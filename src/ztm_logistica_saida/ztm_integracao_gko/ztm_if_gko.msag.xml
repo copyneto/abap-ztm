@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZTM_IF_GKO</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Mensagens de integração com o sistema GKO</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_IF_GKO</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>Falta configuração de parâmetros: módulo: TM, chave1: INTEGRACAO_GKO</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_IF_GKO</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Tipo de ordem de frete (&amp;1) não configurada para envio ao GKO</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_IF_GKO</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Condição de expedição (&amp;1) não configurada para envio ao GKO</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_IF_GKO</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Tipo de expedição (&amp;1) não configurado para envio ao GKO</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_IF_GKO</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Ordem ainda não foi liberada para transporte</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_IF_GKO</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Não foi determinado tipo de veículo na ordem de frete</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_IF_GKO</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>A remessa &amp;1 possui NFe não aprovada ou ainda não foi faturada</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_IF_GKO</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>&amp;1 &amp;2 &amp;3 &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_IF_GKO</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Não foram encontradas remessas para a ordem de frete &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_IF_GKO</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Remessa &amp;1 com inconterms &amp;2 encontrada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_IF_GKO</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Fornecimento &amp;1 com inconterms &amp;2 encontrada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_IF_GKO</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Documento &amp;1 com inconterms &amp;2 encontrada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_IF_GKO</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Recebimento não encontrado incoterms &amp;1 ( remessa &amp;2 ).</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_IF_GKO</ARBGB>
+     <MSGNR>080</MSGNR>
+     <TEXT>Só é possível a execução em background</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_IF_GKO</ARBGB>
+     <MSGNR>081</MSGNR>
+     <TEXT>Já existe um Job em execução.</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

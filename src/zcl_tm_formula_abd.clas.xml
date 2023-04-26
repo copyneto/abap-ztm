@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_TM_FORMULA_ABD</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>TM: Fórmula de Cálculo para ABD</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>BUSCA_VALOR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Busca valor do item</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_PO_VALUE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Busca NETPR do pedido</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCA_VALOR</CMPNAME>
+     <SCONAME>EV_NETPR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Preço líquido</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCA_VALOR</CMPNAME>
+     <SCONAME>IV_EBELN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº do documento de compras</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCA_VALOR</CMPNAME>
+     <SCONAME>IV_EBELP</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº item do documento de compra</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCA_VALOR</CMPNAME>
+     <SCONAME>IV_POSNR_V</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Item documento precedente no doc.administração liquidações</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCA_VALOR</CMPNAME>
+     <SCONAME>IV_SFIR_ID</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Documento de faturamento de frete</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCA_VALOR</CMPNAME>
+     <SCONAME>IV_TOR_ID</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Documento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCA_VALOR</CMPNAME>
+     <SCONAME>IV_WBELN_V</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Documento precedente do documento administração liquidações</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_PO_VALUE</CMPNAME>
+     <SCONAME>EV_NETPR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Preço líquido</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_PO_VALUE</CMPNAME>
+     <SCONAME>IV_EBELN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº do documento de compras</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_PO_VALUE</CMPNAME>
+     <SCONAME>IV_EBELP</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº item do documento de compra</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

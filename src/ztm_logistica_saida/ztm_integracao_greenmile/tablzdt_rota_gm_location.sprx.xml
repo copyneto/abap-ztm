@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SPRX" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROXY_HEADER>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_LOCATION</OBJ_NAME>
+     <OBJECT_M>TABL</OBJECT_M>
+     <OBJ_NAME_M>ZDT_ROTA_GM</OBJ_NAME_M>
+     <HASH_ID>F602FE8AD0140BD59D73F1F6C7366E26BC159A15</HASH_ID>
+     <ID>&lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>Location</IFR_NAME>
+     <IFR_NSPCE>http://trescoracoes.com.br/recebimentoeventos/rotagm</IFR_NSPCE>
+     <IFR_GNSPCE>http://trescoracoes.com.br/recebimentoeventos/rotagm</IFR_GNSPCE>
+     <GEN_VERS>0005</GEN_VERS>
+     <PREFIX>Z</PREFIX>
+     <CATEGORY>ifmtypedef</CATEGORY>
+     <X-ML_NSPCE>http://trescoracoes.com.br/recebimentoeventos/rotagm</X-ML_NSPCE>
+     <X-ML_NAME>Location</X-ML_NAME>
+    </item>
+   </PROXY_HEADER>
+   <PROXY_DATA>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_LOCATION</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>ACTUALSERVICETIME</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>ACTUALSERVICETIME</OBJ_NAME2>
+     <ID>&lt;element&gt; ACTUALSERVICETIME &lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>ACTUALSERVICETIME</IFR_NAME>
+     <IFR_TEXT>Contador de tempo de atividade</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>ACTUALSERVICETIME</R3_NAME>
+     <R3_TEXT>Contador de tempo de atividade</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000012</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_LOCATION</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>CANCELED</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>CANCELED</OBJ_NAME2>
+     <ID>&lt;element&gt; CANCELED &lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>CANCELED</IFR_NAME>
+     <IFR_TEXT>indicador de cancelamento na parada</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>CANCELED</R3_NAME>
+     <R3_TEXT>indicador de cancelamento na parada</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000018</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_LOCATION</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>DELIVERYSTATUS</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>DELIVERYSTATUS</OBJ_NAME2>
+     <ID>&lt;element&gt; DELIVERYSTATUS &lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>DELIVERYSTATUS</IFR_NAME>
+     <IFR_TEXT>Indicador do status da entrega. 
+Parcial, Total ou pendente</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>DELIVERYSTATUS</R3_NAME>
+     <R3_TEXT>Indicador do status da entrega. 
+Parcial, Total ou pendente</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000015</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_LOCATION</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>EVENT_ARRIVAL</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>EVENT_ARRIVAL</OBJ_NAME2>
+     <ID>&lt;element&gt; EVENT_ARRIVAL &lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>EVENT_ARRIVAL</IFR_NAME>
+     <IFR_TEXT>Registro do evento de chegada.</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>EVENT_ARRIVAL</R3_NAME>
+     <R3_TEXT>Registro do evento de chegada.</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000002</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_LOCATION</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>EVENT_ARRIVALDATAQUALITY</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>EVENT_ARRIVALDATAQUALITY</OBJ_NAME2>
+     <ID>&lt;element&gt; EVENT_ARRIVALDATAQUALITY &lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>EVENT_ARRIVALDATAQUALITY</IFR_NAME>
+     <IFR_TEXT>Indicador de como a informação de chegada foi imputada no sistema</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>EVENT_ARRIVALDATAQUALITY</R3_NAME>
+     <R3_TEXT>Indicador de como a informação de chegada foi imputada no si</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000006</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_LOCATION</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>EVENT_DEPARTURE</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>EVENT_DEPARTURE</OBJ_NAME2>
+     <ID>&lt;element&gt; EVENT_DEPARTURE &lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>EVENT_DEPARTURE</IFR_NAME>
+     <IFR_TEXT>Registro do evento de Saida</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>EVENT_DEPARTURE</R3_NAME>
+     <R3_TEXT>Registro do evento de Saida</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000004</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_LOCATION</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>EVENT_DEPARTUREDATAQUALITY</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>EVENT_DEPARTUREDATAQUALITY</OBJ_NAME2>
+     <ID>&lt;element&gt; EVENT_DEPARTUREDATAQUALITY &lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>EVENT_DEPARTUREDATAQUALITY</IFR_NAME>
+     <IFR_TEXT>Indicador de como a informação de partida foi imputada no sistema</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>EVENT_DEPARTUREDATAQUALITY</R3_NAME>
+     <R3_TEXT>Indicador de como a informação de partida foi imputada no si</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000008</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_LOCATION</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>EVENT_DISTANCE</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>EVENT_DISTANCE</OBJ_NAME2>
+     <ID>&lt;element&gt; EVENT_DISTANCE &lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>EVENT_DISTANCE</IFR_NAME>
+     <IFR_TEXT>Distancia percorrida até a etapa</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>EVENT_DISTANCE</R3_NAME>
+     <R3_TEXT>Distancia percorrida até a etapa</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000005</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_LOCATION</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>EVENT_DISTANCEDATAQUALITY</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>EVENT_DISTANCEDATAQUALITY</OBJ_NAME2>
+     <ID>&lt;element&gt; EVENT_DISTANCEDATAQUALITY &lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>EVENT_DISTANCEDATAQUALITY</IFR_NAME>
+     <IFR_TEXT>Indicador de como a informação de distância foi imputada no sistema</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>EVENT_DISTANCEDATAQUALITY</R3_NAME>
+     <R3_TEXT>Indicador de como a informação de distância foi imputada no</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000009</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_LOCATION</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>EVENT_INTIMEWINDOW</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>EVENT_INTIMEWINDOW</OBJ_NAME2>
+     <ID>&lt;element&gt; EVENT_INTIMEWINDOW &lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>EVENT_INTIMEWINDOW</IFR_NAME>
+     <IFR_TEXT>Indicador de entrega dentro da janela programada</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>EVENT_INTIMEWINDOW</R3_NAME>
+     <R3_TEXT>Indicador de entrega dentro da janela programada</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000010</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_LOCATION</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>EVENT_SERVICE</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>EVENT_SERVICE</OBJ_NAME2>
+     <ID>&lt;element&gt; EVENT_SERVICE &lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>EVENT_SERVICE</IFR_NAME>
+     <IFR_TEXT>Registro do evento de inicio de atendimento</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>EVENT_SERVICE</R3_NAME>
+     <R3_TEXT>Registro do evento de inicio de atendimento</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000003</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_LOCATION</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>EVENT_SERVICEDATAQUALITY</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>EVENT_SERVICEDATAQUALITY</OBJ_NAME2>
+     <ID>&lt;element&gt; EVENT_SERVICEDATAQUALITY &lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>EVENT_SERVICEDATAQUALITY</IFR_NAME>
+     <IFR_TEXT>Indicador de como a informação de atendimento foi imputada no sistema</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>EVENT_SERVICEDATAQUALITY</R3_NAME>
+     <R3_TEXT>Indicador de como a informação de atendimento foi imputada n</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000007</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_LOCATION</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>HASASSIGNATURE</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>HASASSIGNATURE</OBJ_NAME2>
+     <ID>&lt;element&gt; HASASSIGNATURE &lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>HASASSIGNATURE</IFR_NAME>
+     <IFR_TEXT>Indicador se há assinatura de canhoto</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>HASASSIGNATURE</R3_NAME>
+     <R3_TEXT>Indicador se há assinatura de canhoto</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000014</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_LOCATION</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>HASPICTURE</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>HASPICTURE</OBJ_NAME2>
+     <ID>&lt;element&gt; HASPICTURE &lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>HASPICTURE</IFR_NAME>
+     <IFR_TEXT>Indicador se há arquivo de imagens para a etapa</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>HASPICTURE</R3_NAME>
+     <R3_TEXT>Indicador se há arquivo de imagens para a etapa</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000013</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_LOCATION</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>LOG_LOCID</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>LOG_LOCID</OBJ_NAME2>
+     <ID>&lt;element&gt; LOG_LOCID &lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>LOG_LOCID</IFR_NAME>
+     <IFR_TEXT>Código da Unidade Gerencial</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>LOG_LOCID</R3_NAME>
+     <R3_TEXT>Código da Unidade Gerencial</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000001</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_LOCATION</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>REDELIVERED</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>REDELIVERED</OBJ_NAME2>
+     <ID>&lt;element&gt; REDELIVERED &lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>REDELIVERED</IFR_NAME>
+     <IFR_TEXT>Indicador de reentrega</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>REDELIVERED</R3_NAME>
+     <R3_TEXT>Indicador de reentrega</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000017</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_LOCATION</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>RETURNED</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>RETURNED</OBJ_NAME2>
+     <ID>&lt;element&gt; RETURNED &lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>RETURNED</IFR_NAME>
+     <IFR_TEXT>Indicador de devolução na parada</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>RETURNED</R3_NAME>
+     <R3_TEXT>Indicador de devolução na parada</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000016</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_LOCATION</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>UNDELIVERABLECODE</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>UNDELIVERABLECODE</OBJ_NAME2>
+     <OBJECT_R>TTYP</OBJECT_R>
+     <OBJ_NAME_R>ZDT_ROTA_GM_UNDELIVERABLEC_TAB</OBJ_NAME_R>
+     <ID>&lt;element&gt; UNDELIVERABLECODE &lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>UNDELIVERABLECODE</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>L</IFR_TAGTYP>
+     <IFR_MAXOCC>65535</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>UNDELIVERABLECODE</R3_NAME>
+     <R3_SEQNUM>000019</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_LOCATION</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>UNIDADE_DE_FRETE</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>UNIDADE_DE_FRETE</OBJ_NAME2>
+     <OBJECT_R>TTYP</OBJECT_R>
+     <OBJ_NAME_R>ZDT_ROTA_GM_UNIDADE_DE_FRE_TAB</OBJ_NAME_R>
+     <ID>&lt;element&gt; UnidadeDeFrete &lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>UnidadeDeFrete</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>L</IFR_TAGTYP>
+     <IFR_MAXOCC>65535</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>UNIDADE_DE_FRETE</R3_NAME>
+     <R3_SEQNUM>000020</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_LOCATION</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>ZCHAPA</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>ZCHAPA</OBJ_NAME2>
+     <ID>&lt;element&gt; ZCHAPA &lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>ZCHAPA</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>ZCHAPA</R3_NAME>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000011</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_LOCATION</OBJ_NAME>
+     <OBJECT1>TABL</OBJECT1>
+     <OBJ_NAME1>ZDT_ROTA_GM_LOCATION</OBJ_NAME1>
+     <OBJECT2>TABL</OBJECT2>
+     <OBJ_NAME2>ZDT_ROTA_GM_LOCATION</OBJ_NAME2>
+     <ID>&lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>Location</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>TABL</R3_TYPE>
+     <R3_NAME>ZDT_ROTA_GM_LOCATION</R3_NAME>
+     <R3_TEXT>Proxy Structure (generated)</R3_TEXT>
+     <CATEGORY>ifmtypedef</CATEGORY>
+    </item>
+   </PROXY_DATA>
+  </asx:values>
+ </asx:abap>
+</abapGit>

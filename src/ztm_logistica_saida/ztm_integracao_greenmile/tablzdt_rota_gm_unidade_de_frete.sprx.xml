@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SPRX" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROXY_HEADER>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_UNIDADE_DE_FRETE</OBJ_NAME>
+     <OBJECT_M>TABL</OBJECT_M>
+     <OBJ_NAME_M>ZDT_ROTA_GM</OBJ_NAME_M>
+     <HASH_ID>5E209F6AED9CDC2867D5CE866618A5EB8D303EA7</HASH_ID>
+     <ID>&lt;type&gt; UnidadeDeFrete &lt;element&gt; UnidadeDeFrete &lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>UnidadeDeFrete</IFR_NAME>
+     <IFR_NSPCE>http://trescoracoes.com.br/recebimentoeventos/rotagm</IFR_NSPCE>
+     <IFR_GNSPCE>http://trescoracoes.com.br/recebimentoeventos/rotagm</IFR_GNSPCE>
+     <GEN_VERS>0005</GEN_VERS>
+     <PREFIX>Z</PREFIX>
+     <CATEGORY>ifmtypedef</CATEGORY>
+     <X-ML_NSPCE>http://trescoracoes.com.br/recebimentoeventos/rotagm</X-ML_NSPCE>
+     <X-ML_NAME>UnidadeDeFrete</X-ML_NAME>
+    </item>
+   </PROXY_HEADER>
+   <PROXY_DATA>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_UNIDADE_DE_FRETE</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>BEGINDATE</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>BEGINDATE</OBJ_NAME2>
+     <ID>&lt;element&gt; BEGINDATE &lt;type&gt; UnidadeDeFrete &lt;element&gt; UnidadeDeFrete &lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>BEGINDATE</IFR_NAME>
+     <IFR_TEXT>Data de início de atendimento ao cliente</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>BEGINDATE</R3_NAME>
+     <R3_TEXT>Data de início de atendimento ao cliente</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000002</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_UNIDADE_DE_FRETE</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>ENDDATE</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>ENDDATE</OBJ_NAME2>
+     <ID>&lt;element&gt; ENDDATE &lt;type&gt; UnidadeDeFrete &lt;element&gt; UnidadeDeFrete &lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>ENDDATE</IFR_NAME>
+     <IFR_TEXT>Data fim de atendimento ao cliente</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>ENDDATE</R3_NAME>
+     <R3_TEXT>Data fim de atendimento ao cliente</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000003</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_UNIDADE_DE_FRETE</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>HASPICTURE</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>HASPICTURE</OBJ_NAME2>
+     <ID>&lt;element&gt; HASPICTURE &lt;type&gt; UnidadeDeFrete &lt;element&gt; UnidadeDeFrete &lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>HASPICTURE</IFR_NAME>
+     <IFR_TEXT>Indicador se há arquivo de imagem</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>HASPICTURE</R3_NAME>
+     <R3_TEXT>Indicador se há arquivo de imagem</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000005</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_UNIDADE_DE_FRETE</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>LINEITEMS</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>LINEITEMS</OBJ_NAME2>
+     <OBJECT_R>TTYP</OBJECT_R>
+     <OBJ_NAME_R>ZDT_ROTA_GM_LINEITEMS_TAB</OBJ_NAME_R>
+     <ID>&lt;element&gt; LINEITEMS &lt;type&gt; UnidadeDeFrete &lt;element&gt; UnidadeDeFrete &lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>LINEITEMS</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>L</IFR_TAGTYP>
+     <IFR_MAXOCC>65535</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>LINEITEMS</R3_NAME>
+     <R3_SEQNUM>000004</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_UNIDADE_DE_FRETE</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>TOR_ID</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>TOR_ID</OBJ_NAME2>
+     <ID>&lt;element&gt; TOR_ID &lt;type&gt; UnidadeDeFrete &lt;element&gt; UnidadeDeFrete &lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>TOR_ID</IFR_NAME>
+     <IFR_TEXT>Número da Unidade de Frete</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>TOR_ID</R3_NAME>
+     <R3_TEXT>Número da Unidade de Frete</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000001</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_UNIDADE_DE_FRETE</OBJ_NAME>
+     <OBJECT1>TABL</OBJECT1>
+     <OBJ_NAME1>ZDT_ROTA_GM_UNIDADE_DE_FRETE</OBJ_NAME1>
+     <OBJECT2>TABL</OBJECT2>
+     <OBJ_NAME2>ZDT_ROTA_GM_UNIDADE_DE_FRETE</OBJ_NAME2>
+     <ID>&lt;type&gt; UnidadeDeFrete &lt;element&gt; UnidadeDeFrete &lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>UnidadeDeFrete</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>TABL</R3_TYPE>
+     <R3_NAME>ZDT_ROTA_GM_UNIDADE_DE_FRETE</R3_NAME>
+     <R3_TEXT>Proxy Structure (generated)</R3_TEXT>
+     <CATEGORY>ifmtypedef</CATEGORY>
+    </item>
+   </PROXY_DATA>
+  </asx:values>
+ </asx:abap>
+</abapGit>

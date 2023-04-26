@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>WF Agrupamento de Faturas</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGTM_WF_AGRUP_FATURASTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGTM_WF_AGRUP_FATURAS</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMTM_WF_AGRUP_FAT_AGENT_DET</FUNCNAME>
+     <SHORT_TEXT>Metaregel zur Bearbeiterfindung</SHORT_TEXT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>AC_CONTAINER</PARAMETER>
+       <DBSTRUCT>SWCONT</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ACTOR_TAB</PARAMETER>
+       <DBSTRUCT>SWHACTOR</DBSTRUCT>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>NOBODY_FOUND</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>AC_CONTAINER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Instance Structure</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ACTOR_TAB</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Rule Resolution Result</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NOBODY_FOUND</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>No agent found</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

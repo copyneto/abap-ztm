@@ -1,0 +1,32 @@
+managed;
+
+define behavior for ZI_TM_LOG_CTE_NFE alias Log
+implementation in class zcltm_log_cte_nfe unique
+persistent table zttm_log_cte_nfe
+lock master
+etag master LocalLastChangedAt
+{
+  field ( numbering : managed, readonly ) Guid;
+  field ( mandatory ) Filename;
+  field ( readonly ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt;
+
+  validation authorityCreate on save { create; }
+
+  mapping for zttm_log_cte_nfe
+  {
+    Guid = guid;
+    Status = status;
+    Message = message;
+    Filename = filename;
+    Documenttype = documenttype;
+    Documentnumber = documentnumber;
+    Documentversion = documentversion;
+    Documentpart = documentpart;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+
+}

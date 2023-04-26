@@ -1,0 +1,7 @@
+@EndUserText.label: 'Definição de Serviço Alteração Motorista'
+define service ZUI_TM_MOTORISTA_CHANGE {
+  expose ZC_TM_MDF_MOTORISTA_CHANGE as Motorista;
+  expose ZC_TM_MDF_HIST_MOTORISTA as Log;
+  expose ZI_TM_VH_EQUNR;
+  expose ZI_TM_VH_MOTORISTA;
+}

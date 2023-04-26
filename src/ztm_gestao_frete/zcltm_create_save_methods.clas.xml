@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLTM_CREATE_SAVE_METHODS</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Change Controller Methods for Create or Save Strategies</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>CHANGE_SHIP_TO_PARTY_ECOMMERCE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Modifica recebedor de mercador E-commerce</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CRIA_RECEBEDOR_MERCADORIA</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Realiza a criação do BP do Recebedor de mercadoria</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_SHIP_TO_PARTY_ECOMMERCE</CMPNAME>
+     <SCONAME>IO_METHPAR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Method Parameter BASIS</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_SHIP_TO_PARTY_ECOMMERCE</CMPNAME>
+     <SCONAME>IT_REQUEST</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Requests</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CRIA_RECEBEDOR_MERCADORIA</CMPNAME>
+     <SCONAME>EV_BP_NUMBER</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Business Partner Number</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CRIA_RECEBEDOR_MERCADORIA</CMPNAME>
+     <SCONAME>IV_EMISSOR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Business Partner Number</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CRIA_RECEBEDOR_MERCADORIA</CMPNAME>
+     <SCONAME>IV_VBELN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Sales and Distribution Document Number</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

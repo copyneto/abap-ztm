@@ -1,0 +1,5 @@
+CLASS zcltm_cockpit_tab DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_tm_cockpit_tab.
+ENDCLASS.
+
+CLASS zcltm_cockpit_tab IMPLEMENTATION.
+ENDCLASS.

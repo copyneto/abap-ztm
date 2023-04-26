@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_TABL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD02V>
+    <TABNAME>ZSTM_ITINERARIO_DET_PAGAMENTO</TABNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <TABCLASS>INTTAB</TABCLASS>
+    <DDTEXT>Smartforms transporte por itinerário - Detalhamento pag.</DDTEXT>
+    <MASTERLANG>P</MASTERLANG>
+   </DD02V>
+   <DD03P_TABLE>
+    <DD03P>
+     <FIELDNAME>DESCRICAO</FIELDNAME>
+     <ADMINFIELD>0</ADMINFIELD>
+     <INTTYPE>C</INTTYPE>
+     <INTLEN>000080</INTLEN>
+     <DATATYPE>CHAR</DATATYPE>
+     <LENG>000040</LENG>
+     <MASK>  CHAR</MASK>
+     <DDTEXT>Descrição pagamento</DDTEXT>
+    </DD03P>
+    <DD03P>
+     <FIELDNAME>VALOR</FIELDNAME>
+     <ROLLNAME>WRBTR</ROLLNAME>
+     <ADMINFIELD>0</ADMINFIELD>
+     <REFTABLE>ZSTM_ITINERARIO_DET_PAGAMENTO</REFTABLE>
+     <REFFIELD>MOEDA</REFFIELD>
+     <COMPTYPE>E</COMPTYPE>
+    </DD03P>
+    <DD03P>
+     <FIELDNAME>MOEDA</FIELDNAME>
+     <ROLLNAME>WAERS</ROLLNAME>
+     <ADMINFIELD>0</ADMINFIELD>
+     <COMPTYPE>E</COMPTYPE>
+    </DD03P>
+   </DD03P_TABLE>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Condição de expedição'
+define service ZUI_TM_COND_EXPED {
+  expose ZC_COND_EXPED;
+}

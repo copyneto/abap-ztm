@@ -1,0 +1,153 @@
+projection;
+
+define behavior for ZC_TM_COCKPIT_TAB //alias <alias_name>
+{
+
+  use update;
+  use delete;
+
+  use association _001 { create; }
+  use association _003 { create; }
+  use association _005 { create; }
+  use association _006 { create; }
+  use association _007 { create; }
+  use association _008 { create; }
+  use association _009 { create; }
+  use association _010 { create; }
+  use association _011 { create; }
+  use association _012 { create; }
+  use association _013 { create; }
+  use association _014 { create; }
+  use association _016 { create; }
+  use association _017 { create; }
+  use association _018 { create; }
+  use association _019 { create; }
+}
+
+define behavior for ZC_TM_PCOCKPIT001 //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _Cockpit;
+}
+
+define behavior for ZC_TM_PCOCKPIT003 //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _Cockpit;
+}
+
+define behavior for ZC_TM_PCOCKPIT005 //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _Cockpit;
+}
+
+define behavior for ZC_TM_PCOCKPIT006 //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _Cockpit;
+}
+
+define behavior for ZC_TM_PCOCKPIT007 //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _Cockpit;
+}
+
+define behavior for ZC_TM_PCOCKPIT008 //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _Cockpit;
+}
+
+define behavior for ZC_TM_PCOCKPIT009 //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _Cockpit;
+}
+
+define behavior for ZC_TM_PCOCKPIT010 //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _Cockpit;
+}
+
+define behavior for ZC_TM_PCOCKPIT011 //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _Cockpit;
+}
+
+define behavior for ZC_TM_PCOCKPIT012 //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _Cockpit;
+}
+
+define behavior for ZC_TM_PCOCKPIT013 //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _Cockpit;
+}
+
+define behavior for ZC_TM_PCOCKPIT014 //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _Cockpit;
+}
+
+define behavior for ZC_TM_PCOCKPIT016 //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _Cockpit;
+}
+
+define behavior for ZC_TM_PCOCKPIT017 //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _Cockpit;
+}
+
+define behavior for ZC_TM_PCOCKPIT018 //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _Cockpit;
+}
+
+define behavior for ZC_TM_PCOCKPIT019 //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _Cockpit;
+}

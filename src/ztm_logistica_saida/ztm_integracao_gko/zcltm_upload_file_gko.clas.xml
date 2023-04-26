@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLTM_UPLOAD_FILE_GKO</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Upload NFS e NF</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_EXTENSAOFILE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo de 3 bytes de comprimento</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_LOG_NMOBJ</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Log de aplicação: nome do objeto (sigla de aplicação)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_LOG_NMSUBOBJ</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Log de aplicação: subobjeto</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_OPTION_EQ</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Componente do nº versão</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_SIGN_I</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de um caractere</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_TPDOC_CTE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo de documento</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_TPDOC_NFS</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo de documento</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_VALUE_TAG_XML</CMPNAME>
+     <SCONAME>IT_XML</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tags do XML</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_VALUE_TAG_XML</CMPNAME>
+     <SCONAME>IV_TAG</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>char255</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_VALUE_TAG_XML</CMPNAME>
+     <SCONAME>RV_VALUE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>char255</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PROCESS</CMPNAME>
+     <SCONAME>IV_PATH</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>nome do file</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PROCESS_NF</CMPNAME>
+     <SCONAME>IT_XML_INFO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tags do XML</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PROCESS_NF</CMPNAME>
+     <SCONAME>IV_NAMEFILE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>nome do file</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PROCESS_NF_GKO</CMPNAME>
+     <SCONAME>IT_XML_INFO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tags do XML</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PROCESS_NF_GKO</CMPNAME>
+     <SCONAME>IV_NAMEFILE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>nome do file</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

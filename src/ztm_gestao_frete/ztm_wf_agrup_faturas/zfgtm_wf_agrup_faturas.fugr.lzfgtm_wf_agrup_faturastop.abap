@@ -1,0 +1,5 @@
+FUNCTION-POOL ZFGTM_WF_AGRUP_FATURAS.       "MESSAGE-ID ..
+
+* INCLUDE LZFGTM_WF_AGRUP_FATURASD...        " Local class definition
+
+INCLUDE <cntn01>.

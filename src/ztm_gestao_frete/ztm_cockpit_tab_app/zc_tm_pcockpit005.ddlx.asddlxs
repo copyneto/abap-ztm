@@ -1,0 +1,39 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: { typeName: 'Regra de seleção de IVAs'}
+annotate view ZC_TM_PCOCKPIT005
+    with 
+{
+  @UI.facet: [
+    { label: 'Valores',
+      id: 'Valores',
+      type: #COLLECTION,
+      position: 10 },
+
+    { label: ' ',
+      position: 10,
+      type: #IDENTIFICATION_REFERENCE,
+      parentId: 'Valores' }
+  ]
+
+    @UI.hidden: true
+    Guid;
+    @UI: { lineItem:       [{position: 10}],
+           identification: [{position: 10}]}       
+    RegioFrom;
+    @UI: { lineItem:       [{position: 20}],
+           identification: [{position: 20}]}    
+    RegioTo;
+    @UI: { lineItem:       [{position: 30}],
+           identification: [{position: 30}]}    
+    Incoterm;
+    @UI: { lineItem:       [{position: 40}],
+           identification: [{position: 40}]}     
+    Burks;
+    @UI: { lineItem:       [{position: 50}],
+           identification: [{position: 50}]}     
+    Vstel;
+    @UI: { lineItem:       [{position: 60}],
+           identification: [{position: 60}]}     
+    Mwskz;
+
+}

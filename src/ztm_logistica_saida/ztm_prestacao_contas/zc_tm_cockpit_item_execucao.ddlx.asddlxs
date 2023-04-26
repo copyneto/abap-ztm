@@ -1,0 +1,68 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo:           { typeName: 'Execução', typeNamePlural: 'Execuções' },
+       presentationVariant: [{ sortOrder: [{ by: 'TranspOrdEvtActualDateTime', direction:  #DESC }] }] }
+
+annotate view ZC_TM_COCKPIT_ITEM_EXECUCAO with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:            'Execucao',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Execução',
+                 position:      10 }  ]
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI.hidden: true
+  FreightOrderUUID;
+
+  @UI.hidden: true
+  FreightUnitUUID;
+
+  @UI.hidden: true
+  TransportationOrderEventUUID;
+  
+  @UI: { lineItem:        [ { position: 10, label: 'ID de execução' } ],
+         identification:  [ { position: 10, label: 'ID de execução' } ] }
+  TranspOrdExecution;
+
+  @UI: { lineItem:        [ { position: 20, label: 'Evento' } ],
+         identification:  [ { position: 20, label: 'Evento' } ] }
+  TranspOrdEventCode;
+
+  @UI.hidden: true
+  TranspOrdEventCodeDesc;
+
+  @UI: { lineItem:        [ { position: 30, label: 'Status do evento' } ],
+         identification:  [ { position: 30, label: 'Status do evento' } ] }
+  TranspOrdEventStatus;
+
+  @UI.hidden: true
+  TranspOrdEventStatusDesc;
+
+  @UI: { lineItem:        [ { position: 40, label: 'Atividade de transporte' } ],
+         identification:  [ { position: 40, label: 'Atividade de transporte' } ] }
+  TransportationActivity;
+
+  @UI.hidden: true
+  TransportationActivityDesc;
+
+  @UI: { lineItem:        [ { position: 50, label: 'Fonte das informações de execução' } ],
+         identification:  [ { position: 50, label: 'Fonte das informações de execução' } ] }
+  TranspOrdExecInfoSource;
+
+  @UI.hidden: true
+  TranspOrdExecInfoSourceDesc;
+
+  @UI: { lineItem:        [ { position: 60, label: 'Data/hora do evento' } ],
+         identification:  [ { position: 60, label: 'Data/hora do evento' } ] }
+  TranspOrdEvtActualDateTime;
+
+  @UI: { lineItem:        [ { position: 70, label: 'Fuso horário' } ],
+         identification:  [ { position: 70, label: 'Fuso horário' } ] }
+  TranspOrdEvtActualDateTimeZone;
+
+}

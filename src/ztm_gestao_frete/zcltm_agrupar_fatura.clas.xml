@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLTM_AGRUPAR_FATURA</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Dispara Job de Agrupamento de Fatura</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>AGRUPAR_FATURA</CMPNAME>
+     <SCONAME>ET_MENSAGENS</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Mensagens de erro</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>AGRUPAR_FATURA</CMPNAME>
+     <SCONAME>IT_ACCKEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Lista de Chaves para agrupamento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>AGRUPAR_FATURA</CMPNAME>
+     <SCONAME>IV_DATA_VENCIMENTO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Data de Vencimento do transportador</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>AGRUPAR_FATURA</CMPNAME>
+     <SCONAME>IV_FATURA_TRASNPO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Número da fatura do transportador</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>AGRUPAR_FATURA</CMPNAME>
+     <SCONAME>IV_STCD1</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº ID fiscal 1</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>AGRUPAR_FATURA</CMPNAME>
+     <SCONAME>IV_VLR_DESCONTO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Valor de desconto financeiro</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>AGRUPAR_FATURA</CMPNAME>
+     <SCONAME>IV_VLR_TOTAL</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Valor total do agrupamento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>EFETIVAR_AGRUPAMENTO</CMPNAME>
+     <SCONAME>IT_XBLNR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Documentos a serem agrupados</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

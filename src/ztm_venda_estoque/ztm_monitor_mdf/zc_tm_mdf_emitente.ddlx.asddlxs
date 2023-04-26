@@ -1,0 +1,76 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Emitente',
+                     typeNamePlural: 'Emitente' } }
+
+annotate view ZC_TM_MDF_EMITENTE with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:            'Emitente',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Emitente',
+                 position:      10 }  ]
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI.hidden: true
+  Id;
+  
+  @UI.hidden: true
+  CompanyCode;
+  
+  @UI.hidden: true
+  BusinessPlace;
+  
+  @UI: { lineItem:        [ { position: 10, label: 'CNPJ' } ],
+         identification:  [ { position: 10, label: 'CNPJ' } ],
+         textArrangement: #TEXT_ONLY } 
+  Cnpj;
+  
+  @UI.hidden: true
+  CnpjText;
+  
+  @UI: { lineItem:        [ { position: 20, label: 'Inscrição Estadual' } ],
+         identification:  [ { position: 20, label: 'Inscrição Estadual' } ]  }
+  InscricaoEstadual;
+  
+  @UI: { lineItem:        [ { position: 30, label: 'Nome de Empresa' } ],
+         identification:  [ { position: 30, label: 'Nome de Empresa' } ]  }
+  NomeEmpresa;
+  
+  @UI: { lineItem:        [ { position: 40, label: 'Cod. Endereço' } ],
+         identification:  [ { position: 40, label: 'Cod. Endereço' } ]  }
+  Endereco;
+  
+  @UI: { lineItem:        [ { position: 50, label: 'Nome da rua' } ],
+         identification:  [ { position: 50, label: 'Nome da rua' } ]  }
+  Rua;
+  
+  @UI: { lineItem:        [ { position: 60, label: 'Número' } ],
+         identification:  [ { position: 60, label: 'Número' } ]  }
+  Numero;
+  
+  @UI: { lineItem:        [ { position: 70, label: 'Complemento' } ],
+         identification:  [ { position: 70, label: 'Complemento' } ]  }
+  Complemento;
+  
+  @UI: { lineItem:        [ { position: 80, label: 'Bairro' } ],
+         identification:  [ { position: 80, label: 'Bairro' } ]  }
+  Bairro;
+  
+  @UI: { lineItem:        [ { position: 90, label: 'Domicílio Fiscal' } ],
+         identification:  [ { position: 90, label: 'Domicílio Fiscal' } ]  }
+  TaxJurCode;
+  
+  @UI: { lineItem:        [ { position: 100, label: 'Cidade' } ],
+         identification:  [ { position: 100, label: 'Cidade' } ]  }
+  Cidade;
+  
+  @UI: { lineItem:        [ { position: 110, label: 'CEP' } ],
+         identification:  [ { position: 110, label: 'CEP' } ]  }
+  Cep;
+
+}

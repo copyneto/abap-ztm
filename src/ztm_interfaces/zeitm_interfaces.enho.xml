@@ -1,0 +1,982 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_ENHO" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TOOL>WDYCONF</TOOL>
+   <ORIGINAL_OBJECT>
+    <CONFIG_ID>/SCMTMS/WDCC_FOR_GEN_GNINF</CONFIG_ID>
+   </ORIGINAL_OBJECT>
+   <ENHANCEMENT_DATA>
+    <Component Name="" ConfId="" ConfType="00" ConfVar="">
+     <Node Name="CONFIGURATION_CONTEXT" SimpleFormat="true">
+      <Item Index="000001" SimpleFormat="true">
+       <Node Name="FORM" SimpleFormat="true">
+        <Item Index="000001" SimpleFormat="true">
+         <Node Name="FORM_GROUP" SimpleFormat="true">
+          <Item Index="000001" SimpleFormat="true">
+           <ID Final="5 ">FGL2_005056B095991EEDAE87F69397D9AC5F</ID>
+           <ANCHORED></ANCHORED>
+           <INSTANCE_STYLE></INSTANCE_STYLE>
+           <CTXT_MENU_ID></CTXT_MENU_ID>
+           <Node Name="FORM_GROUP_ELEMENT" SimpleFormat="true">
+            <Item Index="000001" SimpleFormat="true">
+             <ID Final="5 ">_GENP_005056B095991EEDAE87F6B80EE9EC5F</ID>
+             <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+             <FORM_ELEMENT_ID>FGL2_005056B095991EEDAE87F6B80EE9CC5F</FORM_ELEMENT_ID>
+            </Item>
+            <Item Index="000002" SimpleFormat="true">
+             <ID Final="5 ">_GENP_005056B095991EEDAE87FA343DD76C5F</ID>
+             <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+             <FORM_ELEMENT_ID>FGL2_005056B095991EEDAE87FA343DD6CC5F</FORM_ELEMENT_ID>
+            </Item>
+            <Item Index="000003" SimpleFormat="true">
+             <ID Final="5 ">_GENP_005056B095991EEDAE87FA343DD7AC5F</ID>
+             <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+             <FORM_ELEMENT_ID>FGL2_005056B095991EEDAE87FA343DD6EC5F</FORM_ELEMENT_ID>
+            </Item>
+            <Item Index="000004" SimpleFormat="true">
+             <ID Final="5 ">_GENP_005056B095991EEDAE88404BE0654C73</ID>
+             <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+             <FORM_ELEMENT_ID>FGL2_005056B095991EEDAE87FA343DD70C5F</FORM_ELEMENT_ID>
+            </Item>
+            <Item Index="000005" SimpleFormat="true">
+             <ID Final="5 ">_GENP_005056B095991EEDAE8BE74554514CE1</ID>
+             <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+             <FORM_ELEMENT_ID>FGL2_005056B095991EEDAE8BE74554512CE1</FORM_ELEMENT_ID>
+            </Item>
+           </Node>
+          </Item>
+          <Item Index="000002" SimpleFormat="true">
+           <ID Final="5 ">FGL2_005056B095991EEDAE8861437C2A8C77</ID>
+           <ANCHORED></ANCHORED>
+           <INSTANCE_STYLE></INSTANCE_STYLE>
+           <CTXT_MENU_ID></CTXT_MENU_ID>
+           <Node Name="FORM_GROUP_ELEMENT" SimpleFormat="true">
+            <Item Index="000001" SimpleFormat="true">
+             <ID Final="5 ">_GENP_005056B095991EEDAE8861437C2ACC77</ID>
+             <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+             <FORM_ELEMENT_ID>FGL2_005056B095991EEDAE8861437C2AAC77</FORM_ELEMENT_ID>
+            </Item>
+            <Item Index="000002" SimpleFormat="true">
+             <ID Final="5 ">_GENP_005056B095991EEDAE88664FA285AC77</ID>
+             <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+             <FORM_ELEMENT_ID>FGL2_005056B095991EEDAE88664FA284EC77</FORM_ELEMENT_ID>
+            </Item>
+            <Item Index="000003" SimpleFormat="true">
+             <ID Final="5 ">_GENP_005056B095991EEDAE88A07781474C7F</ID>
+             <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+             <FORM_ELEMENT_ID>FGL2_005056B095991EEDAE88664FA284CC77</FORM_ELEMENT_ID>
+            </Item>
+            <Item Index="000004" SimpleFormat="true">
+             <ID Final="5 ">_GENP_005056B095991EEDAE88A07781476C7F</ID>
+             <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+             <FORM_ELEMENT_ID>FGL2_005056B095991EEDAE88664FA2850C77</FORM_ELEMENT_ID>
+            </Item>
+            <Item Index="000005" SimpleFormat="true">
+             <ID Final="5 ">_GENP_005056B095991EEDAE8BF552AF9BECE4</ID>
+             <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+             <FORM_ELEMENT_ID>FGL2_005056B095991EEDAE8BF552AF9BCCE4</FORM_ELEMENT_ID>
+            </Item>
+           </Node>
+          </Item>
+          <Item Index="000003" SimpleFormat="true">
+           <ID Final="5 ">FGL2_005056B095991EEDAE88A1EFAB674C7F</ID>
+           <ANCHORED></ANCHORED>
+           <INSTANCE_STYLE></INSTANCE_STYLE>
+           <CTXT_MENU_ID></CTXT_MENU_ID>
+           <Node Name="FORM_GROUP_ELEMENT" SimpleFormat="true">
+            <Item Index="000001" SimpleFormat="true">
+             <ID Final="5 ">_GENP_005056B095991EEDAE88A1EFAB678C7F</ID>
+             <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+             <FORM_ELEMENT_ID>FGL2_005056B095991EEDAE88A1EFAB676C7F</FORM_ELEMENT_ID>
+            </Item>
+            <Item Index="000002" SimpleFormat="true">
+             <ID Final="5 ">_GENP_005056B095991EEDAE88AD5BD2218C83</ID>
+             <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+             <FORM_ELEMENT_ID>FGL2_005056B095991EEDAE88AD5BD220EC83</FORM_ELEMENT_ID>
+            </Item>
+            <Item Index="000003" SimpleFormat="true">
+             <ID Final="5 ">_GENP_005056B095991EEDAE88AD5BD221CC83</ID>
+             <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+             <FORM_ELEMENT_ID>FGL2_005056B095991EEDAE88AD5BD2210C83</FORM_ELEMENT_ID>
+            </Item>
+            <Item Index="000004" SimpleFormat="true">
+             <ID Final="5 ">_GENP_005056B095991EEDAE88AD5BD2220C83</ID>
+             <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+             <FORM_ELEMENT_ID>FGL2_005056B095991EEDAE88AD5BD2212C83</FORM_ELEMENT_ID>
+            </Item>
+            <Item Index="000005" SimpleFormat="true">
+             <ID Final="5 ">_GENP_005056B095991EEDAE8C06A77BC8CCE5</ID>
+             <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+             <FORM_ELEMENT_ID>FGL2_005056B095991EEDAE8C06A77BC8ACE5</FORM_ELEMENT_ID>
+            </Item>
+           </Node>
+          </Item>
+         </Node>
+         <Node Name="POSITION" SimpleFormat="true">
+          <Item Index="000001" SimpleFormat="true" Changed="true">
+           <END_ROW>21 </END_ROW>
+           <START_ROW>21 </START_ROW>
+           <ID Final="5 ">_GENP_1048E44E5C26CE2FE10000000A4289BC</ID>
+          </Item>
+          <Item Index="000002" SimpleFormat="true" Changed="true">
+           <END_ROW>22 </END_ROW>
+           <LABEL_END_ROW>22 </LABEL_END_ROW>
+           <LABEL_START_ROW>22 </LABEL_START_ROW>
+           <START_ROW>22 </START_ROW>
+           <ID Final="5 ">_GENP_8F2BE44E9F87C558E10000000A4289BC</ID>
+          </Item>
+          <Item Index="000003" SimpleFormat="true" Changed="true">
+           <END_ROW>22 </END_ROW>
+           <START_ROW>22 </START_ROW>
+           <ID Final="5 ">_GENP_912BE44E9F87C558E10000000A4289BC</ID>
+          </Item>
+          <Item Index="000004" SimpleFormat="true" Changed="true">
+           <END_ROW>23 </END_ROW>
+           <LABEL_END_ROW>23 </LABEL_END_ROW>
+           <LABEL_START_ROW>23 </LABEL_START_ROW>
+           <START_ROW>23 </START_ROW>
+           <ID Final="5 ">_GENP_932BE44E9F87C558E10000000A4289BC</ID>
+          </Item>
+          <Item Index="000005" SimpleFormat="true" Changed="true">
+           <END_ROW>13 </END_ROW>
+           <START_ROW>13 </START_ROW>
+           <ID Final="5 ">_GENP_66C9E64E8D32F03CE10000000A4289BC</ID>
+          </Item>
+          <Item Index="000006" SimpleFormat="true" Changed="true">
+           <END_ROW>27 </END_ROW>
+           <START_ROW>27 </START_ROW>
+           <ID Final="5 ">_GENP_2C39E54EC5C98526E10000000A4289BC</ID>
+          </Item>
+          <Item Index="000007" SimpleFormat="true" Changed="true">
+           <END_ROW>29 </END_ROW>
+           <LABEL_END_ROW>29 </LABEL_END_ROW>
+           <LABEL_START_ROW>29 </LABEL_START_ROW>
+           <START_ROW>29 </START_ROW>
+           <ID Final="5 ">_GENP_203AE54EC5C98526E10000000A4289BC</ID>
+          </Item>
+          <Item Index="000008" SimpleFormat="true" Changed="true">
+           <END_ROW>29 </END_ROW>
+           <START_ROW>29 </START_ROW>
+           <ID Final="5 ">_GENP_223AE54EC5C98526E10000000A4289BC</ID>
+          </Item>
+          <Item Index="000009" SimpleFormat="true" Changed="true">
+           <END_ROW>30 </END_ROW>
+           <LABEL_END_ROW>30 </LABEL_END_ROW>
+           <LABEL_START_ROW>30 </LABEL_START_ROW>
+           <START_ROW>30 </START_ROW>
+           <ID Final="5 ">_GENP_243AE54EC5C98526E10000000A4289BC</ID>
+          </Item>
+          <Item Index="000010" SimpleFormat="true" Changed="true">
+           <END_ROW>30 </END_ROW>
+           <START_ROW>30 </START_ROW>
+           <ID Final="5 ">_GENP_263AE54EC5C98526E10000000A4289BC</ID>
+          </Item>
+          <Item Index="000011" SimpleFormat="true" Changed="true">
+           <END_ROW>31 </END_ROW>
+           <LABEL_END_ROW>31 </LABEL_END_ROW>
+           <LABEL_START_ROW>31 </LABEL_START_ROW>
+           <START_ROW>31 </START_ROW>
+           <ID Final="5 ">_GENP_283AE54EC5C98526E10000000A4289BC</ID>
+          </Item>
+          <Item Index="000012" SimpleFormat="true" Changed="true">
+           <END_ROW>31 </END_ROW>
+           <START_ROW>31 </START_ROW>
+           <ID Final="5 ">_GENP_2A3AE54EC5C98526E10000000A4289BC</ID>
+          </Item>
+          <Item Index="000013" SimpleFormat="true" Changed="true">
+           <END_ROW>32 </END_ROW>
+           <LABEL_END_ROW>32 </LABEL_END_ROW>
+           <LABEL_START_ROW>32 </LABEL_START_ROW>
+           <START_ROW>32 </START_ROW>
+           <ID Final="5 ">_GENP_2C3AE54EC5C98526E10000000A4289BC</ID>
+          </Item>
+          <Item Index="000014" SimpleFormat="true" Changed="true">
+           <END_ROW>32 </END_ROW>
+           <START_ROW>32 </START_ROW>
+           <ID Final="5 ">_GENP_2E3AE54EC5C98526E10000000A4289BC</ID>
+          </Item>
+          <Item Index="000015" SimpleFormat="true" Changed="true">
+           <END_ROW>33 </END_ROW>
+           <LABEL_END_ROW>33 </LABEL_END_ROW>
+           <LABEL_START_ROW>33 </LABEL_START_ROW>
+           <START_ROW>33 </START_ROW>
+           <ID Final="5 ">_GENP_303AE54EC5C98526E10000000A4289BC</ID>
+          </Item>
+          <Item Index="000016" SimpleFormat="true" Changed="true">
+           <END_ROW>33 </END_ROW>
+           <START_ROW>33 </START_ROW>
+           <ID Final="5 ">_GENP_323AE54EC5C98526E10000000A4289BC</ID>
+          </Item>
+          <Item Index="000017" SimpleFormat="true" Changed="true">
+           <END_ROW>26 </END_ROW>
+           <LABEL_END_ROW>26 </LABEL_END_ROW>
+           <LABEL_START_ROW>26 </LABEL_START_ROW>
+           <START_ROW>26 </START_ROW>
+           <ID Final="5 ">_GENP_C009294F4A005132E10000000A4289BC</ID>
+          </Item>
+          <Item Index="000018" SimpleFormat="true" Changed="true">
+           <END_ROW>17 </END_ROW>
+           <LABEL_END_ROW>17 </LABEL_END_ROW>
+           <LABEL_START_ROW>17 </LABEL_START_ROW>
+           <START_ROW>17 </START_ROW>
+           <ID Final="5 ">_GENP_F70E8C509E6B4446E10000000A4289BC</ID>
+          </Item>
+          <Item Index="000019" SimpleFormat="true" Changed="true">
+           <END_ROW>17 </END_ROW>
+           <START_ROW>17 </START_ROW>
+           <ID Final="5 ">_GENP_0A0F8C509E6B4446E10000000A4289BC</ID>
+          </Item>
+          <Item Index="000020" SimpleFormat="true" Changed="true">
+           <END_ROW>34 </END_ROW>
+           <LABEL_END_ROW>34 </LABEL_END_ROW>
+           <LABEL_START_ROW>34 </LABEL_START_ROW>
+           <START_ROW>34 </START_ROW>
+           <ID Final="5 ">_GENP_005056AB02EA1EE29ADA2205F10E75F6</ID>
+          </Item>
+          <Item Index="000021" SimpleFormat="true" Changed="true">
+           <END_ROW>26 </END_ROW>
+           <START_ROW>26 </START_ROW>
+           <ID Final="5 ">_GENP_005056AB02EA1EE2AEA9A17C544099AF</ID>
+          </Item>
+          <Item Index="000022" SimpleFormat="true" Changed="true">
+           <START_ROW>16 </START_ROW>
+           <END_ROW>16 </END_ROW>
+           <LABEL_START_ROW>16 </LABEL_START_ROW>
+           <LABEL_END_ROW>16 </LABEL_END_ROW>
+           <ID Final="5 ">_GENP_3440B5B09FEA1EE5BCA299063B6C29E3</ID>
+          </Item>
+          <Item Index="000023" SimpleFormat="true" Changed="true">
+           <START_ROW>16 </START_ROW>
+           <END_ROW>16 </END_ROW>
+           <ID Final="5 ">_GENP_3440B5B09FEA1EE5BCA29FBC30396A14</ID>
+          </Item>
+          <Item Index="000024" SimpleFormat="true" Changed="true">
+           <START_ROW>26 </START_ROW>
+           <END_ROW>26 </END_ROW>
+           <ID Final="5 ">_GENP_3440B5B09FEA1EE6AE910F02B890B3C1</ID>
+          </Item>
+          <Item Index="000025" SimpleFormat="true" Changed="true">
+           <START_ROW>2 </START_ROW>
+           <END_ROW>2 </END_ROW>
+           <ID Final="5 ">_GENP_1C98EC17AC451EE8B28FC626B9EADFA8</ID>
+          </Item>
+          <Item Index="000026" SimpleFormat="true" Changed="true">
+           <START_ROW>7 </START_ROW>
+           <END_ROW>7 </END_ROW>
+           <LABEL_START_ROW>7 </LABEL_START_ROW>
+           <LABEL_END_ROW>7 </LABEL_END_ROW>
+           <ID Final="5 ">_GENP_1C98EC17AC451ED8B28FD18B1018A029</ID>
+          </Item>
+          <Item Index="000027" SimpleFormat="true" Changed="true">
+           <START_ROW>7 </START_ROW>
+           <END_ROW>7 </END_ROW>
+           <ID Final="5 ">_GENP_1C98EC17AC451ED8B28FD18B1018E029</ID>
+          </Item>
+          <Item Index="000028" SimpleFormat="true" Changed="true">
+           <START_ROW>8 </START_ROW>
+           <END_ROW>8 </END_ROW>
+           <LABEL_START_ROW>8 </LABEL_START_ROW>
+           <LABEL_END_ROW>8 </LABEL_END_ROW>
+           <ID Final="5 ">_GENP_1C98EC17AC451ED8B28FD18B10192029</ID>
+          </Item>
+          <Item Index="000029" SimpleFormat="true" Changed="true">
+           <START_ROW>8 </START_ROW>
+           <END_ROW>8 </END_ROW>
+           <ID Final="5 ">_GENP_1C98EC17AC451ED8B28FD18B10196029</ID>
+          </Item>
+          <Item Index="000030" SimpleFormat="true" Changed="true">
+           <START_ROW>5 </START_ROW>
+           <END_ROW>5 </END_ROW>
+           <ID Final="5 ">_GENP_1C98EC17AC451ED8B28FDE570D946142</ID>
+          </Item>
+          <Item Index="000031" SimpleFormat="true" Changed="true">
+           <START_ROW>5 </START_ROW>
+           <END_ROW>5 </END_ROW>
+           <LABEL_START_ROW>5 </LABEL_START_ROW>
+           <LABEL_END_ROW>5 </LABEL_END_ROW>
+           <ID Final="5 ">_GENP_1C98EC17AC451ED8B28FDFB61C0E0142</ID>
+          </Item>
+          <Item Index="000032" SimpleFormat="true" Changed="true">
+           <START_ROW>7 </START_ROW>
+           <END_ROW>7 </END_ROW>
+           <ID Final="5 ">_GENP_1C98EC17AC451ED8B29071A7544E6569</ID>
+          </Item>
+          <Item Index="000033" SimpleFormat="true" Changed="true">
+           <START_ROW>7 </START_ROW>
+           <END_ROW>7 </END_ROW>
+           <ID Final="5 ">_GENP_1C98EC17AC451ED8B29073FDD886856B</ID>
+          </Item>
+          <Item Index="000034" SimpleFormat="true" Changed="true">
+           <START_ROW>10 </START_ROW>
+           <END_ROW>10 </END_ROW>
+           <LABEL_START_ROW>10 </LABEL_START_ROW>
+           <LABEL_END_ROW>10 </LABEL_END_ROW>
+           <ID Final="5 ">_GENP_1C98EC17AC451ED8B290780F2633656F</ID>
+          </Item>
+          <Item Index="000035" SimpleFormat="true" Changed="true">
+           <START_ROW>8 </START_ROW>
+           <END_ROW>8 </END_ROW>
+           <ID Final="5 ">_GENP_1C98EC17AC451ED8B2907A15D3A0A56F</ID>
+          </Item>
+          <Item Index="000036" SimpleFormat="true" Changed="true">
+           <START_ROW>8 </START_ROW>
+           <END_ROW>8 </END_ROW>
+           <ID Final="5 ">_GENP_1C98EC17AC451ED8B2907B5817CEA573</ID>
+          </Item>
+          <Item Index="000037" SimpleFormat="true" Changed="true">
+           <START_ROW>4 </START_ROW>
+           <END_ROW>4 </END_ROW>
+           <ID Final="5 ">_GENP_1C98EC17AC451ED8B2907D46301E4575</ID>
+          </Item>
+          <Item Index="000038" SimpleFormat="true" Changed="true">
+           <START_ROW>3 </START_ROW>
+           <END_ROW>3 </END_ROW>
+           <LABEL_START_ROW>3 </LABEL_START_ROW>
+           <LABEL_END_ROW>3 </LABEL_END_ROW>
+           <ID Final="5 ">_GENP_1C98EC17AC451ED8B2E516299E913D96</ID>
+          </Item>
+          <Item Index="000039" SimpleFormat="true" Changed="true">
+           <START_ROW>3 </START_ROW>
+           <END_ROW>3 </END_ROW>
+           <ID Final="5 ">_GENP_1C98EC17AC451ED8B2E516299E917D96</ID>
+          </Item>
+          <Item Index="000040" SimpleFormat="true" Changed="true">
+           <START_ROW>25 </START_ROW>
+           <END_ROW>25 </END_ROW>
+           <LABEL_START_ROW>25 </LABEL_START_ROW>
+           <LABEL_END_ROW>25 </LABEL_END_ROW>
+           <ID Final="5 ">_GENP_1C98EC17AC451EE8B2E5FFE6C629041B</ID>
+          </Item>
+          <Item Index="000041" SimpleFormat="true" Changed="true">
+           <START_ROW>25 </START_ROW>
+           <END_ROW>25 </END_ROW>
+           <ID Final="5 ">_GENP_1C98EC17AC451EE8B2E5FFE6C629441B</ID>
+          </Item>
+          <Item Index="000042" SimpleFormat="true" Changed="true">
+           <START_ROW>15 </START_ROW>
+           <END_ROW>15 </END_ROW>
+           <LABEL_START_ROW>15 </LABEL_START_ROW>
+           <LABEL_END_ROW>15 </LABEL_END_ROW>
+           <ID Final="5 ">_GENP_1C98EC17AC451EE8B3AB959929234301</ID>
+          </Item>
+          <Item Index="000043" SimpleFormat="true" Changed="true">
+           <START_ROW>15 </START_ROW>
+           <END_ROW>15 </END_ROW>
+           <ID Final="5 ">_GENP_1C98EC17AC451EE8B3AB965CF4D96301</ID>
+          </Item>
+          <Item Index="000044" SimpleFormat="true" Changed="true">
+           <START_ROW>18 </START_ROW>
+           <END_ROW>18 </END_ROW>
+           <ID Final="5 ">_GENP_1C98EC17AC451EE8B3ABCF05EF6BA442</ID>
+          </Item>
+          <Item Index="000045" SimpleFormat="true" Changed="true">
+           <START_ROW>18 </START_ROW>
+           <END_ROW>18 </END_ROW>
+           <LABEL_START_ROW>18 </LABEL_START_ROW>
+           <LABEL_END_ROW>18 </LABEL_END_ROW>
+           <ID Final="5 ">_GENP_1C98EC17AC451EE8B3ABD16AF9C1C44C</ID>
+          </Item>
+          <Item Index="000046" SimpleFormat="true" Changed="true">
+           <START_ROW>9 </START_ROW>
+           <END_ROW>9 </END_ROW>
+           <LABEL_START_ROW>9 </LABEL_START_ROW>
+           <LABEL_END_ROW>9 </LABEL_END_ROW>
+           <ID Final="5 ">_GENP_0894EF4577A91ED9948D77ADA14876F4</ID>
+          </Item>
+          <Item Index="000047" SimpleFormat="true" Changed="true">
+           <START_ROW>9 </START_ROW>
+           <END_ROW>9 </END_ROW>
+           <ID Final="5 ">_GENP_0894EF4577A91ED9948D8306BE209748</ID>
+          </Item>
+          <Item Index="000048" SimpleFormat="true" Changed="true">
+           <START_ROW>9 </START_ROW>
+           <END_ROW>9 </END_ROW>
+           <ID Final="5 ">_GENP_0894EF4577A91ED9948D863A35A95755</ID>
+          </Item>
+          <Item Index="000049" SimpleFormat="true" Changed="true">
+           <START_ROW>19 </START_ROW>
+           <END_ROW>19 </END_ROW>
+           <LABEL_START_ROW>19 </LABEL_START_ROW>
+           <LABEL_END_ROW>19 </LABEL_END_ROW>
+           <ID Final="5 ">_GENP_0894EF4577A91EE9949364BC8B1CB773</ID>
+          </Item>
+          <Item Index="000050" SimpleFormat="true" Changed="true">
+           <START_ROW>19 </START_ROW>
+           <END_ROW>19 </END_ROW>
+           <ID Final="5 ">_GENP_0894EF4577A91EE99493687AA5A01778</ID>
+          </Item>
+          <Item Index="000051" SimpleFormat="true" Changed="true">
+           <START_ROW>20 </START_ROW>
+           <END_ROW>20 </END_ROW>
+           <LABEL_START_ROW>20 </LABEL_START_ROW>
+           <LABEL_END_ROW>20 </LABEL_END_ROW>
+           <ID Final="5 ">_GENP_0894EF4577A91EE994936C5E2208F77D</ID>
+          </Item>
+          <Item Index="000052" SimpleFormat="true" Changed="true">
+           <START_ROW>20 </START_ROW>
+           <END_ROW>20 </END_ROW>
+           <ID Final="5 ">_GENP_0894EF4577A91EE994936D670393D7B8</ID>
+          </Item>
+          <Item Index="000053" SimpleFormat="true" Changed="true">
+           <START_ROW>9 </START_ROW>
+           <END_ROW>9 </END_ROW>
+           <ID Final="5 ">_GENP_0894EF4577A91EE99FBFB90AB78DF2CC</ID>
+          </Item>
+          <Item Index="000054" SimpleFormat="true" Changed="true">
+           <START_ROW>28 </START_ROW>
+           <END_ROW>28 </END_ROW>
+           <LABEL_START_ROW>28 </LABEL_START_ROW>
+           <LABEL_END_ROW>28 </LABEL_END_ROW>
+           <ID Final="5 ">_GENP_0894EF4577A91EDA889B9559F7AE471A</ID>
+          </Item>
+          <Item Index="000055" SimpleFormat="true" Changed="true">
+           <START_ROW>28 </START_ROW>
+           <END_ROW>28 </END_ROW>
+           <ID Final="5 ">_GENP_0894EF4577A91EDA889B96D3DFABA720</ID>
+          </Item>
+          <Item Index="000056" SimpleFormat="true" Changed="true">
+           <START_ROW>6 </START_ROW>
+           <END_ROW>6 </END_ROW>
+           <LABEL_START_ROW>6 </LABEL_START_ROW>
+           <LABEL_END_ROW>6 </LABEL_END_ROW>
+           <ID Final="5 ">_GENP_0894EF4577A91EEA998EDA3DA352E73B</ID>
+          </Item>
+          <Item Index="000057" SimpleFormat="true" Changed="true">
+           <START_ROW>24 </START_ROW>
+           <END_ROW>24 </END_ROW>
+           <LABEL_START_ROW>24 </LABEL_START_ROW>
+           <LABEL_END_ROW>24 </LABEL_END_ROW>
+           <ID Final="5 ">_GENP_0894EF4577A91EDAAD8C1A05A4CC7BCA</ID>
+          </Item>
+          <Item Index="000058" SimpleFormat="true" Changed="true">
+           <START_ROW>11 </START_ROW>
+           <END_ROW>11 </END_ROW>
+           <LABEL_START_ROW>11 </LABEL_START_ROW>
+           <LABEL_END_ROW>11 </LABEL_END_ROW>
+           <ID Final="5 ">_GENP_005056B095991EDC85F7AE657A72B810</ID>
+          </Item>
+          <Item Index="000059" SimpleFormat="true" Changed="true">
+           <START_ROW>12 </START_ROW>
+           <END_ROW>12 </END_ROW>
+           <LABEL_START_ROW>12 </LABEL_START_ROW>
+           <LABEL_END_ROW>12 </LABEL_END_ROW>
+           <ID Final="5 ">_GENP_005056B095991EEC878F01F3EBCF7801</ID>
+          </Item>
+          <Item Index="000060" SimpleFormat="true" Changed="true">
+           <START_ROW>11 </START_ROW>
+           <END_ROW>11 </END_ROW>
+           <ID Final="5 ">_GENP_005056B095991EDC90AB248489B1FE64</ID>
+          </Item>
+          <Item Index="000061" SimpleFormat="true" Changed="true">
+           <START_ROW>12 </START_ROW>
+           <END_ROW>12 </END_ROW>
+           <ID Final="5 ">_GENP_005056B095991EDC90AB2D7E954DFE6C</ID>
+          </Item>
+          <Item Index="000062" SimpleFormat="true">
+           <ID Final="5 ">_GENP_005056B095991EEDAE87F6B80EEA0C5F</ID>
+           <START_ROW>29 </START_ROW>
+           <START_COLUMN>I</START_COLUMN>
+           <END_ROW>29 </END_ROW>
+           <END_COLUMN>P</END_COLUMN>
+           <LABEL_START_ROW></LABEL_START_ROW>
+           <LABEL_START_COLUMN></LABEL_START_COLUMN>
+           <LABEL_END_ROW></LABEL_END_ROW>
+           <LABEL_END_COLUMN></LABEL_END_COLUMN>
+           <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+           <FORM_ELEMENT_ID>FGL2_005056B095991EEDAE87F6B80EE9CC5F</FORM_ELEMENT_ID>
+          </Item>
+          <Item Index="000063" SimpleFormat="true">
+           <ID Final="5 ">_GENP_005056B095991EEDAE87FA343DD78C5F</ID>
+           <START_ROW>31 </START_ROW>
+           <START_COLUMN>L</START_COLUMN>
+           <END_ROW>31 </END_ROW>
+           <END_COLUMN>L</END_COLUMN>
+           <LABEL_START_ROW>31 </LABEL_START_ROW>
+           <LABEL_START_COLUMN>K</LABEL_START_COLUMN>
+           <LABEL_END_ROW>31 </LABEL_END_ROW>
+           <LABEL_END_COLUMN>K</LABEL_END_COLUMN>
+           <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+           <FORM_ELEMENT_ID>FGL2_005056B095991EEDAE87FA343DD6CC5F</FORM_ELEMENT_ID>
+          </Item>
+          <Item Index="000064" SimpleFormat="true">
+           <ID Final="5 ">_GENP_005056B095991EEDAE87FA343DD7CC5F</ID>
+           <START_ROW>30 </START_ROW>
+           <START_COLUMN>M</START_COLUMN>
+           <END_ROW>30 </END_ROW>
+           <END_COLUMN>P</END_COLUMN>
+           <LABEL_START_ROW></LABEL_START_ROW>
+           <LABEL_START_COLUMN></LABEL_START_COLUMN>
+           <LABEL_END_ROW></LABEL_END_ROW>
+           <LABEL_END_COLUMN></LABEL_END_COLUMN>
+           <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+           <FORM_ELEMENT_ID>FGL2_005056B095991EEDAE87FA343DD6EC5F</FORM_ELEMENT_ID>
+          </Item>
+          <Item Index="000065" SimpleFormat="true">
+           <ID Final="5 ">_GENP_005056B095991EEDAE87FA343DD80C5F</ID>
+           <START_ROW>31 </START_ROW>
+           <START_COLUMN>N</START_COLUMN>
+           <END_ROW>31 </END_ROW>
+           <END_COLUMN>N</END_COLUMN>
+           <LABEL_START_ROW>31 </LABEL_START_ROW>
+           <LABEL_START_COLUMN>M</LABEL_START_COLUMN>
+           <LABEL_END_ROW>31 </LABEL_END_ROW>
+           <LABEL_END_COLUMN>M</LABEL_END_COLUMN>
+           <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+           <FORM_ELEMENT_ID>FGL2_005056B095991EEDAE87FA343DD70C5F</FORM_ELEMENT_ID>
+          </Item>
+          <Item Index="000066" SimpleFormat="true">
+           <ID Final="5 ">_GENP_005056B095991EEDAE8861437C2AEC77</ID>
+           <START_ROW>32 </START_ROW>
+           <START_COLUMN>I</START_COLUMN>
+           <END_ROW>32 </END_ROW>
+           <END_COLUMN>P</END_COLUMN>
+           <LABEL_START_ROW></LABEL_START_ROW>
+           <LABEL_START_COLUMN></LABEL_START_COLUMN>
+           <LABEL_END_ROW></LABEL_END_ROW>
+           <LABEL_END_COLUMN></LABEL_END_COLUMN>
+           <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+           <FORM_ELEMENT_ID>FGL2_005056B095991EEDAE8861437C2AAC77</FORM_ELEMENT_ID>
+          </Item>
+          <Item Index="000067" SimpleFormat="true">
+           <ID Final="5 ">_GENP_005056B095991EEDAE88664FA2858C77</ID>
+           <START_ROW>34 </START_ROW>
+           <START_COLUMN>L</START_COLUMN>
+           <END_ROW>34 </END_ROW>
+           <END_COLUMN>L</END_COLUMN>
+           <LABEL_START_ROW>34 </LABEL_START_ROW>
+           <LABEL_START_COLUMN>I</LABEL_START_COLUMN>
+           <LABEL_END_ROW>34 </LABEL_END_ROW>
+           <LABEL_END_COLUMN>K</LABEL_END_COLUMN>
+           <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+           <FORM_ELEMENT_ID>FGL2_005056B095991EEDAE88664FA284CC77</FORM_ELEMENT_ID>
+          </Item>
+          <Item Index="000068" SimpleFormat="true">
+           <ID Final="5 ">_GENP_005056B095991EEDAE88664FA285CC77</ID>
+           <START_ROW>33 </START_ROW>
+           <START_COLUMN>M</START_COLUMN>
+           <END_ROW>33 </END_ROW>
+           <END_COLUMN>P</END_COLUMN>
+           <LABEL_START_ROW></LABEL_START_ROW>
+           <LABEL_START_COLUMN></LABEL_START_COLUMN>
+           <LABEL_END_ROW></LABEL_END_ROW>
+           <LABEL_END_COLUMN></LABEL_END_COLUMN>
+           <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+           <FORM_ELEMENT_ID>FGL2_005056B095991EEDAE88664FA284EC77</FORM_ELEMENT_ID>
+          </Item>
+          <Item Index="000069" SimpleFormat="true">
+           <ID Final="5 ">_GENP_005056B095991EEDAE88664FA2860C77</ID>
+           <START_ROW>34 </START_ROW>
+           <START_COLUMN>N</START_COLUMN>
+           <END_ROW>34 </END_ROW>
+           <END_COLUMN>N</END_COLUMN>
+           <LABEL_START_ROW>34 </LABEL_START_ROW>
+           <LABEL_START_COLUMN>M</LABEL_START_COLUMN>
+           <LABEL_END_ROW>34 </LABEL_END_ROW>
+           <LABEL_END_COLUMN>M</LABEL_END_COLUMN>
+           <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+           <FORM_ELEMENT_ID>FGL2_005056B095991EEDAE88664FA2850C77</FORM_ELEMENT_ID>
+          </Item>
+          <Item Index="000070" SimpleFormat="true">
+           <ID Final="5 ">_GENP_005056B095991EEDAE88A1EFAB67AC7F</ID>
+           <START_ROW>35 </START_ROW>
+           <START_COLUMN>I</START_COLUMN>
+           <END_ROW>35 </END_ROW>
+           <END_COLUMN>P</END_COLUMN>
+           <LABEL_START_ROW></LABEL_START_ROW>
+           <LABEL_START_COLUMN></LABEL_START_COLUMN>
+           <LABEL_END_ROW></LABEL_END_ROW>
+           <LABEL_END_COLUMN></LABEL_END_COLUMN>
+           <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+           <FORM_ELEMENT_ID>FGL2_005056B095991EEDAE88A1EFAB676C7F</FORM_ELEMENT_ID>
+          </Item>
+          <Item Index="000071" SimpleFormat="true">
+           <ID Final="5 ">_GENP_005056B095991EEDAE88AD5BD221AC83</ID>
+           <START_ROW>37 </START_ROW>
+           <START_COLUMN>L</START_COLUMN>
+           <END_ROW>37 </END_ROW>
+           <END_COLUMN>L</END_COLUMN>
+           <LABEL_START_ROW>37 </LABEL_START_ROW>
+           <LABEL_START_COLUMN>I</LABEL_START_COLUMN>
+           <LABEL_END_ROW>37 </LABEL_END_ROW>
+           <LABEL_END_COLUMN>K</LABEL_END_COLUMN>
+           <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+           <FORM_ELEMENT_ID>FGL2_005056B095991EEDAE88AD5BD220EC83</FORM_ELEMENT_ID>
+          </Item>
+          <Item Index="000072" SimpleFormat="true">
+           <ID Final="5 ">_GENP_005056B095991EEDAE88AD5BD221EC83</ID>
+           <START_ROW>36 </START_ROW>
+           <START_COLUMN>M</START_COLUMN>
+           <END_ROW>36 </END_ROW>
+           <END_COLUMN>P</END_COLUMN>
+           <LABEL_START_ROW></LABEL_START_ROW>
+           <LABEL_START_COLUMN></LABEL_START_COLUMN>
+           <LABEL_END_ROW></LABEL_END_ROW>
+           <LABEL_END_COLUMN></LABEL_END_COLUMN>
+           <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+           <FORM_ELEMENT_ID>FGL2_005056B095991EEDAE88AD5BD2210C83</FORM_ELEMENT_ID>
+          </Item>
+          <Item Index="000073" SimpleFormat="true">
+           <ID Final="5 ">_GENP_005056B095991EEDAE88AD5BD2222C83</ID>
+           <START_ROW>37 </START_ROW>
+           <START_COLUMN>N</START_COLUMN>
+           <END_ROW>37 </END_ROW>
+           <END_COLUMN>N</END_COLUMN>
+           <LABEL_START_ROW>37 </LABEL_START_ROW>
+           <LABEL_START_COLUMN>M</LABEL_START_COLUMN>
+           <LABEL_END_ROW>37 </LABEL_END_ROW>
+           <LABEL_END_COLUMN>M</LABEL_END_COLUMN>
+           <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+           <FORM_ELEMENT_ID>FGL2_005056B095991EEDAE88AD5BD2212C83</FORM_ELEMENT_ID>
+          </Item>
+          <Item Index="000074" SimpleFormat="true">
+           <ID Final="5 ">_GENP_005056B095991EEDAE8BE74554516CE1</ID>
+           <START_ROW>30 </START_ROW>
+           <START_COLUMN>L</START_COLUMN>
+           <END_ROW>30 </END_ROW>
+           <END_COLUMN>L</END_COLUMN>
+           <LABEL_START_ROW>30 </LABEL_START_ROW>
+           <LABEL_START_COLUMN>I</LABEL_START_COLUMN>
+           <LABEL_END_ROW>30 </LABEL_END_ROW>
+           <LABEL_END_COLUMN>K</LABEL_END_COLUMN>
+           <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+           <FORM_ELEMENT_ID>FGL2_005056B095991EEDAE8BE74554512CE1</FORM_ELEMENT_ID>
+          </Item>
+          <Item Index="000075" SimpleFormat="true">
+           <ID Final="5 ">_GENP_005056B095991EEDAE8BF552AF9C0CE4</ID>
+           <START_ROW>33 </START_ROW>
+           <START_COLUMN>L</START_COLUMN>
+           <END_ROW>33 </END_ROW>
+           <END_COLUMN>L</END_COLUMN>
+           <LABEL_START_ROW>33 </LABEL_START_ROW>
+           <LABEL_START_COLUMN>I</LABEL_START_COLUMN>
+           <LABEL_END_ROW>33 </LABEL_END_ROW>
+           <LABEL_END_COLUMN>K</LABEL_END_COLUMN>
+           <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+           <FORM_ELEMENT_ID>FGL2_005056B095991EEDAE8BF552AF9BCCE4</FORM_ELEMENT_ID>
+          </Item>
+          <Item Index="000076" SimpleFormat="true">
+           <ID Final="5 ">_GENP_005056B095991EEDAE8C06A77BC8ECE5</ID>
+           <START_ROW>36 </START_ROW>
+           <START_COLUMN>L</START_COLUMN>
+           <END_ROW>36 </END_ROW>
+           <END_COLUMN>L</END_COLUMN>
+           <LABEL_START_ROW>36 </LABEL_START_ROW>
+           <LABEL_START_COLUMN>I</LABEL_START_COLUMN>
+           <LABEL_END_ROW>36 </LABEL_END_ROW>
+           <LABEL_END_COLUMN>K</LABEL_END_COLUMN>
+           <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+           <FORM_ELEMENT_ID>FGL2_005056B095991EEDAE8C06A77BC8ACE5</FORM_ELEMENT_ID>
+          </Item>
+         </Node>
+         <Node Name="STANDARD_ELEMENT" SimpleFormat="true">
+          <Item Index="000001" SimpleFormat="true">
+           <ID Final="5 ">FGL2_005056B095991EEDAE87F6B80EE9CC5F</ID>
+           <NAME></NAME>
+           <TYPE>SH</TYPE>
+           <EXPLANATION Transl="true"></EXPLANATION>
+           <TEXT Transl="true">1</TEXT>
+           <TOOLTIP Transl="true"></TOOLTIP>
+           <INPUT_PROMPT Transl="true"></INPUT_PROMPT>
+           <INSTANCE_STYLE></INSTANCE_STYLE>
+           <SPECIAL_PROPERTIES></SPECIAL_PROPERTIES>
+           <SPECIAL_ACTIONS></SPECIAL_ACTIONS>
+           <LABEL_TEXT Transl="true"></LABEL_TEXT>
+           <LABEL_VISIBILITY>01</LABEL_VISIBILITY>
+           <LABEL_INSTANCE_STYLE></LABEL_INSTANCE_STYLE>
+           <TAG_ACTIVE></TAG_ACTIVE>
+           <TAG></TAG>
+           <CTXT_MENU_ID></CTXT_MENU_ID>
+          </Item>
+          <Item Index="000002" SimpleFormat="true">
+           <ID Final="5 ">FGL2_005056B095991EEDAE87FA343DD6CC5F</ID>
+           <NAME>ZZINT_GKO_DATA</NAME>
+           <TYPE>TV</TYPE>
+           <EXPLANATION Transl="true"></EXPLANATION>
+           <TEXT Transl="true"></TEXT>
+           <TOOLTIP Transl="true"></TOOLTIP>
+           <INPUT_PROMPT Transl="true"></INPUT_PROMPT>
+           <INSTANCE_STYLE></INSTANCE_STYLE>
+           <SPECIAL_PROPERTIES>﻿&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;asx:abap xmlns:asx=&quot;http://www.sap.com/abapxml&quot; version=&quot;1.0&quot;&gt;&lt;asx:values&gt;&lt;BN1&gt;&lt;ACTION_MENU_ID/&gt;&lt;ALIGNMENT&gt;03&lt;/ALIGNMENT&gt;&lt;ALT_DDIC_SHLP_NAME/&gt;&lt;BORDER&gt;0&lt;/BORDER&gt;&lt;COL_COUNT&gt;1&lt;/COL_COUNT&gt;&lt;DDIC_SHLP_TEXT_FIELD_NAME/&gt;&lt;DISPLAY_AS_TEXT/&gt;&lt;ELEM_DDIC_SHLP_NAME/&gt;&lt;ENFORCE_FIELD_MERGING/&gt;&lt;HEIGHT/&gt;&lt;HIDE_FORMATTING_OPTIONS/&gt;&lt;HIDE_TEXT/&gt;&lt;HIDE_VALUE/&gt;&lt;HOTKEY&gt;00&lt;/HOTKEY&gt;&lt;IMAGE_SOURCE/&gt;&lt;IMAGE_IS_DECORATIVE/&gt;&lt;INPUT_HELP&gt;00&lt;/INPUT_HELP&gt;&lt;KEEP_ORIGINAL_SIZE/&gt;&lt;KEY_VISIBLE/&gt;&lt;LINK_DESIGN&gt;00&lt;/LINK_DESIGN&gt;&lt;LINK_TYPE&gt;02&lt;/LINK_TYPE&gt;&lt;MAX_RATING&gt;5&lt;/MAX_RATING&gt;&lt;MAX_TICK_MARKS&gt;0&lt;/MAX_TICK_MARKS&gt;&lt;MIME_TYPE/&gt;&lt;NO_INPUT_HISTORY/&gt;&lt;PASSWORD_FIELD/&gt;&lt;QUICKVIEW_ID/&gt;&lt;QUICKVIEW_IMAGE_REF/&gt;&lt;ROW_COUNT&gt;0&lt;/ROW_COUNT&gt;&lt;SECTION_HEADER_DESIGN/&gt;&lt;SECTION_HEADER_LEVEL&gt;00&lt;/SECTION_HEADER_LEVEL&gt;&lt;SEMANTIC_OBJECT/&gt;&lt;SHOW_TICK_MARKS/&gt;&lt;SUGGEST_FILTER_METHOD&gt;00&lt;/SUGGEST_FILTER_METHOD&gt;&lt;SUGGEST_HISTORY/&gt;&lt;SUGGEST_VALUES/&gt;&lt;SUPPRESS_FIELD_MERGING/&gt;&lt;TARGET/&gt;&lt;TEXT_DOCUMENT_NAME/&gt;&lt;TEXT_EDIT_DESIGN&gt;09&lt;/TEXT_EDIT_DESIGN&gt;&lt;TEXT_EDIT_HEIGHT_MODE&gt;00&lt;/TEXT_EDIT_HEIGHT_MODE&gt;&lt;TEXT_VIEW_DESIGN&gt;09&lt;/TEXT_VIEW_DESIGN&gt;&lt;TEXT_VIEW_LAYOUT&gt;01&lt;/TEXT_VIEW_LAYOUT&gt;&lt;TEXTVIEW_SEM_COL&gt;00&lt;/TEXTVIEW_SEM_COL&gt;&lt;TEXT_WRAPPING&gt;02&lt;/TEXT_WRAPPING&gt;&lt;THRESHOLDS/&gt;&lt;TICK_MARK_SPACING&gt;0&lt;/TICK_MARK_SPACING&gt;&lt;TOKEN_FORMAT&gt;00&lt;/TOKEN_FORMAT&gt;&lt;UNIT_WIDTH&gt;0&lt;/UNIT_WIDTH&gt;&lt;VIRUS_SCAN_PROFILE/&gt;&lt;WIDTH/&gt;&lt;WRAPPING/&gt;&lt;/BN1&gt;&lt;/asx:values&gt;&lt;/asx:abap&gt;</SPECIAL_PROPERTIES>
+           <SPECIAL_ACTIONS></SPECIAL_ACTIONS>
+           <LABEL_TEXT Transl="true"></LABEL_TEXT>
+           <LABEL_VISIBILITY>02</LABEL_VISIBILITY>
+           <LABEL_INSTANCE_STYLE></LABEL_INSTANCE_STYLE>
+           <TAG_ACTIVE></TAG_ACTIVE>
+           <TAG></TAG>
+           <CTXT_MENU_ID></CTXT_MENU_ID>
+          </Item>
+          <Item Index="000003" SimpleFormat="true">
+           <ID Final="5 ">FGL2_005056B095991EEDAE87FA343DD6EC5F</ID>
+           <NAME>ZZINT_GKO_DESC</NAME>
+           <TYPE>TV</TYPE>
+           <EXPLANATION Transl="true"></EXPLANATION>
+           <TEXT Transl="true"></TEXT>
+           <TOOLTIP Transl="true"></TOOLTIP>
+           <INPUT_PROMPT Transl="true"></INPUT_PROMPT>
+           <INSTANCE_STYLE></INSTANCE_STYLE>
+           <SPECIAL_PROPERTIES>﻿&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;asx:abap xmlns:asx=&quot;http://www.sap.com/abapxml&quot; version=&quot;1.0&quot;&gt;&lt;asx:values&gt;&lt;BN1&gt;&lt;ACTION_MENU_ID/&gt;&lt;ALIGNMENT&gt;03&lt;/ALIGNMENT&gt;&lt;ALT_DDIC_SHLP_NAME/&gt;&lt;BORDER&gt;0&lt;/BORDER&gt;&lt;COL_COUNT&gt;1&lt;/COL_COUNT&gt;&lt;DDIC_SHLP_TEXT_FIELD_NAME/&gt;&lt;DISPLAY_AS_TEXT/&gt;&lt;ELEM_DDIC_SHLP_NAME/&gt;&lt;ENFORCE_FIELD_MERGING/&gt;&lt;HEIGHT/&gt;&lt;HIDE_FORMATTING_OPTIONS/&gt;&lt;HIDE_TEXT/&gt;&lt;HIDE_VALUE/&gt;&lt;HOTKEY&gt;00&lt;/HOTKEY&gt;&lt;IMAGE_SOURCE/&gt;&lt;IMAGE_IS_DECORATIVE/&gt;&lt;INPUT_HELP&gt;00&lt;/INPUT_HELP&gt;&lt;KEEP_ORIGINAL_SIZE/&gt;&lt;KEY_VISIBLE/&gt;&lt;LINK_DESIGN&gt;00&lt;/LINK_DESIGN&gt;&lt;LINK_TYPE&gt;02&lt;/LINK_TYPE&gt;&lt;MAX_RATING&gt;5&lt;/MAX_RATING&gt;&lt;MAX_TICK_MARKS&gt;0&lt;/MAX_TICK_MARKS&gt;&lt;MIME_TYPE/&gt;&lt;NO_INPUT_HISTORY/&gt;&lt;PASSWORD_FIELD/&gt;&lt;QUICKVIEW_ID/&gt;&lt;QUICKVIEW_IMAGE_REF/&gt;&lt;ROW_COUNT&gt;0&lt;/ROW_COUNT&gt;&lt;SECTION_HEADER_DESIGN/&gt;&lt;SECTION_HEADER_LEVEL&gt;00&lt;/SECTION_HEADER_LEVEL&gt;&lt;SEMANTIC_OBJECT/&gt;&lt;SHOW_TICK_MARKS/&gt;&lt;SUGGEST_FILTER_METHOD&gt;00&lt;/SUGGEST_FILTER_METHOD&gt;&lt;SUGGEST_HISTORY/&gt;&lt;SUGGEST_VALUES/&gt;&lt;SUPPRESS_FIELD_MERGING/&gt;&lt;TARGET/&gt;&lt;TEXT_DOCUMENT_NAME/&gt;&lt;TEXT_EDIT_DESIGN&gt;09&lt;/TEXT_EDIT_DESIGN&gt;&lt;TEXT_EDIT_HEIGHT_MODE&gt;00&lt;/TEXT_EDIT_HEIGHT_MODE&gt;&lt;TEXT_VIEW_DESIGN&gt;09&lt;/TEXT_VIEW_DESIGN&gt;&lt;TEXT_VIEW_LAYOUT&gt;01&lt;/TEXT_VIEW_LAYOUT&gt;&lt;TEXTVIEW_SEM_COL&gt;00&lt;/TEXTVIEW_SEM_COL&gt;&lt;TEXT_WRAPPING&gt;02&lt;/TEXT_WRAPPING&gt;&lt;THRESHOLDS/&gt;&lt;TICK_MARK_SPACING&gt;0&lt;/TICK_MARK_SPACING&gt;&lt;TOKEN_FORMAT&gt;00&lt;/TOKEN_FORMAT&gt;&lt;UNIT_WIDTH&gt;0&lt;/UNIT_WIDTH&gt;&lt;VIRUS_SCAN_PROFILE/&gt;&lt;WIDTH/&gt;&lt;WRAPPING/&gt;&lt;/BN1&gt;&lt;/asx:values&gt;&lt;/asx:abap&gt;</SPECIAL_PROPERTIES>
+           <SPECIAL_ACTIONS></SPECIAL_ACTIONS>
+           <LABEL_TEXT Transl="true">2</LABEL_TEXT>
+           <LABEL_VISIBILITY>01</LABEL_VISIBILITY>
+           <LABEL_INSTANCE_STYLE></LABEL_INSTANCE_STYLE>
+           <TAG_ACTIVE></TAG_ACTIVE>
+           <TAG></TAG>
+           <CTXT_MENU_ID></CTXT_MENU_ID>
+          </Item>
+          <Item Index="000004" SimpleFormat="true">
+           <ID Final="5 ">FGL2_005056B095991EEDAE87FA343DD70C5F</ID>
+           <NAME>ZZINT_GKO_HORA</NAME>
+           <TYPE>TV</TYPE>
+           <EXPLANATION Transl="true"></EXPLANATION>
+           <TEXT Transl="true"></TEXT>
+           <TOOLTIP Transl="true"></TOOLTIP>
+           <INPUT_PROMPT Transl="true"></INPUT_PROMPT>
+           <INSTANCE_STYLE></INSTANCE_STYLE>
+           <SPECIAL_PROPERTIES>﻿&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;asx:abap xmlns:asx=&quot;http://www.sap.com/abapxml&quot; version=&quot;1.0&quot;&gt;&lt;asx:values&gt;&lt;BN1&gt;&lt;ACTION_MENU_ID/&gt;&lt;ALIGNMENT&gt;03&lt;/ALIGNMENT&gt;&lt;ALT_DDIC_SHLP_NAME/&gt;&lt;BORDER&gt;0&lt;/BORDER&gt;&lt;COL_COUNT&gt;1&lt;/COL_COUNT&gt;&lt;DDIC_SHLP_TEXT_FIELD_NAME/&gt;&lt;DISPLAY_AS_TEXT/&gt;&lt;ELEM_DDIC_SHLP_NAME/&gt;&lt;ENFORCE_FIELD_MERGING/&gt;&lt;HEIGHT/&gt;&lt;HIDE_FORMATTING_OPTIONS/&gt;&lt;HIDE_TEXT/&gt;&lt;HIDE_VALUE/&gt;&lt;HOTKEY&gt;00&lt;/HOTKEY&gt;&lt;IMAGE_SOURCE/&gt;&lt;IMAGE_IS_DECORATIVE/&gt;&lt;INPUT_HELP&gt;00&lt;/INPUT_HELP&gt;&lt;KEEP_ORIGINAL_SIZE/&gt;&lt;KEY_VISIBLE/&gt;&lt;LINK_DESIGN&gt;00&lt;/LINK_DESIGN&gt;&lt;LINK_TYPE&gt;02&lt;/LINK_TYPE&gt;&lt;MAX_RATING&gt;5&lt;/MAX_RATING&gt;&lt;MAX_TICK_MARKS&gt;0&lt;/MAX_TICK_MARKS&gt;&lt;MIME_TYPE/&gt;&lt;NO_INPUT_HISTORY/&gt;&lt;PASSWORD_FIELD/&gt;&lt;QUICKVIEW_ID/&gt;&lt;QUICKVIEW_IMAGE_REF/&gt;&lt;ROW_COUNT&gt;0&lt;/ROW_COUNT&gt;&lt;SECTION_HEADER_DESIGN/&gt;&lt;SECTION_HEADER_LEVEL&gt;00&lt;/SECTION_HEADER_LEVEL&gt;&lt;SEMANTIC_OBJECT/&gt;&lt;SHOW_TICK_MARKS/&gt;&lt;SUGGEST_FILTER_METHOD&gt;00&lt;/SUGGEST_FILTER_METHOD&gt;&lt;SUGGEST_HISTORY/&gt;&lt;SUGGEST_VALUES/&gt;&lt;SUPPRESS_FIELD_MERGING/&gt;&lt;TARGET/&gt;&lt;TEXT_DOCUMENT_NAME/&gt;&lt;TEXT_EDIT_DESIGN&gt;09&lt;/TEXT_EDIT_DESIGN&gt;&lt;TEXT_EDIT_HEIGHT_MODE&gt;00&lt;/TEXT_EDIT_HEIGHT_MODE&gt;&lt;TEXT_VIEW_DESIGN&gt;09&lt;/TEXT_VIEW_DESIGN&gt;&lt;TEXT_VIEW_LAYOUT&gt;01&lt;/TEXT_VIEW_LAYOUT&gt;&lt;TEXTVIEW_SEM_COL&gt;00&lt;/TEXTVIEW_SEM_COL&gt;&lt;TEXT_WRAPPING&gt;02&lt;/TEXT_WRAPPING&gt;&lt;THRESHOLDS/&gt;&lt;TICK_MARK_SPACING&gt;0&lt;/TICK_MARK_SPACING&gt;&lt;TOKEN_FORMAT&gt;00&lt;/TOKEN_FORMAT&gt;&lt;UNIT_WIDTH&gt;0&lt;/UNIT_WIDTH&gt;&lt;VIRUS_SCAN_PROFILE/&gt;&lt;WIDTH/&gt;&lt;WRAPPING/&gt;&lt;/BN1&gt;&lt;/asx:values&gt;&lt;/asx:abap&gt;</SPECIAL_PROPERTIES>
+           <SPECIAL_ACTIONS></SPECIAL_ACTIONS>
+           <LABEL_TEXT Transl="true"></LABEL_TEXT>
+           <LABEL_VISIBILITY>02</LABEL_VISIBILITY>
+           <LABEL_INSTANCE_STYLE></LABEL_INSTANCE_STYLE>
+           <TAG_ACTIVE></TAG_ACTIVE>
+           <TAG></TAG>
+           <CTXT_MENU_ID></CTXT_MENU_ID>
+          </Item>
+          <Item Index="000005" SimpleFormat="true">
+           <ID Final="5 ">FGL2_005056B095991EEDAE8861437C2AAC77</ID>
+           <NAME></NAME>
+           <TYPE>SH</TYPE>
+           <EXPLANATION Transl="true"></EXPLANATION>
+           <TEXT Transl="true">4</TEXT>
+           <TOOLTIP Transl="true"></TOOLTIP>
+           <INPUT_PROMPT Transl="true"></INPUT_PROMPT>
+           <INSTANCE_STYLE></INSTANCE_STYLE>
+           <SPECIAL_PROPERTIES></SPECIAL_PROPERTIES>
+           <SPECIAL_ACTIONS></SPECIAL_ACTIONS>
+           <LABEL_TEXT Transl="true"></LABEL_TEXT>
+           <LABEL_VISIBILITY>01</LABEL_VISIBILITY>
+           <LABEL_INSTANCE_STYLE></LABEL_INSTANCE_STYLE>
+           <TAG_ACTIVE></TAG_ACTIVE>
+           <TAG></TAG>
+           <CTXT_MENU_ID></CTXT_MENU_ID>
+          </Item>
+          <Item Index="000006" SimpleFormat="true">
+           <ID Final="5 ">FGL2_005056B095991EEDAE88664FA284CC77</ID>
+           <NAME>ZZINT_GM_DATA</NAME>
+           <TYPE>TV</TYPE>
+           <EXPLANATION Transl="true"></EXPLANATION>
+           <TEXT Transl="true"></TEXT>
+           <TOOLTIP Transl="true"></TOOLTIP>
+           <INPUT_PROMPT Transl="true"></INPUT_PROMPT>
+           <INSTANCE_STYLE></INSTANCE_STYLE>
+           <SPECIAL_PROPERTIES>﻿&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;asx:abap xmlns:asx=&quot;http://www.sap.com/abapxml&quot; version=&quot;1.0&quot;&gt;&lt;asx:values&gt;&lt;BN1&gt;&lt;ACTION_MENU_ID/&gt;&lt;ALIGNMENT&gt;03&lt;/ALIGNMENT&gt;&lt;ALT_DDIC_SHLP_NAME/&gt;&lt;BORDER&gt;0&lt;/BORDER&gt;&lt;COL_COUNT&gt;1&lt;/COL_COUNT&gt;&lt;DDIC_SHLP_TEXT_FIELD_NAME/&gt;&lt;DISPLAY_AS_TEXT/&gt;&lt;ELEM_DDIC_SHLP_NAME/&gt;&lt;ENFORCE_FIELD_MERGING/&gt;&lt;HEIGHT/&gt;&lt;HIDE_FORMATTING_OPTIONS/&gt;&lt;HIDE_TEXT/&gt;&lt;HIDE_VALUE/&gt;&lt;HOTKEY&gt;00&lt;/HOTKEY&gt;&lt;IMAGE_SOURCE/&gt;&lt;IMAGE_IS_DECORATIVE/&gt;&lt;INPUT_HELP&gt;00&lt;/INPUT_HELP&gt;&lt;KEEP_ORIGINAL_SIZE/&gt;&lt;KEY_VISIBLE/&gt;&lt;LINK_DESIGN&gt;00&lt;/LINK_DESIGN&gt;&lt;LINK_TYPE&gt;02&lt;/LINK_TYPE&gt;&lt;MAX_RATING&gt;5&lt;/MAX_RATING&gt;&lt;MAX_TICK_MARKS&gt;0&lt;/MAX_TICK_MARKS&gt;&lt;MIME_TYPE/&gt;&lt;NO_INPUT_HISTORY/&gt;&lt;PASSWORD_FIELD/&gt;&lt;QUICKVIEW_ID/&gt;&lt;QUICKVIEW_IMAGE_REF/&gt;&lt;ROW_COUNT&gt;0&lt;/ROW_COUNT&gt;&lt;SECTION_HEADER_DESIGN/&gt;&lt;SECTION_HEADER_LEVEL&gt;00&lt;/SECTION_HEADER_LEVEL&gt;&lt;SEMANTIC_OBJECT/&gt;&lt;SHOW_TICK_MARKS/&gt;&lt;SUGGEST_FILTER_METHOD&gt;00&lt;/SUGGEST_FILTER_METHOD&gt;&lt;SUGGEST_HISTORY/&gt;&lt;SUGGEST_VALUES/&gt;&lt;SUPPRESS_FIELD_MERGING/&gt;&lt;TARGET/&gt;&lt;TEXT_DOCUMENT_NAME/&gt;&lt;TEXT_EDIT_DESIGN&gt;09&lt;/TEXT_EDIT_DESIGN&gt;&lt;TEXT_EDIT_HEIGHT_MODE&gt;00&lt;/TEXT_EDIT_HEIGHT_MODE&gt;&lt;TEXT_VIEW_DESIGN&gt;09&lt;/TEXT_VIEW_DESIGN&gt;&lt;TEXT_VIEW_LAYOUT&gt;01&lt;/TEXT_VIEW_LAYOUT&gt;&lt;TEXTVIEW_SEM_COL&gt;00&lt;/TEXTVIEW_SEM_COL&gt;&lt;TEXT_WRAPPING&gt;02&lt;/TEXT_WRAPPING&gt;&lt;THRESHOLDS/&gt;&lt;TICK_MARK_SPACING&gt;0&lt;/TICK_MARK_SPACING&gt;&lt;TOKEN_FORMAT&gt;00&lt;/TOKEN_FORMAT&gt;&lt;UNIT_WIDTH&gt;0&lt;/UNIT_WIDTH&gt;&lt;VIRUS_SCAN_PROFILE/&gt;&lt;WIDTH/&gt;&lt;WRAPPING/&gt;&lt;/BN1&gt;&lt;/asx:values&gt;&lt;/asx:abap&gt;</SPECIAL_PROPERTIES>
+           <SPECIAL_ACTIONS></SPECIAL_ACTIONS>
+           <LABEL_TEXT Transl="true"></LABEL_TEXT>
+           <LABEL_VISIBILITY>02</LABEL_VISIBILITY>
+           <LABEL_INSTANCE_STYLE></LABEL_INSTANCE_STYLE>
+           <TAG_ACTIVE></TAG_ACTIVE>
+           <TAG></TAG>
+           <CTXT_MENU_ID></CTXT_MENU_ID>
+          </Item>
+          <Item Index="000007" SimpleFormat="true">
+           <ID Final="5 ">FGL2_005056B095991EEDAE88664FA284EC77</ID>
+           <NAME>ZZINT_GM_DESC</NAME>
+           <TYPE>TV</TYPE>
+           <EXPLANATION Transl="true"></EXPLANATION>
+           <TEXT Transl="true"></TEXT>
+           <TOOLTIP Transl="true"></TOOLTIP>
+           <INPUT_PROMPT Transl="true"></INPUT_PROMPT>
+           <INSTANCE_STYLE></INSTANCE_STYLE>
+           <SPECIAL_PROPERTIES>﻿&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;asx:abap xmlns:asx=&quot;http://www.sap.com/abapxml&quot; version=&quot;1.0&quot;&gt;&lt;asx:values&gt;&lt;BN1&gt;&lt;ACTION_MENU_ID/&gt;&lt;ALIGNMENT&gt;03&lt;/ALIGNMENT&gt;&lt;ALT_DDIC_SHLP_NAME/&gt;&lt;BORDER&gt;0&lt;/BORDER&gt;&lt;COL_COUNT&gt;1&lt;/COL_COUNT&gt;&lt;DDIC_SHLP_TEXT_FIELD_NAME/&gt;&lt;DISPLAY_AS_TEXT/&gt;&lt;ELEM_DDIC_SHLP_NAME/&gt;&lt;ENFORCE_FIELD_MERGING/&gt;&lt;HEIGHT/&gt;&lt;HIDE_FORMATTING_OPTIONS/&gt;&lt;HIDE_TEXT/&gt;&lt;HIDE_VALUE/&gt;&lt;HOTKEY&gt;00&lt;/HOTKEY&gt;&lt;IMAGE_SOURCE/&gt;&lt;IMAGE_IS_DECORATIVE/&gt;&lt;INPUT_HELP&gt;00&lt;/INPUT_HELP&gt;&lt;KEEP_ORIGINAL_SIZE/&gt;&lt;KEY_VISIBLE/&gt;&lt;LINK_DESIGN&gt;00&lt;/LINK_DESIGN&gt;&lt;LINK_TYPE&gt;02&lt;/LINK_TYPE&gt;&lt;MAX_RATING&gt;5&lt;/MAX_RATING&gt;&lt;MAX_TICK_MARKS&gt;0&lt;/MAX_TICK_MARKS&gt;&lt;MIME_TYPE/&gt;&lt;NO_INPUT_HISTORY/&gt;&lt;PASSWORD_FIELD/&gt;&lt;QUICKVIEW_ID/&gt;&lt;QUICKVIEW_IMAGE_REF/&gt;&lt;ROW_COUNT&gt;0&lt;/ROW_COUNT&gt;&lt;SECTION_HEADER_DESIGN/&gt;&lt;SECTION_HEADER_LEVEL&gt;00&lt;/SECTION_HEADER_LEVEL&gt;&lt;SEMANTIC_OBJECT/&gt;&lt;SHOW_TICK_MARKS/&gt;&lt;SUGGEST_FILTER_METHOD&gt;00&lt;/SUGGEST_FILTER_METHOD&gt;&lt;SUGGEST_HISTORY/&gt;&lt;SUGGEST_VALUES/&gt;&lt;SUPPRESS_FIELD_MERGING/&gt;&lt;TARGET/&gt;&lt;TEXT_DOCUMENT_NAME/&gt;&lt;TEXT_EDIT_DESIGN&gt;09&lt;/TEXT_EDIT_DESIGN&gt;&lt;TEXT_EDIT_HEIGHT_MODE&gt;00&lt;/TEXT_EDIT_HEIGHT_MODE&gt;&lt;TEXT_VIEW_DESIGN&gt;09&lt;/TEXT_VIEW_DESIGN&gt;&lt;TEXT_VIEW_LAYOUT&gt;01&lt;/TEXT_VIEW_LAYOUT&gt;&lt;TEXTVIEW_SEM_COL&gt;00&lt;/TEXTVIEW_SEM_COL&gt;&lt;TEXT_WRAPPING&gt;02&lt;/TEXT_WRAPPING&gt;&lt;THRESHOLDS/&gt;&lt;TICK_MARK_SPACING&gt;0&lt;/TICK_MARK_SPACING&gt;&lt;TOKEN_FORMAT&gt;00&lt;/TOKEN_FORMAT&gt;&lt;UNIT_WIDTH&gt;0&lt;/UNIT_WIDTH&gt;&lt;VIRUS_SCAN_PROFILE/&gt;&lt;WIDTH/&gt;&lt;WRAPPING/&gt;&lt;/BN1&gt;&lt;/asx:values&gt;&lt;/asx:abap&gt;</SPECIAL_PROPERTIES>
+           <SPECIAL_ACTIONS></SPECIAL_ACTIONS>
+           <LABEL_TEXT Transl="true">5</LABEL_TEXT>
+           <LABEL_VISIBILITY>01</LABEL_VISIBILITY>
+           <LABEL_INSTANCE_STYLE></LABEL_INSTANCE_STYLE>
+           <TAG_ACTIVE></TAG_ACTIVE>
+           <TAG></TAG>
+           <CTXT_MENU_ID></CTXT_MENU_ID>
+          </Item>
+          <Item Index="000008" SimpleFormat="true">
+           <ID Final="5 ">FGL2_005056B095991EEDAE88664FA2850C77</ID>
+           <NAME>ZZINT_GM_HORA</NAME>
+           <TYPE>TV</TYPE>
+           <EXPLANATION Transl="true"></EXPLANATION>
+           <TEXT Transl="true"></TEXT>
+           <TOOLTIP Transl="true"></TOOLTIP>
+           <INPUT_PROMPT Transl="true"></INPUT_PROMPT>
+           <INSTANCE_STYLE></INSTANCE_STYLE>
+           <SPECIAL_PROPERTIES>﻿&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;asx:abap xmlns:asx=&quot;http://www.sap.com/abapxml&quot; version=&quot;1.0&quot;&gt;&lt;asx:values&gt;&lt;BN1&gt;&lt;ACTION_MENU_ID/&gt;&lt;ALIGNMENT&gt;03&lt;/ALIGNMENT&gt;&lt;ALT_DDIC_SHLP_NAME/&gt;&lt;BORDER&gt;0&lt;/BORDER&gt;&lt;COL_COUNT&gt;1&lt;/COL_COUNT&gt;&lt;DDIC_SHLP_TEXT_FIELD_NAME/&gt;&lt;DISPLAY_AS_TEXT/&gt;&lt;ELEM_DDIC_SHLP_NAME/&gt;&lt;ENFORCE_FIELD_MERGING/&gt;&lt;HEIGHT/&gt;&lt;HIDE_FORMATTING_OPTIONS/&gt;&lt;HIDE_TEXT/&gt;&lt;HIDE_VALUE/&gt;&lt;HOTKEY&gt;00&lt;/HOTKEY&gt;&lt;IMAGE_SOURCE/&gt;&lt;IMAGE_IS_DECORATIVE/&gt;&lt;INPUT_HELP&gt;00&lt;/INPUT_HELP&gt;&lt;KEEP_ORIGINAL_SIZE/&gt;&lt;KEY_VISIBLE/&gt;&lt;LINK_DESIGN&gt;00&lt;/LINK_DESIGN&gt;&lt;LINK_TYPE&gt;02&lt;/LINK_TYPE&gt;&lt;MAX_RATING&gt;5&lt;/MAX_RATING&gt;&lt;MAX_TICK_MARKS&gt;0&lt;/MAX_TICK_MARKS&gt;&lt;MIME_TYPE/&gt;&lt;NO_INPUT_HISTORY/&gt;&lt;PASSWORD_FIELD/&gt;&lt;QUICKVIEW_ID/&gt;&lt;QUICKVIEW_IMAGE_REF/&gt;&lt;ROW_COUNT&gt;0&lt;/ROW_COUNT&gt;&lt;SECTION_HEADER_DESIGN/&gt;&lt;SECTION_HEADER_LEVEL&gt;00&lt;/SECTION_HEADER_LEVEL&gt;&lt;SEMANTIC_OBJECT/&gt;&lt;SHOW_TICK_MARKS/&gt;&lt;SUGGEST_FILTER_METHOD&gt;00&lt;/SUGGEST_FILTER_METHOD&gt;&lt;SUGGEST_HISTORY/&gt;&lt;SUGGEST_VALUES/&gt;&lt;SUPPRESS_FIELD_MERGING/&gt;&lt;TARGET/&gt;&lt;TEXT_DOCUMENT_NAME/&gt;&lt;TEXT_EDIT_DESIGN&gt;09&lt;/TEXT_EDIT_DESIGN&gt;&lt;TEXT_EDIT_HEIGHT_MODE&gt;00&lt;/TEXT_EDIT_HEIGHT_MODE&gt;&lt;TEXT_VIEW_DESIGN&gt;09&lt;/TEXT_VIEW_DESIGN&gt;&lt;TEXT_VIEW_LAYOUT&gt;01&lt;/TEXT_VIEW_LAYOUT&gt;&lt;TEXTVIEW_SEM_COL&gt;00&lt;/TEXTVIEW_SEM_COL&gt;&lt;TEXT_WRAPPING&gt;02&lt;/TEXT_WRAPPING&gt;&lt;THRESHOLDS/&gt;&lt;TICK_MARK_SPACING&gt;0&lt;/TICK_MARK_SPACING&gt;&lt;TOKEN_FORMAT&gt;00&lt;/TOKEN_FORMAT&gt;&lt;UNIT_WIDTH&gt;0&lt;/UNIT_WIDTH&gt;&lt;VIRUS_SCAN_PROFILE/&gt;&lt;WIDTH/&gt;&lt;WRAPPING/&gt;&lt;/BN1&gt;&lt;/asx:values&gt;&lt;/asx:abap&gt;</SPECIAL_PROPERTIES>
+           <SPECIAL_ACTIONS></SPECIAL_ACTIONS>
+           <LABEL_TEXT Transl="true"></LABEL_TEXT>
+           <LABEL_VISIBILITY>02</LABEL_VISIBILITY>
+           <LABEL_INSTANCE_STYLE></LABEL_INSTANCE_STYLE>
+           <TAG_ACTIVE></TAG_ACTIVE>
+           <TAG></TAG>
+           <CTXT_MENU_ID></CTXT_MENU_ID>
+          </Item>
+          <Item Index="000009" SimpleFormat="true">
+           <ID Final="5 ">FGL2_005056B095991EEDAE88A1EFAB676C7F</ID>
+           <NAME></NAME>
+           <TYPE>SH</TYPE>
+           <EXPLANATION Transl="true"></EXPLANATION>
+           <TEXT Transl="true">7</TEXT>
+           <TOOLTIP Transl="true"></TOOLTIP>
+           <INPUT_PROMPT Transl="true"></INPUT_PROMPT>
+           <INSTANCE_STYLE></INSTANCE_STYLE>
+           <SPECIAL_PROPERTIES></SPECIAL_PROPERTIES>
+           <SPECIAL_ACTIONS></SPECIAL_ACTIONS>
+           <LABEL_TEXT Transl="true"></LABEL_TEXT>
+           <LABEL_VISIBILITY>01</LABEL_VISIBILITY>
+           <LABEL_INSTANCE_STYLE></LABEL_INSTANCE_STYLE>
+           <TAG_ACTIVE></TAG_ACTIVE>
+           <TAG></TAG>
+           <CTXT_MENU_ID></CTXT_MENU_ID>
+          </Item>
+          <Item Index="000010" SimpleFormat="true">
+           <ID Final="5 ">FGL2_005056B095991EEDAE88AD5BD220EC83</ID>
+           <NAME>ZZINT_TRAF_DATA</NAME>
+           <TYPE>TV</TYPE>
+           <EXPLANATION Transl="true"></EXPLANATION>
+           <TEXT Transl="true"></TEXT>
+           <TOOLTIP Transl="true"></TOOLTIP>
+           <INPUT_PROMPT Transl="true"></INPUT_PROMPT>
+           <INSTANCE_STYLE></INSTANCE_STYLE>
+           <SPECIAL_PROPERTIES>﻿&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;asx:abap xmlns:asx=&quot;http://www.sap.com/abapxml&quot; version=&quot;1.0&quot;&gt;&lt;asx:values&gt;&lt;BN1&gt;&lt;ACTION_MENU_ID/&gt;&lt;ALIGNMENT&gt;03&lt;/ALIGNMENT&gt;&lt;ALT_DDIC_SHLP_NAME/&gt;&lt;BORDER&gt;0&lt;/BORDER&gt;&lt;COL_COUNT&gt;1&lt;/COL_COUNT&gt;&lt;DDIC_SHLP_TEXT_FIELD_NAME/&gt;&lt;DISPLAY_AS_TEXT/&gt;&lt;ELEM_DDIC_SHLP_NAME/&gt;&lt;ENFORCE_FIELD_MERGING/&gt;&lt;HEIGHT/&gt;&lt;HIDE_FORMATTING_OPTIONS/&gt;&lt;HIDE_TEXT/&gt;&lt;HIDE_VALUE/&gt;&lt;HOTKEY&gt;00&lt;/HOTKEY&gt;&lt;IMAGE_SOURCE/&gt;&lt;IMAGE_IS_DECORATIVE/&gt;&lt;INPUT_HELP&gt;00&lt;/INPUT_HELP&gt;&lt;KEEP_ORIGINAL_SIZE/&gt;&lt;KEY_VISIBLE/&gt;&lt;LINK_DESIGN&gt;00&lt;/LINK_DESIGN&gt;&lt;LINK_TYPE&gt;02&lt;/LINK_TYPE&gt;&lt;MAX_RATING&gt;5&lt;/MAX_RATING&gt;&lt;MAX_TICK_MARKS&gt;0&lt;/MAX_TICK_MARKS&gt;&lt;MIME_TYPE/&gt;&lt;NO_INPUT_HISTORY/&gt;&lt;PASSWORD_FIELD/&gt;&lt;QUICKVIEW_ID/&gt;&lt;QUICKVIEW_IMAGE_REF/&gt;&lt;ROW_COUNT&gt;0&lt;/ROW_COUNT&gt;&lt;SECTION_HEADER_DESIGN/&gt;&lt;SECTION_HEADER_LEVEL&gt;00&lt;/SECTION_HEADER_LEVEL&gt;&lt;SEMANTIC_OBJECT/&gt;&lt;SHOW_TICK_MARKS/&gt;&lt;SUGGEST_FILTER_METHOD&gt;00&lt;/SUGGEST_FILTER_METHOD&gt;&lt;SUGGEST_HISTORY/&gt;&lt;SUGGEST_VALUES/&gt;&lt;SUPPRESS_FIELD_MERGING/&gt;&lt;TARGET/&gt;&lt;TEXT_DOCUMENT_NAME/&gt;&lt;TEXT_EDIT_DESIGN&gt;09&lt;/TEXT_EDIT_DESIGN&gt;&lt;TEXT_EDIT_HEIGHT_MODE&gt;00&lt;/TEXT_EDIT_HEIGHT_MODE&gt;&lt;TEXT_VIEW_DESIGN&gt;09&lt;/TEXT_VIEW_DESIGN&gt;&lt;TEXT_VIEW_LAYOUT&gt;01&lt;/TEXT_VIEW_LAYOUT&gt;&lt;TEXTVIEW_SEM_COL&gt;00&lt;/TEXTVIEW_SEM_COL&gt;&lt;TEXT_WRAPPING&gt;02&lt;/TEXT_WRAPPING&gt;&lt;THRESHOLDS/&gt;&lt;TICK_MARK_SPACING&gt;0&lt;/TICK_MARK_SPACING&gt;&lt;TOKEN_FORMAT&gt;00&lt;/TOKEN_FORMAT&gt;&lt;UNIT_WIDTH&gt;0&lt;/UNIT_WIDTH&gt;&lt;VIRUS_SCAN_PROFILE/&gt;&lt;WIDTH/&gt;&lt;WRAPPING/&gt;&lt;/BN1&gt;&lt;/asx:values&gt;&lt;/asx:abap&gt;</SPECIAL_PROPERTIES>
+           <SPECIAL_ACTIONS></SPECIAL_ACTIONS>
+           <LABEL_TEXT Transl="true"></LABEL_TEXT>
+           <LABEL_VISIBILITY>02</LABEL_VISIBILITY>
+           <LABEL_INSTANCE_STYLE></LABEL_INSTANCE_STYLE>
+           <TAG_ACTIVE></TAG_ACTIVE>
+           <TAG></TAG>
+           <CTXT_MENU_ID></CTXT_MENU_ID>
+          </Item>
+          <Item Index="000011" SimpleFormat="true">
+           <ID Final="5 ">FGL2_005056B095991EEDAE88AD5BD2210C83</ID>
+           <NAME>ZZINT_TRAF_DESC</NAME>
+           <TYPE>TV</TYPE>
+           <EXPLANATION Transl="true"></EXPLANATION>
+           <TEXT Transl="true"></TEXT>
+           <TOOLTIP Transl="true"></TOOLTIP>
+           <INPUT_PROMPT Transl="true"></INPUT_PROMPT>
+           <INSTANCE_STYLE></INSTANCE_STYLE>
+           <SPECIAL_PROPERTIES>﻿&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;asx:abap xmlns:asx=&quot;http://www.sap.com/abapxml&quot; version=&quot;1.0&quot;&gt;&lt;asx:values&gt;&lt;BN1&gt;&lt;ACTION_MENU_ID/&gt;&lt;ALIGNMENT&gt;03&lt;/ALIGNMENT&gt;&lt;ALT_DDIC_SHLP_NAME/&gt;&lt;BORDER&gt;0&lt;/BORDER&gt;&lt;COL_COUNT&gt;1&lt;/COL_COUNT&gt;&lt;DDIC_SHLP_TEXT_FIELD_NAME/&gt;&lt;DISPLAY_AS_TEXT/&gt;&lt;ELEM_DDIC_SHLP_NAME/&gt;&lt;ENFORCE_FIELD_MERGING/&gt;&lt;HEIGHT/&gt;&lt;HIDE_FORMATTING_OPTIONS/&gt;&lt;HIDE_TEXT/&gt;&lt;HIDE_VALUE/&gt;&lt;HOTKEY&gt;00&lt;/HOTKEY&gt;&lt;IMAGE_SOURCE/&gt;&lt;IMAGE_IS_DECORATIVE/&gt;&lt;INPUT_HELP&gt;00&lt;/INPUT_HELP&gt;&lt;KEEP_ORIGINAL_SIZE/&gt;&lt;KEY_VISIBLE/&gt;&lt;LINK_DESIGN&gt;00&lt;/LINK_DESIGN&gt;&lt;LINK_TYPE&gt;02&lt;/LINK_TYPE&gt;&lt;MAX_RATING&gt;5&lt;/MAX_RATING&gt;&lt;MAX_TICK_MARKS&gt;0&lt;/MAX_TICK_MARKS&gt;&lt;MIME_TYPE/&gt;&lt;NO_INPUT_HISTORY/&gt;&lt;PASSWORD_FIELD/&gt;&lt;QUICKVIEW_ID/&gt;&lt;QUICKVIEW_IMAGE_REF/&gt;&lt;ROW_COUNT&gt;0&lt;/ROW_COUNT&gt;&lt;SECTION_HEADER_DESIGN/&gt;&lt;SECTION_HEADER_LEVEL&gt;00&lt;/SECTION_HEADER_LEVEL&gt;&lt;SEMANTIC_OBJECT/&gt;&lt;SHOW_TICK_MARKS/&gt;&lt;SUGGEST_FILTER_METHOD&gt;00&lt;/SUGGEST_FILTER_METHOD&gt;&lt;SUGGEST_HISTORY/&gt;&lt;SUGGEST_VALUES/&gt;&lt;SUPPRESS_FIELD_MERGING/&gt;&lt;TARGET/&gt;&lt;TEXT_DOCUMENT_NAME/&gt;&lt;TEXT_EDIT_DESIGN&gt;09&lt;/TEXT_EDIT_DESIGN&gt;&lt;TEXT_EDIT_HEIGHT_MODE&gt;00&lt;/TEXT_EDIT_HEIGHT_MODE&gt;&lt;TEXT_VIEW_DESIGN&gt;09&lt;/TEXT_VIEW_DESIGN&gt;&lt;TEXT_VIEW_LAYOUT&gt;01&lt;/TEXT_VIEW_LAYOUT&gt;&lt;TEXTVIEW_SEM_COL&gt;00&lt;/TEXTVIEW_SEM_COL&gt;&lt;TEXT_WRAPPING&gt;02&lt;/TEXT_WRAPPING&gt;&lt;THRESHOLDS/&gt;&lt;TICK_MARK_SPACING&gt;0&lt;/TICK_MARK_SPACING&gt;&lt;TOKEN_FORMAT&gt;00&lt;/TOKEN_FORMAT&gt;&lt;UNIT_WIDTH&gt;0&lt;/UNIT_WIDTH&gt;&lt;VIRUS_SCAN_PROFILE/&gt;&lt;WIDTH/&gt;&lt;WRAPPING/&gt;&lt;/BN1&gt;&lt;/asx:values&gt;&lt;/asx:abap&gt;</SPECIAL_PROPERTIES>
+           <SPECIAL_ACTIONS></SPECIAL_ACTIONS>
+           <LABEL_TEXT Transl="true">8</LABEL_TEXT>
+           <LABEL_VISIBILITY>01</LABEL_VISIBILITY>
+           <LABEL_INSTANCE_STYLE></LABEL_INSTANCE_STYLE>
+           <TAG_ACTIVE></TAG_ACTIVE>
+           <TAG></TAG>
+           <CTXT_MENU_ID></CTXT_MENU_ID>
+          </Item>
+          <Item Index="000012" SimpleFormat="true">
+           <ID Final="5 ">FGL2_005056B095991EEDAE88AD5BD2212C83</ID>
+           <NAME>ZZINT_TRAF_HORA</NAME>
+           <TYPE>TV</TYPE>
+           <EXPLANATION Transl="true"></EXPLANATION>
+           <TEXT Transl="true"></TEXT>
+           <TOOLTIP Transl="true"></TOOLTIP>
+           <INPUT_PROMPT Transl="true"></INPUT_PROMPT>
+           <INSTANCE_STYLE></INSTANCE_STYLE>
+           <SPECIAL_PROPERTIES>﻿&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;asx:abap xmlns:asx=&quot;http://www.sap.com/abapxml&quot; version=&quot;1.0&quot;&gt;&lt;asx:values&gt;&lt;BN1&gt;&lt;ACTION_MENU_ID/&gt;&lt;ALIGNMENT&gt;03&lt;/ALIGNMENT&gt;&lt;ALT_DDIC_SHLP_NAME/&gt;&lt;BORDER&gt;0&lt;/BORDER&gt;&lt;COL_COUNT&gt;1&lt;/COL_COUNT&gt;&lt;DDIC_SHLP_TEXT_FIELD_NAME/&gt;&lt;DISPLAY_AS_TEXT/&gt;&lt;ELEM_DDIC_SHLP_NAME/&gt;&lt;ENFORCE_FIELD_MERGING/&gt;&lt;HEIGHT/&gt;&lt;HIDE_FORMATTING_OPTIONS/&gt;&lt;HIDE_TEXT/&gt;&lt;HIDE_VALUE/&gt;&lt;HOTKEY&gt;00&lt;/HOTKEY&gt;&lt;IMAGE_SOURCE/&gt;&lt;IMAGE_IS_DECORATIVE/&gt;&lt;INPUT_HELP&gt;00&lt;/INPUT_HELP&gt;&lt;KEEP_ORIGINAL_SIZE/&gt;&lt;KEY_VISIBLE/&gt;&lt;LINK_DESIGN&gt;00&lt;/LINK_DESIGN&gt;&lt;LINK_TYPE&gt;02&lt;/LINK_TYPE&gt;&lt;MAX_RATING&gt;5&lt;/MAX_RATING&gt;&lt;MAX_TICK_MARKS&gt;0&lt;/MAX_TICK_MARKS&gt;&lt;MIME_TYPE/&gt;&lt;NO_INPUT_HISTORY/&gt;&lt;PASSWORD_FIELD/&gt;&lt;QUICKVIEW_ID/&gt;&lt;QUICKVIEW_IMAGE_REF/&gt;&lt;ROW_COUNT&gt;0&lt;/ROW_COUNT&gt;&lt;SECTION_HEADER_DESIGN/&gt;&lt;SECTION_HEADER_LEVEL&gt;00&lt;/SECTION_HEADER_LEVEL&gt;&lt;SEMANTIC_OBJECT/&gt;&lt;SHOW_TICK_MARKS/&gt;&lt;SUGGEST_FILTER_METHOD&gt;00&lt;/SUGGEST_FILTER_METHOD&gt;&lt;SUGGEST_HISTORY/&gt;&lt;SUGGEST_VALUES/&gt;&lt;SUPPRESS_FIELD_MERGING/&gt;&lt;TARGET/&gt;&lt;TEXT_DOCUMENT_NAME/&gt;&lt;TEXT_EDIT_DESIGN&gt;09&lt;/TEXT_EDIT_DESIGN&gt;&lt;TEXT_EDIT_HEIGHT_MODE&gt;00&lt;/TEXT_EDIT_HEIGHT_MODE&gt;&lt;TEXT_VIEW_DESIGN&gt;09&lt;/TEXT_VIEW_DESIGN&gt;&lt;TEXT_VIEW_LAYOUT&gt;01&lt;/TEXT_VIEW_LAYOUT&gt;&lt;TEXTVIEW_SEM_COL&gt;00&lt;/TEXTVIEW_SEM_COL&gt;&lt;TEXT_WRAPPING&gt;02&lt;/TEXT_WRAPPING&gt;&lt;THRESHOLDS/&gt;&lt;TICK_MARK_SPACING&gt;0&lt;/TICK_MARK_SPACING&gt;&lt;TOKEN_FORMAT&gt;00&lt;/TOKEN_FORMAT&gt;&lt;UNIT_WIDTH&gt;0&lt;/UNIT_WIDTH&gt;&lt;VIRUS_SCAN_PROFILE/&gt;&lt;WIDTH/&gt;&lt;WRAPPING/&gt;&lt;/BN1&gt;&lt;/asx:values&gt;&lt;/asx:abap&gt;</SPECIAL_PROPERTIES>
+           <SPECIAL_ACTIONS></SPECIAL_ACTIONS>
+           <LABEL_TEXT Transl="true"></LABEL_TEXT>
+           <LABEL_VISIBILITY>02</LABEL_VISIBILITY>
+           <LABEL_INSTANCE_STYLE></LABEL_INSTANCE_STYLE>
+           <TAG_ACTIVE></TAG_ACTIVE>
+           <TAG></TAG>
+           <CTXT_MENU_ID></CTXT_MENU_ID>
+          </Item>
+          <Item Index="000013" SimpleFormat="true">
+           <ID Final="5 ">FGL2_005056B095991EEDAE8BE74554512CE1</ID>
+           <NAME>ZZINT_GKO_ICON</NAME>
+           <TYPE>IM</TYPE>
+           <EXPLANATION Transl="true"></EXPLANATION>
+           <TEXT Transl="true"></TEXT>
+           <TOOLTIP Transl="true"></TOOLTIP>
+           <INPUT_PROMPT Transl="true"></INPUT_PROMPT>
+           <INSTANCE_STYLE></INSTANCE_STYLE>
+           <SPECIAL_PROPERTIES>﻿&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;asx:abap xmlns:asx=&quot;http://www.sap.com/abapxml&quot; version=&quot;1.0&quot;&gt;&lt;asx:values&gt;&lt;BN1&gt;&lt;ACTION_MENU_ID/&gt;&lt;ALIGNMENT&gt;03&lt;/ALIGNMENT&gt;&lt;ALT_DDIC_SHLP_NAME/&gt;&lt;BORDER&gt;0&lt;/BORDER&gt;&lt;COL_COUNT&gt;1&lt;/COL_COUNT&gt;&lt;DDIC_SHLP_TEXT_FIELD_NAME/&gt;&lt;DISPLAY_AS_TEXT/&gt;&lt;ELEM_DDIC_SHLP_NAME/&gt;&lt;ENFORCE_FIELD_MERGING/&gt;&lt;HEIGHT/&gt;&lt;HIDE_FORMATTING_OPTIONS/&gt;&lt;HIDE_TEXT/&gt;&lt;HIDE_VALUE/&gt;&lt;HOTKEY&gt;00&lt;/HOTKEY&gt;&lt;IMAGE_SOURCE/&gt;&lt;IMAGE_IS_DECORATIVE/&gt;&lt;INPUT_HELP&gt;00&lt;/INPUT_HELP&gt;&lt;KEEP_ORIGINAL_SIZE/&gt;&lt;KEY_VISIBLE/&gt;&lt;LINK_DESIGN&gt;00&lt;/LINK_DESIGN&gt;&lt;LINK_TYPE&gt;02&lt;/LINK_TYPE&gt;&lt;MAX_RATING&gt;5&lt;/MAX_RATING&gt;&lt;MAX_TICK_MARKS&gt;0&lt;/MAX_TICK_MARKS&gt;&lt;MIME_TYPE/&gt;&lt;NO_INPUT_HISTORY/&gt;&lt;PASSWORD_FIELD/&gt;&lt;QUICKVIEW_ID/&gt;&lt;QUICKVIEW_IMAGE_REF/&gt;&lt;ROW_COUNT&gt;0&lt;/ROW_COUNT&gt;&lt;SECTION_HEADER_DESIGN/&gt;&lt;SECTION_HEADER_LEVEL&gt;00&lt;/SECTION_HEADER_LEVEL&gt;&lt;SEMANTIC_OBJECT/&gt;&lt;SHOW_TICK_MARKS/&gt;&lt;SUGGEST_FILTER_METHOD&gt;00&lt;/SUGGEST_FILTER_METHOD&gt;&lt;SUGGEST_HISTORY/&gt;&lt;SUGGEST_VALUES/&gt;&lt;SUPPRESS_FIELD_MERGING/&gt;&lt;TARGET/&gt;&lt;TEXT_DOCUMENT_NAME/&gt;&lt;TEXT_EDIT_DESIGN&gt;09&lt;/TEXT_EDIT_DESIGN&gt;&lt;TEXT_EDIT_HEIGHT_MODE&gt;00&lt;/TEXT_EDIT_HEIGHT_MODE&gt;&lt;TEXT_VIEW_DESIGN&gt;09&lt;/TEXT_VIEW_DESIGN&gt;&lt;TEXT_VIEW_LAYOUT&gt;01&lt;/TEXT_VIEW_LAYOUT&gt;&lt;TEXTVIEW_SEM_COL&gt;00&lt;/TEXTVIEW_SEM_COL&gt;&lt;TEXT_WRAPPING&gt;02&lt;/TEXT_WRAPPING&gt;&lt;THRESHOLDS/&gt;&lt;TICK_MARK_SPACING&gt;0&lt;/TICK_MARK_SPACING&gt;&lt;TOKEN_FORMAT&gt;00&lt;/TOKEN_FORMAT&gt;&lt;UNIT_WIDTH&gt;0&lt;/UNIT_WIDTH&gt;&lt;VIRUS_SCAN_PROFILE/&gt;&lt;WIDTH/&gt;&lt;WRAPPING/&gt;&lt;/BN1&gt;&lt;/asx:values&gt;&lt;/asx:abap&gt;</SPECIAL_PROPERTIES>
+           <SPECIAL_ACTIONS></SPECIAL_ACTIONS>
+           <LABEL_TEXT Transl="true">10</LABEL_TEXT>
+           <LABEL_VISIBILITY>02</LABEL_VISIBILITY>
+           <LABEL_INSTANCE_STYLE></LABEL_INSTANCE_STYLE>
+           <TAG_ACTIVE></TAG_ACTIVE>
+           <TAG></TAG>
+           <CTXT_MENU_ID></CTXT_MENU_ID>
+          </Item>
+          <Item Index="000014" SimpleFormat="true">
+           <ID Final="5 ">FGL2_005056B095991EEDAE8BF552AF9BCCE4</ID>
+           <NAME>ZZINT_GM_ICON</NAME>
+           <TYPE>IM</TYPE>
+           <EXPLANATION Transl="true"></EXPLANATION>
+           <TEXT Transl="true"></TEXT>
+           <TOOLTIP Transl="true"></TOOLTIP>
+           <INPUT_PROMPT Transl="true"></INPUT_PROMPT>
+           <INSTANCE_STYLE></INSTANCE_STYLE>
+           <SPECIAL_PROPERTIES>﻿&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;asx:abap xmlns:asx=&quot;http://www.sap.com/abapxml&quot; version=&quot;1.0&quot;&gt;&lt;asx:values&gt;&lt;BN1&gt;&lt;ACTION_MENU_ID/&gt;&lt;ALIGNMENT&gt;03&lt;/ALIGNMENT&gt;&lt;ALT_DDIC_SHLP_NAME/&gt;&lt;BORDER&gt;0&lt;/BORDER&gt;&lt;COL_COUNT&gt;1&lt;/COL_COUNT&gt;&lt;DDIC_SHLP_TEXT_FIELD_NAME/&gt;&lt;DISPLAY_AS_TEXT/&gt;&lt;ELEM_DDIC_SHLP_NAME/&gt;&lt;ENFORCE_FIELD_MERGING/&gt;&lt;HEIGHT/&gt;&lt;HIDE_FORMATTING_OPTIONS/&gt;&lt;HIDE_TEXT/&gt;&lt;HIDE_VALUE/&gt;&lt;HOTKEY&gt;00&lt;/HOTKEY&gt;&lt;IMAGE_SOURCE/&gt;&lt;IMAGE_IS_DECORATIVE/&gt;&lt;INPUT_HELP&gt;00&lt;/INPUT_HELP&gt;&lt;KEEP_ORIGINAL_SIZE/&gt;&lt;KEY_VISIBLE/&gt;&lt;LINK_DESIGN&gt;00&lt;/LINK_DESIGN&gt;&lt;LINK_TYPE&gt;02&lt;/LINK_TYPE&gt;&lt;MAX_RATING&gt;5&lt;/MAX_RATING&gt;&lt;MAX_TICK_MARKS&gt;0&lt;/MAX_TICK_MARKS&gt;&lt;MIME_TYPE/&gt;&lt;NO_INPUT_HISTORY/&gt;&lt;PASSWORD_FIELD/&gt;&lt;QUICKVIEW_ID/&gt;&lt;QUICKVIEW_IMAGE_REF/&gt;&lt;ROW_COUNT&gt;0&lt;/ROW_COUNT&gt;&lt;SECTION_HEADER_DESIGN/&gt;&lt;SECTION_HEADER_LEVEL&gt;00&lt;/SECTION_HEADER_LEVEL&gt;&lt;SEMANTIC_OBJECT/&gt;&lt;SHOW_TICK_MARKS/&gt;&lt;SUGGEST_FILTER_METHOD&gt;00&lt;/SUGGEST_FILTER_METHOD&gt;&lt;SUGGEST_HISTORY/&gt;&lt;SUGGEST_VALUES/&gt;&lt;SUPPRESS_FIELD_MERGING/&gt;&lt;TARGET/&gt;&lt;TEXT_DOCUMENT_NAME/&gt;&lt;TEXT_EDIT_DESIGN&gt;09&lt;/TEXT_EDIT_DESIGN&gt;&lt;TEXT_EDIT_HEIGHT_MODE&gt;00&lt;/TEXT_EDIT_HEIGHT_MODE&gt;&lt;TEXT_VIEW_DESIGN&gt;09&lt;/TEXT_VIEW_DESIGN&gt;&lt;TEXT_VIEW_LAYOUT&gt;01&lt;/TEXT_VIEW_LAYOUT&gt;&lt;TEXTVIEW_SEM_COL&gt;00&lt;/TEXTVIEW_SEM_COL&gt;&lt;TEXT_WRAPPING&gt;02&lt;/TEXT_WRAPPING&gt;&lt;THRESHOLDS/&gt;&lt;TICK_MARK_SPACING&gt;0&lt;/TICK_MARK_SPACING&gt;&lt;TOKEN_FORMAT&gt;00&lt;/TOKEN_FORMAT&gt;&lt;UNIT_WIDTH&gt;0&lt;/UNIT_WIDTH&gt;&lt;VIRUS_SCAN_PROFILE/&gt;&lt;WIDTH/&gt;&lt;WRAPPING/&gt;&lt;/BN1&gt;&lt;/asx:values&gt;&lt;/asx:abap&gt;</SPECIAL_PROPERTIES>
+           <SPECIAL_ACTIONS></SPECIAL_ACTIONS>
+           <LABEL_TEXT Transl="true">11</LABEL_TEXT>
+           <LABEL_VISIBILITY>02</LABEL_VISIBILITY>
+           <LABEL_INSTANCE_STYLE></LABEL_INSTANCE_STYLE>
+           <TAG_ACTIVE></TAG_ACTIVE>
+           <TAG></TAG>
+           <CTXT_MENU_ID></CTXT_MENU_ID>
+          </Item>
+          <Item Index="000015" SimpleFormat="true">
+           <ID Final="5 ">FGL2_005056B095991EEDAE8C06A77BC8ACE5</ID>
+           <NAME>ZZINT_TRAF_ICON</NAME>
+           <TYPE>IM</TYPE>
+           <EXPLANATION Transl="true"></EXPLANATION>
+           <TEXT Transl="true"></TEXT>
+           <TOOLTIP Transl="true"></TOOLTIP>
+           <INPUT_PROMPT Transl="true"></INPUT_PROMPT>
+           <INSTANCE_STYLE></INSTANCE_STYLE>
+           <SPECIAL_PROPERTIES>﻿&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;asx:abap xmlns:asx=&quot;http://www.sap.com/abapxml&quot; version=&quot;1.0&quot;&gt;&lt;asx:values&gt;&lt;BN1&gt;&lt;ACTION_MENU_ID/&gt;&lt;ALIGNMENT&gt;03&lt;/ALIGNMENT&gt;&lt;ALT_DDIC_SHLP_NAME/&gt;&lt;BORDER&gt;0&lt;/BORDER&gt;&lt;COL_COUNT&gt;1&lt;/COL_COUNT&gt;&lt;DDIC_SHLP_TEXT_FIELD_NAME/&gt;&lt;DISPLAY_AS_TEXT/&gt;&lt;ELEM_DDIC_SHLP_NAME/&gt;&lt;ENFORCE_FIELD_MERGING/&gt;&lt;HEIGHT/&gt;&lt;HIDE_FORMATTING_OPTIONS/&gt;&lt;HIDE_TEXT/&gt;&lt;HIDE_VALUE/&gt;&lt;HOTKEY&gt;00&lt;/HOTKEY&gt;&lt;IMAGE_SOURCE/&gt;&lt;IMAGE_IS_DECORATIVE/&gt;&lt;INPUT_HELP&gt;00&lt;/INPUT_HELP&gt;&lt;KEEP_ORIGINAL_SIZE/&gt;&lt;KEY_VISIBLE/&gt;&lt;LINK_DESIGN&gt;00&lt;/LINK_DESIGN&gt;&lt;LINK_TYPE&gt;02&lt;/LINK_TYPE&gt;&lt;MAX_RATING&gt;5&lt;/MAX_RATING&gt;&lt;MAX_TICK_MARKS&gt;0&lt;/MAX_TICK_MARKS&gt;&lt;MIME_TYPE/&gt;&lt;NO_INPUT_HISTORY/&gt;&lt;PASSWORD_FIELD/&gt;&lt;QUICKVIEW_ID/&gt;&lt;QUICKVIEW_IMAGE_REF/&gt;&lt;ROW_COUNT&gt;0&lt;/ROW_COUNT&gt;&lt;SECTION_HEADER_DESIGN/&gt;&lt;SECTION_HEADER_LEVEL&gt;00&lt;/SECTION_HEADER_LEVEL&gt;&lt;SEMANTIC_OBJECT/&gt;&lt;SHOW_TICK_MARKS/&gt;&lt;SUGGEST_FILTER_METHOD&gt;00&lt;/SUGGEST_FILTER_METHOD&gt;&lt;SUGGEST_HISTORY/&gt;&lt;SUGGEST_VALUES/&gt;&lt;SUPPRESS_FIELD_MERGING/&gt;&lt;TARGET/&gt;&lt;TEXT_DOCUMENT_NAME/&gt;&lt;TEXT_EDIT_DESIGN&gt;09&lt;/TEXT_EDIT_DESIGN&gt;&lt;TEXT_EDIT_HEIGHT_MODE&gt;00&lt;/TEXT_EDIT_HEIGHT_MODE&gt;&lt;TEXT_VIEW_DESIGN&gt;09&lt;/TEXT_VIEW_DESIGN&gt;&lt;TEXT_VIEW_LAYOUT&gt;01&lt;/TEXT_VIEW_LAYOUT&gt;&lt;TEXTVIEW_SEM_COL&gt;00&lt;/TEXTVIEW_SEM_COL&gt;&lt;TEXT_WRAPPING&gt;02&lt;/TEXT_WRAPPING&gt;&lt;THRESHOLDS/&gt;&lt;TICK_MARK_SPACING&gt;0&lt;/TICK_MARK_SPACING&gt;&lt;TOKEN_FORMAT&gt;00&lt;/TOKEN_FORMAT&gt;&lt;UNIT_WIDTH&gt;0&lt;/UNIT_WIDTH&gt;&lt;VIRUS_SCAN_PROFILE/&gt;&lt;WIDTH/&gt;&lt;WRAPPING/&gt;&lt;/BN1&gt;&lt;/asx:values&gt;&lt;/asx:abap&gt;</SPECIAL_PROPERTIES>
+           <SPECIAL_ACTIONS></SPECIAL_ACTIONS>
+           <LABEL_TEXT Transl="true">12</LABEL_TEXT>
+           <LABEL_VISIBILITY>02</LABEL_VISIBILITY>
+           <LABEL_INSTANCE_STYLE></LABEL_INSTANCE_STYLE>
+           <TAG_ACTIVE></TAG_ACTIVE>
+           <TAG></TAG>
+           <CTXT_MENU_ID></CTXT_MENU_ID>
+          </Item>
+         </Node>
+        </Item>
+       </Node>
+      </Item>
+     </Node>
+    </Component>
+   </ENHANCEMENT_DATA>
+   <SOTR>
+    <item>
+     <HEADER>
+      <CONCEPT>005056B095991EEDAE87F17AF95D6C5E</CONCEPT>
+      <CREA_LAN>P</CREA_LAN>
+      <TRALA_TYPE>1</TRALA_TYPE>
+      <OBJID_VEC>AAI=</OBJID_VEC>
+     </HEADER>
+     <ENTRIES>
+      <SOTR_TEXT>
+       <CONCEPT>005056B095991EEDAE87F17AF95D6C5E</CONCEPT>
+       <LANGU>P</LANGU>
+       <LFD_NUM>0001</LFD_NUM>
+       <FLAG_CNTXT>X</FLAG_CNTXT>
+       <STATUS>R</STATUS>
+       <LENGTH>255</LENGTH>
+       <TEXT>Status de disparo de interfaces GKO/GM/Trafegus</TEXT>
+      </SOTR_TEXT>
+     </ENTRIES>
+    </item>
+   </SOTR>
+   <SOTR_USE>
+    <SOTR_USE>
+     <PGMID>R3TR</PGMID>
+     <OBJECT>ENHO</OBJECT>
+     <OBJ_NAME>ZEITM_INTERFACES</OBJ_NAME>
+     <CONCEPT>005056B095991EEDAE87F17AF95D6C5E</CONCEPT>
+     <LFD_NUM>0001</LFD_NUM>
+    </SOTR_USE>
+   </SOTR_USE>
+  </asx:values>
+ </asx:abap>
+</abapGit>

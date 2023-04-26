@@ -1,0 +1,44 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Referência',
+                     typeNamePlural: 'Referências' } }
+
+annotate view ZC_TM_MONITOR_GKO_REF with
+{ 
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:            'Referencia',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Referencia',
+                 position:      10 }  ]
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI.hidden: true
+  acckey;
+
+  @UI: {  lineItem:       [ { position: 10, label: 'Chave referência' } ],
+          identification: [ { position: 10, label: 'Chave referência' } ] }
+  acckey_ref;
+
+  @UI: {  lineItem:       [ { position: 20, label: 'Chave origem' } ],
+          identification: [ { position: 20, label: 'Chave origem' } ] }
+  acckey_orig;
+
+  @UI: {  lineItem:       [ { position: 30, label: 'Nº Documento', semanticObjectAction: 'zzdisplay', type: #WITH_INTENT_BASED_NAVIGATION } ],
+          identification: [ { position: 30, label: 'Nº Documento' } ] }
+  @Consumption.semanticObject:'NotaFiscal'
+  BR_NotaFiscal;
+
+  @UI: {  lineItem:       [ { position: 40, label: 'Produto acabado', criticality: 'crit_prod_acabado', criticalityRepresentation: #WITHOUT_ICON } ],
+          identification: [ { position: 40, label: 'Produto acabado', criticality: 'crit_prod_acabado', criticalityRepresentation: #WITHOUT_ICON } ] }
+  prod_acabado;
+
+  @UI.hidden: true
+  desc_prod_acabado;
+  
+  @UI.hidden: true
+  crit_prod_acabado;
+}

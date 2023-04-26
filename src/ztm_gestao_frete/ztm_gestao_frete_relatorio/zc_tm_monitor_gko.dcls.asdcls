@@ -1,0 +1,11 @@
+@EndUserText.label: 'Controle de acesso para Monitor GKO'
+@MappingRole: true
+define role ZC_TM_MONITOR_GKO {
+    grant
+        select
+            on
+                ZC_TM_MONITOR_GKO
+                    where 
+                        inheriting conditions from entity ZI_TM_MONITOR_GKO;
+                         
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Configuração dos tipos de transporte'
+define service ZUI_TM_MDF_TIPO_TRANSPORTE {
+  expose ZC_TM_MDF_TIPO_TRANSPORTE as TipoTransporte;
+}

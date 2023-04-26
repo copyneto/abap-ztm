@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Busca status do documento na sefaz</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGTM_CHECK_DOC_SEFAZTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGTM_CHECK_DOC_SEFAZ</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMTM_REFRESH_STATUS_SEFAZ</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Atualiza status da sefaz</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_GKOT006</PARAMETER>
+       <TYP>ZTTM_GKOT006</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_GKOT006</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de Logs</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SUSO" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TOBJ>
+    <OBJCT>ZTMMDFE_B</OBJCT>
+    <FIEL1>ACTVT</FIEL1>
+    <OCLSS>ZTM</OCLSS>
+   </TOBJ>
+   <TOBJT>
+    <LANGU>P</LANGU>
+    <OBJECT>ZTMMDFE_B</OBJECT>
+    <TTEXT>MDF-e - Autorização para botões - Grupo B</TTEXT>
+   </TOBJT>
+   <TOBJVORFLG>
+    <OBJCT>ZTMMDFE_B</OBJCT>
+   </TOBJVORFLG>
+   <TACTZ>
+    <TACTZ>
+     <BROBJ>ZTMMDFE_B</BROBJ>
+     <ACTVT>02</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>ZTMMDFE_B</BROBJ>
+     <ACTVT>04</ACTVT>
+    </TACTZ>
+   </TACTZ>
+  </asx:values>
+ </asx:abap>
+</abapGit>

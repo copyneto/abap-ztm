@@ -1,0 +1,74 @@
+@Metadata.layer: #CORE
+
+@UI: { headerInfo: { title: { type: #STANDARD, value: 'Filename' },
+                     typeName: 'Recebimento manual CTe NFe',
+                     typeNamePlural: 'Recebimento manual CTe NFe' } }
+                     
+@UI.presentationVariant: [{ sortOrder: [{ by: 'CreatedAt', direction:  #DESC }]}] 
+
+@UI.lineItem: [{criticality: 'StatusCrit' }]
+
+annotate entity ZC_TM_LOG_CTE_NFE with
+{
+
+  @UI.hidden: true
+  Guid;
+
+  @UI.facet: [  { id: 'InfoGerais',
+                 purpose: #STANDARD,
+                 type: #IDENTIFICATION_REFERENCE,
+                 position: 10,
+                 importance: #HIGH,
+                 label: 'Informações Gerais' }]
+
+  @UI: { lineItem:       [{ position: 10, label: 'Arquivo' }],
+         identification: [{ position: 10, label: 'Arquivo' }],
+         selectionField: [{ position: 10 }]}
+  Filename;
+
+  @UI: { lineItem:       [{ position: 20, label: 'Documento', criticality: 'DoctypeCrit', criticalityRepresentation: #WITHOUT_ICON }],
+         identification: [{ position: 20, label: 'Documento', criticality: 'DoctypeCrit', criticalityRepresentation: #WITHOUT_ICON }],
+         selectionField: [{ position: 20 }],
+         textArrangement: #TEXT_ONLY }
+  @Consumption.filter.selectionType: #SINGLE
+  Doctype;
+  
+  @UI.hidden: true
+  DoctypeText;
+  
+  @UI.hidden: true
+  DoctypeCrit;
+
+  @UI: { lineItem:       [{ position: 30, label: 'Status', criticality: 'StatusCrit', criticalityRepresentation: #WITHOUT_ICON }],
+         identification: [{ position: 30, label: 'Status', criticality: 'StatusCrit', criticalityRepresentation: #WITHOUT_ICON }],
+         selectionField: [{ position: 30 }],
+         textArrangement: #TEXT_ONLY}
+  Status;
+  
+  @UI.hidden: true
+  StatusText;
+  
+  @UI.hidden: true
+  StatusCrit;
+
+  @UI: { lineItem:       [{ position: 40, label: 'Importado por' }],
+         identification: [{ position: 40, label: 'Importado por' }],
+         selectionField: [{ position: 40 }]}
+  CreatedBy;
+  
+  @UI.hidden: true
+  CreatedByName;
+
+  @UI: { lineItem:       [{ position: 50, label: 'Data/hora importação' }],
+         identification: [{ position: 50, label: 'Data/hora importação' }],
+         selectionField: [{ position: 50 }]}
+  CreatedAt;
+  
+  @UI.hidden: true
+  LastChangedByName;
+  
+  @UI: { lineItem:       [{ position: 60, label: 'Mensagem' }],
+         identification: [{ position: 60, label: 'Mensagem' }]}
+  Message;
+
+}

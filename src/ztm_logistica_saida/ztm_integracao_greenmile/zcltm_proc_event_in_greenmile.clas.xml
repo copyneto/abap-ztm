@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLTM_PROC_EVENT_IN_GREENMILE</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Processa os eventos do GreenMile dentro do TM</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_EVENTS</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Evento que ocorre durante uma atividade de transporte</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_OPTION_EQ</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Componente do nº versão</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_SIGN_I</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de um caractere</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_TORCAT_FU</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Categoria de documento comercial</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_TORCAT_TO</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Categoria de documento comercial</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GO_SRV_TOR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Containing the public service methods of a service manager</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GO_TRA_MGR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Interface of the standalone transaction manager</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_KEY_STOP_ANALYZE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Key Table</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_MESSAGES</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Mensagens de erro</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_MOD</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Changes</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_MOD_CHANGE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Changes</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>ANALYZER_EVENT_STOPS</CMPNAME>
+     <SCONAME>IS_TOR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Root Node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>EVENT_LOCATION</CMPNAME>
+     <SCONAME>IS_TOR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Root Node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>EVENT_LOCATION</CMPNAME>
+     <SCONAME>IT_KEY_FU</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Key Table</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>EXEC_ACTION</CMPNAME>
+     <SCONAME>IT_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Key Table</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FILL_TEXT_COLLECTION</CMPNAME>
+     <SCONAME>IT_TOR_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Key Table</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FILL_TEXT_COLLECTION</CMPNAME>
+     <SCONAME>IV_KEY_EVENT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>NodeID</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FILL_TEXT_COLLECTION</CMPNAME>
+     <SCONAME>IV_LOCID</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Unidade gerencial</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FILL_TEXT_COLLECTION</CMPNAME>
+     <SCONAME>IV_ROOT_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>NodeID</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,47 @@
+@Metadata.layer: #CORE
+
+@UI: { headerInfo: { typeName: 'TipoExped',
+                     title: { value: 'TipoExped' },
+                     description: { value: 'Descricao' },
+                     typeNamePlural: 'Tipo de Expedição'
+                   }
+     }
+
+annotate view ZC_TIPO_EXPED with
+{
+
+  @UI.facet: [
+     { id:          'facet1',
+       purpose:       #STANDARD,
+       type:          #IDENTIFICATION_REFERENCE,
+       label:         'Dados Gerais',
+       position:      10
+     } ]
+
+  @UI: { lineItem:        [ { position: 10 } ],
+       identification:  [ { position: 10 } ],
+       selectionField:  [ { position: 10 } ] }
+  TipoExped;
+
+  @UI: { lineItem:        [ { position: 20 } ],
+     identification:  [ { position: 20 } ],
+     selectionField:  [ { position: 20 } ] }
+  Descricao;
+
+  @UI: {  lineItem:        [ { position: 30 } ],
+          identification:  [ { position: 30 } ] }
+  CreatedBy;
+  @UI: {  lineItem:        [ { position: 40 } ],
+          identification:  [ { position: 40 } ] }
+  CreatedAt;
+  @UI: {  lineItem:        [ { position: 50 } ],
+           identification:  [ { position: 50 } ] }
+  LastChangedBy;
+  @UI: {  lineItem:        [ { position: 60 } ],
+          identification:  [ { position: 60 } ] }
+  LastChangedAt;
+  @UI: {  lineItem:        [ { position: 70 } ],
+          identification:  [ { position: 70 } ] }
+  LocalLastChangedAt;
+
+}

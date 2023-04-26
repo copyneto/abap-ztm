@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_ENHO" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TOOL>WDYCONF</TOOL>
+   <ORIGINAL_OBJECT>
+    <CONFIG_ID>/SCMTMS/WDCC_FOR_GEN_GNINF</CONFIG_ID>
+   </ORIGINAL_OBJECT>
+   <ENHANCEMENT_DATA>
+    <Component Name="" ConfId="" ConfType="00" ConfVar="">
+     <Node Name="CONFIGURATION_CONTEXT" SimpleFormat="true">
+      <Item Index="000001" SimpleFormat="true">
+       <Node Name="FORM" SimpleFormat="true">
+        <Item Index="000001" SimpleFormat="true">
+         <Node Name="ACTION" SimpleFormat="true">
+          <Item Index="000001" SimpleFormat="true">
+           <ID Final="5 ">FGL2_005056B095991EEC8DFF64165DB2C289</ID>
+           <TYPE></TYPE>
+           <EVENT_ID>FBI_DEFAULT</EVENT_ID>
+           <EVENT_PARAMETERS></EVENT_PARAMETERS>
+          </Item>
+         </Node>
+         <Node Name="FORM_GROUP" SimpleFormat="true">
+          <Item Index="000001" SimpleFormat="true" Changed="true">
+           <ID Final="5 ">FGL2_0D48E44E5C26CE2FE10000000A4289BC</ID>
+           <Node Name="FORM_GROUP_ELEMENT" SimpleFormat="true">
+            <Item Index="000001" SimpleFormat="true">
+             <ID Final="5 ">_GENP_005056B095991EDC8DE6F49695A8CDF6</ID>
+             <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+             <FORM_ELEMENT_ID>FGL2_005056B095991EDC8DE6F49695A88DF6</FORM_ELEMENT_ID>
+            </Item>
+            <Item Index="000002" SimpleFormat="true">
+             <ID Final="5 ">_GENP_005056B095991EDC8DE97D6E8524D046</ID>
+             <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+             <FORM_ELEMENT_ID>FGL2_005056B095991EDC8DE97D6E85249046</FORM_ELEMENT_ID>
+            </Item>
+           </Node>
+          </Item>
+         </Node>
+         <Node Name="POSITION" SimpleFormat="true">
+          <Item Index="000001" SimpleFormat="true" Changed="true">
+           <END_ROW>27 </END_ROW>
+           <START_ROW>27 </START_ROW>
+           <ID Final="5 ">_GENP_2C39E54EC5C98526E10000000A4289BC</ID>
+          </Item>
+          <Item Index="000002" SimpleFormat="true" Changed="true">
+           <END_ROW>29 </END_ROW>
+           <LABEL_END_ROW>29 </LABEL_END_ROW>
+           <LABEL_START_ROW>29 </LABEL_START_ROW>
+           <START_ROW>29 </START_ROW>
+           <ID Final="5 ">_GENP_203AE54EC5C98526E10000000A4289BC</ID>
+          </Item>
+          <Item Index="000003" SimpleFormat="true" Changed="true">
+           <END_ROW>29 </END_ROW>
+           <START_ROW>29 </START_ROW>
+           <ID Final="5 ">_GENP_223AE54EC5C98526E10000000A4289BC</ID>
+          </Item>
+          <Item Index="000004" SimpleFormat="true" Changed="true">
+           <END_ROW>30 </END_ROW>
+           <LABEL_END_ROW>30 </LABEL_END_ROW>
+           <LABEL_START_ROW>30 </LABEL_START_ROW>
+           <START_ROW>30 </START_ROW>
+           <ID Final="5 ">_GENP_243AE54EC5C98526E10000000A4289BC</ID>
+          </Item>
+          <Item Index="000005" SimpleFormat="true" Changed="true">
+           <END_ROW>30 </END_ROW>
+           <START_ROW>30 </START_ROW>
+           <ID Final="5 ">_GENP_263AE54EC5C98526E10000000A4289BC</ID>
+          </Item>
+          <Item Index="000006" SimpleFormat="true" Changed="true">
+           <END_ROW>31 </END_ROW>
+           <LABEL_END_ROW>31 </LABEL_END_ROW>
+           <LABEL_START_ROW>31 </LABEL_START_ROW>
+           <START_ROW>31 </START_ROW>
+           <ID Final="5 ">_GENP_283AE54EC5C98526E10000000A4289BC</ID>
+          </Item>
+          <Item Index="000007" SimpleFormat="true" Changed="true">
+           <END_ROW>31 </END_ROW>
+           <START_ROW>31 </START_ROW>
+           <ID Final="5 ">_GENP_2A3AE54EC5C98526E10000000A4289BC</ID>
+          </Item>
+          <Item Index="000008" SimpleFormat="true" Changed="true">
+           <END_ROW>32 </END_ROW>
+           <LABEL_END_ROW>32 </LABEL_END_ROW>
+           <LABEL_START_ROW>32 </LABEL_START_ROW>
+           <START_ROW>32 </START_ROW>
+           <ID Final="5 ">_GENP_2C3AE54EC5C98526E10000000A4289BC</ID>
+          </Item>
+          <Item Index="000009" SimpleFormat="true" Changed="true">
+           <END_ROW>32 </END_ROW>
+           <START_ROW>32 </START_ROW>
+           <ID Final="5 ">_GENP_2E3AE54EC5C98526E10000000A4289BC</ID>
+          </Item>
+          <Item Index="000010" SimpleFormat="true" Changed="true">
+           <END_ROW>33 </END_ROW>
+           <LABEL_END_ROW>33 </LABEL_END_ROW>
+           <LABEL_START_ROW>33 </LABEL_START_ROW>
+           <START_ROW>33 </START_ROW>
+           <ID Final="5 ">_GENP_303AE54EC5C98526E10000000A4289BC</ID>
+          </Item>
+          <Item Index="000011" SimpleFormat="true" Changed="true">
+           <END_ROW>33 </END_ROW>
+           <START_ROW>33 </START_ROW>
+           <ID Final="5 ">_GENP_323AE54EC5C98526E10000000A4289BC</ID>
+          </Item>
+          <Item Index="000012" SimpleFormat="true" Changed="true">
+           <END_ROW>34 </END_ROW>
+           <LABEL_END_ROW>34 </LABEL_END_ROW>
+           <LABEL_START_ROW>34 </LABEL_START_ROW>
+           <START_ROW>34 </START_ROW>
+           <ID Final="5 ">_GENP_005056AB02EA1EE29ADA2205F10E75F6</ID>
+          </Item>
+          <Item Index="000013" SimpleFormat="true" Changed="true">
+           <START_ROW>28 </START_ROW>
+           <END_ROW>28 </END_ROW>
+           <LABEL_START_ROW>28 </LABEL_START_ROW>
+           <LABEL_END_ROW>28 </LABEL_END_ROW>
+           <ID Final="5 ">_GENP_0894EF4577A91EDA889B9559F7AE471A</ID>
+          </Item>
+          <Item Index="000014" SimpleFormat="true" Changed="true">
+           <START_ROW>28 </START_ROW>
+           <END_ROW>28 </END_ROW>
+           <ID Final="5 ">_GENP_0894EF4577A91EDA889B96D3DFABA720</ID>
+          </Item>
+          <Item Index="000015" SimpleFormat="true">
+           <ID Final="5 ">_GENP_005056B095991EDC8DE6F49695A8ADF6</ID>
+           <START_ROW>26 </START_ROW>
+           <START_COLUMN>D</START_COLUMN>
+           <END_ROW>26 </END_ROW>
+           <END_COLUMN>E</END_COLUMN>
+           <LABEL_START_ROW>26 </LABEL_START_ROW>
+           <LABEL_START_COLUMN>A</LABEL_START_COLUMN>
+           <LABEL_END_ROW>26 </LABEL_END_ROW>
+           <LABEL_END_COLUMN>C</LABEL_END_COLUMN>
+           <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+           <FORM_ELEMENT_ID>FGL2_005056B095991EDC8DE6F49695A88DF6</FORM_ELEMENT_ID>
+          </Item>
+          <Item Index="000016" SimpleFormat="true">
+           <ID Final="5 ">_GENP_005056B095991EDC8DE97D6E8524B046</ID>
+           <START_ROW>26 </START_ROW>
+           <START_COLUMN>F</START_COLUMN>
+           <END_ROW>26 </END_ROW>
+           <END_COLUMN>H</END_COLUMN>
+           <LABEL_START_ROW></LABEL_START_ROW>
+           <LABEL_START_COLUMN></LABEL_START_COLUMN>
+           <LABEL_END_ROW></LABEL_END_ROW>
+           <LABEL_END_COLUMN></LABEL_END_COLUMN>
+           <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+           <FORM_ELEMENT_ID>FGL2_005056B095991EDC8DE97D6E85249046</FORM_ELEMENT_ID>
+          </Item>
+         </Node>
+         <Node Name="STANDARD_ELEMENT" SimpleFormat="true">
+          <Item Index="000001" SimpleFormat="true">
+           <ID Final="5 ">FGL2_005056B095991EDC8DE6F49695A88DF6</ID>
+           <NAME>ZZ_MOTORISTA</NAME>
+           <TYPE>IN</TYPE>
+           <EXPLANATION Transl="true"></EXPLANATION>
+           <TEXT Transl="true"></TEXT>
+           <TOOLTIP Transl="true"></TOOLTIP>
+           <INPUT_PROMPT Transl="true"></INPUT_PROMPT>
+           <INSTANCE_STYLE></INSTANCE_STYLE>
+           <SPECIAL_PROPERTIES></SPECIAL_PROPERTIES>
+           <SPECIAL_ACTIONS>﻿&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;asx:abap xmlns:asx=&quot;http://www.sap.com/abapxml&quot; version=&quot;1.0&quot;&gt;&lt;asx:values&gt;&lt;BN1&gt;&lt;ACTION_ID_ON_ACTION/&gt;&lt;ACTION_ID_ON_CHANGE/&gt;&lt;ACTION_ID_ON_DELETE/&gt;&lt;ACTION_ID_ON_EDIT/&gt;&lt;ACTION_ID_ON_ENTER&gt;FGL2_005056B095991EEC8DFF64165DB2C289&lt;/ACTION_ID_ON_ENTER&gt;&lt;ACTION_ID_ON_RATE/&gt;&lt;ACTION_ID_ON_SELECT/&gt;&lt;ACTION_ID_ON_TOGGLE/&gt;&lt;/BN1&gt;&lt;/asx:values&gt;&lt;/asx:abap&gt;</SPECIAL_ACTIONS>
+           <LABEL_TEXT Transl="true"></LABEL_TEXT>
+           <LABEL_VISIBILITY>02</LABEL_VISIBILITY>
+           <LABEL_INSTANCE_STYLE></LABEL_INSTANCE_STYLE>
+           <TAG_ACTIVE></TAG_ACTIVE>
+           <TAG></TAG>
+           <CTXT_MENU_ID></CTXT_MENU_ID>
+          </Item>
+          <Item Index="000002" SimpleFormat="true">
+           <ID Final="5 ">FGL2_005056B095991EDC8DE97D6E85249046</ID>
+           <NAME>NOMEMOTORISTA</NAME>
+           <TYPE>TV</TYPE>
+           <EXPLANATION Transl="true"></EXPLANATION>
+           <TEXT Transl="true"></TEXT>
+           <TOOLTIP Transl="true"></TOOLTIP>
+           <INPUT_PROMPT Transl="true"></INPUT_PROMPT>
+           <INSTANCE_STYLE></INSTANCE_STYLE>
+           <SPECIAL_PROPERTIES>﻿&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;asx:abap xmlns:asx=&quot;http://www.sap.com/abapxml&quot; version=&quot;1.0&quot;&gt;&lt;asx:values&gt;&lt;BN1&gt;&lt;ACTION_MENU_ID/&gt;&lt;ALIGNMENT&gt;03&lt;/ALIGNMENT&gt;&lt;ALT_DDIC_SHLP_NAME/&gt;&lt;BORDER&gt;0&lt;/BORDER&gt;&lt;COL_COUNT&gt;1&lt;/COL_COUNT&gt;&lt;DDIC_SHLP_TEXT_FIELD_NAME/&gt;&lt;DISPLAY_AS_TEXT/&gt;&lt;ELEM_DDIC_SHLP_NAME/&gt;&lt;ENFORCE_FIELD_MERGING/&gt;&lt;HEIGHT/&gt;&lt;HIDE_FORMATTING_OPTIONS/&gt;&lt;HIDE_TEXT/&gt;&lt;HIDE_VALUE/&gt;&lt;HOTKEY&gt;00&lt;/HOTKEY&gt;&lt;IMAGE_SOURCE/&gt;&lt;IMAGE_IS_DECORATIVE/&gt;&lt;INPUT_HELP&gt;00&lt;/INPUT_HELP&gt;&lt;KEEP_ORIGINAL_SIZE/&gt;&lt;KEY_VISIBLE/&gt;&lt;LINK_DESIGN&gt;00&lt;/LINK_DESIGN&gt;&lt;LINK_TYPE&gt;02&lt;/LINK_TYPE&gt;&lt;MAX_RATING&gt;5&lt;/MAX_RATING&gt;&lt;MAX_TICK_MARKS&gt;0&lt;/MAX_TICK_MARKS&gt;&lt;MIME_TYPE/&gt;&lt;NO_INPUT_HISTORY/&gt;&lt;PASSWORD_FIELD/&gt;&lt;QUICKVIEW_ID/&gt;&lt;QUICKVIEW_IMAGE_REF/&gt;&lt;ROW_COUNT&gt;0&lt;/ROW_COUNT&gt;&lt;SECTION_HEADER_DESIGN/&gt;&lt;SECTION_HEADER_LEVEL&gt;00&lt;/SECTION_HEADER_LEVEL&gt;&lt;SEMANTIC_OBJECT/&gt;&lt;SHOW_TICK_MARKS/&gt;&lt;SUGGEST_FILTER_METHOD&gt;00&lt;/SUGGEST_FILTER_METHOD&gt;&lt;SUGGEST_HISTORY/&gt;&lt;SUGGEST_VALUES/&gt;&lt;SUPPRESS_FIELD_MERGING/&gt;&lt;TARGET/&gt;&lt;TEXT_DOCUMENT_NAME/&gt;&lt;TEXT_EDIT_DESIGN&gt;09&lt;/TEXT_EDIT_DESIGN&gt;&lt;TEXT_EDIT_HEIGHT_MODE&gt;00&lt;/TEXT_EDIT_HEIGHT_MODE&gt;&lt;TEXT_VIEW_DESIGN&gt;09&lt;/TEXT_VIEW_DESIGN&gt;&lt;TEXT_VIEW_LAYOUT&gt;01&lt;/TEXT_VIEW_LAYOUT&gt;&lt;TEXTVIEW_SEM_COL&gt;00&lt;/TEXTVIEW_SEM_COL&gt;&lt;TEXT_WRAPPING&gt;02&lt;/TEXT_WRAPPING&gt;&lt;THRESHOLDS/&gt;&lt;TICK_MARK_SPACING&gt;0&lt;/TICK_MARK_SPACING&gt;&lt;TOKEN_FORMAT&gt;00&lt;/TOKEN_FORMAT&gt;&lt;UNIT_WIDTH&gt;0&lt;/UNIT_WIDTH&gt;&lt;VIRUS_SCAN_PROFILE/&gt;&lt;WIDTH/&gt;&lt;WRAPPING/&gt;&lt;/BN1&gt;&lt;/asx:values&gt;&lt;/asx:abap&gt;</SPECIAL_PROPERTIES>
+           <SPECIAL_ACTIONS></SPECIAL_ACTIONS>
+           <LABEL_TEXT Transl="true"></LABEL_TEXT>
+           <LABEL_VISIBILITY>01</LABEL_VISIBILITY>
+           <LABEL_INSTANCE_STYLE></LABEL_INSTANCE_STYLE>
+           <TAG_ACTIVE></TAG_ACTIVE>
+           <TAG></TAG>
+           <CTXT_MENU_ID></CTXT_MENU_ID>
+          </Item>
+         </Node>
+        </Item>
+       </Node>
+      </Item>
+     </Node>
+    </Component>
+   </ENHANCEMENT_DATA>
+   <SOTR>
+    <item>
+     <HEADER>
+      <CONCEPT>005056B095991EDC8DE6F2B7B44C6DF5</CONCEPT>
+      <CREA_LAN>P</CREA_LAN>
+      <TRALA_TYPE>1</TRALA_TYPE>
+      <OBJID_VEC>AAI=</OBJID_VEC>
+     </HEADER>
+     <ENTRIES>
+      <SOTR_TEXT>
+       <CONCEPT>005056B095991EDC8DE6F2B7B44C6DF5</CONCEPT>
+       <LANGU>P</LANGU>
+       <LFD_NUM>0001</LFD_NUM>
+       <FLAG_CNTXT>X</FLAG_CNTXT>
+       <STATUS>R</STATUS>
+       <LENGTH>255</LENGTH>
+       <TEXT>Motorista Parceiro</TEXT>
+      </SOTR_TEXT>
+     </ENTRIES>
+    </item>
+   </SOTR>
+   <SOTR_USE>
+    <SOTR_USE>
+     <PGMID>R3TR</PGMID>
+     <OBJECT>ENHO</OBJECT>
+     <OBJ_NAME>ZEITM_MOTORISTA</OBJ_NAME>
+     <CONCEPT>005056B095991EDC8DE6F2B7B44C6DF5</CONCEPT>
+     <LFD_NUM>0001</LFD_NUM>
+    </SOTR_USE>
+   </SOTR_USE>
+  </asx:values>
+ </asx:abap>
+</abapGit>

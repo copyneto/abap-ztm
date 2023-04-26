@@ -1,0 +1,87 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Monitor MDF-e > Histórico',
+                     typeNamePlural: 'Monitor MDF-e > Histórico',
+                     title: { type: #STANDARD, value: 'StepstatusCriticality' } },
+  presentationVariant: [{ sortOrder: [{ by: 'Createtime', direction:  #DESC },
+                                      { by: 'Histcount', direction:  #DESC }] }] }
+
+annotate view ZC_TM_MDF_HISTORICO with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:            'Histórico',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Histórico',
+                 position:      10 }  ]
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI.hidden: true
+  Id;
+
+  @UI: { lineItem:        [ { position: 10, label: 'Contador de Histórico' } ],
+         identification:  [ { position: 10, label: 'Contador de Histórico' } ] }
+  Histcount;
+  
+  @UI: { lineItem:        [ { position: 20, label: 'Evento' } ],
+         identification:  [ { position: 20, label: 'Evento' } ] }
+  Event;
+
+  @UI: { lineItem:        [ { position: 30, label: 'Processo' } ],
+         identification:  [ { position: 30, label: 'Processo' } ]  }
+  Proctyp;
+
+  @UI.hidden: true
+  ProctypText;
+
+  @UI: { lineItem:        [ { position: 40, label: 'Etapa do Processo' } ],
+         identification:  [ { position: 40, label: 'Etapa do Processo' } ]  }
+  Procstep;
+
+  @UI.hidden: true
+  ProcStepText;
+
+
+  @UI: { lineItem:        [ { position: 50, label: 'Status da Etapa do Processo', criticality: 'StepstatusCriticality', criticalityRepresentation: #WITHOUT_ICON } ],
+         identification:  [ { position: 50, label: 'Status da Etapa do Processo', criticality: 'StepstatusCriticality', criticalityRepresentation: #WITHOUT_ICON } ]  }
+  Stepstatus;
+
+  @UI.hidden: true
+  StepStatusText;
+
+  @UI.hidden: true
+  StepstatusCriticality;
+
+  @UI: { lineItem:        [ { position: 60, label: 'Registrado em' } ],
+         identification:  [ { position: 60, label: 'Registrado em' } ]  }
+  Createtime;
+
+  @UI: { lineItem:        [ { position: 70, label: 'Responsável' } ],
+         identification:  [ { position: 70, label: 'Responsável' } ]  }
+  Username;
+
+  @UI.hidden: true
+  UsernameText;
+
+  @UI: { lineItem:        [ { position: 80, label: 'Mensagem' } ],
+         identification:  [ { position: 80, label: 'Mensagem' } ]  }
+  Message;
+
+  @UI.hidden: true
+  Msgno;
+
+  @UI.hidden: true
+  Msgv1;
+
+  @UI.hidden: true
+  Msgv2;
+
+  @UI.hidden: true
+  Msgv3;
+
+  @UI.hidden: true
+  Msgv4;
+}

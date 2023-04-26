@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_ENHO" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TOOL>WDYCONF</TOOL>
+   <ORIGINAL_OBJECT>
+    <CONFIG_ID>/SCMTMS/WDCC_SFIR_ROOT</CONFIG_ID>
+   </ORIGINAL_OBJECT>
+   <ENHANCEMENT_DATA>
+    <Component Name="" ConfId="" ConfType="00" ConfVar="">
+     <Node Name="CONFIGURATION_CONTEXT" SimpleFormat="true">
+      <Item Index="000001" SimpleFormat="true">
+       <Node Name="FORM" SimpleFormat="true">
+        <Item Index="000001" SimpleFormat="true">
+         <Node Name="POSITION" SimpleFormat="true">
+          <Item Index="000001" SimpleFormat="true">
+           <ID Final="5 ">_GENP_005056B095991EDDA7836477A4648AEA</ID>
+           <START_ROW>10 </START_ROW>
+           <START_COLUMN>D</START_COLUMN>
+           <END_ROW>10 </END_ROW>
+           <END_COLUMN>G</END_COLUMN>
+           <LABEL_START_ROW>10 </LABEL_START_ROW>
+           <LABEL_START_COLUMN>A</LABEL_START_COLUMN>
+           <LABEL_END_ROW>10 </LABEL_END_ROW>
+           <LABEL_END_COLUMN>C</LABEL_END_COLUMN>
+           <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+           <FORM_ELEMENT_ID>FGL2_005056B095991EDDA7836477A4646AEA</FORM_ELEMENT_ID>
+          </Item>
+          <Item Index="000002" SimpleFormat="true">
+           <ID Final="5 ">_GENP_005056B095991EDDB4C936ACC271F1E0</ID>
+           <START_ROW>11 </START_ROW>
+           <START_COLUMN>D</START_COLUMN>
+           <END_ROW>11 </END_ROW>
+           <END_COLUMN>E</END_COLUMN>
+           <LABEL_START_ROW>11 </LABEL_START_ROW>
+           <LABEL_START_COLUMN>A</LABEL_START_COLUMN>
+           <LABEL_END_ROW>11 </LABEL_END_ROW>
+           <LABEL_END_COLUMN>C</LABEL_END_COLUMN>
+           <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+           <FORM_ELEMENT_ID>FGL2_005056B095991EDDB4C936ACC271D1E0</FORM_ELEMENT_ID>
+          </Item>
+          <Item Index="000003" SimpleFormat="true">
+           <ID Final="5 ">_GENP_005056B095991EDDB4C9377F72EDF1E0</ID>
+           <START_ROW>12 </START_ROW>
+           <START_COLUMN>D</START_COLUMN>
+           <END_ROW>12 </END_ROW>
+           <END_COLUMN>E</END_COLUMN>
+           <LABEL_START_ROW>12 </LABEL_START_ROW>
+           <LABEL_START_COLUMN>A</LABEL_START_COLUMN>
+           <LABEL_END_ROW>12 </LABEL_END_ROW>
+           <LABEL_END_COLUMN>C</LABEL_END_COLUMN>
+           <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+           <FORM_ELEMENT_ID>FGL2_005056B095991EDDB4C9377F72EDD1E0</FORM_ELEMENT_ID>
+          </Item>
+          <Item Index="000004" SimpleFormat="true">
+           <ID Final="5 ">_GENP_005056B095991EDDB4C9384C048631E0</ID>
+           <START_ROW>13 </START_ROW>
+           <START_COLUMN>D</START_COLUMN>
+           <END_ROW>13 </END_ROW>
+           <END_COLUMN>D</END_COLUMN>
+           <LABEL_START_ROW>13 </LABEL_START_ROW>
+           <LABEL_START_COLUMN>A</LABEL_START_COLUMN>
+           <LABEL_END_ROW>13 </LABEL_END_ROW>
+           <LABEL_END_COLUMN>C</LABEL_END_COLUMN>
+           <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+           <FORM_ELEMENT_ID>FGL2_005056B095991EDDB4C9384C048611E0</FORM_ELEMENT_ID>
+          </Item>
+         </Node>
+         <Node Name="STANDARD_ELEMENT" SimpleFormat="true">
+          <Item Index="000001" SimpleFormat="true">
+           <ID Final="5 ">FGL2_005056B095991EDDA7836477A4646AEA</ID>
+           <NAME>ZZACCKEY</NAME>
+           <TYPE>IN</TYPE>
+           <EXPLANATION Transl="true"></EXPLANATION>
+           <TEXT Transl="true"></TEXT>
+           <TOOLTIP Transl="true"></TOOLTIP>
+           <INPUT_PROMPT Transl="true"></INPUT_PROMPT>
+           <INSTANCE_STYLE></INSTANCE_STYLE>
+           <SPECIAL_PROPERTIES></SPECIAL_PROPERTIES>
+           <SPECIAL_ACTIONS></SPECIAL_ACTIONS>
+           <LABEL_TEXT Transl="true">1</LABEL_TEXT>
+           <LABEL_VISIBILITY>02</LABEL_VISIBILITY>
+           <LABEL_INSTANCE_STYLE></LABEL_INSTANCE_STYLE>
+           <TAG_ACTIVE></TAG_ACTIVE>
+           <TAG></TAG>
+           <CTXT_MENU_ID></CTXT_MENU_ID>
+          </Item>
+          <Item Index="000002" SimpleFormat="true">
+           <ID Final="5 ">FGL2_005056B095991EDDB4C936ACC271D1E0</ID>
+           <NAME>ZZHKONT</NAME>
+           <TYPE>IN</TYPE>
+           <EXPLANATION Transl="true"></EXPLANATION>
+           <TEXT Transl="true"></TEXT>
+           <TOOLTIP Transl="true"></TOOLTIP>
+           <INPUT_PROMPT Transl="true"></INPUT_PROMPT>
+           <INSTANCE_STYLE></INSTANCE_STYLE>
+           <SPECIAL_PROPERTIES></SPECIAL_PROPERTIES>
+           <SPECIAL_ACTIONS></SPECIAL_ACTIONS>
+           <LABEL_TEXT Transl="true"></LABEL_TEXT>
+           <LABEL_VISIBILITY>02</LABEL_VISIBILITY>
+           <LABEL_INSTANCE_STYLE></LABEL_INSTANCE_STYLE>
+           <TAG_ACTIVE></TAG_ACTIVE>
+           <TAG></TAG>
+           <CTXT_MENU_ID></CTXT_MENU_ID>
+          </Item>
+          <Item Index="000003" SimpleFormat="true">
+           <ID Final="5 ">FGL2_005056B095991EDDB4C9377F72EDD1E0</ID>
+           <NAME>ZZKOSTL</NAME>
+           <TYPE>IN</TYPE>
+           <EXPLANATION Transl="true"></EXPLANATION>
+           <TEXT Transl="true"></TEXT>
+           <TOOLTIP Transl="true"></TOOLTIP>
+           <INPUT_PROMPT Transl="true"></INPUT_PROMPT>
+           <INSTANCE_STYLE></INSTANCE_STYLE>
+           <SPECIAL_PROPERTIES></SPECIAL_PROPERTIES>
+           <SPECIAL_ACTIONS></SPECIAL_ACTIONS>
+           <LABEL_TEXT Transl="true"></LABEL_TEXT>
+           <LABEL_VISIBILITY>02</LABEL_VISIBILITY>
+           <LABEL_INSTANCE_STYLE></LABEL_INSTANCE_STYLE>
+           <TAG_ACTIVE></TAG_ACTIVE>
+           <TAG></TAG>
+           <CTXT_MENU_ID></CTXT_MENU_ID>
+          </Item>
+          <Item Index="000004" SimpleFormat="true">
+           <ID Final="5 ">FGL2_005056B095991EDDB4C9384C048611E0</ID>
+           <NAME>ZZMWSKZ</NAME>
+           <TYPE>IN</TYPE>
+           <EXPLANATION Transl="true"></EXPLANATION>
+           <TEXT Transl="true"></TEXT>
+           <TOOLTIP Transl="true"></TOOLTIP>
+           <INPUT_PROMPT Transl="true"></INPUT_PROMPT>
+           <INSTANCE_STYLE></INSTANCE_STYLE>
+           <SPECIAL_PROPERTIES></SPECIAL_PROPERTIES>
+           <SPECIAL_ACTIONS></SPECIAL_ACTIONS>
+           <LABEL_TEXT Transl="true"></LABEL_TEXT>
+           <LABEL_VISIBILITY>02</LABEL_VISIBILITY>
+           <LABEL_INSTANCE_STYLE></LABEL_INSTANCE_STYLE>
+           <TAG_ACTIVE></TAG_ACTIVE>
+           <TAG></TAG>
+           <CTXT_MENU_ID></CTXT_MENU_ID>
+          </Item>
+         </Node>
+        </Item>
+       </Node>
+      </Item>
+     </Node>
+    </Component>
+   </ENHANCEMENT_DATA>
+   <SOTR>
+    <item>
+     <HEADER>
+      <CONCEPT>005056B095991EDDA7835E32AACC2AE4</CONCEPT>
+      <CREA_LAN>P</CREA_LAN>
+      <TRALA_TYPE>1</TRALA_TYPE>
+      <OBJID_VEC>AAI=</OBJID_VEC>
+     </HEADER>
+     <ENTRIES>
+      <SOTR_TEXT>
+       <CONCEPT>005056B095991EDDA7835E32AACC2AE4</CONCEPT>
+       <LANGU>P</LANGU>
+       <LFD_NUM>0001</LFD_NUM>
+       <FLAG_CNTXT>X</FLAG_CNTXT>
+       <STATUS>R</STATUS>
+       <LENGTH>255</LENGTH>
+       <TEXT>Extensão Dados DFF</TEXT>
+      </SOTR_TEXT>
+     </ENTRIES>
+    </item>
+   </SOTR>
+   <SOTR_USE>
+    <SOTR_USE>
+     <PGMID>R3TR</PGMID>
+     <OBJECT>ENHO</OBJECT>
+     <OBJ_NAME>ZEITM_DADOS_DFF</OBJ_NAME>
+     <CONCEPT>005056B095991EDDA7835E32AACC2AE4</CONCEPT>
+     <LFD_NUM>0001</LFD_NUM>
+    </SOTR_USE>
+   </SOTR_USE>
+  </asx:values>
+ </asx:abap>
+</abapGit>

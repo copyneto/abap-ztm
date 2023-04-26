@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Função ZFMTM_GKO_INCM_DELETE</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGTM_GKO_INCM_DELETETOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGTM_GKO_INCM_DELETE</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMTM_GKO_INCM_DELETE</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>BAPI_INCOMINGINVOICE_DELETE</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_INVNUMBER</PARAMETER>
+       <TYP>BAPI_INCINV_FLD-INV_DOC_NO</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_FISCALYEAR</PARAMETER>
+       <TYP>BAPI_INCINV_FLD-FISC_YEAR</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_SUCESS</PARAMETER>
+       <TYP>CHAR1</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_INVNUMBER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nº de um documento de faturamento</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_FISCALYEAR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Exercício</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_SUCESS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Código de um caractere</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

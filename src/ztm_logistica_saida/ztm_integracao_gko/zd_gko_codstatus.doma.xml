@@ -1,0 +1,833 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DOMA" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD01V>
+    <DOMNAME>ZD_GKO_CODSTATUS</DOMNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <DATATYPE>CHAR</DATATYPE>
+    <LENG>000003</LENG>
+    <OUTPUTLEN>000003</OUTPUTLEN>
+    <VALEXI>X</VALEXI>
+    <DDTEXT>Código Status de Processamento</DDTEXT>
+   </DD01V>
+   <DD07V_TAB>
+    <DD07V>
+     <VALPOS>0001</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>100</DOMVALUE_L>
+     <DDTEXT>Documento integrado</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0002</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>101</DOMVALUE_L>
+     <DDTEXT>Aguardando dados adicionais</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0003</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>200</DOMVALUE_L>
+     <DDTEXT>Cenário identificado</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0004</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>210</DOMVALUE_L>
+     <DDTEXT>OF Identificada</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0005</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>211</DOMVALUE_L>
+     <DDTEXT>Calculo de Custo OF efetuado</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0006</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>300</DOMVALUE_L>
+     <DDTEXT>Frete Faturado - TM</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0007</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>301</DOMVALUE_L>
+     <DDTEXT>Aguardando Faturamento de Frete</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0008</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>400</DOMVALUE_L>
+     <DDTEXT>MIRO memorizada</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0009</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>401</DOMVALUE_L>
+     <DDTEXT>MIRO confirmada</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0010</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>500</DOMVALUE_L>
+     <DDTEXT>Agrupamento efetuado</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0011</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>501</DOMVALUE_L>
+     <DDTEXT>Aguardando a realização do agrupamento</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0012</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>502</DOMVALUE_L>
+     <DDTEXT>Aguardando aprovação WF do agrupamento</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0013</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>503</DOMVALUE_L>
+     <DDTEXT>WF do agrupamento Rejeitado</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0014</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>600</DOMVALUE_L>
+     <DDTEXT>Pagamento efetuado</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0015</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>700</DOMVALUE_L>
+     <DDTEXT>Evento de rejeição realizado, aguardando retorno da SEFAZ</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0016</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>701</DOMVALUE_L>
+     <DDTEXT>Evento de rejeição realizado e confirmado pela SEFAZ</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0017</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>800</DOMVALUE_L>
+     <DDTEXT>Estorno total realizado</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0018</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>801</DOMVALUE_L>
+     <DDTEXT>Estorno realizado</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0019</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>802</DOMVALUE_L>
+     <DDTEXT>Estorno MIRO Débito Posterior realizado</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0020</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>803</DOMVALUE_L>
+     <DDTEXT>Estorno do agrupamento realizado</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0021</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>804</DOMVALUE_L>
+     <DDTEXT>Estorno da MIRO realizado</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0022</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>805</DOMVALUE_L>
+     <DDTEXT>Estorno da MIRO Débito Posterior realizado</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0023</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>806</DOMVALUE_L>
+     <DDTEXT>Pedido eliminado</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0024</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>900</DOMVALUE_L>
+     <DDTEXT>Documento cancelado</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0025</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>901</DOMVALUE_L>
+     <DDTEXT>Documento cancelado, reversão realizada</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0026</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>902</DOMVALUE_L>
+     <DDTEXT>Aguardando estorno do agrupamento</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0027</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>903</DOMVALUE_L>
+     <DDTEXT>Estorno do Doc. Faturamento de frete (DFF) realizado</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0028</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>904</DOMVALUE_L>
+     <DDTEXT>Aguardando estorno do Doc. Faturamento de frete (DFF)</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0029</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E01</DOMVALUE_L>
+     <DDTEXT>Cenário não identificado</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0030</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E02</DOMVALUE_L>
+     <DDTEXT>Código do transportador não encontrado</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0031</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E03</DOMVALUE_L>
+     <DDTEXT>Código do tomador não encontrado</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0032</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E04</DOMVALUE_L>
+     <DDTEXT>Código do remetente não encontrado</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0033</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E05</DOMVALUE_L>
+     <DDTEXT>Código do destinatário não encontrado</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0034</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E06</DOMVALUE_L>
+     <DDTEXT>Empresa e Filial não encontrados</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0035</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E07</DOMVALUE_L>
+     <DDTEXT>Cenário não configurado</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0036</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E08</DOMVALUE_L>
+     <DDTEXT>Erro - Ordem de Frete não identificada</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0037</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E09</DOMVALUE_L>
+     <DDTEXT>Erro ao criar a MIRO</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0038</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E10</DOMVALUE_L>
+     <DDTEXT>Erro ao realizar o estorno total</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0039</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E11</DOMVALUE_L>
+     <DDTEXT>Erro ao realizar o estorno</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0040</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E12</DOMVALUE_L>
+     <DDTEXT>Erro ao criar a MIRO Débito Posterior</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0041</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E13</DOMVALUE_L>
+     <DDTEXT>Sem anexo atribuído</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0042</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E14</DOMVALUE_L>
+     <DDTEXT>Sem anexo atribuído MIRO Débito Posterior</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0043</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E15</DOMVALUE_L>
+     <DDTEXT>Erro ao realizar o estorno do agrupamento</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0044</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E16</DOMVALUE_L>
+     <DDTEXT>Erro ao realizar o estorno da MIRO Débito Posterior</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0045</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E17</DOMVALUE_L>
+     <DDTEXT>Erro ao realizar o estorno da MIRO</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0046</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E18</DOMVALUE_L>
+     <DDTEXT>Erro ao eliminar o pedido</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0047</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E19</DOMVALUE_L>
+     <DDTEXT>Erro ao estornar os documentos após o cancelamento</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0048</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E20</DOMVALUE_L>
+     <DDTEXT>Erro ao confirmar o evento de rejeição na SEFAZ</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0049</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E21</DOMVALUE_L>
+     <DDTEXT>Erro Valor total MIRO igual Valor total XML</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0050</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E22</DOMVALUE_L>
+     <DDTEXT>Erro CNPJ XML igual CNPJ escritrurado no CT-e</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0051</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E23</DOMVALUE_L>
+     <DDTEXT>Erro Valor ICMS maior que ICMS do XML</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0052</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E24</DOMVALUE_L>
+     <DDTEXT>Erro Arredondamento não realizado</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0053</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E31</DOMVALUE_L>
+     <DDTEXT>Erro Calculo de Custo - TM</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0054</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E32</DOMVALUE_L>
+     <DDTEXT>Erro Faturamento de Frete - TM</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0055</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E33</DOMVALUE_L>
+     <DDTEXT>Erro Lançamento de Frete - TM</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0056</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E34</DOMVALUE_L>
+     <DDTEXT>Erro Calculo de custo Extra - TM</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0057</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E35</DOMVALUE_L>
+     <DDTEXT>Erro Distribuição de custo - TM</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0058</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E36</DOMVALUE_L>
+     <DDTEXT>Erro Liberar ABD - TM</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0059</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E37</DOMVALUE_L>
+     <DDTEXT>Nota Fiscal de referência, não encontrada.</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0060</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E38</DOMVALUE_L>
+     <DDTEXT>Erro ao realizar estorno do DFF</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0061</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E39</DOMVALUE_L>
+     <DDTEXT>Erro ao carregar arquivo</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0062</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E40</DOMVALUE_L>
+     <DDTEXT>Erro no agrupamento manual de faturas</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0063</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E41</DOMVALUE_L>
+     <DDTEXT>Erro no agrupamento de faturas</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0064</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E42</DOMVALUE_L>
+     <DDTEXT>Código do expedidor não encontrado</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0065</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E43</DOMVALUE_L>
+     <DDTEXT>Código do recebedor não encontrado</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0066</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E44</DOMVALUE_L>
+     <DDTEXT>OF bloqueada por outro usuário durante Criação de Custo</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <VALPOS>0067</VALPOS>
+     <DDLANGUAGE>P</DDLANGUAGE>
+     <DOMVALUE_L>E45</DOMVALUE_L>
+     <DDTEXT>OF bloqueada por outro usuário durante Faturamento de Frete</DDTEXT>
+    </DD07V>
+   </DD07V_TAB>
+   <I18N_LANGS>
+    <LANGU>E</LANGU>
+   </I18N_LANGS>
+   <DD01_TEXTS>
+    <item>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DDTEXT>Código Status de Processamento</DDTEXT>
+    </item>
+   </DD01_TEXTS>
+   <DD07_TEXTS>
+    <item>
+     <VALPOS>0001</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>100</DOMVALUE_L>
+     <DDTEXT>Documento integrado</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0002</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>101</DOMVALUE_L>
+     <DDTEXT>Aguardando dados adicionais</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0003</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>200</DOMVALUE_L>
+     <DDTEXT>Cenário identificado</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0004</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>210</DOMVALUE_L>
+     <DDTEXT>OF Identificada</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0005</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>211</DOMVALUE_L>
+     <DDTEXT>Calculo de Custo OF efetuado</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0006</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>300</DOMVALUE_L>
+     <DDTEXT>Frete Faturado - TM</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0007</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>301</DOMVALUE_L>
+     <DDTEXT>Aguardando Faturamento de Frete</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0008</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>400</DOMVALUE_L>
+     <DDTEXT>MIRO memorizada</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0009</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>401</DOMVALUE_L>
+     <DDTEXT>MIRO confirmada</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0010</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>500</DOMVALUE_L>
+     <DDTEXT>Agrupamento efetuado</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0011</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>501</DOMVALUE_L>
+     <DDTEXT>Aguardando a realização do agrupamento</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0012</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>502</DOMVALUE_L>
+     <DDTEXT>Aguardando aprovação WF do agrupamento</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0013</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>503</DOMVALUE_L>
+     <DDTEXT>WF do agrupamento Rejeitado</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0014</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>600</DOMVALUE_L>
+     <DDTEXT>Pagamento efetuado</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0015</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>700</DOMVALUE_L>
+     <DDTEXT>Evento de rejeição realizado, aguardando retorno da SEFAZ</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0016</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>701</DOMVALUE_L>
+     <DDTEXT>Evento de rejeição realizado e confirmado pela SEFAZ</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0017</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>800</DOMVALUE_L>
+     <DDTEXT>Estorno total realizado</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0018</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>801</DOMVALUE_L>
+     <DDTEXT>Estorno realizado</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0019</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>802</DOMVALUE_L>
+     <DDTEXT>Estorno MIRO Débito Posterior realizado</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0020</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>803</DOMVALUE_L>
+     <DDTEXT>Estorno do agrupamento realizado</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0021</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>804</DOMVALUE_L>
+     <DDTEXT>Estorno da MIRO realizado</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0022</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>805</DOMVALUE_L>
+     <DDTEXT>Estorno da MIRO Débito Posterior realizado</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0023</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>806</DOMVALUE_L>
+     <DDTEXT>Pedido eliminado</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0024</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>900</DOMVALUE_L>
+     <DDTEXT>Documento cancelado</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0025</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>901</DOMVALUE_L>
+     <DDTEXT>Documento cancelado, reversão realizada</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0026</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>902</DOMVALUE_L>
+     <DDTEXT>Aguardando estorno do agrupamento</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0027</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>903</DOMVALUE_L>
+     <DDTEXT>Estorno do Doc. Faturamento de frete (DFF) realizado</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0028</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>904</DOMVALUE_L>
+     <DDTEXT>Aguardando estorno do Doc. Faturamento de frete (DFF)</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0029</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E01</DOMVALUE_L>
+     <DDTEXT>Cenário não identificado</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0030</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E02</DOMVALUE_L>
+     <DDTEXT>Código do transportador não encontrado</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0031</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E03</DOMVALUE_L>
+     <DDTEXT>Código do tomador não encontrado</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0032</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E04</DOMVALUE_L>
+     <DDTEXT>Código do remetente não encontrado</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0033</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E05</DOMVALUE_L>
+     <DDTEXT>Código do destinatário não encontrado</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0034</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E06</DOMVALUE_L>
+     <DDTEXT>Empresa e Filial não encontrados</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0035</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E07</DOMVALUE_L>
+     <DDTEXT>Cenário não configurado</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0036</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E08</DOMVALUE_L>
+     <DDTEXT>Erro - Ordem de Frete não identificada</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0037</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E09</DOMVALUE_L>
+     <DDTEXT>Erro ao criar a MIRO</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0038</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E10</DOMVALUE_L>
+     <DDTEXT>Erro ao realizar o estorno total</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0039</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E11</DOMVALUE_L>
+     <DDTEXT>Erro ao realizar o estorno</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0040</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E12</DOMVALUE_L>
+     <DDTEXT>Erro ao criar a MIRO Débito Posterior</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0041</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E13</DOMVALUE_L>
+     <DDTEXT>Sem anexo atribuído</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0042</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E14</DOMVALUE_L>
+     <DDTEXT>Sem anexo atribuído MIRO Débito Posterior</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0043</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E15</DOMVALUE_L>
+     <DDTEXT>Erro ao realizar o estorno do agrupamento</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0044</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E16</DOMVALUE_L>
+     <DDTEXT>Erro ao realizar o estorno da MIRO Débito Posterior</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0045</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E17</DOMVALUE_L>
+     <DDTEXT>Erro ao realizar o estorno da MIRO</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0046</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E18</DOMVALUE_L>
+     <DDTEXT>Erro ao eliminar o pedido</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0047</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E19</DOMVALUE_L>
+     <DDTEXT>Erro ao estornar os documentos após o cancelamento</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0048</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E20</DOMVALUE_L>
+     <DDTEXT>Erro ao confirmar o evento de rejeição na SEFAZ</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0049</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E21</DOMVALUE_L>
+     <DDTEXT>Erro Valor total MIRO igual Valor total XML</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0050</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E22</DOMVALUE_L>
+     <DDTEXT>Erro CNPJ XML igual CNPJ escritrurado no CT-e</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0051</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E23</DOMVALUE_L>
+     <DDTEXT>Erro Valor ICMS maior que ICMS do XML</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0052</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E24</DOMVALUE_L>
+     <DDTEXT>Erro Arredondamento não realizado</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0053</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E31</DOMVALUE_L>
+     <DDTEXT>Erro Calculo de Custo - TM</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0054</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E32</DOMVALUE_L>
+     <DDTEXT>Erro Faturamento de Frete - TM</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0055</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E33</DOMVALUE_L>
+     <DDTEXT>Erro Lançamento de Frete - TM</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0056</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E34</DOMVALUE_L>
+     <DDTEXT>Erro Calculo de custo Extra - TM</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0057</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E35</DOMVALUE_L>
+     <DDTEXT>Erro Distribuição de custo - TM</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0058</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E36</DOMVALUE_L>
+     <DDTEXT>Erro Liberar ABD - TM</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0059</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E37</DOMVALUE_L>
+     <DDTEXT>Nota Fiscal de referência, não encontrada.</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0060</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E38</DOMVALUE_L>
+     <DDTEXT>Erro ao realizar estorno do DFF</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0061</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E39</DOMVALUE_L>
+     <DDTEXT>Erro ao carregar arquivo</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0062</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E40</DOMVALUE_L>
+     <DDTEXT>Erro no agrupamento manual de faturas</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0063</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E41</DOMVALUE_L>
+     <DDTEXT>Erro no agrupamento de faturas</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0064</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E42</DOMVALUE_L>
+     <DDTEXT>Código do expedidor não encontrado</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0065</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E43</DOMVALUE_L>
+     <DDTEXT>Código do recebedor não encontrado</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0066</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E44</DOMVALUE_L>
+     <DDTEXT>OF bloqueada por outro usuário durante Criação de Custo</DDTEXT>
+    </item>
+    <item>
+     <VALPOS>0067</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>E45</DOMVALUE_L>
+     <DDTEXT>OF bloqueada por outro usuário durante Faturamento de Frete</DDTEXT>
+    </item>
+   </DD07_TEXTS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

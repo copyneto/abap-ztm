@@ -1,0 +1,12 @@
+unmanaged implementation in class zcltm_cockpit_frete_new_bd unique;
+
+define behavior for ZC_TM_COCKPIT_NEW alias _CockpitHeader
+{
+  delete ( features : instance );
+
+  action reprocessar;
+  action estorno parameter zc_tm_popup_estorno;
+  action ( features : instance ) evento_cte  parameter zc_tm_motivo_recusa  ;
+//  action ( features : instance ) agrupamento;
+  action consultar_status;
+}

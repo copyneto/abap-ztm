@@ -1,0 +1,74 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Log',
+                     typeNamePlural: 'Logs' },
+                     
+       presentationVariant: [{ sortOrder: [{ by: 'counter', direction:  #DESC }] }] }
+
+annotate view ZC_TM_MONITOR_GKO_LOG with
+{ 
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:            'Log',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Log',
+                 position:      10 }  ]
+ 
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI.hidden: true
+  acckey;
+  
+  @UI: {  lineItem:       [ { position: 10, label: 'Contador' } ],
+          identification: [ { position: 10, label: 'Contador' } ] }
+  counter;
+  
+  @UI: {  lineItem:       [ { position: 20, label: 'Status', criticality: 'crit_codstatus', criticalityRepresentation: #WITHOUT_ICON } ],
+          identification: [ { position: 20, label: 'Status', criticality: 'crit_codstatus', criticalityRepresentation: #WITHOUT_ICON } ] }
+  codstatus;
+  
+  @UI.hidden: true
+  desc_codstatus;
+  
+  @UI.hidden: true
+  crit_codstatus;
+  
+  @UI: {  lineItem:       [ { position: 30, label: 'Tipo de processamento', criticality: 'crit_tpprocess', criticalityRepresentation: #WITHOUT_ICON } ],
+          identification: [ { position: 30, label: 'Tipo de processamento', criticality: 'crit_tpprocess', criticalityRepresentation: #WITHOUT_ICON } ] }
+  tpprocess;
+  
+  @UI.hidden: true
+  desc_tpprocess;
+  
+  @UI.hidden: true
+  crit_tpprocess;
+  
+//  @UI: {  lineItem:       [ { position: 40, label: 'Documento gerado' } ],
+//          identification: [ { position: 40, label: 'Documento gerado' } ] }
+//  newdoc;
+  
+  @UI: {  lineItem:       [ { position: 50, label: 'Código' } ],
+          identification: [ { position: 50, label: 'Código' } ] }
+  codigo;
+  
+  @UI: {  lineItem:       [ { position: 60, label: 'Descrição' } ],
+          identification: [ { position: 60, label: 'Descrição' } ] }
+  desc_codigo;
+  
+  @UI: {  lineItem:       [ { position: 70, label: 'Data criação' } ],
+          identification: [ { position: 70, label: 'Data criação' } ] }
+  credat;
+  
+  @UI: {  lineItem:       [ { position: 80, label: 'Hora criação' } ],
+          identification: [ { position: 80, label: 'Hora criação' } ] }
+  cretim;
+  
+  @UI: {  lineItem:       [ { position: 90, label: 'Usuário criação' } ],
+          identification: [ { position: 90, label: 'Usuário criação' } ] }
+  crenam;
+  
+  @UI.hidden: true
+  desc_crenam;
+}

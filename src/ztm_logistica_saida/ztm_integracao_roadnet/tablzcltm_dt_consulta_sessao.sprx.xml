@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SPRX" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROXY_HEADER>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_CONSULTA_SESSAO</OBJ_NAME>
+     <OBJECT_M>TABL</OBJECT_M>
+     <OBJ_NAME_M>ZCLTM_DT_CONSULTA_SESSAO</OBJ_NAME_M>
+     <HASH_ID>B3C3E064894200492909400328264CDF6F459057</HASH_ID>
+     <ID>&lt;type&gt; dtConsultaSessao http://trescoracoes.com.br/transporte/rotas http://trescoracoes.com.br/transporte/rotas</ID>
+     <IFR_GLOBAL>X</IFR_GLOBAL>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>dtConsultaSessao</IFR_NAME>
+     <IFR_NSPCE>http://trescoracoes.com.br/transporte/rotas</IFR_NSPCE>
+     <IFR_GNSPCE>http://trescoracoes.com.br/transporte/rotas</IFR_GNSPCE>
+     <GEN_VERS>0005</GEN_VERS>
+     <PREFIX>ZCLTM_</PREFIX>
+     <CATEGORY>ifmtypedef</CATEGORY>
+     <X-ML_NSPCE>http://trescoracoes.com.br/transporte/rotas</X-ML_NSPCE>
+     <X-ML_NAME>dtConsultaSessao</X-ML_NAME>
+     <VERSION_ID>ce801423820611ec890200000085a0ca</VERSION_ID>
+    </item>
+   </PROXY_HEADER>
+   <PROXY_DATA>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_CONSULTA_SESSAO</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>CRITERIA</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>CRITERIA</OBJ_NAME2>
+     <OBJECT_R>TABL</OBJECT_R>
+     <OBJ_NAME_R>ZCLTM_DT_CONSULTA_SESSAO_CRITE</OBJ_NAME_R>
+     <ID>&lt;element&gt; criteria &lt;type&gt; dtConsultaSessao http://trescoracoes.com.br/transporte/rotas http://trescoracoes.com.br/transporte/rotas</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>criteria</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>CRITERIA</R3_NAME>
+     <R3_SEQNUM>000001</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_CONSULTA_SESSAO</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>OPTIONS</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>OPTIONS</OBJ_NAME2>
+     <OBJECT_R>TABL</OBJECT_R>
+     <OBJ_NAME_R>ZCLTM_DT_CONSULTA_SESSAO_OPTIO</OBJ_NAME_R>
+     <ID>&lt;element&gt; options &lt;type&gt; dtConsultaSessao http://trescoracoes.com.br/transporte/rotas http://trescoracoes.com.br/transporte/rotas</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>options</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>OPTIONS</R3_NAME>
+     <R3_SEQNUM>000002</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_CONSULTA_SESSAO</OBJ_NAME>
+     <OBJECT1>TABL</OBJECT1>
+     <OBJ_NAME1>ZCLTM_DT_CONSULTA_SESSAO</OBJ_NAME1>
+     <OBJECT2>TABL</OBJECT2>
+     <OBJ_NAME2>ZCLTM_DT_CONSULTA_SESSAO</OBJ_NAME2>
+     <ID>&lt;type&gt; dtConsultaSessao http://trescoracoes.com.br/transporte/rotas http://trescoracoes.com.br/transporte/rotas</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>dtConsultaSessao</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>TABL</R3_TYPE>
+     <R3_NAME>ZCLTM_DT_CONSULTA_SESSAO</R3_NAME>
+     <R3_TEXT>Proxy Structure (generated)</R3_TEXT>
+     <CATEGORY>ifmtypedef</CATEGORY>
+    </item>
+   </PROXY_DATA>
+  </asx:values>
+ </asx:abap>
+</abapGit>

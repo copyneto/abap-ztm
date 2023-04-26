@@ -1,0 +1,57 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+        typeName: 'Log',
+        typeNamePlural: 'Logs',
+
+        title: {
+            type: #STANDARD,
+            label: 'Documento',
+            value: 'Docnum'
+        }
+}
+annotate view ZC_TM_MDF_HIST_MOTORISTA with
+{
+
+  @UI.facet: [{ id: 'Log', purpose: #STANDARD, type: #IDENTIFICATION_REFERENCE, position: 10, label: 'Histórico' }]
+
+  @UI.hidden: true
+  Guid;
+
+  @UI: { lineItem: [{ position: 10 }], identification: [{ position: 10 }] }
+  Docnum;
+
+  @UI: { lineItem: [{ position: 20 }], identification: [{ position: 20 }] }
+  Data;
+
+  @UI: { lineItem: [{ position: 30 }], identification: [{ position: 30 }] }
+  Hora;
+
+  @UI: { lineItem: [{ position: 40 }], identification: [{ position: 40 }] }
+  Uname;
+
+  @UI: { lineItem: [{ position: 50 }], identification: [{ position: 50 }] }
+  //@Consumption.groupWithElement: 'Placa_New'
+  Placa_Old;
+
+  @UI: { lineItem: [{ position: 70 }], identification: [{ position: 70 }] }
+  Placa_New;
+
+  @UI: { lineItem: [{ position: 80 }], identification: [{ position: 80 }] }
+  //@Consumption.groupWithElement: 'Condutor_New'
+  Condutor_Old;
+
+  @UI: { lineItem: [{ position: 90 }], identification: [{ position: 90 }] }
+  Condutor_New;
+
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+}

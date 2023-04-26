@@ -1,0 +1,3 @@
+FUNCTION-POOL ZFGTM_GKO_INCM_CANCEL.        "MESSAGE-ID ..
+
+* INCLUDE LZFGTM_GKO_INCM_CANCELD...         " Local class definition

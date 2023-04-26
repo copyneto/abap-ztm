@@ -1,0 +1,3 @@
+sap.ui.define([],function(){"use strict";return{onActionNavigateLog:function(a){sap.ushell.Container.getService("CrossApplicationNavigation").isNavigationSupported([{target:{shellHash:"TRAFEGUS-log"}}]).done(function(a){a.map(function(a,e){if(a.supported+
+===true){var i=sap.ushell&&sap.ushell.Container&&sap.ushell.Container.getService("CrossApplicationNavigation").hrefForExternal({target:{semanticObject:"TRAFEGUS",action:"log"},params:{}})||"";sap.m.URLHelper.redirect(i,false)}else{alert("Usuário sem perm+
+issão para acessar o link")}})}).fail(function(){alert("Falha ao acessar o link")})}}});                                                                                                                                                                       

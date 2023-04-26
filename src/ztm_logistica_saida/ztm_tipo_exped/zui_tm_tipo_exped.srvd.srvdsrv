@@ -1,0 +1,4 @@
+@EndUserText.label: 'Tipo de expedição'
+define service ZUI_TM_TIPO_EXPED {
+  expose ZC_TIPO_EXPED;
+}

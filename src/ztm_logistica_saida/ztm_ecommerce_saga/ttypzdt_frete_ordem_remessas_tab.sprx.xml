@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SPRX" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROXY_HEADER>
+    <item>
+     <OBJECT>TTYP</OBJECT>
+     <OBJ_NAME>ZDT_FRETE_ORDEM_REMESSAS_TAB</OBJ_NAME>
+     <OBJECT_M>TABL</OBJECT_M>
+     <OBJ_NAME_M>ZDT_FRETE_ORDEM</OBJ_NAME_M>
+     <HASH_ID>7E30353A2E7C397B5059968A8C4E395AC253329E</HASH_ID>
+     <ID>TableOf&lt;type&gt; REMESSAS &lt;element&gt; REMESSAS &lt;type&gt; dtFreteOrdem http://trescoracoes.com.br/frete/ordem http://trescoracoes.com.br/frete/ordem</ID>
+     <IFR_TYPE>TableOftype</IFR_TYPE>
+     <IFR_NAME>REMESSAS</IFR_NAME>
+     <IFR_NSPCE>http://trescoracoes.com.br/frete/ordem</IFR_NSPCE>
+     <IFR_GNSPCE>http://trescoracoes.com.br/frete/ordem</IFR_GNSPCE>
+     <GEN_VERS>0005</GEN_VERS>
+     <PREFIX>Z</PREFIX>
+     <CATEGORY>ifmtypedef</CATEGORY>
+    </item>
+   </PROXY_HEADER>
+   <PROXY_DATA>
+    <item>
+     <OBJECT>TTYP</OBJECT>
+     <OBJ_NAME>ZDT_FRETE_ORDEM_REMESSAS_TAB</OBJ_NAME>
+     <OBJECT1>TTYP</OBJECT1>
+     <OBJ_NAME1>ZDT_FRETE_ORDEM_REMESSAS_TAB</OBJ_NAME1>
+     <OBJECT2>TTYP</OBJECT2>
+     <OBJ_NAME2>ZDT_FRETE_ORDEM_REMESSAS_TAB</OBJ_NAME2>
+     <OBJECT_R>TABL</OBJECT_R>
+     <OBJ_NAME_R>ZDT_FRETE_ORDEM_REMESSAS</OBJ_NAME_R>
+     <ID>TableOf&lt;type&gt; REMESSAS &lt;element&gt; REMESSAS &lt;type&gt; dtFreteOrdem http://trescoracoes.com.br/frete/ordem http://trescoracoes.com.br/frete/ordem</ID>
+     <IFR_TYPE>TableOftype</IFR_TYPE>
+     <IFR_NAME>REMESSAS</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>TTYP</R3_TYPE>
+     <R3_NAME>ZDT_FRETE_ORDEM_REMESSAS_TAB</R3_NAME>
+     <R3_TEXT>Proxy Table Type (generated)</R3_TEXT>
+     <CATEGORY>ifmtypedef</CATEGORY>
+    </item>
+   </PROXY_DATA>
+  </asx:values>
+ </asx:abap>
+</abapGit>

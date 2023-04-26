@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SPRX" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROXY_HEADER>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_INTELISPOST_STATUS</OBJ_NAME>
+     <OBJECT_M>TABL</OBJECT_M>
+     <OBJ_NAME_M>ZCLTM_DT_INTELISPOST_STATUS</OBJ_NAME_M>
+     <HASH_ID>760DA5CEF7EFD8FCD05E5AB4D615BB5EB4C82EBA</HASH_ID>
+     <ID>&lt;type&gt; dtIntelispostStatus http://trescoracoes.com.br/intelispost/status http://trescoracoes.com.br/intelispost/status</ID>
+     <IFR_GLOBAL>X</IFR_GLOBAL>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>dtIntelispostStatus</IFR_NAME>
+     <IFR_NSPCE>http://trescoracoes.com.br/intelispost/status</IFR_NSPCE>
+     <IFR_GNSPCE>http://trescoracoes.com.br/intelispost/status</IFR_GNSPCE>
+     <GEN_VERS>0005</GEN_VERS>
+     <PREFIX>ZCLTM_</PREFIX>
+     <CATEGORY>ifmtypedef</CATEGORY>
+     <X-ML_NSPCE>http://trescoracoes.com.br/intelispost/status</X-ML_NSPCE>
+     <X-ML_NAME>dtIntelispostStatus</X-ML_NAME>
+     <VERSION_ID>eeb9dfed9a3411ec840200000085a0ca</VERSION_ID>
+    </item>
+   </PROXY_HEADER>
+   <PROXY_DATA>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_INTELISPOST_STATUS</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>DELIVERYDOCUM</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>DELIVERYDOCUM</OBJ_NAME2>
+     <ID>&lt;element&gt; DELIVERYDOCUM &lt;type&gt; dtIntelispostStatus http://trescoracoes.com.br/intelispost/status http://trescoracoes.com.br/intelispost/status</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>DELIVERYDOCUM</IFR_NAME>
+     <IFR_TEXT>Remessa SAP</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>DELIVERYDOCUM</R3_NAME>
+     <R3_TEXT>Remessa SAP</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000004</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_INTELISPOST_STATUS</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>EVENT_CODE</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>EVENT_CODE</OBJ_NAME2>
+     <ID>&lt;element&gt; EVENT_CODE &lt;type&gt; dtIntelispostStatus http://trescoracoes.com.br/intelispost/status http://trescoracoes.com.br/intelispost/status</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>EVENT_CODE</IFR_NAME>
+     <IFR_TEXT>Registro dos Eventos</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>EVENT_CODE</R3_NAME>
+     <R3_TEXT>Registro dos Eventos</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000006</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_INTELISPOST_STATUS</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>NVOICE_KEY</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>NVOICE_KEY</OBJ_NAME2>
+     <ID>&lt;element&gt; NVOICE_KEY &lt;type&gt; dtIntelispostStatus http://trescoracoes.com.br/intelispost/status http://trescoracoes.com.br/intelispost/status</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>NVOICE_KEY</IFR_NAME>
+     <IFR_TEXT>Chave NF-e</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>NVOICE_KEY</R3_NAME>
+     <R3_TEXT>Chave NF-e</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000005</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_INTELISPOST_STATUS</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>PURCH_NO_C</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>PURCH_NO_C</OBJ_NAME2>
+     <ID>&lt;element&gt; PURCH_NO_C &lt;type&gt; dtIntelispostStatus http://trescoracoes.com.br/intelispost/status http://trescoracoes.com.br/intelispost/status</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>PURCH_NO_C</IFR_NAME>
+     <IFR_TEXT>ID pedido VTEX</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>PURCH_NO_C</R3_NAME>
+     <R3_TEXT>ID pedido VTEX</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000002</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_INTELISPOST_STATUS</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>SALESDOCUM</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>SALESDOCUM</OBJ_NAME2>
+     <ID>&lt;element&gt; SALESDOCUM &lt;type&gt; dtIntelispostStatus http://trescoracoes.com.br/intelispost/status http://trescoracoes.com.br/intelispost/status</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>SALESDOCUM</IFR_NAME>
+     <IFR_TEXT>Pedido SAP</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>SALESDOCUM</R3_NAME>
+     <R3_TEXT>Pedido SAP</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000003</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_INTELISPOST_STATUS</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>TOR_ID</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>TOR_ID</OBJ_NAME2>
+     <ID>&lt;element&gt; TOR_ID &lt;type&gt; dtIntelispostStatus http://trescoracoes.com.br/intelispost/status http://trescoracoes.com.br/intelispost/status</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>TOR_ID</IFR_NAME>
+     <IFR_TEXT>Identificador da rota</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>TOR_ID</R3_NAME>
+     <R3_TEXT>Identificador da rota</R3_TEXT>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000001</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_INTELISPOST_STATUS</OBJ_NAME>
+     <OBJECT1>TABL</OBJECT1>
+     <OBJ_NAME1>ZCLTM_DT_INTELISPOST_STATUS</OBJ_NAME1>
+     <OBJECT2>TABL</OBJECT2>
+     <OBJ_NAME2>ZCLTM_DT_INTELISPOST_STATUS</OBJ_NAME2>
+     <ID>&lt;type&gt; dtIntelispostStatus http://trescoracoes.com.br/intelispost/status http://trescoracoes.com.br/intelispost/status</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>dtIntelispostStatus</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>TABL</R3_TYPE>
+     <R3_NAME>ZCLTM_DT_INTELISPOST_STATUS</R3_NAME>
+     <R3_TEXT>Proxy Structure (generated)</R3_TEXT>
+     <CATEGORY>ifmtypedef</CATEGORY>
+    </item>
+   </PROXY_DATA>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZTM_INTEG_CUBAGEM</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Integração cubagem</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_INTEG_CUBAGEM</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp; &amp; &amp; &amp;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_INTEG_CUBAGEM</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Não há foram encontrados registros para os dados recebidos</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_INTEG_CUBAGEM</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Erro ao inserir dados SAP (zttm_cubagem)</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

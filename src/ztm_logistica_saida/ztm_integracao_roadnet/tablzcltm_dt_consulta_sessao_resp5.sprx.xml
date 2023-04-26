@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SPRX" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROXY_HEADER>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_CONSULTA_SESSAO_RESP5</OBJ_NAME>
+     <OBJECT_M>TABL</OBJECT_M>
+     <OBJ_NAME_M>ZCLTM_DT_CONSULTA_SESSAO_RES12</OBJ_NAME_M>
+     <HASH_ID>2CDE6B34D364D126539331785D3EE052A31E7BC4</HASH_ID>
+     <ID>&lt;type&gt; locationIdentity &lt;element&gt; locationIdentity &lt;type&gt; stops &lt;element&gt; stops &lt;type&gt; routes &lt;element&gt; routes &lt;type&gt; sessionIdentity &lt;element&gt; sessionIdentity &lt;type&gt; sessions &lt;element&gt; sessions &lt;type&gt; dtConsultaSessaoResp http://trescoracoes.com.br/transporte/rotas http://trescoracoes.com.br/transporte/rotas</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>locationIdentity</IFR_NAME>
+     <IFR_NSPCE>http://trescoracoes.com.br/transporte/rotas</IFR_NSPCE>
+     <IFR_GNSPCE>http://trescoracoes.com.br/transporte/rotas</IFR_GNSPCE>
+     <GEN_VERS>0005</GEN_VERS>
+     <PREFIX>ZCLTM_</PREFIX>
+     <CATEGORY>ifmtypedef</CATEGORY>
+     <X-ML_NSPCE>http://trescoracoes.com.br/transporte/rotas</X-ML_NSPCE>
+     <X-ML_NAME>locationIdentity</X-ML_NAME>
+    </item>
+   </PROXY_HEADER>
+   <PROXY_DATA>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_CONSULTA_SESSAO_RESP5</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>LOCATION_ID</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>LOCATION_ID</OBJ_NAME2>
+     <ID>&lt;element&gt; LocationID &lt;type&gt; locationIdentity &lt;element&gt; locationIdentity &lt;type&gt; stops &lt;element&gt; stops &lt;type&gt; routes &lt;element&gt; routes &lt;type&gt; sessionIdentity &lt;element&gt; sessionIdentity &lt;type&gt; sessions &lt;element&gt; sessions &lt;type&gt; dtConsultaSessaoResp http://trescoracoes.com.br/transporte/rotas http://trescoracoes.com.br/transporte/rotas</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>LocationID</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>LOCATION_ID</R3_NAME>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000003</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_CONSULTA_SESSAO_RESP5</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>LOCATION_TYPE</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>LOCATION_TYPE</OBJ_NAME2>
+     <ID>&lt;element&gt; LocationType &lt;type&gt; locationIdentity &lt;element&gt; locationIdentity &lt;type&gt; stops &lt;element&gt; stops &lt;type&gt; routes &lt;element&gt; routes &lt;type&gt; sessionIdentity &lt;element&gt; sessionIdentity &lt;type&gt; sessions &lt;element&gt; sessions &lt;type&gt; dtConsultaSessaoResp http://trescoracoes.com.br/transporte/rotas http://trescoracoes.com.br/transporte/rotas</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>LocationType</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>LOCATION_TYPE</R3_NAME>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000002</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_CONSULTA_SESSAO_RESP5</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>REGION_ID</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>REGION_ID</OBJ_NAME2>
+     <ID>&lt;element&gt; RegionID &lt;type&gt; locationIdentity &lt;element&gt; locationIdentity &lt;type&gt; stops &lt;element&gt; stops &lt;type&gt; routes &lt;element&gt; routes &lt;type&gt; sessionIdentity &lt;element&gt; sessionIdentity &lt;type&gt; sessions &lt;element&gt; sessions &lt;type&gt; dtConsultaSessaoResp http://trescoracoes.com.br/transporte/rotas http://trescoracoes.com.br/transporte/rotas</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>RegionID</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>REGION_ID</R3_NAME>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000001</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_CONSULTA_SESSAO_RESP5</OBJ_NAME>
+     <OBJECT1>TABL</OBJECT1>
+     <OBJ_NAME1>ZCLTM_DT_CONSULTA_SESSAO_RESP5</OBJ_NAME1>
+     <OBJECT2>TABL</OBJECT2>
+     <OBJ_NAME2>ZCLTM_DT_CONSULTA_SESSAO_RESP5</OBJ_NAME2>
+     <ID>&lt;type&gt; locationIdentity &lt;element&gt; locationIdentity &lt;type&gt; stops &lt;element&gt; stops &lt;type&gt; routes &lt;element&gt; routes &lt;type&gt; sessionIdentity &lt;element&gt; sessionIdentity &lt;type&gt; sessions &lt;element&gt; sessions &lt;type&gt; dtConsultaSessaoResp http://trescoracoes.com.br/transporte/rotas http://trescoracoes.com.br/transporte/rotas</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>locationIdentity</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>TABL</R3_TYPE>
+     <R3_NAME>ZCLTM_DT_CONSULTA_SESSAO_RESP5</R3_NAME>
+     <R3_TEXT>Proxy Structure (generated)</R3_TEXT>
+     <CATEGORY>ifmtypedef</CATEGORY>
+    </item>
+   </PROXY_DATA>
+  </asx:values>
+ </asx:abap>
+</abapGit>

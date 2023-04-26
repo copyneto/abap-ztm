@@ -1,0 +1,168 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Nota transportada',
+                     typeNamePlural: 'Notas transportadas' } }
+                     
+@UI.lineItem: [{criticality: 'CancelCriticality' }]
+
+annotate view ZC_TM_MDF_MUNICIPIO with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:              'HeaderNotaFiscal',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderNotaFiscal',
+                 position:        10 },
+
+               { id:              'DOCUMENTO',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Documento',
+                 position:        10 },
+
+                        { parentId:        'DOCUMENTO',
+                          id:              'Documento',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'Documento' },
+
+               { id:              'MARCADOR',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Marcadores',
+                 position:        30 },
+
+                        { parentId:        'MARCADOR',
+                          id:              'Marcador',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'Marcador' },
+
+               { id:              'SISTEMA',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Dados de sistema',
+                 position:        120 },
+
+                        { parentId:        'SISTEMA',
+                          id:              'Sistema',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'Sistema' } ]
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI.hidden: true
+  Guid;
+
+  @UI.hidden: true
+  OrdemFrete;
+
+  @UI: {  lineItem:       [ { position: 10, semanticObjectAction: 'zzdisplay', type: #WITH_INTENT_BASED_NAVIGATION } ],
+          fieldGroup:     [ { position: 10, qualifier: 'Documento' } ],
+          dataPoint:        { title: 'Nota Transportada', qualifier: 'HeaderNotaFiscal' } }
+  @Consumption.semanticObject:'NotaFiscal'
+  BR_NotaFiscal;
+
+  @UI: {  lineItem:       [ { position: 20 } ],
+          fieldGroup:     [ { position: 20, qualifier: 'Documento' } ] }
+  BR_NFeNumber;
+
+  @UI: { lineItem:        [ { position: 30, semanticObjectAction: 'displayRoad', type: #WITH_INTENT_BASED_NAVIGATION } ],
+         fieldGroup:      [ { position: 30, qualifier: 'Documento', semanticObjectAction: 'displayRoad', type: #WITH_INTENT_BASED_NAVIGATION } ] }
+  @Consumption.semanticObject:'FreightOrder'
+  FreightOrder;
+  
+  @UI: { lineItem:        [ { hidden: true, position: 30 } ],
+         fieldGroup:      [ { hidden: true, position: 30 } ] }
+  TransportationOrderUUID;
+  
+
+  @UI: { lineItem:        [ { position: 40 } ] }
+  AccessKey;
+
+  @UI: { lineItem:        [ { position: 50 } ] }
+  SegCodigoBarra;
+
+  @UI: { lineItem:        [ { position: 60 } ] }
+  Carga;
+
+  @UI.hidden: true
+  CargaText;
+
+  @UI: { lineItem:        [ { position: 70 } ] }
+  Descarga;
+
+  @UI.hidden: true
+  DescargaText;
+
+  @UI: { lineItem:        [ { position: 80, criticality: 'ReentregaCriticality' } ],
+         fieldGroup:      [ { position: 10, criticality: 'ReentregaCriticality', qualifier: 'Marcador' } ] }
+  Reentrega;
+
+  @UI.hidden: true
+  ReentregaCriticality;
+
+  @UI: { lineItem:        [ { position: 90, criticality: 'ManualCriticality' } ],
+         fieldGroup:      [ { position: 20, criticality: 'ManualCriticality', qualifier: 'Marcador' } ]  }
+  Manual;
+
+  @UI.hidden: true
+  ManualCriticality;
+  
+  @UI: { lineItem:        [ { position: 100, criticality: 'CancelCriticality' } ],
+         fieldGroup:      [ { position: 30, criticality: 'CancelCriticality', qualifier: 'Marcador' } ]  }
+  Cancel;
+
+  @UI.hidden: true
+  CancelCriticality;
+  
+  @UI: { lineItem:        [ { position: 110, criticality: 'NfExtrnCriticality' } ] }
+  NfExtrn; 
+  
+  @UI.hidden: true
+  NfExtrnCriticality;
+
+  @UI: { lineItem:        [ { position: 120 } ] }
+  BR_NFTotalAmount;
+  
+//  @UI.hidden: true
+//  SalesDocumentCurrency;
+
+  @UI.hidden: true
+  HeaderNetWeight;
+
+  @UI: { lineItem:        [ { position: 130, criticality: 'HeaderWeightUnitCriticality', criticalityRepresentation: #WITHOUT_ICON } ] }
+  HeaderGrossWeight;
+  
+//  @UI.hidden: true
+//  HeaderWeightUnit;
+
+//  @UI.hidden: true
+//  HeaderWeightUnit;
+
+  @UI.hidden: true
+  HeaderWeightUnitCriticality;
+
+  @UI: { lineItem:       [ { hidden: true } ],
+         fieldGroup:     [ { position: 10, qualifier: 'Sistema' } ] }
+  CreatedBy;
+
+  @UI: { lineItem:       [ { hidden: true } ],
+         fieldGroup:     [ { position: 20, qualifier: 'Sistema' } ] }
+  CreatedAt;
+
+  @UI: { lineItem:       [ { hidden: true } ],
+         fieldGroup:     [ { position: 30, qualifier: 'Sistema' } ] }
+  LastChangedBy;
+
+  @UI: { lineItem:       [ { hidden: true } ],
+         fieldGroup:     [ { position: 40, qualifier: 'Sistema' } ] }
+  LastChangedAt;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+}

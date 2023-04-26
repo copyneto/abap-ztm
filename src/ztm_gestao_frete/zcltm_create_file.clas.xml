@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLTM_CREATE_FILE</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Criação Arquivo Job</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_SEPARADOR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de um caractere</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>ALV_TO_ITAB</CMPNAME>
+     <SCONAME>ET_FCAT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Catálogo de campos para controle visor de listas</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_WRITE_PERMISSION</CMPNAME>
+     <SCONAME>IV_DIRECTORY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>nome do file</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_DIRECTORIES</CMPNAME>
+     <SCONAME>ZCXTM_GKO_PROCESS</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Erro ao buscar diretório</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_ENHO" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TOOL>BADI_IMPL</TOOL>
+   <SHORTTEXT>Controle genérico de documentos de modificação para business objects</SHORTTEXT>
+   <SPOT_NAME>/SCMTMS/BADI_GEN_CDO_CONTROL</SPOT_NAME>
+   <IMPL>
+    <ENH_BADI_IMPL_DATA>
+     <SPOT_NAME>/SCMTMS/BADI_GEN_CDO_CONTROL</SPOT_NAME>
+     <BADI_NAME>/SCMTMS/BADI_GEN_CDO_CONTROL</BADI_NAME>
+     <IMPL_NAME>ZEITM_BADI_GEN_CDO_CONTROL</IMPL_NAME>
+     <IMPL_CLASS>ZCLTM_BADI_GEN_CDO_CONTROL</IMPL_CLASS>
+     <ACTIVE>X</ACTIVE>
+     <IMPL_SHORTTEXT>Implementação: Controle genérico de documentos de modificação para business objects</IMPL_SHORTTEXT>
+     <IMPL_SHORTTEXT_ID>005056B095991EED8E9C41B44A70F1D2</IMPL_SHORTTEXT_ID>
+    </ENH_BADI_IMPL_DATA>
+   </IMPL>
+   <SOTR>
+    <item>
+     <HEADER>
+      <CONCEPT>005056B095991EED8E9C3F0498EA91CE</CONCEPT>
+      <CREA_LAN>P</CREA_LAN>
+      <TRALA_TYPE>1</TRALA_TYPE>
+      <OBJID_VEC>AAI=</OBJID_VEC>
+     </HEADER>
+     <ENTRIES>
+      <SOTR_TEXT>
+       <CONCEPT>005056B095991EED8E9C3F0498EA91CE</CONCEPT>
+       <LANGU>P</LANGU>
+       <LFD_NUM>0001</LFD_NUM>
+       <FLAG_CNTXT>X</FLAG_CNTXT>
+       <STATUS>R</STATUS>
+       <LENGTH>255</LENGTH>
+       <TEXT>Controle genérico de documentos de modificação para business objects</TEXT>
+      </SOTR_TEXT>
+     </ENTRIES>
+    </item>
+    <item>
+     <HEADER>
+      <CONCEPT>005056B095991EED8E9C41B44A70F1D2</CONCEPT>
+      <CREA_LAN>P</CREA_LAN>
+      <TRALA_TYPE>1</TRALA_TYPE>
+      <OBJID_VEC>AAI=</OBJID_VEC>
+     </HEADER>
+     <ENTRIES>
+      <SOTR_TEXT>
+       <CONCEPT>005056B095991EED8E9C41B44A70F1D2</CONCEPT>
+       <LANGU>P</LANGU>
+       <LFD_NUM>0001</LFD_NUM>
+       <FLAG_CNTXT>X</FLAG_CNTXT>
+       <STATUS>R</STATUS>
+       <LENGTH>255</LENGTH>
+       <TEXT>Implementação: Controle genérico de documentos de modificação para business objects</TEXT>
+      </SOTR_TEXT>
+     </ENTRIES>
+    </item>
+   </SOTR>
+   <SOTR_USE>
+    <SOTR_USE>
+     <PGMID>R3TR</PGMID>
+     <OBJECT>ENHO</OBJECT>
+     <OBJ_NAME>ZENH_TM_BADI_GEN_CDO_CONTROL</OBJ_NAME>
+     <CONCEPT>005056B095991EED8E9C3F0498EA91CE</CONCEPT>
+     <LFD_NUM>0001</LFD_NUM>
+    </SOTR_USE>
+    <SOTR_USE>
+     <PGMID>R3TR</PGMID>
+     <OBJECT>ENHO</OBJECT>
+     <OBJ_NAME>ZENH_TM_BADI_GEN_CDO_CONTROL</OBJ_NAME>
+     <CONCEPT>005056B095991EED8E9C41B44A70F1D2</CONCEPT>
+     <LFD_NUM>0001</LFD_NUM>
+    </SOTR_USE>
+   </SOTR_USE>
+  </asx:values>
+ </asx:abap>
+</abapGit>

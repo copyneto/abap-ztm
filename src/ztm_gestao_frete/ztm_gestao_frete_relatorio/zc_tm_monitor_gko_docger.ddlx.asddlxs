@@ -1,0 +1,32 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Documento gerado',
+                     typeNamePlural: 'Documentos gerados' } }
+
+annotate view ZC_TM_MONITOR_GKO_DOCGER with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:            'Docgerado',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Documento gerado',
+                 position:      10 }  ]  
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI.hidden: true
+  acckey;
+
+  @UI: {  lineItem:       [ { position: 10, label: 'Documento gerado' } ],
+          identification: [ { position: 10, label: 'Documento gerado' } ] }
+  docgerado;
+
+  @UI: {  lineItem:       [ { position: 20, label: 'Tipo Documento' } ],
+          identification: [ { position: 20, label: 'Tipo Documento' } ] }
+  tipodoc;
+
+  @UI.hidden: true
+  desc_tipodoc;
+}

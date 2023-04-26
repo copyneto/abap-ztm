@@ -1,0 +1,32 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: { typeName: 'Determinação Regras Serviço'}
+annotate view ZC_TM_PCOCKPIT010
+    with 
+{
+  @UI.facet: [
+    { label: 'Valores',
+      id: 'Valores',
+      type: #COLLECTION,
+      position: 10 },
+
+    { label: ' ',
+      position: 10,
+      type: #IDENTIFICATION_REFERENCE,
+      parentId: 'Valores' }
+  ]
+
+@UI.hidden: true
+Guid;
+@UI: { lineItem:       [{position: 10}],
+       identification: [{position: 10}]}  
+Saknr;
+@UI: { lineItem:       [{position: 20}],
+       identification: [{position: 20}]}
+RemUf;
+@UI: { lineItem:       [{position: 30}],
+       identification: [{position: 30}]}  
+Mwskz;
+@UI: { lineItem:       [{position: 40}],
+       identification: [{position: 40}]} 
+Nftype;
+}

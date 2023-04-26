@@ -1,0 +1,52 @@
+managed;
+
+define behavior for ZI_TM_MDF_MOTORISTA_CHANGE alias _Writer
+implementation in class ZCLTM_MDF_MOTORISTA_CHANGE unique
+persistent table j_1bnfdoc
+lock master
+etag master Docnum
+{
+
+  association _Historico;
+
+  action ( features : instance ) changeMotorista parameter ZC_TM_MDF_MOTORISTA_POPUP;
+  action ( features : instance ) changePlaca parameter ZC_TM_MDF_PLACA_POPUP;
+  action ( features : instance ) removeMotoristaPlaca;
+
+  mapping for j_1bnfdoc
+  {
+    Docnum = docnum;
+    Placa = zzplaca;
+    Motorista = zzmotorista;
+  }
+
+}
+
+define behavior for ZI_TM_MDF_HIST_MOTORISTA alias _Historico
+persistent table zttm_mdfe_hist
+lock dependent by _Writer
+{
+
+  association _Writer;
+
+  field ( readonly , numbering : managed ) Guid;
+  field ( readonly ) Docnum, Data, Hora, Condutor_Old, Condutor_New, Placa_Old, Placa_New, Uname;
+
+  mapping for zttm_mdfe_hist
+  {
+    Guid = guid;
+    Docnum = docnum;
+    Data = data;
+    Hora = hora;
+    Condutor_Old = condutor;
+    Condutor_New = condutor_novo;
+    Placa_Old = placa;
+    Placa_New = placa_nova;
+    Uname = uname;
+    Createdby = created_by;
+    Createdat = created_at;
+    Lastchangedby = last_changed_by;
+    Lastchangedat = last_changed_at;
+  }
+
+}

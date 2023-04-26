@@ -1,0 +1,77 @@
+@Metadata.layer: #CORE
+
+@UI: { headerInfo: { typeName: 'Log',
+                     typeNamePlural: 'Logs',
+                     title: { type: #STANDARD, value: 'acckey' } },
+
+        presentationVariant: [{ sortOrder: [{ by: 'Acckey', direction:  #DESC },
+                                      { by: 'Counter', direction:  #DESC }] }] }
+
+@UI.lineItem: [{criticality: 'CodstatusCrit' }]
+
+annotate entity zc_tm_cockpit_log with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:            'Log',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Logs',
+                 position:      10 }  ]
+
+  @UI.hidden: true
+  Acckey;
+
+  @UI.lineItem:       [ { position: 20 } ]
+  @UI.identification: [ { position: 20 } ]
+  Counter;
+
+  @UI.lineItem:       [ { position: 30, criticality: 'CodstatusCrit', criticalityRepresentation: #WITHOUT_ICON } ]
+  @UI.identification: [ { position: 30, criticality: 'CodstatusCrit', criticalityRepresentation: #WITHOUT_ICON } ]
+  Codstatus;
+
+  @UI.hidden: true
+  CodstatusText;
+
+  @UI.hidden: true
+  CodstatusCrit;
+
+  @UI.lineItem:       [ { position: 40, criticality: 'TpprocessCrit', criticalityRepresentation: #WITHOUT_ICON } ]
+  @UI.identification: [ { position: 40, criticality: 'TpprocessCrit', criticalityRepresentation: #WITHOUT_ICON } ]
+  Tpprocess;
+
+  @UI.hidden: true
+  TpprocessText;
+
+  @UI.hidden: true
+  TpprocessCrit;
+
+  @UI.lineItem:       [ { position: 50 } ]
+  @UI.identification: [ { position: 50 } ]
+  Newdoc;
+
+  @UI.lineItem:       [ { position: 60 } ]
+  @UI.identification: [ { position: 60 } ]
+  Codigo;
+
+  @UI.lineItem:       [ { position: 70 } ]
+  @UI.identification: [ { position: 70 } ]
+  DescCodigo;
+
+  @UI.lineItem:       [ { position: 80 } ]
+  @UI.identification: [ { position: 80 } ]
+  Credat;
+
+  @UI.lineItem:       [ { position: 90 } ]
+  @UI.identification: [ { position: 90 } ]
+  Cretim;
+
+  @UI.lineItem:       [ { position: 100 } ]
+  @UI.identification: [ { position: 100 } ]
+  Crenam;
+  
+  @UI.hidden: true
+  CrenamText;
+
+}

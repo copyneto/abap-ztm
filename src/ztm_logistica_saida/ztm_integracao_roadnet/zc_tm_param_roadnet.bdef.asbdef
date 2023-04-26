@@ -1,0 +1,6 @@
+projection;
+
+define behavior for ZC_TM_PARAM_ROADNET alias param
+{
+  use action importar;
+}

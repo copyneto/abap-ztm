@@ -1,0 +1,27 @@
+managed; // implementation in class zbp_i_cond_exped unique;
+
+define behavior for ZI_COND_EXPED alias _Condexped
+implementation in class Zcltm_beh_i_codexp unique
+persistent table zttm_cond_exped
+lock master
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  field ( readonly ) LastChangedAt, LastChangedBy, CreatedAt, CreatedBy, LocalLastChangedAt;
+  validation authorityCreate on save { create; }
+
+  mapping for zttm_cond_exped
+  {
+    CondExped = cond_exped;
+    Descricao = descricao;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}

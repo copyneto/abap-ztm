@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZTM_MDF</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Mensagens processamento MDF-e</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp; &amp; &amp; &amp;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Para seleção de nota preencher apenas uma das informações</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Para seleção de nota obrigatório preencher uma das informações</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Nenhum registro encontrado para NF-e &amp; emissor &amp;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Nenhum registro encontrado para chave &amp;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Nenhum registro encontrado para NF-e &amp; emissor &amp;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Dados adicionados para NF-e &amp; emissor &amp;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Dados MDF-e salvos com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>NF-e &amp; &amp; está vinculado a MDF-e &amp;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Centro &amp; não existe.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Informar no mínimo uma NF-e para gravação.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Selecionar uma linha.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Selecionar apenas uma linha.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>MDF-e &amp; não pode ser eliminado devido ao status.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>Status inválido para envio do XML.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>MDF-e &amp; enviado para aprovação com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>MDF-e &amp; enviado para encerramento com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>017</MSGNR>
+     <TEXT>MDF-e &amp; não pode ser encerrado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>018</MSGNR>
+     <TEXT>DF-e &amp; enviado para cancelamento com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>019</MSGNR>
+     <TEXT>MDF-e &amp; não pode ser cancelado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>020</MSGNR>
+     <TEXT>MDF-e &amp; de origem não possui status encerrado, rejeitado ou incompleto.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>021</MSGNR>
+     <TEXT>MDF-e &amp; sem status para entrar contigência.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>022</MSGNR>
+     <TEXT>MDF-e &amp; em contigência.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>023</MSGNR>
+     <TEXT>Destination para integração MDF-e não parametrizada na STVARV</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>024</MSGNR>
+     <TEXT>Placa &amp; não cadastrada!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>025</MSGNR>
+     <TEXT>Registro não pode ser eliminado. MDF-e já aprovado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>026</MSGNR>
+     <TEXT>Registro não pode ser eliminado. MDF-e já enviado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>027</MSGNR>
+     <TEXT>Status &amp; atualizado para MDF-e &amp;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>028</MSGNR>
+     <TEXT>MDF-e &amp; enviado para troca de motorista com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>029</MSGNR>
+     <TEXT>NF-e &amp; já está vinculado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>030</MSGNR>
+     <TEXT>MDF-e &amp; Autorizado. Não é permitido Reenvio!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>031</MSGNR>
+     <TEXT>Nr de documento &amp; não encontrado!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>032</MSGNR>
+     <TEXT>Cadastro de motorista não encontrado para MDF-e &amp;!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>033</MSGNR>
+     <TEXT>Contatar área de cadastros.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>034</MSGNR>
+     <TEXT>Parceiro de negócios bloqueado pelo sistema.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>035</MSGNR>
+     <TEXT>Parceiro informado não é motorista da frota.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>036</MSGNR>
+     <TEXT>O Parceiro informado não existe.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MDF</ARBGB>
+     <MSGNR>037</MSGNR>
+     <TEXT>Erro: Ordem de frete tem MDF-e autorizado</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,412 @@
+managed implementation in class zcltm_cockpit_tab unique;
+
+define behavior for ZI_TM_COCKPIT_TAB alias CockpitTab
+persistent table zttm_cockpit_tab
+lock master
+authorization master ( instance )
+{
+  update;
+  delete;
+  field ( readonly, numbering : managed )
+  Guid;
+
+  association _001 { create; }
+  association _003 { create; }
+  association _005 { create; }
+  association _006 { create; }
+  association _007 { create; }
+  association _008 { create; }
+  association _009 { create; }
+  association _010 { create; }
+  association _011 { create; }
+  association _012 { create; }
+  association _013 { create; }
+  association _014 { create; }
+  association _016 { create; }
+  association _017 { create; }
+  association _018 { create; }
+  association _019 { create; }
+
+  mapping for ZTTM_COCKPIT_TAB
+  {
+    Guid = guid;
+    Tabela = tabela;
+    Descricao = descricao;
+  }
+}
+
+define behavior for ZI_TM_PCOCKPIT001 alias _001
+persistent table zttm_pcockpit001
+lock dependent by _Cockpit
+authorization dependent by _Cockpit
+{
+  update;
+  delete;
+  association _Cockpit;
+
+  field ( readonly : update ) Guid, Id;
+  validation t001_Create on save { create; }
+  validation t001_id_05 on save { create; update; }
+
+  mapping for ZTTM_PCOCKPIT001
+  {
+    Guid = guid;
+    Id = id;
+    Parametro = parametro;
+  }
+}
+
+define behavior for ZI_TM_PCOCKPIT003 alias _003
+persistent table zttm_pcockpit003
+lock dependent by _Cockpit
+authorization dependent by _Cockpit
+{
+  update;
+  delete;
+  association _Cockpit;
+  //  field ( mandatory: ) Guid, Cfop, Cenario, Dmwskz;
+  field ( readonly : update ) Guid, Cfop, Cenario, Dmwskz;
+  validation t003_Create on save { create; }
+
+  mapping for ZTTM_PCOCKPIT003
+  {
+    Guid = guid;
+    Cfop = cfop;
+    Cenario = cenario;
+    Dmwskz = dmwskz;
+    Pmwskz = pmwskz;
+  }
+}
+
+define behavior for ZI_TM_PCOCKPIT005 alias _005
+persistent table zttm_pcockpit005
+lock dependent by _Cockpit
+authorization dependent by _Cockpit
+{
+  update;
+  delete;
+  association _Cockpit;
+
+  field ( readonly : update ) Guid, RegioFrom, RegioTo, Incoterm, Burks, Vstel;
+  validation t005_Create on save { create; }
+  mapping for ZTTM_PCOCKPIT005
+  {
+    Guid = guid;
+    RegioFrom = regio_from;
+    RegioTo = regio_to;
+    Incoterm = incoterm;
+    Burks = burks;
+    Vstel = vstel;
+    Mwskz = mwskz;
+  }
+}
+
+define behavior for ZI_TM_PCOCKPIT006 alias _006
+persistent table zttm_pcockpit006
+lock dependent by _Cockpit
+authorization dependent by _Cockpit
+{
+  update;
+  delete;
+  association _Cockpit;
+
+  field ( readonly : update ) Guid, Cfop;
+  validation t006_Create on save { create; }
+
+  determination convCfop on modify { field Cfop; create; }
+
+  mapping for ZTTM_PCOCKPIT006
+  {
+    Guid = guid;
+    Cfop = cfop;
+    CfopInt = cfop_int;
+  }
+}
+
+define behavior for ZI_TM_PCOCKPIT007 alias _007
+persistent table zttm_pcockpit007
+lock dependent by _Cockpit
+authorization dependent by _Cockpit
+{
+  update;
+  delete;
+  association _Cockpit;
+
+  field ( readonly : update ) Guid, Cfop;
+  validation t007_Create on save { create; }
+
+  determination convCfop1 on modify { field Cfop; create; }
+
+  mapping for ZTTM_PCOCKPIT007
+  {
+    Guid = guid;
+    Cfop = cfop;
+  }
+}
+
+define behavior for ZI_TM_PCOCKPIT008 alias _008
+persistent table zttm_pcockpit008
+lock dependent by _Cockpit
+authorization dependent by _Cockpit
+{
+  update;
+  delete;
+  association _Cockpit;
+
+  field ( readonly : update ) Guid, Dcfop;
+  validation t008_Create on save { create; }
+
+  determination convCfop2 on modify { field Dcfop, pCfop; create; }
+
+  mapping for ZTTM_PCOCKPIT008
+  {
+    Guid = guid;
+    Dcfop = dcfop;
+    Pcfop = pcfop;
+  }
+}
+
+define behavior for ZI_TM_PCOCKPIT009 alias _009
+persistent table zttm_pcockpit009
+lock dependent by _Cockpit
+authorization dependent by _Cockpit
+{
+  update;
+  delete;
+  association _Cockpit;
+//Categoria,
+  field ( readonly : update ) Guid,  TipoMat;
+  validation t009_Create on save { create; }
+  mapping for ZTTM_PCOCKPIT009
+  {
+    Guid = guid;
+//    Categoria = categoria;
+    TipoMat = tipo_mat;
+  }
+}
+
+define behavior for ZI_TM_PCOCKPIT010 alias _010
+persistent table zttm_pcockpit010
+lock dependent by _Cockpit
+authorization dependent by _Cockpit
+{
+  update;
+  delete;
+
+  association _Cockpit;
+
+  //field ( readonly : update ) Guid; //Saknr, RemUf;
+ field ( readonly : update ) Guid, mwskz, nftype; //Saknr, RemUf;
+
+  field ( readonly, numbering : managed )
+  Guid10;
+
+  validation t010_Create on save { create; }
+
+  mapping for ZTTM_PCOCKPIT010
+  {
+    Guid = guid;
+    Guid10 = guid10;
+    Saknr = saknr;
+    RemUf = rem_uf;
+    Mwskz = mwskz;
+    Nftype = nftype;
+  }
+}
+define behavior for ZI_TM_PCOCKPIT011 alias _011
+persistent table zttm_pcockpit011
+lock dependent by _Cockpit
+authorization dependent by _Cockpit
+{
+  update;
+  delete;
+  association _Cockpit;
+
+  field ( readonly : update ) Guid, Cenario, Incoterms, Rateio;
+  validation t011_Create on save { create; update; }
+
+  mapping for ZTTM_PCOCKPIT011
+  {
+    Guid = guid;
+    Cenario = cenario;
+    Incoterms = incoterm;
+    Rateio = rateio;
+    Dmwskz = dmwskz;
+    Pmwskz = pmwskz;
+    Gmwskz = gmwskz;
+  }
+}
+
+define behavior for ZI_TM_PCOCKPIT012 alias _012
+persistent table zttm_pcockpit012
+lock dependent by _Cockpit
+authorization dependent by _Cockpit
+{
+  update;
+  delete;
+  association _Cockpit;
+
+  field ( readonly : update ) Guid, Tpdoc, Model;
+  validation t012_Create on save { create; }
+
+  mapping for ZTTM_PCOCKPIT012
+  {
+    Guid = guid;
+    Tpdoc = tpdoc;
+    Model = model;
+    Nftype = nftype;
+  }
+}
+
+define behavior for ZI_TM_PCOCKPIT013 alias _013
+persistent table zttm_pcockpit013
+lock dependent by _Cockpit
+authorization dependent by _Cockpit
+{
+  update;
+  delete;
+  association _Cockpit;
+
+  field ( readonly : update ) Guid;
+  field ( readonly, numbering : managed ) Guid013;
+  field ( mandatory ) Uforig, Ufdest, RemBranch, TomBranch;
+
+  validation t013_Create on save { create; }
+
+  mapping for ZTTM_PCOCKPIT013
+  {
+    Guid = guid;
+    Guid013 = guid013;
+    Cenario = cenario;
+    Uforig = uforig;
+    Ufdest = ufdest;
+    RemBranch = rem_branch;
+    TomBranch = tom_branch;
+    DestBranch = dest_branch;
+    LocRet = loc_ret;
+    LocEnt = loc_ent;
+    Kostl = kostl;
+    Saknr = saknr;
+    descop = descop;
+  }
+}
+
+define behavior for ZI_TM_PCOCKPIT014 alias _014
+persistent table zttm_pcockpit014
+lock dependent by _Cockpit
+authorization dependent by _Cockpit
+{
+  update;
+  delete;
+  association _Cockpit;
+//TipoDoc,
+  field ( readonly : update ) Guid, EventoExtra;
+  validation t014_Create on save { create; }
+
+  mapping for ZTTM_PCOCKPIT014
+  {
+    Guid = guid;
+    TipoDoc = tipo_doc;
+    EventoExtra = evento_extra;
+    TpCustoTm = tp_custo_tm;
+    descricao = descricao;
+  }
+}
+
+define behavior for ZI_TM_PCOCKPIT016 alias _016
+persistent table zttm_pcockpit016
+lock dependent by _Cockpit
+authorization dependent by _Cockpit
+{
+  update;
+  delete;
+  association _Cockpit;
+
+  field ( readonly : update ) Guid, Acao, CodstatusDe;
+  validation t016_Create on save { create; }
+
+  mapping for ZTTM_PCOCKPIT016
+  {
+    Guid = guid;
+    Acao = acao;
+    CodstatusDe = codstatus_de;
+    CodstatusPara = codstatus_para;
+  }
+}
+
+define behavior for ZI_TM_PCOCKPIT017 alias _017
+persistent table zttm_pcockpit017
+lock dependent by _Cockpit
+authorization dependent by _Cockpit
+{
+  update;
+  delete;
+  association _Cockpit;
+//FornExt, EmpGrupo;
+  field ( readonly : update ) Guid, Bsart; // Ekgrp, Mtart;
+
+  field ( readonly, numbering : managed )
+  Guid17;
+
+  validation t017_Create on save { create; }
+  mapping for ZTTM_PCOCKPIT017
+  {
+    Guid = guid;
+    Guid17 = guid17;
+    Bsart = bsart;
+    Ekgrp = ekgrp;
+    Mtart = mtart;
+    FornExt = forn_ext;
+    EmpGrupo = emp_grupo;
+    Operacao = operacao;
+    tipooperacao = tipooperacao;
+    manual = manual;
+    iva = iva;
+    icms_xml = icms_xml;
+  }
+
+}
+define behavior for ZI_TM_PCOCKPIT018 alias _018
+persistent table zttm_pcockpit018
+lock dependent by _Cockpit
+authorization dependent by _Cockpit
+{
+  update;
+  delete;
+  association _Cockpit;
+
+  field ( readonly : update ) Guid, Vstel, Mtart, Mwskz;
+  validation t018_Create on save { create; }
+
+  mapping for ZTTM_PCOCKPIT018
+  {
+    Guid = guid;
+    Vstel = vstel;
+    Mtart = mtart;
+    Mwskz = mwskz;
+  }
+}
+
+define behavior for ZI_TM_PCOCKPIT019 alias _019
+persistent table zttm_pcockpit019
+lock dependent by _Cockpit
+authorization dependent by _Cockpit
+{
+  update;
+  delete;
+  association _Cockpit;
+
+  field ( readonly : update ) Guid, Cenario, IcmsXml, IvaNf, IvaFrete;
+  validation t019_Create on save
+  { create; }
+    //  validation validacmp_019 on save {field Cenario ;}
+    mapping for ZTTM_PCOCKPIT019
+    {
+      Guid = guid;
+      Cenario = cenario;
+      IcmsXml = icms_xml;
+      IvaNf = iva_nf;
+      IvaFrete = iva_frete;
+      movimentacao = movimentacao;
+    }
+  }

@@ -1,0 +1,521 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { title: { type: #STANDARD, value: 'FreightOrder' },
+                     typeName: 'Monitor MDF-e',
+                     typeNamePlural: 'Monitor MDF-e' },
+
+  presentationVariant: [{ sortOrder: [{ by: 'FreightOrder', direction:  #DESC },
+                                      { by: 'FreightUnit', direction:  #ASC },
+                                      { by: 'SalesDocument', direction:  #ASC },
+                                      { by: 'DeliveryDocument', direction:  #ASC },
+                                      { by: 'BillingDocument', direction:  #ASC },
+                                      { by: 'BR_NotaFiscal', direction:  #ASC },
+                                      { by: 'Driver', direction:  #ASC }] }] }
+
+annotate view ZC_TM_COCKPIT_FROTA_OLD with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [  { id:              'CABECALHO',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Cabeçalho',
+                 position:        10 },
+
+                        { parentId:        'CABECALHO',
+                          id:              'Cabecalho',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'Cabecalho' },
+
+                 { id:              'DADOS',
+                   isSummary:       true,
+                   type:            #COLLECTION,
+                   label:           'Dados',
+                   position:        20 },
+
+                        { parentId:        'DADOS',
+                          id:              'Dados',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'Dados' },
+
+                 { id:              'VEICULO',
+                   isSummary:       true,
+                   type:            #COLLECTION,
+                   label:           'Veículo',
+                   position:        30 },
+
+                        { parentId:        'VEICULO',
+                          id:              'Veiculo',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'Veiculo' },
+
+                 { id:              'PRODUTO',
+                   isSummary:       true,
+                   type:            #COLLECTION,
+                   label:           'Produto',
+                   position:        40 },
+
+                        { parentId:        'PRODUTO',
+                          id:              'Produto',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'Produto' },
+
+                 { id:              'PARADAORIGEM',
+                   isSummary:       true,
+                   type:            #COLLECTION,
+                   label:           'Parada Origem',
+                   position:        50 },
+
+                        { parentId:        'PARADAORIGEM',
+                          id:              'ParadaOrigem',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'ParadaOrigem' },
+
+                 { id:              'PARADADESTINO',
+                   isSummary:       true,
+                   type:            #COLLECTION,
+                   label:           'Parada Destino',
+                   position:        60 },
+
+                        { parentId:        'PARADADESTINO',
+                          id:              'ParadaDestino',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'ParadaDestino' },
+
+                 { id:              'EQUIPAMENTO',
+                   isSummary:       true,
+                   type:            #COLLECTION,
+                   label:           'Equipamento',
+                   position:        70 },
+
+                        { parentId:        'EQUIPAMENTO',
+                          id:              'Equipamento',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'Equipamento' },
+
+                 { id:              'MOTORISTA',
+                   isSummary:       true,
+                   type:            #COLLECTION,
+                   label:           'Motorista',
+                   position:        80 },
+
+                        { parentId:        'MOTORISTA',
+                          id:              'Motorista',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'Motorista' },
+
+                 { id:              'DESPESA',
+                   isSummary:       true,
+                   type:            #COLLECTION,
+                   label:           'Despesa',
+                   position:        90 },
+
+                        { parentId:        'DESPESA',
+                          id:              'Despesa',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'Despesa' },
+
+                 { id:              'TOTAL',
+                   isSummary:       true,
+                   type:            #COLLECTION,
+                   label:           'Total',
+                   position:        100 },
+
+                        { parentId:        'TOTAL',
+                          id:              'Total',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'Total' } ]
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+
+  @UI: {  lineItem:       [ { position: 10 } ],
+          fieldGroup:     [ { position: 10, qualifier: 'Cabecalho' } ],
+          selectionField: [ { position: 80 } ] }
+  FreightOrder;
+
+  @UI: {  lineItem:       [ { position: 20 } ],
+          fieldGroup:     [ { position: 20, qualifier: 'Cabecalho' } ] }
+  FreightUnit;
+
+  @UI: {  lineItem:       [ { position: 30 } ],
+          fieldGroup:     [ { position: 30, qualifier: 'Cabecalho' } ] }
+  SalesDocument;
+
+  @UI: {  lineItem:       [ { position: 40 } ],
+          fieldGroup:     [ { position: 40, qualifier: 'Cabecalho' } ] }
+  DeliveryDocument;
+
+  @UI: {  lineItem:       [ { position: 50 } ],
+          fieldGroup:     [ { position: 50, qualifier: 'Cabecalho' } ] }
+  BillingDocument;
+
+  @UI: {  lineItem:       [ { position: 60 } ],
+          fieldGroup:     [ { position: 60, qualifier: 'Cabecalho' } ] }
+  BR_NotaFiscal;
+
+  @UI.hidden: true
+  VehicleId;
+
+  @UI.hidden: true
+  ProductId;
+
+  @UI: {  lineItem:       [ { position: 70 } ],
+          fieldGroup:     [ { position: 10, qualifier: 'Dados' } ] }
+  Driver;
+
+  @UI.hidden: true
+  FreightOrderId;
+
+  @UI: {  lineItem:       [ { position: 80 } ],
+          fieldGroup:     [ { position: 20, qualifier: 'Dados' } ] }
+  MaxUtil;
+
+  @UI: {  lineItem:       [ { position: 90 } ],
+          fieldGroup:     [ { position: 30, qualifier: 'Dados' } ] }
+  CreatedOn;
+
+  @UI: {  lineItem:       [ { position: 100 } ],
+          fieldGroup:     [ { position: 40, qualifier: 'Dados' } ],
+          selectionField: [ { position: 90 } ] }
+  DistributionChannel;
+
+  @UI.hidden: true
+  DistributionChannelName;
+
+  @UI: {  lineItem:       [ { position: 110 } ],
+          fieldGroup:     [ { position: 50, qualifier: 'Dados' } ],
+          selectionField: [ { position: 100 } ] }
+  BR_NFNumber;
+
+  @UI: {  lineItem:       [ { position: 120 } ],
+          fieldGroup:     [ { position: 60, qualifier: 'Dados' } ] }
+  AccessKey;
+
+  @UI: {  lineItem:       [ { position: 130 } ],
+          fieldGroup:     [ { position: 10, qualifier: 'Veiculo' } ],
+          selectionField: [ { position: 10 } ] }
+  PlateNumber;
+
+  @UI: {  lineItem:       [ { position: 140 } ],
+          fieldGroup:     [ { position: 20, qualifier: 'Veiculo' } ],
+          selectionField: [ { position: 40 } ] }
+  EquipmentCode;
+
+  @UI.hidden: true
+  EquipmentCodeText;
+
+  @UI: {  lineItem:       [ { position: 150 } ],
+          fieldGroup:     [ { position: 10, qualifier: 'Produto' } ],
+          selectionField: [ { position: 70 } ] }
+  Consignee;
+
+  @UI.hidden: true
+  ConsigneeName;
+
+  @UI: {  lineItem:       [ { position: 160 } ],
+          fieldGroup:     [ { position: 20, qualifier: 'DadProdutoos' } ] }
+  ConsigneeCPF;
+
+  @UI.hidden: true
+  ConsigneeCPFText;
+
+  @UI: {  lineItem:       [ { position: 170 } ],
+          fieldGroup:     [ { position: 30, qualifier: 'Produto' } ] }
+  ConsigneeCNPJ;
+
+  @UI.hidden: true
+  ConsigneeCNPJText;
+
+  @UI: {  lineItem:       [ { position: 180 } ],
+          fieldGroup:     [ { position: 40, qualifier: 'Produto' } ] }
+  GrossWeightValue;
+
+  @UI: {  lineItem:       [ { position: 190 } ],
+          fieldGroup:     [ { position: 50, qualifier: 'Produto' } ] }
+  GrossWeightUnit;
+
+  @UI: {  lineItem:       [ { position: 200 } ],
+          fieldGroup:     [ { position: 60, qualifier: 'Produto' } ] }
+  GrossVolumeValue;
+
+  @UI: {  lineItem:       [ { position: 210 } ],
+          fieldGroup:     [ { position: 70, qualifier: 'Produto' } ] }
+  GrossVolumeUnit;
+
+  @UI: {  lineItem:       [ { position: 220 } ],
+          fieldGroup:     [ { position: 80, qualifier: 'Produto' } ] }
+  Product;
+
+  @UI.hidden: true
+  ProductText;
+
+  @UI: {  lineItem:       [ { position: 230 } ],
+          fieldGroup:     [ { position: 90, qualifier: 'Produto' } ],
+          selectionField: [ { position: 60 } ] }
+  Plant;
+
+  @UI.hidden: true
+  PlantName;
+
+  @UI: {  lineItem:       [ { position: 240 } ],
+          fieldGroup:     [ { position: 100, qualifier: 'Produto' } ] }
+  Company;
+
+  @UI.hidden: true
+  CompanyName;
+
+  @UI: {  lineItem:       [ { position: 250 } ],
+          fieldGroup:     [ { position: 10, qualifier: 'ParadaOrigem' } ] }
+  FirstStopKey;
+
+  @UI: {  lineItem:       [ { position: 260 } ],
+          fieldGroup:     [ { position: 20, qualifier: 'ParadaOrigem' } ] }
+  FirstStopNext;
+
+  @UI.hidden: true
+  FirstStopNextText;
+
+  @UI: {  lineItem:       [ { position: 270 } ],
+          fieldGroup:     [ { position: 30, qualifier: 'ParadaOrigem' } ] }
+  FirstLocationId;
+
+  @UI: {  lineItem:       [ { position: 280 } ],
+          fieldGroup:     [ { position: 40, qualifier: 'ParadaOrigem' } ],
+          selectionField: [ { position: 50 } ] }
+  FirstPeriod;
+
+  @UI: {  lineItem:       [ { position: 290 } ],
+          fieldGroup:     [ { position: 50, qualifier: 'ParadaOrigem' } ] }
+  FirstName;
+
+  @UI: {  lineItem:       [ { position: 300 } ],
+          fieldGroup:     [ { position: 60, qualifier: 'ParadaOrigem' } ] }
+  FirstCountryCode;
+
+  @UI: {  lineItem:       [ { position: 310 } ],
+          fieldGroup:     [ { position: 70, qualifier: 'ParadaOrigem' } ],
+          selectionField: [ { position: 110 } ] }
+  FirstRegion;
+  
+  @UI: {  lineItem:       [ { position: 320 } ],
+          fieldGroup:     [ { position: 80, qualifier: 'ParadaOrigem' } ],
+          selectionField: [ { position: 120 } ] }
+  FirstCityName;
+
+  @UI: {  lineItem:       [ { position: 330 } ],
+          fieldGroup:     [ { position: 90, qualifier: 'ParadaOrigem' } ] }
+  FirstAddressNumber;
+
+  @UI: {  lineItem:       [ { position: 340 } ],
+          fieldGroup:     [ { position: 100, qualifier: 'ParadaOrigem' } ] }
+  FirstTaxJurCode;
+
+  @UI.hidden: true
+  FirstTaxJurCodeText;
+
+  @UI: {  lineItem:       [ { position: 350 } ],
+          fieldGroup:     [ { position: 10, qualifier: 'ParadaDestino' } ] }
+  LastStopKey;
+
+  @UI: {  lineItem:       [ { position: 360 } ],
+          fieldGroup:     [ { position: 20, qualifier: 'ParadaDestino' } ] }
+  LastStopNext;
+
+  @UI.hidden: true
+  LastStopNextText;
+
+  @UI: {  lineItem:       [ { position: 370 } ],
+          fieldGroup:     [ { position: 30, qualifier: 'ParadaDestino' } ] }
+  LastLocationId;
+
+  @UI: {  lineItem:       [ { position: 380 } ],
+          fieldGroup:     [ { position: 40, qualifier: 'ParadaDestino' } ] }
+  LastPeriod;
+
+  @UI: {  lineItem:       [ { position: 390 } ],
+          fieldGroup:     [ { position: 50, qualifier: 'ParadaDestino' } ] }
+  LastName;
+
+  @UI: {  lineItem:       [ { position: 400 } ],
+          fieldGroup:     [ { position: 60, qualifier: 'ParadaDestino' } ] }
+  LastCountryCode;
+
+  @UI: {  lineItem:       [ { position: 410 } ],
+          fieldGroup:     [ { position: 70, qualifier: 'ParadaDestino' } ] }
+  LastRegion;
+
+  @UI: {  lineItem:       [ { position: 420 } ],
+          fieldGroup:     [ { position: 80, qualifier: 'ParadaDestino' } ] }
+  LastCityName;
+  
+  @UI: {  lineItem:       [ { position: 430 } ],
+          fieldGroup:     [ { position: 90, qualifier: 'ParadaDestino' } ] }
+  LastAddressNumber;
+
+  @UI: {  lineItem:       [ { position: 440 } ],
+          fieldGroup:     [ { position: 100, qualifier: 'ParadaDestino' } ] }
+  LastTaxJurCode;
+
+  @UI.hidden: true
+  LastTaxJurCodeText;
+
+  @UI: {  lineItem:       [ { position: 450 } ],
+          fieldGroup:     [ { position: 100, qualifier: 'ParadaDestino' } ] }
+  DistanceKm;
+
+  @UI: {  lineItem:       [ { position: 460 } ],
+          fieldGroup:     [ { position: 10, qualifier: 'Equipamento' } ] }
+  ValidityStartDate;
+
+  @UI: {  lineItem:       [ { position: 470 } ],
+          fieldGroup:     [ { position: 20, qualifier: 'Equipamento' } ] }
+  ValidityEndDate;
+
+  @UI: {  lineItem:       [ { position: 480 } ],
+          fieldGroup:     [ { position: 30, qualifier: 'Equipamento' } ],
+          selectionField: [ { position: 20 } ] }
+  AssetManufacturerName;
+
+  @UI: {  lineItem:       [ { position: 490 } ],
+          fieldGroup:     [ { position: 40, qualifier: 'Equipamento' } ] }
+  MaintenancePlant;
+
+  @UI: {  lineItem:       [ { position: 500 } ],
+          fieldGroup:     [ { position: 50, qualifier: 'Equipamento' } ],
+          selectionField: [ { position: 140 } ] }
+  EquipmentAge;
+
+  @UI: {  lineItem:       [ { position: 510 } ],
+          fieldGroup:     [ { position: 60, qualifier: 'Equipamento' } ] }
+  ConstructionYear;
+  
+  @UI: {  lineItem:       [ { position: 520 } ],
+          fieldGroup:     [ { position: 70, qualifier: 'Equipamento' } ] }
+  ConstructionMonth;
+  
+  @UI: {  lineItem:       [ { position: 530 } ],
+          fieldGroup:     [ { position: 80, qualifier: 'Equipamento' } ] }
+  ConstructionDate;
+
+  @UI: {  lineItem:       [ { position: 540 } ],
+          fieldGroup:     [ { position: 90, qualifier: 'Equipamento' } ] }
+  TechnicalObjectType;
+
+  @UI.hidden: true
+  TechnicalObjectTypeText;
+
+  @UI: {  lineItem:       [ { position: 550 } ],
+          fieldGroup:     [ { position: 80, qualifier: 'Equipamento' } ],
+          selectionField: [ { position: 30 } ] }
+  EquipmentCategory;
+
+  @UI.hidden: true
+  EquipmentCategoryText;
+
+  @UI: {  lineItem:       [ { position: 560 } ],
+          fieldGroup:     [ { position: 90, qualifier: 'Equipamento' } ],
+          selectionField: [ { position: 130 } ] }
+  EquipmentClass;
+  
+  @UI: {  lineItem:       [ { position: 570 } ],
+          fieldGroup:     [ { position: 140, qualifier: 'Equipamento' } ] }
+  InventoryNumber;
+
+  @UI: {  lineItem:       [ { position: 580 } ],
+          fieldGroup:     [ { position: 10, qualifier: 'Motorista' } ] }
+  DriverName;
+
+  @UI: {  lineItem:       [ { position: 590 } ],
+          fieldGroup:     [ { position: 10, qualifier: 'Despesa' } ] }
+  MeasureFuelVolume;
+
+  @UI: {  lineItem:       [ { position: 600 } ],
+          fieldGroup:     [ { position: 20, qualifier: 'Despesa' } ] }
+  MeasureFuelValue;
+
+  @UI: {  lineItem:       [ { position: 610 } ],
+          fieldGroup:     [ { position: 30, qualifier: 'Despesa' } ] }
+  MeasureFuelDistanceKm;
+
+  @UI: {  lineItem:       [ { position: 620 } ],
+          fieldGroup:     [ { position: 40, qualifier: 'Despesa' } ] }
+  MeasureDepreciationCost;
+
+  @UI: {  lineItem:       [ { position: 630 } ],
+          fieldGroup:     [ { position: 50, qualifier: 'Despesa' } ] }
+  MeasureWashingCost;
+
+  @UI: {  lineItem:       [ { position: 640 } ],
+          fieldGroup:     [ { position: 60, qualifier: 'Despesa' } ] }
+  MeasurePreventiveMaintCost;
+
+  @UI: {  lineItem:       [ { position: 650 } ],
+          fieldGroup:     [ { position: 70, qualifier: 'Despesa' } ] }
+  MeasureCorrectiveMaintCost;
+
+  @UI: {  lineItem:       [ { position: 660 } ],
+          fieldGroup:     [ { position: 80, qualifier: 'Despesa' } ] }
+  MeasureTiresCost;
+
+  @UI: {  lineItem:       [ { position: 670 } ],
+          fieldGroup:     [ { position: 90, qualifier: 'Despesa' } ] }
+  MeasureDocumentationCost;
+
+  @UI: {  lineItem:       [ { position: 680 } ],
+          fieldGroup:     [ { position: 100, qualifier: 'Despesa' } ] }
+  MeasureLaborCost;
+
+
+  @UI: {  lineItem:       [ { position: 690 } ],
+          fieldGroup:     [ { position: 10, qualifier: 'Total' } ] }
+  TotalSalesDocument;
+
+  @UI: {  lineItem:       [ { position: 700 } ],
+          fieldGroup:     [ { position: 20, qualifier: 'Total' } ] }
+  TotalCustomers;
+
+  @UI: {  lineItem:       [ { position: 710 } ],
+          fieldGroup:     [ { position: 30, qualifier: 'Total' } ] }
+  TotalWeightKg;
+
+  @UI: {  lineItem:       [ { position: 720 } ],
+          fieldGroup:     [ { position: 40, qualifier: 'Total' } ] }
+  TotalLoadingValue;
+  
+  @UI: {  lineItem:       [ { position: 730 } ],
+          fieldGroup:     [ { position: 50, qualifier: 'Total' } ] }
+  TotalKmPerLiter;
+
+  @UI: {  lineItem:       [ { position: 740 } ],
+          fieldGroup:     [ { position: 60, qualifier: 'Total' } ] }
+  TotalValue;
+
+  @UI: {  lineItem:       [ { position: 750 } ],
+          fieldGroup:     [ { position: 70, qualifier: 'Total' } ] }
+  TotalValuePerLiter;
+
+  @UI: {  lineItem:       [ { position: 760 } ],
+          fieldGroup:     [ { position: 80, qualifier: 'Total' } ] }
+  TotalValuePerKm;
+
+  @UI: {  lineItem:       [ { position: 770 } ],
+          fieldGroup:     [ { position: 90, qualifier: 'Total' } ] }
+  TotalValuePerKg;
+
+  @UI: {  lineItem:       [ { position: 780 } ],
+          fieldGroup:     [ { position: 100, qualifier: 'Total' } ] }
+  TotalValuePerKgPerCustomer;
+
+}

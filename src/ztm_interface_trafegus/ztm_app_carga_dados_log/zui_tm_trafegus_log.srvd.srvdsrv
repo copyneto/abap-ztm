@@ -1,0 +1,4 @@
+@EndUserText.label: 'Interface Trafegus - Mensagens de log'
+define service ZUI_TM_TRAFEGUS_LOG {
+  expose ZC_TM_TRAFEGUS_LOG;
+}

@@ -1,0 +1,150 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Parâmetro',
+    typeNamePlural: 'Parâmetros'
+    }}
+annotate view ZC_TM_COCKPIT_TAB
+    with 
+{
+@UI.facet: [
+    { id: '001',
+      label: 'Parâmetros de configurações globais',
+      purpose: #STANDARD,
+      position: 10,
+      type: #LINEITEM_REFERENCE,
+      targetElement: '_001',
+      hidden: #(Hidden001) },
+      
+    { id: '003',
+      label: 'Determinação do IVA – Detalhado',
+      purpose: #STANDARD,
+      position: 20,
+      type: #LINEITEM_REFERENCE,
+      targetElement: '_003',
+      hidden: #(Hidden003) },
+      
+    { id: '005',
+      label: '  Regra de seleção de IVAs',
+      purpose: #STANDARD,
+      position: 30,
+      type: #LINEITEM_REFERENCE,
+      targetElement: '_005',
+      hidden: #(Hidden005) },
+      
+    { id: '006',
+      label: 'Determinação Créd. rateio detalhado CFOP',
+      purpose: #STANDARD,
+      position: 40,
+      type: #LINEITEM_REFERENCE,
+      targetElement: '_006',
+      hidden: #(Hidden006) },
+      
+    { id: '007',
+      label: 'Determinação anexo GNRE CFOP',
+      purpose: #STANDARD,
+      position: 50,
+      type: #LINEITEM_REFERENCE,
+      targetElement: '_007',
+      hidden: #(Hidden007) },
+      
+    { id: '008',
+      label: 'Determinação CFOP MIRO',
+      purpose: #STANDARD,
+      position: 60,
+      type: #LINEITEM_REFERENCE,
+      targetElement: '_008',
+      hidden: #(Hidden008) },
+      
+    { id: '009',
+      label: '  Determinação produto acabado',
+      purpose: #STANDARD,
+      position: 70,
+      type: #LINEITEM_REFERENCE,
+      targetElement: '_009',
+      hidden: #(Hidden009) },
+      
+    { id: '010',
+      label: '  Determinação Regras Serviço',
+      purpose: #STANDARD,
+      position: 80,
+      type: #LINEITEM_REFERENCE,
+      targetElement: '_010',
+      hidden: #(Hidden010) },
+      
+    { id: '011',
+      label: 'Determinação Tipo de rateio',
+      purpose: #STANDARD,
+      position: 90,
+      type: #LINEITEM_REFERENCE,
+      targetElement: '_011',
+      hidden: #(Hidden011) },
+      
+    { id: '012',
+      label: 'Determinação categoria de NF',
+      purpose: #STANDARD,
+      position: 100,
+      type: #LINEITEM_REFERENCE,
+      targetElement: '_012',
+      hidden: #(Hidden012) },
+      
+    { id: '013',
+      label: 'Determinação Centro Custo/Conta Contábil',
+      purpose: #STANDARD,
+      position: 110,
+      type: #LINEITEM_REFERENCE,
+      targetElement: '_013',
+      hidden: #(Hidden013) },
+      
+    { id: '014',
+      label: 'Eventos Extras',
+      purpose: #STANDARD,
+      position: 120,
+      type: #LINEITEM_REFERENCE,
+      targetElement: '_014',
+      hidden: #(Hidden014) },
+      
+    { id: '016',
+      label: '  Status permitido',
+      purpose: #STANDARD,
+      position: 130,
+      type: #LINEITEM_REFERENCE,
+      targetElement: '_016',
+      hidden: #(Hidden016) },
+      
+    { id: '017',
+      label: 'Determinação de cenário Fretes diversos',
+      purpose: #STANDARD,
+      position: 140,
+      type: #LINEITEM_REFERENCE,
+      targetElement: '_017',
+      hidden: #(Hidden017) },
+      
+    { id: '018',
+      label: 'Determinação de IVA grupo de mercadoria',
+      purpose: #STANDARD,
+      position: 150,
+      type: #LINEITEM_REFERENCE,
+      targetElement: '_018',
+      hidden: #(Hidden018) },
+      
+    { id: '019',
+      label: 'Determinação de IVA por operação',
+      purpose: #STANDARD,
+      position: 160,
+      type: #LINEITEM_REFERENCE,
+      targetElement: '_019',
+      hidden: #(Hidden019) }
+      
+      
+      ]
+      
+      
+ @UI: { lineItem:        [ { position: 10, label: 'Tabela' } ],
+        identification:  [ { position: 10, label: 'Tabela' } ] }
+Tabela;
+ @UI: { lineItem:        [ { position: 20, label: 'Descrição' } ],
+        identification:  [ { position: 20, label: 'Descrição' } ] }
+Descricao;
+    
+}

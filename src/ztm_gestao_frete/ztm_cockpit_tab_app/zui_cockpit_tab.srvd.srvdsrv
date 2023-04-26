@@ -1,0 +1,20 @@
+@EndUserText.label: 'Serv. Definition Cockpit Tabelas Manut.'
+define service ZUI_COCKPIT_TAB {
+  expose ZC_TM_COCKPIT_TAB;
+  expose ZC_TM_PCOCKPIT001;
+  expose ZC_TM_PCOCKPIT003;
+  expose ZC_TM_PCOCKPIT005;
+  expose ZC_TM_PCOCKPIT006;
+  expose ZC_TM_PCOCKPIT007;
+  expose ZC_TM_PCOCKPIT008;
+  expose ZC_TM_PCOCKPIT009;
+  expose ZC_TM_PCOCKPIT010;
+  expose ZC_TM_PCOCKPIT011;
+  expose ZC_TM_PCOCKPIT012;
+  expose ZC_TM_PCOCKPIT013;
+  expose ZC_TM_PCOCKPIT014;
+  expose ZC_TM_PCOCKPIT016;
+  expose ZC_TM_PCOCKPIT017;
+  expose ZC_TM_PCOCKPIT018;
+  expose ZC_TM_PCOCKPIT019;
+}

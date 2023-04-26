@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SPRX" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROXY_HEADER>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ORDEM_FRETE_RESP</OBJ_NAME>
+     <OBJECT_M>TABL</OBJECT_M>
+     <OBJ_NAME_M>ZDT_ORDEM_FRETE_RESP</OBJ_NAME_M>
+     <HASH_ID>E3C0F5C09EA940FD16622C266DAA5802AD88FCE7</HASH_ID>
+     <ID>&lt;type&gt; dtOrdemFreteResp http://trescoracoes.com.br/frete/ordem http://trescoracoes.com.br/frete/ordem</ID>
+     <IFR_GLOBAL>X</IFR_GLOBAL>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>dtOrdemFreteResp</IFR_NAME>
+     <IFR_NSPCE>http://trescoracoes.com.br/frete/ordem</IFR_NSPCE>
+     <IFR_GNSPCE>http://trescoracoes.com.br/frete/ordem</IFR_GNSPCE>
+     <GEN_VERS>0005</GEN_VERS>
+     <PREFIX>Z</PREFIX>
+     <CATEGORY>ifmtypedef</CATEGORY>
+     <X-ML_NSPCE>http://trescoracoes.com.br/frete/ordem</X-ML_NSPCE>
+     <X-ML_NAME>dtOrdemFreteResp</X-ML_NAME>
+     <VERSION_ID>b3bb8be03e9f11ed930100000085a0ca</VERSION_ID>
+    </item>
+   </PROXY_HEADER>
+   <PROXY_DATA>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ORDEM_FRETE_RESP</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>ERROR</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>ERROR</OBJ_NAME2>
+     <OBJECT_R>TTYP</OBJECT_R>
+     <OBJ_NAME_R>ZDT_ORDEM_FRETE_RESP_ERROR_TAB</OBJ_NAME_R>
+     <ID>&lt;element&gt; Error &lt;type&gt; dtOrdemFreteResp http://trescoracoes.com.br/frete/ordem http://trescoracoes.com.br/frete/ordem</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>Error</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>L</IFR_TAGTYP>
+     <IFR_MAXOCC>65535</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>ERROR</R3_NAME>
+     <R3_SEQNUM>000003</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ORDEM_FRETE_RESP</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>SUCCESS</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>SUCCESS</OBJ_NAME2>
+     <OBJECT_R>TTYP</OBJECT_R>
+     <OBJ_NAME_R>ZDT_ORDEM_FRETE_RESP_SUCCE_TAB</OBJ_NAME_R>
+     <ID>&lt;element&gt; Success &lt;type&gt; dtOrdemFreteResp http://trescoracoes.com.br/frete/ordem http://trescoracoes.com.br/frete/ordem</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>Success</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>L</IFR_TAGTYP>
+     <IFR_MAXOCC>65535</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>SUCCESS</R3_NAME>
+     <R3_SEQNUM>000002</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ORDEM_FRETE_RESP</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>SUCESSO</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>SUCESSO</OBJ_NAME2>
+     <OBJECT_R>TTYP</OBJECT_R>
+     <OBJ_NAME_R>ZDT_ORDEM_FRETE_RESP_SUCES_TAB</OBJ_NAME_R>
+     <ID>&lt;element&gt; Sucesso &lt;type&gt; dtOrdemFreteResp http://trescoracoes.com.br/frete/ordem http://trescoracoes.com.br/frete/ordem</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>Sucesso</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>L</IFR_TAGTYP>
+     <IFR_MAXOCC>65535</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>SUCESSO</R3_NAME>
+     <R3_SEQNUM>000001</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ORDEM_FRETE_RESP</OBJ_NAME>
+     <OBJECT1>TABL</OBJECT1>
+     <OBJ_NAME1>ZDT_ORDEM_FRETE_RESP</OBJ_NAME1>
+     <OBJECT2>TABL</OBJECT2>
+     <OBJ_NAME2>ZDT_ORDEM_FRETE_RESP</OBJ_NAME2>
+     <ID>&lt;type&gt; dtOrdemFreteResp http://trescoracoes.com.br/frete/ordem http://trescoracoes.com.br/frete/ordem</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>dtOrdemFreteResp</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>TABL</R3_TYPE>
+     <R3_NAME>ZDT_ORDEM_FRETE_RESP</R3_NAME>
+     <R3_TEXT>Proxy Structure (generated)</R3_TEXT>
+     <CATEGORY>ifmtypedef</CATEGORY>
+    </item>
+   </PROXY_DATA>
+  </asx:values>
+ </asx:abap>
+</abapGit>

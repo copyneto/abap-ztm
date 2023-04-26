@@ -1,0 +1,5 @@
+CLASS zcltm_mdf_percurso DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_tm_mdf_percurso.
+ENDCLASS.
+
+CLASS zcltm_mdf_percurso IMPLEMENTATION.
+ENDCLASS.

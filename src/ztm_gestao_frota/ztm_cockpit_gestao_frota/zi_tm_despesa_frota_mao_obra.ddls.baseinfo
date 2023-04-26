@@ -1,0 +1,17 @@
+{
+"BASEINFO":
+{
+"FROM":
+[
+"ZI_TM_DESPESA_FROTA_MAO_OBRA2P",
+"ZI_TM_DESPESA_FROTA_MAO_OBRA2T"
+],
+"ASSOCIATED":
+[],
+"BASE":
+[],
+"ANNO_REF":
+[],
+"VERSION":0
+}
+}

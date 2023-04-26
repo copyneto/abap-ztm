@@ -1,0 +1,86 @@
+unmanaged;
+
+// ------------------------------------------------------
+// Behavior: Parâmetros Roadnet
+// ------------------------------------------------------
+
+define behavior for ZC_TM_PARAM_ROADNET_NEW alias _Roadnet
+implementation in class zcltm_param_roadnet_new unique
+lock master
+{
+
+  association _Entrega;
+  association _CrossDocking;
+  association _Redespacho;
+  association _Log;
+
+//  action ( features : instance ) importar;
+}
+
+// ------------------------------------------------------
+// Behavior: Sessão Entrega
+// ------------------------------------------------------
+
+define behavior for ZC_TM_PARAM_ROADNET_NEW_ENTR alias _Entrega
+implementation in class zcltm_param_roadnet_new_entr unique
+lock dependent by _Roadnet
+{
+  action ( features : instance ) importar_entr;
+
+  association _Roadnet;
+
+  field ( readonly )
+  centro,
+  session_data;
+}
+
+// ------------------------------------------------------
+// Behavior: Sessão Cross Docking
+// ------------------------------------------------------
+
+define behavior for ZC_TM_PARAM_ROADNET_NEW_CROS alias _CrossDocking
+implementation in class zcltm_param_roadnet_new_cros unique
+lock dependent by _Roadnet
+{
+  action ( features : instance ) importar_cros;
+
+  association _Roadnet;
+
+  field ( readonly )
+  centro,
+  session_data;
+}
+
+// ------------------------------------------------------
+// Behavior: Sessão Redespacho
+// ------------------------------------------------------
+
+define behavior for ZC_TM_PARAM_ROADNET_NEW_REDE alias _Redespacho
+implementation in class zcltm_param_roadnet_new_rede unique
+lock dependent by _Roadnet
+{
+  action ( features : instance ) importar_rede;
+
+  association _Roadnet;
+
+  field ( readonly )
+  centro,
+  session_data;
+}
+
+// ------------------------------------------------------
+// Behavior: Log
+// ------------------------------------------------------
+
+define behavior for ZC_TM_PARAM_ROADNET_NEW_LOG alias _Log
+implementation in class zcltm_param_roadnet_new_log unique
+lock dependent by _Roadnet
+{
+  action apagar_log;
+
+  association _Roadnet;
+
+  field ( readonly )
+  centro,
+  session_data;
+}

@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLTM_CHECK_QTD_FU_IN_FO</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Valida Quantidade de UFs na FO</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>001</KEY>
+     <ENTRY>Não permitido mais de uma FU</ENTRY>
+     <LENGTH>56</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>002</KEY>
+     <ENTRY>em FO tipo</ENTRY>
+     <LENGTH>25</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>003</KEY>
+     <ENTRY>FO com MDF-e Aprovado,</ENTRY>
+     <LENGTH>44</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>004</KEY>
+     <ENTRY>inserção de FU não permitida.</ENTRY>
+     <LENGTH>58</LENGTH>
+    </item>
+   </TPOOL>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>CHECK_FO_STATUS_100</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Valida Código de status do Documento</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CHECK_FO_TYPE_1030</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Valida qtde de FUs na FO</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_FO_STATUS_100</CMPNAME>
+     <SCONAME>EO_MESSAGE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Interface of Message Object</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_FO_STATUS_100</CMPNAME>
+     <SCONAME>ET_FAILED_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Key Table</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_FO_STATUS_100</CMPNAME>
+     <SCONAME>IO_READ</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Interface to Read Data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_FO_STATUS_100</CMPNAME>
+     <SCONAME>IS_CTX</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Context Information for Validations</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_FO_STATUS_100</CMPNAME>
+     <SCONAME>IT_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Key Table</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_FO_STATUS_100</CMPNAME>
+     <SCONAME>IT_TOR_DATA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Root Node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_FO_TYPE_1030</CMPNAME>
+     <SCONAME>EO_MESSAGE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Interface of Message Object</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_FO_TYPE_1030</CMPNAME>
+     <SCONAME>ET_FAILED_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Key Table</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_FO_TYPE_1030</CMPNAME>
+     <SCONAME>IO_READ</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Interface to Read Data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_FO_TYPE_1030</CMPNAME>
+     <SCONAME>IS_CTX</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Context Information for Validations</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_FO_TYPE_1030</CMPNAME>
+     <SCONAME>IT_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Key Table</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

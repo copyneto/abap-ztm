@@ -1,0 +1,17 @@
+projection;
+
+define behavior for ZC_TM_COCKPIT alias _CockpitHeader
+{
+
+  use action reprocessar;
+  use action estorno;
+  use action evento_cte;
+  use action agrupamento;
+  use action consultar_status;
+  use association _log;
+}
+
+define behavior for zc_tm_cockpit_log alias _CockpitItemLog
+{
+use association _Cockpit;
+}

@@ -1,0 +1,6 @@
+@EndUserText.label: 'Cockpit para Prestação de Contas'
+define service ZUI_TM_PRESTACAO_CONTAS {
+  expose ZC_TM_COCKPIT_PRESTACAO_CONTAS as Cockpit;
+  expose ZC_TM_COCKPIT_ITEM_EXECUCAO as Execucao;
+  expose ZI_TM_VH_TRANSEVENT_POPUP_STAT as EventoPopupStat;
+}

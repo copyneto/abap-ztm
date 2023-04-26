@@ -1,0 +1,11 @@
+unmanaged implementation in class zcltm_mdf_cockpit_behavior unique;
+
+define behavior for ZC_TM_MDF_COCKPIT alias cockpit
+{
+  action ( features : instance ) verificar;
+  action ( features : instance ) enviarMdf;
+  action ( features : instance ) cancelar;
+  action ( features : instance ) encerrar;
+  action ( features : instance ) motorista parameter ZC_TM_MDF_MOTORISTA_POPUP;
+  action ( features : instance ) criarRefMdfe;
+}

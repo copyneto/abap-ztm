@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv.Def. Log CTe NFe'
+define service ZUI_TM_LOG_CTE_NFE {
+  expose ZC_TM_LOG_CTE_NFE;
+}

@@ -1,0 +1,98 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { title: { type: #STANDARD, value: 'FreightOrder' },
+                     typeName: 'Mensagem',
+                     typeNamePlural: 'Mensagens' },
+  presentationVariant: [{ sortOrder: [{ by: 'FreightOrder', direction:  #DESC },
+                                      { by: 'ContadorItf', direction:  #DESC },
+                                      { by: 'ContadorMsg', direction:  #DESC }] }] }
+
+@UI.lineItem: [{criticality: 'TipoMensagemCrit' }]
+
+annotate view ZC_TM_TRAFEGUS_LOG with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:            'Log',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Log',
+                 position:      10 }  ]
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+
+  @UI.lineItem:        [{ position: 10, semanticObjectAction: 'display', type: #WITH_INTENT_BASED_NAVIGATION }]
+  @UI.identification:  [{ position: 10, semanticObjectAction: 'display', type: #WITH_INTENT_BASED_NAVIGATION }]
+  @UI.selectionField:  [{ position: 10 }]
+  @Consumption.semanticObject:'FreightOrder'
+  FreightOrder;
+
+  @UI.lineItem:        [{ position: 20 }]
+  @UI.identification:  [{ position: 20 }]
+  ContadorItf;
+
+  @UI.lineItem:        [{ position: 30 }]
+  @UI.identification:  [{ position: 30 }]
+  ContadorMsg;
+
+  @UI.lineItem:        [{ position: 40 }]
+  @UI.identification:  [{ position: 40 }]
+  @UI.selectionField:  [{ position: 40 }]
+  CodStatus;
+
+  @UI.lineItem:        [{ position: 50 }]
+  @UI.identification:  [{ position: 50 }]
+  @UI.selectionField:  [{ position: 50 }]
+  CodViagem;
+
+  //TipoMensagem;
+
+  @UI.hidden: true
+  TipoMensagemTxt;
+
+  @UI.hidden: true
+  TipoMensagemCrit;
+
+  @UI.lineItem:        [{ position: 70, criticality: 'TipoMensagemCrit', criticalityRepresentation: #WITHOUT_ICON }]
+  @UI.identification:  [{ position: 70, criticality: 'TipoMensagemCrit', criticalityRepresentation: #WITHOUT_ICON }]
+  Mensagem;
+
+  @UI.lineItem:        [{ position: 80 }]
+  @UI.identification:  [{ position: 80 }]
+  Valor;
+
+  @UI.lineItem:        [{ position: 90 }]
+  @UI.identification:  [{ position: 90 }]
+  Campo;
+
+  @UI.lineItem:        [{ position: 100 }]
+  @UI.identification:  [{ position: 100 }]
+  LinkMapaVeiculoViagem;
+
+  @UI.lineItem:        [{ position: 110 }]
+  @UI.identification:  [{ position: 110 }]
+  CreatedBy;
+
+  @UI.hidden: true
+  CreatedByName;
+
+  @UI.lineItem:        [{ position: 120 }]
+  @UI.identification:  [{ position: 120 }]
+  CreatedAt;
+
+  //LastChangedBy;
+
+  @UI.hidden: true
+  LastChangedByName;
+
+  //LastChangedAt;
+
+  //LocalLastChangedAt;
+  
+  @UI.lineItem:        [{ position: 130 }]
+  @UI.identification:  [{ position: 130 }]
+  TransportationOrderUUID;
+
+}

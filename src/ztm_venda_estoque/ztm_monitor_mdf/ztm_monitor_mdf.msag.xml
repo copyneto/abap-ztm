@@ -1,0 +1,734 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Monitor MDF-e</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp;1&amp;2&amp;3&amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Falha ao salvar as informações IDE.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Falha ao salvar as informações adicionais.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>MDF-e agrupada com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Falha ao salvar os municípios de carregamento.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Falha ao salvar os municípios de descarregamento.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Informar apenas CPF ou CNPJ.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Informar apenas números no campo &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Insira um código com tamanho máximo de &amp;1 caracteres.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Falha ao salvar os dados de municípios e notas transportadas.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Nenhuma nota fiscal informada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>As notas fiscais informadas já constam na lista.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Lista de notas fiscais atualizada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>O(s) documento(s) informado(s) faz(em) parte de outro agrupamento.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>O Parceiro informado não existe ou não possui CPF.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>O Parceiro informado não existe.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>O Parceiro informado não existe ou não possui CNPJ.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>017</MSGNR>
+     <TEXT>Favor marcar antes de cadastrar proprietário diferente.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>018</MSGNR>
+     <TEXT>Falha ao eliminar antigos os municípios de descarregamento.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>019</MSGNR>
+     <TEXT>Falha ao eliminar antigos os municípios de carregamento.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>020</MSGNR>
+     <TEXT>Falha ao salvar as informações de cabeçalho.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>021</MSGNR>
+     <TEXT>MDF-e não encontrada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>022</MSGNR>
+     <TEXT>Favor preencher campo &apos;Tipo de emissão&apos;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>023</MSGNR>
+     <TEXT>Favor preencher campo &apos;Modalidade de Frete&apos;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>024</MSGNR>
+     <TEXT>Favor preencher campo &apos;Domicílio Fiscal&apos;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>025</MSGNR>
+     <TEXT>Favor preencher campo &apos;Local de Expedição&apos;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>026</MSGNR>
+     <TEXT>Favor preencher campo &apos;RNTRC&apos;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>027</MSGNR>
+     <TEXT>Favor preencher campo &apos;UF Origem&apos;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>028</MSGNR>
+     <TEXT>Favor preencher campo &apos;UF Destino&apos;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>029</MSGNR>
+     <TEXT>Favor preencher campo &apos;Data Início Viagem&apos;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>030</MSGNR>
+     <TEXT>Favor preencher campo &apos;Hora Início Viagem&apos;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>031</MSGNR>
+     <TEXT>Favor preencher campo complementar &apos;UF&apos;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>032</MSGNR>
+     <TEXT>Favor preencher campo complementar &apos;Ambiente de Sistema&apos;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>033</MSGNR>
+     <TEXT>Favor preencher campo complementar &apos;Tipo de emitente&apos;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>034</MSGNR>
+     <TEXT>Favor preencher campo complementar &apos;Tipo de transportadora&apos;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>035</MSGNR>
+     <TEXT>Favor preencher campo complementar &apos;Modelo MDF-e&apos;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>036</MSGNR>
+     <TEXT>Favor preencher campo complementar &apos;Nº aleatório&apos;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>037</MSGNR>
+     <TEXT>Favor preencher campo complementar &apos;Dígito verificador&apos;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>038</MSGNR>
+     <TEXT>Favor preencher campo complementar &apos;Tipo de transporte&apos;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>039</MSGNR>
+     <TEXT>Favor preencher campo complementar &apos;Data/hora da emissão&apos;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>040</MSGNR>
+     <TEXT>Favor preencher campo complementar &apos;Tipo de emissão&apos;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>041</MSGNR>
+     <TEXT>Favor informar parceiro.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>042</MSGNR>
+     <TEXT>Favor informar algum motorista.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>043</MSGNR>
+     <TEXT>Não é possível marcar mais de uma placa com &apos;Não&apos; Reboque.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>044</MSGNR>
+     <TEXT>Percurso não configurado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>045</MSGNR>
+     <TEXT>Nenhum município de descarregamento encontrado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>046</MSGNR>
+     <TEXT>Nenhum município de carregamento encontrado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>047</MSGNR>
+     <TEXT>Falha ao salvar os dados de motorista.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>048</MSGNR>
+     <TEXT>Motorista atualizado com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>049</MSGNR>
+     <TEXT>Favor corrigir campo &apos;Placa&apos; em branco</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>050</MSGNR>
+     <TEXT>Favor corrigir campo &apos;Placa&apos;. Placa &apos;&amp;1&apos; não é válida.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>051</MSGNR>
+     <TEXT>Favor preencher campo de transporte &apos;CT-e RENAVAM&apos; da placa &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>052</MSGNR>
+     <TEXT>Favor preencher campo de transporte &apos;Tara em KG&apos; da placa &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>053</MSGNR>
+     <TEXT>Favor preencher campo de transporte &apos;Capacidade em KG&apos; da placa &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>054</MSGNR>
+     <TEXT>Favor preencher campo de transporte &apos;Capacidade em M3&apos; da placa &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>055</MSGNR>
+     <TEXT>Favor preencher campo de transporte &apos;Meio de transporte&apos; da placa &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>056</MSGNR>
+     <TEXT>Favor preencher campo de transporte &apos;Tipo do reboque&apos; da placa &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>057</MSGNR>
+     <TEXT>Favor preencher campo de transporte &apos;Região&apos; da placa &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>058</MSGNR>
+     <TEXT>Ordens de Frete com placas distintas. Agrupamento não possível.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>059</MSGNR>
+     <TEXT>Não é permitido agrupar MDF-e autorizado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>060</MSGNR>
+     <TEXT>Falha ao salvar as placas.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>061</MSGNR>
+     <TEXT>Não é permitido agrupar MDF-e com erros.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>062</MSGNR>
+     <TEXT>NF Writer - Placa do cavalo divergente. Agrupamento não possível.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>063</MSGNR>
+     <TEXT>BP do condutor divergente.Agrupamento não permitido.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>064</MSGNR>
+     <TEXT>Todas as validações realizadas com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>065</MSGNR>
+     <TEXT>Não é permitido agrupar MDF-e já agrupada anteriormente.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>066</MSGNR>
+     <TEXT>Chave de acesso &amp;1 faz parte do agrupamento &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>067</MSGNR>
+     <TEXT>Adicionando chave de acesso &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>068</MSGNR>
+     <TEXT>Selecionar mais de uma linha para agrupar.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>069</MSGNR>
+     <TEXT>Linha selecionada não possui agrupador.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>070</MSGNR>
+     <TEXT>Não é permitido desagrupar MDF-e autorizado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>071</MSGNR>
+     <TEXT>MDF-e desagrupada com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>072</MSGNR>
+     <TEXT>Documento &amp;1 já tem município de carga configurado como &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>073</MSGNR>
+     <TEXT>Documento &amp;1 já tem município de descarga configurado como &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>074</MSGNR>
+     <TEXT>Nota Fiscal &amp;1 é um documento recusado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>075</MSGNR>
+     <TEXT>Nota Fiscal &amp;1 é um documento rejeitado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>076</MSGNR>
+     <TEXT>Nota Fiscal &amp;1 ainda não autorizada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>077</MSGNR>
+     <TEXT>Local de Expedição dos documentos é divergente.Agrupamento não permitido.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>078</MSGNR>
+     <TEXT>Nenhuma ordem de frete informada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>079</MSGNR>
+     <TEXT>Nenhuma Nota Fiscal encontrada para Ordem de Frete informada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>080</MSGNR>
+     <TEXT>Nenhuma Nota Fiscal encontrada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>081</MSGNR>
+     <TEXT>Falha ao salvar as placas x condutores.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>082</MSGNR>
+     <TEXT>Falha ao salvar as placas x vale pedágio.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>083</MSGNR>
+     <TEXT>MDF-e criada com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>084</MSGNR>
+     <TEXT>Agrupamento &amp;1 criado com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>085</MSGNR>
+     <TEXT>Falha ao enviar MDF-e.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>086</MSGNR>
+     <TEXT>Corrigir os erros antes de prosseguir com o envio MDF-e.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>087</MSGNR>
+     <TEXT>Relatório &amp;1 indisponível.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>088</MSGNR>
+     <TEXT>Nenhum dado encontrado para os parâmetros informados.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>089</MSGNR>
+     <TEXT>Houveram erros durante geração do relatório.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>090</MSGNR>
+     <TEXT>Relatório gerado! Nº spool: &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>091</MSGNR>
+     <TEXT>Chave de acesso ainda não foi criado para verificar o status.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>092</MSGNR>
+     <TEXT>Nenhum histórico encontrado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>093</MSGNR>
+     <TEXT>Falha ao salvar os dados de histórico.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>094</MSGNR>
+     <TEXT>MDF-e &amp;1 criado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>095</MSGNR>
+     <TEXT>MDF-e &amp;1 reenviado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>096</MSGNR>
+     <TEXT>Nenhuma MDF-e encontrada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>097</MSGNR>
+     <TEXT>Atualizando status do Agrupador &amp;1, MDF-e &amp;2:</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>098</MSGNR>
+     <TEXT>Nenhuma MDF-e necessita ser atualizada. Nada a fazer.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>099</MSGNR>
+     <TEXT>Motorista atualizado na Ordem de Frete.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>100</MSGNR>
+     <TEXT>Falha ao atualizar motorista na Ordem de Frete.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>101</MSGNR>
+     <TEXT>Solicitação de troca de motorista enviado à SEFAZ.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>102</MSGNR>
+     <TEXT>Falha ao enviar solicitação de troca de motorista à SEFAZ.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>103</MSGNR>
+     <TEXT>Nenhum documento encontrado para desagrupar.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>104</MSGNR>
+     <TEXT>Desagrupamento não permitido.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>105</MSGNR>
+     <TEXT>Somente é possível a troca de motorista para documentos autorizados.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>106</MSGNR>
+     <TEXT>Mais de uma placa encontrada para as Ordens de Frete informadas.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>107</MSGNR>
+     <TEXT>Informações de Motorista atualizado com sucesso da Ordem de Frete.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>108</MSGNR>
+     <TEXT>Informações de Notas atualizadas com sucesso da Ordem de Frete.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>109</MSGNR>
+     <TEXT>Informações de Placas atualizadas com sucesso da Ordem de Frete.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>110</MSGNR>
+     <TEXT>NF &amp;1 está em outra MDF-e. Favor desmarcar.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>111</MSGNR>
+     <TEXT>OF &amp;1 já agrupada na MDF-e. Favor desmarcar.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>112</MSGNR>
+     <TEXT>Chave externa identificada: &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>113</MSGNR>
+     <TEXT>A Ordem de Frete possui Nota Fiscal cancelada</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>114</MSGNR>
+     <TEXT>Placa &amp;1 está em uso no agrupador &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>115</MSGNR>
+     <TEXT>Favor informar o valor da carga para Nota Fiscal externa &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>116</MSGNR>
+     <TEXT>Favor informar a quantidade da carga para Nota Fiscal externa &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>117</MSGNR>
+     <TEXT>Favor informar a unidade de medida para Nota Fiscal externa &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>118</MSGNR>
+     <TEXT>Unidade de medida &amp;1 não é válida.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_MONITOR_MDF</ARBGB>
+     <MSGNR>119</MSGNR>
+     <TEXT>Sem autorização para esta operação</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

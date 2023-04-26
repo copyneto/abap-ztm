@@ -1,0 +1,3 @@
+FUNCTION-POOL ZFGTM_CHECK_DOC_SEFAZ.        "MESSAGE-ID ..
+
+* INCLUDE LZFGTM_CHECK_DOC_SEFAZD...         " Local class definition

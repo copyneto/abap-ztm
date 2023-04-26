@@ -1,0 +1,8 @@
+@EndUserText.label: 'Parâmetros de chamada: Interface Roadnet'
+define service ZUI_PARAM_ROADNET {
+  expose ZC_TM_PARAM_ROADNET_NEW;
+  expose ZC_TM_PARAM_ROADNET_NEW_ENTR;
+  expose ZC_TM_PARAM_ROADNET_NEW_CROS;
+  expose ZC_TM_PARAM_ROADNET_NEW_REDE;
+  expose ZC_TM_PARAM_ROADNET_NEW_LOG;
+}

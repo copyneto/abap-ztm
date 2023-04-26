@@ -1,0 +1,434 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { title: { type: #STANDARD, value: 'Agrupador' },
+                     typeName: 'Monitor MDF-e',
+                     typeNamePlural: 'Monitor MDF-e' },
+  presentationVariant: [{ sortOrder: [{ by: 'BR_MDFeNumber', direction:  #DESC },
+                                      { by: 'BR_MDFeSeries', direction:  #DESC },
+                                      { by: 'Agrupador', direction:  #DESC }] }] }
+
+@UI.lineItem: [{criticality: 'StatusCriticality' }]
+
+annotate view ZC_TM_MDF with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [{ id:              'HeaderMDFeNumber',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderMDFeNumber',
+                 position:        10 },
+
+               { id:              'HeaderMDFeSeries',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderMDFeSeries',
+                 position:        20 },
+
+               { id:              'HeaderMDFeStatus',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderMDFeStatus',
+                 position:        30 },
+
+               { id:              'HeaderStatus',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderStatus',
+                 position:        40 },
+
+               { id:              'HeaderProcstep',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderProcstep',
+                 position:        50 },
+
+               { id:              'HeaderStepstatus',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderStepstatus',
+                 position:        60 },
+
+               { id:              'CABECALHO_EMITENTE',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Dados Organizacionais',
+                 position:        10 },
+
+                       { parentId:        'CABECALHO_EMITENTE',
+                         id:              'CabDadosOrganizacionais',
+                         purpose:         #STANDARD,
+                         type:            #FIELDGROUP_REFERENCE,
+                         position:        10,
+                         targetQualifier: 'CabDadosOrganizacionais' },
+
+               { id:              'CABECALHO',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Cabeçalho',
+                 position:        20 },
+
+                        { parentId:        'CABECALHO',
+                          id:              'CabChaves',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'CabChaves' },
+
+                        { parentId:        'CABECALHO',
+                          id:              'CabOrigem',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'Origem',
+                          position:        20,
+                          targetQualifier: 'CabOrigem' },
+
+                        { parentId:        'CABECALHO',
+                          id:              'CabDestino',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'Destino',
+                          position:        30,
+                          targetQualifier: 'CabDestino' },
+
+                 { id:              'CABECALHO_DADOS',
+                   isSummary:       true,
+                   type:            #COLLECTION,
+                   label:           'Dados',
+                   position:        30 },
+
+                        { parentId:        'CABECALHO_DADOS',
+                          id:              'CabDados',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'Informações',
+                          position:        10,
+                          targetQualifier: 'CabDados' },
+
+                        { parentId:        'CABECALHO_DADOS',
+                          id:              'CabViagem',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'Dados do Percurso',
+                          position:        20,
+                          targetQualifier: 'CabViagem' },
+
+                        { parentId:        'CABECALHO_DADOS',
+                          id:              'CabTotal',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'Totalizadores',
+                          position:        30,
+                          targetQualifier: 'CabTotal' },
+
+                        { parentId:        'CABECALHO_DADOS',
+                          id:              'CabMod',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'Dados de Modificação',
+                          position:        40,
+                          targetQualifier: 'CabMod' },
+
+               { id:              'Complemento',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Dados complementares',
+                 position:        40,
+                 targetElement:   '_Complemento'},
+
+               { id:              'Emitente',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Emitente',
+                 position:        50,
+                 targetElement:   '_Emitente'},
+
+               { id:              'Municipio',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Notas Transportadas',
+                 position:        60,
+                 targetElement:   '_Municipio'},
+
+               { id:              'Motorista',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Motorista',
+                 position:        70,
+                 targetElement:   '_Motorista'},
+
+               { id:              'Placa',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Transporte',
+                 position:        80,
+                 targetElement:   '_Placa'},
+
+               { id:              'Percurso',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Percurso',
+                 position:        90,
+                 targetElement:   '_Percurso'},
+
+               { id:              'Carregamento',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Municípios Carregamento',
+                 position:        100,
+                 targetElement:   '_Carregamento'},
+
+               { id:              'Descarregamento',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Municípios Descarregamento',
+                 position:        110,
+                 targetElement:   '_Descarregamento'},
+
+               { id:              'CABECALHO_INFO',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Informações Adicionais',
+                 position:        120 },
+
+                      { parentId:        'CABECALHO_INFO',
+                        id:              'CabInfoAdicFisco',
+                        type:            #FIELDGROUP_REFERENCE,
+                        position:        10,
+                        targetQualifier: 'CabInfoAdicFisco' },
+
+                      { parentId:        'CABECALHO_INFO',
+                        id:              'CabInfoAdicContrib',
+                        type:            #FIELDGROUP_REFERENCE,
+                        position:        20,
+                        targetQualifier: 'CabInfoAdicContrib' },
+
+               { id:              'Historico',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Histórico',
+                 position:        130,
+                 targetElement:   '_Historico'}]
+
+  // ------------------------------------------------------
+  // Buttons information
+  // ------------------------------------------------------
+//  @UI.lineItem:         [{ position: 10, type: #FOR_ACTION, dataAction: 'verificar', label: 'Verificar/Atualizar' },
+//                          { position: 20, type: #FOR_ACTION, dataAction: 'enviar', label: 'Enviar MDFe' },
+//                          { position: 30, type: #FOR_ACTION, dataAction: 'cancelar', label: 'Cancelar MDFe' },
+//                          { position: 40, type: #FOR_ACTION, dataAction: 'encerrar', label: 'Encerrar MDFe' },
+//                          { position: 50, type: #FOR_ACTION, dataAction: 'criarRefMdfe', label: 'Criar Referência MDFe' }]
+
+  @UI.identification:   [{ position: 10, type: #FOR_ACTION, dataAction: 'verificar', label: 'Verificar/Atualizar' },
+                          { position: 20, type: #FOR_ACTION, dataAction: 'enviar', label: 'Enviar MDFe' },
+                          { position: 30, type: #FOR_ACTION, dataAction: 'cancelar', label: 'Cancelar MDFe' },
+                          { position: 40, type: #FOR_ACTION, dataAction: 'encerrar', label: 'Encerrar MDFe' },
+                          { position: 50, type: #FOR_ACTION, dataAction: 'motorista', label: '[+] Motorista' }]
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI.hidden: true
+  Guid;
+
+  @UI.lineItem:        [{ position: 10  }]
+  @UI.dataPoint:        { qualifier: 'HeaderProcstep', title: 'Etapa do Processo' }
+  Procstep;
+
+  @UI.hidden: true
+  ProcessStepText;
+
+
+  @UI.lineItem:        [{ position: 20, criticality: 'StepstatusCriticality' }]
+  @UI.dataPoint:        { qualifier: 'HeaderStepstatus', title: 'Status da Etapa do Processo', criticality: 'StepstatusCriticality' }
+  Stepstatus;
+
+  @UI.hidden: true
+  StepStatusText;
+
+  @UI.hidden: true
+  StepstatusCriticality;
+
+  @UI.lineItem:       [{ position: 30, criticality: 'StatusCriticality', criticalityRepresentation: #WITHOUT_ICON }]
+  @UI.dataPoint:       { qualifier: 'HeaderStatus', title: 'Status', criticality: 'StatusCriticality' }
+  @UI.textArrangement: #TEXT_LAST
+  StatusCode;
+
+  @UI.lineItem:       [{ position: 40 }]
+  @UI.fieldGroup:     [{ position: 10, qualifier: 'CabChaves' }]
+  @UI.selectionField: [{ position: 10 }]
+  Agrupador;
+
+  @UI.lineItem:       [{ position: 50 }]
+  @UI.fieldGroup:     [{ position: 20, qualifier: 'CabChaves' }]
+  @UI.selectionField: [{ position: 20 }]
+  @UI.dataPoint:        { qualifier: 'HeaderMDFeNumber', title: 'Nº MDF-e' }
+  BR_MDFeNumber;
+
+  @UI.lineItem:       [{ position: 60 }]
+  @UI.fieldGroup:     [{ position: 30, qualifier: 'CabChaves' }]
+  @UI.selectionField: [{ position: 30 }]
+  @UI.dataPoint:        { qualifier: 'HeaderMDFeSeries', title: 'Series' }
+  BR_MDFeSeries;
+
+  @UI.lineItem:       [{ position: 70, criticality: 'BR_MDFeNumberStatusCriticality', criticalityRepresentation: #WITHOUT_ICON }]
+  @UI.dataPoint:       { qualifier: 'HeaderMDFeStatus', title: 'Processo', criticality: 'BR_MDFeNumberStatusCriticality' }
+  BR_MDFeNumberStatus;
+
+  @UI.lineItem:       [{ position: 80 }]
+  @UI.fieldGroup:     [{ position: 40, qualifier: 'CabChaves' }]
+  Protocol;
+
+  @UI.lineItem:       [{ position: 80 }]
+  @UI.fieldGroup:     [{ position: 40, qualifier: 'CabChaves' }]
+  AccessKey;
+
+  @UI.hidden: true
+  Manual;
+
+  @UI.hidden: true
+  BR_MDFeNumberStatusCriticality;
+
+  @UI.lineItem:       [{ position: 90 }]
+  @UI.selectionField: [{ position: 40 }]
+  TipoEmissao;
+
+  @UI.hidden: true
+  TipoEmissaoText;
+
+  @UI.lineItem:       [{ position: 100 }]
+  @UI.fieldGroup:     [{ position: 10, qualifier: 'CabDadosOrganizacionais' }]
+  @UI.selectionField: [{ position: 50 }]
+  CompanyCode;
+
+  @UI.hidden: true
+  CompanyCodeName;
+
+  @UI.lineItem:       [{ position: 110 }]
+  @UI.fieldGroup:     [{ position: 20, qualifier: 'CabDadosOrganizacionais' }]
+  @UI.selectionField: [{ position: 60 }]
+  BusinessPlace;
+
+  @UI.hidden: true
+  BusinessPlaceName;
+
+  @UI.lineItem:       [{ position: 120 }]
+  @UI.fieldGroup:     [{ position: 10, qualifier: 'CabDados' }]
+  ModFrete;
+
+  @UI.hidden: true
+  ModFreteText;
+
+  @UI.lineItem:       [{ position: 130 }]
+  @UI.fieldGroup:     [{ position: 10, qualifier: 'CabOrigem' }]
+  DomFiscalInicio;
+  
+  @UI.hidden: true
+  DomFiscalInicioText;
+
+  @UI.lineItem:       [{ position: 140 }]
+  @UI.fieldGroup:     [{ position: 20, qualifier: 'CabOrigem' }]
+  UfInicio;
+
+  @UI.hidden: true
+  UfInicioText;
+
+  @UI.lineItem:       [{ position: 150 }]
+  @UI.fieldGroup:     [{ position: 10, qualifier: 'CabDestino' }]
+  DomFiscalFim;
+  
+  @UI.hidden: true
+  DomFiscalFimText;
+
+  @UI.lineItem:       [{ position: 160 }]
+  @UI.fieldGroup:     [{ position: 20, qualifier: 'CabDestino' }]
+  UfFim;
+
+  @UI.hidden: true
+  UfFimText;
+
+  @UI.lineItem:       [{ position: 170 }]
+  @UI.fieldGroup:     [{ position: 30, qualifier: 'CabViagem' }]
+  DataInicioViagem;
+
+  @UI.lineItem:       [{ position: 180 }]
+  @UI.fieldGroup:     [{ position: 40, qualifier: 'CabViagem' }]
+  HoraInicioViagem;
+
+  @UI.lineItem:       [{ position: 190 }]
+  @UI.fieldGroup:     [{ position: 30, qualifier: 'CabDados' }]
+  LocalExpedicao;
+
+  @UI.hidden: true
+  LocalExpedicaoText;
+
+  @UI.lineItem:       [{ position: 200 }]
+  @UI.fieldGroup:     [{ position: 40, qualifier: 'CabDados' }]
+  Rntrc;
+
+  @UI.lineItem:       [{ position: 210 }]
+  @UI.fieldGroup:     [{ position: 10, qualifier: 'CabTotal' }]
+  QtdNfe;
+
+  @UI.lineItem:       [{ position: 220 }]
+  @UI.fieldGroup:     [{ position: 20, qualifier: 'CabTotal' }]
+  QtdNfeWrt;
+
+  @UI.lineItem:       [{ position: 230 }]
+  @UI.fieldGroup:     [{ position: 30, qualifier: 'CabTotal' }]
+  QtdNfeExt;
+
+  @UI.lineItem:       [{ position: 240 }]
+  @UI.fieldGroup:     [{ position: 40, qualifier: 'CabTotal' }]
+  VlrCarga;
+
+  @UI.lineItem:       [{ position: 250, criticality: 'CorrecaoCriticality', criticalityRepresentation: #WITHOUT_ICON }]
+  @UI.fieldGroup:     [{ position: 50, criticality: 'CorrecaoCriticality', criticalityRepresentation: #WITHOUT_ICON, qualifier: 'CabDados' }]
+  Correcao;
+
+  @UI.lineItem:       [{ position: 260 }]
+  @UI.selectionField: [{ position: 70 }]
+  Placa;
+
+  @UI.hidden: true
+  CorrecaoCriticality;
+
+  @UI.hidden: true
+  StatusText;
+
+  @UI.hidden: true
+  StatusCriticality;
+
+  @UI.fieldGroup:     [{ position: 10, qualifier: 'CabInfoAdicFisco' }]
+  @UI.multiLineText: true
+  InfoFisco;
+
+  @UI.fieldGroup:     [{ position: 10, qualifier: 'CabInfoAdicContrib' }]
+  @UI.multiLineText: true
+  InfoContrib;
+
+  @UI.fieldGroup:     [{ position: 10, qualifier: 'CabMod' }]
+  CreatedBy;
+
+  @UI.hidden: true
+  CreatedAt;
+
+  @UI.fieldGroup:     [{ position: 20, qualifier: 'CabMod' }]
+  CreatedDate;
+
+  @UI.fieldGroup:     [{ position: 30, qualifier: 'CabMod' }]
+  LastChangedBy;
+
+  @UI.hidden: true
+  LastChangedAt;
+
+  @UI.fieldGroup:     [{ position: 40, qualifier: 'CabMod' }]
+  LastChangedDate;
+
+  @UI.fieldGroup:     [{ position: 50, qualifier: 'CabMod' }]
+  LocalLastChangedAt;
+
+  @Consumption.filter.hidden: true
+  Motorista;
+
+  @UI.hidden: true
+  FreightOrder;
+
+  @UI.fieldGroup:     [{ position: 50, qualifier: 'CabChaves' }]
+  RefOf;
+
+
+}

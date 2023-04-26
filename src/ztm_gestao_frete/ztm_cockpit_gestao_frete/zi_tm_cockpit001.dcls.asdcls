@@ -1,0 +1,11 @@
+@EndUserText.label: 'CDS de Autorização'
+@MappingRole: true
+define role ZI_TM_COCKPIT001 {
+    grant
+        select
+            on
+                ZI_TM_COCKPIT001
+                    where
+                        ( bukrs ) = aspect pfcg_auth( ZTMBUKRS, BUKRS, ACTVT = '03');
+                        
+}

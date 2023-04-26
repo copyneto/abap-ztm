@@ -1,0 +1,5 @@
+CLASS zcltm_beh_i_tipoexp DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_tipo_exped.
+ENDCLASS.
+
+CLASS zcltm_beh_i_tipoexp IMPLEMENTATION.
+ENDCLASS.

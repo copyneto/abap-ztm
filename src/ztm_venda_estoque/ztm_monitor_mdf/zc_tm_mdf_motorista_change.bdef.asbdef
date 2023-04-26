@@ -1,0 +1,18 @@
+projection;
+
+define behavior for ZC_TM_MDF_MOTORISTA_CHANGE alias _Writer
+use etag
+{
+
+  use action changeMotorista;
+  use action changePlaca;
+  use action removeMotoristaPlaca;
+
+  use association _Historico { }
+}
+
+define behavior for ZC_TM_MDF_HIST_MOTORISTA alias _Historico
+use etag
+{
+  use association _Writer { }
+}

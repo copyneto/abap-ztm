@@ -1,0 +1,11 @@
+@EndUserText.label: 'CDS de Autorização'
+@MappingRole: true
+define role ZC_TM_MDF_MOTORISTA_CHANGE {
+    grant
+        select
+            on
+                ZC_TM_MDF_MOTORISTA_CHANGE
+                    where
+                        inheriting conditions from entity ZI_TM_MDF_MOTORISTA_CHANGE;
+                        
+}

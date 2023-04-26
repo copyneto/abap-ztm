@@ -1,0 +1,660 @@
+@Metadata.layer: #CORE
+
+@UI: { headerInfo: { typeName: 'Documento',
+                     typeNamePlural: 'Documentos' } }
+
+annotate view ZC_TM_MONITOR_GKO with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+
+  @UI.facet: [ { id:              'HeaderAcckey',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderAcckey',
+                 position:        10 },
+
+               { id:              'HeaderTipo',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderTipo',
+                 position:        20 },
+
+               { id:              'HeaderStatus',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderStatus',
+                 position:        30 },
+
+  /* [CTE] Detalhes CT-e */
+
+               { id:              'CTE_CABECALHO',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 hidden:          #(hiddenCTE),
+                 position:        10 },
+
+                        { parentId:        'CTE_CABECALHO',
+                          id:              'CTE_Cabecalho1',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'CTE_Cabecalho1' },
+
+                        { parentId:        'CTE_CABECALHO',
+                          id:              'CTE_Cabecalho2',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        20,
+                          targetQualifier: 'CTE_Cabecalho2' },
+
+                        { parentId:        'CTE_CABECALHO',
+                          id:              'CTE_Cabecalho3',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        30,
+                          targetQualifier: 'CTE_Cabecalho3' },
+
+                        { parentId:        'CTE_CABECALHO',
+                          id:              'CTE_Cabecalho4',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        40,
+                          targetQualifier: 'CTE_Cabecalho4' },
+
+  /* [NFE] Detalhes NFS-e */
+
+               { id:              'NFE_CABECALHO',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 hidden:          #(hiddenNFE),
+                 position:        20 },
+
+                        { parentId:        'NFE_CABECALHO',
+                          id:              'NFE_Cabecalho1',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'NFE_Cabecalho1' },
+
+                        { parentId:        'NFE_CABECALHO',
+                          id:              'NFE_Cabecalho2',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        20,
+                          targetQualifier: 'NFE_Cabecalho2' },
+
+                        { parentId:        'NFE_CABECALHO',
+                          id:              'NFE_Cabecalho3',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        30,
+                          targetQualifier: 'NFE_Cabecalho3' },
+
+                        { parentId:        'NFE_CABECALHO',
+                          id:              'NFE_Cabecalho4',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        40,
+                          targetQualifier: 'NFE_Cabecalho4' },
+
+  /* [CTE] Síntese */
+
+               { id:              'CTE_SINTESE',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 hidden:          #(hiddenCTE),
+                 label:           'Síntese',
+                 position:        30 },
+
+                        { parentId:        'CTE_SINTESE',
+                          id:              'CTE_Sintese1',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'Chave de acesso (SEFAZ)',
+                          position:        10,
+                          targetQualifier: 'CTE_Sintese1' },
+
+                        { parentId:        'CTE_SINTESE',
+                          id:              'CTE_Sintese2',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'Protocolo',
+                          position:        20,
+                          targetQualifier: 'CTE_Sintese2' },
+
+                        { parentId:        'CTE_SINTESE',
+                          id:              'CTE_Sintese3',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'CT-e',
+                          position:        30,
+                          targetQualifier: 'CTE_Sintese3' },
+
+  /* [CTE/NFE] Emitente */
+
+               { id:              'EMITENTE',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Emitente',
+                 position:        40 },
+
+                        { parentId:        'EMITENTE',
+                          id:              'Emitente1',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'Emitente1' },
+
+  /* [CTE/NFE] Remetente */
+
+               { id:              'REMETENTE',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Remetente',
+                 position:        50 },
+
+                        { parentId:        'REMETENTE',
+                          id:              'Remetente1',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'Remetente1' },
+
+  /* [CTE/NFE] Destinatário */
+
+               { id:              'DESTINATARIO',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Destinatário',
+                 position:        60 },
+
+                        { parentId:        'DESTINATARIO',
+                          id:              'Destinatario1',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'Destinatario1' },
+
+  /* [CTE/NFE] Tomador */
+
+               { id:              'TOMADOR',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Tomador',
+                 position:        70 },
+
+                        { parentId:        'TOMADOR',
+                          id:              'Tomador1',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'Tomador1' },
+
+  /* [CTE/NFE] Expedidor */
+
+               { id:              'EXPEDIDOR',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Expedidor',
+                 position:        80 },
+
+                        { parentId:        'EXPEDIDOR',
+                          id:              'Expedidor1',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'Expedidor1' },
+
+  /* [CTE/NFE] Recebedor */
+
+               { id:              'RECEBEDOR',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Recebedor',
+                 position:        90 },
+
+                        { parentId:        'RECEBEDOR',
+                          id:              'Recebedor1',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'Recebedor1' },
+
+  /* [NFE] Totais */
+
+               { id:              'NFE_TOTAL',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 hidden:          #(hiddenNFE),
+                 label:           'Totais',
+                 position:        100 },
+
+                        { parentId:        'NFE_TOTAL',
+                          id:              'NFE_Total1',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'Totais',
+                          position:        10,
+                          targetQualifier: 'NFE_Total1' },
+
+                        { parentId:        'NFE_TOTAL',
+                          id:              'NFE_Total2',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'Impostos',
+                          position:        20,
+                          targetQualifier: 'NFE_Total2' },
+
+  /* [CTE] Totais */
+
+               { id:              'CTE_TOTAL',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 hidden:          #(hiddenCTE),
+                 label:           'Totais',
+                 position:        110 },
+
+                        { parentId:        'CTE_TOTAL',
+                          id:              'CTE_Total1',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'Totais',
+                          position:        10,
+                          targetQualifier: 'CTE_Total1' },
+
+                        { parentId:        'CTE_TOTAL',
+                          id:              'CTE_Total2',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'Impostos',
+                          position:        20,
+                          targetQualifier: 'CTE_Total2' },
+
+               { id:              'CTE_Total3',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 hidden:          #(hiddenCTE),
+                 label:           'Totais - Componentes',
+                 position:        120,
+                 targetElement:   '_cte_componente' },
+
+  /* [CTE] Carga */
+
+               { id:              'CTE_CARGA',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 hidden:          #(hiddenCTE),
+                 label:           'Carga',
+                 position:        130 },
+
+                        { parentId:        'CTE_CARGA',
+                          id:              'CTE_Carga1',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'Informações da Carga',
+                          position:        10,
+                          targetQualifier: 'CTE_Carga1' },
+
+                        { parentId:        'CTE_CARGA',
+                          id:              'CTE_Carga2',
+                          type:            #FIELDGROUP_REFERENCE,
+                          label:           'Informações adicionais',
+                          position:        20,
+                          targetQualifier: 'CTE_Carga2' },
+
+               { id:              'CTE_Carga3',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 hidden:          #(hiddenCTE),
+                 label:           'Carga - Quantidade',
+                 position:        140,
+                 targetElement:   '_cte_carga' },
+
+  /* [CTE/NFE] Referências */
+
+               { id:              'REFERENCIA',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Referências',
+                 position:        150,
+                 targetElement:   '_referencia' },
+
+  /* [CTE/NFE] Doc. Gerados */
+
+               { id:              'DOCGERADO',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Doc. Gerados',
+                 position:        160,
+                 targetElement:   '_doc_gerado' },
+
+  /* [CTE] Eventos */
+
+               { id:              'EVENTO',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 hidden:          #(hiddenCTE),
+                 label:           'Eventos',
+                 position:        170,
+                 targetElement:   '_evento' },
+
+  /* [CTE/NFE] Log */
+
+               { id:              'LOG',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Log',
+                 position:        180,
+                 targetElement:   '_log' } ]
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI: { dataPoint:        { qualifier: 'HeaderTipo', title: 'Tipo documento', criticality: 'tipo_criticality' } }
+  tipo;
+
+  @UI.hidden: true
+  tipo_criticality;
+  
+  @UI: { dataPoint:        { qualifier: 'HeaderStatus', title: 'Status processamento', criticality: 'codstatus_criticality' } }
+  codstatus_label;
+  
+  @UI.hidden: true
+  codstatus;
+
+  @UI.hidden: true
+  codstatus_txt;
+  
+  @UI.hidden: true
+  codstatus_criticality;    
+
+  @UI: { lineItem:       [ { position: 10, label: 'Chave de acesso' } ],
+         dataPoint:        { qualifier: 'HeaderAcckey', title: 'Chave' } }
+  acckey;
+
+  @UI.hidden: true
+  chcte;
+
+  @UI.hidden: true
+  chnfse;
+
+  @UI.hidden: true
+  hiddenCTE;
+
+  @UI.hidden: true
+  hiddenNFE;
+
+  /* [CTE] Detalhes CT-e */
+
+  @UI: {  fieldGroup:     [ { position: 10, qualifier: 'CTE_Cabecalho1' } ] }
+  c0_chcte;
+  @UI: {  fieldGroup:     [ { position: 20, qualifier: 'CTE_Cabecalho1' } ] }
+  c0_natop;
+  @UI: {  fieldGroup:     [ { position: 10, qualifier: 'CTE_Cabecalho2' } ] }
+  c0_nfenum;
+  @UI: {  fieldGroup:     [ { position: 20, qualifier: 'CTE_Cabecalho2' } ] }
+  c0_serie;
+  @UI: {  fieldGroup:     [ { position: 10, qualifier: 'CTE_Cabecalho3', criticality: 'c0_tp_oper_criticality', criticalityRepresentation: #WITHOUT_ICON } ] }
+  c0_tp_oper;
+  @UI.hidden: true
+  c0_tp_oper_criticality;
+  @UI: {  fieldGroup:     [ { position: 20, qualifier: 'CTE_Cabecalho3' } ] }
+  c0_lifnr;
+  @UI.hidden: true
+  c0_lifnr_txt;
+  @UI: {  fieldGroup:     [ { position: 10, qualifier: 'CTE_Cabecalho4' } ] }
+  c0_valor;
+  @UI: {  fieldGroup:     [ { position: 20, qualifier: 'CTE_Cabecalho4', criticality: 'c0_xml_found_criticality' } ] }
+  c0_xml_found;
+  @UI.hidden: true
+  c0_xml_found_criticality;
+  
+
+  /* [NFE] Detalhes NFS-e */
+
+  @UI: {  fieldGroup:     [ { position: 10, qualifier: 'NFE_Cabecalho1' } ] }
+  n0_chnfse;
+  @UI: {  fieldGroup:     [ { position: 20, qualifier: 'NFE_Cabecalho1' } ] }
+  n0_dtemiss;
+  @UI: {  fieldGroup:     [ { position: 10, qualifier: 'NFE_Cabecalho2' } ] }
+  n0_nfenum;
+  @UI: {  fieldGroup:     [ { position: 20, qualifier: 'NFE_Cabecalho2' } ] }
+  n0_serie;
+  @UI: {  fieldGroup:     [ { position: 10, qualifier: 'NFE_Cabecalho3', criticality: 'n0_tp_oper_criticality', criticalityRepresentation: #WITHOUT_ICON } ] }
+  n0_tp_oper;
+  @UI.hidden: true
+  n0_tp_oper_criticality;
+  @UI: {  fieldGroup:     [ { position: 10, qualifier: 'NFE_Cabecalho4' } ] }
+  n0_valor;
+  @UI: {  fieldGroup:     [ { position: 20, qualifier: 'NFE_Cabecalho4' } ] }
+  n0_lifnr;
+  @UI.hidden: true
+  n0_lifnr_txt;
+
+  /* [CTE] Síntese */
+
+  @UI: {  fieldGroup:     [ { position: 10, qualifier: 'CTE_Sintese1' } ] }
+  c1_regio;
+  @UI: {  fieldGroup:     [ { position: 20, qualifier: 'CTE_Sintese1' } ] }
+  c1_nfyear;
+  @UI: {  fieldGroup:     [ { position: 30, qualifier: 'CTE_Sintese1' } ] }
+  c1_nfmonth;
+  @UI: {  fieldGroup:     [ { position: 40, qualifier: 'CTE_Sintese1' } ],
+          textArrangement: #TEXT_ONLY }
+  c1_stcd1;
+  @UI.hidden: true
+  c1_stcd1_txt;
+  @UI: {  fieldGroup:     [ { position: 50, qualifier: 'CTE_Sintese1' } ] }
+  c1_model;
+  @UI.hidden: true
+  c1_model_txt;
+  @UI: {  fieldGroup:     [ { position: 60, qualifier: 'CTE_Sintese1' } ] }
+  c1_serie;
+  @UI: {  fieldGroup:     [ { position: 70, qualifier: 'CTE_Sintese1' } ] }
+  c1_nfenum;
+  @UI: {  fieldGroup:     [ { position: 80, qualifier: 'CTE_Sintese1' } ] }
+  c1_tpemis;
+  @UI.hidden: true
+  c1_tpemis_txt;
+  @UI: {  fieldGroup:     [ { position: 90, qualifier: 'CTE_Sintese1' } ] }
+  c1_docnum8;
+  @UI: {  fieldGroup:     [ { position: 100, qualifier: 'CTE_Sintese1' } ] }
+  c1_cdv;
+
+  @UI: {  fieldGroup:     [ { position: 10, qualifier: 'CTE_Sintese2' } ] }
+  c1_digest_value;
+  @UI: {  fieldGroup:     [ { position: 20, qualifier: 'CTE_Sintese2' } ] }
+  c1_nprot;
+  @UI: {  fieldGroup:     [ { position: 30, qualifier: 'CTE_Sintese2' } ] }
+  c1_dhemi;
+  @UI: {  fieldGroup:     [ { position: 40, qualifier: 'CTE_Sintese2', criticality: 'c1_cstat_criticality', criticalityRepresentation: #WITHOUT_ICON } ] }
+  c1_cstat;
+  @UI.hidden: true
+  c1_cstat_criticality;
+  @UI: {  fieldGroup:     [ { position: 50, qualifier: 'CTE_Sintese2' } ] }
+  c1_xmotivo;
+
+  @UI: {  fieldGroup:     [ { position: 10, qualifier: 'CTE_Sintese3' } ] }
+  c1_tpcte;
+  @UI.hidden: true
+  c1_tpcte_txt;
+  @UI: {  fieldGroup:     [ { position: 20, qualifier: 'CTE_Sintese3' } ] }
+  c1_tpserv;
+  @UI.hidden: true
+  c1_tpserv_txt;
+  @UI: {  fieldGroup:     [ { position: 30, qualifier: 'CTE_Sintese3' } ] }
+  @UI.textArrangement: #TEXT_FIRST
+  c1_tomador;
+  @UI.hidden: true
+  c1_tomador_txt;
+  @UI: {  fieldGroup:     [ { position: 40, qualifier: 'CTE_Sintese3' } ] }
+  c1_inicio_prestsrv;
+  @UI: {  fieldGroup:     [ { position: 50, qualifier: 'CTE_Sintese3' } ] }
+  c1_termino_prestsrv;
+  @UI: {  fieldGroup:     [ { position: 60, qualifier: 'CTE_Sintese3' } ] }
+  c1_modal;
+  @UI.hidden: true
+  c1_modal_txt;
+
+  /* [CTE/NFE] Emitente */
+
+  @UI: {  fieldGroup:     [ { position: 10, qualifier: 'Emitente1' } ] }
+  emit_cod;
+  @UI: {  fieldGroup:     [ { position: 20, qualifier: 'Emitente1' } ] }
+  emit_nome;
+  @UI: {  fieldGroup:     [ { position: 30, qualifier: 'Emitente1' } ],
+          textArrangement: #TEXT_ONLY }
+  emit_cnpj_cpf;
+  @UI.hidden: true
+  emit_cnpj_cpf_txt;
+  @UI: {  fieldGroup:     [ { position: 40, qualifier: 'Emitente1' } ] }
+  emit_endereco;
+  @UI: {  fieldGroup:     [ { position: 50, qualifier: 'Emitente1' } ] }
+  emit_complemento;
+  @UI: {  fieldGroup:     [ { position: 60, qualifier: 'Emitente1' } ] }
+  emit_cep_bairro;
+  @UI: {  fieldGroup:     [ { position: 70, qualifier: 'Emitente1' } ] }
+  emit_municipio_uf;
+  @UI: {  fieldGroup:     [ { position: 80, qualifier: 'Emitente1' } ] }
+  emit_ie;
+
+  /* [CTE/NFE] Remetente */
+
+  @UI: {  fieldGroup:     [ { position: 10, qualifier: 'Remetente1' } ] }
+  rem_cod;
+  @UI: {  fieldGroup:     [ { position: 20, qualifier: 'Remetente1' } ] }
+  rem_nome;
+  @UI: {  fieldGroup:     [ { position: 30, qualifier: 'Remetente1' } ],
+          textArrangement: #TEXT_ONLY }
+  rem_cnpj_cpf;
+  @UI.hidden: true
+  rem_cnpj_cpf_txt;
+  @UI: {  fieldGroup:     [ { position: 40, qualifier: 'Remetente1' } ] }
+  rem_endereco;
+  @UI: {  fieldGroup:     [ { position: 50, qualifier: 'Remetente1' } ] }
+  rem_complemento;
+  @UI: {  fieldGroup:     [ { position: 60, qualifier: 'Remetente1' } ] }
+  rem_cep_bairro;
+  @UI: {  fieldGroup:     [ { position: 70, qualifier: 'Remetente1' } ] }
+  rem_municipio_uf;
+  @UI: {  fieldGroup:     [ { position: 80, qualifier: 'Remetente1' } ] }
+  rem_ie;
+
+  /* [CTE/NFE] Destinatário */
+
+  @UI: {  fieldGroup:     [ { position: 10, qualifier: 'Destinatario1' } ] }
+  dest_cod;
+  @UI: {  fieldGroup:     [ { position: 20, qualifier: 'Destinatario1' } ] }
+  dest_nome;
+  @UI: {  fieldGroup:     [ { position: 30, qualifier: 'Destinatario1' } ],
+          textArrangement: #TEXT_ONLY }
+  dest_cnpj_cpf;
+  @UI.hidden: true
+  dest_cnpj_cpf_txt;
+  @UI: {  fieldGroup:     [ { position: 40, qualifier: 'Destinatario1' } ] }
+  dest_endereco;
+  @UI: {  fieldGroup:     [ { position: 50, qualifier: 'Destinatario1' } ] }
+  dest_complemento;
+  @UI: {  fieldGroup:     [ { position: 60, qualifier: 'Destinatario1' } ] }
+  dest_cep_bairro;
+  @UI: {  fieldGroup:     [ { position: 70, qualifier: 'Destinatario1' } ] }
+  dest_municipio_uf;
+  @UI: {  fieldGroup:     [ { position: 80, qualifier: 'Destinatario1' } ] }
+  dest_ie;
+
+  /* [CTE/NFE] Tomador */
+
+  @UI: {  fieldGroup:     [ { position: 10, qualifier: 'Tomador1' } ] }
+  tom_cod;
+  @UI: {  fieldGroup:     [ { position: 20, qualifier: 'Tomador1' } ] }
+  tom_nome;
+  @UI: {  fieldGroup:     [ { position: 30, qualifier: 'Tomador1' } ],
+          textArrangement: #TEXT_ONLY }
+  tom_cnpj_cpf;
+  @UI.hidden: true
+  tom_cnpj_cpf_txt;
+  @UI: {  fieldGroup:     [ { position: 40, qualifier: 'Tomador1' } ] }
+  tom_endereco;
+  @UI: {  fieldGroup:     [ { position: 50, qualifier: 'Tomador1' } ] }
+  tom_complemento;
+  @UI: {  fieldGroup:     [ { position: 60, qualifier: 'Tomador1' } ] }
+  tom_cep_bairro;
+  @UI: {  fieldGroup:     [ { position: 70, qualifier: 'Tomador1' } ] }
+  tom_municipio_uf;
+  @UI: {  fieldGroup:     [ { position: 80, qualifier: 'Tomador1' } ] }
+  tom_ie;
+
+  /* [CTE/NFE] Expedidor */
+
+  @UI: {  fieldGroup:     [ { position: 10, qualifier: 'Expedidor1' } ] }
+  exped_cod;
+  @UI: {  fieldGroup:     [ { position: 20, qualifier: 'Expedidor1' } ] }
+  exped_nome;
+  @UI: {  fieldGroup:     [ { position: 30, qualifier: 'Expedidor1' } ],
+          textArrangement: #TEXT_ONLY }
+  exped_cnpj_cpf;
+  @UI.hidden: true
+  exped_cnpj_cpf_txt;
+  @UI: {  fieldGroup:     [ { position: 40, qualifier: 'Expedidor1' } ] }
+  exped_endereco;
+  @UI: {  fieldGroup:     [ { position: 50, qualifier: 'Expedidor1' } ] }
+  exped_complemento;
+  @UI: {  fieldGroup:     [ { position: 60, qualifier: 'Expedidor1' } ] }
+  exped_cep_bairro;
+  @UI: {  fieldGroup:     [ { position: 70, qualifier: 'Expedidor1' } ] }
+  exped_municipio_uf;
+  @UI: {  fieldGroup:     [ { position: 80, qualifier: 'Expedidor1' } ] }
+  exped_ie;
+
+  /* [CTE/NFE] Recebedor */
+
+  @UI: {  fieldGroup:     [ { position: 10, qualifier: 'Recebedor1' } ] }
+  receb_cod;
+  @UI: {  fieldGroup:     [ { position: 20, qualifier: 'Recebedor1' } ] }
+  receb_nome;
+  @UI: {  fieldGroup:     [ { position: 30, qualifier: 'Recebedor1' } ],
+          textArrangement: #TEXT_ONLY }
+  receb_cnpj_cpf;
+  @UI.hidden: true
+  receb_cnpj_cpf_txt;
+  @UI: {  fieldGroup:     [ { position: 40, qualifier: 'Recebedor1' } ] }
+  receb_endereco;
+  @UI: {  fieldGroup:     [ { position: 50, qualifier: 'Recebedor1' } ] }
+  receb_complemento;
+  @UI: {  fieldGroup:     [ { position: 60, qualifier: 'Recebedor1' } ] }
+  receb_cep_bairro;
+  @UI: {  fieldGroup:     [ { position: 70, qualifier: 'Recebedor1' } ] }
+  receb_municipio_uf;
+  @UI: {  fieldGroup:     [ { position: 80, qualifier: 'Recebedor1' } ] }
+  receb_ie;
+
+  /* [NFE] Totais */
+
+  @UI: {  fieldGroup:     [ { position: 10, qualifier: 'NFE_Total1' } ] }
+  n5_vtpres;
+  @UI: {  fieldGroup:     [ { position: 20, qualifier: 'NFE_Total1' } ] }
+  n5_vrec;
+
+  @UI: {  fieldGroup:     [ { position: 10, qualifier: 'NFE_Total2' } ] }
+  n5_viss;
+  @UI: {  fieldGroup:     [ { position: 20, qualifier: 'NFE_Total2' } ] }
+  n5_piss;
+
+  /* [CTE] Totais: Totais */
+
+  @UI: {  fieldGroup:     [ { position: 10, qualifier: 'CTE_Total1' } ] }
+  c6_vtpres;
+  @UI: {  fieldGroup:     [ { position: 20, qualifier: 'CTE_Total1' } ] }
+  c6_vrec;
+
+  @UI: {  fieldGroup:     [ { position: 10, qualifier: 'CTE_Total2' } ] }
+  c6_cst;
+  @UI.hidden: true
+  c6_cst_txt;
+  @UI: {  fieldGroup:     [ { position: 20, qualifier: 'CTE_Total2' } ] }
+  c6_predbc;
+  @UI: {  fieldGroup:     [ { position: 30, qualifier: 'CTE_Total2' } ] }
+  c6_vcred;
+  @UI: {  fieldGroup:     [ { position: 40, qualifier: 'CTE_Total2' } ] }
+  c6_vbcicms;
+  @UI: {  fieldGroup:     [ { position: 50, qualifier: 'CTE_Total2' } ] }
+  c6_picms;
+  @UI: {  fieldGroup:     [ { position: 60, qualifier: 'CTE_Total2' } ] }
+  c6_vicms;
+  @UI: {  fieldGroup:     [ { position: 70, qualifier: 'CTE_Total2' } ] }
+  c6_vtottrib;
+
+  /* [CTE] Carga  */
+
+  @UI: {  fieldGroup:     [ { position: 10, qualifier: 'CTE_Carga1' } ] }
+  c7_vcarga;
+  @UI: {  fieldGroup:     [ { position: 20, qualifier: 'CTE_Carga1' } ] }
+  c7_propred;
+  @UI: {  fieldGroup:     [ { position: 30, qualifier: 'CTE_Carga1' } ] }
+  c7_xoutcat;
+
+  @UI: {  fieldGroup:     [ { position: 10, qualifier: 'CTE_Carga2' } ] }
+  @UI.multiLineText: true
+  c7_xobs;
+
+}

@@ -1,0 +1,389 @@
+@Metadata.layer: #CORE
+
+@UI: { headerInfo: { typeName: 'Cockpit de Frete',
+                     typeNamePlural: 'Cockpit de Frete',
+                     title: { type: #STANDARD, value: 'acckey' } } }
+
+@UI.lineItem: [{criticality: 'codstatus_crit'}]
+
+annotate entity ZC_TM_COCKPIT with
+{
+
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+
+  @UI.facet: [
+
+    { label:            'Informações Gerais',
+      id:               'GeneralInfo',
+      type:             #COLLECTION,
+      position:         10 },
+
+    { label:            'Geral',
+      purpose:          #STANDARD,
+      position:         10,
+      type:             #IDENTIFICATION_REFERENCE,
+      parentId:         'GeneralInfo' },
+
+    { label:            'Dados',
+      purpose:          #STANDARD,
+      position:         30,
+      type:             #FIELDGROUP_REFERENCE,
+      parentId:         'GeneralInfo',
+      targetQualifier:  'DatesGroup' },
+
+    { id:               'Log',
+      label:            'Log',
+      purpose:          #STANDARD,
+      position:         20,
+      type:             #LINEITEM_REFERENCE,
+      targetElement:    '_log' }
+  ]
+
+  // ------------------------------------------------------
+  // Buttons information
+  // ------------------------------------------------------
+  @UI.lineItem:       [ { type: #FOR_ACTION, dataAction: 'estorno', label: 'Estorno' },
+                        { type: #FOR_ACTION, dataAction: 'reprocessar', label: 'Reprocessar' },
+                        { type: #FOR_ACTION, dataAction: 'agrupamento', label: 'Agrupamento de Faturas' },
+                        { type: #FOR_ACTION, dataAction: 'evento_cte', label: 'Evento CTE' } ]
+
+  @UI.hidden: true
+  motivoRejeicao;
+  @UI.hidden: true
+  estornoAgrupamento;
+  @UI.hidden: true
+  estornoMiro;
+  @UI.hidden: true
+  estornoPedido;
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI.lineItem:       [ { position: 10, semanticObjectAction: 'display', type: #WITH_INTENT_BASED_NAVIGATION } ]
+  @UI.selectionField: [ { position: 40 } ]
+  @Consumption.semanticObject:'ZZ1_MONITOR_GKO'
+  acckey;
+
+  @UI.hidden: true
+  doctype;
+
+  @UI.fieldGroup:     [ { qualifier: 'DatesGroup', position: 40 } ]
+  @UI.lineItem:       [ { position: 20 } ]
+  @UI.selectionField: [ { position: 20 } ]
+  codstatus;
+
+  @UI.hidden: true
+  codstatus_txt;
+
+  @UI.lineItem:       [ { position: 30 } ]
+  @UI.selectionField: [ { position: 30 } ]
+  @UI.fieldGroup:     [ { qualifier: 'DatesGroup', position: 10 } ]
+  bukrs;
+
+  @UI.hidden: true
+  bukrs_txt;
+
+  @UI.lineItem:       [ { position: 40 } ]
+  @UI.fieldGroup:     [ { qualifier: 'DatesGroup', position: 15 } ]
+  werks;
+
+  @UI.hidden: true
+  werks_txt;
+
+  @UI.lineItem:       [ { position: 50 } ]
+  @UI.selectionField: [ { position: 30 } ]
+  @UI.fieldGroup:     [ { qualifier: 'DatesGroup', position: 20 } ]
+  branch;
+
+  @UI.hidden: true
+  branch_txt;
+
+  @UI.lineItem:       [ { position: 60 } ]
+  @UI.selectionField: [ { position: 60 } ]
+  @UI.fieldGroup:     [ { qualifier: 'DatesGroup', position: 30 } ]
+  @Consumption.filter.selectionType: #INTERVAL
+  credat;
+
+  @Consumption.filter.selectionType: #INTERVAL
+  cretim;
+
+  @UI.lineItem:       [ { position: 70 } ]
+  @UI.selectionField: [ { position: 70 } ]
+  cenario;
+
+  @UI.hidden: true
+  cenario_txt;
+
+  @UI.lineItem:       [ { position: 80, semanticObjectAction: 'display', type: #WITH_INTENT_BASED_NAVIGATION } ]
+  @UI.selectionField: [ { position: 80 } ]
+  @Consumption.semanticObject:'ServiceEntrySheet'
+  lblni;
+
+  @UI.hidden: true
+  gjahr;
+
+  @Consumption.semanticObject:'SupplierInvoice'
+  @UI.lineItem:       [ { position: 90, semanticObjectAction: 'displayAdvanced', type: #WITH_INTENT_BASED_NAVIGATION } ]
+  @UI.selectionField: [ { position: 90 } ]
+  SupplierInvoice;
+
+  @UI.lineItem:       [ { position: 100 } ]
+  @UI.selectionField: [ { position: 100 } ]
+  FiscalYear;
+
+  @Consumption.semanticObject:'NotaFiscal'
+  @UI.lineItem:       [ { position: 110, semanticObjectAction: 'zzdisplay', type: #WITH_INTENT_BASED_NAVIGATION } ]
+  @UI.selectionField: [ { position: 110 } ]
+  BR_NotaFiscal;
+
+  @Consumption.semanticObject : 'BusinessPartnerDriver'
+  @UI.lineItem:       [ { position: 120, semanticObjectAction: 'display', type: #WITH_INTENT_BASED_NAVIGATION } ]
+  @UI.selectionField: [ { position: 120 } ]
+  Driver;
+
+  @UI.lineItem:       [ { position: 130 } ]
+  @UI.selectionField: [ { position: 130 } ]
+  DriverName;
+
+  @Consumption.semanticObject : 'BusinessPartnerBuyer'
+  @UI.lineItem:       [ { position: 140, semanticObjectAction: 'display', type: #WITH_INTENT_BASED_NAVIGATION } ]
+  @UI.selectionField: [ { position: 140 } ]
+  Buyer;
+
+  @UI.lineItem:       [ { position: 150 } ]
+  @UI.selectionField: [ { position: 150 } ]
+  BuyerName;
+
+  @Consumption.semanticObject : 'BusinessPartnerSender'
+  @UI.lineItem:       [ { position: 160, semanticObjectAction: 'display', type: #WITH_INTENT_BASED_NAVIGATION } ]
+  @UI.selectionField: [ { position: 160 } ]
+  Sender;
+
+  @UI.lineItem:       [ { position: 170 } ]
+  SenderName;
+
+  @Consumption.semanticObject : 'BusinessPartnerConsignee'
+  @UI.lineItem:       [ { position: 180, semanticObjectAction: 'display', type: #WITH_INTENT_BASED_NAVIGATION } ]
+  @UI.selectionField: [ { position: 180 } ]
+  Consignee;
+
+  @UI.lineItem:       [ { position: 190 } ]
+  ConsigneeName;
+
+  @Consumption.semanticObject:'BusinessPartnerReceiver'
+  @UI.lineItem:       [ { position: 200, semanticObjectAction: 'display', type: #WITH_INTENT_BASED_NAVIGATION } ]
+  @UI.selectionField: [ { position: 200 } ]
+  Receiver;
+
+  @UI.lineItem:       [ { position: 210 } ]
+  ReceiverName;
+
+  @UI.lineItem:       [ { position: 220 } ]
+  @UI.selectionField: [ { position: 220 } ]
+  nfnum9;
+
+  @UI.lineItem:       [ { position: 230 } ]
+  @UI.selectionField: [ { position: 230 } ]
+  not_code;
+
+  @UI.hidden: true
+  not_code_txt;
+
+  @UI.lineItem:       [ { position: 240 } ]
+  @UI.selectionField: [ { position: 240 } ]
+  cfop;
+  
+  @UI.lineItem:       [ { position: 240 } ]
+  @UI.selectionField: [ { position: 240 } ]
+  cfop_ok;
+
+//  @UI.lineItem:       [ { position: 250 } ]
+//  @UI.selectionField: [ { position: 250 } ]
+//  prefno;
+
+  @UI.lineItem:       [ { position: 260 } ]
+  @UI.selectionField: [ { position: 260 } ]
+  sitdoc;
+
+  @UI.hidden: true
+  sitdoc_txt;
+
+  @UI.lineItem:       [ { position: 270 } ]
+  @UI.selectionField: [ { position: 270 } ]
+  @Consumption.filter.selectionType: #INTERVAL
+  @Consumption.filter.mandatory: true
+  dtemi;
+  
+  @UI.lineItem:       [ { position: 280 } ]
+  hremi;
+
+  @UI.lineItem:       [ { position: 290 } ]
+  @UI.selectionField: [ { position: 290 } ]
+  @Consumption.filter.selectionType: #INTERVAL
+  chadat;
+
+  @Consumption.filter.selectionType: #INTERVAL
+  chatim;
+
+  @UI.lineItem:       [ { position: 300 } ]
+  @UI.selectionField: [ { position: 300 } ]
+  usr_lib;
+
+  @UI.lineItem:       [ { position: 310 } ]
+  @UI.selectionField: [ { position: 310 } ]
+  usnam;
+
+  @UI.hidden: true
+  usnam_txt;
+
+  @UI.lineItem:       [ { position: 320 } ]
+  @UI.selectionField: [ { position: 320 } ]
+  @Consumption.filter.selectionType: #SINGLE
+  tpdoc;
+
+  @UI.lineItem:       [ { position: 330, criticality: 'possui_anexo_gnre_crit', criticalityRepresentation: #WITHOUT_ICON } ]
+  @UI.selectionField: [ { position: 330 } ]
+  @Consumption.filter.selectionType: #SINGLE
+  possui_anexo_gnre;
+
+  @UI.hidden: true
+  possui_anexo_gnre_crit;
+
+  @UI.lineItem:       [ { position: 340, criticality: 'possui_comprovante_gnre_crit', criticalityRepresentation: #WITHOUT_ICON } ]
+  @UI.selectionField: [ { position: 340 } ]
+  @Consumption.filter.selectionType: #SINGLE
+  possui_comprovante_gnre;
+
+  @UI.hidden: true
+  possui_comprovante_gnre_crit;
+
+  @UI.lineItem:       [ { position: 350, criticality: 'possui_anexo_nfs_crit', criticalityRepresentation: #WITHOUT_ICON } ]
+  @UI.selectionField: [ { position: 350 } ]
+  @Consumption.filter.selectionType: #SINGLE
+  possui_anexo_nfs;
+
+  @UI.hidden: true
+  possui_anexo_nfs_crit;
+
+  @UI.hidden: true
+  rem_uf_txt;
+
+  @UI.hidden: true
+  dest_uf_txt;
+
+  @UI.hidden: true
+  tpdoc_txt;
+  
+  @UI.hidden: true
+  direct_txt;
+
+  @UI.hidden: true
+  model_txt;
+
+  @UI.hidden: true
+  prod_acabado_desc;
+
+  @UI.hidden: true
+  rateio_txt;
+
+  @UI.hidden: true
+  codevento_txt;
+
+  @UI.hidden: true
+  tpcte_txt;
+
+  @UI.hidden: true
+  xmotivo;
+
+  @UI.hidden: true
+  iss_curr;
+
+  @UI.hidden: true
+  inss_curr;
+
+  @UI.hidden: true
+  trio_curr;
+
+  @UI.hidden: true
+  irrf_curr;
+
+  @UI.hidden: true
+  emit_uf_txt;
+
+  @UI.hidden: true
+  tom_uf_txt;
+
+  @UI.hidden: true
+  vstel_txt;
+
+  @UI.hidden: true
+  lifecycle_txt;
+
+  @UI.hidden: true
+  confirmation_txt;
+ 
+  @UI.hidden: true
+  sakto_txt;
+
+  @UI.hidden: true
+  kostl_txt;
+
+  @UI.hidden: true
+  bukrs_doc_txt;
+
+  @UI.hidden: true
+  crenam_txt;
+
+  @UI.hidden: true
+  chanam_txt;
+
+  @UI.hidden: true
+  belnr;
+
+  @UI.lineItem:       [ { position: 360 } ]
+  @UI.selectionField: [ { position: 280 } ]
+  vtprest;
+
+  @Consumption.semanticObject:'FreightOrder'
+  @UI.lineItem:       [ { position: 370, semanticObjectAction: 'displayRoad', type: #WITH_INTENT_BASED_NAVIGATION } ]
+  @UI.selectionField: [ { position: 370 } ]
+  FreightOrder;
+
+  @Consumption.semanticObject:'FreightSettlementDocument'
+  @UI.lineItem:       [ { position: 380, semanticObjectAction: 'display', type: #WITH_INTENT_BASED_NAVIGATION } ]
+  sfir_id;
+
+  @Consumption.semanticObject:'ZPurchaseOrder'
+  @UI.lineItem:       [ { position: 390, semanticObjectAction: 'zzdisplay', type: #WITH_INTENT_BASED_NAVIGATION } ]
+  @UI.selectionField: [ { position: 390 } ]
+  PurchaseOrder;
+
+  @UI.lineItem:       [ { position: 400, hidden: true } ]
+  @UI.selectionField: [ { position: 400 } ]
+  TransportationOrderUUID;
+
+  @UI.lineItem:       [ { position: 410, hidden: true } ]
+  @UI.selectionField: [ { position: 410 } ]
+  SuplrFrtInvcReqUUID;
+
+  @UI.lineItem:       [ { position: 420, criticality: 'pago_criticality', criticalityRepresentation: #WITHOUT_ICON } ]
+  pago;
+
+  @UI.hidden: true  
+  pago_criticality;
+  
+  @Consumption.filter.selectionType: #INTERVAL
+  rbkp_budat;
+  
+  @Consumption.filter.selectionType: #INTERVAL
+  budat;
+  
+  @Consumption.filter.selectionType: #INTERVAL
+  augdt;
+  
+  @UI.lineItem:       [ { position: 430, criticality: 'codstatus_crit', criticalityRepresentation: #WITHOUT_ICON } ]
+  UltimoLog;
+
+}

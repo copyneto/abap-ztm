@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZTM_PRESTACAO_CONTAS</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Cockpit para Prestação de Contas</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_PRESTACAO_CONTAS</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp;1&amp;2&amp;3&amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_PRESTACAO_CONTAS</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Nenhuma Ordem de Frete encontrada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_PRESTACAO_CONTAS</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Não é possível concluir a Ordem de Frete &amp;1. Nota Fiscal &amp;2 sem status.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_PRESTACAO_CONTAS</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Não é possível concluir a Ordem de Frete &amp;1. Unid. Frete &amp;2 sem status.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_PRESTACAO_CONTAS</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Não é possível concluir a Ordem de Frete &amp;1. Ordem sem Unidade de Frete.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_PRESTACAO_CONTAS</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Sem autorização para acessar esta funcionalidade.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_PRESTACAO_CONTAS</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Erro ao extrair PDF do spool &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_PRESTACAO_CONTAS</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Status &apos;&amp;1&apos; inválido. Utilizar um status válido.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_PRESTACAO_CONTAS</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Não é possível concluir. Ordem de Frete &amp;1 possui status &apos;Pendente&apos;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_PRESTACAO_CONTAS</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Ordem sem unidade de frete.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_PRESTACAO_CONTAS</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Tipo de Ordem de Venda não cadastrado para validação.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_PRESTACAO_CONTAS</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Tipo de Ordem de Venda &amp;1 não cadastrado para este evento.</TEXT>
+    </T100>
+   </T100>
+   <LONGTEXTS>
+    <item>
+     <DOKIL>
+      <ID>NA</ID>
+      <OBJECT>ZTM_PRESTACAO_CONTAS010</OBJECT>
+      <LANGU>P</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0002</VERSION>
+      <MASTERLANG>X</MASTERLANG>
+      <TXTLINES>00007</TXTLINES>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>ZTM_PRESTACAO_CONTAS010</TDNAME>
+      <TDID>NA</TDID>
+      <TDSPRAS>P</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00002</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;CAUSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Tipo de Ordem de Venda não cadastrado.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;SYSTEM_RESPONSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Tipo de Ordem de Venda não cadastrado na Tabela de Parâmetros</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;WHAT_TO_DO&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Cadastrar Tipo de Ordem de Venda no seguinte parâmetro:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>Modulo = &amp;V1&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>Chave1 = &amp;V2&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>Chave2 = &amp;V3&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>Chave3 = &amp;V4&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;SYS_ADMIN&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+     </LINES>
+    </item>
+   </LONGTEXTS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,1060 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Mensagens Gestão de Frete</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp;1&amp;2&amp;3&amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>NFS número &amp;1 não foi encontrado e possui status de &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Não foi encontrado fornecedor para o CNPJ &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Não foram encontrados &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Valor da fatura &amp;1 é de &amp;2 e o valor apurado no SAP é de &amp;3.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Erro ao iniciar processo de baixa.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Erro na compensação dos documentos.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Não foi encontrado pagamento para o documento &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Erro ao desbloquear documento &amp;1 motivo: &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Não foi possível realizar anulação/estorno do documento &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Erro ao obter o valor do campo &amp;1, &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>O documento já está em processamento.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Erro ao inserir/modificar os dados da tabela &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>Chave de acesso &amp;1 bloqueada pelo usuário &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>O documento não possui produtos acabados.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>Já existe um anexo para o tipo informado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>Erro ao abrir o arquivo &amp;1, &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>017</MSGNR>
+     <TEXT>O diretório de origem dos anexos não foi configurado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>018</MSGNR>
+     <TEXT>O diretório de arquivos processados não foi configurado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>019</MSGNR>
+     <TEXT>Diretório &amp;1 não foi encontrado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>020</MSGNR>
+     <TEXT>Sem permissão de escrita para o diretório &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>021</MSGNR>
+     <TEXT>Erro ao verificar o diretório &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>022</MSGNR>
+     <TEXT>Sem autorização para acessar o diretório &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>023</MSGNR>
+     <TEXT>O diretório &amp;1 está vazio.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>024</MSGNR>
+     <TEXT>Erro ao obter a lista de arquivos do diretório &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>025</MSGNR>
+     <TEXT>Nenhum arquivo válido foi encontrado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>026</MSGNR>
+     <TEXT>Só é possível a execução em background.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>027</MSGNR>
+     <TEXT>Já existe um Job em execução.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>028</MSGNR>
+     <TEXT>Para os arquivos do diretório, nenhum CTe/NFS foi encontrado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>029</MSGNR>
+     <TEXT>Erro ao criar o arquivo &amp;1, &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>030</MSGNR>
+     <TEXT>Erro ao ler o arquivo &amp;1, &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>031</MSGNR>
+     <TEXT>Erro ao deletar o arquivo &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>032</MSGNR>
+     <TEXT>Nota Fiscal de referência, não encontrada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>033</MSGNR>
+     <TEXT>XML processado, verificar logs.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>034</MSGNR>
+     <TEXT>Nenhum registro foi encontrado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>035</MSGNR>
+     <TEXT>Para a chave &amp;1, o XML não foi encontrado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>036</MSGNR>
+     <TEXT>Para o documento, nenhuma referência foi informada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>037</MSGNR>
+     <TEXT>Nenhuma linha válida foi selecionada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>038</MSGNR>
+     <TEXT>O evento não é permitido para o tipo de documento &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>039</MSGNR>
+     <TEXT>Destino RFC não configurado na tabela de parâmetros.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>040</MSGNR>
+     <TEXT>Processamento realizado. Verificar logs.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>041</MSGNR>
+     <TEXT>O &amp;1 não foi configurado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>042</MSGNR>
+     <TEXT>Abortando processamento, motivo: &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>043</MSGNR>
+     <TEXT>Nenhum documento foi informado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>044</MSGNR>
+     <TEXT>Centro do emitente não encontrado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>045</MSGNR>
+     <TEXT>Cenário &amp;1  tp. doc. &amp;2,  dados do material não encontrados.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>046</MSGNR>
+     <TEXT>Não foi possível determinar o Centro de Custo e Conta Contábil &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>047</MSGNR>
+     <TEXT>Filial do tomador não encontrada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>048</MSGNR>
+     <TEXT>Para o tipo de rateio &amp;1, não foi possível determinar o IVA.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>049</MSGNR>
+     <TEXT>A chave de acesso informada não foi integrada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>050</MSGNR>
+     <TEXT>Os dados da chave de acesso foram excluídos.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>051</MSGNR>
+     <TEXT>Os parâmetros do cabeçalho do pedido não foram encontrados.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>052</MSGNR>
+     <TEXT>Parâmetro &amp;1 não encontrado na tabela de parâmetros.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>053</MSGNR>
+     <TEXT>Não foi possível determinar o IVA para a Nota Fiscal &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>054</MSGNR>
+     <TEXT>O Código de Status &amp;1 não permite o Reprocessamento.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>055</MSGNR>
+     <TEXT>Erro ao realizar o estorno do doc. de agrupamento de fatura &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>056</MSGNR>
+     <TEXT>Erro ao realizar a anulação do doc. de agrupamento de fatura &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>057</MSGNR>
+     <TEXT>Erro ao realizar o estorno da Fatura &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>058</MSGNR>
+     <TEXT>Erro ao realizar o estorno do Pedido &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>059</MSGNR>
+     <TEXT>Erro ao determinar a categoria da nota fiscal &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>060</MSGNR>
+     <TEXT>Emitente &amp;1 não ampliado para fornecedor.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>061</MSGNR>
+     <TEXT>Para o cenário &amp;1, não foi possível determinar o IVA &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>062</MSGNR>
+     <TEXT>Não foi possível determinar o IVA para a NF &amp;1 item &amp;2 &amp;3.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>063</MSGNR>
+     <TEXT>Nenhum cenário configurado para o processamento agrupado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>064</MSGNR>
+     <TEXT>O cenário &amp;1 não permite o processamento agrupado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>065</MSGNR>
+     <TEXT>Selecionar apenas uma linha.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>066</MSGNR>
+     <TEXT>O status &amp;1 não permite &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>067</MSGNR>
+     <TEXT>Favor preencher todos os campos obrigatórios.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>068</MSGNR>
+     <TEXT>O arquivo &amp;1 não foi encontrado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>069</MSGNR>
+     <TEXT>Não foi possível realizar o anexo do documento.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>070</MSGNR>
+     <TEXT>Anexo &amp;1 &amp;2 adicionado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>071</MSGNR>
+     <TEXT>Erro ao criar o arquivo &amp;1, &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>072</MSGNR>
+     <TEXT>CTe &amp;1 não foi encontrado e possui status de &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>073</MSGNR>
+     <TEXT>Sucesso ao anexar o arquivo.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>074</MSGNR>
+     <TEXT>Documento de agrupamento &amp;1 estornado com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>075</MSGNR>
+     <TEXT>Fatura &amp;1 estornada com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>076</MSGNR>
+     <TEXT>Pedido &amp;1 eliminado com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>077</MSGNR>
+     <TEXT>Não foi realizada a MIRO para a NF de referência.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>078</MSGNR>
+     <TEXT>O valor total do pedido difere do valor total do frete.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>079</MSGNR>
+     <TEXT>Não foi possível determ. os itens da MIRO a partir das NFs de referência.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>080</MSGNR>
+     <TEXT>Só é possível a execução em background.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>081</MSGNR>
+     <TEXT>Já existe um Job em execução.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>082</MSGNR>
+     <TEXT>Condição de pagamento do transportadora não encontrada &amp;1 &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>083</MSGNR>
+     <TEXT>Não foi realizada a entrada da NF de referência da chave de acesso &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>084</MSGNR>
+     <TEXT>Valor total da MIRO difere do valor total do frete (diferença: &amp;1)</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>085</MSGNR>
+     <TEXT>Documento de estorno compensado com sucesso, &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>086</MSGNR>
+     <TEXT>Compensar manualmente o documento de estorno, &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>087</MSGNR>
+     <TEXT>Para o documento, o remetente não é um local de negócios.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>088</MSGNR>
+     <TEXT>Não foi realizada a entrada da nota &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>089</MSGNR>
+     <TEXT>Só é permitida a entrada de documentos emitidos a partir de &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>090</MSGNR>
+     <TEXT>Centro do tomador não encontrado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>091</MSGNR>
+     <TEXT>Atualização não permitida. Fatura &amp;1 se encontra com status de &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>092</MSGNR>
+     <TEXT>Centro tomador XML difere do pedido.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>093</MSGNR>
+     <TEXT>Não foram encontradas referências para a chave de origem &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>094</MSGNR>
+     <TEXT>A chave de origem &amp;1 não possui MIRO Confirmada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>095</MSGNR>
+     <TEXT>Favor selecionar o Motivo da recusa.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>096</MSGNR>
+     <TEXT>A chave de acesso &amp;1 não está com o evento de rejeição confirmado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>097</MSGNR>
+     <TEXT>Processo bloqueado pela área fiscal. Tabela: ZGKO_BLOQUEIO</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>098</MSGNR>
+     <TEXT>Não foi possível realizar o arredondamento.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>099</MSGNR>
+     <TEXT>Relatório &amp;1 indisponível.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>100</MSGNR>
+     <TEXT>Houveram erros durante geração do relatório.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>101</MSGNR>
+     <TEXT>Nenhuma Nota Fiscal encontrada para a chave informada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>102</MSGNR>
+     <TEXT>Chave inválida</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>103</MSGNR>
+     <TEXT>CT-e Incoming Header Data não encontrado</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>104</MSGNR>
+     <TEXT>Erro ao buscar status na SEFAZ</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>105</MSGNR>
+     <TEXT>Job executado com sucesso</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>106</MSGNR>
+     <TEXT>Parâmetro FAT_SELECION_PROF não configurado</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>107</MSGNR>
+     <TEXT>Erro na execução do job</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>108</MSGNR>
+     <TEXT>Parâmetro JOB_CALCULO_CUSTO não configurado</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>109</MSGNR>
+     <TEXT>Execução finalizada com sucesso</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>110</MSGNR>
+     <TEXT>Usuário não autorizado a agrupar faturas</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>111</MSGNR>
+     <TEXT>Agrupamento não gerado</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>112</MSGNR>
+     <TEXT>Chave &amp;1 não localizado no Mestre</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>113</MSGNR>
+     <TEXT>Chaves possuem transportadores distintos</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>114</MSGNR>
+     <TEXT>Chaves possuem tomadores distintos</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>115</MSGNR>
+     <TEXT>Tipo de documento invalido para agrupamento</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>116</MSGNR>
+     <TEXT>Não há dados a serem processados</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>117</MSGNR>
+     <TEXT>Linha do relatório não encontrada para chave de acesso &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>118</MSGNR>
+     <TEXT>Linha do relatório sem Ordem de Frete.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>119</MSGNR>
+     <TEXT>Chave não informada para a busca da lista.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>120</MSGNR>
+     <TEXT>Ordem de frete sem lista de anexos.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>121</MSGNR>
+     <TEXT>Medições para &quot;Hodômetro&quot; não cadastrado na tabela de parâmetros</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>122</MSGNR>
+     <TEXT>Medições para &quot;Combustível&quot; não cadastrado na tabela de parâmetros</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>123</MSGNR>
+     <TEXT>Medições para &quot;Abastecimento&quot; não cadastrado na tabela de parâmetros</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>124</MSGNR>
+     <TEXT>Arquivo não encontrado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>125</MSGNR>
+     <TEXT>Chave não informada para criação do anexo.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>126</MSGNR>
+     <TEXT>Tipo de documento não informado para criação do anexo.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>127</MSGNR>
+     <TEXT>Tipo de documento não existe.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>128</MSGNR>
+     <TEXT>Erro ao enviar arquivo XML para o GRC.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>129</MSGNR>
+     <TEXT>Envio realizado com sucesso!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>130</MSGNR>
+     <TEXT>Nenhum registro encontrado para a chave informada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>131</MSGNR>
+     <TEXT>Registro sem número de documento para buscar o arquivo.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>132</MSGNR>
+     <TEXT>Ordem de frete não identificada</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>133</MSGNR>
+     <TEXT>NF-e não encontrado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>134</MSGNR>
+     <TEXT>Falha ao anexar arquivo.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>135</MSGNR>
+     <TEXT>Erro ao extrair os campos do pop-up.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>136</MSGNR>
+     <TEXT>Agrupamento realizado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>137</MSGNR>
+     <TEXT>Agrupamento contêm erros. Favor verificar log de execução.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>138</MSGNR>
+     <TEXT>Documento pago - autenticação bancária &amp;1.</TEXT>
+    </T100>
+   </T100>
+   <LONGTEXTS>
+    <item>
+     <DOKIL>
+      <ID>NA</ID>
+      <OBJECT>ZTM_GESTAO_FRETE121</OBJECT>
+      <LANGU>P</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0002</VERSION>
+      <MASTERLANG>X</MASTERLANG>
+      <TXTLINES>00007</TXTLINES>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>ZTM_GESTAO_FRETE121</TDNAME>
+      <TDID>NA</TDID>
+      <TDSPRAS>P</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00002</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;CAUSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Medições para &quot;Hodômetro&quot; não cadastrado na tabela de parâmetros</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;SYSTEM_RESPONSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Medições para &quot;Hodômetro&quot; não cadastrado na tabela de parâmetros</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;WHAT_TO_DO&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Cadastrar valores na tabela de parâmetros:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>Modulo = &amp;V1&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>Chave1 = &amp;V2&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>Chave2 = &amp;V3&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>Chave3 = &amp;V4&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;SYS_ADMIN&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>NA</ID>
+      <OBJECT>ZTM_GESTAO_FRETE122</OBJECT>
+      <LANGU>P</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0006</VERSION>
+      <MASTERLANG>X</MASTERLANG>
+      <TXTLINES>00007</TXTLINES>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>ZTM_GESTAO_FRETE122</TDNAME>
+      <TDID>NA</TDID>
+      <TDSPRAS>P</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00006</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;CAUSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Medições para &quot;Combustível&quot; não cadastrado na tabela de parâmetros</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;SYSTEM_RESPONSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Medições para &quot;Combustível&quot; não cadastrado na tabela de parâmetros</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;WHAT_TO_DO&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Cadastrar valores na tabela de parâmetros:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>Modulo = &amp;V1&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>Chave1 = &amp;V2&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>Chave2 = &amp;V3&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>Chave3 = &amp;V4&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;SYS_ADMIN&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>NA</ID>
+      <OBJECT>ZTM_GESTAO_FRETE123</OBJECT>
+      <LANGU>P</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0002</VERSION>
+      <MASTERLANG>X</MASTERLANG>
+      <TXTLINES>00007</TXTLINES>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>ZTM_GESTAO_FRETE123</TDNAME>
+      <TDID>NA</TDID>
+      <TDSPRAS>P</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00002</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;CAUSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Medições para &quot;Abastecimento&quot; não cadastrado na tabela de parâmetros</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;SYSTEM_RESPONSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Medições para &quot;Abastecimento&quot; não cadastrado na tabela de parâmetros</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;WHAT_TO_DO&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Cadastrar valores na tabela de parâmetros:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>Modulo = &amp;V1&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>Chave1 = &amp;V2&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>Chave2 = &amp;V3&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>Chave3 = &amp;V4&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;SYS_ADMIN&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+     </LINES>
+    </item>
+   </LONGTEXTS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

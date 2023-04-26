@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv Def para Cockpit MDF-e'
+define service ZUI_TM_MDF_COCKPIT {
+  expose ZC_TM_MDF_COCKPIT;
+}

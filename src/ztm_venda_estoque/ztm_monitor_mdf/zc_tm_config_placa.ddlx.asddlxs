@@ -1,0 +1,117 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Placa (OBSOLETO)',
+                     typeNamePlural: 'Placas (OBSOLETO)',
+                     title: { type: #STANDARD, label: 'Placa',  value: 'Placa' } } }
+
+annotate view ZC_TM_CONFIG_PLACA with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:              'DADOS',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Placa',
+                 position:        10 },
+
+                        { parentId:        'DADOS',
+                          id:              'DADOS_PRINCIPAIS',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          label: 'Dados principais',
+                          targetQualifier: 'DADOS_PRINCIPAIS' },
+
+                        { parentId:        'DADOS',
+                          id:              'DADOS_CONTROLE',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          label: 'Dados de controle',
+                          targetQualifier: 'DADOS_CONTROLE' } ]
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI: { lineItem:       [ { position: 10 } ],
+         fieldGroup:     [ { position: 10, qualifier: 'DADOS_PRINCIPAIS' } ],
+         selectionField: [ { position: 10 } ] }
+  Placa;
+
+  @UI.hidden: true
+  Placatext;
+
+  @UI: { lineItem:       [ { position: 20 } ],
+         fieldGroup:     [ { position: 20, qualifier: 'DADOS_PRINCIPAIS' } ],
+         selectionField: [ { position: 20 } ] }
+  CategoriaEquip;
+
+  @UI.hidden: true
+  CategoriaEquipText;
+
+  @UI: { lineItem:       [ { position: 30 } ],
+         fieldGroup:     [ { position: 30, qualifier: 'DADOS_PRINCIPAIS' } ],
+         selectionField: [ { position: 30 } ] }
+  TipoEquip;
+
+  @UI.hidden: true
+  TipoEquipText;
+
+  @UI: { lineItem:       [ { position: 40 } ],
+         fieldGroup:     [ { position: 40, qualifier: 'DADOS_PRINCIPAIS' } ],
+         selectionField: [ { position: 40 } ] }
+  Renavam;
+
+  @UI: { lineItem:       [ { position: 50 } ],
+         fieldGroup:     [ { position: 50, qualifier: 'DADOS_PRINCIPAIS' } ],
+         selectionField: [ { position: 50 } ] }
+  Tara;
+
+  @UI: { lineItem:       [ { position: 60 } ],
+         fieldGroup:     [ { position: 60, qualifier: 'DADOS_PRINCIPAIS' } ],
+         selectionField: [ { position: 60 } ] }
+  CapKg;
+
+  @UI: { lineItem:       [ { position: 70 } ],
+         fieldGroup:     [ { position: 70, qualifier: 'DADOS_PRINCIPAIS' } ],
+         selectionField: [ { position: 70 } ] }
+  CapM3;
+
+  @UI: { lineItem:       [ { position: 80 } ],
+         fieldGroup:     [ { position: 80, qualifier: 'DADOS_PRINCIPAIS' } ],
+         selectionField: [ { position: 80 } ] }
+  TpRod;
+
+  @UI.hidden: true
+  TpRodText;
+
+  @UI: { lineItem:       [ { position: 90 } ],
+         fieldGroup:     [ { position: 90, qualifier: 'DADOS_PRINCIPAIS' } ],
+         selectionField: [ { position: 90 } ] }
+  TpCar;
+
+  @UI.hidden: true
+  TpCarText;
+
+  @UI: { lineItem:       [ { position: 100 } ],
+         fieldGroup:     [ { position: 100, qualifier: 'DADOS_PRINCIPAIS' } ],
+         selectionField: [ { position: 100 } ] }
+  Uf;
+
+  @UI.hidden: true
+  UfName;
+
+  @UI: { fieldGroup:     [ { position: 10, qualifier: 'DADOS_CONTROLE' } ] }
+  CreatedBy;
+
+  @UI: { fieldGroup:     [ { position: 20, qualifier: 'DADOS_CONTROLE' } ] }
+  CreatedAt;
+
+  @UI: { fieldGroup:     [ { position: 30, qualifier: 'DADOS_CONTROLE' } ] }
+  LastChangedBy;
+
+  @UI: { fieldGroup:     [ { position: 40, qualifier: 'DADOS_CONTROLE' } ] }
+  LastChangedAt;
+
+  @UI: { fieldGroup:     [ { position: 50, qualifier: 'DADOS_CONTROLE' } ] }
+  LocalLastChangedAt;
+
+
+}

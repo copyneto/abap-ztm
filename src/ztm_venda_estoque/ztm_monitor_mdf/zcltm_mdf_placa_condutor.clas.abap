@@ -1,0 +1,5 @@
+CLASS zcltm_mdf_placa_condutor DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_tm_mdf.
+ENDCLASS.
+
+CLASS zcltm_mdf_placa_condutor IMPLEMENTATION.
+ENDCLASS.

@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Funções para Prestação de Contas</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGTM_PRESTACAO_CONTASTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGTM_PRESTACAO_CONTAS</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMTM_PRESTACAO_DEF_STS</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Definir novo status para prestação de contas</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_FREIGHTORDERUUID</PARAMETER>
+       <TYP>/BOBF/CONF_KEY</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_STATUS</PARAMETER>
+       <TYP>/SCMTMS/TOR_LC_STATUS</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_MESSAGES</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_FREIGHTORDERUUID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Globally Unique Identifier</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_STATUS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Status do ciclo de vida</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MESSAGES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMTM_PRESTACAO_DEF_STS_UNID</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Inserir status para unidade frete para prestação de contas</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_FREIGHTORDERUUID</PARAMETER>
+       <TYP>/BOBF/CONF_KEY</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_FREIGHTUNITUUID</PARAMETER>
+       <TYP>/BOBF/CONF_KEY</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_TRANSPORDEVENTCODE</PARAMETER>
+       <TYP>/SCMTMS/TOR_EVENT</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_MESSAGES</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_FREIGHTORDERUUID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>NodeID</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_FREIGHTUNITUUID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>NodeID</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_TRANSPORDEVENTCODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Evento que ocorre durante uma atividade de transporte</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MESSAGES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

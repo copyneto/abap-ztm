@@ -1,0 +1,43 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Percurso',
+                     typeNamePlural: 'Percurso' } }
+                     
+annotate view ZC_TM_MDF_PERCURSO_DOC with
+{
+
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:            'Percurso',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Percurso',
+                 position:      10 }  ]                                                                 
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI.hidden: true
+  Id;
+
+  @UI: { lineItem:        [ { position: 10, label: 'Origem' } ],
+         identification:  [ { position: 10, label: 'Origem' } ]  }
+  UfInicio;
+
+  @UI: { lineItem:        [ { position: 20, label: 'Destino' } ],
+         identification:  [ { position: 20, label: 'Destino' } ]  }
+  UfFim;
+
+  @UI.hidden: true
+  UfInicioText;
+
+  @UI.hidden: true
+  UfFimText;
+
+  @UI: { lineItem:        [ { position: 30, label: 'Percurso', criticality: 'PercursoCriticality', criticalityRepresentation: #WITHOUT_ICON } ],
+         identification:  [ { position: 30, label: 'Percurso', criticality: 'PercursoCriticality', criticalityRepresentation: #WITHOUT_ICON } ]  }
+  Percurso;
+
+  @UI.hidden: true
+  PercursoCriticality;
+}

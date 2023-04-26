@@ -1,0 +1,5 @@
+CLASS zcltm_config_placa DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_tm_config_placa.
+ENDCLASS.
+
+CLASS zcltm_config_placa IMPLEMENTATION.
+ENDCLASS.

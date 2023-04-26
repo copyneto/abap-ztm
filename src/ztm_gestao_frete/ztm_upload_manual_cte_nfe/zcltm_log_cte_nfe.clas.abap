@@ -1,0 +1,5 @@
+CLASS zcltm_log_cte_nfe DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_tm_log_cte_nfe.
+ENDCLASS.
+
+CLASS zcltm_log_cte_nfe IMPLEMENTATION.
+ENDCLASS.

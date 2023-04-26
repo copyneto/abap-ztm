@@ -1,0 +1,28 @@
+managed;
+
+define behavior for ZI_TM_PARAM_ROADNET alias param
+implementation in class zcltm_param_roadnet unique
+persistent table zttm_road_sessio
+lock master
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  field ( readonly )
+  centro,
+  session_data;
+
+  action ( features : instance ) importar;
+
+  mapping for zttm_road_sessio
+  {
+    centro = werks;
+    session_data = dtsession;
+    session_id = id_session_roadnet;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+
+}

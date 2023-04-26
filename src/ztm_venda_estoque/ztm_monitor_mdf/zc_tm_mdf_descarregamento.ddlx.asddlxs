@@ -1,0 +1,35 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Descarregamento',
+                     typeNamePlural: 'Descarregamento' } }
+                     
+annotate view ZC_TM_MDF_DESCARREGAMENTO with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:            'Descarregamento',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Descarregamento',
+                 position:      10 }  ]
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI.hidden: true
+  Id;
+
+  @UI: { lineItem:        [ { position: 10, label: 'Município' } ],
+         identification:  [ { position: 10, label: 'Município' } ] }
+  TaxJurCode;
+
+  @UI.hidden: true
+  TaxJurCodeText;
+  
+  @UI: { lineItem:        [ { position: 20, label: 'UF' } ],
+         identification:  [ { position: 20, label: 'UF' } ] }
+  Uf;
+  
+  @UI.hidden: true
+  UfName;
+}

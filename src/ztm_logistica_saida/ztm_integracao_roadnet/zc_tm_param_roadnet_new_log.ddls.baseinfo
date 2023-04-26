@@ -1,0 +1,16 @@
+{
+"BASEINFO":
+{
+"FROM":
+[],
+"ASSOCIATED":
+[
+"ZC_TM_PARAM_ROADNET_NEW"
+],
+"BASE":
+[],
+"ANNO_REF":
+[],
+"VERSION":0
+}
+}

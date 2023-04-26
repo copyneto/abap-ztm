@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SPRX" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROXY_HEADER>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_FRETES_DIVERSOS_DADOS</OBJ_NAME>
+     <OBJECT_M>TABL</OBJECT_M>
+     <OBJ_NAME_M>ZCLTM_DT_FRETES_DIVERSOS</OBJ_NAME_M>
+     <HASH_ID>A511388C38CE3EBB0E7B588A5117863EAD9A2469</HASH_ID>
+     <ID>&lt;type&gt; DADOS &lt;element&gt; DADOS &lt;type&gt; dtFretesDiversos http://trescoracoes.com.br/transporte/fretesdiversos http://trescoracoes.com.br/transporte/fretesdiversos</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>DADOS</IFR_NAME>
+     <IFR_NSPCE>http://trescoracoes.com.br/transporte/fretesdiversos</IFR_NSPCE>
+     <IFR_GNSPCE>http://trescoracoes.com.br/transporte/fretesdiversos</IFR_GNSPCE>
+     <GEN_VERS>0005</GEN_VERS>
+     <PREFIX>ZCLTM_</PREFIX>
+     <CATEGORY>ifmtypedef</CATEGORY>
+     <X-ML_NSPCE>http://trescoracoes.com.br/transporte/fretesdiversos</X-ML_NSPCE>
+     <X-ML_NAME>DADOS</X-ML_NAME>
+    </item>
+   </PROXY_HEADER>
+   <PROXY_DATA>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_FRETES_DIVERSOS_DADOS</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>CENTRO_CUSTO</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>CENTRO_CUSTO</OBJ_NAME2>
+     <ID>&lt;element&gt; CENTRO_CUSTO &lt;type&gt; DADOS &lt;element&gt; DADOS &lt;type&gt; dtFretesDiversos http://trescoracoes.com.br/transporte/fretesdiversos http://trescoracoes.com.br/transporte/fretesdiversos</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>CENTRO_CUSTO</IFR_NAME>
+     <IFR_TEXT>Centro de Custo</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>10</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>CENTRO_CUSTO</R3_NAME>
+     <R3_TEXT>Centro de Custo</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000010</R3_LENGTH>
+     <R3_SEQNUM>000011</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_FRETES_DIVERSOS_DADOS</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>CHAVE_NFE</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>CHAVE_NFE</OBJ_NAME2>
+     <ID>&lt;element&gt; CHAVE_NFE &lt;type&gt; DADOS &lt;element&gt; DADOS &lt;type&gt; dtFretesDiversos http://trescoracoes.com.br/transporte/fretesdiversos http://trescoracoes.com.br/transporte/fretesdiversos</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>CHAVE_NFE</IFR_NAME>
+     <IFR_TEXT>Número da chave de acesso da NF-e que vai acobertar a movimentação da mercadoria e que será informad</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>44</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>CHAVE_NFE</R3_NAME>
+     <R3_TEXT>Número da chave de acesso da NF-e que vai acobertar a movime</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000044</R3_LENGTH>
+     <R3_SEQNUM>000013</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_FRETES_DIVERSOS_DADOS</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>CONTA_CONTABIL</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>CONTA_CONTABIL</OBJ_NAME2>
+     <ID>&lt;element&gt; CONTA_CONTABIL &lt;type&gt; DADOS &lt;element&gt; DADOS &lt;type&gt; dtFretesDiversos http://trescoracoes.com.br/transporte/fretesdiversos http://trescoracoes.com.br/transporte/fretesdiversos</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>CONTA_CONTABIL</IFR_NAME>
+     <IFR_TEXT>Conta Contábil</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>10</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>CONTA_CONTABIL</R3_NAME>
+     <R3_TEXT>Conta Contábil</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000010</R3_LENGTH>
+     <R3_SEQNUM>000012</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_FRETES_DIVERSOS_DADOS</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>CUSTO_ADICIONAL</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>CUSTO_ADICIONAL</OBJ_NAME2>
+     <ID>&lt;element&gt; CUSTO_ADICIONAL &lt;type&gt; DADOS &lt;element&gt; DADOS &lt;type&gt; dtFretesDiversos http://trescoracoes.com.br/transporte/fretesdiversos http://trescoracoes.com.br/transporte/fretesdiversos</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>CUSTO_ADICIONAL</IFR_NAME>
+     <IFR_TEXT>Frete Adicional</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>decimal</IFR_XSDTYP>
+     <IFR_PREC>10</IFR_PREC>
+     <IFR_SCALE>2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>CUSTO_ADICIONAL</R3_NAME>
+     <R3_TEXT>Frete Adicional</R3_TEXT>
+     <R3_DATATYP>DEC</R3_DATATYP>
+     <R3_LENGTH>000012</R3_LENGTH>
+     <R3_DECIMAL>000002</R3_DECIMAL>
+     <R3_SEQNUM>000010</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_FRETES_DIVERSOS_DADOS</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>DATA_PEDIDO</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>DATA_PEDIDO</OBJ_NAME2>
+     <ID>&lt;element&gt; DATA_PEDIDO &lt;type&gt; DADOS &lt;element&gt; DADOS &lt;type&gt; dtFretesDiversos http://trescoracoes.com.br/transporte/fretesdiversos http://trescoracoes.com.br/transporte/fretesdiversos</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>DATA_PEDIDO</IFR_NAME>
+     <IFR_TEXT>Data Pedido</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>date</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>DATA_PEDIDO</R3_NAME>
+     <R3_TEXT>Data Pedido</R3_TEXT>
+     <R3_DTREF>XSDDATE_D</R3_DTREF>
+     <R3_SEQNUM>000014</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_FRETES_DIVERSOS_DADOS</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>MODAL</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>MODAL</OBJ_NAME2>
+     <ID>&lt;element&gt; MODAL &lt;type&gt; DADOS &lt;element&gt; DADOS &lt;type&gt; dtFretesDiversos http://trescoracoes.com.br/transporte/fretesdiversos http://trescoracoes.com.br/transporte/fretesdiversos</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>MODAL</IFR_NAME>
+     <IFR_TEXT>Modal</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>decimal</IFR_XSDTYP>
+     <IFR_PREC>2</IFR_PREC>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>MODAL</R3_NAME>
+     <R3_TEXT>Modal</R3_TEXT>
+     <R3_DATATYP>NUMC</R3_DATATYP>
+     <R3_LENGTH>000002</R3_LENGTH>
+     <R3_SEQNUM>000008</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_FRETES_DIVERSOS_DADOS</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>ORDEM_FRETE</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>ORDEM_FRETE</OBJ_NAME2>
+     <ID>&lt;element&gt; ORDEM_FRETE &lt;type&gt; DADOS &lt;element&gt; DADOS &lt;type&gt; dtFretesDiversos http://trescoracoes.com.br/transporte/fretesdiversos http://trescoracoes.com.br/transporte/fretesdiversos</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>ORDEM_FRETE</IFR_NAME>
+     <IFR_TEXT>Ordem de Frete</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>10</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>ORDEM_FRETE</R3_NAME>
+     <R3_TEXT>Ordem de Frete</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000010</R3_LENGTH>
+     <R3_SEQNUM>000006</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_FRETES_DIVERSOS_DADOS</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>ORDEM_SD</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>ORDEM_SD</OBJ_NAME2>
+     <ID>&lt;element&gt; ORDEM_SD &lt;type&gt; DADOS &lt;element&gt; DADOS &lt;type&gt; dtFretesDiversos http://trescoracoes.com.br/transporte/fretesdiversos http://trescoracoes.com.br/transporte/fretesdiversos</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>ORDEM_SD</IFR_NAME>
+     <IFR_TEXT>Ordem de Venda</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>10</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>ORDEM_SD</R3_NAME>
+     <R3_TEXT>Ordem de Venda</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000010</R3_LENGTH>
+     <R3_SEQNUM>000003</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_FRETES_DIVERSOS_DADOS</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>PEDIDO_FLUIG</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>PEDIDO_FLUIG</OBJ_NAME2>
+     <ID>&lt;element&gt; PEDIDO_FLUIG &lt;type&gt; DADOS &lt;element&gt; DADOS &lt;type&gt; dtFretesDiversos http://trescoracoes.com.br/transporte/fretesdiversos http://trescoracoes.com.br/transporte/fretesdiversos</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>PEDIDO_FLUIG</IFR_NAME>
+     <IFR_TEXT>Nº Pedido Fluig</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>10</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>PEDIDO_FLUIG</R3_NAME>
+     <R3_TEXT>Nº Pedido Fluig</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000010</R3_LENGTH>
+     <R3_SEQNUM>000015</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_FRETES_DIVERSOS_DADOS</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>PEDIDO_MM</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>PEDIDO_MM</OBJ_NAME2>
+     <ID>&lt;element&gt; PEDIDO_MM &lt;type&gt; DADOS &lt;element&gt; DADOS &lt;type&gt; dtFretesDiversos http://trescoracoes.com.br/transporte/fretesdiversos http://trescoracoes.com.br/transporte/fretesdiversos</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>PEDIDO_MM</IFR_NAME>
+     <IFR_TEXT>Pedido de Compras</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>10</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>PEDIDO_MM</R3_NAME>
+     <R3_TEXT>Pedido de Compras</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000010</R3_LENGTH>
+     <R3_SEQNUM>000002</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_FRETES_DIVERSOS_DADOS</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>REMESSA</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>REMESSA</OBJ_NAME2>
+     <ID>&lt;element&gt; REMESSA &lt;type&gt; DADOS &lt;element&gt; DADOS &lt;type&gt; dtFretesDiversos http://trescoracoes.com.br/transporte/fretesdiversos http://trescoracoes.com.br/transporte/fretesdiversos</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>REMESSA</IFR_NAME>
+     <IFR_TEXT>Fornecimento / Remessa</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>8</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>REMESSA</R3_NAME>
+     <R3_TEXT>Fornecimento / Remessa</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000008</R3_LENGTH>
+     <R3_SEQNUM>000004</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_FRETES_DIVERSOS_DADOS</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>STATUS</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>STATUS</OBJ_NAME2>
+     <ID>&lt;element&gt; STATUS &lt;type&gt; DADOS &lt;element&gt; DADOS &lt;type&gt; dtFretesDiversos http://trescoracoes.com.br/transporte/fretesdiversos http://trescoracoes.com.br/transporte/fretesdiversos</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>STATUS</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>STATUS</R3_NAME>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000001</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_FRETES_DIVERSOS_DADOS</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>TIPO_FRETE</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>TIPO_FRETE</OBJ_NAME2>
+     <ID>&lt;element&gt; TIPO_FRETE &lt;type&gt; DADOS &lt;element&gt; DADOS &lt;type&gt; dtFretesDiversos http://trescoracoes.com.br/transporte/fretesdiversos http://trescoracoes.com.br/transporte/fretesdiversos</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>TIPO_FRETE</IFR_NAME>
+     <IFR_TEXT>Tipo de Pedido Fluig</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>20</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>TIPO_FRETE</R3_NAME>
+     <R3_TEXT>Tipo de Pedido Fluig</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000020</R3_LENGTH>
+     <R3_SEQNUM>000016</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_FRETES_DIVERSOS_DADOS</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>TIPO_OPERACAO</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>TIPO_OPERACAO</OBJ_NAME2>
+     <ID>&lt;element&gt; TIPO_OPERACAO &lt;type&gt; DADOS &lt;element&gt; DADOS &lt;type&gt; dtFretesDiversos http://trescoracoes.com.br/transporte/fretesdiversos http://trescoracoes.com.br/transporte/fretesdiversos</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>TIPO_OPERACAO</IFR_NAME>
+     <IFR_TEXT>Tipo Operação Fiscal</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>int</IFR_XSDTYP>
+     <IFR_PREC>2</IFR_PREC>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>TIPO_OPERACAO</R3_NAME>
+     <R3_TEXT>Tipo Operação Fiscal</R3_TEXT>
+     <R3_DATATYP>INT4</R3_DATATYP>
+     <R3_SEQNUM>000017</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_FRETES_DIVERSOS_DADOS</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>TRANSPORTADORA</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>TRANSPORTADORA</OBJ_NAME2>
+     <ID>&lt;element&gt; TRANSPORTADORA &lt;type&gt; DADOS &lt;element&gt; DADOS &lt;type&gt; dtFretesDiversos http://trescoracoes.com.br/transporte/fretesdiversos http://trescoracoes.com.br/transporte/fretesdiversos</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>TRANSPORTADORA</IFR_NAME>
+     <IFR_TEXT>Cod. BP Transportadora</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>10</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>TRANSPORTADORA</R3_NAME>
+     <R3_TEXT>Cod. BP Transportadora</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000010</R3_LENGTH>
+     <R3_SEQNUM>000007</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_FRETES_DIVERSOS_DADOS</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>UNIDADE_FRETE</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>UNIDADE_FRETE</OBJ_NAME2>
+     <ID>&lt;element&gt; UNIDADE_FRETE &lt;type&gt; DADOS &lt;element&gt; DADOS &lt;type&gt; dtFretesDiversos http://trescoracoes.com.br/transporte/fretesdiversos http://trescoracoes.com.br/transporte/fretesdiversos</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>UNIDADE_FRETE</IFR_NAME>
+     <IFR_TEXT>Unidade de Frete</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_MAXLEN>10</IFR_MAXLEN>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>UNIDADE_FRETE</R3_NAME>
+     <R3_TEXT>Unidade de Frete</R3_TEXT>
+     <R3_DATATYP>CHAR</R3_DATATYP>
+     <R3_LENGTH>000010</R3_LENGTH>
+     <R3_SEQNUM>000005</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_FRETES_DIVERSOS_DADOS</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>VLR_FRETE</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>VLR_FRETE</OBJ_NAME2>
+     <ID>&lt;element&gt; VLR_FRETE &lt;type&gt; DADOS &lt;element&gt; DADOS &lt;type&gt; dtFretesDiversos http://trescoracoes.com.br/transporte/fretesdiversos http://trescoracoes.com.br/transporte/fretesdiversos</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>VLR_FRETE</IFR_NAME>
+     <IFR_TEXT>Valor do Frete</IFR_TEXT>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MINOCC>1</IFR_MINOCC>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_XSDTYP>decimal</IFR_XSDTYP>
+     <IFR_PREC>10</IFR_PREC>
+     <IFR_SCALE>2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>VLR_FRETE</R3_NAME>
+     <R3_TEXT>Valor do Frete</R3_TEXT>
+     <R3_DATATYP>DEC</R3_DATATYP>
+     <R3_LENGTH>000012</R3_LENGTH>
+     <R3_DECIMAL>000002</R3_DECIMAL>
+     <R3_SEQNUM>000009</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_FRETES_DIVERSOS_DADOS</OBJ_NAME>
+     <OBJECT1>TABL</OBJECT1>
+     <OBJ_NAME1>ZCLTM_DT_FRETES_DIVERSOS_DADOS</OBJ_NAME1>
+     <OBJECT2>TABL</OBJECT2>
+     <OBJ_NAME2>ZCLTM_DT_FRETES_DIVERSOS_DADOS</OBJ_NAME2>
+     <ID>&lt;type&gt; DADOS &lt;element&gt; DADOS &lt;type&gt; dtFretesDiversos http://trescoracoes.com.br/transporte/fretesdiversos http://trescoracoes.com.br/transporte/fretesdiversos</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>DADOS</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>TABL</R3_TYPE>
+     <R3_NAME>ZCLTM_DT_FRETES_DIVERSOS_DADOS</R3_NAME>
+     <R3_TEXT>Proxy Structure (generated)</R3_TEXT>
+     <CATEGORY>ifmtypedef</CATEGORY>
+    </item>
+   </PROXY_DATA>
+  </asx:values>
+ </asx:abap>
+</abapGit>

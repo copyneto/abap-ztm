@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLTM_TCC_CALC_COND</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Calculation Method Product x Stage</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_PERC_CALCULATION_RATE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Add percent on Calculation Rate</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_PERC_CREDIT_AMOUNT_LOC_CUR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Add per. on amount from master data(amount from calc sheet)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_PERC_MODIFIED_RATE_AFT_CL</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Add percent on modified rate after class rate applied</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Constructor</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>C_BRL</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Moeda</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>C_PRD</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Categoria de item</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DETERMINE_PERC_REMOVE_FR_CUST</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Determinar o pecentual a ser removido do custo de frete</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_DES_STOP_KEY_BY_STOP_SUCC</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Get DES_STOP_KEY by STOP_SUCC</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_HIER_LOG_RB_REF</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Get MS_HIER_LOG_RB_REF</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_REQUEST_KEY</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Get root key</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_SERVICE_MANAGER</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Get service manager</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_TRANSPORT_CHARGES_VALUE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Get transport charges value</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MO_SERVICE_MANAGER</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Containing the public service methods of a service manager</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SUMMARIZE_UNLOADING_STOP_VL</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Summarize unloading stop values</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_PERC_CALCULATION_RATE</CMPNAME>
+     <SCONAME>IR_CHARGE_BASE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Transportation Charge Element - Communication Structure</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_PERC_CALCULATION_RATE</CMPNAME>
+     <SCONAME>IV_PERC_AMOUNT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Amount</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_PERC_CREDIT_AMOUNT_LOC_CUR</CMPNAME>
+     <SCONAME>IR_CHARGE_BASE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Transportation Charge Element - Communication Structure</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_PERC_CREDIT_AMOUNT_LOC_CUR</CMPNAME>
+     <SCONAME>IV_PERC_AMOUNT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Montante</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_PERC_MODIFIED_RATE_AFT_CL</CMPNAME>
+     <SCONAME>IR_CHARGE_BASE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Transportation Charge Element - Communication Structure</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_PERC_MODIFIED_RATE_AFT_CL</CMPNAME>
+     <SCONAME>IV_PERC_AMOUNT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Montante</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_DES_STOP_KEY_BY_STOP_SUCC</CMPNAME>
+     <SCONAME>IV_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave para tempo de execução do cálculo de custos</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_DES_STOP_KEY_BY_STOP_SUCC</CMPNAME>
+     <SCONAME>RV_RESULT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave para tempo de execução do cálculo de custos</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_SERVICE_MANAGER</CMPNAME>
+     <SCONAME>RO_RESULT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Containing the public service methods of a service manager</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_TRANSPORT_CHARGES_VALUE</CMPNAME>
+     <SCONAME>RV_RESULT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Montante</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SUMMARIZE_UNLOADING_STOP_VL</CMPNAME>
+     <SCONAME>EV_PRD_TOTAL_VL</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Valor da mercadoria</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

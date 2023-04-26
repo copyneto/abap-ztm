@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLTM_CREATE_OF_SAGA</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Criação da OF SAGA</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_EVENT_COLETADO</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Evento que ocorre durante uma atividade de transporte</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_ITEMCAT_AVR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Categoria de item</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_ITEMCAT_PVR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Categoria de item</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_ITMTYPE_TRL</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo de item da ordem de transporte</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_ITMTYPE_TRUC</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo de item da ordem de transporte</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_OPTION_EQ</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Componente do nº versão</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_SIGN_I</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de um caractere</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_TORCAT_FU</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Categoria de documento comercial</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_TORCAT_TO</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Categoria de documento comercial</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_TORTYPE_ECOMMERCE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo de documento comercial</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GO_SRV_TOR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Containing the public service methods of a service manager</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GO_TRA_MGR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Interface of the standalone transaction manager</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_MESSAGES</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Mensagens de erro</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_MOD</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Changes</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_STOP_FIRST_LAST</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Stop</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_TURES_TCO</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo de equipamento</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>ASSOCIATE_UF</CMPNAME>
+     <SCONAME>IS_FO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Root Node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ASSOCIATE_UF</CMPNAME>
+     <SCONAME>IS_FU</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Root Node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ATUALIZA_STATUS_OF</CMPNAME>
+     <SCONAME>IV_TOR_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>NodeID</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_FO</CMPNAME>
+     <SCONAME>IS_ROOT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Root Node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_FO</CMPNAME>
+     <SCONAME>IV_ACTUA_DATA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Data real do evento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_DATA_STOP</CMPNAME>
+     <SCONAME>IV_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>NodeID</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_MESSAGE</CMPNAME>
+     <SCONAME>RT_BAPIRET2</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Mensagens de erro</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PROCESS_INTERFACE</CMPNAME>
+     <SCONAME>ZCXTM_CREATE_OF_SAGA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Excessão na Criação da Ordem de Frete SAGA</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

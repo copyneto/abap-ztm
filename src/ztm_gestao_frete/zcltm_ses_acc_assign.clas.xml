@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLTM_SES_ACC_ASSIGN</CLSNAME>
+    <LANGU>P</LANGU>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>BUSCA_REFERENCIA</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Busca documentos de referencia</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DETERMINA_LOC_ORIGEM_DEST</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Determina Local de Expedição Origem/Destino</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>TRATA_CARACTER_ESPECIAL</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Retira caracteres especiais</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCA_REFERENCIA</CMPNAME>
+     <SCONAME>IS_TOR_FO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Root Node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCA_REFERENCIA</CMPNAME>
+     <SCONAME>RT_TOR_DOCREF</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Document Reference</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DETERMINA_LOC_ORIGEM_DEST</CMPNAME>
+     <SCONAME>ES_LOC_DEST</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Node structure for postal address data - internal</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DETERMINA_LOC_ORIGEM_DEST</CMPNAME>
+     <SCONAME>ES_LOC_ORIGEM</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Node structure for postal address data - internal</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DETERMINA_LOC_ORIGEM_DEST</CMPNAME>
+     <SCONAME>IT_POSTAL_ADDR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>/SCMTMS/S_ADDR_POSTAL_ADDRESSK</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DETERMINA_LOC_ORIGEM_DEST</CMPNAME>
+     <SCONAME>IT_SFIR_ITEM_DATA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Main Area: SFIR Item</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

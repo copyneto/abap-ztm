@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLTM_TCC_RULES</CLSNAME>
+    <LANGU>P</LANGU>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>BUSCA_BUPA_SHIP_ROOT</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Busca dados de Parceiros de Negócios</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>BUSCA_FU_ASSIGN</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Busca unidades de fretes associadas</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>BUSCA_REFERENCIA</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Busca documentos de referencia</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCA_BUPA_SHIP_ROOT</CMPNAME>
+     <SCONAME>IS_TOR_FO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Root Node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCA_BUPA_SHIP_ROOT</CMPNAME>
+     <SCONAME>RT_BUPA_SHIP_ROOT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>BusinessPartner</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCA_FU_ASSIGN</CMPNAME>
+     <SCONAME>IS_TOR_FO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Root Node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCA_FU_ASSIGN</CMPNAME>
+     <SCONAME>RT_TOR_ASSIGN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Root Node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCA_REFERENCIA</CMPNAME>
+     <SCONAME>IS_TOR_FO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Root Node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCA_REFERENCIA</CMPNAME>
+     <SCONAME>RT_TOR_DOCREF</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Root Node</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,37 @@
+managed implementation in class zcltm_cockpit_frete unique;
+
+define behavior for ZI_TM_COCKPIT001 alias _CockpitHeader
+persistent table zttm_gkot001
+lock master
+{
+
+  association _log { internal create; }
+
+  action reprocessar;
+  action estorno parameter zc_tm_popup_estorno;
+  action evento_cte parameter zc_tm_motivo_recusa;
+  action agrupamento;
+  action consultar_status;
+}
+
+define behavior for ZI_TM_COCKPIT006 alias _CockpitItemLog
+persistent table zttm_gkot006
+lock dependent by _Cockpit
+{
+
+  field ( readonly ) Acckey;
+  association _Cockpit;
+  mapping for zttm_gkot006
+  {
+    Acckey = acckey;
+    Counter = counter;
+    Codstatus = codstatus;
+    Tpprocess = tpprocess;
+    Newdoc = Newdoc;
+    codigo = codigo;
+    DescCodigo = desc_codigo;
+    Credat = credat;
+    Cretim = cretim;
+    Crenam = crenam;
+  }
+}

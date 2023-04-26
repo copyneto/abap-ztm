@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLTM_MONITOR_MDF_AUT</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Autorização de Objetos</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_ACTVT</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Atividades</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_OBJ</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Objetos de autorização</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_AUT</CMPNAME>
+     <SCONAME>IV_ACTVT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Componente do nº versão</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_AUT</CMPNAME>
+     <SCONAME>IV_OBJ</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Objeto autorização</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_AUT</CMPNAME>
+     <SCONAME>RT_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Parâmetro de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FORMAT_MESSAGE</CMPNAME>
+     <SCONAME>CT_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FORMAT_MESSAGE</CMPNAME>
+     <SCONAME>IV_CHANGE_ERROR_TYPE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Flag geral</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FORMAT_MESSAGE</CMPNAME>
+     <SCONAME>IV_CHANGE_WARNING_TYPE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Flag geral</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

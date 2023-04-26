@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>ZE_GKO_EMIT_CNJP_CPF</ROLLNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <HEADLEN>28</HEADLEN>
+    <SCRLEN1>10</SCRLEN1>
+    <SCRLEN2>18</SCRLEN2>
+    <SCRLEN3>28</SCRLEN3>
+    <DDTEXT>CNPJ / CPF da transportadora</DDTEXT>
+    <REPTEXT>CNPJ / CPF da transportadora</REPTEXT>
+    <SCRTEXT_S>CNPJ/CPFTr</SCRTEXT_S>
+    <SCRTEXT_M>CNPJ / CPF transp.</SCRTEXT_M>
+    <SCRTEXT_L>CNPJ / CPF da transportadora</SCRTEXT_L>
+    <DTELMASTER>P</DTELMASTER>
+    <DATATYPE>NUMC</DATATYPE>
+    <LENG>000014</LENG>
+    <OUTPUTLEN>000014</OUTPUTLEN>
+   </DD04V>
+  </asx:values>
+ </asx:abap>
+</abapGit>

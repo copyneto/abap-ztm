@@ -1,0 +1,10 @@
+@EndUserText.label: 'Gestão de Fretes - Monitor GKO'
+define service ZUI_TM_MONITOR_GKO {
+  expose ZC_TM_MONITOR_GKO;
+  expose ZC_TM_MONITOR_GKO_CTE_COMP;
+  expose ZC_TM_MONITOR_GKO_CTE_CARGA;
+  expose ZC_TM_MONITOR_GKO_REF;
+  expose ZC_TM_MONITOR_GKO_DOCGER;
+  expose ZC_TM_MONITOR_GKO_EVENTO;
+  expose ZC_TM_MONITOR_GKO_LOG;
+}

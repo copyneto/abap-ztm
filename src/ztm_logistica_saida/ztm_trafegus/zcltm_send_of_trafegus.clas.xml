@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLTM_SEND_OF_TRAFEGUS</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Envia OF para o Trafegus</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>001</KEY>
+     <ENTRY>Trafegus_T_</ENTRY>
+     <LENGTH>21</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>002</KEY>
+     <ENTRY>Trafegus_M_</ENTRY>
+     <LENGTH>21</LENGTH>
+    </item>
+   </TPOOL>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_BTD_TCO_73</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo de documento para transação comercial</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_ITEMCAT_AVR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Categoria de item</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_ITEMCAT_PVR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Categoria de item</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_ITMTYPE_TRL</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo de item da ordem de transporte</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_ITMTYPE_TRUC</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo de item da ordem de transporte</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_NF_AUTORIZADA</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Status do documento</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_OPTION_EQ</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Componente do nº versão</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_SIGN_I</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de um caractere</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GO_SRV_TOR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Containing the public service methods of a service manager</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_RETURN</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Mensagens de erro</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_KEY</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>NodeID</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_DATA_DOCREFERENTE</CMPNAME>
+     <SCONAME>IV_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>NodeID</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_DATA_STOP</CMPNAME>
+     <SCONAME>IV_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>NodeID</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_ERRO</CMPNAME>
+     <SCONAME>RT_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Mensagens de erro</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_LOCATION</CMPNAME>
+     <SCONAME>EV_TAXJURCODE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Domicílio fiscal</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_LOCATION</CMPNAME>
+     <SCONAME>IV_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>NodeID</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_LOCATION</CMPNAME>
+     <SCONAME>IV_LOCID</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Unidade gerencial</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_LOCATION</CMPNAME>
+     <SCONAME>RS_ENDERECO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Selected Address Details of a Location (combined structure)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_VEHICLE</CMPNAME>
+     <SCONAME>IV_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>NodeID</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PREPARE_LOG</CMPNAME>
+     <SCONAME>IV_TOR_ID</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Documento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PROCESS</CMPNAME>
+     <SCONAME>IV_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>NodeID</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

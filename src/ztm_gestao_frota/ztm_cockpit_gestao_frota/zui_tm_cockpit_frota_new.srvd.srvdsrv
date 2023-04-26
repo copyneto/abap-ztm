@@ -1,0 +1,4 @@
+@EndUserText.label: 'Cockpit Gestão de Frota'
+define service ZUI_TM_COCKPIT_FROTA_NEW {
+  expose ZC_TM_COCKPIT_FROTA;
+}

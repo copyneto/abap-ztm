@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>J_1B_NFE_UPDATE_ACTIVE_W_LOCK</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGTM_GKO_NFE_ACTIVE_LOCKTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGTM_GKO_NFE_ACTIVE_LOCK</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMTM_GKO_NFE_ACTIVE_LOCK</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>J_1B_NFE_UPDATE_ACTIVE_W_LOCK</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_ACTTAB</PARAMETER>
+       <TYP>J_1BNFE_ACTIVE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_HISTTAB</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>J_1BNFE_HISTORY</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_UPDMODE</PARAMETER>
+       <TYP>CHAR1</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_WAIT_AFTER_COMMIT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>XFELD</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_HISTORY</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>J_1BNFE_HISTORY</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_SUBRC</PARAMETER>
+       <TYP>SY-SUBRC</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_ACTTAB</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Electronic Nota Fiscal: Actual Status</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_HISTTAB</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Electronic Nota Fiscal - History</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_UPDMODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Código de um caractere</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_WAIT_AFTER_COMMIT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Campo de seleção</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_HISTORY</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Electronic Nota Fiscal - History</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_SUBRC</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Campo do sistema ABAP: código de retorno de instruções ABAP</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Função /XNFE/CTE_SET_REJECTED</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGTM_GKO_CTE_SET_REJECTEDTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGTM_GKO_CTE_SET_REJECTED</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMTM_GKO_CTE_SET_REJECTED</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>/XNFE/CTE_SET_REJECTED</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_GUID</PARAMETER>
+       <TYP>/XNFE/GUID_16</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_NOT_CODE</PARAMETER>
+       <TYP>/XNFE/NOT_CODE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_OVERWRITE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>/XNFE/OVERWRITE</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_SUBRC</PARAMETER>
+       <TYP>SY-SUBRC</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ES_RETURN</PARAMETER>
+       <TYP>BAPIRET2</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_GUID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Chave primária como GUID em formato &apos;RAW&apos;</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_NOT_CODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Motivo da rejeição</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_OVERWRITE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Código - documento pode ser sobregravado</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_SUBRC</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Código de um caractere</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ES_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Parâmetro de retorno</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,5 @@
+CLASS zcltm_mdf_complemento DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_tm_mdf.
+ENDCLASS.
+
+CLASS zcltm_mdf_complemento IMPLEMENTATION.
+ENDCLASS.

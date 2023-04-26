@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLTM_PROCESS_GREENMILE</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Processamento Interface GreenMile</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>000</KEY>
+     <ENTRY>Execução RoadNet realizada</ENTRY>
+     <LENGTH>52</LENGTH>
+    </item>
+   </TPOOL>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>BUSCA_DADOS_ENVIO</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Busca dados da referencia</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>BUSCA_FO</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Busca ordens de frete</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>BUSCA_FU</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Busca unidades de frete</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_TOR_FO</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Root Node</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCA_CAMPOS_VALIDACAO</CMPNAME>
+     <SCONAME>IV_ESTRUTURA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nome da tabela</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCA_CAMPOS_VALIDACAO</CMPNAME>
+     <SCONAME>RT_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Range tyoe for FIELD</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCA_DADOS_ENVIO</CMPNAME>
+     <SCONAME>IT_TOR_FO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Root Node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCA_FO</CMPNAME>
+     <SCONAME>IS_DADOS</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Informações entrada Roadnet</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCA_FO</CMPNAME>
+     <SCONAME>IV_TOR_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>NodeID</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCA_FO</CMPNAME>
+     <SCONAME>RT_TOR_FO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Root Node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCA_FU</CMPNAME>
+     <SCONAME>IV_REMESSA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Informações entrada Roadnet</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUSCA_FU</CMPNAME>
+     <SCONAME>RT_TOR_FU</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Root Node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>VALIDA_ESTRUTURA_GREENMILE</CMPNAME>
+     <SCONAME>IV_ESTRUTURA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nome da tabela</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

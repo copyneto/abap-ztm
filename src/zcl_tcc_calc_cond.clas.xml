@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_TCC_CALC_COND</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Calculation Method Product x Stage</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_PERC_CALCULATION_RATE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Add percent on Calculation Rate</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_PERC_CREDIT_AMOUNT_LOC_CUR</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Add per. on amount from master data(amount from calc sheet)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_PERC_MODIFIED_RATE_AFT_CL</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Add percent on modified rate after class rate applied</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Constructor</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DETERMINE_PERC_REMOVE_FR_CUST</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Determinar o pecentual a ser removido do custo de frete</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_DES_STOP_KEY_BY_STOP_SUCC</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Get DES_STOP_KEY by STOP_SUCC</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_HIER_LOG_RB_REF</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Get MS_HIER_LOG_RB_REF</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_REQUEST_KEY</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Get root key</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_SERVICE_MANAGER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Get service manager</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_TRANSPORT_CHARGES_VALUE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Get transport charges value</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SUMMARIZE_UNLOADING_STOP_VL</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Summarize unloading stop values</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_PERC_CALCULATION_RATE</CMPNAME>
+     <SCONAME>IR_CHARGE_BASE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Transportation Charge Element - Communication Structure</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_PERC_CALCULATION_RATE</CMPNAME>
+     <SCONAME>IV_PERC_AMOUNT</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Amount</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

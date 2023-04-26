@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLTM_EVENTOS_EXTRAS</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Eventos Extras</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CUSTO_NORMAL</CMPNAME>
+     <SCONAME>IS_GKO_HEADER</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>GKO: Dados mestres</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CUSTO_NORMAL</CMPNAME>
+     <SCONAME>IV_COD_EVENTO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo de custo</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CUSTO_NORMAL</CMPNAME>
+     <SCONAME>RT_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>EXECUTAR</CMPNAME>
+     <SCONAME>IS_GKO_HEADER</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>GKO: Dados mestres</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>EXECUTAR</CMPNAME>
+     <SCONAME>IV_COD_EVENTO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo de custo</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

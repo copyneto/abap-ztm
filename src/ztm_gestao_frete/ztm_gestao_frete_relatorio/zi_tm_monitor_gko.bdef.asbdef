@@ -1,0 +1,51 @@
+unmanaged;
+
+define behavior for ZI_TM_MONITOR_GKO alias monitor
+lock master
+authorization master ( instance )
+{
+  association _doc_gerado;
+  association _evento;
+  association _log;
+  association _referencia;
+}
+
+define behavior for ZI_TM_MONITOR_GKO_DOCGER alias doc_gerado
+lock dependent by _monitor
+authorization dependent by _monitor
+{
+  association _monitor;
+
+  field ( readonly)
+  acckey;
+}
+
+define behavior for ZI_TM_MONITOR_GKO_EVENTO alias evento
+lock dependent by _monitor
+authorization dependent by _monitor
+{
+  association _monitor;
+
+  field ( readonly)
+  acckey;
+}
+
+define behavior for ZI_TM_MONITOR_GKO_LOG alias log
+lock dependent by _monitor
+authorization dependent by _monitor
+{
+  association _monitor;
+
+  field ( readonly)
+  acckey;
+}
+
+define behavior for ZI_TM_MONITOR_GKO_REF alias referencia
+lock dependent by _monitor
+authorization dependent by _monitor
+{
+  association _monitor;
+
+  field ( readonly)
+  acckey;
+}

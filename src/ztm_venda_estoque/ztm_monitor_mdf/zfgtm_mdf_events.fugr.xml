@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Eventos MDF-e</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGTM_MDF_EVENTSTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGTM_MDF_EVENTS</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMTM_MDF_DRIVER_CHANGE</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Monitor MDFe: Atualizar motorista (ordem de frete)</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_DOCNUM</PARAMETER>
+       <TYP>J_1BDOCNUM</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_PARAMETERS</PARAMETER>
+       <TYP>ZC_TM_MDF_MOTORISTA_POPUP</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_ID</PARAMETER>
+       <TYP>SYSUUID_X16</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_DOCNUM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nº documento</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_PARAMETERS</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>16 Byte UUID in 16 Bytes (Raw Format)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMTM_MDF_SEND_BACK</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Envio MDF-e em background</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_DOCNUM</PARAMETER>
+       <TYP>J_1BDOCNUM</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_ID</PARAMETER>
+       <TYP>SYSUUID_X16</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_RESEND</PARAMETER>
+       <TYP>/XNFE/RESEND</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_STATUSCODE</PARAMETER>
+       <TYP>/XNFE/STATUSCODE</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_DOCNUM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nº documento</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>16 Byte UUID in 16 Bytes (Raw Format)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_RESEND</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_STATUSCODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Código de status do documento junto às autoridades (SEFAZ)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMTM_MONITOR_MDF_BUSCA_HIST</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Monitor MDF-e:  Recupera histórico</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_MDF</PARAMETER>
+       <TYP>ZTTM_MDF</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_MDF</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Informações MDF-e</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMTM_MONITOR_MDF_SALVAR</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Monitor MDF-e: Salvar dados</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_MDF</PARAMETER>
+       <TYP>ZTTM_MDF</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_MDF_IDE</PARAMETER>
+       <TYP>ZTTM_MDF_IDE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IT_MDF_MCD</PARAMETER>
+       <TYP>ZCTGTM_MDF_MCD</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_MDF_MOTO</PARAMETER>
+       <TYP>ZTTM_MDF_MOTO</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IT_MDF_PLACA</PARAMETER>
+       <TYP>ZCTGTM_MDF_PLACA</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IT_MDF_PLACA_C</PARAMETER>
+       <TYP>ZCTGTM_MDF_PLACA_C</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IT_MDF_PLACA_V</PARAMETER>
+       <TYP>ZCTGTM_MDF_PLACA_V</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_MDF</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Informações MDF-e</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_MDF_IDE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Informações MDF-e : Informações Interface IDE</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_MDF_MCD</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Informações MDF-e: Município</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_MDF_MOTO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Informações MDF-e : Motorista</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_MDF_PLACA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Informações MDFe: Placa</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_MDF_PLACA_C</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Informações MDFe: Condutor</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_MDF_PLACA_V</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Informações MDFe: Vale Pedágio</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,80 @@
+@Metadata.layer: #CORE
+
+@UI: { headerInfo:           { typeName: 'Sessão',
+                               typeNamePlural: 'Sessões',
+                               title: { type: #STANDARD, value: 'session_id' } },
+
+       presentationVariant: [{ sortOrder: [{ by: 'session_id', direction:  #DESC }] }] }
+
+annotate view ZC_TM_PARAM_ROADNET with
+{
+
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:              'CABECALHO',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 position:        10 },
+
+                        { parentId:        'CABECALHO',
+                          id:              'Cabecalho',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'Cabecalho' } ]
+
+  // ------------------------------------------------------
+  // Buttons information
+  // ------------------------------------------------------
+  @UI.lineItem:         [ { position: 10, type: #FOR_ACTION, dataAction: 'importar', label: 'Importar' } ]
+  @UI.identification:   [ { position: 10, type: #FOR_ACTION, dataAction: 'importar', label: 'Importar' } ]
+   
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI.hidden: true
+  centro_txt;
+
+  @UI: { lineItem:       [ { position: 10 } ],
+         fieldGroup:     [ { position: 10, qualifier: 'Cabecalho' } ],
+         selectionField: [ { position: 10 } ] }
+  @Consumption: { filter: { mandatory: true, multipleSelections: true } }
+  centro;
+
+  @UI: { lineItem:       [ { position: 20 } ],
+         fieldGroup:     [ { position: 20, qualifier: 'Cabecalho' } ],
+         selectionField: [ { position: 20 } ] }
+  @Consumption.filter: { mandatory: true, multipleSelections: false, selectionType: #SINGLE }
+  data;
+
+  @UI: { lineItem:       [ { position: 30 } ],
+         fieldGroup:     [ { position: 30, qualifier: 'Cabecalho' } ] }
+  hora;
+
+  @UI: { lineItem:       [ { position: 40 } ],
+         fieldGroup:     [ { position: 40, qualifier: 'Cabecalho' } ] }
+  session_data;
+
+  @UI: { lineItem:       [ { position: 50 } ],
+         fieldGroup:     [ { position: 50, qualifier: 'Cabecalho' } ],
+         selectionField: [ { position: 50 } ] }
+  @Consumption.filter: { multipleSelections: false, selectionType: #SINGLE }
+  session_id;
+
+  @UI.hidden: true
+  CreatedBy;
+
+  @UI.hidden: true
+  CreatedAt;
+
+  @UI.hidden: true
+  LastChangedBy;
+
+  @UI.hidden: true
+  LastChangedAt;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+
+}

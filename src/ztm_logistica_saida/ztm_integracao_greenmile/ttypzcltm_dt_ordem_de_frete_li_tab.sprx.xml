@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SPRX" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROXY_HEADER>
+    <item>
+     <OBJECT>TTYP</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_ORDEM_DE_FRETE_LI_TAB</OBJ_NAME>
+     <OBJECT_M>TABL</OBJECT_M>
+     <OBJ_NAME_M>ZCLTM_DT_ORDEM_DE_FRETE</OBJ_NAME_M>
+     <HASH_ID>7108DC5CFDD8B0F9E309D0F0AC73E51473B12B64</HASH_ID>
+     <ID>TableOf&lt;type&gt; LineItems &lt;element&gt; LineItems &lt;type&gt; ORDERS &lt;element&gt; ORDERS &lt;type&gt; STOPS &lt;element&gt; STOPS &lt;type&gt; dtOrdemDeFrete http://trescoracoes.com.br/transporte/ordemfrete http://trescoracoes.com.br/transporte/ordemfrete</ID>
+     <IFR_TYPE>TableOftype</IFR_TYPE>
+     <IFR_NAME>LineItems</IFR_NAME>
+     <IFR_NSPCE>http://trescoracoes.com.br/transporte/ordemfrete</IFR_NSPCE>
+     <IFR_GNSPCE>http://trescoracoes.com.br/transporte/ordemfrete</IFR_GNSPCE>
+     <GEN_VERS>0005</GEN_VERS>
+     <PREFIX>ZCLTM_</PREFIX>
+     <CATEGORY>ifmtypedef</CATEGORY>
+    </item>
+   </PROXY_HEADER>
+   <PROXY_DATA>
+    <item>
+     <OBJECT>TTYP</OBJECT>
+     <OBJ_NAME>ZCLTM_DT_ORDEM_DE_FRETE_LI_TAB</OBJ_NAME>
+     <OBJECT1>TTYP</OBJECT1>
+     <OBJ_NAME1>ZCLTM_DT_ORDEM_DE_FRETE_LI_TAB</OBJ_NAME1>
+     <OBJECT2>TTYP</OBJECT2>
+     <OBJ_NAME2>ZCLTM_DT_ORDEM_DE_FRETE_LI_TAB</OBJ_NAME2>
+     <OBJECT_R>TABL</OBJECT_R>
+     <OBJ_NAME_R>ZCLTM_DT_ORDEM_DE_FRETE_LINE_I</OBJ_NAME_R>
+     <ID>TableOf&lt;type&gt; LineItems &lt;element&gt; LineItems &lt;type&gt; ORDERS &lt;element&gt; ORDERS &lt;type&gt; STOPS &lt;element&gt; STOPS &lt;type&gt; dtOrdemDeFrete http://trescoracoes.com.br/transporte/ordemfrete http://trescoracoes.com.br/transporte/ordemfrete</ID>
+     <IFR_TYPE>TableOftype</IFR_TYPE>
+     <IFR_NAME>LineItems</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>TTYP</R3_TYPE>
+     <R3_NAME>ZCLTM_DT_ORDEM_DE_FRETE_LI_TAB</R3_NAME>
+     <R3_TEXT>Proxy Table Type (generated)</R3_TEXT>
+     <CATEGORY>ifmtypedef</CATEGORY>
+    </item>
+   </PROXY_DATA>
+  </asx:values>
+ </asx:abap>
+</abapGit>

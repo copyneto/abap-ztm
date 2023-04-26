@@ -1,0 +1,4 @@
+@EndUserText.label: 'Cockpit para Prestação de Contas'
+define service ZUI_TM_PRESTACAO_SUM {
+  expose ZI_TM_COCKPIT_SUM_PRESTACAO as Cockpit;
+}

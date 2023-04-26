@@ -1,0 +1,463 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>ZFGTM_GKO_PERSIST</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGTM_GKO_PERSISTTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGTM_GKO_PERSIST</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMTM_DELETE_CTE</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Cockpit de Frete - Eliminar CTE</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_ACCKEY</PARAMETER>
+       <TYP>J_1B_NFE_ACCESS_KEY_DTEL44</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_ACCKEY</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Chave de acesso de 44 dígitos</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMTM_EXTRA_CHARGE_AND_STEP</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Criação do custo extra e faturamento de frete</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_GKO_HEADER</PARAMETER>
+       <TYP>ZTTM_GKOT001</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_GKO_HEADER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>GKO: Dados mestres</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMTM_EXTRA_CHARGE_SAVE</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>GKO - Save</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_COD_EVENTO</PARAMETER>
+       <TYP>/SCMTMS/TRCHARG_ELMNT_TYPECD</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_GKO_HEADER</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>ZTTM_GKOT001</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_COD_EVENTO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tipo de custo</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_GKO_HEADER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>GKO: Dados mestres</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMTM_GKO_CHECK_DFF</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Check DFF</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_TORID</PARAMETER>
+       <TYP>/SCMTMS/TOR_ID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_ACCKEY</PARAMETER>
+       <TYP>J_1B_NFE_ACCESS_KEY_DTEL44</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_CHECK</PARAMETER>
+       <TYP>ABAP_BOOLEAN</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ET_SFIR_ID</PARAMETER>
+       <TYP>/SCMTMS/T_SFIR_ID</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_TORID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Documento</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_ACCKEY</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_CHECK</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Valor verdadeiro: verdadeiro/falso</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_SFIR_ID</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMTM_GKO_FATURAR_ETAPA</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>GKO - Fatura Etapa</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_GKO_HEADER</PARAMETER>
+       <TYP>ZTTM_GKOT001</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_GKO_HEADER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>GKO: Dados mestres</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMTM_GKO_FATURAR_ETAPA_2</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>GKO - Fatura Etapa</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_TORID</PARAMETER>
+       <TYP>/SCMTMS/TOR_ID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_DEST_COD</PARAMETER>
+       <TYP>ZE_GKO_DEST_COD</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_TORID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Documento</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_DEST_COD</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Código do destinatário</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMTM_GKO_PERSIST</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Persist GKO</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_GKO_HEADER</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>ZTTM_GKOT001</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_GKO_COMPL</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>ZTTM_GKOT004</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_GKO_REFERENCES</PARAMETER>
+       <DBSTRUCT>ZTTM_GKOT003</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_GKO_ACCKEY_PO_DEL</PARAMETER>
+       <DBSTRUCT>ZTTM_GKOT005</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_GKO_ACCKEY_PO</PARAMETER>
+       <DBSTRUCT>ZTTM_GKOT005</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_GKO_LOGS</PARAMETER>
+       <DBSTRUCT>ZTTM_GKOT006</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>IT_GKO_AGRUP_DEL</PARAMETER>
+       <DBSTRUCT>ZTTM_GKOT009</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_GKO_HEADER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>GKO: Dados mestres</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_GKO_COMPL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>GKO: Dados complementares</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_GKO_REFERENCES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>GKO: Referências CTe/NFS</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_GKO_ACCKEY_PO_DEL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Chave de acesso vs pedido</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_GKO_ACCKEY_PO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Chave de acesso vs pedido</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_GKO_LOGS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de Logs</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_GKO_AGRUP_DEL</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMTM_GKO_SAVE</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>GKO - Save</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_GKO_HEADER</PARAMETER>
+       <TYP>ZTTM_GKOT001</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_GKO_HEADER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>GKO: Dados mestres</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMTM_REVERSAL_INVOICE_GROUP</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Cockpit de frete - estorno do agrupamento</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_ESTORNO_MIRO</PARAMETER>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_ESTORNO_PEDIDO</PARAMETER>
+       <TYP>FLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IT_COCKPIT</PARAMETER>
+       <TYP>ZCTGTM_COCKPIT_NEW</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ET_BAPI_RETURN</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_ESTORNO_MIRO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Flag geral</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_ESTORNO_PEDIDO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Flag geral</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_COCKPIT</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_BAPI_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMTM_REVERSAL_PURCHASE_ORDER</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Cockpit de frete - estorno de pedido</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_ACCKEY</PARAMETER>
+       <TYP>J_1B_NFE_ACCESS_KEY_DTEL44</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_TPPROCESS</PARAMETER>
+       <TYP>ZE_GKO_TPPROCESS</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_SUCCESS</PARAMETER>
+       <TYP>FLAG</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ET_BAPI_RETURN</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_ACCKEY</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Chave de acesso de 44 dígitos</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_TPPROCESS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tipo de processamento</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_SUCCESS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Flag geral</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_BAPI_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,23 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: { typeName: 'Determinação anexo GNRE CFOP'}
+annotate view ZC_TM_PCOCKPIT007
+    with 
+{
+  @UI.facet: [
+    { label: 'Valores',
+      id: 'Valores',
+      type: #COLLECTION,
+      position: 10 },
+
+    { label: ' ',
+      position: 10,
+      type: #IDENTIFICATION_REFERENCE,
+      parentId: 'Valores' }
+  ]
+  
+    @UI.hidden: true 
+    Guid;
+    @UI: { lineItem:       [{position: 10}],
+           identification: [{position: 10}]} 
+    Cfop;
+}

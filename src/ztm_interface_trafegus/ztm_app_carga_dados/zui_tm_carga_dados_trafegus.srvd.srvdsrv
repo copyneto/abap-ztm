@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serviço OData V2 UI Carga Dados'
+define service ZUI_TM_CARGA_DADOS_TRAFEGUS {
+  expose ZC_TM_CARGA_DADOS;
+}

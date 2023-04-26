@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Eventos para parâmetros ROADNET</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGTM_PARAM_ROADNETTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGTM_PARAM_ROADNET</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMTM_PARAM_ROADNET_APAGAR_LOG</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Evento para apagar histórico</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IT_ROAD_LOG</PARAMETER>
+       <TYP>ZCTGTM_ROAD_LOG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IT_ROAD_LOG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Roadnet Session - Log</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFMTM_PARAM_ROADNET_IMPORTAR</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Evento para importar dados do  ROADNET</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_CENTRO</PARAMETER>
+       <TYP>WERKS_D</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_DATA</PARAMETER>
+       <TYP>SYDATUM</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_DATA_ATE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SYDATUM</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_SESSAO</PARAMETER>
+       <TYP>ZTTM_ROAD_SESSIO-ID_SESSION_ROADNET</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IT_ROUTES</PARAMETER>
+       <TYP>ZCTGTM_ROUTE_ID</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_MESSAGES</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_CENTRO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Centro</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_DATA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Data do sistema</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_DATA_ATE</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_SESSAO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>ID da sessão roadnet</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_ROUTES</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_MESSAGES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

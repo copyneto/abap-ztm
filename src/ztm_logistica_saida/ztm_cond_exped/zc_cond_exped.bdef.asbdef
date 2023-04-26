@@ -1,0 +1,8 @@
+projection;
+
+define behavior for ZC_COND_EXPED alias _Condexped
+{
+  use create;
+  use update;
+  use delete;
+}

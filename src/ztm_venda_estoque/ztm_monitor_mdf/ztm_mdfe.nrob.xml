@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_NROB" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <ATTRIBUTES>
+    <OBJECT>ZTM_MDFE</OBJECT>
+    <DOMLEN>NUMC09</DOMLEN>
+    <PERCENTAGE>90.0</PERCENTAGE>
+    <BUFFER>X</BUFFER>
+    <NOIVBUFFER>00000010</NOIVBUFFER>
+    <CHANGED_AT>20220628182512.486376</CHANGED_AT>
+    <CHANGED_BY>JWSILVA</CHANGED_BY>
+    <UNAME>GOLIVAN</UNAME>
+    <UDATE>2022-04-14</UDATE>
+    <UTIME>16:47:28</UTIME>
+    <ENAME>GOLIVAN</ENAME>
+    <EDATE>2021-11-04</EDATE>
+    <ETIME>11:54:37</ETIME>
+   </ATTRIBUTES>
+   <TEXT>
+    <LANGU>P</LANGU>
+    <OBJECT>ZTM_MDFE</OBJECT>
+    <TXT>Número MDF-e</TXT>
+    <TXTSHORT>Número MDF-e</TXTSHORT>
+    <ENAME>GOLIVAN</ENAME>
+    <EDATE>2021-11-04</EDATE>
+    <ETIME>11:54:37</ETIME>
+   </TEXT>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Prestação de Contas - Evento Impressão'
+define service ZUI_TM_PRESTACAO_PRINT {
+  expose ZI_TM_VH_PRINT_STATUS;
+}

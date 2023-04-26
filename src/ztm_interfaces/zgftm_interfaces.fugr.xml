@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Disparo de interfaces GKO/GM/Trafegus</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZGFTM_INTERFACESTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZGFTM_INTERFACES</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMTM_INTERFACES</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Disparo de interfaces GKO/GM/Trafegus</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_HEADER</PARAMETER>
+       <TYP>J_1BNFDOC</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_HEADER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Cabeçalho da nota fiscal</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

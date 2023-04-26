@@ -1,0 +1,54 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: { typeName: 'Determinação Centro Custo/Conta Contábil'}
+annotate view ZC_TM_PCOCKPIT013
+    with 
+{
+  @UI.facet: [
+    { label: 'Valores',
+      id: 'Valores',
+      type: #COLLECTION,
+      position: 10 },
+
+    { label: ' ',
+      position: 10,
+      type: #IDENTIFICATION_REFERENCE,
+      parentId: 'Valores' }
+  ]
+
+    @UI.hidden: true
+    Guid;
+    @UI: { lineItem:       [{position: 10}],
+           identification: [{position: 10}]}        
+    Cenario;
+    @UI: { lineItem:       [{position: 20}],
+           identification: [{position: 20}]}     
+    Uforig;
+    @UI: { lineItem:       [{position: 30}],
+           identification: [{position: 30}]}      
+    Ufdest;
+    @UI: { lineItem:       [{position: 40}],
+           identification: [{position: 40}]}    
+    RemBranch;
+    @UI: { lineItem:       [{position: 50}],
+           identification: [{position: 50}]}    
+    TomBranch;
+    @UI: { lineItem:       [{position: 60}],
+           identification: [{position: 60}]}     
+    DestBranch;
+    @UI: { lineItem:       [{position: 70}],
+           identification: [{position: 70}]}     
+    LocRet;
+    @UI: { lineItem:       [{position: 80}],
+           identification: [{position: 80}]}     
+    LocEnt;
+    @UI: { lineItem:       [{position: 90}],
+           identification: [{position: 90}]}     
+    Kostl;
+    @UI: { lineItem:       [{position: 100}],
+           identification: [{position: 100}]}     
+    Saknr;
+    @UI: { lineItem:       [{position: 110}],
+           identification: [{position: 110}]} 
+    descop;
+
+}

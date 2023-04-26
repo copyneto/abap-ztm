@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Função BAPI_INCOMINGINVOICE_CANCEL</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGTM_GKO_INCM_CANCELTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGTM_GKO_INCM_CANCEL</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMTM_GKO_INCM_CANCEL</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>BAPI_INCOMINGINVOICE_CANCEL</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_INVOICEDOCNUMBER</PARAMETER>
+       <TYP>BAPI_INCINV_FLD-INV_DOC_NO</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_FISCALYEAR</PARAMETER>
+       <TYP>BAPI_INCINV_FLD-FISC_YEAR</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_REASONREVERSAL</PARAMETER>
+       <TYP>BAPI_INCINV_FLD-REASON_REV</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_POSTINGDATE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>BAPI_INCINV_FLD-PSTNG_DATE</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_INVNUMBER_REVERSAL</PARAMETER>
+       <TYP>BAPI_INCINV_FLD-INV_DOC_NO</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EV_FISCALYEAR_REVERSAL</PARAMETER>
+       <TYP>BAPI_INCINV_FLD-FISC_YEAR</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_INVOICEDOCNUMBER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nº de um documento de faturamento</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_FISCALYEAR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Exercício</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_REASONREVERSAL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Motivo para estorno ou lançamento inverso</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_POSTINGDATE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Data de lançamento no documento</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_INVNUMBER_REVERSAL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nº de um documento de faturamento</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_FISCALYEAR_REVERSAL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Exercício</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

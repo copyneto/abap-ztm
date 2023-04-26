@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SPRX" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROXY_HEADER>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_SHORTREASONCODE</OBJ_NAME>
+     <OBJECT_M>TABL</OBJECT_M>
+     <OBJ_NAME_M>ZDT_ROTA_GM</OBJ_NAME_M>
+     <HASH_ID>90CE6EDD993DB1F4A255072B443D10F4C869744E</HASH_ID>
+     <ID>&lt;type&gt; SHORTREASONCODE &lt;element&gt; SHORTREASONCODE &lt;type&gt; LINEITEMS &lt;element&gt; LINEITEMS &lt;type&gt; UnidadeDeFrete &lt;element&gt; UnidadeDeFrete &lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>SHORTREASONCODE</IFR_NAME>
+     <IFR_NSPCE>http://trescoracoes.com.br/recebimentoeventos/rotagm</IFR_NSPCE>
+     <IFR_GNSPCE>http://trescoracoes.com.br/recebimentoeventos/rotagm</IFR_GNSPCE>
+     <GEN_VERS>0005</GEN_VERS>
+     <PREFIX>Z</PREFIX>
+     <CATEGORY>ifmtypedef</CATEGORY>
+     <X-ML_NSPCE>http://trescoracoes.com.br/recebimentoeventos/rotagm</X-ML_NSPCE>
+     <X-ML_NAME>SHORTREASONCODE</X-ML_NAME>
+    </item>
+   </PROXY_HEADER>
+   <PROXY_DATA>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_SHORTREASONCODE</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>SHORTREASONCODE_DESCRIPTION</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>SHORTREASONCODE_DESCRIPTION</OBJ_NAME2>
+     <ID>&lt;element&gt; SHORTREASONCODE_DESCRIPTION &lt;type&gt; SHORTREASONCODE &lt;element&gt; SHORTREASONCODE &lt;type&gt; LINEITEMS &lt;element&gt; LINEITEMS &lt;type&gt; UnidadeDeFrete &lt;element&gt; UnidadeDeFrete &lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>SHORTREASONCODE_DESCRIPTION</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>SHORTREASONCODE_DESCRIPTION</R3_NAME>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000002</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_SHORTREASONCODE</OBJ_NAME>
+     <OBJECT1>FIEL</OBJECT1>
+     <OBJ_NAME1>SHORTREASONCODE_KEY</OBJ_NAME1>
+     <OBJECT2>FIEL</OBJECT2>
+     <OBJ_NAME2>SHORTREASONCODE_KEY</OBJ_NAME2>
+     <ID>&lt;element&gt; SHORTREASONCODE_KEY &lt;type&gt; SHORTREASONCODE &lt;element&gt; SHORTREASONCODE &lt;type&gt; LINEITEMS &lt;element&gt; LINEITEMS &lt;type&gt; UnidadeDeFrete &lt;element&gt; UnidadeDeFrete &lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>element</IFR_TYPE>
+     <IFR_NAME>SHORTREASONCODE_KEY</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_TAGTYP>E</IFR_TAGTYP>
+     <IFR_MAXOCC>1</IFR_MAXOCC>
+     <IFR_OPTNL>X</IFR_OPTNL>
+     <IFR_XSDTYP>string</IFR_XSDTYP>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>FIEL</R3_TYPE>
+     <R3_NAME>SHORTREASONCODE_KEY</R3_NAME>
+     <R3_DATATYP>STRG</R3_DATATYP>
+     <R3_SEQNUM>000001</R3_SEQNUM>
+    </item>
+    <item>
+     <OBJECT>TABL</OBJECT>
+     <OBJ_NAME>ZDT_ROTA_GM_SHORTREASONCODE</OBJ_NAME>
+     <OBJECT1>TABL</OBJECT1>
+     <OBJ_NAME1>ZDT_ROTA_GM_SHORTREASONCODE</OBJ_NAME1>
+     <OBJECT2>TABL</OBJECT2>
+     <OBJ_NAME2>ZDT_ROTA_GM_SHORTREASONCODE</OBJ_NAME2>
+     <ID>&lt;type&gt; SHORTREASONCODE &lt;element&gt; SHORTREASONCODE &lt;type&gt; LINEITEMS &lt;element&gt; LINEITEMS &lt;type&gt; UnidadeDeFrete &lt;element&gt; UnidadeDeFrete &lt;type&gt; Location &lt;element&gt; Location &lt;type&gt; OrdemDeFrete &lt;element&gt; OrdemDeFrete &lt;type&gt; dtRotaGm http://trescoracoes.com.br/recebimentoeventos/rotagm http://trescoracoes.com.br/recebimentoeventos/rotagm</ID>
+     <IFR_TYPE>type</IFR_TYPE>
+     <IFR_NAME>SHORTREASONCODE</IFR_NAME>
+     <IFR_LANGU>EN</IFR_LANGU>
+     <IFR_SCALE>-2</IFR_SCALE>
+     <R3_TYPE>TABL</R3_TYPE>
+     <R3_NAME>ZDT_ROTA_GM_SHORTREASONCODE</R3_NAME>
+     <R3_TEXT>Proxy Structure (generated)</R3_TEXT>
+     <CATEGORY>ifmtypedef</CATEGORY>
+    </item>
+   </PROXY_DATA>
+  </asx:values>
+ </asx:abap>
+</abapGit>

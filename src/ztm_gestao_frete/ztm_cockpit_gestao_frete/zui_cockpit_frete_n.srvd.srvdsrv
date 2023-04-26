@@ -1,0 +1,8 @@
+@EndUserText.label: 'Cockpit de Frete'
+define service ZUI_COCKPIT_FRETE_N {
+  expose ZC_TM_COCKPIT_NEW;
+  expose ZC_TM_COCKPIT_LOG_NEW;
+  expose zi_tm_sh_motivo_rejeicao;
+  expose ZI_TM_VH_ATT_SCH1;
+  expose ZI_TM_VH_ATT_SCH1_NFS;
+}

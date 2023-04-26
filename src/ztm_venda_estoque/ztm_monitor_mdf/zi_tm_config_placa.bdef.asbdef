@@ -1,0 +1,39 @@
+managed;
+
+define behavior for ZI_TM_CONFIG_PLACA alias Placa
+implementation in class zcltm_config_placa unique
+persistent table zttm_conf_placa
+lock master
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+//  create;
+//  update;
+//  delete;
+
+  field ( readonly : update ) Placa;
+  field ( readonly ) CreatedBy, CreatedAt, LastChangedBy, LastChangedAt, LocalLastChangedAt;
+  // Placatext, CategoriaEquipText, TipoEquipText, TpRodText, TpCarText, UfName,
+
+  validation authorityCreate on save { create; }
+
+  mapping for zttm_conf_placa
+  {
+    Placa = placa;
+    CategoriaEquip = categoriaequip;
+    TipoEquip = tipoequip;
+    Renavam = renavam;
+    Tara = tara;
+    CapKg = capkg;
+    CapM3 = capm3;
+    TpRod = tprod;
+    TpCar = tpcar;
+    Uf = uf;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+
+}

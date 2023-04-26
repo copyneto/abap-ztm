@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Remessa Saga</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGTM_REMESSA_SAGATOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGTM_REMESSA_SAGA</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMTM_REMESSA_SAGA</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Remessas SAGA</SHORT_TEXT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>IT_REMESSA</PARAMETER>
+       <DBSTRUCT>ZTSD_REM_SAGA</DBSTRUCT>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IT_REMESSA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Controle remessas integração SAGA</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

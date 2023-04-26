@@ -1,0 +1,11 @@
+@EndUserText.label: 'Parâmetros de Entrada: Interface Roadnet'
+@MappingRole: true
+define role ZC_TM_PARAM_ROADNET {
+    grant
+        select
+            on
+                ZC_TM_PARAM_ROADNET
+                    where
+                        inheriting conditions from entity ZI_TM_PARAM_ROADNET;
+                        
+}

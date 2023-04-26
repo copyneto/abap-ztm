@@ -1,0 +1,36 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Carregamento',
+                     typeNamePlural: 'Carregamento' } }
+                     
+annotate view ZC_TM_MDF_CARREGAMENTO with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:            'Carregamento',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Carregamento',
+                 position:      10 }  ]
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI.hidden: true
+  Id;
+
+  @UI: { lineItem:        [ { position: 10, label: 'Município' } ],
+         identification:  [ { position: 10, label: 'Município' } ] }
+  TaxJurCode;
+
+  @UI.hidden: true
+  TaxJurCodeText;
+  
+  @UI: { lineItem:        [ { position: 20, label: 'UF' } ],
+         identification:  [ { position: 20, label: 'UF' } ] }
+  Uf;
+  
+  @UI.hidden: true
+  UfName;
+
+}

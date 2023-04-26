@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLTM_DET_TOR_EXEC</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Determination no nó Executioninformation</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_EVENT_FATURAR_CARREGAR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Evento que ocorre durante uma atividade de transporte</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_EVENT_FIM_CARREG</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Evento que ocorre durante uma atividade de transporte</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_EVENT_LIB_P_CARREGAR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Evento que ocorre durante uma atividade de transporte</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_ITEMCAT_AVR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Categoria de item</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_ITEMCAT_PVR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Categoria de item</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_ITEM_BTD_ENTREGA</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo de documento básico para transação comercial</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_ITMTYPE_PRD</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo de item da ordem de transporte</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_ITMTYPE_TRL</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo de item da ordem de transporte</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_ITMTYPE_TRUC</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo de item da ordem de transporte</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_SEP_SPLIT</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de um caractere</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GO_SRV_TOR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Containing the public service methods of a service manager</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_EVENT_DB</CMPNAME>
+     <SCONAME>IV_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>NodeID</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_EVENT_DB</CMPNAME>
+     <SCONAME>RT_EXEC</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Execution Data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SEND_DATA_SAGA</CMPNAME>
+     <SCONAME>IV_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>NodeID</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

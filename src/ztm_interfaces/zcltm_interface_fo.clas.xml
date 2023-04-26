@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLTM_INTERFACE_FO</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Disparo de interfaces GKO/GM/Trafegus</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>EXECUTE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Execution of Processing Logic</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CALL_GKO</CMPNAME>
+     <SCONAME>CS_TOR_ROOT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Root Node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CALL_GKO</CMPNAME>
+     <SCONAME>ET_MESSAGES</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>System Messages</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CALL_GM</CMPNAME>
+     <SCONAME>CS_TOR_ROOT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Root Node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CALL_GM</CMPNAME>
+     <SCONAME>ET_MESSAGES</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>System Messages</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CALL_TRAF</CMPNAME>
+     <SCONAME>CS_TOR_ROOT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Root Node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CALL_TRAF</CMPNAME>
+     <SCONAME>ET_MESSAGES</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>System Messages</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_FUS</CMPNAME>
+     <SCONAME>IS_TOR_ROOT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>TOR Root Node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_FUS</CMPNAME>
+     <SCONAME>RV_CHECK</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Valor verdadeiro: verdadeiro/falso</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_QUERY_PARAMETERS</CMPNAME>
+     <SCONAME>CT_PARAMETERS</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Query Selection Parameters</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_STATUS_DESC</CMPNAME>
+     <SCONAME>IS_STATUS_COD</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Status de disparo de interface</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_STATUS_DESC</CMPNAME>
+     <SCONAME>RV_STATUS_DESC</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Comentário</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE_LOG</CMPNAME>
+     <SCONAME>IT_MESSAGES</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>System Messages</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE_LOG</CMPNAME>
+     <SCONAME>IV_EXTERNALID</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Log de aplicação: identificação externa</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE_LOG</CMPNAME>
+     <SCONAME>IV_SUBOBJECT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Log de aplicação: subobjeto</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET_STATUS_INVOICING</CMPNAME>
+     <SCONAME>IS_HEADER</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Electronic Nota Fiscal: Actual Status</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

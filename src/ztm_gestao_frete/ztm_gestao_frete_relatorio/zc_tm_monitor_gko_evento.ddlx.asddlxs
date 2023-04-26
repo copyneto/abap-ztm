@@ -1,0 +1,70 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Evento',
+                     typeNamePlural: 'Eventos' } }
+
+annotate view ZC_TM_MONITOR_GKO_EVENTO with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:            'Evento',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Evento',
+                 position:      10 }  ]
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI.hidden: true
+  acckey;
+
+  @UI: {  lineItem:       [ { position: 10, label: 'Código evento' } ],
+          identification: [ { position: 10, label: 'Código evento' } ] }
+  codevento;
+
+  @UI.hidden: true
+  desc_codevento;
+
+  @UI: {  lineItem:       [ { position: 20, label: 'Nº evento' } ],
+          identification: [ { position: 20, label: 'Nº evento' } ] }
+  nseqevento;
+
+  @UI: {  lineItem:       [ { position: 30, label: 'UF' } ],
+          identification: [ { position: 30, label: 'UF' } ] }
+  uf;
+
+  @UI.hidden: true
+  desc_uf;
+
+  @UI: {  lineItem:       [ { position: 40, label: 'Ambiente de sistema' } ],
+          identification: [ { position: 40, label: 'Ambiente de sistema' } ] }
+  tpamb;
+
+  @UI.hidden: true
+  desc_tpamb;
+
+  @UI: {  lineItem:       [ { position: 50, label: 'Status da resposta' } ],
+          identification: [ { position: 50, label: 'Status da resposta' } ] }
+  cstat;
+
+  @UI: {  lineItem:       [ { position: 60, label: 'Descrição da resposta' } ],
+          identification: [ { position: 60, label: 'Descrição da resposta' } ] }
+  xmotivo;
+
+  @UI: {  lineItem:       [ { position: 70, label: 'Momento do registro' } ],
+          identification: [ { position: 70, label: 'Momento do registro' } ] }
+  dhregevento;
+
+  @UI: {  lineItem:       [ { position: 80, label: 'Nº protocolo' } ],
+          identification: [ { position: 80, label: 'Nº protocolo' } ] }
+  nprot;
+
+  @UI: {  lineItem:       [ { position: 90, label: 'Registro da hora' } ],
+          identification: [ { position: 90, label: 'Registro da hora' } ] }
+  dh_regevento_int;
+
+  @UI: {  lineItem:       [ { position: 100, label: 'Cadeia' } ],
+          identification: [ { position: 100, label: 'Cadeia' } ] }
+  digval;
+}

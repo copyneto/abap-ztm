@@ -1,0 +1,932 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZTM_GKO</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Classe de mensagens GKO</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp; &amp; &amp; &amp;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>NFS número &amp;1 não foi encontrado e possui status de &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Não foi encontrado fornecedor para o CNPJ &amp;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Não foram encontrados &amp;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Valor da fatura &amp;1 é de &amp;2 e o valor apurado no SAP é de &amp;3.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Erro ao iniciar processo de baixa.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Erro na compensação dos documentos.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Não foi encontrado pagamento para o documento &amp;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Erro ao desbloquear documento &amp;1 motivo: &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Não foi possível realizar anulação/estorno do documento &amp;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Erro ao obter o valor do campo &amp;1, &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>O documento já está em processamento.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Erro ao inserir/modificar os dados da tabela &amp;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>Chave de acesso &amp;1 bloqueada pelo usuário &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>O documento não possui produtos acabados.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>Já existe um anexo para o tipo informado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>Erro ao abrir o arquivo &amp;1, &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>017</MSGNR>
+     <TEXT>O diretório de origem dos anexos não foi configurado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>018</MSGNR>
+     <TEXT>O diretório de arquivos processados não foi configurado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>019</MSGNR>
+     <TEXT>Diretório &amp; não foi encontrado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>020</MSGNR>
+     <TEXT>Sem permissão de escrita para o diretório &amp;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>021</MSGNR>
+     <TEXT>Erro ao verificar o diretório &amp;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>022</MSGNR>
+     <TEXT>Sem autorização para acessar o diretório &amp;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>023</MSGNR>
+     <TEXT>O diretório &amp; está vazio.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>024</MSGNR>
+     <TEXT>Erro ao obter a lista de arquivos do diretório &amp;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>025</MSGNR>
+     <TEXT>Nenhum arquivo válido foi encontrado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>026</MSGNR>
+     <TEXT>Só é possível a execução em background.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>027</MSGNR>
+     <TEXT>Já existe um Job em execução.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>028</MSGNR>
+     <TEXT>Para os arquivos do diretório, nenhum CTe/NFS foi encontrado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>029</MSGNR>
+     <TEXT>Erro ao criar o arquivo &amp;1, &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>030</MSGNR>
+     <TEXT>Erro ao ler o arquivo &amp;1, &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>031</MSGNR>
+     <TEXT>Erro ao deletar o arquivo &amp;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>032</MSGNR>
+     <TEXT>Nota Fiscal de referência, não encontrada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>033</MSGNR>
+     <TEXT>XML processado, verificar logs.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>034</MSGNR>
+     <TEXT>Nenhum registro foi encontrado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>035</MSGNR>
+     <TEXT>Para a chave &amp;, o xml não foi encontrado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>036</MSGNR>
+     <TEXT>Para o documento, nenhuma referência foi informada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>037</MSGNR>
+     <TEXT>Nenhuma linha válida foi selecionada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>038</MSGNR>
+     <TEXT>O evento não é permitido para o tipo de documento &amp;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>039</MSGNR>
+     <TEXT>Destino RFC não configurado na tabela de parâmetros.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>040</MSGNR>
+     <TEXT>Processamento realizado, verificar logs.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>041</MSGNR>
+     <TEXT>O &amp; não foi configurado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>042</MSGNR>
+     <TEXT>Abortando processamento, motivo: &amp;1&amp;2&amp;3&amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>043</MSGNR>
+     <TEXT>Nenhum documento foi informado. &amp;1 &amp;2 &amp;3 &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>044</MSGNR>
+     <TEXT>Centro do emitente não encontrado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>045</MSGNR>
+     <TEXT>Cenário &amp;1  tp. doc. &amp;2,  dados do material não encontrados.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>046</MSGNR>
+     <TEXT>Não foi possível determinar o Centro de Custo e Conta Contábil &amp;1&amp;2&amp;3&amp;4.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>047</MSGNR>
+     <TEXT>Filial do tomador não encontrada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>048</MSGNR>
+     <TEXT>Para o tipo de rateio &amp;, não foi possível determinar o IVA.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>049</MSGNR>
+     <TEXT>A chave de acesso informada, não foi integrada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>050</MSGNR>
+     <TEXT>Os dados da chave de acesso, foram excluídos.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>051</MSGNR>
+     <TEXT>Os parâmetros do cabeçalho do pedido, não foram encontrados. &amp;1 &amp;2 &amp;3 &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>052</MSGNR>
+     <TEXT>Parâmetro &amp;, não encontrado na tabela de parâmetros.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>053</MSGNR>
+     <TEXT>Não foi possível determinar o IVA para a Nota Fiscal &amp;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>054</MSGNR>
+     <TEXT>O Código de Status &amp;, não permite o Reprocessamento.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>055</MSGNR>
+     <TEXT>Erro ao realizar o estorno do doc. de agrupamento de fatura &amp;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>056</MSGNR>
+     <TEXT>Erro ao realizar a anulação do doc. de agrupamento de fatura &amp;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>057</MSGNR>
+     <TEXT>Erro ao realizar o estorno da Fatura &amp;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>058</MSGNR>
+     <TEXT>Erro ao realizar o estorno do Pedido &amp;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>059</MSGNR>
+     <TEXT>Erro ao determinar a categoria da nota fiscal &amp;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>060</MSGNR>
+     <TEXT>Emitente &amp; não ampliado para fornecedor.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>061</MSGNR>
+     <TEXT>Para o cenário &amp;1, não foi possível determinar o IVA &amp;2. &amp;3 &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>062</MSGNR>
+     <TEXT>Não foi possível determinar o IVA para a NF &amp;1 item &amp;2 &amp;3.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>063</MSGNR>
+     <TEXT>Nenhum cenário configurado para o processamento agrupado &amp;1 &amp;2 &amp;3 &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>064</MSGNR>
+     <TEXT>O cenário &amp;1 não permite o processamento agrupado &amp;2 &amp;3 &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>065</MSGNR>
+     <TEXT>Selecionar apenas uma linha.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>066</MSGNR>
+     <TEXT>O status &amp;1 não permite &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>067</MSGNR>
+     <TEXT>Favor preencher todos os campos obrigatórios.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>068</MSGNR>
+     <TEXT>O arquivo &amp; não foi encontrado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>069</MSGNR>
+     <TEXT>Não foi possível realizar o anexo do documento.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>070</MSGNR>
+     <TEXT>Anexo &amp;1 &amp;2 adicionado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>071</MSGNR>
+     <TEXT>Erro ao criar o arquivo &amp;1, &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>072</MSGNR>
+     <TEXT>CTe &amp;1 não foi encontrado e possui status de &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>073</MSGNR>
+     <TEXT>Sucesso ao anexar o arquivo.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>074</MSGNR>
+     <TEXT>Documento de agrupamento &amp;, estornado com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>075</MSGNR>
+     <TEXT>Fatura &amp;, estornada com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>076</MSGNR>
+     <TEXT>Pedido &amp;, eliminado com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>077</MSGNR>
+     <TEXT>Não foi realizada a MIRO para a NF de referência.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>078</MSGNR>
+     <TEXT>O valor total do pedido, difere do valor total do frete.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>079</MSGNR>
+     <TEXT>Não foi possível determ. os itens da MIRO a partir das NFs de referência.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>080</MSGNR>
+     <TEXT>Só é possível a execução em background.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>081</MSGNR>
+     <TEXT>Já existe um Job em execução.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>082</MSGNR>
+     <TEXT>Condição de pagamento do transportadora não encontrada &amp;1 &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>083</MSGNR>
+     <TEXT>Não foi realizada a entrada da NF de referência da chave de acesso &amp;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>084</MSGNR>
+     <TEXT>Valor total da MIRO difere do valor total do frete (diferença: &amp;)</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>085</MSGNR>
+     <TEXT>Documento de estorno compensado com sucesso, &amp;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>086</MSGNR>
+     <TEXT>Compensar manualmente o documento de estorno, &amp;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>087</MSGNR>
+     <TEXT>Para o documento, o remetente não é um local de negócios.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>088</MSGNR>
+     <TEXT>Não foi realizada a entrada da nota &amp;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>089</MSGNR>
+     <TEXT>Só é permitida a entrada de documentos emitidos a partir de &amp;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>090</MSGNR>
+     <TEXT>Centro do tomador não encontrado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>091</MSGNR>
+     <TEXT>Atualização não permitida. Fatura &amp;1 se encontra com status de &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>092</MSGNR>
+     <TEXT>O centro &amp;1 do pedido &amp;2, difere do centro do tomador &amp;3.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>093</MSGNR>
+     <TEXT>Não foram encontradas referências para a chave de origem &amp;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>094</MSGNR>
+     <TEXT>A chave de origem &amp; não possui MIRO Confirmada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>095</MSGNR>
+     <TEXT>Favor selecionar o Motivo da recusa.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>096</MSGNR>
+     <TEXT>A chave de acesso &amp;, não está com o evento de rejeição confirmado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>097</MSGNR>
+     <TEXT>Processo bloqueado pela área fiscal. Tabela: ZGKO_BLOQUEIO</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>098</MSGNR>
+     <TEXT>Não foi possível realizar o arredondamento.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>099</MSGNR>
+     <TEXT>OF identificada</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>100</MSGNR>
+     <TEXT>Transportadora cotada diferente da transportadora executante</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>101</MSGNR>
+     <TEXT>Parâmetro &amp;1 de &quot;&amp;2&quot; não encontrado na tabela de parâmetros &amp;3.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>102</MSGNR>
+     <TEXT>Chave &amp;1: Documento &amp;2/&amp;3 criado com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>103</MSGNR>
+     <TEXT>Chave &amp;1: Documento &amp;2/&amp;3 já criado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>104</MSGNR>
+     <TEXT>Erro ao realizar o cálculo de custo para a OF &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>105</MSGNR>
+     <TEXT>Não é possível estornar o pedido antes da fatura.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>106</MSGNR>
+     <TEXT>Nenhum documento DFF encontrado para estorno.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>107</MSGNR>
+     <TEXT>CNPJ do tomador diferente do CNPJ do centro.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>108</MSGNR>
+     <TEXT>CNPJ do centro não encontrado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>109</MSGNR>
+     <TEXT>Emitente &amp;1 não ampliado para fornecedor.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>110</MSGNR>
+     <TEXT>Sem anexo atribuído.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>111</MSGNR>
+     <TEXT>Pedido não encontrado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>112</MSGNR>
+     <TEXT>Pedido não encontrado para chave &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>113</MSGNR>
+     <TEXT>Erro durante faturamento.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>114</MSGNR>
+     <TEXT>Erro durante faturamento para chave &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>115</MSGNR>
+     <TEXT>Documento Faturamento de Frete (DFF) ainda não foi lançado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>116</MSGNR>
+     <TEXT>Documento Faturamento de Frete (DFF) ainda não foi confirmado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>117</MSGNR>
+     <TEXT>Fatura &amp;1 criada com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>118</MSGNR>
+     <TEXT>Fatura &amp;1 memorizada com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>119</MSGNR>
+     <TEXT>Agente de frete diferente da Ordem de frente &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>120</MSGNR>
+     <TEXT>-- Nenhum registro foi encontrado</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>121</MSGNR>
+     <TEXT>-- Iniciando o processamento da fatura</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>122</MSGNR>
+     <TEXT>--- Fatura processada</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>123</MSGNR>
+     <TEXT>-- Fim do processamento da fatura</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>124</MSGNR>
+     <TEXT>-- Nenhum registro válido foi encontrado</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>125</MSGNR>
+     <TEXT>Centro de Custo &amp;1 e Conta Contábil &amp;2 encontrado para &amp;3&amp;4.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>126</MSGNR>
+     <TEXT>Transp. &amp;1 possui reg. trib. Simples Nacional. MIRO será memorizada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>127</MSGNR>
+     <TEXT>Ctg. IRF não foi encontrada na tabela de parâmetros. MIRO será memorizada</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>128</MSGNR>
+     <TEXT>Fornecedor não está Sujeito a IRF. MIRO será memorizada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>129</MSGNR>
+     <TEXT>Fatura &amp;1 já foi estornada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>130</MSGNR>
+     <TEXT>Ctg &amp;1 não está sujeito a IRF. MIRO será memorizada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>131</MSGNR>
+     <TEXT>Ordem de frete &amp;1 não encontrado para validação do cálculo de custos.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>132</MSGNR>
+     <TEXT>Ordem de frete &amp;1 com cálculo de custos zerado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>133</MSGNR>
+     <TEXT>Documento DFF &amp;1 encontrado não consta no fluxo de documentos.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>134</MSGNR>
+     <TEXT>Custo extra &amp;1 já foi adicionado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>135</MSGNR>
+     <TEXT>Tipo de documento deve ser apenas de tamanho 2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>136</MSGNR>
+     <TEXT>Erro ao apagar os dados da tabela &amp;.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>137</MSGNR>
+     <TEXT>IVA &amp;1 determinado por: &amp;2&amp;3&amp;4.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>138</MSGNR>
+     <TEXT>Falha na determinação de IVA: &amp;1&amp;2&amp;3&amp;4.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>139</MSGNR>
+     <TEXT>Parceiros da OF difere dos parceiros do XML.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>140</MSGNR>
+     <TEXT>Cálculo de Custo não realizado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>141</MSGNR>
+     <TEXT>Custo extra &amp;1 já foi adicionado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>142</MSGNR>
+     <TEXT>Custo &amp;1 não encontrado para atualização do valor.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>143</MSGNR>
+     <TEXT>Numero de Fatura &amp;1 já possui agrupamento.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>144</MSGNR>
+     <TEXT>Falha na liberação do documento de administração &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>145</MSGNR>
+     <TEXT>Falha ao eliminar automaticamente o custo extra &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>146</MSGNR>
+     <TEXT>Chave de acesso &amp;1 não possui o status correto para agrupamento.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>147</MSGNR>
+     <TEXT>Solicitação enviada para aprovadores. Favor verificar caixa de mensagens.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>148</MSGNR>
+     <TEXT>Chave de acesso de referência &amp;1 não está autorizada</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>149</MSGNR>
+     <TEXT>Fatura &amp;1 já foi compensada. Não é possível continuar com agrupamento.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>150</MSGNR>
+     <TEXT>Ordem de Frete &amp;1 bloqueada pelo usuário &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>151</MSGNR>
+     <TEXT>Valor ICMS escriturado no CT-e não pode ser maior que valor do ICMS XML</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>152</MSGNR>
+     <TEXT>Sem anexo atribuído para chave &amp;1.</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

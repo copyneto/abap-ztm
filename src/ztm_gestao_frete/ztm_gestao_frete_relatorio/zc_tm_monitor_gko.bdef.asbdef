@@ -1,0 +1,34 @@
+projection;
+
+define behavior for ZC_TM_MONITOR_GKO alias monitor
+{
+
+  use association _doc_gerado;
+  use association _evento;
+  use association _log;
+  use association _referencia;
+}
+
+define behavior for ZC_TM_MONITOR_GKO_DOCGER alias doc_gerado
+{
+
+  use association _monitor;
+}
+
+define behavior for ZC_TM_MONITOR_GKO_EVENTO alias evento
+{
+
+  use association _monitor;
+}
+
+define behavior for ZC_TM_MONITOR_GKO_LOG alias log
+{
+
+  use association _monitor;
+}
+
+define behavior for ZC_TM_MONITOR_GKO_REF alias referencia
+{
+
+  use association _monitor;
+}

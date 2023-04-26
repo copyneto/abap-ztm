@@ -1,0 +1,104 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Complemento',
+                     typeNamePlural: 'Complemento' } }
+
+annotate view ZC_TM_MDF_COMPLEMENTO with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:            'Complemento',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Dados complementares',
+                 position:      10 }  ]
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI.hidden: true
+  Id;
+
+  @UI: { lineItem:        [ { position: 10, label: 'UF' } ],
+         identification:  [ { position: 10, label: 'UF' } ] }
+  Uf;
+
+  @UI.hidden: true
+  UfText;
+  
+  @UI: { lineItem:        [ { position: 20, label: 'Ambiente de Sistema', criticality: 'TpAmbCriticality', criticalityRepresentation: #WITHOUT_ICON } ],
+         identification:  [ { position: 20, label: 'Ambiente de Sistema', criticality: 'TpAmbCriticality', criticalityRepresentation: #WITHOUT_ICON } ] }
+  TpAmb;
+  
+  @UI.hidden: true
+  TpAmbText;
+  
+  @UI.hidden: true
+  TpAmbCriticality;
+  
+  @UI: { lineItem:        [ { position: 30, label: 'Tipo de Emitente' } ],
+         identification:  [ { position: 30, label: 'Tipo de Emitente' } ] }
+  TpEmit;
+  
+  @UI.hidden: true
+  TpEmitText;
+  
+  @UI: { lineItem:        [ { position: 40, label: 'Tipo de Transportadora' } ],
+         identification:  [ { position: 40, label: 'Tipo de Transportadora' } ] }
+  TpTransp;
+  
+  @UI.hidden: true
+  TpTranspText;
+  
+  @UI: { lineItem:        [ { position: 50, label: 'Modelo MDF-e' } ],
+         identification:  [ { position: 50, label: 'Modelo MDF-e' } ] }
+  Mod;
+  
+  @UI.hidden: true
+  ModText;
+  
+  @UI: { lineItem:        [ { position: 60, label: 'Nº Aleatório' } ],
+         identification:  [ { position: 60, label: 'Nº Aleatório' } ] }
+  CMdf;
+  
+  @UI: { lineItem:        [ { position: 70, label: 'Dígito Verificador' } ],
+         identification:  [ { position: 70, label: 'Dígito Verificador' } ] }
+  CDv;
+  
+  @UI: { lineItem:        [ { position: 80, label: 'Tipo de Transporte' } ],
+         identification:  [ { position: 80, label: 'Tipo de Transporte' } ] }
+  Modal;
+  
+  @UI.hidden: true
+  ModalText;
+  
+  @UI: { lineItem:        [ { position: 90, label: 'Data/Hora da Emissão' } ],
+         identification:  [ { position: 90, label: 'Data/Hora da Emissão' } ] }
+  DhEmi;
+  
+  @UI: { lineItem:        [ { position: 100, label: 'Tipo de emissão', criticality: 'TpEmisCriticality', criticalityRepresentation: #WITHOUT_ICON } ],
+         identification:  [ { position: 100, label: 'Tipo de emissão', criticality: 'TpEmisCriticality', criticalityRepresentation: #WITHOUT_ICON } ] }
+  TpEmis;
+  
+  @UI.hidden: true
+  TpEmisCriticality;
+  
+  @UI.hidden: true
+  TpEmisText;
+  
+  @UI.hidden: true
+  CreatedBy;
+  
+  @UI.hidden: true
+  CreatedAt;
+  
+  @UI.hidden: true
+  LastChangedBy;
+  
+  @UI.hidden: true
+  LastChangedAt;
+  
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+}

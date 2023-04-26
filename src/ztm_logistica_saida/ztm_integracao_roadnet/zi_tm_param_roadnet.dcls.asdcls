@@ -1,0 +1,11 @@
+@EndUserText.label: 'Parâmetros de Entrada: Interface Roadnet'
+@MappingRole: true
+define role ZI_TM_PARAM_ROADNET {
+    grant
+        select
+            on
+                ZI_TM_PARAM_ROADNET
+                    where
+                        ( centro ) = aspect pfcg_auth( ZTMWERKS, WERKS, ACTVT = '03' );
+                        
+}

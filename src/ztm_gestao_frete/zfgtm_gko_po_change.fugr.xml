@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Função ZFMTM_GKO_PO_CHANGE</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGTM_GKO_PO_CHANGETOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGTM_GKO_PO_CHANGE</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMTM_GKO_PO_CHANGE</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>BAPI_PO_CHANGE</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_PURCHASEORDER</PARAMETER>
+       <TYP>BAPIMEPOHEADER-PO_NUMBER</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IT_POITEM</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>BAPIMEPOITEM_TP</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IT_POITEMX</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>BAPIMEPOITEMX_TP</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EV_SUCESS</PARAMETER>
+       <TYP>CHAR1</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_PURCHASEORDER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nº do documento de compras</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_POITEM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tipo de tabela para BAPIMEPOITEM</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_POITEMX</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tipo de tabela para BAPIMEPOITEMX</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_SUCESS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Código de um caractere</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

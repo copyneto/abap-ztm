@@ -1,0 +1,123 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Vale Pedágio',
+                     typeNamePlural: 'Vale Pedágio' } }
+
+annotate view ZC_TM_MDF_PLACA_VALE_PEDAGIO with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:              'HeaderPlaca',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderPlaca',
+                 position:        10 },
+                 
+               { id:              'VALE',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Vale Pedágio',
+                 position:        10 },
+
+                        { parentId:        'VALE',
+                          id:              'ValePedagio',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'ValePedagio' },
+                          
+               { id:              'FORNECEDOR',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Fornecedor',
+                 position:        10 },
+
+                        { parentId:        'FORNECEDOR',
+                          id:              'Fornecedor',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'Fornecedor' },
+                          
+               { id:              'PAGADOR',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Pagador',
+                 position:        10 },
+
+                        { parentId:        'PAGADOR',
+                          id:              'Pagador',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          targetQualifier: 'Pagador' } ]
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI.hidden: true
+  Id;
+
+  @UI.hidden: true
+  @UI: { dataPoint:         { title: 'Placa', qualifier: 'HeaderPlaca' } }
+  Placa;
+
+  @UI: { lineItem:        [ { position: 10, label: 'Comprovante' } ],
+         fieldGroup:      [ { position: 10, label: 'Comprovante', qualifier: 'ValePedagio' } ] }
+  NCompra;
+  
+  @UI: { lineItem:        [ { position: 20, label: 'Fornecedor' } ],
+         fieldGroup:      [ { position: 10, label: 'Fornecedor', qualifier: 'Fornecedor' } ] }
+  Fornecedor;
+  
+  @UI.hidden: true
+  FornecedorNome;
+
+  @UI: { lineItem:        [ { position: 30, label: 'CNPJ Fornecedor' } ],
+         fieldGroup:      [ { position: 20, label: 'CNPJ Fornecedor', qualifier: 'Fornecedor' } ],
+         textArrangement: #TEXT_ONLY }
+  CnpjForn;
+
+  @UI.hidden: true
+  CnpjFornText;
+  
+  @UI: { lineItem:        [ { position: 40, label: 'Pagador' } ],
+         fieldGroup:      [ { position: 10, label: 'Pagador', qualifier: 'Pagador' } ] }
+  Pagador;
+  
+  @UI.hidden: true
+  PagadorNome;
+
+  @UI: { lineItem:        [ { position: 50, label: 'CNPJ Pagador' } ],
+         fieldGroup:      [ { position: 20, label: 'CNPJ Pagador', qualifier: 'Pagador' } ],
+         textArrangement: #TEXT_ONLY }
+  CnpjPg;
+
+  @UI.hidden: true
+  CnpjPgText;
+
+  @UI: { lineItem:        [ { position: 60, label: 'CPF Pagador' } ],
+         fieldGroup:      [ { position: 30, label: 'CPF Pagador', qualifier: 'Pagador' } ],
+         textArrangement: #TEXT_ONLY }
+  CpfPg;
+  
+  @UI: { lineItem:        [ { position: 70, label: 'Valor ticket de pedágio' } ],
+         fieldGroup:      [ { position: 20, label: 'Valor ticket de pedágio', qualifier: 'ValePedagio' } ] }
+  ValorValePed;
+
+  @UI.hidden: true
+  CpfPgText;
+
+  @UI.hidden: true
+  CreatedBy;
+
+  @UI.hidden: true
+  CreatedAt;
+
+  @UI.hidden: true
+  LastChangedBy;
+
+  @UI.hidden: true
+  LastChangedAt;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+}

@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Função BAPI_INCOMINGINVOICE_CREATE1</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGTM_GKO_INCM_CREATE1TOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGTM_GKO_INCM_CREATE1</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMTM_GKO_INCM_CREATE1</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>BAPI_INCOMINGINVOICE_CREATE1</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_HEADERDATA</PARAMETER>
+       <TYP>BAPI_INCINV_CREATE_HEADER</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_INVOICESTATUS</PARAMETER>
+       <DEFAULT>5</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>BAPI_INCINV_CREATE_STATUS-RBSTAT</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_ACCKEY</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>J_1B_NFE_ACCESS_KEY_DTEL44</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_ARREDONDAMENTO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>ZSTM_GKO_ARREDONDAMENTO</TYP>
+      </RSIMP>
+     </IMPORT>
+     <CHANGING>
+      <RSCHA>
+       <PARAMETER>CT_ITEMDATA</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>BAPI_INCINV_CREATE_ITEM_TAB</TYP>
+      </RSCHA>
+      <RSCHA>
+       <PARAMETER>CT_RETURN</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>BAPIRET2_T</TYP>
+      </RSCHA>
+     </CHANGING>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_INVOICEDOCNUMBER</PARAMETER>
+       <TYP>BAPI_INCINV_FLD-INV_DOC_NO</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EV_FISCALYEAR</PARAMETER>
+       <TYP>BAPI_INCINV_FLD-FISC_YEAR</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_HEADERDATA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Estr.transf.dds.cabeçalho fatura recebida (criar)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_INVOICESTATUS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Status do documento de faturamento</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_ACCKEY</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Chave de acesso de 44 dígitos</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_ARREDONDAMENTO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Arredondadmento MIRO GKO</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_INVOICEDOCNUMBER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nº de um documento de faturamento</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_FISCALYEAR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Exercício</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CT_ITEMDATA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>TABLE BAPI_INCINV_CREATE_ITEM</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CT_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

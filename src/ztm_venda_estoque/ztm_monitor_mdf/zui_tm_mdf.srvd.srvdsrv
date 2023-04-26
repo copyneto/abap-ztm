@@ -1,0 +1,16 @@
+@EndUserText.label: 'Informações MDF-e'
+define service ZUI_TM_MDF {
+  expose ZC_TM_MDF as MDF;
+  expose ZC_TM_MDF_COMPLEMENTO as Complemento;
+  expose ZC_TM_MDF_EMITENTE as Emitente;
+  expose ZC_TM_MDF_MUNICIPIO as Municipio;
+  expose ZC_TM_MDF_HISTORICO as Historico;
+  expose ZC_TM_MDF_MOTORISTA as Motorista;
+  expose ZC_TM_MDF_PLACA as Placa;
+  expose ZC_TM_MDF_PLACA_CONDUTOR as Condutor;
+  expose ZC_TM_MDF_PLACA_VALE_PEDAGIO as ValePedagio;
+  expose ZC_TM_MDF_PERCURSO_DOC as Percurso;
+  expose ZC_TM_MDF_CARREGAMENTO as Carregamento;
+  expose ZC_TM_MDF_DESCARREGAMENTO as Descarregamento;
+  expose ZI_TM_VH_MDF_OF_NF_CRIAR;
+}

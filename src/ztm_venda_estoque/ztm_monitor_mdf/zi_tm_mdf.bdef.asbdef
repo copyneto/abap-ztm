@@ -1,0 +1,534 @@
+managed;
+
+// ------------------------------------------------------
+// Behavior: MDF
+// ------------------------------------------------------
+
+define behavior for ZI_TM_MDF alias MDF
+implementation in class zcltm_mdf unique
+persistent table zttm_mdf
+lock master
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create ( precheck );
+  update ( features : instance );
+  delete ( features : instance );
+
+  association _Complemento;
+  association _Emitente;
+  association _Municipio { create ( features : instance ); }
+  association _Historico;
+  association _Motorista;
+  association _Placa { create ( features : instance ); }
+  association _Percurso;
+  association _Carregamento;
+  association _Descarregamento;
+
+  field ( readonly, numbering : managed )
+  Guid;
+
+  field ( mandatory : create )
+  CompanyCode,
+  BusinessPlace;
+  //  ModFrete;
+
+  field ( mandatory )
+  DataInicioViagem;
+
+  field ( readonly )
+  TipoEmissao,
+  Agrupador,
+  BR_MDFeNumber,
+  BR_MDFeSeries,
+  AccessKey,
+  BR_MDFeNumberStatus,
+  QtdNfe,
+  QtdNfeWrt,
+  VlrCarga,
+  Moeda,
+  Correcao,
+  LastChangedAt,
+  LastChangedBy,
+  LastChangedDate,
+  CreatedAt,
+  CreatedDate,
+  CreatedBy,
+  LocalLastChangedAt;
+
+  action ( features : instance ) verificar;
+  action ( features : instance ) enviar;
+  action ( features : instance ) cancelar;
+  action ( features : instance ) encerrar;
+  action ( features : instance ) motorista parameter ZC_TM_MDF_MOTORISTA_POPUP;
+  action ( features : instance ) criarMdfeUsarOF parameter ZI_TM_MDF_ORDEM_FRETE_POPUP;
+  action ( features : instance ) criarRefMdfe;
+
+  validation authorityCreate on save { create; }
+
+  determination determinarNotaFiscal on save { create; }
+  determination criarAssociacoes on save { create; update; }
+
+  mapping for ZTTM_MDF
+  {
+    Guid = id;
+    Agrupador = docnum;
+    Manual = manual;
+    CompanyCode = bukrs;
+    BusinessPlace = branch;
+    ModFrete = modfrete;
+    DomFiscalInicio = domfiscalini;
+    DomFiscalFim = domfiscalfim;
+    DataInicioViagem = dtini;
+    HoraInicioViagem = hrini;
+    LocalExpedicao = vstel;
+    rntrc = rntrc;
+    Correcao = correcao;
+    StatusCode = statcod;
+    InfoFisco = inf_ad_fisco;
+    InfoContrib = inf_cpl;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
+
+// ------------------------------------------------------
+// Behavior: MDF x Complemento
+// ------------------------------------------------------
+
+define behavior for ZI_TM_MDF_COMPLEMENTO alias Complemento
+implementation in class zcltm_mdf_complemento unique
+persistent table zttm_mdf_ide
+authorization dependent by _MDF
+lock dependent by _MDF
+{
+  update ( features : instance );
+
+  association _MDF;
+
+  field ( readonly : update )
+  Id;
+
+  field ( mandatory )
+  TpAmb,
+  TpEmit,
+  TpTransp,
+  Modal,
+  DhEmi,
+  TpEmis;
+
+  field ( readonly )
+  Uf,
+  Mod,
+  CMdf,
+  CDv,
+  LastChangedAt,
+  LastChangedBy,
+  CreatedAt,
+  CreatedBy,
+  LocalLastChangedAt;
+
+  mapping for zttm_mdf_ide
+  {
+    Id = id;
+    Uf = c_uf;
+    TpAmb = tp_amb;
+    TpEmit = tp_emit;
+    TpTransp = tp_transp;
+    Mod = mod;
+    CMdf = c_mdf;
+    CDv = c_dv;
+    Modal = modal;
+    DhEmi = dh_emi;
+    TpEmis = tp_emis;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
+
+// ------------------------------------------------------
+// Behavior: MDF x Emitente
+// ------------------------------------------------------
+
+define behavior for ZI_TM_MDF_EMITENTE alias Emitente
+persistent table zttm_mdf
+authorization dependent by _MDF
+lock dependent by _MDF
+{
+  association _MDF;
+
+  field ( readonly : update )
+  Id;
+
+  mapping for zttm_mdf
+  {
+    Id = id;
+  }
+}
+
+// ------------------------------------------------------
+// Behavior: MDF x Município
+// ------------------------------------------------------
+
+define behavior for ZI_TM_MDF_MUNICIPIO alias Municipio
+implementation in class zcltm_mdf_municipio unique
+persistent table zttm_mdf_mcd
+authorization dependent by _MDF
+lock dependent by _MDF
+{
+  association _MDF { }
+
+  update ( features : instance );
+  delete ( features : instance );
+
+  field ( readonly : update )
+  Guid;
+
+  field ( readonly )
+  AccessKey,
+  FreightOrder,
+  BR_NotaFiscal,
+  BR_NFeNumber,
+  Carga,
+  Descarga,
+  Manual,
+  SegCodigoBarra,
+  Cancel,
+  CancelCriticality,
+  Reentrega,
+  ReentregaCriticality,
+  NfExtrn,
+  NfExtrnCriticality,
+  LastChangedAt,
+  LastChangedBy,
+  CreatedAt,
+  CreatedBy,
+  LocalLastChangedAt;
+
+  // Campos habilitados somente para NF externa
+  field ( features : instance )
+  SalesDocumentCurrency,
+  BR_NFTotalAmount,
+  HeaderNetWeight,
+  HeaderWeightUnit,
+  HeaderGrossWeight;
+
+  mapping for zttm_mdf_mcd
+  {
+    Guid = id;
+    AccessKey = access_key;
+    OrdemFrete = ordem_frete;
+    Reentrega = reentrega;
+    SegCodigoBarra = segcodbarra;
+    BR_NFTotalAmount = v_carga;
+    HeaderWeightUnit = c_unid;
+    HeaderGrossWeight = q_carga;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
+
+// ------------------------------------------------------
+// Behavior: MDF x Histórico
+// ------------------------------------------------------
+
+define behavior for ZI_TM_MDF_HISTORICO alias Historico
+persistent table zttm_mdf_hist
+authorization dependent by _MDF
+lock dependent by _MDF
+{
+  association _MDF;
+
+  field ( readonly : update )
+  Id;
+
+  mapping for zttm_mdf_hist
+  {
+    Id = id;
+    Histcount = histcount;
+  }
+}
+
+// ------------------------------------------------------
+// Behavior: MDF x Motorista
+// ------------------------------------------------------
+
+define behavior for ZI_TM_MDF_MOTORISTA alias Motorista
+persistent table zttm_mdf_moto
+lock dependent by _MDF
+authorization dependent by _MDF
+etag master LocalLastChangedAt
+{
+  association _MDF { }
+
+  field ( readonly : update )
+  Id;
+
+  field ( readonly )
+  LastChangedAt,
+  LastChangedBy,
+  CreatedAt,
+  CreatedBy,
+  LocalLastChangedAt;
+
+  mapping for ZTTM_MDF_MOTO
+  {
+    Id = id;
+    Line = line;
+    Motorista = motorista;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
+
+// ------------------------------------------------------
+// Behavior: MDF x Placa/Proprietário
+// ------------------------------------------------------
+
+define behavior for ZI_TM_MDF_PLACA alias Placa
+implementation in class zcltm_mdf_placa unique
+persistent table zttm_mdf_placa
+lock dependent by _MDF
+authorization dependent by _MDF
+etag master LocalLastChangedAt
+{
+  update ( features : instance );
+  delete ( features : instance );
+
+  association _MDF { }
+  association _Condutor { create ( features : instance ); }
+  association _ValePedagio { create ( features : instance ); }
+
+  validation validarPlaca on save { create; update; }
+  validation validarProprietario on save { create; update; }
+  determination determinarInfoPlaca on modify { field Placa, Ativo, Proprietario; }
+
+  field ( readonly : update )
+  Id;
+
+  field ( mandatory : create, readonly : update )
+  Placa;
+
+  field ( readonly )
+  CategoriaEquip,
+  TipoEquip,
+  Renavam,
+  Tara,
+  CapKg,
+  CapM3,
+  TpRod,
+  TpCar,
+
+  Uf,
+  cpf,
+  cnpj,
+  Nome,
+  ie,
+
+  LastChangedAt,
+  LastChangedBy,
+  CreatedAt,
+  CreatedBy,
+  LocalLastChangedAt;
+
+  mapping for zttm_mdf_placa
+  {
+    Id = id;
+    Placa = placa;
+    Reboque = reboque;
+
+    Ativo = ativo;
+    Proprietario = proprietario;
+    cpf = cpf;
+    cnpj = cnpj;
+    rntrc = rntrc;
+    Nome = x_nome;
+    ie = ie;
+    UfProp = uf_prop;
+    TpProp = tp_prop;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
+
+// ------------------------------------------------------
+// Behavior: MDF x Placa/Proprietário x Condutor
+// ------------------------------------------------------
+
+define behavior for ZI_TM_MDF_PLACA_CONDUTOR alias Condutor
+implementation in class zcltm_mdf_placa_condutor unique
+persistent table zttm_mdf_placa_c
+lock dependent by _MDF
+authorization dependent by _MDF
+etag master LocalLastChangedAt
+{
+  update ( features : instance );
+  delete ( features : instance );
+
+  association _MDF;
+
+  validation validarCondutor on save { create; update; }
+  determination determinarInfoCondutor on modify { field Condutor; }
+
+  field ( readonly : update )
+  Id,
+  Placa;
+
+  field ( mandatory : create, readonly : update )
+  Condutor;
+
+  field ( readonly )
+  Cpf, Nome;
+
+  mapping for zttm_mdf_placa_c
+  {
+    Id = id;
+    Placa = placa;
+    Condutor = condutor;
+    Cpf = cpf;
+    Nome = x_nome;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
+
+// ------------------------------------------------------
+// Behavior: MDF x Placa/Proprietário x Vale Pedágio
+// ------------------------------------------------------
+
+define behavior for ZI_TM_MDF_PLACA_VALE_PEDAGIO alias ValePedagio
+implementation in class zcltm_mdf_placa_valepedagio unique
+persistent table zttm_mdf_placa_v
+lock dependent by _MDF
+authorization dependent by _MDF
+etag master LocalLastChangedAt
+{
+  update ( features : instance );
+  delete ( features : instance );
+
+  association _MDF;
+
+  validation validarValePedagio on save { create; update; }
+  determination determinarInfoValePedagio on modify { field Fornecedor, Pagador; }
+
+  field ( readonly : update )
+  Id,
+  Placa;
+
+  field ( mandatory : create, readonly : update )
+  NCompra;
+
+  field ( readonly )
+  CnpjForn,
+  CnpjPg,
+  CpfPg;
+
+  mapping for zttm_mdf_placa_v
+  {
+    Id = id;
+    Placa = placa;
+    NCompra = n_compra;
+    Fornecedor = fornecedor;
+    CnpjForn = cnpjforn;
+    Pagador = pagador;
+    CnpjPg = cnpjpg;
+    CpfPg = cpfpg;
+    ValorValePed = v_vale_ped;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
+
+// ------------------------------------------------------
+// Behavior: MDF x Percurso
+// ------------------------------------------------------
+
+define behavior for ZI_TM_MDF_PERCURSO_DOC alias Percurso
+persistent table zttm_mdf
+authorization dependent by _MDF
+lock dependent by _MDF
+{
+  association _MDF;
+
+  field ( readonly : update )
+  Id;
+
+  mapping for zttm_mdf
+  {
+    Id = id;
+  }
+}
+
+// ------------------------------------------------------
+// Behavior: MDF x Carregamento
+// ------------------------------------------------------
+
+define behavior for ZI_TM_MDF_CARREGAMENTO alias Carregamento
+persistent table zttm_mdf
+authorization dependent by _MDF
+lock dependent by _MDF
+{
+  association _MDF;
+
+  field ( readonly : update )
+  Id,
+  Uf;
+
+  field ( mandatory : create )
+  TaxJurCode;
+
+  field ( readonly : update )
+  TaxJurCode;
+
+  mapping for zttm_mdf
+  {
+    Id = id;
+  }
+}
+// ------------------------------------------------------
+// Behavior: MDF x Descarregamento
+// ------------------------------------------------------
+
+define behavior for ZI_TM_MDF_DESCARREGAMENTO alias Descarregamento
+persistent table zttm_mdf
+authorization dependent by _MDF
+lock dependent by _MDF
+{
+  association _MDF;
+
+  field ( readonly : update )
+  Id,
+  Uf;
+
+  field ( mandatory : create )
+  TaxJurCode;
+
+  field ( readonly : update )
+  TaxJurCode;
+
+  mapping for zttm_mdf
+  {
+    Id = id;
+  }
+}

@@ -1,0 +1,174 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Placa',
+                     typeNamePlural: 'Placas' } }
+
+annotate view ZC_TM_MDF_PLACA with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:              'HeaderPlaca',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderPlaca',
+                 position:        10 },
+
+               { id:            'Placa',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Placa',
+                 position:      10 },
+
+               { id:              'PROPRIETARIO',
+                 isSummary:       true,
+                 type:            #COLLECTION,
+                 label:           'Proprietário',
+                 position:        10 },
+
+                        { parentId:        'PROPRIETARIO',
+                          id:              'PropAtivo',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        10,
+                          label:           'Proprietário',
+                          targetQualifier: 'PropAtivo' },
+
+                        { parentId:        'PROPRIETARIO',
+                          id:              'PropDoc',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        20,
+                          label:           'Documento',
+                          targetQualifier: 'PropDoc' },
+
+                        { parentId:        'PROPRIETARIO',
+                          id:              'PropInfo',
+                          type:            #FIELDGROUP_REFERENCE,
+                          position:        30,
+                          label:           'Informações',
+                          targetQualifier: 'PropInfo' },
+                       
+               { id:              'Condutor',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Condutor',
+                 position:        20,
+                 targetElement:   '_Condutor'},
+                 
+               { id:              'ValePedagio',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Vale Pedágio',
+                 position:        30,
+                 targetElement:   '_ValePedagio'} ]
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI.hidden: true
+  Id;
+
+  @UI: { lineItem:        [ { position: 10, label: 'Reboque', criticality: 'ReboqueCriticality', criticalityRepresentation: #WITHOUT_ICON } ],
+         identification:  [ { position: 10, label: 'Reboque', criticality: 'ReboqueCriticality', criticalityRepresentation: #WITHOUT_ICON } ] }
+  Reboque;
+
+  @UI.hidden: true
+  ReboqueCriticality;
+
+  @UI: { lineItem:        [ { position: 20, label: 'Placa' } ],
+         identification:  [ { position: 20, label: 'Placa' } ],
+         dataPoint:         { qualifier: 'HeaderPlaca', title: 'Placa' } }
+  Placa;
+
+  @UI.hidden: true
+  PlacaText;
+
+  @UI: { lineItem:        [ { position: 30, label: 'Categoria' } ],
+         identification:  [ { position: 30, label: 'Categoria' } ] }
+  CategoriaEquip;
+
+  @UI.hidden: true
+  CategoriaEquipText;
+
+  @UI: { lineItem:        [ { position: 40, label: 'Tipo' } ],
+         identification:  [ { position: 40, label: 'Tipo' } ] }
+  TipoEquip;
+
+  @UI.hidden: true
+  TipoEquipText;
+
+  @UI: { lineItem:        [ { position: 50, label: 'CT-e RENAVAM' } ],
+         identification:  [ { position: 50, label: 'CT-e RENAVAM' } ] }
+  Renavam;
+
+  @UI: { lineItem:        [ { position: 60, label: 'Tara em KG' } ],
+         identification:  [ { position: 60, label: 'Tara em KG' } ] }
+  Tara;
+
+  @UI: { lineItem:        [ { position: 70, label: 'Capacidade em KG' } ],
+         identification:  [ { position: 70, label: 'Capacidade em KG' } ] }
+  CapKg;
+
+  @UI: { lineItem:        [ { position: 80, label: 'Capacidade em M3' } ],
+         identification:  [ { position: 80, label: 'Capacidade em M3' } ] }
+  CapM3;
+
+  @UI: { lineItem:        [ { position: 90, label: 'Meio de transporte' } ],
+         identification:  [ { position: 90, label: 'Meio de transporte' } ] }
+  TpRod;
+
+  @UI.hidden: true
+  TpRodText;
+
+  @UI: { lineItem:        [ { position: 100, label: 'Tipo do reboque' } ],
+         identification:  [ { position: 100, label: 'Tipo do reboque' } ] }
+  TpCar;
+
+  @UI.hidden: true
+  TpCarText;
+
+  @UI: { lineItem:        [ { position: 110, label: 'Região' } ],
+         identification:  [ { position: 110, label: 'Região' } ] }
+  Uf;
+
+  @UI.hidden: true
+  UfName;
+
+  @UI: { fieldGroup:      [ { position: 10, label: 'Proprietário diferente do Emitente', qualifier: 'PropAtivo',
+                              criticality: 'AtivoCriticality', criticalityRepresentation: #WITHOUT_ICON } ] }
+  Ativo;
+  
+  @UI.hidden: true
+  AtivoCriticality;
+  
+  @UI: { fieldGroup:      [ { position: 20, label: 'Proprietário', qualifier: 'PropAtivo' } ] }
+  Proprietario;  
+
+  @UI: { fieldGroup:      [ { position: 10, label: 'CPF', qualifier: 'PropDoc' } ],
+         textArrangement: #TEXT_ONLY } 
+  CPF;
+  
+  @UI.hidden: true
+  CPFText;
+
+  @UI: { fieldGroup:      [ { position: 20, label: 'CNPJ', qualifier: 'PropDoc' } ],
+         textArrangement: #TEXT_ONLY } 
+  CNPJ;
+  
+  @UI.hidden: true
+  CNPJText;
+
+  @UI: { fieldGroup:      [ { position: 30, label: 'Inscrição Estadual', qualifier: 'PropDoc' } ] }
+  IE;
+  
+  @UI: { fieldGroup:      [ { position: 10, label: 'Nome', qualifier: 'PropInfo' } ] }
+  Nome;
+
+  @UI: { fieldGroup:      [ { position: 20, label: 'Tipo de Proprietário', qualifier: 'PropInfo' } ] }
+  TpProp;
+
+  @UI: { fieldGroup:      [ { position: 30, label: 'RNTRC', qualifier: 'PropInfo' } ] }
+  RNTRC;
+
+  @UI: { fieldGroup:      [ { position: 40, label: 'UF', qualifier: 'PropInfo' } ] }
+  UfProp;
+
+}

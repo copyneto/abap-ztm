@@ -1,0 +1,49 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: { typeName: 'Determinação de cenário Fretes diversos'}
+annotate view ZC_TM_PCOCKPIT017 with
+{
+  @UI.facet: [
+    { label: 'Valores',
+      id: 'Valores',
+      type: #COLLECTION,
+      position: 10 },
+
+    { label: ' ',
+      position: 10,
+      type: #IDENTIFICATION_REFERENCE,
+      parentId: 'Valores' }
+  ]
+
+  @UI.hidden: true
+  Guid;
+  @UI: { lineItem:       [{position: 10}],
+         identification: [{position: 10}]}
+  Bsart;
+  @UI: { lineItem:       [{position: 20}],
+         identification: [{position: 20}]}
+  Ekgrp;
+  @UI: { lineItem:       [{position: 30}],
+         identification: [{position: 30}]}
+  Mtart;
+  @UI: { lineItem:       [{position: 40}],
+         identification: [{position: 40}]}
+  FornExt;
+  @UI: { lineItem:       [{position: 50}],
+         identification: [{position: 50}]}
+  EmpGrupo;
+  @UI: { lineItem:       [{position: 60}],
+         identification: [{position: 60}]}
+  Operacao;
+  @UI: { lineItem:       [{position: 70}],
+         identification: [{position: 70}]}
+  tipooperacao;
+  @UI: { lineItem:       [{position: 80}],
+         identification: [{position: 80}]}
+  manual;
+  @UI: { lineItem:       [{position: 90}],
+         identification: [{position: 90}]}
+  iva;
+  @UI: { lineItem:       [{position: 100}],
+         identification: [{position: 100}]}
+  icms_xml;
+}

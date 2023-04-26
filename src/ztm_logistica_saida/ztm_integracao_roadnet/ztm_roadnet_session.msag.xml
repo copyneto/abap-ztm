@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZTM_ROADNET_SESSION</ARBGB>
+    <MASTERLANG>P</MASTERLANG>
+    <STEXT>Roadnet Session</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_ROADNET_SESSION</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp; &amp; &amp; &amp;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_ROADNET_SESSION</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Sem Remessa</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_ROADNET_SESSION</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Erro ao processar (&amp;1 &amp;2 &amp;3 &amp;4 )</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_ROADNET_SESSION</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Sessão &amp;1: Nenhuma rota encontrada para continuar com o processamento.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_ROADNET_SESSION</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Remessa &amp;1 foi enviada para Roadnet com Id da sessão &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_ROADNET_SESSION</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Remessa &amp; não possui nenhuma Unidade de Frete no TM</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_ROADNET_SESSION</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Nenhum centro encontrado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_ROADNET_SESSION</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Nenhum centro informado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_ROADNET_SESSION</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Nenhuma data informada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_ROADNET_SESSION</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Nenhuma rota encontrada para continuar com o processamento.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_ROADNET_SESSION</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Importação realizada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_ROADNET_SESSION</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Importação realizada com avisos.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_ROADNET_SESSION</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Importação realizada com erros.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_ROADNET_SESSION</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>Problemas encontrados durante envio. Favor verificar log.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_ROADNET_SESSION</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>Remessas enviadas com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_ROADNET_SESSION</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>Processando ordem de frete &amp;1...</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_ROADNET_SESSION</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>Rota &amp;1 já processada, OF: &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_ROADNET_SESSION</ARBGB>
+     <MSGNR>017</MSGNR>
+     <TEXT>Importação em processamento!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_ROADNET_SESSION</ARBGB>
+     <MSGNR>018</MSGNR>
+     <TEXT>Iniciando criação da Ordem de Frete &amp;1 para rota &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_ROADNET_SESSION</ARBGB>
+     <MSGNR>019</MSGNR>
+     <TEXT>Processamento da Sessão &amp;1 finalizada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_ROADNET_SESSION</ARBGB>
+     <MSGNR>020</MSGNR>
+     <TEXT>Falha ao criar Ordem de Frete para Sessão &amp;1 Rota &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_ROADNET_SESSION</ARBGB>
+     <MSGNR>021</MSGNR>
+     <TEXT>Remessa &amp;1 não atribuída à Ordem de Frete &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_ROADNET_SESSION</ARBGB>
+     <MSGNR>022</MSGNR>
+     <TEXT>Remessa &amp;1 não atribuída à OF &amp;2. Atualmente Atribuída na OF &amp;3.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_ROADNET_SESSION</ARBGB>
+     <MSGNR>023</MSGNR>
+     <TEXT>Iniciando a alteração do bloqueio das remessas.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_ROADNET_SESSION</ARBGB>
+     <MSGNR>024</MSGNR>
+     <TEXT>Iniciando processamento da rota &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_ROADNET_SESSION</ARBGB>
+     <MSGNR>025</MSGNR>
+     <TEXT>Finalizado processamento da rota &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_ROADNET_SESSION</ARBGB>
+     <MSGNR>026</MSGNR>
+     <TEXT>Processamento da Sessão &amp;1 iniciada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_ROADNET_SESSION</ARBGB>
+     <MSGNR>027</MSGNR>
+     <TEXT>Operação realizada com sucesso.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_ROADNET_SESSION</ARBGB>
+     <MSGNR>028</MSGNR>
+     <TEXT>Falha ao limpar o histórico.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_ROADNET_SESSION</ARBGB>
+     <MSGNR>029</MSGNR>
+     <TEXT>Remessa &amp;1 da UF &amp;2 não está (Planejado Parcialmente)</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

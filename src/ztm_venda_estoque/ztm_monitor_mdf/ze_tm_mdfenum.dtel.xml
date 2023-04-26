@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>ZE_TM_MDFENUM</ROLLNAME>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <DOMNAME>NUMC09</DOMNAME>
+    <HEADLEN>55</HEADLEN>
+    <SCRLEN1>10</SCRLEN1>
+    <SCRLEN2>20</SCRLEN2>
+    <SCRLEN3>40</SCRLEN3>
+    <DDTEXT>Número MDF-e</DDTEXT>
+    <REPTEXT>Número MDF-e</REPTEXT>
+    <SCRTEXT_S>Nº MDF-e</SCRTEXT_S>
+    <SCRTEXT_M>Número MDF-e</SCRTEXT_M>
+    <SCRTEXT_L>Número MDF-e</SCRTEXT_L>
+    <DTELMASTER>P</DTELMASTER>
+    <REFKIND>D</REFKIND>
+   </DD04V>
+   <I18N_LANGS>
+    <LANGU>E</LANGU>
+   </I18N_LANGS>
+   <DD04_TEXTS>
+    <item>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DDTEXT>MDF-e Number</DDTEXT>
+     <REPTEXT>MDF-e Number</REPTEXT>
+     <SCRTEXT_S>MDF-e</SCRTEXT_S>
+     <SCRTEXT_M>MDF-e Number</SCRTEXT_M>
+     <SCRTEXT_L>MDF-e Number</SCRTEXT_L>
+    </item>
+   </DD04_TEXTS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

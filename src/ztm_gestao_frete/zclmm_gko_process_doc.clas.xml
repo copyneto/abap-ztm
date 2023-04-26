@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLMM_GKO_PROCESS_DOC</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Processamento de documentos</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>P04</KEY>
+     <ENTRY>Moeda</ENTRY>
+     <LENGTH>30</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>P05</KEY>
+     <ENTRY>Texto</ENTRY>
+     <LENGTH>30</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>P17</KEY>
+     <ENTRY>Tipo de documento</ENTRY>
+     <LENGTH>30</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>P18</KEY>
+     <ENTRY>Bloqueio de Pagamento</ENTRY>
+     <LENGTH>30</LENGTH>
+    </item>
+   </TPOOL>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>CONSTRUCTOR</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_CTE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo de 3 bytes de comprimento</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_NF55</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Componente do nº versão</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_NFS</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo de 3 bytes de comprimento</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_PO_CREATED</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo de 3 bytes de comprimento</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_BLOQ_PAG</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Parâmetro</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_CURR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Parâmetro</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_DOCTYPE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Parâmetro</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_TXT</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Parâmetro</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>BAPI_MIRO</CMPNAME>
+     <SCONAME>IT_ACCOUNT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Table Type BAPI_INCINV_CREATE_ACCOUNT</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FILL_BAPI</CMPNAME>
+     <SCONAME>ET_ACCOUNT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Table Type BAPI_INCINV_CREATE_ACCOUNT</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FILL_BAPI_ACC</CMPNAME>
+     <SCONAME>ET_ACCOUNT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Table Type BAPI_INCINV_CREATE_ACCOUNT</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_PARAM</CMPNAME>
+     <SCONAME>IV_ID</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Id do parâmetro</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_PARAM</CMPNAME>
+     <SCONAME>RV_PARAM</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Parâmetro</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

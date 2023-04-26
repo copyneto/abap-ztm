@@ -1,0 +1,17 @@
+projection;
+
+define behavior for ZC_TM_COCKPIT_PRESTACAO_CONTAS alias Cockpit
+{
+
+  use association _Execucao;
+
+  use action novoStatusEvento;
+  use action definirEmProcessamento;
+  use action definirConcluido;
+}
+
+define behavior for ZC_TM_COCKPIT_ITEM_EXECUCAO alias Execucao
+{
+
+  use association _Cockpit;
+}

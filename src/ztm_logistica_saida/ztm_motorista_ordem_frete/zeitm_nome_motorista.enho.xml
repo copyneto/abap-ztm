@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_ENHO" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TOOL>CLASENH</TOOL>
+   <SHORTTEXT>Nome do motorista da ordem de frete</SHORTTEXT>
+   <CLASS>/SCMTMS/CL_UI_VIEWEXIT_TOR</CLASS>
+   <POST_METHODS>
+    <ENHAMETHKEYS>
+     <METHKEY>
+      <CLSNAME>/SCMTMS/CL_UI_VIEWEXIT_TOR</CLSNAME>
+      <CMPNAME>GET_GENDATA_TEXT</CMPNAME>
+     </METHKEY>
+    </ENHAMETHKEYS>
+   </POST_METHODS>
+   <TAB_ATTRIBUTES>
+    <ENHCLASSATTRIB>
+     <CLSNAME>/SCMTMS/CL_UI_VIEWEXIT_TOR</CLSNAME>
+     <CMPNAME>%_ZEITM_NOME_MOTORISTA</CMPNAME>
+     <DESCRIPT>SAP-generated, not changeable!</DESCRIPT>
+     <STATE>1</STATE>
+     <EDITORDER>1</EDITORDER>
+     <TYPTYPE>3</TYPTYPE>
+     <TYPE>OBJECT</TYPE>
+     <LOCKED>X</LOCKED>
+    </ENHCLASSATTRIB>
+   </TAB_ATTRIBUTES>
+   <SOTR>
+    <item>
+     <HEADER>
+      <CONCEPT>005056B095991EEC8DFEBD276A90A148</CONCEPT>
+      <CREA_LAN>P</CREA_LAN>
+      <TRALA_TYPE>1</TRALA_TYPE>
+      <OBJID_VEC>AAI=</OBJID_VEC>
+     </HEADER>
+     <ENTRIES>
+      <SOTR_TEXT>
+       <CONCEPT>005056B095991EEC8DFEBD276A90A148</CONCEPT>
+       <LANGU>P</LANGU>
+       <LFD_NUM>0001</LFD_NUM>
+       <FLAG_CNTXT>X</FLAG_CNTXT>
+       <STATUS>R</STATUS>
+       <LENGTH>255</LENGTH>
+       <TEXT>Nome do motorista da ordem de frete</TEXT>
+      </SOTR_TEXT>
+     </ENTRIES>
+    </item>
+    <item>
+     <HEADER>
+      <CONCEPT>005056B095991EEC8DFED8AA89908179</CONCEPT>
+      <CREA_LAN>P</CREA_LAN>
+      <TRALA_TYPE>1</TRALA_TYPE>
+      <OBJID_VEC>AAI=</OBJID_VEC>
+     </HEADER>
+     <ENTRIES>
+      <SOTR_TEXT>
+       <CONCEPT>005056B095991EEC8DFED8AA89908179</CONCEPT>
+       <LANGU>P</LANGU>
+       <LFD_NUM>0001</LFD_NUM>
+       <FLAG_CNTXT>X</FLAG_CNTXT>
+       <STATUS>R</STATUS>
+       <LENGTH>255</LENGTH>
+       <TEXT>SAP-generated, not changeable!</TEXT>
+      </SOTR_TEXT>
+     </ENTRIES>
+    </item>
+   </SOTR>
+   <SOTR_USE>
+    <SOTR_USE>
+     <PGMID>R3TR</PGMID>
+     <OBJECT>ENHO</OBJECT>
+     <OBJ_NAME>ZEITM_NOME_MOTORISTA</OBJ_NAME>
+     <CONCEPT>005056B095991EEC8DFEBD276A90A148</CONCEPT>
+     <LFD_NUM>0001</LFD_NUM>
+    </SOTR_USE>
+    <SOTR_USE>
+     <PGMID>R3TR</PGMID>
+     <OBJECT>ENHO</OBJECT>
+     <OBJ_NAME>ZEITM_NOME_MOTORISTA</OBJ_NAME>
+     <CONCEPT>005056B095991EEC8DFED8AA89908179</CONCEPT>
+     <LFD_NUM>0001</LFD_NUM>
+    </SOTR_USE>
+   </SOTR_USE>
+  </asx:values>
+ </asx:abap>
+</abapGit>

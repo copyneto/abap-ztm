@@ -1,0 +1,10 @@
+@EndUserText.label: 'Controle de acesso para Monitor GKO'
+@MappingRole: true
+define role ZI_TM_MONITOR_GKO {
+    grant
+        select
+            on
+                ZI_TM_MONITOR_GKO
+                    where
+                        ( bukrs ) = aspect pfcg_auth( ZPMBUKRS, BUKRS, ACTVT = '03' );  -- Role '03' para exibição
+}

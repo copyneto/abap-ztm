@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLTM_INTEGRAR_MEDIDA_CUBAGEM</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Integração cubagem</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_CLASS_MSG</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Classe de mensagem</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_TOR_CATG_FU</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Categoria de documento comercial</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>INSERT_TABLE</CMPNAME>
+     <SCONAME>ZCXTM_ERRO_INTERFACE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Classe de exceção para tratar erros na Interface Cubagem</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SELECT_DATA</CMPNAME>
+     <SCONAME>ZCXTM_ERRO_INTERFACE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Classe de exceção para tratar erros na Interface Cubagem</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

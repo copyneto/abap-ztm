@@ -1,0 +1,63 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Condutor',
+                     typeNamePlural: 'Condutores' } }
+
+annotate view ZC_TM_MDF_PLACA_CONDUTOR with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:              'HeaderPlaca',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderPlaca',
+                 position:        10 },
+
+               { id:            'Condutor',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Condutor',
+                 position:      10 }  ]
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI.hidden: true
+  Id;
+
+  @UI.hidden: true
+  @UI: { dataPoint:         { qualifier: 'HeaderPlaca', title: 'Placa' } }
+  Placa;
+
+  @UI: { lineItem:        [ { position: 10, label: 'Condutor' } ],
+         identification:  [ { position: 10, label: 'Condutor' } ] }
+  Condutor;
+
+  @UI: { lineItem:        [ { position: 20, label: 'CPF' } ],
+         identification:  [ { position: 20, label: 'CPF' } ],
+         textArrangement: #TEXT_ONLY }
+  Cpf;
+
+  @UI.hidden: true
+  CPFText;
+
+  @UI: { lineItem:        [ { position: 30, label: 'Nome' } ],
+         identification:  [ { position: 30, label: 'Nome' } ] }
+  Nome;
+
+  @UI.hidden: true
+  CreatedBy;
+
+  @UI.hidden: true
+  CreatedAt;
+
+  @UI.hidden: true
+  LastChangedBy;
+
+  @UI.hidden: true
+  LastChangedAt;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+}

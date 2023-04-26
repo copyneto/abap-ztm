@@ -1,0 +1,4 @@
+@EndUserText.label: 'Configuração das UFs do percurso'
+define service ZUI_TM_MDF_PERCURSO {
+  expose ZC_TM_MDF_PERCURSO as Percurso;
+}

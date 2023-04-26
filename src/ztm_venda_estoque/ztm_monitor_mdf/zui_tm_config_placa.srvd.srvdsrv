@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv Def para Manutenção de Placas'
+define service ZUI_TM_CONFIG_PLACA {
+  expose ZC_TM_CONFIG_PLACA;
+}

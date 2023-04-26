@@ -1,0 +1,58 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Motorista',
+                     typeNamePlural: 'Motoristas',
+                     title: { type: #STANDARD, value: 'Motorista' } } }
+
+@UI.presentationVariant: [{ sortOrder: [{ by: 'Line', direction:  #DESC }] }] 
+                     
+@UI.lineItem: [{criticality: 'Criticality' }]
+
+annotate view ZC_TM_MDF_MOTORISTA with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+  @UI.facet: [ { id:            'Motorista',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Motorista',
+                 position:      10 }  ]
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+  @UI.hidden: true
+  Id;
+  
+  @UI: { lineItem:        [ { position: 10 } ],
+         identification:  [ { position: 10 } ]  }
+  Line;
+  
+  @UI: { lineItem:        [ { position: 20 } ],
+         identification:  [ { position: 20 } ]  }
+  Motorista;
+
+  @UI: { lineItem:        [ { position: 30 } ],
+         identification:  [ { position: 30 } ],
+         textArrangement: #TEXT_ONLY } 
+  CPF;
+  
+  @UI.hidden: true
+  CPFText;
+
+  @UI: { lineItem:        [ { position: 40  } ],
+         identification:  [ { position: 40 } ]  }
+  Nome;
+  
+  @UI: { lineItem:        [ { position: 50, criticality: 'Criticality', criticalityRepresentation: #WITHOUT_ICON } ],
+         identification:  [ { position: 50, criticality: 'Criticality', criticalityRepresentation: #WITHOUT_ICON } ]  }
+  AtualMotorista;
+  
+  @UI.hidden: true
+  Criticality;
+  
+  @UI: { lineItem:        [ { position: 60 } ],
+         identification:  [ { position: 60 } ]  }
+  CreatedAt;
+
+}

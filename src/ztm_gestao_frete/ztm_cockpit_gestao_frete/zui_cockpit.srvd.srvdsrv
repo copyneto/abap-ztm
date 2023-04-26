@@ -1,0 +1,8 @@
+@EndUserText.label: 'Cockpit'
+define service Zui_cockpit {
+  expose ZC_TM_COCKPIT;
+  expose zc_tm_cockpit_log;
+  expose zi_tm_sh_motivo_rejeicao;
+  expose ZI_TM_VH_ATT_SCH1;
+  expose ZI_TM_VH_ATT_SCH1_NFS;
+}

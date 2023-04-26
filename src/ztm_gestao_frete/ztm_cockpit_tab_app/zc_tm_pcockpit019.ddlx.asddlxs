@@ -1,0 +1,36 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: { typeName: 'Determinação de IVA por operação'}
+annotate view ZC_TM_PCOCKPIT019
+    with 
+{
+  @UI.facet: [
+    { label: 'Valores',
+      id: 'Valores',
+      type: #COLLECTION,
+      position: 10 },
+
+    { label: ' ',
+      position: 10,
+      type: #IDENTIFICATION_REFERENCE,
+      parentId: 'Valores' }
+  ]
+
+    @UI.hidden: true
+    Guid;
+    @UI: { lineItem:       [{position: 10}],
+           identification: [{position: 10}]}     
+    Cenario;
+    @UI: { lineItem:       [{position: 20}],
+           identification: [{position: 20}]}      
+    IcmsXml;
+    @UI: { lineItem:       [{position: 30}],
+           identification: [{position: 30}]}     
+    IvaNf;
+    @UI: { lineItem:       [{position: 40}],
+           identification: [{position: 40}]}        
+    IvaFrete;
+    @UI: { lineItem:       [{position: 50}],
+           identification: [{position: 50}]}  
+    movimentacao;
+
+}

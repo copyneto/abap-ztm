@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>FI_DOCUMENT_CHANGE</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGTM_GKO_DOCUMENT_CHANGETOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGTM_GKO_DOCUMENT_CHANGE</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFMTM_GKO_DOCUMENT_CHANGE</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>FI_DOCUMENT_CHANGE</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_AWTYP</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>ACCHD-AWTYP</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_AWREF</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>ACCHD-AWREF</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_AWORG</PARAMETER>
+       <DEFAULT>SPACE</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>ACCHD-AWORG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_AWSYS</PARAMETER>
+       <DEFAULT>SPACE</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>ACCHD-AWSYS</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_KUNNR</PARAMETER>
+       <DEFAULT>SPACE</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>ACCIT-KUNNR</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_LIFNR</PARAMETER>
+       <DEFAULT>SPACE</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>ACCIT-LIFNR</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_HKONT</PARAMETER>
+       <DEFAULT>SPACE</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>ACCIT-HKONT</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_OBZEI</PARAMETER>
+       <DEFAULT>SPACE</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>BSEG-OBZEI</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_BUZEI</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>BSEG-BUZEI</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_BSEGC</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>BSEGC</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_LOCK</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>BOOLE-BOOLE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_BUKRS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>BUKRS</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_BELNR</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>BELNR_D</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_GJAHR</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>GJAHR</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_ALE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>XFELD</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_UPD_FQM</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>BOOLE_D</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_FI_INTERNAL_USE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>BOOLE_D</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IT_ACCCHG</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>ARBERP_T_ACCCHG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_SUBRC</PARAMETER>
+       <TYP>SY-SUBRC</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ES_RETURN</PARAMETER>
+       <TYP>BAPIRET2</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_AWTYP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Operação de referência</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_AWREF</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nº do documento de referência</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_AWORG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Unidades organizacionais de referência</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_AWSYS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Sistema lógico</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_KUNNR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nº cliente</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_LIFNR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nº conta do fornecedor</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_HKONT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Conta do Razão da contabilidade geral</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_OBZEI</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nº linha lançamento no documento original</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_BUZEI</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nº linha de lançamento no documento contábil</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_BSEGC</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Documento: dados para pagamento com cartões de pagamento</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_LOCK</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Elem.dados para domínio BOOLE: TRUE (=&apos;X&apos;) e FALSE (=&apos; &apos;)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_BUKRS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Empresa</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_BELNR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nº documento de um documento contábil</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_GJAHR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Exercício</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_ALE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Campo de seleção</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_UPD_FQM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Elem.dados para domínio BOOLE: TRUE (=&apos;X&apos;) e FALSE (=&apos; &apos;)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_FI_INTERNAL_USE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Elem.dados para domínio BOOLE: TRUE (=&apos;X&apos;) e FALSE (=&apos; &apos;)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_ACCCHG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Modificações de docs.FI</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_SUBRC</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Campo do sistema ABAP: código de retorno de instruções ABAP</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ES_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Parâmetro de retorno</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

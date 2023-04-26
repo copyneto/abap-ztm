@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_ENHO" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TOOL>WDYCONF</TOOL>
+   <ORIGINAL_OBJECT>
+    <CONFIG_ID>/SCMTMS/WDCC_FOR_GEN_GNINF</CONFIG_ID>
+   </ORIGINAL_OBJECT>
+   <ENHANCEMENT_DATA>
+    <Component Name="" ConfId="" ConfType="00" ConfVar="">
+     <Node Name="CONFIGURATION_CONTEXT" SimpleFormat="true">
+      <Item Index="000001" SimpleFormat="true">
+       <Node Name="FORM" SimpleFormat="true">
+        <Item Index="000001" SimpleFormat="true">
+         <Node Name="FORM_GROUP" SimpleFormat="true">
+          <Item Index="000001" SimpleFormat="true" Changed="true">
+           <ID Final="5 ">FGL2_1C98EC17AC451EE8B28FC626B9EA7FA8</ID>
+           <Node Name="FORM_GROUP_ELEMENT" SimpleFormat="true">
+            <Item Index="000001" SimpleFormat="true">
+             <ID Final="5 ">_GENP_005056B095991EDCB8D907E0AE83CD30</ID>
+             <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+             <FORM_ELEMENT_ID>FGL2_005056B095991EDCB8D907E0AE838D30</FORM_ELEMENT_ID>
+            </Item>
+           </Node>
+          </Item>
+         </Node>
+         <Node Name="POSITION" SimpleFormat="true">
+          <Item Index="000001" SimpleFormat="true">
+           <ID Final="5 ">_GENP_005056B095991EDCB8D907E0AE83AD30</ID>
+           <START_ROW>3 </START_ROW>
+           <START_COLUMN>D</START_COLUMN>
+           <END_ROW>3 </END_ROW>
+           <END_COLUMN>E</END_COLUMN>
+           <LABEL_START_ROW>3 </LABEL_START_ROW>
+           <LABEL_START_COLUMN>A</LABEL_START_COLUMN>
+           <LABEL_END_ROW>3 </LABEL_END_ROW>
+           <LABEL_END_COLUMN>C</LABEL_END_COLUMN>
+           <FORM_ELEMENT_TYPE>SE</FORM_ELEMENT_TYPE>
+           <FORM_ELEMENT_ID>FGL2_005056B095991EDCB8D907E0AE838D30</FORM_ELEMENT_ID>
+          </Item>
+         </Node>
+         <Node Name="STANDARD_ELEMENT" SimpleFormat="true">
+          <Item Index="000001" SimpleFormat="true">
+           <ID Final="5 ">FGL2_005056B095991EDCB8D907E0AE838D30</ID>
+           <NAME>ZZNR_SAGA</NAME>
+           <TYPE>IN</TYPE>
+           <EXPLANATION Transl="true"></EXPLANATION>
+           <TEXT Transl="true"></TEXT>
+           <TOOLTIP Transl="true"></TOOLTIP>
+           <INPUT_PROMPT Transl="true"></INPUT_PROMPT>
+           <INSTANCE_STYLE></INSTANCE_STYLE>
+           <SPECIAL_PROPERTIES></SPECIAL_PROPERTIES>
+           <SPECIAL_ACTIONS></SPECIAL_ACTIONS>
+           <LABEL_TEXT Transl="true"></LABEL_TEXT>
+           <LABEL_VISIBILITY>02</LABEL_VISIBILITY>
+           <LABEL_INSTANCE_STYLE></LABEL_INSTANCE_STYLE>
+           <TAG_ACTIVE></TAG_ACTIVE>
+           <TAG></TAG>
+           <CTXT_MENU_ID></CTXT_MENU_ID>
+          </Item>
+         </Node>
+        </Item>
+       </Node>
+      </Item>
+     </Node>
+    </Component>
+   </ENHANCEMENT_DATA>
+   <SOTR>
+    <item>
+     <HEADER>
+      <CONCEPT>005056B095991EDCB8D9068899EB6D2F</CONCEPT>
+      <CREA_LAN>P</CREA_LAN>
+      <TRALA_TYPE>1</TRALA_TYPE>
+      <OBJID_VEC>AAI=</OBJID_VEC>
+     </HEADER>
+     <ENTRIES>
+      <SOTR_TEXT>
+       <CONCEPT>005056B095991EDCB8D9068899EB6D2F</CONCEPT>
+       <LANGU>P</LANGU>
+       <LFD_NUM>0001</LFD_NUM>
+       <FLAG_CNTXT>X</FLAG_CNTXT>
+       <STATUS>R</STATUS>
+       <LENGTH>255</LENGTH>
+       <TEXT>Informações SAGA</TEXT>
+      </SOTR_TEXT>
+     </ENTRIES>
+    </item>
+   </SOTR>
+   <SOTR_USE>
+    <SOTR_USE>
+     <PGMID>R3TR</PGMID>
+     <OBJECT>ENHO</OBJECT>
+     <OBJ_NAME>ZEITM_SAGA_INFO</OBJ_NAME>
+     <CONCEPT>005056B095991EDCB8D9068899EB6D2F</CONCEPT>
+     <LFD_NUM>0001</LFD_NUM>
+    </SOTR_USE>
+   </SOTR_USE>
+  </asx:values>
+ </asx:abap>
+</abapGit>

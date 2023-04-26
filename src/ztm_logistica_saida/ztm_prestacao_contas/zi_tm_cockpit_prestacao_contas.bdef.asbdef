@@ -1,0 +1,30 @@
+unmanaged;
+
+// ------------------------------------------------------
+// Behavior: Cockpit
+// ------------------------------------------------------
+
+define behavior for ZI_TM_COCKPIT_PRESTACAO_CONTAS alias Cockpit
+implementation in class zcltm_cockpit_prestacao_contas unique
+lock master
+{
+  association _Execucao;
+
+  action ( features : instance ) novoStatusEvento parameter ZI_TM_COCKPIT_EVENT_POPUP;
+  action ( features : instance ) definirEmProcessamento;
+  action ( features : instance ) definirConcluido;
+}
+
+// ------------------------------------------------------
+// Behavior: Histório de Execuções
+// ------------------------------------------------------
+
+define behavior for ZI_TM_COCKPIT_ITEM_EXECUCAO alias Execucao
+implementation in class zcltm_cockpit_item_execucao unique
+lock dependent by _Cockpit
+{
+  association _Cockpit;
+
+  field ( readonly : update ) FreightOrderUUID, FreightUnitUUID;
+
+}

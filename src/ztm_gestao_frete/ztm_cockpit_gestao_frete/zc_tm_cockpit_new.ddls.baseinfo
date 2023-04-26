@@ -1,0 +1,16 @@
+{
+"BASEINFO":
+{
+"FROM":
+[],
+"ASSOCIATED":
+[
+"ZC_TM_COCKPIT_LOG_NEW"
+],
+"BASE":
+[],
+"ANNO_REF":
+[],
+"VERSION":0
+}
+}

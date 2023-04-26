@@ -1,0 +1,55 @@
+@Metadata.layer: #PARTNER
+
+@UI.headerInfo: {
+ typeName: 'Relatório Custo Entrega/Devolutiva',
+ typeNamePlural: 'Relatório Custo Entregas/Devolutivas'
+}
+
+
+//    ,
+//    {
+//        qualifier: 'visualDate',
+//        chartType: #BAR,
+//        description: 'Teste',
+//        dimensions: ['CondicaoExpedicao'],
+//        measures: ['TotalItensNF'],
+//        dimensionAttributes: [{ dimension: 'CondicaoExpedicao', role: #SERIES }],
+//        measureAttributes: [{ measure: 'TotalItensNF', role: #AXIS_1 }]
+//    } 
+
+
+
+//@UI.presentationVariant: [{ 
+//        qualifier: 'Default', 
+//        visualizations: [{ type: #AS_DATAPOINT, qualifier: 'chartDefault' }] 
+//        
+//    }
+//    
+//    {
+//        qualifier: 'visualDateFilter',
+//        visualizations: [{ type: #AS_CHART, qualifier: 'visualDate' }] 
+//    },
+//    {
+//        qualifier: 'KPI_Teste', text: 'teste' , visualizations: [{ type: #AS_CHART, qualifier: 'visualDate' },
+//                                                                 { type: #AS_CHART, qualifier: 'visualDate' }
+//                                                                ] 
+//    }
+//]
+
+//@UI.selectionVariant: [
+//    {
+//        qualifier: 'KPI_Teste', text: 'teste' 
+//    }
+//]
+//
+//@UI.selectionPresentationVariant: [
+//    {
+//        qualifier: 'KPI_Teste', presentationVariantQualifier: 'KPI_Teste', selectionVariantQualifier: 'KPI_Teste' 
+//    }
+//]
+
+annotate view ZC_TM_CUSTOS_ENTREGA
+    with 
+{
+    
+}

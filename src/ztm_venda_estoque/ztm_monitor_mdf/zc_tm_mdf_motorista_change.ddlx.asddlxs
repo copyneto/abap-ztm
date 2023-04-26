@@ -1,0 +1,63 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+        typeName: 'Nota manual',
+        typeNamePlural: 'Notas manuais',
+
+        title: {
+            type: #STANDARD,
+            label: 'Motorista',
+            value: 'MotoristaNome'
+        }
+}
+
+annotate view ZC_TM_MDF_MOTORISTA_CHANGE with
+{
+
+  @UI.facet: [{ id: 'Info', purpose: #STANDARD, type: #IDENTIFICATION_REFERENCE, position: 10, label: 'MDF-e' },
+              { id: 'Log' , purpose: #STANDARD, type: #LINEITEM_REFERENCE,       position: 20, label: 'Modificações', targetElement: '_Historico' }]
+
+  @UI: { lineItem: [{ position: 10, semanticObjectAction: 'zzdisplay', type: #WITH_INTENT_BASED_NAVIGATION },
+                    { type: #FOR_ACTION, dataAction: 'changeMotorista', label: 'Motorista', position: 100 },
+                    { type: #FOR_ACTION, dataAction: 'changePlaca', label: 'Placa',     position: 110 },
+                    { type: #FOR_ACTION, dataAction: 'removeMotoristaPlaca', label: 'Remover Motorista/Placa',     position: 120 }],
+   identification: [{ position: 10, semanticObjectAction: 'zzdisplay', type: #WITH_INTENT_BASED_NAVIGATION },
+                    { type: #FOR_ACTION, dataAction: 'changeMotorista', label: 'Motorista', position: 100 },
+                    { type: #FOR_ACTION, dataAction: 'changePlaca',     label: 'Placa',     position: 110 },
+                    { type: #FOR_ACTION, dataAction: 'removeMotoristaPlaca',     label: 'Remover Motorista/Placa',     position: 120 }],
+   selectionField: [{ position: 10 }] }
+  @Consumption.semanticObject:'NotaFiscal'
+  BR_NotaFiscal;
+//  Docnum;
+
+  @UI: { lineItem: [{ position: 20 }],
+   identification: [{ position: 20 }],
+   selectionField: [{ position: 20 }] }
+  DataLancamento;
+
+  @UI.hidden: true
+  CriadoPor;
+
+  @UI: { lineItem: [{ position: 30 }],
+   identification: [{ position: 30 }],
+   selectionField: [{ position: 30 }] }
+  LocalNegocio;
+  
+  @UI: { lineItem: [{ position: 40 }],
+   identification: [{ position: 40 }],
+   selectionField: [{ position: 40 }] }
+  NumeroNota;
+
+  @UI: { lineItem: [{ position: 50 }],
+   identification: [{ position: 50 }],
+   selectionField: [{ position: 50 }] }
+  Placa;
+
+  @UI: { lineItem: [{ position: 60 }],
+   identification: [{ position: 60 }],
+   selectionField: [{ position: 60 }] }
+  Motorista;
+  
+  @UI.hidden: true
+  CompanyCode;
+
+}

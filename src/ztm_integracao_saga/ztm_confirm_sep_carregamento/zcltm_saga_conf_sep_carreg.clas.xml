@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLTM_SAGA_CONF_SEP_CARREG</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Confirmação de Separação / Carregamento</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_CDSIT_EMEXECUCAO</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de um caractere</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_CDSIT_FECHADA</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de um caractere</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_ITEMCAT_AVR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Categoria de item</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_ITEMCAT_PVR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Categoria de item</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_ITMTYPE_TRL</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo de item da ordem de transporte</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_ITMTYPE_TRUC</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo de item da ordem de transporte</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_OPTION_EQ</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Componente do nº versão</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_SEP_SPLIT</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de um caractere</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_SIGN_I</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código de um caractere</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_TORCAT_TO</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Categoria de documento comercial</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GO_SRV_TOR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Containing the public service methods of a service manager</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GO_TRA_MGR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Interface of the standalone transaction manager</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_MESSAGES</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Mensagens de erro</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_MOD</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Changes</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_VEHICLE</CMPNAME>
+     <SCONAME>IV_ITMSTART</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº inteiro sem sinal 1 byte</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_VEHICLE</CMPNAME>
+     <SCONAME>IV_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>NodeID</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_VEHICLE</CMPNAME>
+     <SCONAME>IV_TURES_TCO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo de equipamento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CLEAR_ITMTR</CMPNAME>
+     <SCONAME>IT_ITEMTR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Transportation Order Item</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_EVENT</CMPNAME>
+     <SCONAME>IS_STOP</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Stop</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_EVENT</CMPNAME>
+     <SCONAME>IS_TOR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Root Node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_EVENT</CMPNAME>
+     <SCONAME>IV_EVENTO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Evento que ocorre durante uma atividade de transporte</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_EVENT_N</CMPNAME>
+     <SCONAME>IS_STOP</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Stop</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_EVENT_N</CMPNAME>
+     <SCONAME>IS_TOR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Root Node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_EVENT_N</CMPNAME>
+     <SCONAME>IV_EVENTO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Evento que ocorre durante uma atividade de transporte</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PROCESS_INTERFACE</CMPNAME>
+     <SCONAME>ZCXTM_SAGA_CONF_SEP_CARREG</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Confirmação de separação e carregamento</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>UNLOCK_DELIVERY</CMPNAME>
+     <SCONAME>IV_DELIVERY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Remessa</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>UPD_DATA_ROOT</CMPNAME>
+     <SCONAME>IV_AGENT_FRETE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Agente de frete</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>UPD_DATA_ROOT</CMPNAME>
+     <SCONAME>IV_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>NodeID</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>UPD_DATA_ROOT</CMPNAME>
+     <SCONAME>IV_MOTORISTA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Motorista Parceiro - TM</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>UPD_VEHICLE</CMPNAME>
+     <SCONAME>IT_ITEMTR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Transportation Order Item</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>UPD_VEHICLE</CMPNAME>
+     <SCONAME>IV_CLEAR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Flag geral</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>UPD_VEHICLE</CMPNAME>
+     <SCONAME>IV_ITMSTART</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº Linha</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>UPD_VEHICLE</CMPNAME>
+     <SCONAME>IV_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>NodeID</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>UPD_VEHICLE</CMPNAME>
+     <SCONAME>IV_TURES_TCO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo de equipamento</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

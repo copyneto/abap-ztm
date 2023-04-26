@@ -1,0 +1,11 @@
+@EndUserText.label: 'Controle de acesso para Gestão de Frota'
+@MappingRole: true
+define role ZI_TM_COCKPIT_FROTA {
+    grant
+        select
+            on
+                ZI_TM_COCKPIT_FROTA
+                    where ( Company ) = aspect pfcg_auth( ZTMBUKRS, BUKRS, ACTVT = '03' )
+                      and ( Plant )   = aspect pfcg_auth( ZTMWERKS, WERKS, ACTVT = '03' ); 
+                        
+}

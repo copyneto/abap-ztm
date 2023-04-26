@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLTM_RAOADNET_SESSION</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Session Roadnet</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_BTD_ISSUER</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Emitente do documento da transação comercial</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_BTD_TCO</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo de documento para transação comercial</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_CALENDFAB</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Calendário de fábrica</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_TORCAT_FU</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Categoria de documento comercial</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_MOD</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Changes</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_REMESSA</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de números de remessa</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GT_RETURN</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Mensagens de erro</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CRIAR_SESSAO</CMPNAME>
+     <SCONAME>CX_AI_SYSTEM_FAULT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Application Integration: Technical Error</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ENVIAR_REMESSA</CMPNAME>
+     <SCONAME>CX_AI_SYSTEM_FAULT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Application Integration: Technical Error</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_SESSION_ROADNET</CMPNAME>
+     <SCONAME>IV_CENTRO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Centro</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_SESSION_ROADNET</CMPNAME>
+     <SCONAME>IV_DATA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Data do sistema</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_SESSION_ROADNET</CMPNAME>
+     <SCONAME>RS_SESSION</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Roadnet Session</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LIBERAR_REMESSA</CMPNAME>
+     <SCONAME>IV_REMESSA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Remessa</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LIBERAR_REMESSA</CMPNAME>
+     <SCONAME>RT_MESSAGES</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de retorno</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PROCESSA</CMPNAME>
+     <SCONAME>IT_REMESSA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tabela de números de remessa</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PROCESSA</CMPNAME>
+     <SCONAME>RT_RETURN</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Mensagens de erro</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>WORKINGDAY</CMPNAME>
+     <SCONAME>IV_DATA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do tipo DATS</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>WORKINGDAY</CMPNAME>
+     <SCONAME>IV_DAY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº inteiro sem sinal 1 byte</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>WORKINGDAY</CMPNAME>
+     <SCONAME>RV_DATA</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo do tipo DATS</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,5 @@
+CLASS zcltm_param_roadnet DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_tm_param_roadnet.
+ENDCLASS.
+
+CLASS zcltm_param_roadnet IMPLEMENTATION.
+ENDCLASS.

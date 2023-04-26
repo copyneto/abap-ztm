@@ -1,0 +1,2 @@
+sap.ui.define([],function(){"use strict";return{onInitSmartFilterBarExtension:function(e){debugger;var t=new Date;t.setDate(t.getDate()+1);var a={session_data:{ranges:[{exclude:false,operation:"EQ",keyField:"session_data",value1:t}]}};var n=e.getSource()+
+;n.setFilterData(a)},onaction:function(e){alert("onaction")}}});                                                                                                                                                                                               

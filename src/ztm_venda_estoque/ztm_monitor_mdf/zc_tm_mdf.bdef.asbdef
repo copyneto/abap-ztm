@@ -1,0 +1,100 @@
+projection;
+
+define behavior for ZC_TM_MDF alias MDF
+use etag
+{
+  use create;
+  use update;
+  use delete;
+  use action verificar;
+  use action enviar;
+  use action cancelar;
+  use action encerrar;
+  use action criarMdfeUsarOF;
+  use action criarRefMdfe;
+  use action motorista;
+  use association _Complemento;
+  use association _Emitente;
+  use association _Municipio { create; }
+  use association _Historico;
+  use association _Motorista;
+  use association _Placa { create; }
+  use association _Percurso;
+  use association _Carregamento;
+  use association _Descarregamento;
+}
+
+define behavior for ZC_TM_MDF_COMPLEMENTO alias Complemento
+use etag
+{
+  use update;
+  use association _MDF { }
+}
+
+define behavior for ZC_TM_MDF_EMITENTE alias Emitente
+use etag
+{
+  use association _MDF { }
+}
+
+define behavior for ZC_TM_MDF_MUNICIPIO alias Municipio
+use etag
+{
+  use update;
+  use delete;
+  use association _MDF { }
+}
+
+define behavior for ZC_TM_MDF_HISTORICO alias Historico
+use etag
+{
+  use association _MDF { }
+}
+
+define behavior for ZC_TM_MDF_MOTORISTA alias Motorista
+use etag
+{
+  use association _MDF { }
+}
+
+define behavior for ZC_TM_MDF_PLACA alias Placa
+use etag
+{
+  use update;
+  use delete;
+  use association _MDF { }
+  use association _Condutor { create; }
+  use association _ValePedagio { create; }
+}
+
+define behavior for ZC_TM_MDF_PLACA_CONDUTOR alias Condutor
+{
+  use update;
+  use delete;
+  use association _MDF { }
+}
+
+define behavior for ZC_TM_MDF_PLACA_VALE_PEDAGIO alias ValePedagio
+{
+  use update;
+  use delete;
+  use association _MDF { }
+}
+
+define behavior for ZC_TM_MDF_PERCURSO_DOC alias Percurso
+use etag
+{
+  use association _MDF { }
+}
+
+define behavior for ZC_TM_MDF_CARREGAMENTO alias Carregamento
+use etag
+{
+  use association _MDF { }
+}
+
+define behavior for ZC_TM_MDF_DESCARREGAMENTO alias Descarregamento
+use etag
+{
+  use association _MDF { }
+}

@@ -1,0 +1,26 @@
+@Metadata.layer: #CORE
+annotate view ZC_TM_PCOCKPIT001
+    with 
+{
+  @UI.facet: [
+    { label: 'Valores',
+      id: 'Valores',
+      type: #COLLECTION,
+      position: 10 },
+
+    { label: ' ',
+      position: 10,
+      type: #IDENTIFICATION_REFERENCE,
+      parentId: 'Valores' }
+  ]
+   @UI.hidden: true
+   Guid;
+   @UI: { lineItem:       [{position: 10}],
+          identification: [{position: 10}]}
+   Id;
+   @UI: { lineItem:       [{position: 20}],
+          identification: [{position: 20}]}
+   Parametro;
+
+    
+}
