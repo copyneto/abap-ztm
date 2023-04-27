@@ -146,6 +146,9 @@ CLASS ZCLTM_COCKPIT_FROTA_CE IMPLEMENTATION.
       lt_result[] = lt_result_cds[].
     ENDIF.
 
+    SORT lt_result BY freightorder product.
+    DELETE ADJACENT DUPLICATES FROM lt_result COMPARING freightorder product.
+
 * --------------------------------------------------------------------
 * Calcula despesas
 * --------------------------------------------------------------------
