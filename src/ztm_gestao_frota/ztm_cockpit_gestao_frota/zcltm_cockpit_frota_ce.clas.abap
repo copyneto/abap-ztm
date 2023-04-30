@@ -22,80 +22,82 @@ CLASS zcltm_cockpit_frota_ce DEFINITION
 
   PROTECTED SECTION.
 
-  PRIVATE SECTION.
+private section.
+
+  data GT_FROTA type TY_T_FROTA .
 
     "! Calcula todos os custos
     "! @parameter it_ranges | Filtros do relatório
     "! @parameter ct_frota | Relatório de frota
-    METHODS calculate
-      IMPORTING
-        !it_ranges TYPE if_rap_query_filter=>tt_name_range_pairs OPTIONAL
-      CHANGING
-        !ct_frota  TYPE ty_t_frota .
+  methods CALCULATE
+    importing
+      !IT_RANGES type IF_RAP_QUERY_FILTER=>TT_NAME_RANGE_PAIRS optional
+    changing
+      !CT_FROTA type TY_T_FROTA .
     "! Calcula custos relacionado à custos de combustível
     "! @parameter ct_frota | Relatório de frota
-    METHODS calculate_fuel
-      IMPORTING
-        !it_ranges TYPE if_rap_query_filter=>tt_name_range_pairs OPTIONAL
-      CHANGING
-        !ct_frota  TYPE ty_t_frota .
+  methods CALCULATE_FUEL
+    importing
+      !IT_RANGES type IF_RAP_QUERY_FILTER=>TT_NAME_RANGE_PAIRS optional
+    changing
+      !CT_FROTA type TY_T_FROTA .
     "! Calcula custos relacionado à custos de depreciação
     "! @parameter ct_frota | Relatório de frota
-    METHODS calculate_depreciation
-      CHANGING
-        !ct_frota TYPE ty_t_frota .
+  methods CALCULATE_DEPRECIATION
+    changing
+      !CT_FROTA type TY_T_FROTA .
     "! Calcula custos relacionado à custos de lavagem
     "! @parameter ct_frota | Relatório de frota
-    METHODS calculate_washing
-      CHANGING
-        !ct_frota TYPE ty_t_frota .
+  methods CALCULATE_WASHING
+    changing
+      !CT_FROTA type TY_T_FROTA .
     "! Calcula custos relacionado à custos de manutenção
     "! @parameter ct_frota | Relatório de frota
-    METHODS calculate_corr_maintenance
-      CHANGING
-        !ct_frota TYPE ty_t_frota .
+  methods CALCULATE_CORR_MAINTENANCE
+    changing
+      !CT_FROTA type TY_T_FROTA .
     "! Calcula custos relacionado à custos de manutenção
     "! @parameter ct_frota | Relatório de frota
-    METHODS calculate_prev_maintenance
-      CHANGING
-        !ct_frota TYPE ty_t_frota .
+  methods CALCULATE_PREV_MAINTENANCE
+    changing
+      !CT_FROTA type TY_T_FROTA .
     "! Calcula custos relacionado à custos de pneus
     "! @parameter ct_frota | Relatório de frota
-    METHODS calculate_tires
-      CHANGING
-        !ct_frota TYPE ty_t_frota .
+  methods CALCULATE_TIRES
+    changing
+      !CT_FROTA type TY_T_FROTA .
     "! Calcula custos relacionado à custos de documentação
     "! @parameter ct_frota | Relatório de frota
-    METHODS calculate_documentation
-      CHANGING
-        !ct_frota TYPE ty_t_frota .
+  methods CALCULATE_DOCUMENTATION
+    changing
+      !CT_FROTA type TY_T_FROTA .
     "! Calcula custos relacionado à custos de mão-de-obra
     "! @parameter ct_frota | Relatório de frota
-    METHODS calculate_labor
-      IMPORTING
-        !it_ranges TYPE if_rap_query_filter=>tt_name_range_pairs
-      CHANGING
-        !ct_frota  TYPE ty_t_frota .
+  methods CALCULATE_LABOR
+    importing
+      !IT_RANGES type IF_RAP_QUERY_FILTER=>TT_NAME_RANGE_PAIRS
+    changing
+      !CT_FROTA type TY_T_FROTA .
     "! Calcula total dos valores
     "! @parameter ct_frota | Relatório de frota
-    METHODS total
-      CHANGING
-        !ct_frota TYPE ty_t_frota .
+  methods TOTAL
+    changing
+      !CT_FROTA type TY_T_FROTA .
     "! Recupera parâmetro
     "! @parameter is_param | Parâmetro cadastrado
     "! @parameter et_value | Valor cadastrado
-    METHODS get_parameter
-      IMPORTING
-        !is_param TYPE ztca_param_val
-      EXPORTING
-        !et_value TYPE any .
+  methods GET_PARAMETER
+    importing
+      !IS_PARAM type ZTCA_PARAM_VAL
+    exporting
+      !ET_VALUE type ANY .
     "! Recupera configurações cadastradas
     "! @parameter es_parameter | Parâmetros de configuração
     "! @parameter et_return | Mensagens de retorno
-    METHODS get_configuration
-      EXPORTING
-        !es_parameter TYPE ty_parameter
-        !et_return    TYPE bapiret2_t .
+  methods GET_CONFIGURATION
+    exporting
+      !ES_PARAMETER type TY_PARAMETER
+      !ET_RETURN type BAPIRET2_T .
 ENDCLASS.
 
 
@@ -145,6 +147,8 @@ CLASS ZCLTM_COCKPIT_FROTA_CE IMPLEMENTATION.
     ELSE.
       lt_result[] = lt_result_cds[].
     ENDIF.
+
+    gt_frota[] = lt_result[].
 
     SORT lt_result BY freightorder product.
     DELETE ADJACENT DUPLICATES FROM lt_result COMPARING freightorder product.
