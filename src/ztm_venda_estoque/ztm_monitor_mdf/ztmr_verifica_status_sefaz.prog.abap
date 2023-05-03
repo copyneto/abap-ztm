@@ -90,9 +90,18 @@ FORM f_processa_dados_mdf CHANGING ct_return TYPE bapiret2_t.
     ct_return[] = VALUE #( BASE ct_return ( type = 'S' id = 'ZTM_MONITOR_MDF' number = '097' message_v1 = <fs_mdf>-docnum message_v2 = <fs_mdf>-mdfenum ) ).
 
     lo_events->get_history_background( EXPORTING is_mdf    = <fs_mdf>
-                                       IMPORTING et_return = DATA(lt_return) ).
+                                       IMPORTING es_mdfehd = DATA(ls_mdfehd)
+                                                 et_return = DATA(lt_return) ).
 
     INSERT LINES OF lt_return INTO TABLE ct_return[].
+
+* BEGIN OF INSERT - JWSILVA - 02.05.2023
+    lo_events->update_freight_order( EXPORTING is_mdf    = <fs_mdf>
+                                               is_mdfehd = ls_mdfehd
+                                     IMPORTING et_return = lt_return ).
+
+    INSERT LINES OF lt_return INTO TABLE ct_return.
+* END OF INSERT - JWSILVA - 02.05.2023
 
   ENDLOOP.
 

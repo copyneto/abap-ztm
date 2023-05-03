@@ -4116,15 +4116,36 @@ CLASS zcltm_mdf_events_manual IMPLEMENTATION.
     ENDIF.
 
     LOOP AT lt_data ASSIGNING FIELD-SYMBOL(<fs_data>).
+
+
+      " Atualiza campos da Ordem de Frete
       <fs_data>-zz_mdf  = is_mdf-mdfenum.
       <fs_data>-zz_code = is_mdfehd-statcod.
-    ENDLOOP.
 
-    " Atualiza campos da Ordem de Frete
-    TRY.
-        zcltm_manage_of=>change_of( CHANGING cs_root = <fs_data> ).
-      CATCH cx_root.
-    ENDTRY.
+      TRY.
+          " Campo KEY é parcialmente protegido, não podemos passar o <fs_data>
+          DATA(ls_data) = <fs_data>.
+          zcltm_manage_of=>change_of( CHANGING cs_root = ls_data ).
+        CATCH cx_root.
+      ENDTRY.
+
+      <fs_data>-tspid                = ls_data-tspid.
+      <fs_data>-tsp                  = ls_data-tsp.
+      <fs_data>-labeltxt             = ls_data-labeltxt.
+      <fs_data>-zznr_saga            = ls_data-zznr_saga.
+      <fs_data>-zz_motorista         = ls_data-zz_motorista.
+      <fs_data>-zz1_cond_exped       = ls_data-zz1_cond_exped.
+      <fs_data>-zz1_tipo_exped       = ls_data-zz1_tipo_exped.
+      <fs_data>-mtr                  = ls_data-mtr.
+      <fs_data>-zzchapa              = ls_data-zzchapa.
+      <fs_data>-zzcustochapa         = ls_data-zzcustochapa.
+      <fs_data>-zz_code              = ls_data-zz_code.
+      <fs_data>-zz_mdf               = ls_data-zz_mdf.
+      <fs_data>-subcontracting       = ls_data-subcontracting.
+      <fs_data>-purch_company_code   = ls_data-purch_company_code.
+      <fs_data>-purch_company_org_id = ls_data-purch_company_org_id.
+
+    ENDLOOP.
 
     /scmtms/cl_mod_helper=>mod_update_multi( EXPORTING iv_node        = /scmtms/if_tor_c=>sc_node-root
                                                        iv_bo_key      = /scmtms/if_tor_c=>sc_bo_key

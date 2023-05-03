@@ -451,6 +451,8 @@ CLASS ZCLTM_COCKPIT_FROTA_CE IMPLEMENTATION.
 
     TYPES: BEGIN OF ty_stops,
              freightorder TYPE zi_tm_gestao_frota_stop-freightorder,
+             stopkey      TYPE zi_tm_gestao_frota_stop-stopkey,
+             sucesorid    TYPE zi_tm_gestao_frota_stop_aux-sucessorid,
              distancekm   TYPE zi_tm_gestao_frota_stop-distancekm,
              div_by       TYPE i,
            END OF ty_stops.
@@ -504,11 +506,17 @@ CLASS ZCLTM_COCKPIT_FROTA_CE IMPLEMENTATION.
     ENDTRY.
 
 
-    SELECT freightorder, distancekm
-      FROM zi_tm_gestao_frota_stop
-      INTO TABLE @lt_stops_sel
+    SELECT *
+      FROM zi_tm_gestao_frota_stop_aux
+      INTO TABLE @DATA(lt_stops_sel_aux)
       FOR ALL ENTRIES IN @ct_frota
-      WHERE freightorder = @ct_frota-freightorder.
+      WHERE freightorder = @ct_frota-freightorder
+      AND stopnext = 'U'.
+
+    lt_stops_sel =  VALUE #(
+      FOR ls_stops_sel_aux IN lt_stops_sel_aux (
+        CORRESPONDING #( ls_stops_sel_aux )
+    ) ).
 
     LOOP AT lt_stops_sel INTO DATA(ls_stops_sel).
       ls_stops_sel-div_by = 1.
