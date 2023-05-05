@@ -33,9 +33,10 @@ CLASS zcltm_gestao_frete_a_dpc_ext IMPLEMENTATION.
 
     DATA: lo_message    TYPE REF TO /iwbep/if_message_container,
           lo_exception  TYPE REF TO /iwbep/cx_mgw_busi_exception,
+          lt_acckey     TYPE STANDARD TABLE OF zttm_gkot001-acckey,
           lt_return_all TYPE bapiret2_t,
           ls_cockpit    TYPE zi_tm_cockpit001,
-          lv_acckey     TYPE zttm_gkot001-acckey,
+          lv_acckey_all TYPE string,
           lv_filename   TYPE sdok_filnm,
           lv_extension  TYPE char20,
           lv_mime_type  TYPE w3conttype,
@@ -55,7 +56,8 @@ CLASS zcltm_gestao_frete_a_dpc_ext IMPLEMENTATION.
 * ----------------------------------------------------------------------
 * Recupera dados informados durante carga
 * ----------------------------------------------------------------------
-        SPLIT iv_slug AT ';' INTO lv_acckey lv_filename lv_atc_type lv_name.
+        SPLIT iv_slug AT ';' INTO lv_acckey_all lv_filename lv_atc_type.
+        SPLIT lv_acckey_all AT ',' INTO TABLE lt_acckey.
 
 * ----------------------------------------------------------------------
 * Recupera Mime Type
@@ -68,26 +70,39 @@ CLASS zcltm_gestao_frete_a_dpc_ext IMPLEMENTATION.
           IMPORTING
             mimetype  = lv_mime_type.
 
+        LOOP AT lt_acckey INTO DATA(lv_acckey).
+
 * ----------------------------------------------------------------------
 * Recupera dados do cockpit
 * ----------------------------------------------------------------------
-        lt_return_all = lo_file->get_data( EXPORTING iv_acckey  = lv_acckey
-                                       IMPORTING es_cockpit = ls_cockpit ).
+          DATA(lt_return) = lo_file->get_data( EXPORTING iv_acckey  = lv_acckey
+                                               IMPORTING es_cockpit = ls_cockpit ).
+
+          INSERT LINES OF lt_return INTO TABLE lt_return_all.
 
 * ----------------------------------------------------------------------
 * Realiza carga do arquivo
 * ----------------------------------------------------------------------
-        IF lt_return_all IS INITIAL.
+          IF lt_return IS INITIAL.
 
-          lt_return_all = lo_file->add_file( EXPORTING iv_torid     = ls_cockpit-tor_id
-                                                       iv_filename  = lv_filename
-                                                       iv_atc_type  = lv_atc_type
-                                                       iv_mime_type = lv_mime_type
-                                                       iv_name      = lv_name
-                                                       iv_data      = is_media_resource-value
-                                                       iv_acckey    = lv_acckey ).
+            lt_return = lo_file->add_file( EXPORTING iv_torid     = ls_cockpit-tor_id
+                                                     iv_filename  = lv_filename
+                                                     iv_atc_type  = lv_atc_type
+                                                     iv_mime_type = lv_mime_type
+                                                     iv_name      = CONV #( lv_acckey )
+                                                     iv_data      = is_media_resource-value
+                                                     iv_acckey    = lv_acckey ).
 
-        ENDIF.
+            lo_file->format_message( CHANGING ct_return = lt_return ).
+
+            LOOP AT lt_return REFERENCE INTO DATA(ls_return).
+              ls_return->message = |{ lv_acckey }: { ls_return->message }|.
+            ENDLOOP.
+
+            INSERT LINES OF lt_return INTO TABLE lt_return_all.
+          ENDIF.
+
+        ENDLOOP.
 
       WHEN 'grouping'.
 
@@ -97,9 +112,9 @@ CLASS zcltm_gestao_frete_a_dpc_ext IMPLEMENTATION.
 * Recupera filtro de seleção
 * ----------------------------------------------------------------------
         TRY.
-            DATA(lv_acckey_all)     = VALUE #( lt_header[ name = 'acckey' ]-value ). "#EC CI_STDSEQ
+            lv_acckey_all     = VALUE #( lt_header[ name = 'acckey' ]-value ). "#EC CI_STDSEQ
             CONDENSE lv_acckey_all NO-GAPS.
-            SPLIT lv_acckey_all AT ',' INTO TABLE DATA(lt_acckey).
+            SPLIT lv_acckey_all AT ',' INTO TABLE lt_acckey.
             DATA(lv_numdoc)         = VALUE #( lt_header[ name = 'numdoc' ]-value ). "#EC CI_STDSEQ
             DATA(lv_numfatura)      = VALUE #( lt_header[ name = 'numfatura' ]-value ). "#EC CI_STDSEQ
             DATA(lv_datavenc)       = VALUE #( lt_header[ name = 'datavenc' ]-value ). "#EC CI_STDSEQ
@@ -165,8 +180,8 @@ CLASS zcltm_gestao_frete_a_dpc_ext IMPLEMENTATION.
 
           LOOP AT lt_acckey INTO lv_acckey.
 
-            DATA(lt_return) = lo_file->get_data( EXPORTING iv_acckey  = lv_acckey
-                                                 IMPORTING es_cockpit = ls_cockpit ).
+            lt_return = lo_file->get_data( EXPORTING iv_acckey  = lv_acckey
+                                           IMPORTING es_cockpit = ls_cockpit ).
 
             INSERT LINES OF lt_return INTO TABLE lt_return_all.
 

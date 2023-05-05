@@ -14,7 +14,7 @@ define view entity ZI_TM_MDF_HISTORICO_MSG_LAST
                                                           and _Historico.Histcount = $projection.Histcount
                                                           and _Historico.Event     = $projection.Event
 {
-  key Id,
+  key Id,  
       Histcount,
       Event, 
       _Historico.Proctyp,

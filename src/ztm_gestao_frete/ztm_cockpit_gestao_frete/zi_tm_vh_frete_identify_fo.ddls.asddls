@@ -53,6 +53,7 @@ define view ZI_TM_VH_FRETE_IDENTIFY_FO
         _NFItem.BR_NFSourceDocumentType                                            as BR_NFSourceDocumentType,
         _NFActive.BR_NFeDocumentStatus                                             as BR_NFeDocumentStatus,
         _NFActive.BR_NFIsCanceled                                                  as BR_NFIsCanceled,
+        _Likp.DeliveryDocumentType                                                 as DeliveryDocumentType,
         _Likp.SDDocumentCategory                                                   as SDDocumentCategory,
         _Likp.IncotermsClassification                                              as IncotermsClassification
 }
@@ -68,7 +69,7 @@ group by
   _Entrega.base_btd_id,
    _OrdemFrete.tspid,
   _OrdemFrete.tor_cat,
-  _OrdemFrete.tor_type,
+  _OrdemFrete.tor_type,                             
   _NFActive.Region,
   _NFActive.BR_NFeIssueYear,
   _NFActive.BR_NFeIssueMonth,
@@ -81,6 +82,7 @@ group by
   _NFItem.BR_NFSourceDocumentType,
   _NFActive.BR_NFeDocumentStatus,
   _NFActive.BR_NFIsCanceled,
+  _Likp.DeliveryDocumentType,
   _Likp.SDDocumentCategory,
   _Likp.IncotermsClassification
 
@@ -135,6 +137,7 @@ union select from        /scmtms/d_torrot   as _OrdemFrete
        _NFItem.BR_NFSourceDocumentType                                              as BR_NFSourceDocumentType,
        _NFActive.BR_NFeDocumentStatus                                               as BR_NFeDocumentStatus,
        _NFActive.BR_NFIsCanceled                                                    as BR_NFIsCanceled,
+        _Likp.DeliveryDocumentType                                                  as DeliveryDocumentType,
        _Likp.SDDocumentCategory                                                     as SDDocumentCategory,
        _Likp.IncotermsClassification                                                as IncotermsClassification
 }
@@ -163,6 +166,7 @@ group by
   _NFItem.BR_NFSourceDocumentType,
   _NFActive.BR_NFeDocumentStatus,
   _NFActive.BR_NFIsCanceled,
+  _Likp.DeliveryDocumentType,
   _Likp.SDDocumentCategory,
   _Likp.IncotermsClassification
 
@@ -216,6 +220,7 @@ union select from        /scmtms/d_torrot   as _OrdemFrete
        _NFItem.BR_NFSourceDocumentType                                              as BR_NFSourceDocumentType,
        _NFActive.BR_NFeDocumentStatus                                               as BR_NFeDocumentStatus,
        _NFActive.BR_NFIsCanceled                                                    as BR_NFIsCanceled,
+       _Likp.DeliveryDocumentType                                                   as DeliveryDocumentType,
        _Likp.SDDocumentCategory                                                     as SDDocumentCategory,
        _Likp.IncotermsClassification                                                as IncotermsClassification
 }
@@ -244,5 +249,6 @@ group by
   _NFItem.BR_NFSourceDocumentType,
   _NFActive.BR_NFeDocumentStatus,
   _NFActive.BR_NFIsCanceled,
+  _Likp.DeliveryDocumentType,
   _Likp.SDDocumentCategory,
   _Likp.IncotermsClassification

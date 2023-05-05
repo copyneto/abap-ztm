@@ -134,6 +134,12 @@ CLASS zcltm_atc_folder_fo DEFINITION
     METHODS get_msgs
       RETURNING
         VALUE(rt_msgs) TYPE bapiret2_tab .
+    "! Formata as mensages de retorno
+    "! @parameter ct_return | Mensagens de retorno
+    METHODS format_message
+      CHANGING
+        !ct_return TYPE bapiret2_t.
+
   PROTECTED SECTION.
   PRIVATE SECTION.
 
@@ -1014,4 +1020,46 @@ CLASS zcltm_atc_folder_fo IMPLEMENTATION.
     DELETE DATASET lv_source_file.
 
   ENDMETHOD.
+
+  METHOD format_message.
+
+    DATA: ls_return_format TYPE bapiret2.
+
+* ---------------------------------------------------------------------------
+* Format mensagens de retorno
+* ---------------------------------------------------------------------------
+    LOOP AT ct_return REFERENCE INTO DATA(ls_return).
+
+      IF  ls_return->message IS INITIAL.
+
+        TRY.
+            CALL FUNCTION 'FORMAT_MESSAGE'
+              EXPORTING
+                id        = ls_return->id
+                lang      = sy-langu
+                no        = ls_return->number
+                v1        = ls_return->message_v1
+                v2        = ls_return->message_v2
+                v3        = ls_return->message_v3
+                v4        = ls_return->message_v4
+              IMPORTING
+                msg       = ls_return->message
+              EXCEPTIONS
+                not_found = 1
+                OTHERS    = 2.
+
+            IF sy-subrc <> 0.
+              CLEAR ls_return->message.
+            ENDIF.
+
+          CATCH cx_root INTO DATA(lo_root).
+            DATA(lv_message) = lo_root->get_longtext( ).
+        ENDTRY.
+
+      ENDIF.
+
+    ENDLOOP.
+
+  ENDMETHOD.
+
 ENDCLASS.

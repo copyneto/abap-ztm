@@ -8,11 +8,15 @@
     dataClass: #MIXED
 }
 define view entity ZI_TM_MDF_HISTORICO_LAST
-  as select from zttm_mdf_hist
+  as select from zttm_mdf_hist                  as _Historico
+
+    inner join   ZI_TM_MDF_HISTORICO_LAST_EVENT as _Evento on  _Evento.Id    = _Historico.id
+                                                           and _Evento.Event = _Historico.event
 {
-  key id             as Id,
-      max(histcount) as Histcount,
-      max(event)     as Event
+  key _Historico.id             as Id,
+      _Historico.event          as Event,
+      max(_Historico.histcount) as Histcount
 }
 group by
-  id
+  _Historico.id,
+  _Historico.event

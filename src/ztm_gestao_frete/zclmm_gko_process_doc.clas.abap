@@ -843,6 +843,8 @@ CLASS ZCLMM_GKO_PROCESS_DOC IMPLEMENTATION.
 
         IF is_doc-tpcte = zcltm_gko_process=>gc_tpcte-complemento_de_valores.
           lo_gko_process->check_doc_orig_is_posted( ).
+        ELSE.
+          lo_gko_process->check_doc_memo_miro( ).
         ENDIF.
 
       CATCH  zcxtm_gko_process INTO DATA(lo_cx_gko_process).

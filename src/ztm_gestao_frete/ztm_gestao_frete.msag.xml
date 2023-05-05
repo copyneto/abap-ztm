@@ -842,6 +842,12 @@
      <MSGNR>138</MSGNR>
      <TEXT>Documento pago - autenticação bancária &amp;1.</TEXT>
     </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>139</MSGNR>
+     <TEXT>&amp;1: &amp;2&amp;3&amp;4</TEXT>
+    </T100>
    </T100>
    <LONGTEXTS>
     <item>

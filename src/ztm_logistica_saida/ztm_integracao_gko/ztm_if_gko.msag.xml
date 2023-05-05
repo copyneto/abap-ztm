@@ -84,7 +84,13 @@
      <SPRSL>P</SPRSL>
      <ARBGB>ZTM_IF_GKO</ARBGB>
      <MSGNR>012</MSGNR>
-     <TEXT>Recebimento não encontrado incoterms &amp;1 ( remessa &amp;2 ).</TEXT>
+     <TEXT>Recebimento não encontrado ( Remessa &amp;2 encontrada com Incoterms &amp;1 ).</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_IF_GKO</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>Nenhuma remessa encontrada.</TEXT>
     </T100>
     <T100>
      <SPRSL>P</SPRSL>
