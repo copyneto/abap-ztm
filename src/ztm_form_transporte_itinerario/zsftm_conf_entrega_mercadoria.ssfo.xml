@@ -3,7 +3,6 @@
  <sf:SMARTFORM xmlns:sf="urn:sap-com:SmartForms:2000:internal-structure" xmlns="urn:sap-com:sdixml-ifr:2000">
   <HEADER>
    <FORMNAME>ZSFTM_CONF_ENTREGA_MERCADORIA</FORMNAME>
-   <CAPTION>Transporte por itinerário</CAPTION>
    <MASTERLANG>P</MASTERLANG>
    <LANGVECTOR>*</LANGVECTOR>
    <DEVCLASS></DEVCLASS>
@@ -250,7 +249,6 @@
            <NAME>
             <INAME>%PAGE1</INAME>
            </NAME>
-           <CAPTION>Página nova</CAPTION>
            <NEXTPAGE>
             <INAME>%PAGE1</INAME>
            </NEXTPAGE>
@@ -271,7 +269,6 @@
              <NAME>
               <INAME>%GRAPHIC1</INAME>
              </NAME>
-             <CAPTION>Tela de fundo</CAPTION>
              <GTYPE>B</GTYPE>
              <GKEYBDS>
               <BTYPE>BMON</BTYPE>
@@ -331,7 +328,6 @@
                      <NAME>
                       <INAME>LOGO</INAME>
                      </NAME>
-                     <CAPTION>Logo 3corações</CAPTION>
                      <GTYPE>B</GTYPE>
                      <GKEYBDS>
                       <OBJECT>GRAPHICS</OBJECT>
@@ -757,17 +753,7 @@
                         <NAME>
                          <INAME>TITULO_RELATORIO</INAME>
                         </NAME>
-                        <CAPTION>Texto com título do relatório</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>P2</TDFORMAT>
-                         </item>
-                         <item>
-                          <TDFORMAT>P2</TDFORMAT>
-                          <TDLINE>&lt;C6&gt;CONFERÊNCIA NA ENTREGA DE MERCADORIAS&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -889,22 +875,7 @@
                         <NAME>
                          <INAME>DATA_HORA_PAGINA</INAME>
                         </NAME>
-                        <CAPTION>- Data/Hora/Página (1.3)</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>P3</TDFORMAT>
-                          <TDLINE>&lt;C2&gt;Data:&lt;C2&gt; &amp;SFSY-DATE&amp;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>P3</TDFORMAT>
-                          <TDLINE>&lt;C2&gt;Hora:&lt;C2&gt; &amp;SFSY-TIME&amp;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>P3</TDFORMAT>
-                          <TDLINE>&lt;C2&gt;Pagína:&lt;C2&gt; &amp;SFSY-PAGE&amp; de &amp;SFSY-FORMPAGES&amp;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -1123,7 +1094,6 @@
               <NAME>
                <INAME>MAIN</INAME>
               </NAME>
-              <CAPTION>Janela principal</CAPTION>
               <WTYPE>M</WTYPE>
               <T_CAPTION>
                <item>
@@ -1339,14 +1309,7 @@
                         <NAME>
                          <INAME>TRANSPORTE</INAME>
                         </NAME>
-                        <CAPTION>- Transporte (1.1)</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>*</TDFORMAT>
-                          <TDLINE>&lt;C2&gt;Transporte:&lt;C1&gt; &amp;IS_ORDEM_FRETE-ORDEMFRETE&amp;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -1460,17 +1423,7 @@
                         <NAME>
                          <INAME>MOTORISTA</INAME>
                         </NAME>
-                        <CAPTION>- Motorista (1.2)</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>*</TDFORMAT>
-                          <TDLINE>&lt;C2&gt;Motorista:&lt;C1&gt; &amp;IS_ORDEM_FRETE-MOTORISTA&amp; -</TDLINE>
-                         </item>
-                         <item>
-                          <TDLINE>&amp;IS_ORDEM_FRETE-NOME_MOTORISTA&amp;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -1592,14 +1545,7 @@
                         <NAME>
                          <INAME>PLACA</INAME>
                         </NAME>
-                        <CAPTION>- Placa (1.3)</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>*</TDFORMAT>
-                          <TDLINE>&lt;C2&gt;Placa:&lt;C1&gt; &amp;IS_ORDEM_FRETE-PLACA&amp;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -1751,7 +1697,6 @@
                         <NAME>
                          <INAME>DADOS_NF</INAME>
                         </NAME>
-                        <CAPTION>Informações da NF</CAPTION>
                         <SECTTYPE>S</SECTTYPE>
                         <OTABTYPE>S</OTABTYPE>
                         <U_FHEIGHT>CM</U_FHEIGHT>
@@ -2407,7 +2352,6 @@
                            <NAME>
                             <INAME>F_CAB_NF</INAME>
                            </NAME>
-                           <CAPTION>Nova pasta 1</CAPTION>
                            <SECTTYPE>F</SECTTYPE>
                            <U_FHEIGHT>CM</U_FHEIGHT>
                            <PATTERN>
@@ -2440,14 +2384,7 @@
                               <NAME>
                                <INAME>%TEXT1</INAME>
                               </NAME>
-                              <CAPTION>Texto novo 1</CAPTION>
                               <APPMODE>P</APPMODE>
-                              <TEXT>
-                               <item>
-                                <TDFORMAT>*</TDFORMAT>
-                                <TDLINE>&lt;C2&gt;Nº NFE&lt;/&gt;</TDLINE>
-                               </item>
-                              </TEXT>
                               <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                               <TEXT_AREA>
                                <ENABLED>F</ENABLED>
@@ -2561,14 +2498,7 @@
                               <NAME>
                                <INAME>%TEXT2</INAME>
                               </NAME>
-                              <CAPTION>Nome do cliente</CAPTION>
                               <APPMODE>P</APPMODE>
-                              <TEXT>
-                               <item>
-                                <TDFORMAT>*</TDFORMAT>
-                                <TDLINE>&lt;C2&gt;CLIENTE</TDLINE>
-                               </item>
-                              </TEXT>
                               <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                               <TEXT_AREA>
                                <ENABLED>F</ENABLED>
@@ -2682,14 +2612,7 @@
                               <NAME>
                                <INAME>%TEXT3</INAME>
                               </NAME>
-                              <CAPTION>Data de emissão da NF</CAPTION>
                               <APPMODE>P</APPMODE>
-                              <TEXT>
-                               <item>
-                                <TDFORMAT>*</TDFORMAT>
-                                <TDLINE>&lt;C2&gt;DATA DE EMISSÃO</TDLINE>
-                               </item>
-                              </TEXT>
                               <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                               <TEXT_AREA>
                                <ENABLED>F</ENABLED>
@@ -2806,7 +2729,6 @@
                            <NAME>
                             <INAME>F_DADOS_NF</INAME>
                            </NAME>
-                           <CAPTION>Nova pasta 1</CAPTION>
                            <SECTTYPE>F</SECTTYPE>
                            <U_FHEIGHT>CM</U_FHEIGHT>
                            <PATTERN>
@@ -2839,7 +2761,6 @@
                               <NAME>
                                <INAME>NFENUM</INAME>
                               </NAME>
-                              <CAPTION>Texto novo 1</CAPTION>
                               <NOLANGUAGE>X</NOLANGUAGE>
                               <APPMODE>P</APPMODE>
                               <TEXT>
@@ -2950,7 +2871,6 @@
                               <NAME>
                                <INAME>CLIENTE</INAME>
                               </NAME>
-                              <CAPTION>Nome do cliente</CAPTION>
                               <NOLANGUAGE>X</NOLANGUAGE>
                               <APPMODE>P</APPMODE>
                               <TEXT>
@@ -3061,7 +2981,6 @@
                               <NAME>
                                <INAME>DATA_EMISSAO</INAME>
                               </NAME>
-                              <CAPTION>Data de emissão da NF</CAPTION>
                               <NOLANGUAGE>X</NOLANGUAGE>
                               <APPMODE>P</APPMODE>
                               <TEXT>
@@ -3725,7 +3644,6 @@
                            <NAME>
                             <INAME>%EVENT1</INAME>
                            </NAME>
-                           <CAPTION>Área de cabeçalho</CAPTION>
                            <EVTYPE>H</EVTYPE>
                            <T_CAPTION>
                             <item>
@@ -3747,7 +3665,6 @@
                               <NAME>
                                <INAME>%ROW_CABECALHO</INAME>
                               </NAME>
-                              <CAPTION>Nova linha 3</CAPTION>
                               <SECTTYPE>R</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -3853,7 +3770,6 @@
                                  <NAME>
                                   <INAME>%CELL1</INAME>
                                  </NAME>
-                                 <CAPTION>Coluna nova 1</CAPTION>
                                  <SECTTYPE>E</SECTTYPE>
                                  <U_FHEIGHT>CM</U_FHEIGHT>
                                  <PATTERN>
@@ -3958,14 +3874,7 @@
                                     <NAME>
                                      <INAME>%C1_PRODUTO</INAME>
                                     </NAME>
-                                    <CAPTION>Produto</CAPTION>
                                     <APPMODE>P</APPMODE>
-                                    <TEXT>
-                                     <item>
-                                      <TDFORMAT>*</TDFORMAT>
-                                      <TDLINE>&lt;C2&gt;MATERIAL</TDLINE>
-                                     </item>
-                                    </TEXT>
                                     <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                                     <TEXT_AREA>
                                      <ENABLED>F</ENABLED>
@@ -4008,7 +3917,6 @@
                                  <NAME>
                                   <INAME>%CELL2</INAME>
                                  </NAME>
-                                 <CAPTION>Coluna nova 2</CAPTION>
                                  <SECTTYPE>E</SECTTYPE>
                                  <U_FHEIGHT>CM</U_FHEIGHT>
                                  <PATTERN>
@@ -4113,14 +4021,7 @@
                                     <NAME>
                                      <INAME>%C2_DESCRICAO</INAME>
                                     </NAME>
-                                    <CAPTION>Descrição do produto</CAPTION>
                                     <APPMODE>P</APPMODE>
-                                    <TEXT>
-                                     <item>
-                                      <TDFORMAT>*</TDFORMAT>
-                                      <TDLINE>&lt;C2&gt;DESCRIÇÃO DO MATERIAL&lt;/&gt;</TDLINE>
-                                     </item>
-                                    </TEXT>
                                     <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                                     <TEXT_AREA>
                                      <ENABLED>F</ENABLED>
@@ -4163,7 +4064,6 @@
                                  <NAME>
                                   <INAME>%CELL6</INAME>
                                  </NAME>
-                                 <CAPTION>Coluna nova 6</CAPTION>
                                  <SECTTYPE>E</SECTTYPE>
                                  <U_FHEIGHT>CM</U_FHEIGHT>
                                  <PATTERN>
@@ -4268,14 +4168,7 @@
                                     <NAME>
                                      <INAME>%C3_QUANT</INAME>
                                     </NAME>
-                                    <CAPTION>Quantidade de itens</CAPTION>
                                     <APPMODE>P</APPMODE>
-                                    <TEXT>
-                                     <item>
-                                      <TDFORMAT>*</TDFORMAT>
-                                      <TDLINE>&lt;C2&gt;QUANT.</TDLINE>
-                                     </item>
-                                    </TEXT>
                                     <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                                     <TEXT_AREA>
                                      <ENABLED>F</ENABLED>
@@ -4318,7 +4211,6 @@
                                  <NAME>
                                   <INAME>%CELL12</INAME>
                                  </NAME>
-                                 <CAPTION>Coluna nova 12</CAPTION>
                                  <SECTTYPE>E</SECTTYPE>
                                  <U_FHEIGHT>CM</U_FHEIGHT>
                                  <PATTERN>
@@ -4423,14 +4315,7 @@
                                     <NAME>
                                      <INAME>%C4_UNID</INAME>
                                     </NAME>
-                                    <CAPTION>Unidade de medidas</CAPTION>
                                     <APPMODE>P</APPMODE>
-                                    <TEXT>
-                                     <item>
-                                      <TDFORMAT>*</TDFORMAT>
-                                      <TDLINE>&lt;C2&gt;UM</TDLINE>
-                                     </item>
-                                    </TEXT>
                                     <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                                     <TEXT_AREA>
                                      <ENABLED>F</ENABLED>
@@ -4473,7 +4358,6 @@
                                  <NAME>
                                   <INAME>%CELL13</INAME>
                                  </NAME>
-                                 <CAPTION>Coluna nova 13</CAPTION>
                                  <SECTTYPE>E</SECTTYPE>
                                  <U_FHEIGHT>CM</U_FHEIGHT>
                                  <PATTERN>
@@ -4578,14 +4462,7 @@
                                     <NAME>
                                      <INAME>%C5_ANOT</INAME>
                                     </NAME>
-                                    <CAPTION>Anotações</CAPTION>
                                     <APPMODE>P</APPMODE>
-                                    <TEXT>
-                                     <item>
-                                      <TDFORMAT>*</TDFORMAT>
-                                      <TDLINE>&lt;C2&gt;ANOTAÇÕES</TDLINE>
-                                     </item>
-                                    </TEXT>
                                     <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                                     <TEXT_AREA>
                                      <ENABLED>F</ENABLED>
@@ -4634,7 +4511,6 @@
                            <NAME>
                             <INAME>%EVENT2</INAME>
                            </NAME>
-                           <CAPTION>Área principal</CAPTION>
                            <EVTYPE>B</EVTYPE>
                            <T_CAPTION>
                             <item>
@@ -4656,7 +4532,6 @@
                               <NAME>
                                <INAME>%ROW</INAME>
                               </NAME>
-                              <CAPTION>Linha itens da NF</CAPTION>
                               <SECTTYPE>R</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -4762,7 +4637,6 @@
                                  <NAME>
                                   <INAME>%CELL7</INAME>
                                  </NAME>
-                                 <CAPTION>Coluna nova 7</CAPTION>
                                  <SECTTYPE>E</SECTTYPE>
                                  <U_FHEIGHT>CM</U_FHEIGHT>
                                  <PATTERN>
@@ -4867,7 +4741,6 @@
                                     <NAME>
                                      <INAME>PRODUTO</INAME>
                                     </NAME>
-                                    <CAPTION>Código do produto</CAPTION>
                                     <NOLANGUAGE>X</NOLANGUAGE>
                                     <APPMODE>P</APPMODE>
                                     <TEXT>
@@ -4907,7 +4780,6 @@
                                  <NAME>
                                   <INAME>%CELL8</INAME>
                                  </NAME>
-                                 <CAPTION>Coluna nova 8</CAPTION>
                                  <SECTTYPE>E</SECTTYPE>
                                  <U_FHEIGHT>CM</U_FHEIGHT>
                                  <PATTERN>
@@ -5012,7 +4884,6 @@
                                     <NAME>
                                      <INAME>NOME_PRODUTO</INAME>
                                     </NAME>
-                                    <CAPTION>Descrição do produto</CAPTION>
                                     <NOLANGUAGE>X</NOLANGUAGE>
                                     <APPMODE>P</APPMODE>
                                     <TEXT>
@@ -5052,7 +4923,6 @@
                                  <NAME>
                                   <INAME>%CELL9</INAME>
                                  </NAME>
-                                 <CAPTION>Coluna nova 9</CAPTION>
                                  <SECTTYPE>E</SECTTYPE>
                                  <U_FHEIGHT>CM</U_FHEIGHT>
                                  <PATTERN>
@@ -5157,7 +5027,6 @@
                                     <NAME>
                                      <INAME>QUANTIDADE</INAME>
                                     </NAME>
-                                    <CAPTION>Quantidade de itens</CAPTION>
                                     <NOLANGUAGE>X</NOLANGUAGE>
                                     <APPMODE>P</APPMODE>
                                     <TEXT>
@@ -5197,7 +5066,6 @@
                                  <NAME>
                                   <INAME>%CELL10</INAME>
                                  </NAME>
-                                 <CAPTION>Coluna nova 10</CAPTION>
                                  <SECTTYPE>E</SECTTYPE>
                                  <U_FHEIGHT>CM</U_FHEIGHT>
                                  <PATTERN>
@@ -5302,7 +5170,6 @@
                                     <NAME>
                                      <INAME>%UNIDADE</INAME>
                                     </NAME>
-                                    <CAPTION>Unidade de medidas</CAPTION>
                                     <NOLANGUAGE>X</NOLANGUAGE>
                                     <APPMODE>P</APPMODE>
                                     <TEXT>
@@ -5342,7 +5209,6 @@
                                  <NAME>
                                   <INAME>%CELL11</INAME>
                                  </NAME>
-                                 <CAPTION>Coluna nova 11</CAPTION>
                                  <SECTTYPE>E</SECTTYPE>
                                  <U_FHEIGHT>CM</U_FHEIGHT>
                                  <PATTERN>
@@ -5447,7 +5313,6 @@
                                     <NAME>
                                      <INAME>%ANOTACAO</INAME>
                                     </NAME>
-                                    <CAPTION>Campo em branco para anotações</CAPTION>
                                     <NOLANGUAGE>X</NOLANGUAGE>
                                     <APPMODE>P</APPMODE>
                                     <TEXT>
@@ -5493,7 +5358,6 @@
                            <NAME>
                             <INAME>%EVENT3</INAME>
                            </NAME>
-                           <CAPTION>Nota de rodapé</CAPTION>
                            <EVTYPE>F</EVTYPE>
                            <T_CAPTION>
                             <item>
@@ -5525,7 +5389,6 @@
               <NAME>
                <INAME>%OUTATTRIB1</INAME>
               </NAME>
-              <CAPTION>Nova opção de saída</CAPTION>
               <U_WFRAME>PT</U_WFRAME>
               <U_WBOXV>CM</U_WBOXV>
               <U_WBOXH>CM</U_WBOXH>

@@ -6,7 +6,6 @@
     <METADATA>
      <NAME>ZUI_O2_TM_TRAFEGUS_LOG</NAME>
      <TYPE>SRVB/SVB</TYPE>
-     <DESCRIPTION>Interface Trafegus - Mensagens de log</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_TM_TRAFEGUS_LOG</HREF>

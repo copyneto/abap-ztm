@@ -3,7 +3,6 @@
  <sf:SMARTFORM xmlns:sf="urn:sap-com:SmartForms:2000:internal-structure" xmlns="urn:sap-com:sdixml-ifr:2000">
   <HEADER>
    <FORMNAME>ZSFTM_DACTE_COMPL</FORMNAME>
-   <CAPTION>DACTE</CAPTION>
    <MASTERLANG>P</MASTERLANG>
    <LANGVECTOR>*</LANGVECTOR>
    <DEVCLASS></DEVCLASS>
@@ -659,7 +658,6 @@
            <NAME>
             <INAME>DACTE</INAME>
            </NAME>
-           <CAPTION>DACTE</CAPTION>
            <NEXTPAGE>
             <INAME>DACTE</INAME>
            </NEXTPAGE>
@@ -680,7 +678,6 @@
              <NAME>
               <INAME>%GRAPHIC1</INAME>
              </NAME>
-             <CAPTION>Tela de fundo</CAPTION>
              <GTYPE>B</GTYPE>
              <GKEYBDS>
               <BTYPE>BMON</BTYPE>
@@ -719,7 +716,6 @@
               <NAME>
                <INAME>CABECALHO</INAME>
               </NAME>
-              <CAPTION>Cabeçalho</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -742,7 +738,6 @@
                      <NAME>
                       <INAME>CABECALHO</INAME>
                      </NAME>
-                     <CAPTION>Cabeçalho</CAPTION>
                      <SECTTYPE>S</SECTTYPE>
                      <OTABTYPE>S</OTABTYPE>
                      <U_FHEIGHT>CM</U_FHEIGHT>
@@ -1321,17 +1316,7 @@
                         <NAME>
                          <INAME>LINHA_1_CTE</INAME>
                         </NAME>
-                        <CAPTION>Linha 1 CT-e</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>C2</TDFORMAT>
-                          <TDLINE>DECLARO QUE RECEBI OS VOLUMES DESTE CONHECIMENTO EM PERFEITO ESTADO PELO</TDLINE>
-                         </item>
-                         <item>
-                          <TDLINE>QUE DOU POR CUMPRIDO O PRESENTE CONTRATO DE TRANSPORTE</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -1453,14 +1438,7 @@
                         <NAME>
                          <INAME>NOME</INAME>
                         </NAME>
-                        <CAPTION>Nome</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>L</TDFORMAT>
-                          <TDLINE>NOME</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -1574,14 +1552,7 @@
                         <NAME>
                          <INAME>RG</INAME>
                         </NAME>
-                        <CAPTION>RG</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>L</TDFORMAT>
-                          <TDLINE>RG</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -1695,20 +1666,7 @@
                         <NAME>
                          <INAME>ASSINATURA_CARIMBO</INAME>
                         </NAME>
-                        <CAPTION>Assinatura / Carimbo</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>C</TDFORMAT>
-                         </item>
-                         <item>
-                          <TDFORMAT>C</TDFORMAT>
-                         </item>
-                         <item>
-                          <TDFORMAT>C</TDFORMAT>
-                          <TDLINE>ASSINATURA / CARIMBO</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -1838,14 +1796,7 @@
                         <NAME>
                          <INAME>TERMINO_PRESTACAO</INAME>
                         </NAME>
-                        <CAPTION>Término da prestação</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>C</TDFORMAT>
-                          <TDLINE>TÉRMINO DA PRESTAÇÃO - DATA/HORA</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -1959,14 +1910,7 @@
                         <NAME>
                          <INAME>INICIO_PRESTACAO</INAME>
                         </NAME>
-                        <CAPTION>Início da prestação</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>C</TDFORMAT>
-                          <TDLINE>INÍCIO DA PRESTAÇÃO - DATA/HORA</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -2080,18 +2024,7 @@
                         <NAME>
                          <INAME>CTE_DOC</INAME>
                         </NAME>
-                        <CAPTION>CT-e / Nº Documento</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>C3</TDFORMAT>
-                          <TDLINE>&lt;H&gt;CT-E&lt;/&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>C</TDFORMAT>
-                          <TDLINE>Nº. DOCUMENTO &amp;DADOS_CTE-NFENUM&amp;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -2214,14 +2147,7 @@
                         <NAME>
                          <INAME>SERIE</INAME>
                         </NAME>
-                        <CAPTION>Série</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>C</TDFORMAT>
-                          <TDLINE>SÉRIE &amp;DADOS_CTE-SERIE&amp;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -2422,7 +2348,6 @@
               <NAME>
                <INAME>LINHA_PONTILHADA</INAME>
               </NAME>
-              <CAPTION>Linha Pontilhada</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -2445,7 +2370,6 @@
                      <NAME>
                       <INAME>LINHA_PONTILHADA</INAME>
                      </NAME>
-                     <CAPTION>Linha Pontilhada</CAPTION>
                      <NOLANGUAGE>X</NOLANGUAGE>
                      <APPMODE>P</APPMODE>
                      <TEXT>
@@ -2570,7 +2494,6 @@
               <NAME>
                <INAME>CODIGO_DE_BARRAS</INAME>
               </NAME>
-              <CAPTION>Código de barras</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -2593,7 +2516,6 @@
                      <NAME>
                       <INAME>COD_BARRAS_CHAVE_DE_ACESSO</INAME>
                      </NAME>
-                     <CAPTION>Chave de acesso - Cód. barras</CAPTION>
                      <NOLANGUAGE>X</NOLANGUAGE>
                      <APPMODE>P</APPMODE>
                      <TEXT>
@@ -2786,7 +2708,6 @@
               <NAME>
                <INAME>DADOS_CTE</INAME>
               </NAME>
-              <CAPTION>Dados CTE</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -2809,7 +2730,6 @@
                      <NAME>
                       <INAME>DADOS_CTE</INAME>
                      </NAME>
-                     <CAPTION>Dados CTE</CAPTION>
                      <SECTTYPE>S</SECTTYPE>
                      <OTABTYPE>S</OTABTYPE>
                      <U_FHEIGHT>CM</U_FHEIGHT>
@@ -4341,7 +4261,6 @@
                         <NAME>
                          <INAME>DADOS_TRANSPORTADOR_1</INAME>
                         </NAME>
-                        <CAPTION>Dados Transportador</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -4455,25 +4374,7 @@
                         <NAME>
                          <INAME>DADOS_TRANSPORTADOR_2</INAME>
                         </NAME>
-                        <CAPTION>Dados Transportador</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>C8</TDFORMAT>
-                          <TDLINE>&amp;DADOS_CTE-EMIT_LGR(I)&amp;, &amp;DADOS_CTE-EMIT_NRO(I)&amp;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>C8</TDFORMAT>
-                          <TDLINE>&amp;DADOS_CTE-EMIT_BAIRRO(I)&amp; - &amp;DADOS_CTE-EMIT_CEP(I)&amp; -</TDLINE>
-                         </item>
-                         <item>
-                          <TDLINE>&amp;DADOS_CTE-EMIT_MUN(I)&amp; - &amp;DADOS_CTE-EMIT_UF(I)&amp;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>C8</TDFORMAT>
-                          <TDLINE>Fone/Fax &amp;DADOS_CTE-EMIT_FONE(I)&amp;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -4613,14 +4514,7 @@
                         <NAME>
                          <INAME>DADOS_TRANSPORTADOR_3</INAME>
                         </NAME>
-                        <CAPTION>Dados Transportador</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>C8</TDFORMAT>
-                          <TDLINE>CNPJ/CPF: &amp;GV_EMIT_CNPJ_CPF(I)&amp; Insc.Estadual: &amp;DADOS_CTE-EMIT_IE(I)&amp;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -4734,18 +4628,7 @@
                         <NAME>
                          <INAME>DACTE</INAME>
                         </NAME>
-                        <CAPTION>DACTE</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>C4</TDFORMAT>
-                          <TDLINE>DACTE</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>C5</TDFORMAT>
-                          <TDLINE>Documento Auxiliar do Conhecimento de Transporte Eletrônico</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -4868,21 +4751,7 @@
                         <NAME>
                          <INAME>MODAL</INAME>
                         </NAME>
-                        <CAPTION>Modal</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>C6</TDFORMAT>
-                          <TDLINE>MODAL</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>C6</TDFORMAT>
-                         </item>
-                         <item>
-                          <TDFORMAT>C9</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;GV_DESC_MODAL&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -5013,18 +4882,7 @@
                         <NAME>
                          <INAME>MODELO</INAME>
                         </NAME>
-                        <CAPTION>Modelo</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>C6</TDFORMAT>
-                          <TDLINE>MODELO</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>C6</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;DADOS_CTE-MODEL&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -5147,18 +5005,7 @@
                         <NAME>
                          <INAME>SERIE_DACTE</INAME>
                         </NAME>
-                        <CAPTION>Série</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>C6</TDFORMAT>
-                          <TDLINE>SÉRIE</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>C6</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;DADOS_CTE-SERIE&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -5281,18 +5128,7 @@
                         <NAME>
                          <INAME>NUMERO</INAME>
                         </NAME>
-                        <CAPTION>Número</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>C6</TDFORMAT>
-                          <TDLINE>NÚMERO</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>C6</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;DADOS_CTE-NFENUM&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -5415,18 +5251,7 @@
                         <NAME>
                          <INAME>FL</INAME>
                         </NAME>
-                        <CAPTION>FL</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>C6</TDFORMAT>
-                          <TDLINE>FL</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>C6</TDFORMAT>
-                          <TDLINE>&lt;H&gt;1/1&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -5549,18 +5374,7 @@
                         <NAME>
                          <INAME>DHEMI</INAME>
                         </NAME>
-                        <CAPTION>Data e hora de emissão</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>C8</TDFORMAT>
-                          <TDLINE>DATA E HORA DE EMISSÃO</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>C6</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;DADOS_CTE-DHEMI&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -5683,18 +5497,7 @@
                         <NAME>
                          <INAME>INSC_SUFRAMA</INAME>
                         </NAME>
-                        <CAPTION>Insc. Suframa do destinatário</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>CA</TDFORMAT>
-                          <TDLINE>INSC. SUFRAMA DO DESTINATÁRIO</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>C6</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;DADOS_CTE-ISUF(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -5817,18 +5620,7 @@
                         <NAME>
                          <INAME>TIPO_CTE</INAME>
                         </NAME>
-                        <CAPTION>Tipo do CTE</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>C6</TDFORMAT>
-                          <TDLINE>TIPO DO CTE</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>C6</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;GV_DESC_TPCTE&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -5951,18 +5743,7 @@
                         <NAME>
                          <INAME>TIPO_SERVICO</INAME>
                         </NAME>
-                        <CAPTION>Tipo do Serviço</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>C6</TDFORMAT>
-                          <TDLINE>TIPO DO SERVIÇO</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>C6</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;GV_DESC_TPSERV&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -6085,18 +5866,7 @@
                         <NAME>
                          <INAME>CHAVE_ACESSO</INAME>
                         </NAME>
-                        <CAPTION>Chave de Acesso</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>CHAVE DE ACESSO</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>C6</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;GV_CHCTE_OUT&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -6219,18 +5989,7 @@
                         <NAME>
                          <INAME>TOMADOR_SERVICO</INAME>
                         </NAME>
-                        <CAPTION>Tomador do Serviço</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>C6</TDFORMAT>
-                          <TDLINE>TOMADOR DO SERVIÇO</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>C6</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;GV_DESC_TOMADOR&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -6353,17 +6112,7 @@
                         <NAME>
                          <INAME>CONSULTA_AUTENTICIDADE</INAME>
                         </NAME>
-                        <CAPTION>Consulta de Autenticidade</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>C7</TDFORMAT>
-                          <TDLINE>Consulta de autenticidade no portal nacional do CT-e, no site da Sefaz</TDLINE>
-                         </item>
-                         <item>
-                          <TDLINE>Autorizadora, ou em http://www.cte.fazenda.gov.br</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -6485,18 +6234,7 @@
                         <NAME>
                          <INAME>CFOP</INAME>
                         </NAME>
-                        <CAPTION>CFOP - Natureza da prestação</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>CFOP - NATUREZA DA OPERAÇÃO</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;DADOS_CTE-CFOP&amp;&lt;/&gt;&lt;H&gt; - &amp;DADOS_CTE-NATOP&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -6619,18 +6357,7 @@
                         <NAME>
                          <INAME>INICIO_PRESTACAO_DACTE</INAME>
                         </NAME>
-                        <CAPTION>Início da prestação</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>INÍCIO DA PRESTAÇÃO</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;DADOS_CTE-INICIO_PRESTSRV&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -6753,18 +6480,7 @@
                         <NAME>
                          <INAME>PROTOCOLO_AUTORIZACAO</INAME>
                         </NAME>
-                        <CAPTION>Protocolo de autorização de us</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>PROTOCOLO DE AUTORIZAÇÃO DE USO</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>C6</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;DADOS_CTE-NPROT&amp;&lt;/&gt;&lt;H&gt; - &amp;DADOS_CTE-DHRECBTO&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -6887,18 +6603,7 @@
                         <NAME>
                          <INAME>TERMINO_PRESTACAO_DACTE</INAME>
                         </NAME>
-                        <CAPTION>Término da prestação</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>TÉRMINO DA PRESTAÇÃO</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;DADOS_CTE-TERMINO_PRESTSRV&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -7021,43 +6726,7 @@
                         <NAME>
                          <INAME>REMETENTE</INAME>
                         </NAME>
-                        <CAPTION>Remetente</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>REMETENTE,,&lt;H&gt;&amp;DADOS_CTE-REM_NOME(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>ENDEREÇO,,&lt;H&gt;&amp;DADOS_CTE-REM_LGR(I)&amp;&lt;/&gt;&lt;H&gt;, &amp;DADOS_CTE-REM_NRO(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>&lt;H&gt;,,,,&amp;DADOS_CTE-REM_BAIRRO(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>MUNICÍPIO,,&lt;H&gt;&amp;DADOS_CTE-REM_MUN(I)&amp;&lt;/&gt;&lt;H&gt; - &amp;DADOS_CTE-REM_UF(I)&amp;</TDLINE>
-                         </item>
-                         <item>
-                          <TDLINE>  &lt;/&gt;CEP &lt;H&gt;&amp;DADOS_CTE-REM_CEP(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>CNPJ/CPF,,&lt;H&gt;&amp;GV_REM_CNPJ_CPF(I)&amp;&lt;/&gt;&lt;H&gt;   &lt;/&gt;INSCRIÇÃO ESTADUAL&lt;H&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDLINE>&amp;DADOS_CTE-REM_IE(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>PAÍS,,,,&lt;H&gt;&amp;DADOS_CTE-REM_PAIS(I)&amp;&lt;/&gt;&lt;H&gt;   &lt;/&gt;FONE&lt;H&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDLINE>&amp;DADOS_CTE-REM_FONE(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -7240,45 +6909,7 @@
                         <NAME>
                          <INAME>DESTINATARIO</INAME>
                         </NAME>
-                        <CAPTION>Destinatário</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>DESTINATÁRIO &lt;H&gt;&amp;DADOS_CTE-DEST_NOME(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>ENDEREÇO,,&lt;H&gt;&amp;DADOS_CTE-DEST_LGR(I)&amp;&lt;/&gt;&lt;H&gt;, &amp;DADOS_CTE-DEST_NRO(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>&lt;H&gt;,,,,&amp;DADOS_CTE-DEST_BAIRRO(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>MUNICÍPIO,,&lt;H&gt;&amp;DADOS_CTE-DEST_MUN(I)&amp;&lt;/&gt;&lt;H&gt; - &amp;DADOS_CTE-DEST_UF(I)&amp;</TDLINE>
-                         </item>
-                         <item>
-                          <TDLINE>  &lt;/&gt;CEP &lt;H&gt;&amp;DADOS_CTE-DEST_CEP(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>CNPJ/CPF,,&lt;H&gt;&amp;GV_DEST_CNPJ_CPF(I)&amp;&lt;/&gt;&lt;H&gt;   &lt;/&gt;INSCRIÇÃO ESTADUAL &lt;H&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>=</TDFORMAT>
-                          <TDLINE>&amp;DADOS_CTE-DEST_IE(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>PAÍS,,,,&lt;H&gt;&amp;DADOS_CTE-DEST_PAIS(I)&amp;&lt;/&gt;&lt;H&gt;   &lt;/&gt;FONE &lt;H&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>=</TDFORMAT>
-                          <TDLINE>&amp;DADOS_CTE-DEST_FONE(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -7463,45 +7094,7 @@
                         <NAME>
                          <INAME>EXPEDIDOR</INAME>
                         </NAME>
-                        <CAPTION>Expedidor</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>EXPEDIDOR,,&lt;H&gt;&amp;DADOS_CTE-EXP_NOME(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>ENDEREÇO,,&lt;H&gt;&amp;DADOS_CTE-EXP_LGR(I)&amp;&lt;/&gt;,&lt;H&gt; &amp;DADOS_CTE-EXP_NRO(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>&lt;H&gt;,,,,&amp;DADOS_CTE-EXP_BAIRRO(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>MUNICÍPIO,,&lt;H&gt;&amp;DADOS_CTE-EXP_MUN(I)&amp;&lt;/&gt;&lt;H&gt; - &amp;DADOS_CTE-EXP_UF(I)&amp;</TDLINE>
-                         </item>
-                         <item>
-                          <TDLINE>  &lt;/&gt;CEP &lt;H&gt;&amp;DADOS_CTE-EXP_CEP(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>CNPJ/CPF,,&lt;H&gt;&amp;GV_EXP_CNPJ_CPF(I)&amp;&lt;/&gt;&lt;H&gt;   &lt;/&gt;INSCRIÇÃO ESTADUAL &lt;H&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>=</TDFORMAT>
-                          <TDLINE>&amp;DADOS_CTE-EXP_IE(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>PAÍS,,&lt;H&gt;,,&amp;DADOS_CTE-EXP_PAIS(I)&amp;   &lt;/&gt;FONE&lt;H&gt; &amp;DADOS_CTE-EXP_FONE(I)&amp;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>=</TDFORMAT>
-                          <TDLINE>&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -7686,45 +7279,7 @@
                         <NAME>
                          <INAME>RECEBEDOR</INAME>
                         </NAME>
-                        <CAPTION>Recebedor</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>RECEBEDOR,,&lt;H&gt;&amp;DADOS_CTE-REC_NOME(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>ENDEREÇO,,&lt;H&gt;&amp;DADOS_CTE-REC_LGR(I)&amp;&lt;/&gt;,&lt;H&gt; &amp;DADOS_CTE-REC_NRO(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>&lt;H&gt;,,,,&amp;DADOS_CTE-REC_BAIRRO(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>MUNICÍPIO,,&lt;H&gt;&amp;DADOS_CTE-REC_MUN(I)&amp;&lt;/&gt;&lt;H&gt; - &amp;DADOS_CTE-REC_UF(I)&amp;</TDLINE>
-                         </item>
-                         <item>
-                          <TDLINE>  &lt;/&gt;CEP &lt;H&gt;&amp;DADOS_CTE-REC_CEP(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>CNPJ/CPF,,&lt;H&gt;&amp;GV_REC_CNPJ_CPF(I)&amp;&lt;/&gt;&lt;H&gt;   &lt;/&gt;INSCRIÇÃO ESTADUAL &lt;H&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>=</TDFORMAT>
-                          <TDLINE>&amp;DADOS_CTE-REC_IE(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>PAÍS,,,,&lt;H&gt;&amp;DADOS_CTE-REC_PAIS(I)&amp;&lt;/&gt;&lt;H&gt;   &lt;/&gt;FONE &lt;H&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>=</TDFORMAT>
-                          <TDLINE>&amp;DADOS_CTE-REC_FONE(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -7909,39 +7464,7 @@
                         <NAME>
                          <INAME>TOMADOR_SERVICO_DET</INAME>
                         </NAME>
-                        <CAPTION>Tomador do Serviço Detalhe</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>TOMADOR DO SERVIÇO  &lt;H&gt;&amp;DADOS_CTE-TMD_NOME(I)&amp;&lt;/&gt;&lt;H&gt;   &lt;/&gt;MUNICÍPIO &lt;H&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>=</TDFORMAT>
-                          <TDLINE>&amp;DADOS_CTE-TMD_MUN(I)&amp;&lt;/&gt;&lt;H&gt;   &lt;/&gt;UF  &lt;H&gt;&amp;DADOS_CTE-TMD_UF(I)&amp;&lt;/&gt;&lt;H&gt;,,</TDLINE>
-                         </item>
-                         <item>
-                          <TDLINE>  &lt;/&gt;CEP &lt;H&gt;&amp;DADOS_CTE-TMD_CEP(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>ENDEREÇO &lt;H&gt;&amp;DADOS_CTE-TMD_LGR(I)&amp;&lt;/&gt;&lt;H&gt;, &amp;DADOS_CTE-TMD_NRO(I)&amp; -</TDLINE>
-                         </item>
-                         <item>
-                          <TDLINE>&amp;DADOS_CTE-TMD_BAIRRO(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>CNPJ/CPF &lt;H&gt;&amp;GV_TMD_CNPJ_CPF(I)&amp;&lt;/&gt;&lt;H&gt;   &lt;/&gt;INSCRIÇÃO ESTADUAL &lt;H&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>=</TDFORMAT>
-                          <TDLINE>&amp;DADOS_CTE-TMD_IE(I)&amp;&lt;/&gt;&lt;H&gt;   &lt;/&gt;PAÍS &lt;H&gt;&amp;DADOS_CTE-TMD_PAIS(I)&amp;&lt;/&gt;&lt;H&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDLINE>  &lt;/&gt;FONE &lt;H&gt;&amp;DADOS_CTE-TMD_FONE(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -8202,7 +7725,6 @@
               <NAME>
                <INAME>CTE_COMPLEMENTADO</INAME>
               </NAME>
-              <CAPTION>CTe Complementado</CAPTION>
               <WTYPE>M</WTYPE>
               <T_CAPTION>
                <item>
@@ -8225,7 +7747,6 @@
                      <NAME>
                       <INAME>CTE_COMPLEMENTADO</INAME>
                      </NAME>
-                     <CAPTION>CTe Complementado</CAPTION>
                      <SECTTYPE>S</SECTTYPE>
                      <OTABTYPE>S</OTABTYPE>
                      <U_FHEIGHT>CM</U_FHEIGHT>
@@ -8720,14 +8241,7 @@
                         <NAME>
                          <INAME>DET_CTE_COMPLEMENTADO</INAME>
                         </NAME>
-                        <CAPTION>Detalhamento do CT-e compl.</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>C6</TDFORMAT>
-                          <TDLINE>DETALHAMENTO DO CT-E COMPLENTADO</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -8841,14 +8355,7 @@
                         <NAME>
                          <INAME>CHAVE_CTE_COMPLEMENTADO_1</INAME>
                         </NAME>
-                        <CAPTION>Chave do CT-e complementado</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>L3</TDFORMAT>
-                          <TDLINE>CHAVE DO CT-E COMPLEMENTADO</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -8962,7 +8469,6 @@
                         <NAME>
                          <INAME>CHAVE_CTE_COMPLEMENTADO_1_VAL</INAME>
                         </NAME>
-                        <CAPTION>Chave do CT-e complementado</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -9073,14 +8579,7 @@
                         <NAME>
                          <INAME>VALOR_COMPLEMENTADO_1</INAME>
                         </NAME>
-                        <CAPTION>Valor complementado</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>L3</TDFORMAT>
-                          <TDLINE>VALOR COMPLEMENTADO</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -9194,7 +8693,6 @@
                         <NAME>
                          <INAME>VALOR_COMPLEMENTADO_1_VAL</INAME>
                         </NAME>
-                        <CAPTION>Valor complementado</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -9305,14 +8803,7 @@
                         <NAME>
                          <INAME>CHAVE_CTE_COMPLEMENTADO_2</INAME>
                         </NAME>
-                        <CAPTION>Chave do CT-e complementado</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>L3</TDFORMAT>
-                          <TDLINE>CHAVE DO CT-E COMPLEMENTADO</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -9426,14 +8917,7 @@
                         <NAME>
                          <INAME>VALOR_COMPLEMENTADO_2</INAME>
                         </NAME>
-                        <CAPTION>Valor complementado</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>L3</TDFORMAT>
-                          <TDLINE>VALOR COMPLEMENTADO</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -9552,7 +9036,6 @@
               <NAME>
                <INAME>%OUTATTRIB1</INAME>
               </NAME>
-              <CAPTION>Nova opção de saída</CAPTION>
               <U_WFRAME>PT</U_WFRAME>
               <U_WBOXV>CM</U_WBOXV>
               <U_WBOXH>CM</U_WBOXH>
@@ -9636,7 +9119,6 @@
               <NAME>
                <INAME>OBSERVACOES_RODAPE</INAME>
               </NAME>
-              <CAPTION>Observações / Rodapé</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -9659,7 +9141,6 @@
                      <NAME>
                       <INAME>COMPONENTES_VLR_PREST_SERV</INAME>
                      </NAME>
-                     <CAPTION>Comp. do valor da prestação sr</CAPTION>
                      <SECTTYPE>S</SECTTYPE>
                      <OTABTYPE>S</OTABTYPE>
                      <U_FHEIGHT>CM</U_FHEIGHT>
@@ -10812,14 +10293,7 @@
                         <NAME>
                          <INAME>COMPONENTES_VLR_PREST_SERV</INAME>
                         </NAME>
-                        <CAPTION>Comp. do valor da prestação sr</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>C6</TDFORMAT>
-                          <TDLINE>COMPONENTES DO VALOR DA PRESTAÇÃO DO SERVIÇO</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -10933,22 +10407,7 @@
                         <NAME>
                          <INAME>NOME_1_L1</INAME>
                         </NAME>
-                        <CAPTION>Nome</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>NOME</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;GS_COMP_VLR_1-XNOME(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;GS_COMP_VLR_4-XNOME(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -11080,22 +10539,7 @@
                         <NAME>
                          <INAME>VALOR_1_L1</INAME>
                         </NAME>
-                        <CAPTION>Valor</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>VALOR</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;GS_COMP_VLR_1-VCOMP(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;GS_COMP_VLR_4-VCOMP(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -11227,22 +10671,7 @@
                         <NAME>
                          <INAME>NOME_2_L1</INAME>
                         </NAME>
-                        <CAPTION>Nome</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>NOME</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;GS_COMP_VLR_2-XNOME(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;GS_COMP_VLR_5-XNOME(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -11374,22 +10803,7 @@
                         <NAME>
                          <INAME>VALOR_2_L1</INAME>
                         </NAME>
-                        <CAPTION>Valor</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>VALOR</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;GS_COMP_VLR_2-VCOMP(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;GS_COMP_VLR_5-VCOMP(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -11521,22 +10935,7 @@
                         <NAME>
                          <INAME>NOME_3_L1</INAME>
                         </NAME>
-                        <CAPTION>Nome</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>NOME</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;GS_COMP_VLR_3-XNOME(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;GS_COMP_VLR_6-XNOME(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -11668,22 +11067,7 @@
                         <NAME>
                          <INAME>VALOR_3_L1</INAME>
                         </NAME>
-                        <CAPTION>Valor</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>VALOR</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;GS_COMP_VLR_3-VCOMP(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;GS_COMP_VLR_6-VCOMP(I)&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -11815,7 +11199,6 @@
                         <NAME>
                          <INAME>NOME_1_L2</INAME>
                         </NAME>
-                        <CAPTION>Nome</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -11930,7 +11313,6 @@
                         <NAME>
                          <INAME>VALOR_1_L2</INAME>
                         </NAME>
-                        <CAPTION>Valor</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -12045,7 +11427,6 @@
                         <NAME>
                          <INAME>NOME_2_L2</INAME>
                         </NAME>
-                        <CAPTION>Nome</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -12160,7 +11541,6 @@
                         <NAME>
                          <INAME>VALOR_2_L2</INAME>
                         </NAME>
-                        <CAPTION>Valor</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -12275,7 +11655,6 @@
                         <NAME>
                          <INAME>NOME_3_L2</INAME>
                         </NAME>
-                        <CAPTION>Nome</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -12390,7 +11769,6 @@
                         <NAME>
                          <INAME>VALOR_3_L2</INAME>
                         </NAME>
-                        <CAPTION>Valor</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -12505,21 +11883,7 @@
                         <NAME>
                          <INAME>VLR_TOT_SERVICO</INAME>
                         </NAME>
-                        <CAPTION>Valor total do serviço</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>CA</TDFORMAT>
-                         </item>
-                         <item>
-                          <TDFORMAT>C8</TDFORMAT>
-                          <TDLINE>VALOR TOTAL DO SERVIÇO</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>C6</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;DADOS_CTE-VTPREST&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -12650,21 +12014,7 @@
                         <NAME>
                          <INAME>VLR_A_RECEBER</INAME>
                         </NAME>
-                        <CAPTION>Valor a receber</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>CA</TDFORMAT>
-                         </item>
-                         <item>
-                          <TDFORMAT>C8</TDFORMAT>
-                          <TDLINE>VALOR A RECEBER</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>C6</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;DADOS_CTE-VREC&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -12795,14 +12145,7 @@
                         <NAME>
                          <INAME>INFO_RELATIVAS_IMPOSTO</INAME>
                         </NAME>
-                        <CAPTION>Info. relativas ao imposto</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>C6</TDFORMAT>
-                          <TDLINE>INFORMAÇÕES RELATIVAS AO IMPOSTO</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -12916,18 +12259,7 @@
                         <NAME>
                          <INAME>SITUACAO_TRIBUTARIA</INAME>
                         </NAME>
-                        <CAPTION>Situação tributária</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>SITUAÇÃO TRIBUTÁRIA</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;GV_DESC_CST&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -13050,18 +12382,7 @@
                         <NAME>
                          <INAME>BASE_DE_CALCULO</INAME>
                         </NAME>
-                        <CAPTION>Base de cálculo</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>BASE DE CÁLCULO</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;DADOS_CTE-VBCICMS&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -13184,18 +12505,7 @@
                         <NAME>
                          <INAME>ALIQ_ICMS</INAME>
                         </NAME>
-                        <CAPTION>Alíquota ICMS</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>ALÍQ. ICMS</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;DADOS_CTE-PICMS&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -13318,18 +12628,7 @@
                         <NAME>
                          <INAME>VALOR_ICMS</INAME>
                         </NAME>
-                        <CAPTION>Valor ICMS</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>VALOR ICMS</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;DADOS_CTE-VICMS&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -13452,18 +12751,7 @@
                         <NAME>
                          <INAME>RED_BC_ICMS</INAME>
                         </NAME>
-                        <CAPTION>% Red. BC ICMS</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>% RED. BC ICMS</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;DADOS_CTE-PREDBC&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -13586,18 +12874,7 @@
                         <NAME>
                          <INAME>ICMS_ST</INAME>
                         </NAME>
-                        <CAPTION>ICMS ST</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>ICMS ST</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>L2</TDFORMAT>
-                          <TDLINE>&lt;H&gt;&amp;DADOS_CTE-VICMSSTRET&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -13723,7 +13000,6 @@
                      <NAME>
                       <INAME>OBSERVACOES_RODAPE</INAME>
                      </NAME>
-                     <CAPTION>Observações / Rodapé</CAPTION>
                      <SECTTYPE>S</SECTTYPE>
                      <OTABTYPE>S</OTABTYPE>
                      <U_FHEIGHT>CM</U_FHEIGHT>
@@ -14092,14 +13368,7 @@
                         <NAME>
                          <INAME>OBSERVACOES</INAME>
                         </NAME>
-                        <CAPTION>Observações</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>C6</TDFORMAT>
-                          <TDLINE>OBSERVAÇÕES</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -14213,7 +13482,6 @@
                         <NAME>
                          <INAME>OBSERVACOES_VAL</INAME>
                         </NAME>
-                        <CAPTION>Observações</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -14324,14 +13592,7 @@
                         <NAME>
                          <INAME>USO_EXC_EMISSOR_CTE</INAME>
                         </NAME>
-                        <CAPTION>Uso exclusivo do emissor CT-e</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>C6</TDFORMAT>
-                          <TDLINE>USO EXCLUSIVO DO EMISSOR DO CT-E</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -14445,14 +13706,7 @@
                         <NAME>
                          <INAME>RESERVADO_AO_FISCO</INAME>
                         </NAME>
-                        <CAPTION>Reservado ao FISCO</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>C6</TDFORMAT>
-                          <TDLINE>RESERVADO AO FISCO</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSGKO_DACTE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>

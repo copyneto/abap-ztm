@@ -6,7 +6,6 @@
     <METADATA>
      <NAME>ZUI_O2_TM_LOG_CTE_NFE</NAME>
      <TYPE>SRVB/SVB</TYPE>
-     <DESCRIPTION>Serv.bind. Log CTe NFe</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_TM_LOG_CTE_NFE</HREF>

@@ -6,7 +6,6 @@
     <METADATA>
      <NAME>ZUI_O2_TM_COND_EXPED</NAME>
      <TYPE>SRVB/SVB</TYPE>
-     <DESCRIPTION>Condição de expedição</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_TM_COND_EXPED</HREF>

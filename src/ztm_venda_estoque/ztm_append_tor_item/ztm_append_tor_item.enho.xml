@@ -179,7 +179,7 @@
            <NAME></NAME>
            <TYPE>SH</TYPE>
            <EXPLANATION Transl="true"></EXPLANATION>
-           <TEXT Transl="true">1</TEXT>
+           <TEXT Transl="true"></TEXT>
            <TOOLTIP Transl="true"></TOOLTIP>
            <INPUT_PROMPT Transl="true"></INPUT_PROMPT>
            <INSTANCE_STYLE></INSTANCE_STYLE>

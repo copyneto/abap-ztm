@@ -3,7 +3,6 @@
  <sf:SMARTFORM xmlns:sf="urn:sap-com:SmartForms:2000:internal-structure" xmlns="urn:sap-com:sdixml-ifr:2000">
   <HEADER>
    <FORMNAME>ZSFTM_TRANSPORTE_ITINERARIO</FORMNAME>
-   <CAPTION>Transporte por itinerário</CAPTION>
    <MASTERLANG>P</MASTERLANG>
    <LANGVECTOR>*</LANGVECTOR>
    <DEVCLASS></DEVCLASS>
@@ -228,7 +227,6 @@
            <NAME>
             <INAME>%PAGE1</INAME>
            </NAME>
-           <CAPTION>Página nova</CAPTION>
            <NEXTPAGE>
             <INAME>%PAGE1</INAME>
            </NEXTPAGE>
@@ -249,7 +247,6 @@
              <NAME>
               <INAME>%GRAPHIC1</INAME>
              </NAME>
-             <CAPTION>Tela de fundo</CAPTION>
              <GTYPE>B</GTYPE>
              <GKEYBDS>
               <BTYPE>BMON</BTYPE>
@@ -309,7 +306,6 @@
                      <NAME>
                       <INAME>LOGO</INAME>
                      </NAME>
-                     <CAPTION>Logo 3corações</CAPTION>
                      <GTYPE>B</GTYPE>
                      <GKEYBDS>
                       <OBJECT>GRAPHICS</OBJECT>
@@ -735,17 +731,7 @@
                         <NAME>
                          <INAME>TEXTO_RELATORIO</INAME>
                         </NAME>
-                        <CAPTION>- Rel. Transp. Intiner. (1.2)</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>P2</TDFORMAT>
-                         </item>
-                         <item>
-                          <TDFORMAT>P2</TDFORMAT>
-                          <TDLINE>&lt;C5&gt;PLANO DE CARGA&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -867,31 +853,7 @@
                         <NAME>
                          <INAME>DATA_HORA_PAGINA</INAME>
                         </NAME>
-                        <CAPTION>- Data/Hora/Página (1.3)</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>*</TDFORMAT>
-                          <TDLINE>&lt;C2&gt;Data:&lt;C2&gt; &amp;SFSY-DATE&amp;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>*</TDFORMAT>
-                          <TDLINE>&lt;C2&gt;Hora:&lt;C2&gt; &amp;SFSY-TIME&amp;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>*</TDFORMAT>
-                          <TDLINE>&lt;C2&gt;Pagína:&lt;C2&gt; &amp;SFSY-PAGE&amp; de &amp;SFSY-FORMPAGES&amp;</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>*</TDFORMAT>
-                         </item>
-                         <item>
-                          <TDFORMAT>*</TDFORMAT>
-                         </item>
-                         <item>
-                          <TDFORMAT>*</TDFORMAT>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -1134,7 +1096,6 @@
               <NAME>
                <INAME>MAIN</INAME>
               </NAME>
-              <CAPTION>Janela principal</CAPTION>
               <WTYPE>M</WTYPE>
               <T_CAPTION>
                <item>
@@ -1450,17 +1411,7 @@
                         <NAME>
                          <INAME>TRANSPORTE</INAME>
                         </NAME>
-                        <CAPTION>- Transporte (1.1)</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>*</TDFORMAT>
-                          <TDLINE>&lt;C2&gt;Transporte:&lt;/&gt;&lt;C1&gt; &amp;IS_DADOS_ITINERARIO-CAB_ITINERARIO-ORDEM_FRETE&amp;</TDLINE>
-                         </item>
-                         <item>
-                          <TDLINE>&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -1582,17 +1533,7 @@
                         <NAME>
                          <INAME>MOTORISTA</INAME>
                         </NAME>
-                        <CAPTION>- Motorista (1.2)</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>*</TDFORMAT>
-                          <TDLINE>&lt;C2&gt;Motorista:&lt;/&gt;&lt;C1&gt; &amp;IS_DADOS_ITINERARIO-CAB_ITINERARIO-MOTORISTA&amp; -</TDLINE>
-                         </item>
-                         <item>
-                          <TDLINE>&amp;IS_DADOS_ITINERARIO-CAB_ITINERARIO-NOME_MOTORISTA&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -1714,14 +1655,7 @@
                         <NAME>
                          <INAME>PLACA</INAME>
                         </NAME>
-                        <CAPTION>- Placa (1.3)</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>*</TDFORMAT>
-                          <TDLINE>&lt;C2&gt;Placa:&lt;/&gt;&lt;C1&gt; &amp;IS_DADOS_ITINERARIO-CAB_ITINERARIO-PLACA&amp;&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -1835,14 +1769,7 @@
                         <NAME>
                          <INAME>TIPO_VIA</INAME>
                         </NAME>
-                        <CAPTION>- Tipo via (1.4)</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>*</TDFORMAT>
-                          <TDLINE>&lt;C2&gt;Tipo de via:&lt;/&gt;&lt;C1&gt; Saída&lt;/&gt;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -2679,7 +2606,6 @@
                         <NAME>
                          <INAME>%EVENT1</INAME>
                         </NAME>
-                        <CAPTION>Área de cabeçalho</CAPTION>
                         <EVTYPE>H</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -2909,12 +2835,6 @@
                                   <INAME>C_NF</INAME>
                                  </NAME>
                                  <APPMODE>P</APPMODE>
-                                 <TEXT>
-                                  <item>
-                                   <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;C4&gt;NF</TDLINE>
-                                  </item>
-                                 </TEXT>
                                  <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                                  <TEXT_AREA>
                                   <ENABLED>F</ENABLED>
@@ -3060,12 +2980,6 @@
                                   <INAME>C_CLIENTE</INAME>
                                  </NAME>
                                  <APPMODE>P</APPMODE>
-                                 <TEXT>
-                                  <item>
-                                   <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;C4&gt;Cliente</TDLINE>
-                                  </item>
-                                 </TEXT>
                                  <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                                  <TEXT_AREA>
                                   <ENABLED>F</ENABLED>
@@ -3211,12 +3125,6 @@
                                   <INAME>C_ENDERECO</INAME>
                                  </NAME>
                                  <APPMODE>P</APPMODE>
-                                 <TEXT>
-                                  <item>
-                                   <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;C4&gt;Endereço</TDLINE>
-                                  </item>
-                                 </TEXT>
                                  <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                                  <TEXT_AREA>
                                   <ENABLED>F</ENABLED>
@@ -3362,12 +3270,6 @@
                                   <INAME>C_BAIRRO</INAME>
                                  </NAME>
                                  <APPMODE>P</APPMODE>
-                                 <TEXT>
-                                  <item>
-                                   <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;C4&gt;Bairro</TDLINE>
-                                  </item>
-                                 </TEXT>
                                  <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                                  <TEXT_AREA>
                                   <ENABLED>F</ENABLED>
@@ -3513,12 +3415,6 @@
                                   <INAME>C_CIDADE</INAME>
                                  </NAME>
                                  <APPMODE>P</APPMODE>
-                                 <TEXT>
-                                  <item>
-                                   <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;C4&gt;Cidade</TDLINE>
-                                  </item>
-                                 </TEXT>
                                  <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                                  <TEXT_AREA>
                                   <ENABLED>F</ENABLED>
@@ -3664,12 +3560,6 @@
                                   <INAME>C_FORMA_PAGAMENTO</INAME>
                                  </NAME>
                                  <APPMODE>P</APPMODE>
-                                 <TEXT>
-                                  <item>
-                                   <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;C4&gt;MV</TDLINE>
-                                  </item>
-                                 </TEXT>
                                  <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                                  <TEXT_AREA>
                                   <ENABLED>F</ENABLED>
@@ -3815,12 +3705,6 @@
                                   <INAME>C_VALOR_TOTAL</INAME>
                                  </NAME>
                                  <APPMODE>P</APPMODE>
-                                 <TEXT>
-                                  <item>
-                                   <TDFORMAT>P2</TDFORMAT>
-                                   <TDLINE>&lt;C4&gt;Valor</TDLINE>
-                                  </item>
-                                 </TEXT>
                                  <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                                  <TEXT_AREA>
                                   <ENABLED>F</ENABLED>
@@ -3868,7 +3752,6 @@
                         <NAME>
                          <INAME>%EVENT2</INAME>
                         </NAME>
-                        <CAPTION>Área principal</CAPTION>
                         <EVTYPE>B</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -4987,7 +4870,6 @@
                         <NAME>
                          <INAME>%EVENT3</INAME>
                         </NAME>
-                        <CAPTION>Nota de rodapé</CAPTION>
                         <EVTYPE>F</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -5639,7 +5521,6 @@
                         <NAME>
                          <INAME>%EVENT4</INAME>
                         </NAME>
-                        <CAPTION>Área de cabeçalho</CAPTION>
                         <EVTYPE>H</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -5869,12 +5750,6 @@
                                   <INAME>C_PRODUTO</INAME>
                                  </NAME>
                                  <APPMODE>P</APPMODE>
-                                 <TEXT>
-                                  <item>
-                                   <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;C4&gt;Produto&lt;/&gt;</TDLINE>
-                                  </item>
-                                 </TEXT>
                                  <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                                  <TEXT_AREA>
                                   <ENABLED>F</ENABLED>
@@ -6020,12 +5895,6 @@
                                   <INAME>C_QTD_TOTAL</INAME>
                                  </NAME>
                                  <APPMODE>P</APPMODE>
-                                 <TEXT>
-                                  <item>
-                                   <TDFORMAT>P2</TDFORMAT>
-                                   <TDLINE>&lt;C4&gt;Qtde. Total&lt;/&gt;</TDLINE>
-                                  </item>
-                                 </TEXT>
                                  <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                                  <TEXT_AREA>
                                   <ENABLED>F</ENABLED>
@@ -6171,12 +6040,6 @@
                                   <INAME>C_QTD_ATACADO</INAME>
                                  </NAME>
                                  <APPMODE>P</APPMODE>
-                                 <TEXT>
-                                  <item>
-                                   <TDFORMAT>P2</TDFORMAT>
-                                   <TDLINE>&lt;C4&gt;Qtde. Atacado&lt;/&gt;</TDLINE>
-                                  </item>
-                                 </TEXT>
                                  <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                                  <TEXT_AREA>
                                   <ENABLED>F</ENABLED>
@@ -6322,12 +6185,6 @@
                                   <INAME>C_QTD_VAREJO</INAME>
                                  </NAME>
                                  <APPMODE>P</APPMODE>
-                                 <TEXT>
-                                  <item>
-                                   <TDFORMAT>P2</TDFORMAT>
-                                   <TDLINE>&lt;C4&gt;Qtde. Varejo&lt;/&gt;</TDLINE>
-                                  </item>
-                                 </TEXT>
                                  <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                                  <TEXT_AREA>
                                   <ENABLED>F</ENABLED>
@@ -6473,12 +6330,6 @@
                                   <INAME>C_PESO_BRUTO</INAME>
                                  </NAME>
                                  <APPMODE>P</APPMODE>
-                                 <TEXT>
-                                  <item>
-                                   <TDFORMAT>P2</TDFORMAT>
-                                   <TDLINE>&lt;C4&gt;Peso Bruto&lt;/&gt;</TDLINE>
-                                  </item>
-                                 </TEXT>
                                  <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                                  <TEXT_AREA>
                                   <ENABLED>F</ENABLED>
@@ -6526,7 +6377,6 @@
                         <NAME>
                          <INAME>%EVENT5</INAME>
                         </NAME>
-                        <CAPTION>Área principal</CAPTION>
                         <EVTYPE>B</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -7363,7 +7213,6 @@
                         <NAME>
                          <INAME>%EVENT6</INAME>
                         </NAME>
-                        <CAPTION>Nota de rodapé</CAPTION>
                         <EVTYPE>F</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -7593,12 +7442,6 @@
                                   <INAME>T_TEXTO_TOTAL_GERAL</INAME>
                                  </NAME>
                                  <APPMODE>P</APPMODE>
-                                 <TEXT>
-                                  <item>
-                                   <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;C4&gt;Total Geral</TDLINE>
-                                  </item>
-                                 </TEXT>
                                  <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                                  <TEXT_AREA>
                                   <ENABLED>F</ENABLED>
@@ -8605,7 +8448,6 @@
                         <NAME>
                          <INAME>%EVENT7</INAME>
                         </NAME>
-                        <CAPTION>Área de cabeçalho</CAPTION>
                         <EVTYPE>H</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -8629,7 +8471,6 @@
                         <NAME>
                          <INAME>%EVENT8</INAME>
                         </NAME>
-                        <CAPTION>Área principal</CAPTION>
                         <EVTYPE>B</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -9000,12 +8841,6 @@
                                   <INAME>V_REAL</INAME>
                                  </NAME>
                                  <APPMODE>P</APPMODE>
-                                 <TEXT>
-                                  <item>
-                                   <TDFORMAT>P3</TDFORMAT>
-                                   <TDLINE>&lt;C3&gt;R$&lt;/&gt;</TDLINE>
-                                  </item>
-                                 </TEXT>
                                  <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                                  <TEXT_AREA>
                                   <ENABLED>F</ENABLED>
@@ -9299,7 +9134,6 @@
                         <NAME>
                          <INAME>%EVENT9</INAME>
                         </NAME>
-                        <CAPTION>Nota de rodapé</CAPTION>
                         <EVTYPE>F</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -9529,12 +9363,6 @@
                                   <INAME>V_VALOR_FINANCEIRO_CAB</INAME>
                                  </NAME>
                                  <APPMODE>P</APPMODE>
-                                 <TEXT>
-                                  <item>
-                                   <TDFORMAT>*</TDFORMAT>
-                                   <TDLINE>&lt;C4&gt;Total Financeiro:&lt;/&gt;</TDLINE>
-                                  </item>
-                                 </TEXT>
                                  <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                                  <TEXT_AREA>
                                   <ENABLED>F</ENABLED>
@@ -9752,12 +9580,6 @@
                                   <INAME>V_CIFRAO</INAME>
                                  </NAME>
                                  <APPMODE>P</APPMODE>
-                                 <TEXT>
-                                  <item>
-                                   <TDFORMAT>P3</TDFORMAT>
-                                   <TDLINE>&lt;C3&gt;R$&lt;/&gt;</TDLINE>
-                                  </item>
-                                 </TEXT>
                                  <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                                  <TEXT_AREA>
                                   <ENABLED>F</ENABLED>
@@ -9902,7 +9724,6 @@
                                  <NAME>
                                   <INAME>T_VALOR_FINANCEIRO</INAME>
                                  </NAME>
-                                 <CAPTION>- Valor financeiro</CAPTION>
                                  <NOLANGUAGE>X</NOLANGUAGE>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
@@ -10014,7 +9835,6 @@
                               <NAME>
                                <INAME>DUMMY2</INAME>
                               </NAME>
-                              <CAPTION>Coluna nova 2</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -10260,14 +10080,7 @@
                         <NAME>
                          <INAME>T_QTD_COLETAS</INAME>
                         </NAME>
-                        <CAPTION>- Coletas (2.1)</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>*</TDFORMAT>
-                          <TDLINE>&lt;C4&gt;Qtd. Coletas:&lt;/&gt;&lt;C3&gt; &amp;IS_DADOS_ITINERARIO-COLETAS&amp;</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -10577,18 +10390,7 @@
                         <NAME>
                          <INAME>T_ASS_CONFERENTE</INAME>
                         </NAME>
-                        <CAPTION>- Ass. Conferente (2.1)</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>P2</TDFORMAT>
-                          <TDLINE>____________________</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>P2</TDFORMAT>
-                          <TDLINE>Conferente</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -10711,18 +10513,7 @@
                         <NAME>
                          <INAME>T_ASS_ENTREGADOR</INAME>
                         </NAME>
-                        <CAPTION>- Ass. Entregador (2.2)</CAPTION>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>P2</TDFORMAT>
-                          <TDLINE>____________________</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>P2</TDFORMAT>
-                          <TDLINE>Entregador</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_TRANSPORTE_ITINERARIO</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -10850,7 +10641,6 @@
               <NAME>
                <INAME>%OUTATTRIB1</INAME>
               </NAME>
-              <CAPTION>Nova opção de saída</CAPTION>
               <U_WFRAME>PT</U_WFRAME>
               <U_WBOXV>CM</U_WBOXV>
               <U_WBOXH>CM</U_WBOXH>

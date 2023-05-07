@@ -11,7 +11,6 @@
     <item>
      <FUNCNAME>ZFMTM_DELETE_CTE</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>Cockpit de Frete - Eliminar CTE</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_ACCKEY</PARAMETER>
@@ -28,19 +27,16 @@
       <RSFDO>
        <PARAMETER>IV_ACCKEY</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Chave de acesso de 44 dígitos</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMTM_EXTRA_CHARGE_AND_STEP</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>Criação do custo extra e faturamento de frete</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_GKO_HEADER</PARAMETER>
@@ -57,19 +53,16 @@
       <RSFDO>
        <PARAMETER>IS_GKO_HEADER</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>GKO: Dados mestres</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMTM_EXTRA_CHARGE_SAVE</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>GKO - Save</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_COD_EVENTO</PARAMETER>
@@ -91,24 +84,20 @@
       <RSFDO>
        <PARAMETER>IV_COD_EVENTO</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tipo de custo</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IS_GKO_HEADER</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>GKO: Dados mestres</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMTM_GKO_CHECK_DFF</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>Check DFF</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_TORID</PARAMETER>
@@ -137,7 +126,6 @@
       <RSFDO>
        <PARAMETER>IV_TORID</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Documento</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_ACCKEY</PARAMETER>
@@ -146,7 +134,6 @@
       <RSFDO>
        <PARAMETER>EV_CHECK</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Valor verdadeiro: verdadeiro/falso</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_SFIR_ID</PARAMETER>
@@ -155,14 +142,12 @@
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMTM_GKO_FATURAR_ETAPA</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>GKO - Fatura Etapa</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_GKO_HEADER</PARAMETER>
@@ -179,19 +164,16 @@
       <RSFDO>
        <PARAMETER>IS_GKO_HEADER</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>GKO: Dados mestres</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMTM_GKO_FATURAR_ETAPA_2</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>GKO - Fatura Etapa</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_TORID</PARAMETER>
@@ -212,24 +194,20 @@
       <RSFDO>
        <PARAMETER>IV_TORID</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Documento</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_DEST_COD</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Código do destinatário</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMTM_GKO_PERSIST</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>Persist GKO</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_GKO_HEADER</PARAMETER>
@@ -279,37 +257,30 @@
       <RSFDO>
        <PARAMETER>IS_GKO_HEADER</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>GKO: Dados mestres</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IS_GKO_COMPL</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>GKO: Dados complementares</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_GKO_REFERENCES</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>GKO: Referências CTe/NFS</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_GKO_ACCKEY_PO_DEL</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Chave de acesso vs pedido</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_GKO_ACCKEY_PO</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Chave de acesso vs pedido</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_GKO_LOGS</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tabela de Logs</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_GKO_AGRUP_DEL</PARAMETER>
@@ -320,7 +291,6 @@
     <item>
      <FUNCNAME>ZFMTM_GKO_SAVE</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>GKO - Save</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_GKO_HEADER</PARAMETER>
@@ -337,19 +307,16 @@
       <RSFDO>
        <PARAMETER>IS_GKO_HEADER</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>GKO: Dados mestres</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMTM_REVERSAL_INVOICE_GROUP</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>Cockpit de frete - estorno do agrupamento</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_ESTORNO_MIRO</PARAMETER>
@@ -378,12 +345,10 @@
       <RSFDO>
        <PARAMETER>IV_ESTORNO_MIRO</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Flag geral</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_ESTORNO_PEDIDO</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Flag geral</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_COCKPIT</PARAMETER>
@@ -392,19 +357,16 @@
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_BAPI_RETURN</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMTM_REVERSAL_PURCHASE_ORDER</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
-     <SHORT_TEXT>Cockpit de frete - estorno de pedido</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_ACCKEY</PARAMETER>
@@ -433,27 +395,22 @@
       <RSFDO>
        <PARAMETER>IV_ACCKEY</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Chave de acesso de 44 dígitos</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_TPPROCESS</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tipo de processamento</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_SUCCESS</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Flag geral</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_BAPI_RETURN</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

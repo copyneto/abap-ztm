@@ -2,7 +2,6 @@
 <abapGit version="v1.0.0" serializer="LCL_OBJECT_ENHC" serializer_version="v1.0.0">
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
-   <SHORTTEXT>Cockpit de Gestão de Frete</SHORTTEXT>
    <ENH_CHILDS>
     <ENHNAME>ZEIMM_ARREDONDAMENTO_MIRO</ENHNAME>
     <ENHNAME>ZEIMM_COCKPIT_FRETE_MIRO</ENHNAME>

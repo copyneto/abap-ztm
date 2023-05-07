@@ -4,8 +4,7 @@
   <asx:values>
    <DCLS>
     <DCLNAME>ZC_TM_PARAM_ROADNET</DCLNAME>
-    <DCLLANGUAGE>P</DCLLANGUAGE>
-    <DDTEXT>Autorização Parâmetros de Entrada para Interface Roadnet</DDTEXT>
+    <DCLLANGUAGE>E</DCLLANGUAGE>
    </DCLS>
   </asx:values>
  </asx:abap>

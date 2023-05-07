@@ -3,7 +3,6 @@
  <sf:SMARTFORM xmlns:sf="urn:sap-com:SmartForms:2000:internal-structure" xmlns="urn:sap-com:sdixml-ifr:2000">
   <HEADER>
    <FORMNAME>ZSFTM_NFE</FORMNAME>
-   <CAPTION>Formulário NFE</CAPTION>
    <MASTERLANG>P</MASTERLANG>
    <LANGVECTOR>*</LANGVECTOR>
    <DEVCLASS></DEVCLASS>
@@ -1312,12 +1311,6 @@
                          <INAME>C_EMIT_CNPJ</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>MA</TDFORMAT>
-                          <TDLINE>CNPJ:</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -1540,12 +1533,6 @@
                          <INAME>C_EMIT_IE</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>MA</TDFORMAT>
-                          <TDLINE>INSCRIÇÃO ESTADUAL:</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -1768,12 +1755,6 @@
                          <INAME>C_EMIT_TEL</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>MA</TDFORMAT>
-                          <TDLINE>TELEFONE:</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -2256,12 +2237,6 @@
                          <INAME>C_DANFE</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>D2</TDFORMAT>
-                          <TDLINE>DANFE</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -2375,16 +2350,6 @@
                          <INAME>C_DOC_AUXILIAR</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>D1</TDFORMAT>
-                          <TDLINE>Documento Auxiliar</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>D1</TDFORMAT>
-                          <TDLINE>da Nota Fiscal Eletrônica</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -3102,19 +3067,6 @@
                          <INAME>C_DIRECT</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M1</TDFORMAT>
-                          <TDLINE>0-ENTRADA</TDLINE>
-                         </item>
-                         <item>
-                          <TDFORMAT>M1</TDFORMAT>
-                         </item>
-                         <item>
-                          <TDFORMAT>M1</TDFORMAT>
-                          <TDLINE>1-SAÍDA</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -3997,12 +3949,6 @@
                          <INAME>C_MODELO</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M1</TDFORMAT>
-                          <TDLINE>MODELO</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -4225,12 +4171,6 @@
                          <INAME>C_SERIE</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M1</TDFORMAT>
-                          <TDLINE>SERIE</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -4453,12 +4393,6 @@
                          <INAME>C_NUMERO</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M1</TDFORMAT>
-                          <TDLINE>NUMERO</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -4681,12 +4615,6 @@
                          <INAME>C_FL</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M1</TDFORMAT>
-                          <TDLINE>FL</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -4909,12 +4837,6 @@
                          <INAME>C_DATA_EMISSAO</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M1</TDFORMAT>
-                          <TDLINE>DATA DE EMISSÃO</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -5505,12 +5427,6 @@
                          <INAME>C_CONTROLE_FISCO</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>D1</TDFORMAT>
-                          <TDLINE>CONTROLE DE FISCO</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -5733,15 +5649,6 @@
                          <INAME>C_CHAVE_ACESSO_SITE</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>D0</TDFORMAT>
-                          <TDLINE>Chave de acesso para consulta de autenticidade no site</TDLINE>
-                         </item>
-                         <item>
-                          <TDLINE>www.nfe.fazenda.gov.br</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -6329,12 +6236,6 @@
                          <INAME>C_CODIGO</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M1</TDFORMAT>
-                          <TDLINE>CODIGO</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -6557,12 +6458,6 @@
                          <INAME>C_NATUREZA_PRESTACAO</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M1</TDFORMAT>
-                          <TDLINE>NATUREZA DA PRESTAÇÃO</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -7237,12 +7132,6 @@
                          <INAME>C_PROTOCOLO_AUTORIZACAO</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M1</TDFORMAT>
-                          <TDLINE>PROTOCOLO AUTORIZAÇÃO</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -7465,12 +7354,6 @@
                          <INAME>C_DATA_AUTORIZACAO</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M1</TDFORMAT>
-                          <TDLINE>DATA AUTORIZAÇÃO</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -7693,12 +7576,6 @@
                          <INAME>C_HORA_AUTORIZACAO</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M1</TDFORMAT>
-                          <TDLINE>HORA AUTORIZAÇÃO</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -8034,12 +7911,6 @@
                       <INAME>C_DESTINATARIO_TIT</INAME>
                      </NAME>
                      <APPMODE>P</APPMODE>
-                     <TEXT>
-                      <item>
-                       <TDFORMAT>M1</TDFORMAT>
-                       <TDLINE>DESTINATÁRIO/REMETENTE</TDLINE>
-                      </item>
-                     </TEXT>
                      <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                      <TEXT_AREA>
                       <ENABLED>F</ENABLED>
@@ -8905,12 +8776,6 @@
                          <INAME>C_DEST_NOME</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>MA</TDFORMAT>
-                          <TDLINE>NOME</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -9133,12 +8998,6 @@
                          <INAME>C_DEST_MUNICIPIO</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>MA</TDFORMAT>
-                          <TDLINE>MUNICÍPIO</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -9361,12 +9220,6 @@
                          <INAME>C_DEST_CEP</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>MA</TDFORMAT>
-                          <TDLINE>CEP</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -9589,12 +9442,6 @@
                          <INAME>C_DEST_ENDERECO</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>MA</TDFORMAT>
-                          <TDLINE>ENDEREÇO</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -9817,12 +9664,6 @@
                          <INAME>C_DEST_CNPJ_CPF</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>MA</TDFORMAT>
-                          <TDLINE>CNPJ/CPF</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -10045,12 +9886,6 @@
                          <INAME>C_DEST_IE</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>MA</TDFORMAT>
-                          <TDLINE>INSCRIÇÃO ESTADUAL</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -10273,12 +10108,6 @@
                          <INAME>C_DEST_TELEFONE</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>MA</TDFORMAT>
-                          <TDLINE>TELEFONE</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -10614,12 +10443,6 @@
                       <INAME>T_IMPOSTO_TIT</INAME>
                      </NAME>
                      <APPMODE>P</APPMODE>
-                     <TEXT>
-                      <item>
-                       <TDFORMAT>M1</TDFORMAT>
-                       <TDLINE>CÁLCULO DO IMPOSTO</TDLINE>
-                      </item>
-                     </TEXT>
                      <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                      <TEXT_AREA>
                       <ENABLED>F</ENABLED>
@@ -11792,12 +11615,6 @@
                          <INAME>C_VL_BASE_ICMS</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M1</TDFORMAT>
-                          <TDLINE>BASE DE CÁLCULO DO ICMS</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -12020,12 +11837,6 @@
                          <INAME>C_VL_FRETE</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M1</TDFORMAT>
-                          <TDLINE>VALOR DO FRETE</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -12248,12 +12059,6 @@
                          <INAME>C_VL_ICMS</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M1</TDFORMAT>
-                          <TDLINE>VALOR DO ICMS</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -12476,12 +12281,6 @@
                          <INAME>C_VL_SEGURO</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M1</TDFORMAT>
-                          <TDLINE>VALOR DO SEGURO</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -12704,12 +12503,6 @@
                          <INAME>C_VL_BASE_ICMS_ST</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M1</TDFORMAT>
-                          <TDLINE>BASE CALC. ICMS SUBST.</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -12932,12 +12725,6 @@
                          <INAME>C_VL_OTHBAS</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M1</TDFORMAT>
-                          <TDLINE>OUTRAS DESPESAS ACESSORIAS</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -13160,12 +12947,6 @@
                          <INAME>C_VL_ICMS_ST</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M1</TDFORMAT>
-                          <TDLINE>VALOR DO ICMS SUBST.</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -13388,12 +13169,6 @@
                          <INAME>C_VL_TOT_IPI</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M1</TDFORMAT>
-                          <TDLINE>VALOR TOTAL DO IPI</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -13616,12 +13391,6 @@
                          <INAME>C_VL_TOT_PROD</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M1</TDFORMAT>
-                          <TDLINE>VALOR TOTAL DOS PRODUTOS</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -13844,12 +13613,6 @@
                          <INAME>C_VL_TOTAL</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M1</TDFORMAT>
-                          <TDLINE>VALOR TOTAL DA NOTA</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -14185,12 +13948,6 @@
                       <INAME>C_TRANSPORTADOR_TIT</INAME>
                      </NAME>
                      <APPMODE>P</APPMODE>
-                     <TEXT>
-                      <item>
-                       <TDFORMAT>M1</TDFORMAT>
-                       <TDLINE>TRANSPORTADOR / VOLUMES TRANSPORTADOS</TDLINE>
-                      </item>
-                     </TEXT>
                      <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                      <TEXT_AREA>
                       <ENABLED>F</ENABLED>
@@ -15808,12 +15565,6 @@
                          <INAME>C_TRANSP_NOME</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>MA</TDFORMAT>
-                          <TDLINE>NOME</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -16036,12 +15787,6 @@
                          <INAME>C_TRANSP_FRETE</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>MA</TDFORMAT>
-                          <TDLINE>FRETE</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -16264,12 +16009,6 @@
                          <INAME>C_TRANSP_PLACA</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>MA</TDFORMAT>
-                          <TDLINE>PLACA VEÍCULO</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -16492,12 +16231,6 @@
                          <INAME>C_TRANSP_PLACA_UF</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>MA</TDFORMAT>
-                          <TDLINE>UF</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -16720,12 +16453,6 @@
                          <INAME>C_TRANSP_CNPJ_CPF</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>MA</TDFORMAT>
-                          <TDLINE>CNPJ/CPF</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -16948,12 +16675,6 @@
                          <INAME>C_TRANSP_ENDERECO</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>MA</TDFORMAT>
-                          <TDLINE>ENDEREÇO</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -17176,12 +16897,6 @@
                          <INAME>C_TRANSP_MUNICIPIO</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>MA</TDFORMAT>
-                          <TDLINE>MUNICÍPIO</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -17404,12 +17119,6 @@
                          <INAME>C_TRANSP_UF</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>MA</TDFORMAT>
-                          <TDLINE>UF</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -17632,12 +17341,6 @@
                          <INAME>C_TRANSP_IE</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>MA</TDFORMAT>
-                          <TDLINE>I. ESTADUAL</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -17860,12 +17563,6 @@
                          <INAME>C_TRANSP_QTD</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>MA</TDFORMAT>
-                          <TDLINE>QUANTIDADE</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -18088,12 +17785,6 @@
                          <INAME>C_TRANSP_ESPECIE</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>MA</TDFORMAT>
-                          <TDLINE>ESPÉCIE</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -18316,12 +18007,6 @@
                          <INAME>C_TRANSP_MARCA</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>MA</TDFORMAT>
-                          <TDLINE>MARCA</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -18544,12 +18229,6 @@
                          <INAME>C_TRANSP_NUMERO</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>MA</TDFORMAT>
-                          <TDLINE>NUMERO</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -18772,12 +18451,6 @@
                          <INAME>C_TRANSP_PESO_BRUTO</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>MA</TDFORMAT>
-                          <TDLINE>PESO BRUTO</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -19000,12 +18673,6 @@
                          <INAME>C_TRANSP_PESO_LIQUIDO</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>MA</TDFORMAT>
-                          <TDLINE>PESO LÍQUIDO</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -19341,12 +19008,6 @@
                       <INAME>C_PRODUTO_TIT</INAME>
                      </NAME>
                      <APPMODE>P</APPMODE>
-                     <TEXT>
-                      <item>
-                       <TDFORMAT>M1</TDFORMAT>
-                       <TDLINE>DADOS DO PRODUTO / SERVIÇO</TDLINE>
-                      </item>
-                     </TEXT>
                      <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                      <TEXT_AREA>
                       <ENABLED>F</ENABLED>
@@ -24371,12 +24032,6 @@
                          <INAME>C_PRODUTO</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M0</TDFORMAT>
-                          <TDLINE>CÓDIGO DO PRODUTO</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -24599,12 +24254,6 @@
                          <INAME>C_PRODUTO_TXT</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M0</TDFORMAT>
-                          <TDLINE>DESCRIÇÃO DOS PRODUTOS/SERVIÇOS</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -24827,12 +24476,6 @@
                          <INAME>C_NCM</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M0</TDFORMAT>
-                          <TDLINE>NCM</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -25055,12 +24698,6 @@
                          <INAME>C_CST</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M0</TDFORMAT>
-                          <TDLINE>C.S.T.</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -25283,12 +24920,6 @@
                          <INAME>C_UNID</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M0</TDFORMAT>
-                          <TDLINE>UNID.</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -25511,12 +25142,6 @@
                          <INAME>C_QUANTIDADE</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M0</TDFORMAT>
-                          <TDLINE>QUANT.</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -25739,12 +25364,6 @@
                          <INAME>C_VALOR_UNITARIO</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M0</TDFORMAT>
-                          <TDLINE>VALOR UNITÁRIO</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -25967,12 +25586,6 @@
                          <INAME>C_VALOR_TOTAL</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M0</TDFORMAT>
-                          <TDLINE>VALOR TOTAL</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -26195,12 +25808,6 @@
                          <INAME>C_ALIQ_ICMS</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M0</TDFORMAT>
-                          <TDLINE>ALIQ. ICMS</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -27408,7 +27015,6 @@
               <NAME>
                <INAME>%OUTATTRIB1</INAME>
               </NAME>
-              <CAPTION>Nova opção de saída</CAPTION>
               <U_WFRAME>PT</U_WFRAME>
               <U_WBOXV>CM</U_WBOXV>
               <U_WBOXH>CM</U_WBOXH>
@@ -27519,12 +27125,6 @@
                       <INAME>C_ISSQN_TIT</INAME>
                      </NAME>
                      <APPMODE>P</APPMODE>
-                     <TEXT>
-                      <item>
-                       <TDFORMAT>M1</TDFORMAT>
-                       <TDLINE>CÁLCULO DO ISSQN</TDLINE>
-                      </item>
-                     </TEXT>
                      <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                      <TEXT_AREA>
                       <ENABLED>F</ENABLED>
@@ -28106,12 +27706,6 @@
                          <INAME>C_INSCRICAO_MUNICIPAL</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M1</TDFORMAT>
-                          <TDLINE>INSCRIÇÃO MUNICIPAL</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -28334,12 +27928,6 @@
                          <INAME>C_VL_TOTAL_SERVICO</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M1</TDFORMAT>
-                          <TDLINE>VALOR TOTAL DOS SERVIÇOS</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -28562,12 +28150,6 @@
                          <INAME>C_VL_BASE_ISSQN</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M1</TDFORMAT>
-                          <TDLINE>BASE CÁLCULO DO ISSQN</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -28790,12 +28372,6 @@
                          <INAME>C_VL_ISSQN</INAME>
                         </NAME>
                         <APPMODE>P</APPMODE>
-                        <TEXT>
-                         <item>
-                          <TDFORMAT>M1</TDFORMAT>
-                          <TDLINE>VALOR DO ISSQN</TDLINE>
-                         </item>
-                        </TEXT>
                         <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -29131,12 +28707,6 @@
                       <INAME>C_ADICIONAL_TIT</INAME>
                      </NAME>
                      <APPMODE>P</APPMODE>
-                     <TEXT>
-                      <item>
-                       <TDFORMAT>M1</TDFORMAT>
-                       <TDLINE>DADOS ADICIONAIS</TDLINE>
-                      </item>
-                     </TEXT>
                      <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                      <TEXT_AREA>
                       <ENABLED>F</ENABLED>
@@ -29281,18 +28851,6 @@
                       <INAME>C_ADICIONAL</INAME>
                      </NAME>
                      <APPMODE>P</APPMODE>
-                     <TEXT>
-                      <item>
-                       <TDFORMAT>L1</TDFORMAT>
-                      </item>
-                      <item>
-                       <TDFORMAT>L1</TDFORMAT>
-                       <TDLINE>ISSQN A SER RECOLHIDO PELO TOMADOR DO SERVIÇO ART. 90, o 50, DO DECRETO</TDLINE>
-                      </item>
-                      <item>
-                       <TDLINE>25.508/2005 ..RPS 049327 NOTAS 353319</TDLINE>
-                      </item>
-                     </TEXT>
                      <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                      <TEXT_AREA>
                       <ENABLED>F</ENABLED>
@@ -29458,12 +29016,6 @@
                       <INAME>W_RESERVADO_TIT</INAME>
                      </NAME>
                      <APPMODE>P</APPMODE>
-                     <TEXT>
-                      <item>
-                       <TDFORMAT>M1</TDFORMAT>
-                       <TDLINE>RESERVADO AO FISCO</TDLINE>
-                      </item>
-                     </TEXT>
                      <STYLE_NAME>ZSSTM_NFE</STYLE_NAME>
                      <TEXT_AREA>
                       <ENABLED>F</ENABLED>
