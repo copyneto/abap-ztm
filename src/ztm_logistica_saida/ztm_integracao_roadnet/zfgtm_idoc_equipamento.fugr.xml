@@ -10,6 +10,7 @@
    <FUNCTIONS>
     <item>
      <FUNCNAME>ZFMTM_IDOC_ROADNET</FUNCNAME>
+     <SHORT_TEXT>Envio de veículo para RoadNet</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>MESSAGE_TYPE</PARAMETER>

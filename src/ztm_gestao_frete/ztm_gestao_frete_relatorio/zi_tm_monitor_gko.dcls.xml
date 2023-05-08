@@ -4,7 +4,8 @@
   <asx:values>
    <DCLS>
     <DCLNAME>ZI_TM_MONITOR_GKO</DCLNAME>
-    <DCLLANGUAGE>E</DCLLANGUAGE>
+    <DCLLANGUAGE>P</DCLLANGUAGE>
+    <DDTEXT>Controle de acesso para Monitor GKO</DDTEXT>
    </DCLS>
   </asx:values>
  </asx:abap>

@@ -32,12 +32,12 @@ _CFG_GROUP_44" SimpleFormat="true">
                <DISPLAY_TYPE>IN</DISPLAY_TYPE>
                <INDEX>1 </INDEX>
                <VISIBILITY_LABEL>02</VISIBILITY_LABEL>
-               <TEXT Transl="true"></TEXT>
+               <TEXT Transl="true">1</TEXT>
                <SPECIAL_PROPERTIES></SPECIAL_PROPERTIES>
                <WIDTH></WIDTH>
                <TAG_ACTIVE></TAG_ACTIVE>
                <TAG></TAG>
-               <TOOLTIP Transl="true"></TOOLTIP>
+               <TOOLTIP Transl="true">2</TOOLTIP>
                <EXPLANATION Transl="true"></EXPLANATION>
                <CTXT_MENU_ID></CTXT_MENU_ID>
                <INSTANCE_STYLE></INSTANCE_STYLE>

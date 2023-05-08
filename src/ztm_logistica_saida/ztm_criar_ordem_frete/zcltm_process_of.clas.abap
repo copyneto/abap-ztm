@@ -431,6 +431,7 @@ CLASS ZCLTM_PROCESS_OF IMPLEMENTATION.
     SELECT SINGLE vbeln,
                   wadat,
                   lfdat,
+                  vsbed,
                   lfuhr,
                   wauhr
       FROM likp
@@ -532,6 +533,13 @@ CLASS ZCLTM_PROCESS_OF IMPLEMENTATION.
 *          eo_message      = lo_message.
 *
 *      CLEAR lt_mod_root.
+      IF ls_likp-vsbed IS NOT INITIAL.
+        ls_tor_root-zz1_cond_exped = ls_likp-vsbed.
+        ls_tor_root-zz1_tipo_exped = '01'.
+
+        APPEND: 'ZZ1_COND_EXPED' TO lt_changed,
+                'ZZ1_TIPO_EXPED' TO lt_changed.
+      ENDIF.
     ENDIF.
 ** FIM - WMDO - 02-12-22 - Inclusão de dados da empresa
 

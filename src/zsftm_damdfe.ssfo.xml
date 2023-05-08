@@ -3,6 +3,7 @@
  <sf:SMARTFORM xmlns:sf="urn:sap-com:SmartForms:2000:internal-structure" xmlns="urn:sap-com:sdixml-ifr:2000">
   <HEADER>
    <FORMNAME>ZSFTM_DAMDFE</FORMNAME>
+   <CAPTION>GS_DAMDFE</CAPTION>
    <MASTERLANG>P</MASTERLANG>
    <LANGVECTOR>*</LANGVECTOR>
    <DEVCLASS></DEVCLASS>
@@ -328,7 +329,6 @@
            <NAME>
             <INAME>FIRSTPAGE</INAME>
            </NAME>
-           <CAPTION>Página MDFe</CAPTION>
            <NEXTPAGE>
             <INAME>FIRSTPAGE</INAME>
            </NEXTPAGE>
@@ -355,7 +355,6 @@
              <NAME>
               <INAME>%GRAPHIC1</INAME>
              </NAME>
-             <CAPTION>Tela de fundo</CAPTION>
              <RESOLUTION>0075</RESOLUTION>
              <GTYPE>B</GTYPE>
              <GKEYBDS>
@@ -519,6 +518,7 @@
                         <NAME>
                          <INAME>PIMPINELA</INAME>
                         </NAME>
+                        <CAPTION>Nova alternativa 1</CAPTION>
                         <COND>
                          <item>
                           <COP>EQ</COP>
@@ -547,6 +547,7 @@
                            <NAME>
                             <INAME>%EVENT18</INAME>
                            </NAME>
+                           <CAPTION>TRUE</CAPTION>
                            <EVTYPE>+</EVTYPE>
                            <T_CAPTION>
                             <item>
@@ -568,6 +569,7 @@
                               <NAME>
                                <INAME>LOGO_PIMP</INAME>
                               </NAME>
+                              <CAPTION>Gráfico novo 4</CAPTION>
                               <RESOLUTION>0100</RESOLUTION>
                               <GTYPE>B</GTYPE>
                               <GKEYBDS>
@@ -613,6 +615,7 @@
                            <NAME>
                             <INAME>%EVENT19</INAME>
                            </NAME>
+                           <CAPTION>FALSE</CAPTION>
                            <EVTYPE>-</EVTYPE>
                            <T_CAPTION>
                             <item>
@@ -639,6 +642,7 @@
                         <NAME>
                          <INAME>TCORACOES</INAME>
                         </NAME>
+                        <CAPTION>Nova alternativa 1</CAPTION>
                         <COND>
                          <item>
                           <COP>EQ</COP>
@@ -730,6 +734,7 @@
                            <NAME>
                             <INAME>%EVENT16</INAME>
                            </NAME>
+                           <CAPTION>TRUE</CAPTION>
                            <EVTYPE>+</EVTYPE>
                            <T_CAPTION>
                             <item>
@@ -751,6 +756,7 @@
                               <NAME>
                                <INAME>ZLOGO_TCOR</INAME>
                               </NAME>
+                              <CAPTION>Gráfico novo 3</CAPTION>
                               <RESOLUTION>0600</RESOLUTION>
                               <GTYPE>B</GTYPE>
                               <GKEYBDS>
@@ -796,6 +802,7 @@
                            <NAME>
                             <INAME>%EVENT17</INAME>
                            </NAME>
+                           <CAPTION>FALSE</CAPTION>
                            <EVTYPE>-</EVTYPE>
                            <T_CAPTION>
                             <item>
@@ -822,6 +829,7 @@
                         <NAME>
                          <INAME>SANTACLARA</INAME>
                         </NAME>
+                        <CAPTION>Nova alternativa 1</CAPTION>
                         <COND>
                          <item>
                           <COP>EQ</COP>
@@ -850,6 +858,7 @@
                            <NAME>
                             <INAME>%EVENT14</INAME>
                            </NAME>
+                           <CAPTION>TRUE</CAPTION>
                            <EVTYPE>+</EVTYPE>
                            <T_CAPTION>
                             <item>
@@ -871,6 +880,7 @@
                               <NAME>
                                <INAME>LOGO_SC</INAME>
                               </NAME>
+                              <CAPTION>Gráfico novo 2</CAPTION>
                               <RESOLUTION>0100</RESOLUTION>
                               <GTYPE>B</GTYPE>
                               <GKEYBDS>
@@ -916,6 +926,7 @@
                            <NAME>
                             <INAME>%EVENT15</INAME>
                            </NAME>
+                           <CAPTION>FALSE</CAPTION>
                            <EVTYPE>-</EVTYPE>
                            <T_CAPTION>
                             <item>
@@ -942,6 +953,7 @@
                         <NAME>
                          <INAME>SANTACLARA2</INAME>
                         </NAME>
+                        <CAPTION>Nova alternativa 1</CAPTION>
                         <COND>
                          <item>
                           <COP>EQ</COP>
@@ -970,6 +982,7 @@
                            <NAME>
                             <INAME>%EVENT12</INAME>
                            </NAME>
+                           <CAPTION>TRUE</CAPTION>
                            <EVTYPE>+</EVTYPE>
                            <T_CAPTION>
                             <item>
@@ -991,6 +1004,7 @@
                               <NAME>
                                <INAME>SANTA_CLARA2</INAME>
                               </NAME>
+                              <CAPTION>SANTA_CLARA</CAPTION>
                               <RESOLUTION>0100</RESOLUTION>
                               <GTYPE>B</GTYPE>
                               <GKEYBDS>
@@ -1110,6 +1124,7 @@
                            <NAME>
                             <INAME>%EVENT13</INAME>
                            </NAME>
+                           <CAPTION>FALSE</CAPTION>
                            <EVTYPE>-</EVTYPE>
                            <T_CAPTION>
                             <item>
@@ -1136,6 +1151,7 @@
                         <NAME>
                          <INAME>GRAO</INAME>
                         </NAME>
+                        <CAPTION>Nova alternativa 1</CAPTION>
                         <COND>
                          <item>
                           <COP>EQ</COP>
@@ -1164,6 +1180,7 @@
                            <NAME>
                             <INAME>%EVENT10</INAME>
                            </NAME>
+                           <CAPTION>TRUE</CAPTION>
                            <EVTYPE>+</EVTYPE>
                            <T_CAPTION>
                             <item>
@@ -1185,6 +1202,7 @@
                               <NAME>
                                <INAME>LOGO_GRAO</INAME>
                               </NAME>
+                              <CAPTION>Gráfico novo 5</CAPTION>
                               <RESOLUTION>0100</RESOLUTION>
                               <GTYPE>B</GTYPE>
                               <GKEYBDS>
@@ -1230,6 +1248,7 @@
                            <NAME>
                             <INAME>%EVENT11</INAME>
                            </NAME>
+                           <CAPTION>FALSE</CAPTION>
                            <EVTYPE>-</EVTYPE>
                            <T_CAPTION>
                             <item>
@@ -1364,6 +1383,7 @@
                      <NAME>
                       <INAME>%GRAPHIC2</INAME>
                      </NAME>
+                     <CAPTION>Gráfico novo 2</CAPTION>
                      <RESOLUTION>0075</RESOLUTION>
                      <GTYPE>B</GTYPE>
                      <GKEYBDS>
@@ -1400,6 +1420,7 @@
                      <NAME>
                       <INAME>%CONDITION3</INAME>
                      </NAME>
+                     <CAPTION>Nova alternativa 3</CAPTION>
                      <COND>
                       <item>
                        <COP>NE</COP>
@@ -1521,6 +1542,7 @@
               <NAME>
                <INAME>WID_CONTINGENCY</INAME>
               </NAME>
+              <CAPTION>CONTINGENCY</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -1543,7 +1565,18 @@
                      <NAME>
                       <INAME>%TEXT5</INAME>
                      </NAME>
+                     <CAPTION>Texto novo 5</CAPTION>
                      <APPMODE>P</APPMODE>
+                     <TEXT>
+                      <item>
+                       <TDFORMAT>PP</TDFORMAT>
+                       <TDLINE>&lt;B1&gt;EMISSÃO EM CONTINGÊNCIA: Obrigatória a autorização em 168 horas após</TDLINE>
+                      </item>
+                      <item>
+                       <TDFORMAT>=</TDFORMAT>
+                       <TDLINE> esta emissão (&amp;GS_DAMDFE-DATA_EMISSAO&amp; &amp;GS_DAMDFE-HORA_EMISSAO&amp;)&lt;/&gt;</TDLINE>
+                      </item>
+                     </TEXT>
                      <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                      <TEXT_AREA>
                       <ENABLED>F</ENABLED>
@@ -1749,6 +1782,7 @@
               <NAME>
                <INAME>%CONDITION6</INAME>
               </NAME>
+              <CAPTION>Nova alternativa 6</CAPTION>
               <COND>
                <item>
                 <COP>EQ</COP>
@@ -1779,7 +1813,6 @@
               <NAME>
                <INAME>WID_HEADER_LOGO</INAME>
               </NAME>
-              <CAPTION>Cabeçalho</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -1808,7 +1841,6 @@
                      <NAME>
                       <INAME>TPL_HEADER_LOGO</INAME>
                      </NAME>
-                     <CAPTION>Cabeçalho - Logo</CAPTION>
                      <SECTTYPE>S</SECTTYPE>
                      <OTABTYPE>S</OTABTYPE>
                      <U_FHEIGHT>CM</U_FHEIGHT>
@@ -2403,6 +2435,7 @@
                         <NAME>
                          <INAME>COMPANY_NAME</INAME>
                         </NAME>
+                        <CAPTION>Razão Social</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -2513,7 +2546,39 @@
                         <NAME>
                          <INAME>COMPANY_INFORMATION</INAME>
                         </NAME>
+                        <CAPTION>Informações Jurídicas</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&lt;CT&gt;CNPJ:&lt;/&gt; &amp;GS_DAMDFE-CNPJ&amp;    &lt;CT&gt;IE:&lt;/&gt; &amp;GS_DAMDFE-IE&amp;</TDLINE>
+                         </item>
+                         <item>
+                          <TDLINE>     &lt;CT&gt;RNTRC:&lt;/&gt;</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&lt;CT&gt;Razao Social:&lt;/&gt; &amp;GS_DAMDFE-RAZAO_SOCIAL&amp;</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&lt;CT&gt;Logradouro N.:&lt;/&gt; &amp;GS_DAMDFE-LOGRADOURO&amp; &lt;CT&gt;Complemento:</TDLINE>
+                         </item>
+                         <item>
+                          <TDLINE>&lt;/&gt;&amp;GS_DAMDFE-COMPLEMENTO&amp;</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&lt;CT&gt;Bairro&lt;/&gt;: &amp;GS_DAMDFE-BAIRRO&amp; &lt;CT&gt;UF:&lt;/&gt; &amp;GS_DAMDFE-UF&amp;</TDLINE>
+                         </item>
+                         <item>
+                          <TDLINE>  &lt;CT&gt;Municipio:&lt;/&gt; &amp;GS_DAMDFE-MUNICIPIO&amp;</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&lt;CT&gt;CEP:&lt;/&gt;&amp;GS_DAMDFE-CEP&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -2687,7 +2752,21 @@
                         <NAME>
                          <INAME>GS_DAMDFE_INFORMATION_MODEL</INAME>
                         </NAME>
+                        <CAPTION>GS_DAMDFE - Modelo</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&lt;CT&gt;Modelo&lt;/&gt;</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>  &amp;GS_DAMDFE-MODELO&amp;</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -2818,7 +2897,18 @@
                         <NAME>
                          <INAME>GS_DAMDFE_INFORMATION_SERIAL</INAME>
                         </NAME>
+                        <CAPTION>GS_DAMDFE - Série</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&lt;CT&gt;Série&lt;/&gt;</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>  &amp;GS_DAMDFE-SERIE&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -2941,7 +3031,18 @@
                         <NAME>
                          <INAME>GS_DAMDFE_INFORMATION_NUMBER</INAME>
                         </NAME>
+                        <CAPTION>GS_DAMDFE - Number</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&lt;CT&gt;Número&lt;/&gt;</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&amp;GS_DAMDFE-MDFENUM&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -3064,7 +3165,18 @@
                         <NAME>
                          <INAME>GS_DAMDFE_INFORMATION_FL</INAME>
                         </NAME>
+                        <CAPTION>GS_DAMDFE - Folha</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&lt;CT&gt;FL&lt;/&gt;</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&amp;SFSY-PAGE&amp; - &amp;SFSY-FORMPAGES&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -3187,7 +3299,18 @@
                         <NAME>
                          <INAME>GS_DAMDFE_INFORMATION_DATE_TIM</INAME>
                         </NAME>
+                        <CAPTION>GS_DAMDFE - Data e Hora</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&lt;CT&gt;Data e Hora da Emissão&lt;/&gt;</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>  &amp;GS_DAMDFE-DATA_EMISSAO&amp; &amp;GS_DAMDFE-HORA_EMISSAO&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -3310,7 +3433,18 @@
                         <NAME>
                          <INAME>GS_DAMDFE_INFORMATION_UF_CARRY</INAME>
                         </NAME>
+                        <CAPTION>GS_DAMDFE - UF de Carregamento</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&lt;CT&gt;UF Carreg.&lt;/&gt;</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>  &amp;GS_DAMDFE-UF_CARREGA&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -3433,7 +3567,18 @@
                         <NAME>
                          <INAME>GS_DAMDFE_INFORMATION_UFD</INAME>
                         </NAME>
+                        <CAPTION>GS_DAMDFE - UF de Descarregame</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&lt;CT&gt;UF Descarr.&lt;/&gt;</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>  &amp;GS_DAMDFE-UF_DESCARREGA&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -3649,7 +3794,6 @@
               <NAME>
                <INAME>WID_HEADER_GS_DAMDFE</INAME>
               </NAME>
-              <CAPTION>Cabeçalho</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -3678,7 +3822,6 @@
                      <NAME>
                       <INAME>TPL_HEADER_GS_DAMDFE</INAME>
                      </NAME>
-                     <CAPTION>Cabeçalho - GS_DAMDFE</CAPTION>
                      <SECTTYPE>S</SECTTYPE>
                      <OTABTYPE>S</OTABTYPE>
                      <U_FHEIGHT>CM</U_FHEIGHT>
@@ -4007,7 +4150,14 @@
                         <NAME>
                          <INAME>GS_DAMDFE</INAME>
                         </NAME>
+                        <CAPTION>GS_DAMDFE</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>PD</TDFORMAT>
+                          <TDLINE>&lt;CD&gt;DAMDFE&lt;/&gt;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -4121,7 +4271,18 @@
                         <NAME>
                          <INAME>DAMDFE_DESCRIPTION</INAME>
                         </NAME>
+                        <CAPTION>DAMDFE - Descrição</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>PA</TDFORMAT>
+                          <TDLINE>&lt;CA&gt;Documento Auxiliar de Manifesto Eletrônico&lt;/&gt;</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>PA</TDFORMAT>
+                          <TDLINE>&lt;CA&gt; de Documentos Fiscais                                       &lt;/&gt;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -4244,7 +4405,30 @@
                         <NAME>
                          <INAME>DAMDFE_BARCODE</INAME>
                         </NAME>
+                        <CAPTION>GS_DAMDFE - Código de Barra</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&lt;CT&gt;CONTROLE DO FISCO&lt;/&gt;</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                         </item>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                         </item>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                         </item>
+                         <item>
+                          <TDFORMAT>*</TDFORMAT>
+                         </item>
+                         <item>
+                          <TDFORMAT>QB</TDFORMAT>
+                          <TDLINE>  &lt;BC&gt;&amp;GS_DAMDFE-CHAVE_ACESSO&amp;&lt;/&gt;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -4399,7 +4583,18 @@
                         <NAME>
                          <INAME>GS_DAMDFE_ACESS_KEY</INAME>
                         </NAME>
+                        <CAPTION>GS_DAMDFE - Código de Acesso</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&lt;CT&gt;CHAVE DE ACESSO&lt;/&gt;</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>  &amp;GS_DAMDFE-CHAVE_ACESSO&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -4522,7 +4717,18 @@
                         <NAME>
                          <INAME>GS_DAMDFE_PROTOCOL</INAME>
                         </NAME>
+                        <CAPTION>GS_DAMDFE - Protocolo de Autor</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&lt;CT&gt;PROTOCOLO DE AUTORIZAÇÃO DE USO&lt;/&gt;</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&amp;GS_DAMDFE-protocolo&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -4738,7 +4944,6 @@
               <NAME>
                <INAME>WID_MODAL</INAME>
               </NAME>
-              <CAPTION>Modal Rodoviário de CargoModal</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -4767,7 +4972,6 @@
                      <NAME>
                       <INAME>TPL_MODAL_RODOVIARIO_CARGO</INAME>
                      </NAME>
-                     <CAPTION>Modal Rodoviário de Cargo</CAPTION>
                      <SECTTYPE>S</SECTTYPE>
                      <OTABTYPE>S</OTABTYPE>
                      <U_FHEIGHT>CM</U_FHEIGHT>
@@ -5032,7 +5236,14 @@
                         <NAME>
                          <INAME>ROAD_TRANSPORT</INAME>
                         </NAME>
+                        <CAPTION>Modal Rodoviário de Carga</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>PC</TDFORMAT>
+                          <TDLINE>&lt;CT&gt;Modal Rodoviário de Carga&lt;/&gt;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -5072,7 +5283,18 @@
                         <NAME>
                          <INAME>MODAL_CTE</INAME>
                         </NAME>
+                        <CAPTION>Qtd. CT-e</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&lt;CT&gt;Qtd. CT-e&lt;/&gt;</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>  0</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -5195,7 +5417,18 @@
                         <NAME>
                          <INAME>MODAL_NFE</INAME>
                         </NAME>
+                        <CAPTION>Qtd. Nf-e</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&lt;CT&gt;Qtd. Nf-e&lt;/&gt;</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>  &amp;GS_DAMDFE-QUANT_NFE&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -5318,7 +5551,18 @@
                         <NAME>
                          <INAME>MODAL_WEIGHT</INAME>
                         </NAME>
+                        <CAPTION>Peso Total (Kg)</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&lt;CT&gt;Peso Total (Kg)&lt;/&gt;</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>  &amp;GS_DAMDFE-PESO_TOTAL&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -5534,7 +5778,6 @@
               <NAME>
                <INAME>WID_VEHICLE</INAME>
               </NAME>
-              <CAPTION>Veículo</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -5563,7 +5806,6 @@
                      <NAME>
                       <INAME>TPL_VEICULO_PEDAGIO</INAME>
                      </NAME>
-                     <CAPTION>Veículo - Placa - Ped. - Resp.</CAPTION>
                      <SECTTYPE>S</SECTTYPE>
                      <OTABTYPE>S</OTABTYPE>
                      <U_FHEIGHT>CM</U_FHEIGHT>
@@ -6102,7 +6344,14 @@
                         <NAME>
                          <INAME>VEHICLE</INAME>
                         </NAME>
+                        <CAPTION>Veículo</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&lt;CT&gt;Veículo&lt;/&gt;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -6142,7 +6391,14 @@
                         <NAME>
                          <INAME>VEHICLE_PLATE</INAME>
                         </NAME>
+                        <CAPTION>Placa</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&lt;CT&gt;Placa&lt;/&gt;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -6256,6 +6512,7 @@
                         <NAME>
                          <INAME>VEHICLE_PLACA_INFO</INAME>
                         </NAME>
+                        <CAPTION>PLACA</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -6369,7 +6626,14 @@
                         <NAME>
                          <INAME>VEHICLE_RNTRC</INAME>
                         </NAME>
+                        <CAPTION>RNTRC</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&lt;CT&gt;RNTRC&lt;/&gt;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -6483,6 +6747,7 @@
                         <NAME>
                          <INAME>VEHICLE_RNTRC_INFO</INAME>
                         </NAME>
+                        <CAPTION>RNTRC</CAPTION>
                         <NOLANGUAGE>X</NOLANGUAGE>
                         <APPMODE>P</APPMODE>
                         <TEXT>
@@ -6605,7 +6870,14 @@
                         <NAME>
                          <INAME>TOLL</INAME>
                         </NAME>
+                        <CAPTION>Vale Pedágio</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&lt;CT&gt;Vale Pedágio&lt;/&gt;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -6719,7 +6991,18 @@
                         <NAME>
                          <INAME>TOLL_RESPONSABLE</INAME>
                         </NAME>
+                        <CAPTION>Responsável pelo CNPJ</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&lt;CT&gt;Responsável pelo CNPJ  &lt;/&gt;</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&amp;GS_DAMDFE-CNPJ_PROP&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -6842,7 +7125,18 @@
                         <NAME>
                          <INAME>TOLL_PROVIDER</INAME>
                         </NAME>
+                        <CAPTION>Fornecedor CNPJ</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&lt;CT&gt;Fornecedora CNPJ  &lt;/&gt;</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&amp;GS_DAMDFE-PED_CNPJPG&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -6965,7 +7259,18 @@
                         <NAME>
                          <INAME>TOLL_CHECKING</INAME>
                         </NAME>
+                        <CAPTION>Nº Comprovante</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&lt;CT&gt;Nº Comprovante &lt;/&gt;</TDLINE>
+                         </item>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&amp;GS_DAMDFE-NCOMPRA&amp;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -7181,7 +7486,6 @@
               <NAME>
                <INAME>WID_CONDUCTOR</INAME>
               </NAME>
-              <CAPTION>GT_CONDUTOR</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -7210,7 +7514,6 @@
                      <NAME>
                       <INAME>TPL_CONDUTOR</INAME>
                      </NAME>
-                     <CAPTION>Veículo - Placa - Ped. - Resp.</CAPTION>
                      <SECTTYPE>S</SECTTYPE>
                      <OTABTYPE>S</OTABTYPE>
                      <U_FHEIGHT>CM</U_FHEIGHT>
@@ -7534,7 +7837,14 @@
                         <NAME>
                          <INAME>DRIVER</INAME>
                         </NAME>
+                        <CAPTION>GT_CONDUTOR</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&lt;CT&gt;Condutor&lt;/&gt;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -7648,7 +7958,14 @@
                         <NAME>
                          <INAME>DRIVER_CPF</INAME>
                         </NAME>
+                        <CAPTION>CPF</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&lt;CT&gt;CPF&lt;/&gt;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -7874,7 +8191,14 @@
                         <NAME>
                          <INAME>DRIVER_NAME</INAME>
                         </NAME>
+                        <CAPTION>Nome</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&lt;CT&gt;Nome&lt;/&gt;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -8135,6 +8459,7 @@
                            <NAME>
                             <INAME>DRIVER_CPF_INFO</INAME>
                            </NAME>
+                           <CAPTION>CPF</CAPTION>
                            <NOLANGUAGE>X</NOLANGUAGE>
                            <APPMODE>P</APPMODE>
                            <TEXT>
@@ -8245,6 +8570,7 @@
                            <NAME>
                             <INAME>DRIVER_NAME_INFO</INAME>
                            </NAME>
+                           <CAPTION>Nome</CAPTION>
                            <NOLANGUAGE>X</NOLANGUAGE>
                            <APPMODE>P</APPMODE>
                            <TEXT>
@@ -8451,6 +8777,7 @@
               <NAME>
                <INAME>WID_QRCODE</INAME>
               </NAME>
+              <CAPTION>QR Code</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -8473,6 +8800,7 @@
                      <NAME>
                       <INAME>CHAVE_MDFE_QR_CODE</INAME>
                      </NAME>
+                     <CAPTION>Carregar Linha MDF-e</CAPTION>
                      <PLIST>
                       <item>
                        <OPD>GS_DAMDFE</OPD>
@@ -8521,7 +8849,67 @@
                      <NAME>
                       <INAME>QR_CODE_INFO</INAME>
                      </NAME>
+                     <CAPTION>Informações QR Code</CAPTION>
                      <APPMODE>P</APPMODE>
+                     <TEXT>
+                      <item>
+                       <TDFORMAT>P1</TDFORMAT>
+                      </item>
+                      <item>
+                       <TDFORMAT>P2</TDFORMAT>
+                       <TDLINE>&lt;B1&gt;QR Code&lt;/&gt;</TDLINE>
+                      </item>
+                      <item>
+                       <TDFORMAT>P1</TDFORMAT>
+                       <TDLINE>,,,,</TDLINE>
+                      </item>
+                      <item>
+                       <TDFORMAT>P1</TDFORMAT>
+                      </item>
+                      <item>
+                       <TDFORMAT>P1</TDFORMAT>
+                      </item>
+                      <item>
+                       <TDFORMAT>P1</TDFORMAT>
+                      </item>
+                      <item>
+                       <TDFORMAT>P1</TDFORMAT>
+                      </item>
+                      <item>
+                       <TDFORMAT>P1</TDFORMAT>
+                      </item>
+                      <item>
+                       <TDFORMAT>P1</TDFORMAT>
+                      </item>
+                      <item>
+                       <TDFORMAT>P1</TDFORMAT>
+                      </item>
+                      <item>
+                       <TDFORMAT>P1</TDFORMAT>
+                      </item>
+                      <item>
+                       <TDFORMAT>P1</TDFORMAT>
+                      </item>
+                      <item>
+                       <TDFORMAT>P1</TDFORMAT>
+                      </item>
+                      <item>
+                       <TDFORMAT>P1</TDFORMAT>
+                      </item>
+                      <item>
+                       <TDFORMAT>P1</TDFORMAT>
+                      </item>
+                      <item>
+                       <TDFORMAT>CD</TDFORMAT>
+                      </item>
+                      <item>
+                       <TDFORMAT>CD</TDFORMAT>
+                      </item>
+                      <item>
+                       <TDFORMAT>QC</TDFORMAT>
+                       <TDLINE>              ,,,,&lt;(&gt;,&lt;)&gt;&lt;BQ&gt;&amp;GS_MDFE&amp;&lt;/&gt;</TDLINE>
+                      </item>
+                     </TEXT>
                      <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                      <TEXT_AREA>
                       <ENABLED>F</ENABLED>
@@ -8808,6 +9196,7 @@
                      <NAME>
                       <INAME>%TABLE2</INAME>
                      </NAME>
+                     <CAPTION>Nova tabela 2</CAPTION>
                      <SECTTYPE>C</SECTTYPE>
                      <DATATYPE>L</DATATYPE>
                      <TABNAME>GT_NFE</TABNAME>
@@ -8912,6 +9301,7 @@
                         <NAME>
                          <INAME>%EVENT4</INAME>
                         </NAME>
+                        <CAPTION>Área de cabeçalho</CAPTION>
                         <EVTYPE>H</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -8933,6 +9323,7 @@
                            <NAME>
                             <INAME>%ROW4</INAME>
                            </NAME>
+                           <CAPTION>Nova linha 4</CAPTION>
                            <SECTTYPE>R</SECTTYPE>
                            <U_FHEIGHT>CM</U_FHEIGHT>
                            <PATTERN>
@@ -9038,6 +9429,7 @@
                               <NAME>
                                <INAME>%CELL8</INAME>
                               </NAME>
+                              <CAPTION>Coluna nova 8</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -9142,7 +9534,14 @@
                                  <NAME>
                                   <INAME>TIT_DADOS</INAME>
                                  </NAME>
+                                 <CAPTION>GT_NFE</CAPTION>
                                  <APPMODE>P</APPMODE>
+                                 <TEXT>
+                                  <item>
+                                   <TDFORMAT>PC</TDFORMAT>
+                                   <TDLINE>&lt;CT&gt;Informações da Composição da Carga&lt;/&gt;</TDLINE>
+                                  </item>
+                                 </TEXT>
                                  <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                                  <TEXT_AREA>
                                   <ENABLED>F</ENABLED>
@@ -9263,6 +9662,7 @@
                         <NAME>
                          <INAME>%EVENT5</INAME>
                         </NAME>
+                        <CAPTION>Área principal</CAPTION>
                         <EVTYPE>B</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -9286,6 +9686,7 @@
                         <NAME>
                          <INAME>%EVENT6</INAME>
                         </NAME>
+                        <CAPTION>Nota de rodapé</CAPTION>
                         <EVTYPE>F</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -9312,6 +9713,7 @@
                      <NAME>
                       <INAME>%TABLE1</INAME>
                      </NAME>
+                     <CAPTION>Nova tabela 1</CAPTION>
                      <SECTTYPE>C</SECTTYPE>
                      <TABHTYPE>I</TABHTYPE>
                      <OTABTYPE>D</OTABTYPE>
@@ -9517,6 +9919,7 @@
                         <NAME>
                          <INAME>%EVENT1</INAME>
                         </NAME>
+                        <CAPTION>Área de cabeçalho</CAPTION>
                         <EVTYPE>H</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -9538,6 +9941,7 @@
                            <NAME>
                             <INAME>%ROW2</INAME>
                            </NAME>
+                           <CAPTION>Nova linha 2</CAPTION>
                            <SECTTYPE>R</SECTTYPE>
                            <U_FHEIGHT>CM</U_FHEIGHT>
                            <PATTERN>
@@ -9643,6 +10047,7 @@
                               <NAME>
                                <INAME>%CELL4</INAME>
                               </NAME>
+                              <CAPTION>Coluna nova 4</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -9747,7 +10152,14 @@
                                  <NAME>
                                   <INAME>%TEXT1</INAME>
                                  </NAME>
+                                 <CAPTION>Texto novo 1</CAPTION>
                                  <APPMODE>P</APPMODE>
+                                 <TEXT>
+                                  <item>
+                                   <TDFORMAT>PC</TDFORMAT>
+                                   <TDLINE>&lt;CT&gt;Informações dos Documentos Fiscais vinculados ao Manifesto&lt;/&gt;</TDLINE>
+                                  </item>
+                                 </TEXT>
                                  <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                                  <TEXT_AREA>
                                   <ENABLED>F</ENABLED>
@@ -9790,6 +10202,7 @@
                               <NAME>
                                <INAME>%CELL5</INAME>
                               </NAME>
+                              <CAPTION>Coluna nova 5</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -9894,7 +10307,14 @@
                                  <NAME>
                                   <INAME>%TEXT2</INAME>
                                  </NAME>
+                                 <CAPTION>Texto novo 2</CAPTION>
                                  <APPMODE>P</APPMODE>
+                                 <TEXT>
+                                  <item>
+                                   <TDFORMAT>PC</TDFORMAT>
+                                   <TDLINE>&lt;CT&gt;Identificação de Unidade de Transporte&lt;/&gt;</TDLINE>
+                                  </item>
+                                 </TEXT>
                                  <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                                  <TEXT_AREA>
                                   <ENABLED>F</ENABLED>
@@ -9937,6 +10357,7 @@
                               <NAME>
                                <INAME>%CELL6</INAME>
                               </NAME>
+                              <CAPTION>Coluna nova 6</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -10041,7 +10462,14 @@
                                  <NAME>
                                   <INAME>%TEXT3</INAME>
                                  </NAME>
+                                 <CAPTION>Texto novo 3</CAPTION>
                                  <APPMODE>P</APPMODE>
+                                 <TEXT>
+                                  <item>
+                                   <TDFORMAT>PC</TDFORMAT>
+                                   <TDLINE>&lt;CT&gt;Identificação de Unidade de Carga&lt;/&gt;</TDLINE>
+                                  </item>
+                                 </TEXT>
                                  <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                                  <TEXT_AREA>
                                   <ENABLED>F</ENABLED>
@@ -10090,6 +10518,7 @@
                         <NAME>
                          <INAME>%EVENT2</INAME>
                         </NAME>
+                        <CAPTION>Área principal</CAPTION>
                         <EVTYPE>B</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -10113,6 +10542,7 @@
                         <NAME>
                          <INAME>%EVENT3</INAME>
                         </NAME>
+                        <CAPTION>Nota de rodapé</CAPTION>
                         <EVTYPE>F</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -10223,7 +10653,6 @@
               <NAME>
                <INAME>NFE_VINCULADAS</INAME>
               </NAME>
-              <CAPTION>Principal</CAPTION>
               <WTYPE>M</WTYPE>
               <T_CAPTION>
                <item>
@@ -10252,6 +10681,7 @@
                      <NAME>
                       <INAME>%TABLE3</INAME>
                      </NAME>
+                     <CAPTION>Nova tabela 3</CAPTION>
                      <SECTTYPE>C</SECTTYPE>
                      <DATATYPE>L</DATATYPE>
                      <TABNAME>GT_NFE</TABNAME>
@@ -10445,6 +10875,7 @@
                         <NAME>
                          <INAME>%EVENT7</INAME>
                         </NAME>
+                        <CAPTION>Área de cabeçalho</CAPTION>
                         <EVTYPE>H</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -10466,6 +10897,7 @@
                            <NAME>
                             <INAME>%ROW3</INAME>
                            </NAME>
+                           <CAPTION>Nova linha 3</CAPTION>
                            <SECTTYPE>R</SECTTYPE>
                            <U_FHEIGHT>CM</U_FHEIGHT>
                            <PATTERN>
@@ -10571,6 +11003,7 @@
                               <NAME>
                                <INAME>%CELL7</INAME>
                               </NAME>
+                              <CAPTION>Coluna nova 7</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -10677,6 +11110,7 @@
                               <NAME>
                                <INAME>%CELL9</INAME>
                               </NAME>
+                              <CAPTION>Coluna nova 9</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -10783,6 +11217,7 @@
                               <NAME>
                                <INAME>%CELL10</INAME>
                               </NAME>
+                              <CAPTION>Coluna nova 10</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -10895,6 +11330,7 @@
                         <NAME>
                          <INAME>%EVENT8</INAME>
                         </NAME>
+                        <CAPTION>Área principal</CAPTION>
                         <EVTYPE>B</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -10916,6 +11352,7 @@
                            <NAME>
                             <INAME>%ROW1</INAME>
                            </NAME>
+                           <CAPTION>Nova linha 1</CAPTION>
                            <SECTTYPE>R</SECTTYPE>
                            <U_FHEIGHT>CM</U_FHEIGHT>
                            <PATTERN>
@@ -11021,6 +11458,7 @@
                               <NAME>
                                <INAME>%CELL1</INAME>
                               </NAME>
+                              <CAPTION>Coluna nova 1</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -11125,6 +11563,7 @@
                                  <NAME>
                                   <INAME>%TEXT8</INAME>
                                  </NAME>
+                                 <CAPTION>Texto novo 8</CAPTION>
                                  <NOLANGUAGE>X</NOLANGUAGE>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
@@ -11164,6 +11603,7 @@
                               <NAME>
                                <INAME>%CELL2</INAME>
                               </NAME>
+                              <CAPTION>Coluna nova 2</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -11268,6 +11708,7 @@
                                  <NAME>
                                   <INAME>%TEXT9</INAME>
                                  </NAME>
+                                 <CAPTION>Texto novo 9</CAPTION>
                                  <NOLANGUAGE>X</NOLANGUAGE>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
@@ -11307,6 +11748,7 @@
                               <NAME>
                                <INAME>%CELL3</INAME>
                               </NAME>
+                              <CAPTION>Coluna nova 3</CAPTION>
                               <SECTTYPE>E</SECTTYPE>
                               <U_FHEIGHT>CM</U_FHEIGHT>
                               <PATTERN>
@@ -11411,6 +11853,7 @@
                                  <NAME>
                                   <INAME>%TEXT10</INAME>
                                  </NAME>
+                                 <CAPTION>Texto novo 10</CAPTION>
                                  <NOLANGUAGE>X</NOLANGUAGE>
                                  <APPMODE>P</APPMODE>
                                  <TEXT>
@@ -11456,6 +11899,7 @@
                         <NAME>
                          <INAME>%EVENT9</INAME>
                         </NAME>
+                        <CAPTION>Nota de rodapé</CAPTION>
                         <EVTYPE>F</EVTYPE>
                         <T_CAPTION>
                          <item>
@@ -11572,6 +12016,7 @@
               <NAME>
                <INAME>NFE_VINCULADAS_DEFAULT</INAME>
               </NAME>
+              <CAPTION>GT_NFE</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -11594,6 +12039,7 @@
                      <NAME>
                       <INAME>%TEMPLATE1</INAME>
                      </NAME>
+                     <CAPTION>Novo padrão 1</CAPTION>
                      <SECTTYPE>S</SECTTYPE>
                      <OTABTYPE>S</OTABTYPE>
                      <U_FHEIGHT>CM</U_FHEIGHT>
@@ -11882,7 +12328,6 @@
               <NAME>
                <INAME>WID_OBSERVACAO</INAME>
               </NAME>
-              <CAPTION>Observação</CAPTION>
               <WTYPE>T</WTYPE>
               <T_CAPTION>
                <item>
@@ -11911,7 +12356,7 @@
                      <NAME>
                       <INAME>TPL_OBSERVACAO</INAME>
                      </NAME>
-                     <CAPTION>Novo padrão 2</CAPTION>
+                     <CAPTION>Observação</CAPTION>
                      <SECTTYPE>S</SECTTYPE>
                      <OTABTYPE>S</OTABTYPE>
                      <U_FHEIGHT>CM</U_FHEIGHT>
@@ -12076,6 +12521,7 @@
                         <NAME>
                          <INAME>%LOOP2</INAME>
                         </NAME>
+                        <CAPTION>Novo loop 2</CAPTION>
                         <SECTTYPE>L</SECTTYPE>
                         <DATATYPE>L</DATATYPE>
                         <TABNAME>GT_OBSERVACAO</TABNAME>
@@ -12112,6 +12558,7 @@
                            <NAME>
                             <INAME>OBSERVATION_DESCRIPTION</INAME>
                            </NAME>
+                           <CAPTION>Descrição</CAPTION>
                            <NOLANGUAGE>X</NOLANGUAGE>
                            <APPMODE>P</APPMODE>
                            <TEXT>
@@ -12225,7 +12672,14 @@
                         <NAME>
                          <INAME>OBSERVATION</INAME>
                         </NAME>
+                        <CAPTION>Observação</CAPTION>
                         <APPMODE>P</APPMODE>
+                        <TEXT>
+                         <item>
+                          <TDFORMAT>PT</TDFORMAT>
+                          <TDLINE>&lt;CT&gt;Observação&lt;/&gt;</TDLINE>
+                         </item>
+                        </TEXT>
                         <STYLE_NAME>ZSFETM_DAMDFE</STYLE_NAME>
                         <TEXT_AREA>
                          <ENABLED>F</ENABLED>
@@ -12430,6 +12884,7 @@
               <NAME>
                <INAME>%CONDITION12</INAME>
               </NAME>
+              <CAPTION>Nova alternativa 12</CAPTION>
               <OCOND>
                <NFPAGE>X</NFPAGE>
                <LPAGE>X</LPAGE>

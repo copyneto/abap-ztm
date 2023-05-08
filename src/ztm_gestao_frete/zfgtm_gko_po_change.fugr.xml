@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZFMTM_GKO_PO_CHANGE</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>BAPI_PO_CHANGE</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_PURCHASEORDER</PARAMETER>
@@ -41,22 +42,27 @@
       <RSFDO>
        <PARAMETER>IV_PURCHASEORDER</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nº do documento de compras</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_POITEM</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Tipo de tabela para BAPIMEPOITEM</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_POITEMX</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Tipo de tabela para BAPIMEPOITEMX</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_SUCESS</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Código de um caractere</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

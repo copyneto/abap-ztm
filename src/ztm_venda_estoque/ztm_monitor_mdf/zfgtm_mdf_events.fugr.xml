@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZFMTM_MDF_DRIVER_CHANGE</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Monitor MDFe: Atualizar motorista (ordem de frete)</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_DOCNUM</PARAMETER>
@@ -35,6 +36,7 @@
       <RSFDO>
        <PARAMETER>IV_DOCNUM</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nº documento</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IS_PARAMETERS</PARAMETER>
@@ -43,16 +45,19 @@
       <RSFDO>
        <PARAMETER>IV_ID</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>16 Byte UUID in 16 Bytes (Raw Format)</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMTM_MDF_SEND_BACK</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Envio MDF-e em background</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_DOCNUM</PARAMETER>
@@ -81,10 +86,12 @@
       <RSFDO>
        <PARAMETER>IV_DOCNUM</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nº documento</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_ID</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>16 Byte UUID in 16 Bytes (Raw Format)</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_RESEND</PARAMETER>
@@ -93,16 +100,19 @@
       <RSFDO>
        <PARAMETER>EV_STATUSCODE</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Código de status do documento junto às autoridades (SEFAZ)</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMTM_MONITOR_MDF_BUSCA_HIST</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Monitor MDF-e:  Recupera histórico</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_MDF</PARAMETER>
@@ -119,16 +129,19 @@
       <RSFDO>
        <PARAMETER>IS_MDF</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Informações MDF-e</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>
     <item>
      <FUNCNAME>ZFMTM_MONITOR_MDF_SALVAR</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Monitor MDF-e: Salvar dados</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_MDF</PARAMETER>
@@ -169,34 +182,42 @@
       <RSFDO>
        <PARAMETER>IS_MDF</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Informações MDF-e</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IS_MDF_IDE</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Informações MDF-e : Informações Interface IDE</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_MDF_MCD</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Informações MDF-e: Município</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IS_MDF_MOTO</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Informações MDF-e : Motorista</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_MDF_PLACA</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Informações MDFe: Placa</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_MDF_PLACA_C</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Informações MDFe: Condutor</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IT_MDF_PLACA_V</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Informações MDFe: Vale Pedágio</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

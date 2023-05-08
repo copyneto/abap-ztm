@@ -5,7 +5,8 @@
    <SRVD>
     <NAME>ZUI_TM_MOTORISTA_CHANGE</NAME>
     <TYPE>SRVD/SRV</TYPE>
-    <LANGUAGE>EN</LANGUAGE>
+    <DESCRIPTION>Definição de Serviço para Alteração de Motorista</DESCRIPTION>
+    <LANGUAGE>PT</LANGUAGE>
     <MASTER_LANGUAGE>PT</MASTER_LANGUAGE>
     <SOURCE_URI>./zui_tm_motorista_change/source/main</SOURCE_URI>
     <SOURCE_TYPE>ABAP_SOURCE</SOURCE_TYPE>

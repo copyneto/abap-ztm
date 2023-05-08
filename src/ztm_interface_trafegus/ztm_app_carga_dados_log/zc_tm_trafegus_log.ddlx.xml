@@ -5,6 +5,7 @@
    <DDLX>
     <METADATA>
      <NAME>ZC_TM_TRAFEGUS_LOG</NAME>
+     <DESCRIPTION>Interface Trafegus - Mensagens de log</DESCRIPTION>
      <MASTER_LANGUAGE>PT</MASTER_LANGUAGE>
     </METADATA>
    </DDLX>

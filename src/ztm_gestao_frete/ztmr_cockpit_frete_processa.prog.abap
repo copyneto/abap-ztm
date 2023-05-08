@@ -69,12 +69,34 @@ START-OF-SELECTION.
     RETURN.
   ENDIF.
 
+  "Recupera o nome do programa sendo executado no job
+  SELECT SINGLE
+         tbtco~jobname,
+         tbtco~jobcount,
+         tbtcp~stepcount,
+         tbtcp~progname
+    FROM tbtco
+    INNER JOIN tbtcp
+      ON  tbtcp~jobname  = tbtco~jobname
+      AND tbtcp~jobcount = tbtco~jobcount
+    INTO @DATA(ls_job)
+    WHERE tbtco~jobname   = @gv_jobname
+      AND tbtco~jobcount  = @gv_jobcount
+      AND tbtcp~stepcount = @gv_stepcount.
+
+  IF sy-subrc NE 0.
+    CLEAR ls_job.
+  ENDIF.
+
   "Verifica se possui outro Job em execução
   SELECT COUNT(*)
     FROM tbtco
-    WHERE jobname  =  gv_jobname
-      AND jobcount <> gv_jobcount
-      AND status   =  'R'.
+    INNER JOIN tbtcp
+      ON  tbtcp~jobname  = tbtco~jobname
+      AND tbtcp~jobcount = tbtco~jobcount
+    WHERE tbtco~jobcount <> gv_jobcount
+      AND tbtco~status   = 'R'
+      AND tbtcp~progname = ls_job-progname.
   IF sy-subrc IS INITIAL.
 
     "Já existe um Job em execução.
@@ -174,13 +196,13 @@ START-OF-SELECTION.
 *      COMMIT WORK AND WAIT.
 * END OF DELETE - JWSILVA - 31.03.2023
 
-      TRY.
+    TRY.
 
 *** Reprocessa erro de bloqueio
-          DATA(go_gko_process) = NEW zcltm_gko_process( iv_acckey        = <fs_001>-acckey
-                                                        iv_tpprocess     = zcltm_gko_process=>gc_tpprocess-automatico
-                                                        iv_locked_in_tab = abap_true
-                                                        iv_min_data_load = abap_false                              ).
+        DATA(go_gko_process) = NEW zcltm_gko_process( iv_acckey        = <fs_001>-acckey
+                                                      iv_tpprocess     = zcltm_gko_process=>gc_tpprocess-automatico
+                                                      iv_locked_in_tab = abap_true
+                                                      iv_min_data_load = abap_false                              ).
 
 * BEGIN OF DELETE - JWSILVA - 03.04.2023
 *          DATA: lt_006     TYPE zcltm_gko_process=>ty_t_zgkot006,
@@ -199,28 +221,28 @@ START-OF-SELECTION.
 *              OR
 *              ( <fs_001>-codstatus = zcltm_gko_process=>gc_codstatus-erro_ao_realizar_estorno_canc
 *              ).
-          go_gko_process->reprocess( ).
+        go_gko_process->reprocess( ).
 *          ELSE.
 *            go_gko_process->process( ).
 *          ENDIF.
-          go_gko_process->persist( ).
+        go_gko_process->persist( ).
+        go_gko_process->free( ).
+
+        COMMIT WORK AND WAIT.
+
+        WRITE: / |--- Chave de acesso processada|.
+
+      CATCH zcxtm_gko_process INTO DATA(lo_cx_gko_process).
+
+        IF go_gko_process IS BOUND.
           go_gko_process->free( ).
+        ENDIF.
 
-          COMMIT WORK AND WAIT.
+        LOOP AT lo_cx_gko_process->get_bapi_return( ) ASSIGNING FIELD-SYMBOL(<fs_s_bapi_return>).
+          WRITE: / |--- { <fs_s_bapi_return>-id } { <fs_s_bapi_return>-number } { <fs_s_bapi_return>-type } { <fs_s_bapi_return>-message }|.
+        ENDLOOP.
 
-          WRITE: / |--- Chave de acesso processada|.
-
-        CATCH zcxtm_gko_process INTO DATA(lo_cx_gko_process).
-
-          IF go_gko_process IS BOUND.
-            go_gko_process->free( ).
-          ENDIF.
-
-          LOOP AT lo_cx_gko_process->get_bapi_return( ) ASSIGNING FIELD-SYMBOL(<fs_s_bapi_return>).
-            WRITE: / |--- { <fs_s_bapi_return>-id } { <fs_s_bapi_return>-number } { <fs_s_bapi_return>-type } { <fs_s_bapi_return>-message }|.
-          ENDLOOP.
-
-      ENDTRY.
+    ENDTRY.
 * BEGIN OF DELETE - JWSILVA - 31.03.2023
 *
 *      DELETE zttm_gkot008 FROM ls_008.

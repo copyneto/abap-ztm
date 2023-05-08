@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZFMTM_GKO_INCM_DELETE</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>BAPI_INCOMINGINVOICE_DELETE</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_INVNUMBER</PARAMETER>
@@ -35,18 +36,22 @@
       <RSFDO>
        <PARAMETER>IV_INVNUMBER</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nº de um documento de faturamento</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_FISCALYEAR</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Exercício</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_SUCESS</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Código de um caractere</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

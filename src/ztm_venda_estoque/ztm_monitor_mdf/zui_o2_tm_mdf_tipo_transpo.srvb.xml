@@ -6,6 +6,7 @@
     <METADATA>
      <NAME>ZUI_O2_TM_MDF_TIPO_TRANSPO</NAME>
      <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>Configuração dos tipos de transporte</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_TM_MDF_TIPO_TRANSPO</HREF>

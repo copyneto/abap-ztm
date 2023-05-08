@@ -5,7 +5,7 @@
    <PDTS>
     <SHORT_TEXT>ZAGRPFAT01</SHORT_TEXT>
     <PLVAR>01</PLVAR>
-    <WI_TEXT>Decide between the alternatives available</WI_TEXT>
+    <WI_TEXT>Aprovação de Agrupamento de Faturas - &amp;ZAGRPFAT.REFERENCE&amp; &amp;ZAGRPFAT.CNPJ&amp; &amp;ZAGRPFAT.DOCUMENTDATE&amp;</WI_TEXT>
     <METHOD>
      <OTYPE>TS</OTYPE>
      <OBJID>90000059</OBJID>
@@ -20,92 +20,113 @@
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000059</OBJID>
-      <LANGU>E</LANGU>
+      <LANGU>P</LANGU>
       <SUBTY>0120</SUBTY>
       <TABSEQNR>000001</TABSEQNR>
-      <TLINE>Select one of the available decision options. This completes the</TLINE>
+      <TLINE>Prezado(a),</TLINE>
       <TFORMAT>*</TFORMAT>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000059</OBJID>
-      <LANGU>E</LANGU>
+      <LANGU>P</LANGU>
       <SUBTY>0120</SUBTY>
       <TABSEQNR>000002</TABSEQNR>
-      <TLINE>processing of this step.</TLINE>
+      <TFORMAT>*</TFORMAT>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000059</OBJID>
-      <LANGU>E</LANGU>
+      <LANGU>P</LANGU>
       <SUBTY>0120</SUBTY>
       <TABSEQNR>000003</TABSEQNR>
+      <TLINE>O agrupamento de faturas está pendente de aprovação.</TLINE>
       <TFORMAT>*</TFORMAT>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000059</OBJID>
-      <LANGU>E</LANGU>
+      <LANGU>P</LANGU>
       <SUBTY>0120</SUBTY>
       <TABSEQNR>000004</TABSEQNR>
-      <TLINE>Before you make a decision, you can display the attachments and objects</TLINE>
       <TFORMAT>*</TFORMAT>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000059</OBJID>
-      <LANGU>E</LANGU>
+      <LANGU>P</LANGU>
       <SUBTY>0120</SUBTY>
       <TABSEQNR>000005</TABSEQNR>
-      <TLINE>which have been attached to the user decision. You can also add your own</TLINE>
+      <TLINE>Referência: &amp;ZAGRPFAT.REFERENCE&amp;</TLINE>
+      <TFORMAT>*</TFORMAT>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000059</OBJID>
-      <LANGU>E</LANGU>
+      <LANGU>P</LANGU>
       <SUBTY>0120</SUBTY>
       <TABSEQNR>000006</TABSEQNR>
-      <TLINE>attachments.</TLINE>
+      <TLINE>CNPJ: &amp;ZAGRPFAT.CNPJ&amp;</TLINE>
+      <TFORMAT>*</TFORMAT>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000059</OBJID>
-      <LANGU>E</LANGU>
+      <LANGU>P</LANGU>
       <SUBTY>0120</SUBTY>
       <TABSEQNR>000007</TABSEQNR>
-      <TLINE>If you choose &lt;H&gt;Cancel&lt;/&gt;, the user decision remains in your inbox for</TLINE>
+      <TLINE>Data do Documento: &amp;ZAGRPFAT.DOCUMENTDATE&amp;</TLINE>
       <TFORMAT>*</TFORMAT>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000059</OBJID>
-      <LANGU>E</LANGU>
+      <LANGU>P</LANGU>
       <SUBTY>0120</SUBTY>
       <TABSEQNR>000008</TABSEQNR>
-      <TLINE>processing.</TLINE>
+      <TLINE>Data de Vencimento: &amp;ZAGRPFAT.PRAZOPGTO&amp;</TLINE>
+      <TFORMAT>*</TFORMAT>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000059</OBJID>
-      <LANGU>E</LANGU>
+      <LANGU>P</LANGU>
+      <SUBTY>0120</SUBTY>
+      <TABSEQNR>000009</TABSEQNR>
+      <TLINE>Valor Total: &amp;ZAGRPFAT.MONTANTE&amp;</TLINE>
+      <TFORMAT>*</TFORMAT>
+     </HRS1002>
+     <HRS1002>
+      <OTYPE>TS</OTYPE>
+      <OBJID>90000059</OBJID>
+      <LANGU>P</LANGU>
+      <SUBTY>0120</SUBTY>
+      <TABSEQNR>000010</TABSEQNR>
+      <TLINE>Valor do Desconto: &amp;ZAGRPFAT.DESCONTO&amp;</TLINE>
+      <TFORMAT>*</TFORMAT>
+     </HRS1002>
+     <HRS1002>
+      <OTYPE>TS</OTYPE>
+      <OBJID>90000059</OBJID>
+      <LANGU>P</LANGU>
       <SUBTY>0121</SUBTY>
       <TABSEQNR>000001</TABSEQNR>
-      <TLINE>User &amp;_Workitem.ExecutedByUser.Name&amp; made the user decision.</TLINE>
+      <TLINE>O usuário &amp;_Workitem.ExecutedByUser.Name&amp; executou a decisão do usuário.</TLINE>
       <TFORMAT>*</TFORMAT>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000059</OBJID>
-      <LANGU>E</LANGU>
+      <LANGU>P</LANGU>
       <SUBTY>0122</SUBTY>
       <TABSEQNR>000001</TABSEQNR>
-      <TLINE>The latest end set in the workflow definition for the decision has</TLINE>
+      <TLINE>O prazo determinado na definição de workflow para a decisão expirou.</TLINE>
       <TFORMAT>*</TFORMAT>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000059</OBJID>
-      <LANGU>E</LANGU>
+      <LANGU>P</LANGU>
       <SUBTY>0122</SUBTY>
       <TABSEQNR>000002</TABSEQNR>
       <TLINE>passed.</TLINE>
@@ -113,36 +134,36 @@
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000059</OBJID>
-      <LANGU>E</LANGU>
+      <LANGU>P</LANGU>
       <SUBTY>0123</SUBTY>
       <TABSEQNR>000001</TABSEQNR>
-      <TLINE>The deadline set in the workflow definition for the requested end for</TLINE>
+      <TLINE>A data/hora determinada na definição de workflow para o fim desejado da</TLINE>
       <TFORMAT>*</TFORMAT>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000059</OBJID>
-      <LANGU>E</LANGU>
+      <LANGU>P</LANGU>
       <SUBTY>0123</SUBTY>
       <TABSEQNR>000002</TABSEQNR>
-      <TLINE>the decision has been missed.</TLINE>
+      <TLINE>decisão foi excedida.</TLINE>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000059</OBJID>
-      <LANGU>E</LANGU>
+      <LANGU>P</LANGU>
       <SUBTY>0124</SUBTY>
       <TABSEQNR>000001</TABSEQNR>
-      <TLINE>The deadline set in the workflow definition for the latest start for the</TLINE>
+      <TLINE>A data/hora definida na definição de workflow para o último início da</TLINE>
       <TFORMAT>*</TFORMAT>
      </HRS1002>
      <HRS1002>
       <OTYPE>TS</OTYPE>
       <OBJID>90000059</OBJID>
-      <LANGU>E</LANGU>
+      <LANGU>P</LANGU>
       <SUBTY>0124</SUBTY>
       <TABSEQNR>000002</TABSEQNR>
-      <TLINE>decision has been missed.</TLINE>
+      <TLINE>determinação de decisão foi excedida.</TLINE>
      </HRS1002>
     </DESCRIPTIONS>
    </PDTS>

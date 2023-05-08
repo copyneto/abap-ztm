@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZFMTM_GKO_INCM_CANCEL</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>BAPI_INCOMINGINVOICE_CANCEL</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_INVOICEDOCNUMBER</PARAMETER>
@@ -48,30 +49,37 @@
       <RSFDO>
        <PARAMETER>IV_INVOICEDOCNUMBER</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nº de um documento de faturamento</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_FISCALYEAR</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Exercício</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_REASONREVERSAL</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Motivo para estorno ou lançamento inverso</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_POSTINGDATE</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Data de lançamento no documento</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_INVNUMBER_REVERSAL</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nº de um documento de faturamento</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_FISCALYEAR_REVERSAL</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Exercício</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

@@ -10612,7 +10612,7 @@ OR cstat  = '136'    ). " Evento registrado, mas não vinculado a CT-e
 *      RETURN.
 *    ENDIF.
 
-    IF is_gko_header-tpevento EQ 'NORMAL' OR is_gko_header-tpcte EQ gc_tpcte-normal.
+    IF is_gko_header-tpevento EQ 'NORMAL' AND is_gko_header-tpcte EQ gc_tpcte-normal.
       rv_evento = 'COCKPIT'.
       RETURN.
     ENDIF.

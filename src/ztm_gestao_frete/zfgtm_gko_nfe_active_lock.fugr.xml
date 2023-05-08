@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZFMTM_GKO_NFE_ACTIVE_LOCK</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>J_1B_NFE_UPDATE_ACTIVE_W_LOCK</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_ACTTAB</PARAMETER>
@@ -46,26 +47,32 @@
       <RSFDO>
        <PARAMETER>IS_ACTTAB</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Electronic Nota Fiscal: Actual Status</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IS_HISTTAB</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Electronic Nota Fiscal - History</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_UPDMODE</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Código de um caractere</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_WAIT_AFTER_COMMIT</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campo de seleção</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IS_HISTORY</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Electronic Nota Fiscal - History</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_SUBRC</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Campo do sistema ABAP: código de retorno de instruções ABAP</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZFMTM_GKO_INCM_CREATE1</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>BAPI_INCOMINGINVOICE_CREATE1</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IS_HEADERDATA</PARAMETER>
@@ -59,34 +60,42 @@
       <RSFDO>
        <PARAMETER>IS_HEADERDATA</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Estr.transf.dds.cabeçalho fatura recebida (criar)</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_INVOICESTATUS</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Status do documento de faturamento</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_ACCKEY</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Chave de acesso de 44 dígitos</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IS_ARREDONDAMENTO</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Arredondadmento MIRO GKO</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_INVOICEDOCNUMBER</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nº de um documento de faturamento</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_FISCALYEAR</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Exercício</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>CT_ITEMDATA</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>TABLE BAPI_INCINV_CREATE_ITEM</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>CT_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

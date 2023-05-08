@@ -5,6 +5,7 @@
    <DDLX>
     <METADATA>
      <NAME>ZC_TM_PARAM_ROADNET</NAME>
+     <DESCRIPTION>Metadata Parâmetros de Entrada para Interface Roadnet</DESCRIPTION>
      <MASTER_LANGUAGE>PT</MASTER_LANGUAGE>
     </METADATA>
    </DDLX>

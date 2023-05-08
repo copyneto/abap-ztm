@@ -6,6 +6,7 @@
     <METADATA>
      <NAME>ZUI_O2_COCKPIT_FRETE</NAME>
      <TYPE>SRVB/SVB</TYPE>
+     <DESCRIPTION>Cockpit de gestão de frete</DESCRIPTION>
      <LINKS>
       <item>
        <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_COCKPIT_FRETE</HREF>

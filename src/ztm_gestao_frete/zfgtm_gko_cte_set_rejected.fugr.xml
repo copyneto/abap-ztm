@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZFMTM_GKO_CTE_SET_REJECTED</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>/XNFE/CTE_SET_REJECTED</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_GUID</PARAMETER>
@@ -40,22 +41,27 @@
       <RSFDO>
        <PARAMETER>IV_GUID</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Chave primária como GUID em formato &apos;RAW&apos;</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_NOT_CODE</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Motivo da rejeição</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_OVERWRITE</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Código - documento pode ser sobregravado</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EV_SUBRC</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Código de um caractere</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ES_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Parâmetro de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

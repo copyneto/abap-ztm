@@ -11,6 +11,7 @@
     <item>
      <FUNCNAME>ZFMTM_GKO_REVERSE_FI_DOCS</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Cockpit de Frete - Reversão Docs. FI</SHORT_TEXT>
      <IMPORT>
       <RSIMP>
        <PARAMETER>IV_RE_BELNR</PARAMETER>
@@ -43,26 +44,32 @@
       <RSFDO>
        <PARAMETER>IV_RE_BELNR</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nº de um documento de faturamento</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_RE_GJAHR</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Exercício</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_REV_BELNR</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Nº de um documento de faturamento</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_REV_GJAHR</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Exercício</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_BAPI_RETURN</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Tabela de retorno</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

@@ -4,7 +4,8 @@
   <asx:values>
    <DCLS>
     <DCLNAME>ZI_TM_COCKPIT_FROTA</DCLNAME>
-    <DCLLANGUAGE>E</DCLLANGUAGE>
+    <DCLLANGUAGE>P</DCLLANGUAGE>
+    <DDTEXT>Controle de acesso para Gestão de Frota</DDTEXT>
    </DCLS>
   </asx:values>
  </asx:abap>

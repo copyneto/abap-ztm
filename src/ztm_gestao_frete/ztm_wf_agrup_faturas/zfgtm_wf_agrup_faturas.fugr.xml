@@ -10,6 +10,7 @@
    <FUNCTIONS>
     <item>
      <FUNCNAME>ZFMTM_WF_AGRUP_FAT_AGENT_DET</FUNCNAME>
+     <SHORT_TEXT>Metaregel zur Bearbeiterfindung</SHORT_TEXT>
      <TABLES>
       <RSTBL>
        <PARAMETER>AC_CONTAINER</PARAMETER>
@@ -29,14 +30,17 @@
       <RSFDO>
        <PARAMETER>AC_CONTAINER</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Instance Structure</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ACTOR_TAB</PARAMETER>
        <KIND>P</KIND>
+       <STEXT>Rule Resolution Result</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>NOBODY_FOUND</PARAMETER>
        <KIND>X</KIND>
+       <STEXT>No agent found</STEXT>
       </RSFDO>
      </DOCUMENTATION>
     </item>

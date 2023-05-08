@@ -4,7 +4,8 @@
   <asx:values>
    <DDLS>
     <DDLNAME>ZI_TM_NF_SEM_OF</DDLNAME>
-    <DDLANGUAGE>E</DDLANGUAGE>
+    <DDLANGUAGE>P</DDLANGUAGE>
+    <DDTEXT>Listagem NF sem OF</DDTEXT>
     <SOURCE_TYPE>V</SOURCE_TYPE>
    </DDLS>
   </asx:values>
