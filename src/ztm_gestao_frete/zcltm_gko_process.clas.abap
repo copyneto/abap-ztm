@@ -1,36 +1,36 @@
-class ZCLTM_GKO_PROCESS definition
-  public
-  final
-  create public .
+CLASS zcltm_gko_process DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
 
-public section.
+  PUBLIC SECTION.
 
-  types:
-    BEGIN OF ty_s_bsak,
+    TYPES:
+      BEGIN OF ty_s_bsak,
         bukrs TYPE bsak_view-bukrs,
         augbl TYPE bsak_view-augbl,
         auggj TYPE bsak_view-auggj,
         augdt TYPE bsak_view-augdt,
       END OF ty_s_bsak .
-  types:
-    BEGIN OF ty_s_012k,
+    TYPES:
+      BEGIN OF ty_s_012k,
         bukrs TYPE t012k-bukrs,
         hkont TYPE t012k-hkont,
       END OF ty_s_012k .
-  types:
-    BEGIN OF ty_accounts,
+    TYPES:
+      BEGIN OF ty_accounts,
         bukrs TYPE t012k-bukrs,
         hkont TYPE t012k-hkont,
       END OF ty_accounts .
-  types:
-    BEGIN OF ty_s_po_ref_nf_data,
+    TYPES:
+      BEGIN OF ty_s_po_ref_nf_data,
         docnum TYPE j_1bnfdoc-docnum,
         itmnum TYPE j_1bnflin-itmnum,
         nftot  TYPE j_1bnfdoc-nftot,
         nfnet  TYPE j_1bnflin-nfnet,
       END OF ty_s_po_ref_nf_data .
-  types:
-    BEGIN OF ty_s_material_data,
+    TYPES:
+      BEGIN OF ty_s_material_data,
         matnr   TYPE mara-matnr, "zgkop007-matnr,
         meins   TYPE mara-meins,
         steuc   TYPE marc-steuc,
@@ -44,14 +44,14 @@ public section.
         mtuse_g TYPE mbew-mtuse,
         mtorg_g TYPE mbew-mtorg,
       END OF ty_s_material_data .
-  types:
-    BEGIN OF ty_s_po_iva_detailed,
+    TYPES:
+      BEGIN OF ty_s_po_iva_detailed,
         docnum TYPE j_1bnflin-docnum,
         itmnum TYPE j_1bnflin-itmnum,
         mwskz  TYPE ekpo-mwskz,
       END OF ty_s_po_iva_detailed .
-  types:
-    BEGIN OF ty_s_j_1bnflin,
+    TYPES:
+      BEGIN OF ty_s_j_1bnflin,
         docnum    TYPE j_1bnflin-docnum,
         itmnum    TYPE j_1bnflin-itmnum,
         matnr     TYPE j_1bnflin-matnr,
@@ -79,8 +79,8 @@ public section.
         buzei     TYPE rseg-buzei,
         mtart_pa  TYPE zttm_pcockpit009-tipo_mat, " zgkop002-mtart,
       END OF ty_s_j_1bnflin .
-  types:
-    BEGIN OF ty_s_po_data_col,
+    TYPES:
+      BEGIN OF ty_s_po_data_col,
         ebeln   TYPE ekpo-ebeln,
         ebelp   TYPE ekpo-ebelp,
         mwskz   TYPE ekpo-mwskz,
@@ -93,8 +93,8 @@ public section.
         refkey  TYPE j_1bnflin-refkey,
         refitm  TYPE j_1bnflin-refitm,
       END OF ty_s_po_data_col .
-  types:
-    BEGIN OF ty_s_items_post,
+    TYPES:
+      BEGIN OF ty_s_items_post,
         docnum        TYPE j_1bnflin-docnum,
         itmnum        TYPE j_1bnflin-itmnum,
         matnr         TYPE j_1bnflin-matnr,
@@ -115,89 +115,89 @@ public section.
         itmnum_out    TYPE j_1bnflin-itmnum,
         mtart_pa      TYPE zttm_pcockpit009-tipo_mat, " zgkop002-mtart,
       END OF ty_s_items_post .
-  types TY_S_ITEM_ARREDONDAMENTO type ZSTM_GKO_ARREDONDAMENTO .
-  types:
+    TYPES ty_s_item_arredondamento TYPE zstm_gko_arredondamento .
+    TYPES:
 *    BEGIN OF ty_s_item_arredondamento,
 *        ebeln     TYPE ekpo-ebeln,
 *        ebelp     TYPE ekpo-ebelp,
 *        diferenca TYPE zttm_gkot001-vtprest,
 *      END OF ty_s_item_arredondamento .
-    ty_t_zgkot001            TYPE STANDARD TABLE OF zttm_gkot001             WITH DEFAULT KEY .
-  types:
-    ty_t_zgkot002            TYPE STANDARD TABLE OF zttm_gkot002             WITH DEFAULT KEY .
-  types:
-    ty_t_zgkot003            TYPE STANDARD TABLE OF zttm_gkot003             WITH DEFAULT KEY .
-  types:
-    ty_t_zgkot005            TYPE STANDARD TABLE OF zttm_gkot005             WITH DEFAULT KEY .
-  types:
-    ty_t_zgkot006            TYPE STANDARD TABLE OF zttm_gkot006             WITH DEFAULT KEY .
-  types:
-    ty_t_zgkot007            TYPE STANDARD TABLE OF zttm_gkot007             WITH DEFAULT KEY .
-  types:
-    ty_t_po_item             TYPE STANDARD TABLE OF bapimepoitem             WITH DEFAULT KEY .
-  types:
-    ty_t_po_itemx            TYPE STANDARD TABLE OF bapimepoitemx            WITH DEFAULT KEY .
-  types:
-    ty_t_po_cond             TYPE STANDARD TABLE OF bapimepocond             WITH DEFAULT KEY .
-  types:
-    ty_t_po_condx            TYPE STANDARD TABLE OF bapimepocondx            WITH DEFAULT KEY .
-  types:
-    ty_t_po_account          TYPE STANDARD TABLE OF bapimepoaccount          WITH DEFAULT KEY .
-  types:
-    ty_t_po_accountx         TYPE STANDARD TABLE OF bapimepoaccountx         WITH DEFAULT KEY .
-  types:
-    ty_t_acckey              TYPE STANDARD TABLE OF zttm_gkot001-acckey      WITH DEFAULT KEY .
-  types:
-    ty_t_miro_itemdata       TYPE STANDARD TABLE OF bapi_incinv_create_item  WITH DEFAULT KEY .
-  types:
-    ty_t_012k                TYPE STANDARD TABLE OF ty_s_012k .
-  types:
-    ty_t_po_ref_nf_data      TYPE STANDARD TABLE OF ty_s_po_ref_nf_data      WITH DEFAULT KEY .
-  types:
-    ty_t_po_iva_detailed     TYPE STANDARD TABLE OF ty_s_po_iva_detailed     WITH DEFAULT KEY .
-  types:
-    ty_t_j_1bnflin           TYPE STANDARD TABLE OF ty_s_j_1bnflin           WITH DEFAULT KEY .
-  types:
-    ty_t_po_data_col         TYPE STANDARD TABLE OF ty_s_po_data_col         WITH DEFAULT KEY .
-  types:
-    ty_t_items_post          TYPE STANDARD TABLE OF ty_s_items_post          WITH DEFAULT KEY .
-  types:
-    ty_t_item_arredondamento TYPE STANDARD TABLE OF ty_s_item_arredondamento WITH DEFAULT KEY .
-  types:
-    ty_t_formulario_cte TYPE STANDARD TABLE OF zi_tm_formulario_cte .
-  types TY_COMP type ZC_TM_MONITOR_GKO_CTE_COMP .
-  types:
-    ty_t_comp  TYPE STANDARD TABLE OF ty_comp .
-  types TY_CARGA type ZC_TM_MONITOR_GKO_CTE_CARGA .
-  types:
-    ty_t_carga TYPE STANDARD TABLE OF ty_carga .
-  types:
-    BEGIN OF ty_parameter,
+      ty_t_zgkot001            TYPE STANDARD TABLE OF zttm_gkot001             WITH DEFAULT KEY .
+    TYPES:
+      ty_t_zgkot002            TYPE STANDARD TABLE OF zttm_gkot002             WITH DEFAULT KEY .
+    TYPES:
+      ty_t_zgkot003            TYPE STANDARD TABLE OF zttm_gkot003             WITH DEFAULT KEY .
+    TYPES:
+      ty_t_zgkot005            TYPE STANDARD TABLE OF zttm_gkot005             WITH DEFAULT KEY .
+    TYPES:
+      ty_t_zgkot006            TYPE STANDARD TABLE OF zttm_gkot006             WITH DEFAULT KEY .
+    TYPES:
+      ty_t_zgkot007            TYPE STANDARD TABLE OF zttm_gkot007             WITH DEFAULT KEY .
+    TYPES:
+      ty_t_po_item             TYPE STANDARD TABLE OF bapimepoitem             WITH DEFAULT KEY .
+    TYPES:
+      ty_t_po_itemx            TYPE STANDARD TABLE OF bapimepoitemx            WITH DEFAULT KEY .
+    TYPES:
+      ty_t_po_cond             TYPE STANDARD TABLE OF bapimepocond             WITH DEFAULT KEY .
+    TYPES:
+      ty_t_po_condx            TYPE STANDARD TABLE OF bapimepocondx            WITH DEFAULT KEY .
+    TYPES:
+      ty_t_po_account          TYPE STANDARD TABLE OF bapimepoaccount          WITH DEFAULT KEY .
+    TYPES:
+      ty_t_po_accountx         TYPE STANDARD TABLE OF bapimepoaccountx         WITH DEFAULT KEY .
+    TYPES:
+      ty_t_acckey              TYPE STANDARD TABLE OF zttm_gkot001-acckey      WITH DEFAULT KEY .
+    TYPES:
+      ty_t_miro_itemdata       TYPE STANDARD TABLE OF bapi_incinv_create_item  WITH DEFAULT KEY .
+    TYPES:
+      ty_t_012k                TYPE STANDARD TABLE OF ty_s_012k .
+    TYPES:
+      ty_t_po_ref_nf_data      TYPE STANDARD TABLE OF ty_s_po_ref_nf_data      WITH DEFAULT KEY .
+    TYPES:
+      ty_t_po_iva_detailed     TYPE STANDARD TABLE OF ty_s_po_iva_detailed     WITH DEFAULT KEY .
+    TYPES:
+      ty_t_j_1bnflin           TYPE STANDARD TABLE OF ty_s_j_1bnflin           WITH DEFAULT KEY .
+    TYPES:
+      ty_t_po_data_col         TYPE STANDARD TABLE OF ty_s_po_data_col         WITH DEFAULT KEY .
+    TYPES:
+      ty_t_items_post          TYPE STANDARD TABLE OF ty_s_items_post          WITH DEFAULT KEY .
+    TYPES:
+      ty_t_item_arredondamento TYPE STANDARD TABLE OF ty_s_item_arredondamento WITH DEFAULT KEY .
+    TYPES:
+      ty_t_formulario_cte TYPE STANDARD TABLE OF zi_tm_formulario_cte .
+    TYPES ty_comp TYPE zc_tm_monitor_gko_cte_comp .
+    TYPES:
+      ty_t_comp  TYPE STANDARD TABLE OF ty_comp .
+    TYPES ty_carga TYPE zc_tm_monitor_gko_cte_carga .
+    TYPES:
+      ty_t_carga TYPE STANDARD TABLE OF ty_carga .
+    TYPES:
+      BEGIN OF ty_parameter,
         r_zgko_local TYPE RANGE OF zclsd_dt_nota_fiscal_servico-zgko_local,
       END OF ty_parameter .
 
-  data GS_GKO_HEADER type ZTTM_GKOT001 .
-  constants:
-    BEGIN OF gc_param_zgko_local,
+    DATA gs_gko_header TYPE zttm_gkot001 .
+    CONSTANTS:
+      BEGIN OF gc_param_zgko_local,
         modulo TYPE ztca_param_val-modulo VALUE 'TM' ##NO_TEXT,
         chave1 TYPE ztca_param_val-chave1 VALUE 'COCKPIT_FRETE' ##NO_TEXT,
         chave2 TYPE ztca_param_val-chave2 VALUE 'ZGKO_LOCAL' ##NO_TEXT,
         chave3 TYPE ztca_param_val-chave3 VALUE '' ##NO_TEXT,
       END OF gc_param_zgko_local .
-  constants:
-    BEGIN OF gc_tpdoc,
+    CONSTANTS:
+      BEGIN OF gc_tpdoc,
         cte TYPE ze_gko_tpdoc VALUE 'CTE',
         nfs TYPE ze_gko_tpdoc VALUE 'NFS',
         nfe TYPE ze_gko_tpdoc VALUE 'NFE',
       END OF gc_tpdoc .
-  constants:
-    BEGIN OF gc_prod_acabado,
+    CONSTANTS:
+      BEGIN OF gc_prod_acabado,
         nao     TYPE ze_gko_prod_acabado VALUE '0',
         sim     TYPE ze_gko_prod_acabado VALUE '1',
         parcial TYPE ze_gko_prod_acabado VALUE '2',
       END OF gc_prod_acabado .
-  constants:
-    BEGIN OF gc_codstatus,
+    CONSTANTS:
+      BEGIN OF gc_codstatus,
         documento_integrado            TYPE ze_gko_codstatus VALUE '100',
         aguardando_dados_adicionais    TYPE ze_gko_codstatus VALUE '101',
         of_identificada                TYPE ze_gko_codstatus VALUE '200',
@@ -267,22 +267,22 @@ public section.
         bloqueio_usuario_criacao_custo TYPE ze_gko_codstatus VALUE 'E44',
         bloqueio_usuario_faturam_frete TYPE ze_gko_codstatus VALUE 'E45',
       END OF gc_codstatus .
-  constants:
-    BEGIN OF gc_attach_type,
+    CONSTANTS:
+      BEGIN OF gc_attach_type,
         xml            TYPE ze_gko_attach_type VALUE '1',
         gnre           TYPE ze_gko_attach_type VALUE '2',
         comp_pgto_gnre TYPE ze_gko_attach_type VALUE '3',
         nfs            TYPE ze_gko_attach_type VALUE '4',
       END OF gc_attach_type .
-  constants:
-    BEGIN OF gc_attach_type_new,
+    CONSTANTS:
+      BEGIN OF gc_attach_type_new,
         xml            TYPE /bobf/attachment_type  VALUE 'XML',
         gnre           TYPE /bobf/attachment_type  VALUE 'GNRE',
         comp_pgto_gnre TYPE /bobf/attachment_type  VALUE 'CGNRE',
         nfs            TYPE /bobf/attachment_type  VALUE 'NFS',
       END OF gc_attach_type_new .
-  constants:
-    BEGIN OF gc_params,
+    CONSTANTS:
+      BEGIN OF gc_params,
         qtd_dias_criacao_pedido     TYPE ze_gko_id VALUE '01',
         diretorio_origem            TYPE ze_gko_id VALUE '02',
         diretorio_processados       TYPE ze_gko_id VALUE '03',
@@ -309,8 +309,8 @@ public section.
         diretorio_anexos_job        TYPE ze_gko_id VALUE '25',
         texto_cab_document_fatura_m TYPE ze_gko_id VALUE '26',
       END OF gc_params .
-  constants:
-    BEGIN OF gc_cenario,
+    CONSTANTS:
+      BEGIN OF gc_cenario,
         transferencia  TYPE ze_gko_cenario VALUE '01',
         e_commerce     TYPE ze_gko_cenario VALUE '02',
         venda_coligada TYPE ze_gko_cenario VALUE '03',
@@ -319,441 +319,441 @@ public section.
         frete_diversos TYPE ze_gko_cenario VALUE '06',
         entradas       TYPE ze_gko_cenario VALUE '07',
       END OF gc_cenario .
-  constants:
-    BEGIN OF gc_tpprocess,
+    CONSTANTS:
+      BEGIN OF gc_tpprocess,
         automatico TYPE ze_gko_tpprocess VALUE '1',
         manual     TYPE ze_gko_tpprocess VALUE '2',
       END OF gc_tpprocess .
-  constants:
+    CONSTANTS:
       " Formulários
-    BEGIN OF gc_smartforms,
+      BEGIN OF gc_smartforms,
         dacte       TYPE tdsfname VALUE 'ZSFTM_DACTE',
         dacte_compl TYPE tdsfname VALUE 'ZSFTM_DACTE_COMPL',
       END OF gc_smartforms .
-  constants:
-    BEGIN OF gc_sitdoc,
+    CONSTANTS:
+      BEGIN OF gc_sitdoc,
         autorizado TYPE ze_gko_sitdoc VALUE '1',
         cancelado  TYPE ze_gko_sitdoc VALUE '2',
         desacordo  TYPE ze_gko_sitdoc VALUE '3',
       END OF gc_sitdoc .
-  constants:
-    BEGIN OF gc_tprateio,
+    CONSTANTS:
+      BEGIN OF gc_tprateio,
         detalhado TYPE ze_gko_tprateio VALUE 'R01',
         unificado TYPE ze_gko_tprateio VALUE 'R02',
       END OF gc_tprateio .
-  constants:
-    BEGIN OF gc_docger,
+    CONSTANTS:
+      BEGIN OF gc_docger,
         pedido_miro        TYPE ze_gko_docgerado VALUE 'D001',
         miro_deb_posterior TYPE ze_gko_docgerado VALUE 'D002',
       END OF gc_docger .
-  constants:
-    BEGIN OF gc_tipo_docger,
+    CONSTANTS:
+      BEGIN OF gc_tipo_docger,
         pedido             TYPE ze_gko_tipo_doc VALUE '1',
         fatura             TYPE ze_gko_tipo_doc VALUE '2',
         agrupamento_fatura TYPE ze_gko_tipo_doc VALUE '3',
       END OF gc_tipo_docger .
-  constants:
-    BEGIN OF gc_acao,
+    CONSTANTS:
+      BEGIN OF gc_acao,
         reprocessar      TYPE ze_gko_acao VALUE 'R',
         estorno_fiscal   TYPE ze_gko_acao VALUE 'F',
         estorno_completo TYPE ze_gko_acao VALUE 'C',
         evento_cte       TYPE ze_gko_acao VALUE 'E',
         estorno          TYPE ze_gko_acao VALUE 'S',
       END OF gc_acao .
-  constants:
-    BEGIN OF gc_tipo_retencao,
+    CONSTANTS:
+      BEGIN OF gc_tipo_retencao,
         iss      TYPE ze_gko_tipo_retencao VALUE '1',
         funrural TYPE ze_gko_tipo_retencao VALUE '2',
         inss     TYPE ze_gko_tipo_retencao VALUE '3',
         trio     TYPE ze_gko_tipo_retencao VALUE '4',
         irrf     TYPE ze_gko_tipo_retencao VALUE '5',
       END OF gc_tipo_retencao .
-  constants:
-    BEGIN OF gc_memory_id,
+    CONSTANTS:
+      BEGIN OF gc_memory_id,
         acckey              TYPE memory_id VALUE 'ZMID_GKO_ACCKEY',
         acckey_header_tab   TYPE memory_id VALUE 'ZMID_GKO_ACCKEY_HEADER_TAB',
         item_arredondamento TYPE memory_id VALUE 'ZMID_GKO_ITEM_ARREDONDAMENTO',
       END OF gc_memory_id .
-  constants:
-    BEGIN OF gc_invoice_status,
+    CONSTANTS:
+      BEGIN OF gc_invoice_status,
         registrado         TYPE rbkp-rbstat VALUE '5',
         memorizado_entrado TYPE rbkp-rbstat VALUE 'D',
       END OF gc_invoice_status .
-  constants:
-    BEGIN OF gc_tpcte,
+    CONSTANTS:
+      BEGIN OF gc_tpcte,
         normal                 TYPE ze_gko_tpcte VALUE '0',
         complemento_de_valores TYPE ze_gko_tpcte VALUE '1',
         anulacao_de_valores    TYPE ze_gko_tpcte VALUE '2',
         substituto             TYPE ze_gko_tpcte VALUE '3',
       END OF gc_tpcte .
 
-  methods ADD_TO_LOG
-    importing
-      !IV_NEWDOC type ZTTM_GKOT006-NEWDOC optional
-      !IV_CODIGO type ZTTM_GKOT006-CODIGO optional
-      !IV_DESC_COD type ZTTM_GKOT006-DESC_CODIGO optional
-      !IT_BAPI_RET type BAPIRET2_T optional .
-  class-methods SAVE_TO_LOG
-    importing
-      !IV_ACCKEY type J_1B_NFE_ACCESS_KEY_DTEL44
-      !IV_NEWDOC type ZTTM_GKOT006-NEWDOC optional
-      !IV_CODIGO type ZTTM_GKOT006-CODIGO optional
-      !IV_CODSTATUS type ZTTM_GKOT006-CODSTATUS optional
-      !IV_DESC_COD type ZTTM_GKOT006-DESC_CODIGO optional
-      !IV_TPDOC type ZE_GKO_TPDOC default GC_TPDOC-CTE
-      !IV_TPPROCESS type ZE_GKO_TPPROCESS default GC_TPPROCESS-MANUAL
-      !IT_BAPI_RET type BAPIRET2_T optional .
-  methods ATTACH_FILE
-    importing
-      !IV_ATTACH_TYPE type ZE_GKO_ATTACH_TYPE
-      !IV_REPLACE type ABAP_BOOL default ABAP_FALSE
-      !IV_FILE_NAME type STRING optional
-      !IV_DATA_XSTRING type XSTRING optional
-      !IV_DATA_LENGTH type I optional
-      !IT_DATA_TAB type STANDARD TABLE optional
-    raising
-      ZCXTM_GKO_PROCESS .
-  class-methods CHECK_BANK_ACCOUNT .
-  class-methods CHECK_INVOICE_GKO
-    importing
-      !IV_BELNR type RE_BELNR optional
-      !IV_GJAHR type GJAHR optional
-    exporting
-      !EV_ACCKEY type ZTTM_GKOT001-ACCKEY
-    returning
-      value(RV_RESULT) type ABAP_BOOL .
-  class-methods CHECK_PURCHASE_ORDER_GKO
-    importing
-      !IV_EBELN type EKKO-EBELN
-    exporting
-      !ET_GKO_HEADER type TY_T_ZGKOT001
-    returning
-      value(RV_RESULT) type ABAP_BOOL .
-  methods CHECK_STATUS_SEFAZ_DIRECT
-    importing
-      value(IV_ACCKEY) type J_1B_NFE_ACCESS_KEY_DTEL44
-    raising
-      ZCXTM_GKO_PROCESS .
-  class-methods CHECK_STATUS_FROM_ACTION
-    importing
-      !IV_ACTION type ZTTM_PCOCKPIT016-ACAO
-      !IV_STATUS type ZTTM_GKOT001-CODSTATUS
-    raising
-      ZCXTM_GKO_PROCESS .
-  class-methods CLEAR_GLOBAL_DATA
-    importing
-      !IV_REPID type SY-REPID .
-  methods CONSTRUCTOR
-    importing
-      !IV_ACCKEY type ZTTM_GKOT001-ACCKEY optional
-      !IV_NEW type ABAP_BOOL default ABAP_FALSE
-      !IV_TPDOC type ZE_GKO_TPDOC default GC_TPDOC-CTE
-      !IV_TPPROCESS type ZE_GKO_TPPROCESS default GC_TPPROCESS-MANUAL
-      !IV_XML type J_1B_NFE_XML_CONTENT optional
-      !IS_NFS_DATA type ZCLSD_DT_NOTA_FISCAL_SERVICO optional
-      !IV_LOCKED_IN_TAB type ABAP_BOOL default ABAP_FALSE
-      !IV_WO_LOCK type ABAP_BOOL default ABAP_FALSE
-      !IV_MIN_DATA_LOAD type ABAP_BOOL default ABAP_TRUE
-    raising
-      ZCXTM_GKO_PROCESS .
-  methods FREE .
-  methods GET_DATA
-    exporting
-      !ES_GKO_HEADER type ZTTM_GKOT001
-      !ES_GKO_COMPL type ZTTM_GKOT004
-      !ET_GKO_ATTACHMENTS type TY_T_ZGKOT002
-      !ET_GKO_REFERENCES type TY_T_ZGKOT003
-      !ET_GKO_ACCKEY_PO type TY_T_ZGKOT005
-      !ET_GKO_LOGS type TY_T_ZGKOT006
-      !ET_GKO_EVENTS type TY_T_ZGKOT007 .
-  class-methods GET_ICON_FROM_CODSTATUS
-    importing
-      !IV_CODSTATUS type ZE_GKO_CODSTATUS
-    returning
-      value(RV_ICON) type ZE_GKO_ICON_STATUS .
-  methods GET_ITEMS_POST
-    returning
-      value(RT_ITEMS_POST) type TY_T_ITEMS_POST
-    raising
-      ZCXTM_GKO_PROCESS .
-  class-methods GET_PARAMETER
-    importing
-      !IV_ID type ZTTM_PCOCKPIT001-ID
-    returning
-      value(RV_VALUE) type ZTTM_PCOCKPIT001-PARAMETRO
-    raising
-      ZCXTM_GKO_PROCESS .
-  methods GET_PAYMENT_DOCUMENT
-    importing
-      !IT_DOC type TY_T_ZGKOT001
-    returning
-      value(RT_GKOT001) type TY_T_ZGKOT001 .
-  methods GET_PO_DATA
-    importing
-      !IV_ITEM_INTVL type BAPIMEPOHEADER-ITEM_INTVL default '10'
-    changing
-      !CV_LAST_ITEM_NUM type BAPIMEPOITEM-PO_ITEM
-      !CT_PO_ITEM type TY_T_PO_ITEM
-      !CT_PO_ITEMX type TY_T_PO_ITEMX
-      !CT_PO_COND type TY_T_PO_COND
-      !CT_PO_CONDX type TY_T_PO_CONDX
-      !CT_PO_ACCOUNT type TY_T_PO_ACCOUNT
-      !CT_PO_ACCOUNTX type TY_T_PO_ACCOUNTX
-    raising
-      ZCXTM_GKO_PROCESS .
-  class-methods GET_RFC_DESTINATION
-    returning
-      value(RV_RFC_DEST) type RFCDEST
-    raising
-      ZCXTM_GKO_PROCESS .
-  class-methods GET_STATUS_DESCRIPTION
-    importing
-      !IV_STATUS type ZTTM_GKOT001-CODSTATUS
-    returning
-      value(RV_DESCRIPTION) type VAL_TEXT .
-  class-methods GET_VALUE_FROM_XML
-    importing
-      !IV_XML type XSTRING optional
-      !IO_XSLT_PROCESSOR type ref to CL_XSLT_PROCESSOR optional
-      !IV_EXPRESSION type STRING
-    exporting
-      !EO_NODES type ref to IF_IXML_NODE_COLLECTION
-    returning
-      value(RV_VALUE) type STRING
-    raising
-      ZCXTM_GKO_PROCESS .
-  class-methods GET_XML_FROM_REF_NF
-    importing
-      !IV_BUKRS type T001-BUKRS
-      !IV_BRANCH type J_1BBRANCH-BRANCH
-      !IV_ACCKEY type J_1B_NFE_ACCESS_KEY_DTEL44
-      !IV_DIRECTION type J_1B_NFE_DIRECTION default 'OUTB'
-      !IV_DOCTYPE type J_1B_NFE_DOCTYPE default 'NFE'
-    returning
-      value(RV_XML) type J_1B_NFE_XML_CONTENT
-    raising
-      ZCXTM_GKO_PROCESS .
-  methods PERSIST
-    raising
-      ZCXTM_GKO_PROCESS .
-  methods PRINT
-    exporting
-      !EV_PDF type XSTRING
-    raising
-      ZCXTM_GKO_PROCESS .
-  class-methods PRINT_DACTE_FROM_XSTRING
-    importing
-      !IV_XML type XSTRING
-    exporting
-      !EV_PDF type XSTRING
-    raising
-      ZCXTM_GKO_PROCESS .
-  methods PROCESS
-    raising
-      ZCXTM_GKO_PROCESS .
-  class-methods PROCESS_PAYMENT
-    importing
-      !IT_DOC type TY_T_ZGKOT001 .
-  methods REJECT
-    importing
-      !IV_NOT_CODE type ZE_GKO_NOT_CODE
-    raising
-      ZCXTM_GKO_PROCESS .
-  methods REPROCESS
-    raising
-      ZCXTM_GKO_PROCESS .
-  methods REVERSAL
-    importing
-      !IV_TIPO_DOC type ZE_GKO_TIPO_DOC optional
-      !IV_STGRD type STGRD optional
-      !IV_BUDAT type BUDAT optional
-    raising
-      ZCXTM_GKO_PROCESS .
-  methods REVERSAL_INVOICE
-    importing
-      !IV_STGRD type STGRD optional
-      !IV_BUDAT type BUDAT optional
-    returning
-      value(RV_SUCCESS) type ABAP_BOOL
-    raising
-      ZCXTM_GKO_PROCESS .
-  methods CHECK_INVOICE_BEFORE_REVERSAL
-    importing
-      !IV_BELNR type RBKP-BELNR
-      !IV_GJAHR type RBKP-GJAHR
-    exporting
-      !EV_STBLG type RBKP-STBLG
-      !EV_STJAH type RBKP-STJAH
-    returning
-      value(RV_SUCCESS) type ABAP_BOOL .
-  methods REVERSAL_INVOICE_GROUPING
-    importing
-      !IV_STGRD type STGRD optional
-      !IV_BUDAT type BUDAT optional
-    returning
-      value(RV_SUCCESS) type ABAP_BOOL
-    raising
-      ZCXTM_GKO_PROCESS .
-  methods REVERSAL_PURCHASE_ORDER
-    exporting
-      !ET_RETURN type BAPIRET2_T
-    returning
-      value(RV_SUCCESS) type ABAP_BOOL
-    raising
-      ZCXTM_GKO_PROCESS .
-  methods REVERSAL_PURCHASE_ORDER_EX
-    exporting
-      !ET_RETURN type BAPIRET2_T
-    returning
-      value(RV_SUCCESS) type ABAP_BOOL
-    raising
-      ZCXTM_GKO_PROCESS .
-  class-methods SEND_DATE_PAYMENT_TO_GKO
-    importing
-      !IT_AUSZ1 type AUSZ1_TAB
-      !IT_AUSZ2 type AUSZ2_TAB
-      !IT_BSEG type BSEG_T
-    exporting
-      !EV_AUGDT type BSAK_VIEW-AUGDT
-      !EV_PAID type ABAP_BOOL
-    raising
-      ZCXTM_GKO_PROCESS .
-  methods SET_CANCEL
-    raising
-      ZCXTM_GKO_PROCESS .
-  methods SET_INVOICE_AS_PAID
-    importing
-      !IV_AUGDT type ZTTM_GKOT001-AUGDT
-      !IV_PAGO type ZTTM_GKOT001-PAGO .
-  methods SET_INVOICE_DATA
-    importing
-      !IV_NUM_FATURA type ZTTM_GKOT001-NUM_FATURA
-      !IV_VCT_GKO type ZTTM_GKOT001-VCT_GKO
-      !IV_USR_LIB type ZTTM_GKOT001-USR_LIB .
-  methods SET_INVOICE_GROUPING
-    importing
-      !IV_NUM_FATURA type ZTTM_GKOT001-NUM_FATURA
-      !IV_VCT_GKO type ZTTM_GKOT001-VCT_GKO
-      !IV_USR_LIB type ZTTM_GKOT001-USR_LIB
-      !IV_BUKRS type ZTTM_GKOT001-BUKRS_DOC
-      !IV_BELNR type ZTTM_GKOT001-BELNR
-      !IV_GJAHR type ZTTM_GKOT001-GJAHR
-      !IV_DESCONTO type WRBTR optional .
-  methods SET_INVOICE_REGISTERED .
-  methods SET_PO
-    importing
-      !IV_PO_NUMBER type EKKO-EBELN
-      !IT_PO_ITEM type TY_T_PO_ITEM .
-  methods SET_PO_APPROVED .
-  methods SET_REVERSAL_INVOICE_GROUPING
-    raising
-      ZCXTM_GKO_PROCESS .
-  methods SET_STATUS
-    importing
-      !IV_STATUS type ZE_GKO_CODSTATUS
-      !IV_NEWDOC type ZTTM_GKOT006-NEWDOC optional
-      !IV_CODIGO type ZTTM_GKOT006-CODIGO optional
-      !IV_DESC_COD type ZTTM_GKOT006-DESC_CODIGO optional
-      !IT_BAPI_RET type BAPIRET2_T optional .
-  methods SET_STATUS_PAYMENT
-    importing
-      !IV_AUGDT type ZTTM_GKOT001-AUGDT
-      !IV_PAGO type ZTTM_GKOT001-PAGO .
-  class-methods SETUP_MESSAGES
-    importing
-      !P_TASK type CLIKE .
+    METHODS add_to_log
+      IMPORTING
+        !iv_newdoc   TYPE zttm_gkot006-newdoc OPTIONAL
+        !iv_codigo   TYPE zttm_gkot006-codigo OPTIONAL
+        !iv_desc_cod TYPE zttm_gkot006-desc_codigo OPTIONAL
+        !it_bapi_ret TYPE bapiret2_t OPTIONAL .
+    CLASS-METHODS save_to_log
+      IMPORTING
+        !iv_acckey    TYPE j_1b_nfe_access_key_dtel44
+        !iv_newdoc    TYPE zttm_gkot006-newdoc OPTIONAL
+        !iv_codigo    TYPE zttm_gkot006-codigo OPTIONAL
+        !iv_codstatus TYPE zttm_gkot006-codstatus OPTIONAL
+        !iv_desc_cod  TYPE zttm_gkot006-desc_codigo OPTIONAL
+        !iv_tpdoc     TYPE ze_gko_tpdoc DEFAULT gc_tpdoc-cte
+        !iv_tpprocess TYPE ze_gko_tpprocess DEFAULT gc_tpprocess-manual
+        !it_bapi_ret  TYPE bapiret2_t OPTIONAL .
+    METHODS attach_file
+      IMPORTING
+        !iv_attach_type  TYPE ze_gko_attach_type
+        !iv_replace      TYPE abap_bool DEFAULT abap_false
+        !iv_file_name    TYPE string OPTIONAL
+        !iv_data_xstring TYPE xstring OPTIONAL
+        !iv_data_length  TYPE i OPTIONAL
+        !it_data_tab     TYPE STANDARD TABLE OPTIONAL
+      RAISING
+        zcxtm_gko_process .
+    CLASS-METHODS check_bank_account .
+    CLASS-METHODS check_invoice_gko
+      IMPORTING
+        !iv_belnr        TYPE re_belnr OPTIONAL
+        !iv_gjahr        TYPE gjahr OPTIONAL
+      EXPORTING
+        !ev_acckey       TYPE zttm_gkot001-acckey
+      RETURNING
+        VALUE(rv_result) TYPE abap_bool .
+    CLASS-METHODS check_purchase_order_gko
+      IMPORTING
+        !iv_ebeln        TYPE ekko-ebeln
+      EXPORTING
+        !et_gko_header   TYPE ty_t_zgkot001
+      RETURNING
+        VALUE(rv_result) TYPE abap_bool .
+    METHODS check_status_sefaz_direct
+      IMPORTING
+        VALUE(iv_acckey) TYPE j_1b_nfe_access_key_dtel44
+      RAISING
+        zcxtm_gko_process .
+    CLASS-METHODS check_status_from_action
+      IMPORTING
+        !iv_action TYPE zttm_pcockpit016-acao
+        !iv_status TYPE zttm_gkot001-codstatus
+      RAISING
+        zcxtm_gko_process .
+    CLASS-METHODS clear_global_data
+      IMPORTING
+        !iv_repid TYPE sy-repid .
+    METHODS constructor
+      IMPORTING
+        !iv_acckey        TYPE zttm_gkot001-acckey OPTIONAL
+        !iv_new           TYPE abap_bool DEFAULT abap_false
+        !iv_tpdoc         TYPE ze_gko_tpdoc DEFAULT gc_tpdoc-cte
+        !iv_tpprocess     TYPE ze_gko_tpprocess DEFAULT gc_tpprocess-manual
+        !iv_xml           TYPE j_1b_nfe_xml_content OPTIONAL
+        !is_nfs_data      TYPE zclsd_dt_nota_fiscal_servico OPTIONAL
+        !iv_locked_in_tab TYPE abap_bool DEFAULT abap_false
+        !iv_wo_lock       TYPE abap_bool DEFAULT abap_false
+        !iv_min_data_load TYPE abap_bool DEFAULT abap_true
+      RAISING
+        zcxtm_gko_process .
+    METHODS free .
+    METHODS get_data
+      EXPORTING
+        !es_gko_header      TYPE zttm_gkot001
+        !es_gko_compl       TYPE zttm_gkot004
+        !et_gko_attachments TYPE ty_t_zgkot002
+        !et_gko_references  TYPE ty_t_zgkot003
+        !et_gko_acckey_po   TYPE ty_t_zgkot005
+        !et_gko_logs        TYPE ty_t_zgkot006
+        !et_gko_events      TYPE ty_t_zgkot007 .
+    CLASS-METHODS get_icon_from_codstatus
+      IMPORTING
+        !iv_codstatus  TYPE ze_gko_codstatus
+      RETURNING
+        VALUE(rv_icon) TYPE ze_gko_icon_status .
+    METHODS get_items_post
+      RETURNING
+        VALUE(rt_items_post) TYPE ty_t_items_post
+      RAISING
+        zcxtm_gko_process .
+    CLASS-METHODS get_parameter
+      IMPORTING
+        !iv_id          TYPE zttm_pcockpit001-id
+      RETURNING
+        VALUE(rv_value) TYPE zttm_pcockpit001-parametro
+      RAISING
+        zcxtm_gko_process .
+    METHODS get_payment_document
+      IMPORTING
+        !it_doc           TYPE ty_t_zgkot001
+      RETURNING
+        VALUE(rt_gkot001) TYPE ty_t_zgkot001 .
+    METHODS get_po_data
+      IMPORTING
+        !iv_item_intvl    TYPE bapimepoheader-item_intvl DEFAULT '10'
+      CHANGING
+        !cv_last_item_num TYPE bapimepoitem-po_item
+        !ct_po_item       TYPE ty_t_po_item
+        !ct_po_itemx      TYPE ty_t_po_itemx
+        !ct_po_cond       TYPE ty_t_po_cond
+        !ct_po_condx      TYPE ty_t_po_condx
+        !ct_po_account    TYPE ty_t_po_account
+        !ct_po_accountx   TYPE ty_t_po_accountx
+      RAISING
+        zcxtm_gko_process .
+    CLASS-METHODS get_rfc_destination
+      RETURNING
+        VALUE(rv_rfc_dest) TYPE rfcdest
+      RAISING
+        zcxtm_gko_process .
+    CLASS-METHODS get_status_description
+      IMPORTING
+        !iv_status            TYPE zttm_gkot001-codstatus
+      RETURNING
+        VALUE(rv_description) TYPE val_text .
+    CLASS-METHODS get_value_from_xml
+      IMPORTING
+        !iv_xml            TYPE xstring OPTIONAL
+        !io_xslt_processor TYPE REF TO cl_xslt_processor OPTIONAL
+        !iv_expression     TYPE string
+      EXPORTING
+        !eo_nodes          TYPE REF TO if_ixml_node_collection
+      RETURNING
+        VALUE(rv_value)    TYPE string
+      RAISING
+        zcxtm_gko_process .
+    CLASS-METHODS get_xml_from_ref_nf
+      IMPORTING
+        !iv_bukrs     TYPE t001-bukrs
+        !iv_branch    TYPE j_1bbranch-branch
+        !iv_acckey    TYPE j_1b_nfe_access_key_dtel44
+        !iv_direction TYPE j_1b_nfe_direction DEFAULT 'OUTB'
+        !iv_doctype   TYPE j_1b_nfe_doctype DEFAULT 'NFE'
+      RETURNING
+        VALUE(rv_xml) TYPE j_1b_nfe_xml_content
+      RAISING
+        zcxtm_gko_process .
+    METHODS persist
+      RAISING
+        zcxtm_gko_process .
+    METHODS print
+      EXPORTING
+        !ev_pdf TYPE xstring
+      RAISING
+        zcxtm_gko_process .
+    CLASS-METHODS print_dacte_from_xstring
+      IMPORTING
+        !iv_xml TYPE xstring
+      EXPORTING
+        !ev_pdf TYPE xstring
+      RAISING
+        zcxtm_gko_process .
+    METHODS process
+      RAISING
+        zcxtm_gko_process .
+    CLASS-METHODS process_payment
+      IMPORTING
+        !it_doc TYPE ty_t_zgkot001 .
+    METHODS reject
+      IMPORTING
+        !iv_not_code TYPE ze_gko_not_code
+      RAISING
+        zcxtm_gko_process .
+    METHODS reprocess
+      RAISING
+        zcxtm_gko_process .
+    METHODS reversal
+      IMPORTING
+        !iv_tipo_doc TYPE ze_gko_tipo_doc OPTIONAL
+        !iv_stgrd    TYPE stgrd OPTIONAL
+        !iv_budat    TYPE budat OPTIONAL
+      RAISING
+        zcxtm_gko_process .
+    METHODS reversal_invoice
+      IMPORTING
+        !iv_stgrd         TYPE stgrd OPTIONAL
+        !iv_budat         TYPE budat OPTIONAL
+      RETURNING
+        VALUE(rv_success) TYPE abap_bool
+      RAISING
+        zcxtm_gko_process .
+    METHODS check_invoice_before_reversal
+      IMPORTING
+        !iv_belnr         TYPE rbkp-belnr
+        !iv_gjahr         TYPE rbkp-gjahr
+      EXPORTING
+        !ev_stblg         TYPE rbkp-stblg
+        !ev_stjah         TYPE rbkp-stjah
+      RETURNING
+        VALUE(rv_success) TYPE abap_bool .
+    METHODS reversal_invoice_grouping
+      IMPORTING
+        !iv_stgrd         TYPE stgrd OPTIONAL
+        !iv_budat         TYPE budat OPTIONAL
+      RETURNING
+        VALUE(rv_success) TYPE abap_bool
+      RAISING
+        zcxtm_gko_process .
+    METHODS reversal_purchase_order
+      EXPORTING
+        !et_return        TYPE bapiret2_t
+      RETURNING
+        VALUE(rv_success) TYPE abap_bool
+      RAISING
+        zcxtm_gko_process .
+    METHODS reversal_purchase_order_ex
+      EXPORTING
+        !et_return        TYPE bapiret2_t
+      RETURNING
+        VALUE(rv_success) TYPE abap_bool
+      RAISING
+        zcxtm_gko_process .
+    CLASS-METHODS send_date_payment_to_gko
+      IMPORTING
+        !it_ausz1 TYPE ausz1_tab
+        !it_ausz2 TYPE ausz2_tab
+        !it_bseg  TYPE bseg_t
+      EXPORTING
+        !ev_augdt TYPE bsak_view-augdt
+        !ev_paid  TYPE abap_bool
+      RAISING
+        zcxtm_gko_process .
+    METHODS set_cancel
+      RAISING
+        zcxtm_gko_process .
+    METHODS set_invoice_as_paid
+      IMPORTING
+        !iv_augdt TYPE zttm_gkot001-augdt
+        !iv_pago  TYPE zttm_gkot001-pago .
+    METHODS set_invoice_data
+      IMPORTING
+        !iv_num_fatura TYPE zttm_gkot001-num_fatura
+        !iv_vct_gko    TYPE zttm_gkot001-vct_gko
+        !iv_usr_lib    TYPE zttm_gkot001-usr_lib .
+    METHODS set_invoice_grouping
+      IMPORTING
+        !iv_num_fatura TYPE zttm_gkot001-num_fatura
+        !iv_vct_gko    TYPE zttm_gkot001-vct_gko
+        !iv_usr_lib    TYPE zttm_gkot001-usr_lib
+        !iv_bukrs      TYPE zttm_gkot001-bukrs_doc
+        !iv_belnr      TYPE zttm_gkot001-belnr
+        !iv_gjahr      TYPE zttm_gkot001-gjahr
+        !iv_desconto   TYPE wrbtr OPTIONAL .
+    METHODS set_invoice_registered .
+    METHODS set_po
+      IMPORTING
+        !iv_po_number TYPE ekko-ebeln
+        !it_po_item   TYPE ty_t_po_item .
+    METHODS set_po_approved .
+    METHODS set_reversal_invoice_grouping
+      RAISING
+        zcxtm_gko_process .
+    METHODS set_status
+      IMPORTING
+        !iv_status   TYPE ze_gko_codstatus
+        !iv_newdoc   TYPE zttm_gkot006-newdoc OPTIONAL
+        !iv_codigo   TYPE zttm_gkot006-codigo OPTIONAL
+        !iv_desc_cod TYPE zttm_gkot006-desc_codigo OPTIONAL
+        !it_bapi_ret TYPE bapiret2_t OPTIONAL .
+    METHODS set_status_payment
+      IMPORTING
+        !iv_augdt TYPE zttm_gkot001-augdt
+        !iv_pago  TYPE zttm_gkot001-pago .
+    CLASS-METHODS setup_messages
+      IMPORTING
+        !p_task TYPE clike .
     "! Recupera detalhes do XML, utilizado no relatório
     "! @parameter ct_cte | Formulário CTE
-  methods FILL_RELATORIO_CTE
-    changing
-      !CT_CTE type TY_T_FORMULARIO_CTE
-    raising
-      ZCXTM_GKO_PROCESS .
+    METHODS fill_relatorio_cte
+      CHANGING
+        !ct_cte TYPE ty_t_formulario_cte
+      RAISING
+        zcxtm_gko_process .
     "! Monta o relatório CTE - Componentes do Valor da Prestação do Serviço
     "! @parameter iv_filter | Filtro de seleção
     "! @parameter et_comp | Tabela de dados complementares
-  methods FILL_RELATORIO_CTE_COMP
-    importing
-      !IV_FILTER type STRING
-    exporting
-      !ET_COMP type TY_T_COMP
-    raising
-      ZCXTM_GKO_PROCESS .
+    METHODS fill_relatorio_cte_comp
+      IMPORTING
+        !iv_filter TYPE string
+      EXPORTING
+        !et_comp   TYPE ty_t_comp
+      RAISING
+        zcxtm_gko_process .
     "! Monta o relatório CTE - Quantidade de carga
     "! @parameter iv_filter | Filtro de seleção
     "! @parameter et_carga| Tabela de quantidade de carga
-  methods FILL_RELATORIO_CTE_CARGA
-    importing
-      !IV_FILTER type STRING
-    exporting
-      !ET_CARGA type TY_T_CARGA
-    raising
-      ZCXTM_GKO_PROCESS .
-  methods FATURAR_ETAPA
-    importing
-      !IV_TORID type /SCMTMS/TOR_ID .
-  methods FATURAR_ETAPA_V2 .
-  methods FATURAR_ETAPA_VALID_CALC_CUSTO
-    importing
-      !IV_TORID type /SCMTMS/TOR_ID
-    returning
-      value(RV_SUCCESS) type FLAG .
-  methods VALIDATE_PO_MIRO
-    importing
-      !IT_ITEM_DATA type TY_T_MIRO_ITEMDATA
-    raising
-      ZCXTM_GKO_PROCESS .
-  methods ATTACH_IS_VALID
-    returning
-      value(RV_VALID) type ABAP_BOOL
-    raising
-      ZCXTM_GKO_PROCESS .
-  methods CHECK_DOC_ORIG_IS_POSTED
-    raising
-      ZCXTM_GKO_PROCESS .
-  class-methods DETERMINA_CONFIGURACAO_P013
-    importing
-      !IV_ACCKEY type ZTTM_GKOT001-ACCKEY optional
-      !IV_TOR_ID type ZTTM_GKOT001-TOR_ID optional
-      !IS_HEADER type ZTTM_GKOT001 optional
-    exporting
-      !ES_HEADER type ZTTM_GKOT001
-      !EV_TOM_BRANCH type T001W-J_1BBRANCH
-      !EV_REM_BRANCH type T001W-J_1BBRANCH
-      !EV_DEST_BRANCH type T001W-J_1BBRANCH
-      !ES_P013 type ZTTM_PCOCKPIT013 .
+    METHODS fill_relatorio_cte_carga
+      IMPORTING
+        !iv_filter TYPE string
+      EXPORTING
+        !et_carga  TYPE ty_t_carga
+      RAISING
+        zcxtm_gko_process .
+    METHODS faturar_etapa
+      IMPORTING
+        !iv_torid TYPE /scmtms/tor_id .
+    METHODS faturar_etapa_v2 .
+    METHODS faturar_etapa_valid_calc_custo
+      IMPORTING
+        !iv_torid         TYPE /scmtms/tor_id
+      RETURNING
+        VALUE(rv_success) TYPE flag .
+    METHODS validate_po_miro
+      IMPORTING
+        !it_item_data TYPE ty_t_miro_itemdata
+      RAISING
+        zcxtm_gko_process .
+    METHODS attach_is_valid
+      RETURNING
+        VALUE(rv_valid) TYPE abap_bool
+      RAISING
+        zcxtm_gko_process .
+    METHODS check_doc_orig_is_posted
+      RAISING
+        zcxtm_gko_process .
+    CLASS-METHODS determina_configuracao_p013
+      IMPORTING
+        !iv_acckey      TYPE zttm_gkot001-acckey OPTIONAL
+        !iv_tor_id      TYPE zttm_gkot001-tor_id OPTIONAL
+        !is_header      TYPE zttm_gkot001 OPTIONAL
+      EXPORTING
+        !es_header      TYPE zttm_gkot001
+        !ev_tom_branch  TYPE t001w-j_1bbranch
+        !ev_rem_branch  TYPE t001w-j_1bbranch
+        !ev_dest_branch TYPE t001w-j_1bbranch
+        !es_p013        TYPE zttm_pcockpit013 .
     "! Recupera parâmetro na tabela de parâmetros
     "! @parameter is_param | Parâmetro cadastrado
     "! @parameter et_value | Valor cadastrado
-  methods GET_T_PARAMETER
-    importing
-      !IS_PARAM type ZTCA_PARAM_VAL
-    exporting
-      !ET_VALUE type ANY .
+    METHODS get_t_parameter
+      IMPORTING
+        !is_param TYPE ztca_param_val
+      EXPORTING
+        !et_value TYPE any .
     "! Recupera configurações cadastradas
     "! @parameter es_parameter | Parâmetros de configuração
     "! @parameter et_return | Mensagens de retorno
-  methods GET_CONFIGURATION
-    exporting
-      !ES_PARAMETER type TY_PARAMETER
-      !ET_RETURN type BAPIRET2_T .
-  methods EXTRA_CHARGE_AND_STEP .
-  methods RELEASE_CHARGE_STEP
-    importing
-      !IS_GKO_HEADER type ZTTM_GKOT001
-    exporting
-      !ET_RETURN type BAPIRET2_T .
-  methods GET_MESSAGE
-    importing
-      !IO_MESSAGE type ref to /BOBF/IF_FRW_MESSAGE
-    changing
-      !CT_RETURN type BAPIRET2_T .
-  class-methods DETERMINE_CHARGE
-    importing
-      !IS_GKO_HEADER type ZTTM_GKOT001
-    returning
-      value(RV_EVENTO) type /SCMTMS/TRCHARG_ELMNT_TYPECD .
-  methods CHECK_DOC_MEMO_MIRO .
+    METHODS get_configuration
+      EXPORTING
+        !es_parameter TYPE ty_parameter
+        !et_return    TYPE bapiret2_t .
+    METHODS extra_charge_and_step .
+    METHODS release_charge_step
+      IMPORTING
+        !is_gko_header TYPE zttm_gkot001
+      EXPORTING
+        !et_return     TYPE bapiret2_t .
+    METHODS get_message
+      IMPORTING
+        !io_message TYPE REF TO /bobf/if_frw_message
+      CHANGING
+        !ct_return  TYPE bapiret2_t .
+    CLASS-METHODS determine_charge
+      IMPORTING
+        !is_gko_header   TYPE zttm_gkot001
+      RETURNING
+        VALUE(rv_evento) TYPE /scmtms/trcharg_elmnt_typecd .
+    METHODS check_doc_memo_miro .
   PROTECTED SECTION.
 
   PRIVATE SECTION.
@@ -821,6 +821,7 @@ public section.
     METHODS check_status_sefaz .
     METHODS check_estorno_dff .
     METHODS check_dff_confirmed.
+    METHODS check_miro_created.
     METHODS clear_reversal_fi_documents
       IMPORTING
         !iv_re_belnr  TYPE zttm_gkot001-re_belnr
@@ -989,7 +990,7 @@ ENDCLASS.
 
 
 
-CLASS ZCLTM_GKO_PROCESS IMPLEMENTATION.
+CLASS zcltm_gko_process IMPLEMENTATION.
 
 
   METHOD read_file.
@@ -1407,6 +1408,10 @@ CLASS ZCLTM_GKO_PROCESS IMPLEMENTATION.
       WHEN gc_codstatus-aguardando_faturamento_frete.
 
         me->check_dff_confirmed( ).
+
+      WHEN gc_codstatus-erro_estorno_miro.
+
+        me->check_miro_created( ).
 
     ENDCASE.
 
@@ -11425,59 +11430,127 @@ OR cstat  = '136'    ). " Evento registrado, mas não vinculado a CT-e
 
 
   METHOD check_doc_memo_miro.
-
-    DATA: lt_errors TYPE zcxtm_gko=>ty_t_errors.
-
-    load_gko_references( ).
-
-    DATA(lt_gko_orig_acckey) = gt_gko_references.
-    SORT lt_gko_orig_acckey BY acckey_orig.
-    DELETE ADJACENT DUPLICATES FROM lt_gko_orig_acckey COMPARING acckey_orig.
-
-    CHECK lt_gko_orig_acckey IS NOT INITIAL.
-
-    " Verifica se a MIRO do Documento de origem, foi confirmada
-    SELECT acckey
-      FROM zttm_gkot001
-     INNER JOIN rbkp
-             ON ( rbkp~belnr = zttm_gkot001~re_belnr AND
-                  rbkp~gjahr = zttm_gkot001~re_gjahr )
-      INTO TABLE @DATA(lt_gko_orig_acckey_posted)
-       FOR ALL ENTRIES IN @lt_gko_orig_acckey
-     WHERE zttm_gkot001~acckey = @lt_gko_orig_acckey-acckey_orig
-       AND rbkp~rbstat         = @gc_invoice_status-registrado.
-
-    IF sy-subrc IS INITIAL.
-      SORT lt_gko_orig_acckey_posted BY acckey.
-    ENDIF.
-
-    IF lines( lt_gko_orig_acckey ) <> lines( lt_gko_orig_acckey_posted ).
-
-      LOOP AT lt_gko_orig_acckey ASSIGNING FIELD-SYMBOL(<fs_s_acckey_orig>).
-
-        READ TABLE lt_gko_orig_acckey_posted TRANSPORTING NO FIELDS
-                                                           WITH KEY acckey = <fs_s_acckey_orig>-acckey_orig
-                                                           BINARY SEARCH.
-        CHECK sy-subrc IS NOT INITIAL.
-
-        me->add_to_log( it_bapi_ret = VALUE #( ( type       = 'E'
-                                                 id         = zcxtm_gko_process=>orig_acckey_not_posted-msgid
-                                                 number     = zcxtm_gko_process=>orig_acckey_not_posted-msgno
-                                                 message_v1 = <fs_s_acckey_orig>-acckey_orig ) ) ).
-
-        " A chave de origem & não possui MIRO Confirmada.
-        APPEND NEW zcxtm_gko_process( textid    = zcxtm_gko_process=>orig_acckey_not_posted
-                                      gv_msgv1  = CONV #( <fs_s_acckey_orig>-acckey_orig ) )
-                                    TO lt_errors.
-
-      ENDLOOP.
-
-      RAISE EXCEPTION TYPE zcxtm_gko_process
-        EXPORTING
-          gt_errors = lt_errors.
-
-    ENDIF.
-
+*
+*    DATA: lt_errors TYPE zcxtm_gko=>ty_t_errors.
+*
+*    load_gko_references( ).
+*
+*    DATA(lt_gko_orig_acckey) = gt_gko_references.
+*    SORT lt_gko_orig_acckey BY acckey_orig.
+*    DELETE ADJACENT DUPLICATES FROM lt_gko_orig_acckey COMPARING acckey_orig.
+*
+*    CHECK lt_gko_orig_acckey IS NOT INITIAL.
+*
+*    " Verifica se a MIRO do Documento de origem, foi confirmada
+*    SELECT acckey
+*      FROM zttm_gkot001
+*     INNER JOIN rbkp
+*             ON ( rbkp~belnr = zttm_gkot001~re_belnr AND
+*                  rbkp~gjahr = zttm_gkot001~re_gjahr )
+*      INTO TABLE @DATA(lt_gko_orig_acckey_posted)
+*       FOR ALL ENTRIES IN @lt_gko_orig_acckey
+*     WHERE zttm_gkot001~acckey = @lt_gko_orig_acckey-acckey_orig
+*       AND rbkp~rbstat         = @gc_invoice_status-registrado.
+*
+*    IF sy-subrc IS INITIAL.
+*      SORT lt_gko_orig_acckey_posted BY acckey.
+*    ENDIF.
+*
+*    IF lines( lt_gko_orig_acckey ) <> lines( lt_gko_orig_acckey_posted ).
+*
+*      LOOP AT lt_gko_orig_acckey ASSIGNING FIELD-SYMBOL(<fs_s_acckey_orig>).
+*
+*        READ TABLE lt_gko_orig_acckey_posted TRANSPORTING NO FIELDS
+*                                                           WITH KEY acckey = <fs_s_acckey_orig>-acckey_orig
+*                                                           BINARY SEARCH.
+*        CHECK sy-subrc IS NOT INITIAL.
+*
+*        me->add_to_log( it_bapi_ret = VALUE #( ( type       = 'E'
+*                                                 id         = zcxtm_gko_process=>orig_acckey_not_posted-msgid
+*                                                 number     = zcxtm_gko_process=>orig_acckey_not_posted-msgno
+*                                                 message_v1 = <fs_s_acckey_orig>-acckey_orig ) ) ).
+*
+*        " A chave de origem & não possui MIRO Confirmada.
+*        APPEND NEW zcxtm_gko_process( textid    = zcxtm_gko_process=>orig_acckey_not_posted
+*                                      gv_msgv1  = CONV #( <fs_s_acckey_orig>-acckey_orig ) )
+*                                    TO lt_errors.
+*
+*      ENDLOOP.
+*
+*      FREE: ls_header-j_1bnftype.
+*      FREE: lt_return.
+*      CALL FUNCTION 'BAPI_INCOMINGINVOICE_CREATE1'
+*        EXPORTING
+*          headerdata       = ls_header
+*          invoicestatus    = zcltm_gko_process=>gc_invoice_status-memorizado_entrado
+*        IMPORTING
+*          invoicedocnumber = ev_invoicedocnumber
+*          fiscalyear       = ev_fiscalyear
+*        TABLES
+*          itemdata         = lt_item
+*          withtaxdata      = lt_wht
+*          tm_itemdata      = lt_tm_item
+*          accountingdata   = lt_account
+*          return           = lt_return.
+*
+*      IF line_exists( lt_return[ type = 'E' ] ).
+*        CALL FUNCTION 'BAPI_TRANSACTION_ROLLBACK'.
+*      ELSE.
+*        CALL FUNCTION 'BAPI_TRANSACTION_COMMIT'
+*          EXPORTING
+*            wait = 'X'.
+*
+*        lv_codstatus = zcltm_gko_process=>gc_codstatus-miro_memorizada.
+*
+*        " Fatura &1 memorizada com sucesso.
+*        me->save_log( EXPORTING iv_acckey           = is_doc-acckey
+*                                iv_codstatus        = lv_codstatus
+*                                iv_invoicedocnumber = ev_invoicedocnumber
+*                                iv_fiscalyear       = ev_fiscalyear
+*                                it_return           = VALUE #( ( type = 'E' id = 'ZTM_GKO' number = '118' message_v1 = |{ ev_invoicedocnumber }{ ev_fiscalyear }| ) ) ).
+*
+*      ENDIF.
+*
+*
+*      RAISE EXCEPTION TYPE zcxtm_gko_process
+*        EXPORTING
+*          gt_errors = lt_errors.
+*
+*    ENDIF.
 
   ENDMETHOD.
+
+
+  METHOD check_miro_created.
+
+* ---------------------------------------------------------------------------
+* Recupera o status da fatura
+* ---------------------------------------------------------------------------
+    SELECT SINGLE belnr, gjahr, rbstat
+        FROM rbkp
+        WHERE belnr = @gs_gko_header-re_belnr
+          AND gjahr = @gs_gko_header-re_gjahr
+        INTO @DATA(ls_rbkp).
+
+    IF sy-subrc NE 0.
+      RETURN.
+    ENDIF.
+
+* ---------------------------------------------------------------------------
+* Atualizar o status do cockpit com base no status da fatura
+* ---------------------------------------------------------------------------
+    IF ls_rbkp-rbstat = gc_invoice_status-registrado.
+      me->set_status( EXPORTING iv_status  = me->gc_codstatus-miro_confirmada ).
+      RETURN.
+    ENDIF.
+
+    IF ls_rbkp-rbstat = gc_invoice_status-memorizado_entrado.
+      me->set_status( EXPORTING iv_status  = me->gc_codstatus-miro_memorizada ).
+      RETURN.
+    ENDIF.
+
+    me->set_status( EXPORTING iv_status  = me->gc_codstatus-frete_faturado ).
+
+  ENDMETHOD.
+
 ENDCLASS.

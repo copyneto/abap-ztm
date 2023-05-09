@@ -40,6 +40,11 @@ CLASS lcl_mdf DEFINITION INHERITING FROM cl_abap_behavior_handler.
     METHODS precheck FOR PRECHECK
       IMPORTING keys FOR CREATE mdf.
 
+
+    METHODS refresh FOR MODIFY
+      IMPORTING keys FOR ACTION mdf~refresh.
+
+
 ENDCLASS.
 
 CLASS lcl_mdf IMPLEMENTATION.
@@ -644,12 +649,49 @@ CLASS lcl_mdf IMPLEMENTATION.
                                                               attr2 = ls_return-message_v2
                                                               attr3 = ls_return-message_v3
                                                               attr4 = ls_return-message_v4 ) ) )
-          to reported-mdf.
+          TO reported-mdf.
 
       ENDLOOP.
 
     ENDLOOP.
 
+  ENDMETHOD.
+
+
+  METHOD refresh.
+    DATA: lt_return     TYPE bapiret2_t,
+          lt_return_all TYPE bapiret2_t,
+          lv_statuscode TYPE /xnfe/statuscode.
+
+    DATA(lo_events) = NEW zcltm_mdf_events_manual(  ).
+
+* ---------------------------------------------------------------------------
+* Chama BAPI para envio da XML
+* ---------------------------------------------------------------------------
+    LOOP AT keys INTO DATA(ls_keys).               "#EC CI_LOOP_INTO_WA
+
+      " Verifica se alguma informação da ordem de frete foi atualizada
+      lo_events->update_mdf_using_fo( EXPORTING iv_id     = ls_keys-%tky-guid
+                                      IMPORTING et_return = lt_return ).
+
+      INSERT LINES OF lt_return[] INTO TABLE lt_return_all[].
+
+      lo_events->get_history( EXPORTING iv_id     = ls_keys-%tky-guid
+                              IMPORTING et_return = lt_return ).
+
+      INSERT LINES OF lt_return[] INTO TABLE lt_return_all[].
+      CHECK lt_return IS INITIAL.
+
+      lo_events->validate_all( EXPORTING iv_id     = ls_keys-%tky-guid
+                               IMPORTING et_return = lt_return ).
+
+      INSERT LINES OF lt_return[] INTO TABLE lt_return_all[].
+      CHECK NOT line_exists( lt_return[ type = 'E ' ] ). "#EC CI_STDSEQ
+
+      " Todas as validações realizadas com sucesso.
+      lt_return_all[] = VALUE #( BASE lt_return_all ( type = 'S' id = 'ZTM_MONITOR_MDF' number = '064' ) ).
+
+    ENDLOOP.
   ENDMETHOD.
 
 ENDCLASS.

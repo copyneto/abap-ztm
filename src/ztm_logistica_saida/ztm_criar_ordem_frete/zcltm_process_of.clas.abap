@@ -475,7 +475,6 @@ CLASS ZCLTM_PROCESS_OF IMPLEMENTATION.
           WHERE docnum = @lv_docnum.
       ENDIF.
 
-
     ENDIF.
 ** INICIO - WMDO - 02-12-22 - Inclusão de dados da empresa
     IF ls_likp IS NOT INITIAL.
@@ -1248,6 +1247,26 @@ CLASS ZCLTM_PROCESS_OF IMPLEMENTATION.
       ls_fo_info-loc_dst_key = lt_result[ 2 ]-key. " Destination
     ENDIF.
 
+    SELECT SINGLE *
+      FROM likp
+      INTO @DATA(ls_likp)
+    WHERE vbeln = @is_freight_unit-vbeln.
+    IF sy-subrc = 0.
+      SELECT vbeln, posnr FROM vbrp INTO @DATA(ls_fat_remessa)
+        UP TO 1 ROWS
+        WHERE vgbel = @ls_likp-vbeln.
+      ENDSELECT.
+      IF sy-subrc = 0.
+        SELECT docnum FROM j_1bnflin INTO @DATA(lv_docnum)
+          UP TO 1 ROWS
+          WHERE refkey = @ls_fat_remessa-vbeln
+            AND refitm = @ls_fat_remessa-posnr.
+        ENDSELECT.
+        SELECT SINGLE pstdat FROM j_1bnfdoc INTO @DATA(lv_data_nota)
+          WHERE docnum = @lv_docnum.
+      ENDIF.
+    ENDIF.
+
     /scmtms/cl_tor_factory=>create_tor_tour(
       EXPORTING
          iv_do_modify            = abap_true
@@ -1281,6 +1300,14 @@ CLASS ZCLTM_PROCESS_OF IMPLEMENTATION.
 
         APPEND 'ZZ_MOTORISTA' TO lt_changed.
       ENDSELECT.
+
+      IF ls_likp-vsbed IS NOT INITIAL.
+        ls_tor_root-zz1_cond_exped = ls_likp-vsbed.
+        ls_tor_root-zz1_tipo_exped = '01'.
+
+        APPEND: 'ZZ1_COND_EXPED' TO lt_changed,
+                'ZZ1_TIPO_EXPED' TO lt_changed.
+      ENDIF.
 
       " Atualiza campos da Ordem de Frete
       TRY.
@@ -1326,25 +1353,25 @@ CLASS ZCLTM_PROCESS_OF IMPLEMENTATION.
         IMPORTING
           et_data        = lt_stop_new ).
 
-      SELECT SINGLE *
-        FROM likp
-        INTO @DATA(ls_likp)
-      WHERE vbeln = @is_freight_unit-vbeln.
-      IF sy-subrc = 0.
-        SELECT vbeln, posnr FROM vbrp INTO @DATA(ls_fat_remessa)
-          UP TO 1 ROWS
-          WHERE vgbel = @ls_likp-vbeln.
-        ENDSELECT.
-        IF sy-subrc = 0.
-          SELECT docnum FROM j_1bnflin INTO @DATA(lv_docnum)
-            UP TO 1 ROWS
-            WHERE refkey = @ls_fat_remessa-vbeln
-              AND refitm = @ls_fat_remessa-posnr.
-          ENDSELECT.
-          SELECT SINGLE pstdat FROM j_1bnfdoc INTO @DATA(lv_data_nota)
-            WHERE docnum = @lv_docnum.
-        ENDIF.
-      ENDIF.
+*      SELECT SINGLE *
+*        FROM likp
+*        INTO @DATA(ls_likp)
+*      WHERE vbeln = @is_freight_unit-vbeln.
+*      IF sy-subrc = 0.
+*        SELECT vbeln, posnr FROM vbrp INTO @DATA(ls_fat_remessa)
+*          UP TO 1 ROWS
+*          WHERE vgbel = @ls_likp-vbeln.
+*        ENDSELECT.
+*        IF sy-subrc = 0.
+*          SELECT docnum FROM j_1bnflin INTO @DATA(lv_docnum)
+*            UP TO 1 ROWS
+*            WHERE refkey = @ls_fat_remessa-vbeln
+*              AND refitm = @ls_fat_remessa-posnr.
+*          ENDSELECT.
+*          SELECT SINGLE pstdat FROM j_1bnfdoc INTO @DATA(lv_data_nota)
+*            WHERE docnum = @lv_docnum.
+*        ENDIF.
+*      ENDIF.
 
 
       "Definir os pontos de origem e destino
