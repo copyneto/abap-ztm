@@ -95,6 +95,18 @@
     <T100>
      <SPRSL>P</SPRSL>
      <ARBGB>ZTM_IF_GKO</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>Nota Fiscal e/ou recebimento não encontrado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_IF_GKO</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>Falta cadastro do tipo de remessa para envio ao GKO.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_IF_GKO</ARBGB>
      <MSGNR>080</MSGNR>
      <TEXT>Só é possível a execução em background</TEXT>
     </T100>

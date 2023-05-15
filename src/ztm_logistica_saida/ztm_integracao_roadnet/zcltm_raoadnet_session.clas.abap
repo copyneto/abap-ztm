@@ -94,7 +94,7 @@ ENDCLASS.
 
 
 
-CLASS ZCLTM_RAOADNET_SESSION IMPLEMENTATION.
+CLASS zcltm_raoadnet_session IMPLEMENTATION.
 
 
   METHOD carrega_dados.
@@ -547,6 +547,34 @@ CLASS ZCLTM_RAOADNET_SESSION IMPLEMENTATION.
       ENDIF.
 
     ENDIF.
+
+* BEGIN OF INSERT - JWSILVA - 12.05.2023
+* ---------------------------------------------------------------------------
+* Tratativa para integração do cliente UNOP
+* ---------------------------------------------------------------------------
+    IF gt_dados[] IS NOT INITIAL.
+
+      SELECT vbeln, posnr, parvw, kunnr
+        FROM vbpa
+        INTO TABLE @DATA(lt_partners)
+        FOR ALL ENTRIES IN @gt_dados
+        WHERE vbeln EQ @gt_dados-vbeln
+          AND parvw EQ 'Z2'. " Cliente UNOP
+
+      IF sy-subrc EQ 0.
+        SORT lt_partners BY vbeln.
+      ENDIF.
+    ENDIF.
+
+    LOOP AT lt_delivery REFERENCE INTO DATA(ls_delivery).
+
+      READ TABLE lt_partners REFERENCE INTO DATA(ls_partner) WITH KEY vbeln = ls_delivery->DeliveryDocument.
+
+      IF sy-subrc EQ 0.
+        ls_delivery->ShipToParty = ls_partner->kunnr.
+      ENDIF.
+    ENDLOOP.
+* END OF INSERT - JWSILVA - 12.05.2023
 
     " Monta tabela de chaves Remessa X Material
     DATA(lt_delivery_key) = lt_delivery.
@@ -1145,11 +1173,11 @@ CLASS ZCLTM_RAOADNET_SESSION IMPLEMENTATION.
             delivery       = iv_remessa
           TABLES
             return         = rt_messages.
-    IF NOT line_exists( rt_messages[ type = 'E' ] ).
-      CALL FUNCTION 'BAPI_TRANSACTION_COMMIT'
-        EXPORTING
-          wait = abap_true.
-    ENDIF.
+        IF NOT line_exists( rt_messages[ type = 'E' ] ).
+          CALL FUNCTION 'BAPI_TRANSACTION_COMMIT'
+            EXPORTING
+              wait = abap_true.
+        ENDIF.
 
       CATCH cx_root INTO DATA(lo_cx_root).
         DATA(lv_msg) = lo_cx_root->get_text( ).

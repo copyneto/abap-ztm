@@ -26,6 +26,8 @@ define view ZI_TM_VH_FRETE_IDENTIFY_FO
     left outer join        I_BR_NFItem           as _NFItem       on  _NFItem.BR_NFSourceDocumentType   = 'BI'
                                                                   and _NFItem.BR_NFSourceDocumentNumber = _Fatura.BillingDocument
                                                                   and _NFItem.BR_NFSourceDocumentItem   = _Fatura.BillingDocumentItem
+                                                                  
+    left outer join        I_BR_NFDocument       as _NF           on _NF.BR_NotaFiscal = _NFItem.BR_NotaFiscal
 
     left outer join        I_BR_NFeActive        as _NFActive     on _NFActive.BR_NotaFiscal = _NFItem.BR_NotaFiscal
 
@@ -50,6 +52,7 @@ define view ZI_TM_VH_FRETE_IDENTIFY_FO
         _OrdemFrete.tspid                                                          as Carrier,
         _OrdemFrete.tor_cat                                                        as FreightOrderCategory,
         _OrdemFrete.tor_type                                                       as FreightOrderType,
+        _NF.BR_NFDocumentType                                                      as BR_NFDocumentType,
         _NFItem.BR_NFSourceDocumentType                                            as BR_NFSourceDocumentType,
         _NFActive.BR_NFeDocumentStatus                                             as BR_NFeDocumentStatus,
         _NFActive.BR_NFIsCanceled                                                  as BR_NFIsCanceled,
@@ -79,6 +82,7 @@ group by
   _NFActive.BR_NFeNumber,
   _NFActive.BR_NFeRandomNumber,
   _NFActive.BR_NFeCheckDigit,
+  _NF.BR_NFDocumentType,
   _NFItem.BR_NFSourceDocumentType,
   _NFActive.BR_NFeDocumentStatus,
   _NFActive.BR_NFIsCanceled,
@@ -112,6 +116,8 @@ union select from        /scmtms/d_torrot   as _OrdemFrete
   left outer join        I_BR_NFItem        as _NFItem        on  _NFItem.BR_NFSourceDocumentType   = 'MD'
                                                               and _NFItem.BR_NFSourceDocumentNumber = concat( left( _Transferencia.mblnr, 10 ), left( _Transferencia.mjahr, 4 ) )
 
+  left outer join        I_BR_NFDocument    as _NF            on _NF.BR_NotaFiscal = _NFItem.BR_NotaFiscal
+    
   left outer join        I_BR_NFeActive     as _NFActive      on _NFActive.BR_NotaFiscal = _NFItem.BR_NotaFiscal
 
 
@@ -134,6 +140,7 @@ union select from        /scmtms/d_torrot   as _OrdemFrete
        _OrdemFrete.tspid                                                            as Carrier,
        _OrdemFrete.tor_cat                                                          as FreightOrderCategory,
        _OrdemFrete.tor_type                                                         as FreightOrderType,
+       _NF.BR_NFDocumentType                                                        as BR_NFDocumentType,
        _NFItem.BR_NFSourceDocumentType                                              as BR_NFSourceDocumentType,
        _NFActive.BR_NFeDocumentStatus                                               as BR_NFeDocumentStatus,
        _NFActive.BR_NFIsCanceled                                                    as BR_NFIsCanceled,
@@ -163,6 +170,7 @@ group by
   _NFActive.BR_NFeNumber,
   _NFActive.BR_NFeRandomNumber,
   _NFActive.BR_NFeCheckDigit,
+  _NF.BR_NFDocumentType,
   _NFItem.BR_NFSourceDocumentType,
   _NFActive.BR_NFeDocumentStatus,
   _NFActive.BR_NFIsCanceled,
@@ -196,6 +204,8 @@ union select from        /scmtms/d_torrot   as _OrdemFrete
   left outer join        I_BR_NFItem        as _NFItem       on  _NFItem.BR_NFSourceDocumentType   = 'LI'
                                                              and _NFItem.BR_NFSourceDocumentNumber = concat( left( _Fatura.belnr, 10 ), left( _Fatura.gjahr, 4 ) )
 
+  left outer join        I_BR_NFDocument    as _NF           on _NF.BR_NotaFiscal = _NFItem.BR_NotaFiscal
+  
   left outer join        I_BR_NFeActive     as _NFActive     on _NFActive.BR_NotaFiscal = _NFItem.BR_NotaFiscal
 
 {
@@ -217,6 +227,7 @@ union select from        /scmtms/d_torrot   as _OrdemFrete
        _OrdemFrete.tspid                                                            as Carrier,
        _OrdemFrete.tor_cat                                                          as FreightOrderCategory,
        _OrdemFrete.tor_type                                                         as FreightOrderType,
+       _NF.BR_NFDocumentType                                                        as BR_NFDocumentType,
        _NFItem.BR_NFSourceDocumentType                                              as BR_NFSourceDocumentType,
        _NFActive.BR_NFeDocumentStatus                                               as BR_NFeDocumentStatus,
        _NFActive.BR_NFIsCanceled                                                    as BR_NFIsCanceled,
@@ -246,6 +257,7 @@ group by
   _NFActive.BR_NFeNumber,
   _NFActive.BR_NFeRandomNumber,
   _NFActive.BR_NFeCheckDigit,
+  _NF.BR_NFDocumentType,
   _NFItem.BR_NFSourceDocumentType,
   _NFActive.BR_NFeDocumentStatus,
   _NFActive.BR_NFIsCanceled,

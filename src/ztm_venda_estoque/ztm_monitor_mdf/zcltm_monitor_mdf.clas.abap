@@ -407,10 +407,10 @@ CLASS zcltm_monitor_mdf IMPLEMENTATION.
     DATA(lt_return) = zcltm_monitor_mdf_aut=>check_aut( iv_obj   = zcltm_monitor_mdf_aut=>gc_obj-grupo_b
                                                         iv_actvt = zcltm_monitor_mdf_aut=>gc_actvt-modificar ).
 
-    if lt_return Is NOT INITIAL.
-       rt_return = lt_return.
-       RETURN.
-    endif.
+    IF lt_return IS NOT INITIAL.
+      rt_return = lt_return.
+      RETURN.
+    ENDIF.
 
     "Valida os dados das linhas selecionadas
     rt_return = valida_agrupar( EXPORTING it_cockpit = it_dados IMPORTING ev_guid = lv_guid ).
@@ -2130,14 +2130,16 @@ CLASS zcltm_monitor_mdf IMPLEMENTATION.
 
     DATA lo_cached_response    TYPE REF TO if_http_response.
 
-    DATA: lt_accesskey TYPE ty_t_access_key,
-          lt_otf       TYPE STANDARD TABLE OF itcoo,
-          lt_pdf       TYPE tlinet,
-          lt_host      TYPE STANDARD TABLE OF /sdf/icm_data_struc.
+    DATA: lt_accesskey  TYPE ty_t_access_key,
+          lt_otf        TYPE STANDARD TABLE OF itcoo,
+          lt_pdf        TYPE tlinet,
+          lt_host       TYPE STANDARD TABLE OF /sdf/icm_data_struc,
+          lt_logradouro TYPE TABLE OF string.
 
     DATA: lv_smartform    TYPE rs38l_fnam,
           lv_pdf_filesize TYPE i,
-          lv_guid         TYPE guid_32.
+          lv_guid         TYPE guid_32,
+          lv_logradouro   TYPE c LENGTH 60.
 
     DATA: ls_control_parameters TYPE ssfctrlop,
           ls_output_options     TYPE ssfcompop,
@@ -2195,6 +2197,19 @@ CLASS zcltm_monitor_mdf IMPLEMENTATION.
         ls_output_options-tdnewid       = abap_true.
       ENDIF.
 
+      SPLIT <fs_print>-damdfe-logradouro AT ' ' INTO TABLE lt_logradouro.
+
+      LOOP AT lt_logradouro INTO DATA(ls_logradouro).
+        IF lv_logradouro IS INITIAL.
+          lv_logradouro = ls_logradouro.
+        ELSE.
+          lv_logradouro = lv_logradouro && | | && ls_logradouro.
+        ENDIF.
+      ENDLOOP.
+
+      CLEAR <fs_print>-damdfe-logradouro.
+
+      <fs_print>-damdfe-logradouro = lv_logradouro.
 
       CALL FUNCTION lv_smartform
         EXPORTING
@@ -2522,7 +2537,18 @@ CLASS zcltm_monitor_mdf IMPLEMENTATION.
       ls_print-damdfe-serie           = <fs_mdf>-br_mdfeseries.
       ls_print-damdfe-chave_acesso    = <fs_mdf>-accesskey.
       ls_print-damdfe-bukrs           = <fs_mdf>-companycode.
-      ls_print-damdfe-razao_social    = <fs_mdf>-companycodename.
+      DATA(lv_company) = CONV bu_partner( <fs_mdf>-companycode ).
+      CALL FUNCTION 'CONVERSION_EXIT_ALPHA_INPUT'
+        EXPORTING
+          input  = lv_company
+        IMPORTING
+          output = lv_company.
+      SELECT SINGLE name_org1, name_org2 FROM but000 INTO (  @DATA(lv_razao_social), @DATA(lv_razao_social2) ) WHERE partner = @lv_company.
+      IF sy-subrc = 0.
+        ls_print-damdfe-razao_social = lv_razao_social && | | &&  lv_razao_social2.
+      ELSE.
+        ls_print-damdfe-razao_social    = <fs_mdf>-companycodename.
+      ENDIF.
 *      ls_print-damdfe-data_emissao    = <fs_mdf>-datainicioviagem.
 *      ls_print-damdfe-hora_emissao    = <fs_mdf>-horainicioviagem.
 

@@ -539,7 +539,7 @@ ENDCLASS.
 
 
 
-CLASS zcltm_mdf_events_manual IMPLEMENTATION.
+CLASS ZCLTM_MDF_EVENTS_MANUAL IMPLEMENTATION.
 
 
   METHOD format_message.
@@ -4269,13 +4269,19 @@ CLASS zcltm_mdf_events_manual IMPLEMENTATION.
 * ---------------------------------------------------------------------------
 * Gera novamente os dados MDF a partir de uma Ordem de frete e Chave de acesso
 * ---------------------------------------------------------------------------
-    me->get_data_fo_to_mdf( EXPORTING iv_id              = ls_mdf-id
-                                      it_freight_order   = lt_freight_order
-                                      it_access_key      = lt_access_key
-                            IMPORTING et_municipio       = DATA(lt_municipio_new)
-                                      es_motorista       = DATA(ls_motorista_new)
-                                      et_placa           = DATA(lt_placa_new)
-                                      et_return          = DATA(lt_return) ).
+    IF lt_freight_order IS NOT INITIAL.
+      me->get_data_fo_to_mdf( EXPORTING iv_id              = ls_mdf-id
+                                        it_freight_order   = lt_freight_order
+                                        it_access_key      = lt_access_key
+                              IMPORTING et_municipio       = DATA(lt_municipio_new)
+                                        es_motorista       = DATA(ls_motorista_new)
+                                        et_placa           = DATA(lt_placa_new)
+                                        et_return          = DATA(lt_return) ).
+    ELSE.
+      ls_motorista_new = ls_motorista.
+      lt_placa_new     = lt_placa.
+      lt_municipio_new = lt_municipio.
+    ENDIF.
 
     INSERT LINES OF lt_return INTO TABLE et_return[].
     CHECK NOT line_exists( lt_return[ type = 'E ' ] ).   "#EC CI_STDSEQ

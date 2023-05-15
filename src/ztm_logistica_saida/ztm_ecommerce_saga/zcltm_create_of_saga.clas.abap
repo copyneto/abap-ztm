@@ -697,11 +697,19 @@ CLASS ZCLTM_CREATE_OF_SAGA IMPLEMENTATION.
     IF lines( lt_return ) > 0.
       lo_tra_tor->cleanup( ).
     ELSE.
-      lo_tra_tor->save( EXPORTING iv_transaction_pattern = /bobf/if_tra_c=>gc_tp_save_and_continue
-                        IMPORTING ev_rejected         = DATA(lv_rejected)
-                                  eo_change           = DATA(lo_change)
-                                  eo_message          = lo_message
-                                  et_rejecting_bo_key = DATA(lt_rej_bo_key) ).
+      DO 5 TIMES.
+
+        lo_tra_tor->save( EXPORTING iv_transaction_pattern = /bobf/if_tra_c=>gc_tp_save_and_continue
+                          IMPORTING ev_rejected         = DATA(lv_rejected)
+                                    eo_change           = DATA(lo_change)
+                                    eo_message          = lo_message
+                                    et_rejecting_bo_key = DATA(lt_rej_bo_key) ).
+        IF line_exists( lt_return[ id = '/SCMTMS/TOR' number = '000' ] ).
+          EXIT.
+        ELSE.
+          WAIT UP TO 10 SECONDS.
+        ENDIF.
+      ENDDO.
 
 
       CLEAR lt_return.

@@ -216,8 +216,8 @@ annotate view ZC_TM_MDF with
                           { position: 20, type: #FOR_ACTION, dataAction: 'enviar', label: 'Enviar MDFe' },
                           { position: 30, type: #FOR_ACTION, dataAction: 'cancelar', label: 'Cancelar MDFe' },
                           { position: 40, type: #FOR_ACTION, dataAction: 'encerrar', label: 'Encerrar MDFe' },
-                          { position: 50, type: #FOR_ACTION, dataAction: 'motorista', label: '[+] Motorista' },
-                          { position: 60, type: #FOR_ACTION, dataAction: 'refresh', label: 'Atualizar' }]
+                          { position: 50, type: #FOR_ACTION, dataAction: 'motorista', label: '[+] Motorista' }]
+                          //{ position: 60, type: #FOR_ACTION, dataAction: 'refresh', label: 'Atualizar' }]
 
   // ------------------------------------------------------
   // Field information

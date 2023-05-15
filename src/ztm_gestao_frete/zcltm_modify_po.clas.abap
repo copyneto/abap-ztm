@@ -1551,6 +1551,11 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
 
     IF sy-subrc IS INITIAL.
 
+* BEGIN OF INSERT - JWSILVA - 15.05.2023
+      " Determina Produto Acabado
+      DATA(lv_prod_acabado) = determina_prod_acabado( it_tor_item = it_tor_item ).
+* END OF INSERT - JWSILVA - 15.05.2023
+
       SELECT SINGLE *
         FROM zttm_pcockpit011
         INTO @DATA(ls_pcockpit011)
@@ -1560,12 +1565,17 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
 
       IF sy-subrc IS INITIAL.
 
-        IF ls_gkot001-picms IS NOT INITIAL AND  " Se tiver ICMS no XML do CT-e
-           ls_gkot001-vicms IS NOT INITIAL.
+* BEGIN OF INSERT - JWSILVA - 15.05.2023
+        IF lv_prod_acabado IS INITIAL.              " Se não tiver produto acabado
 
-          DATA(lv_iva) = ls_pcockpit011-dmwskz.
+          DATA(lv_iva) = ls_pcockpit011-gmwskz.
+* END OF INSERT - JWSILVA - 15.05.2023
+        ELSEIF ls_gkot001-picms IS NOT INITIAL AND  " Se tiver ICMS no XML do CT-e
+               ls_gkot001-vicms IS NOT INITIAL.
 
-        ELSEIF ls_gkot001-picms IS INITIAL AND  " Se não tiver ICMS no XML do CT-e
+          lv_iva = ls_pcockpit011-dmwskz.
+
+        ELSEIF ls_gkot001-picms IS INITIAL AND      " Se não tiver ICMS no XML do CT-e
                ls_gkot001-vicms IS INITIAL.
 
           lv_iva = ls_pcockpit011-pmwskz.

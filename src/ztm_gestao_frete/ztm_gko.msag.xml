@@ -926,6 +926,12 @@
      <MSGNR>152</MSGNR>
      <TEXT>Sem anexo atribuído para chave &amp;1.</TEXT>
     </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>153</MSGNR>
+     <TEXT>Para mais informações, favor verificar no monitor SAP NF-e.</TEXT>
+    </T100>
    </T100>
   </asx:values>
  </asx:abap>

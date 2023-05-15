@@ -753,7 +753,9 @@ CLASS zcltm_gko_process DEFINITION
         !is_gko_header   TYPE zttm_gkot001
       RETURNING
         VALUE(rv_evento) TYPE /scmtms/trcharg_elmnt_typecd .
-    METHODS check_doc_memo_miro .
+    METHODS check_doc_memo_miro
+      EXPORTING
+        !et_return TYPE bapiret2_t .
   PROTECTED SECTION.
 
   PRIVATE SECTION.
@@ -822,6 +824,7 @@ CLASS zcltm_gko_process DEFINITION
     METHODS check_estorno_dff .
     METHODS check_dff_confirmed.
     METHODS check_miro_created.
+    METHODS check_cte_rejected.
     METHODS clear_reversal_fi_documents
       IMPORTING
         !iv_re_belnr  TYPE zttm_gkot001-re_belnr
@@ -990,7 +993,7 @@ ENDCLASS.
 
 
 
-CLASS zcltm_gko_process IMPLEMENTATION.
+CLASS ZCLTM_GKO_PROCESS IMPLEMENTATION.
 
 
   METHOD read_file.
@@ -1385,10 +1388,11 @@ CLASS zcltm_gko_process IMPLEMENTATION.
 
         check_miro_registered( ).
 
-      WHEN gc_codstatus-evt_rejeicao_aguard_sefaz.
-
-        check_status_sefaz( ).
-
+* BEGIN OF DELETE - JWSILVA -  15.05.2023
+*      WHEN gc_codstatus-evt_rejeicao_aguard_sefaz.
+*
+*        check_status_sefaz( ).
+* END OF DELETE - JWSILVA -  15.05.2023
       WHEN gc_codstatus-documento_cancelado.
 
         reversal_documents( ).
@@ -1412,6 +1416,11 @@ CLASS zcltm_gko_process IMPLEMENTATION.
       WHEN gc_codstatus-erro_estorno_miro.
 
         me->check_miro_created( ).
+
+      WHEN gc_codstatus-evt_rejeicao_aguard_sefaz.
+
+        me->check_cte_rejected( ).
+*        me->check_status_sefaz( ).
 
     ENDCASE.
 
@@ -2340,6 +2349,7 @@ CLASS zcltm_gko_process IMPLEMENTATION.
       ENDLOOP.
 
       IF sy-subrc NE 0.
+
         " Nenhuma remessa encontrada.
         lt_return = VALUE #( BASE lt_return ( type   = 'I'
                                               id     = 'ZTM_IF_GKO'
@@ -3581,121 +3591,145 @@ CLASS zcltm_gko_process IMPLEMENTATION.
 
   METHOD setup_messages.
 
-    CASE p_task.
-      WHEN 'TM_INCM_DELETE'.
-        RECEIVE RESULTS FROM FUNCTION 'ZFMTM_GKO_INCM_DELETE'
-         IMPORTING
-           ev_sucess = gv_success
-           et_return = gt_return.
+    TRY.
 
-        gv_wait_async = abap_true.
+        CASE p_task.
+          WHEN 'TM_INCM_DELETE'.
+            RECEIVE RESULTS FROM FUNCTION 'ZFMTM_GKO_INCM_DELETE'
+             IMPORTING
+               ev_sucess = gv_success
+               et_return = gt_return.
 
-      WHEN 'TM_INCM_CANCEL'.
-        RECEIVE RESULTS FROM FUNCTION 'ZFMTM_GKO_INCM_CANCEL'
-         IMPORTING
-           ev_invnumber_reversal  = gv_invnumber_reversal
-           ev_fiscalyear_reversal = gv_fiscalyear_reversal
-           et_return              = gt_return.
+            gv_wait_async = abap_true.
 
-        gv_wait_async = abap_true.
+          WHEN 'TM_INCM_CANCEL'.
+            RECEIVE RESULTS FROM FUNCTION 'ZFMTM_GKO_INCM_CANCEL'
+             IMPORTING
+               ev_invnumber_reversal  = gv_invnumber_reversal
+               ev_fiscalyear_reversal = gv_fiscalyear_reversal
+               et_return              = gt_return.
 
-      WHEN 'TM_REVERSE_FI_DOCS'.
-        RECEIVE RESULTS FROM FUNCTION 'ZFMTM_GKO_REVERSE_FI_DOCS'
+            gv_wait_async = abap_true.
+
+          WHEN 'TM_REVERSE_FI_DOCS'.
+            RECEIVE RESULTS FROM FUNCTION 'ZFMTM_GKO_REVERSE_FI_DOCS'
+                IMPORTING
+                    et_return      = gt_return
+                    et_bapi_return = gt_bapi_return.
+
+            gv_wait_async = abap_true.
+
+          WHEN 'TM_PO_CHANGE'.
+            RECEIVE RESULTS FROM FUNCTION 'ZFMTM_GKO_PO_CHANGE'
+             IMPORTING
+               et_return = gt_return
+               ev_sucess = gv_success2.
+
+            gv_wait_async = abap_true.
+
+          WHEN 'TM_SET_REJECTED'.
+            RECEIVE RESULTS FROM FUNCTION 'ZFMTM_GKO_CTE_SET_REJECTED'
+             IMPORTING
+               ev_subrc  = gv_subrc
+               es_return = gs_return.
+
+            gv_wait_async = abap_true.
+
+          WHEN 'GKO_CTE_CHECK_REJECTED'.
+
+            RECEIVE RESULTS FROM FUNCTION 'ZFMTM_GKO_CTE_CHECK_REJECTED'
+             IMPORTING
+               et_return = gt_return.
+
+            gv_wait_async = abap_true.
+
+          WHEN 'TM_INCM_CREATE1'.
+            RECEIVE RESULTS FROM FUNCTION 'ZFMTM_GKO_INCM_CREATE1'
+             IMPORTING
+               ev_invoicedocnumber = gv_belnr
+               ev_fiscalyear       = gv_gjahr
+             CHANGING
+               ct_itemdata         = gt_itemdata
+               ct_return           = gt_return.
+
+            gv_wait_async = abap_true.
+
+          WHEN 'TM_ACTIVE_LOCK'.
+            RECEIVE RESULTS FROM FUNCTION 'ZFMTM_GKO_NFE_ACTIVE_LOCK'
+              IMPORTING
+                ev_subrc = gv_subrc.
+
+            gv_wait_async = abap_true.
+
+          WHEN 'GKO_PERSIST'.
+            RECEIVE RESULTS FROM FUNCTION 'ZFMTM_GKO_PERSIST'
+              IMPORTING
+                et_return = gt_return.
+
+            gv_wait_async = abap_true.
+
+          WHEN 'GKO_SAVE'.
+            RECEIVE RESULTS FROM FUNCTION 'ZFMTM_GKO_SAVE'
+              IMPORTING
+                et_return = gt_return.
+
+            gv_wait_async = abap_true.
+
+          WHEN 'GKO_EXTRA_CHARGE'.
+            RECEIVE RESULTS FROM FUNCTION 'ZFMTM_EXTRA_CHARGE_SAVE'
             IMPORTING
-                et_return      = gt_return
-                et_bapi_return = gt_bapi_return.
+              et_return = gt_return.
 
-        gv_wait_async = abap_true.
+            gv_wait_async = abap_true.
 
-      WHEN 'TM_PO_CHANGE'.
-        RECEIVE RESULTS FROM FUNCTION 'ZFMTM_GKO_PO_CHANGE'
-         IMPORTING
-           et_return = gt_return
-           ev_sucess = gv_success2.
+          WHEN 'GKO_FATURAR_ETAPA'.
+            RECEIVE RESULTS FROM FUNCTION 'ZFMTM_GKO_FATURAR_ETAPA'
+            IMPORTING
+              et_return = gt_return.
 
-        gv_wait_async = abap_true.
+            gv_wait_async = abap_true.
 
-      WHEN 'TM_SET_REJECTED'.
-        RECEIVE RESULTS FROM FUNCTION 'ZFMTM_GKO_CTE_SET_REJECTED'
-         IMPORTING
-           ev_subrc  = gv_subrc
-           es_return = gs_return.
+          WHEN 'REVERSAL_PURCHASE_ORDER'.
+            RECEIVE RESULTS FROM FUNCTION 'ZFMTM_REVERSAL_PURCHASE_ORDER'
+            IMPORTING
+              ev_success     = gv_success
+              et_return      = gt_return
+              et_bapi_return = gt_bapi_return.
 
-        gv_wait_async = abap_true.
+            gv_wait_async = abap_true.
 
-      WHEN 'TM_INCM_CREATE1'.
-        RECEIVE RESULTS FROM FUNCTION 'ZFMTM_GKO_INCM_CREATE1'
-         IMPORTING
-           ev_invoicedocnumber = gv_belnr
-           ev_fiscalyear       = gv_gjahr
-         CHANGING
-           ct_itemdata         = gt_itemdata
-           ct_return           = gt_return.
+          WHEN 'GKO_CHECK_DFF'.
+            RECEIVE RESULTS FROM FUNCTION 'ZFMTM_GKO_CHECK_DFF'
+            IMPORTING
+              ev_check   = gv_check
+              et_sfir_id = gt_sfir_id
+              et_return  = gt_return.
 
-        gv_wait_async = abap_true.
+            gv_wait_async = abap_true.
 
-      WHEN 'TM_ACTIVE_LOCK'.
-        RECEIVE RESULTS FROM FUNCTION 'ZFMTM_GKO_NFE_ACTIVE_LOCK'
-          IMPORTING
-            ev_subrc = gv_subrc.
+          WHEN 'EXTRA_CHARGE_AND_STEP'.
+            RECEIVE RESULTS FROM FUNCTION 'ZFMTM_EXTRA_CHARGE_AND_STEP'
+            IMPORTING
+              et_return  = gt_return.
 
-        gv_wait_async = abap_true.
+            gv_wait_async = abap_true.
 
-      WHEN 'GKO_PERSIST'.
-        RECEIVE RESULTS FROM FUNCTION 'ZFMTM_GKO_PERSIST'
-          IMPORTING
-            et_return = gt_return.
+          WHEN OTHERS.
+        ENDCASE.
 
-        gv_wait_async = abap_true.
+      CATCH BEFORE UNWIND cx_root INTO DATA(lo_root).
 
-      WHEN 'GKO_SAVE'.
-        RECEIVE RESULTS FROM FUNCTION 'ZFMTM_GKO_SAVE'
-          IMPORTING
-            et_return = gt_return.
+        DATA(lv_message) = lo_root->get_longtext( ).
 
-        gv_wait_async = abap_true.
+        gt_return[] = VALUE #( BASE gt_return ( type       = sy-msgty
+                                                id         = sy-msgid
+                                                number     = sy-msgno
+                                                message_v1 = sy-msgv1
+                                                message_v2 = sy-msgv2
+                                                message_v3 = sy-msgv3
+                                                message_v4 = sy-msgv4 ) ).
 
-      WHEN 'GKO_EXTRA_CHARGE'.
-        RECEIVE RESULTS FROM FUNCTION 'ZFMTM_EXTRA_CHARGE_SAVE'
-        IMPORTING
-          et_return = gt_return.
-
-        gv_wait_async = abap_true.
-
-      WHEN 'GKO_FATURAR_ETAPA'.
-        RECEIVE RESULTS FROM FUNCTION 'ZFMTM_GKO_FATURAR_ETAPA'
-        IMPORTING
-          et_return = gt_return.
-
-        gv_wait_async = abap_true.
-
-      WHEN 'REVERSAL_PURCHASE_ORDER'.
-        RECEIVE RESULTS FROM FUNCTION 'ZFMTM_REVERSAL_PURCHASE_ORDER'
-        IMPORTING
-          ev_success     = gv_success
-          et_return      = gt_return
-          et_bapi_return = gt_bapi_return.
-
-        gv_wait_async = abap_true.
-
-      WHEN 'GKO_CHECK_DFF'.
-        RECEIVE RESULTS FROM FUNCTION 'ZFMTM_GKO_CHECK_DFF'
-        IMPORTING
-          ev_check   = gv_check
-          et_sfir_id = gt_sfir_id
-          et_return  = gt_return.
-
-        gv_wait_async = abap_true.
-
-      WHEN 'EXTRA_CHARGE_AND_STEP'.
-        RECEIVE RESULTS FROM FUNCTION 'ZFMTM_EXTRA_CHARGE_AND_STEP'
-        IMPORTING
-          et_return  = gt_return.
-
-        gv_wait_async = abap_true.
-
-      WHEN OTHERS.
-    ENDCASE.
+    ENDTRY.
 
   ENDMETHOD.
 
@@ -4719,7 +4753,7 @@ CLASS zcltm_gko_process IMPLEMENTATION.
           SELECT SINGLE j_1bbranch
             FROM T001w
             INTO @lv_branch_retirada
-            WHERE werks       = @ls_j1_doc-parid(4) AND
+            WHERE " werks       = @ls_j1_doc-parid(4) AND     " CHANGE - JWSILVA - 15.05.2023
                   j_1bbranch  = @ls_j1_doc-parid+4(4).
 
 
@@ -4729,7 +4763,7 @@ CLASS zcltm_gko_process IMPLEMENTATION.
           SELECT SINGLE j_1bbranch
            FROM T001w
            INTO @lv_branch_entrega
-           WHERE werks       = @ls_j1_doc-parid(4) AND
+           WHERE " werks       = @ls_j1_doc-parid(4) AND      " CHANGE - JWSILVA - 15.05.2023
                  j_1bbranch  = @ls_j1_doc-parid+4(4).
         ENDIF.
       ENDIF.
@@ -10344,64 +10378,129 @@ gs_gko_header-acckey      = |NFS{ gs_nfs_data-docdat }{ CONV num9( gs_nfs_data-z
         AND rem_branch  = @ev_rem_branch
         AND tom_branch  = @ev_tom_branch.
 
+* BEGIN OF INSERT - JWSILVA - 15.05.2023
     IF sy-subrc EQ 0.
-      SORT lt_p013 BY cenario uforig ufdest rem_branch tom_branch.
+      SORT lt_p013 BY cenario     DESCENDING
+                      dest_branch ASCENDING
+                      loc_ret     ASCENDING
+                      loc_ent     ASCENDING.
     ENDIF.
 
-    READ TABLE lt_p013 INTO es_p013 WITH KEY cenario     = es_header-cenario
-                                             uforig      = es_header-rem_uf
-                                             ufdest      = es_header-dest_uf
-                                             rem_branch  = ev_rem_branch
-                                             tom_branch  = ev_tom_branch
-                                             dest_branch = ev_dest_branch
+    READ TABLE lt_p013 INTO es_p013 WITH KEY dest_branch = ev_dest_branch
                                              loc_ret     = es_header-ret_loc
                                              loc_ent     = es_header-ent_loc.
     IF sy-subrc EQ 0.
       RETURN.
     ENDIF.
 
-    READ TABLE lt_p013 INTO es_p013 WITH KEY cenario     = es_header-cenario
-                                             uforig      = es_header-rem_uf
-                                             ufdest      = es_header-dest_uf
-                                             rem_branch  = ev_rem_branch
-                                             tom_branch  = ev_tom_branch
-                                             dest_branch = ev_dest_branch
+    READ TABLE lt_p013 INTO es_p013 WITH KEY dest_branch = ev_dest_branch
                                              loc_ret     = es_header-ret_loc.
     IF sy-subrc EQ 0.
       RETURN.
     ENDIF.
 
-    READ TABLE lt_p013 INTO es_p013 WITH KEY cenario     = es_header-cenario
-                                             uforig      = es_header-rem_uf
-                                             ufdest      = es_header-dest_uf
-                                             rem_branch  = ev_rem_branch
-                                             tom_branch  = ev_tom_branch
-                                             dest_branch = ev_dest_branch
+    READ TABLE lt_p013 INTO es_p013 WITH KEY dest_branch = ev_dest_branch
                                              loc_ent     = es_header-ent_loc.
     IF sy-subrc EQ 0.
       RETURN.
     ENDIF.
 
-    READ TABLE lt_p013 INTO es_p013 WITH KEY cenario     = '00'
-                                             uforig      = es_header-rem_uf
-                                             ufdest      = es_header-dest_uf
-                                             rem_branch  = ev_rem_branch
-                                             tom_branch  = ev_tom_branch
-                                             dest_branch = ev_dest_branch
-                                             loc_ret     = es_header-ret_loc
+    READ TABLE lt_p013 INTO es_p013 WITH KEY loc_ret     = es_header-ret_loc
                                              loc_ent     = es_header-ent_loc.
     IF sy-subrc EQ 0.
       RETURN.
     ENDIF.
 
-    READ TABLE lt_p013 INTO es_p013 WITH KEY cenario     = '00'
-                                             uforig      = es_header-rem_uf
-                                             ufdest      = es_header-dest_uf
-                                             rem_branch  = ev_rem_branch
-                                             tom_branch  = ev_tom_branch.
+    READ TABLE lt_p013 INTO es_p013 WITH KEY dest_branch = ev_dest_branch.
+
     IF sy-subrc EQ 0.
       RETURN.
     ENDIF.
+
+    READ TABLE lt_p013 INTO es_p013 WITH KEY loc_ret     = es_header-ret_loc.
+
+    IF sy-subrc EQ 0.
+      RETURN.
+    ENDIF.
+
+    READ TABLE lt_p013 INTO es_p013 WITH KEY loc_ent     = es_header-ent_loc.
+
+    IF sy-subrc EQ 0.
+      RETURN.
+    ENDIF.
+
+* ---------------------------------------------------------------------------
+* Caso não encontre combinações específicas, pegar o primeiro registro encontrado na seleção
+* ---------------------------------------------------------------------------
+    READ TABLE lt_p013 INTO es_p013 INDEX 1.
+
+    IF sy-subrc EQ 0.
+      RETURN.
+    ENDIF.
+
+* END OF INSERT - JWSILVA - 15.05.2023
+* END OF INSERT - JWSILVA - 15.05.2023
+
+* BEGIN OF DELETE - JWSILVA - 15.05.2023
+*    IF sy-subrc EQ 0.
+*      SORT lt_p013 BY cenario uforig ufdest rem_branch tom_branch.
+*    ENDIF.
+*
+*    READ TABLE lt_p013 INTO es_p013 WITH KEY cenario     = es_header-cenario
+*                                             uforig      = es_header-rem_uf
+*                                             ufdest      = es_header-dest_uf
+*                                             rem_branch  = ev_rem_branch
+*                                             tom_branch  = ev_tom_branch
+*                                             dest_branch = ev_dest_branch
+*                                             loc_ret     = es_header-ret_loc
+*                                             loc_ent     = es_header-ent_loc.
+*    IF sy-subrc EQ 0.
+*      RETURN.
+*    ENDIF.
+*
+*    READ TABLE lt_p013 INTO es_p013 WITH KEY cenario     = es_header-cenario
+*                                             uforig      = es_header-rem_uf
+*                                             ufdest      = es_header-dest_uf
+*                                             rem_branch  = ev_rem_branch
+*                                             tom_branch  = ev_tom_branch
+*                                             dest_branch = ev_dest_branch
+*                                             loc_ret     = es_header-ret_loc.
+*    IF sy-subrc EQ 0.
+*      RETURN.
+*    ENDIF.
+*
+*    READ TABLE lt_p013 INTO es_p013 WITH KEY cenario     = es_header-cenario
+*                                             uforig      = es_header-rem_uf
+*                                             ufdest      = es_header-dest_uf
+*                                             rem_branch  = ev_rem_branch
+*                                             tom_branch  = ev_tom_branch
+*                                             dest_branch = ev_dest_branch
+*                                             loc_ent     = es_header-ent_loc.
+*    IF sy-subrc EQ 0.
+*      RETURN.
+*    ENDIF.
+*
+*    READ TABLE lt_p013 INTO es_p013 WITH KEY cenario     = '00'
+*                                             uforig      = es_header-rem_uf
+*                                             ufdest      = es_header-dest_uf
+*                                             rem_branch  = ev_rem_branch
+*                                             tom_branch  = ev_tom_branch
+*                                             dest_branch = ev_dest_branch
+*                                             loc_ret     = es_header-ret_loc
+*                                             loc_ent     = es_header-ent_loc.
+*    IF sy-subrc EQ 0.
+*      RETURN.
+*    ENDIF.
+*
+*    READ TABLE lt_p013 INTO es_p013 WITH KEY cenario     = '00'
+*                                             uforig      = es_header-rem_uf
+*                                             ufdest      = es_header-dest_uf
+*                                             rem_branch  = ev_rem_branch
+*                                             tom_branch  = ev_tom_branch.
+*    IF sy-subrc EQ 0.
+*      RETURN.
+*    ENDIF.
+* END OF DELETE - JWSILVA - 15.05.2023
 
   ENDMETHOD.
 
@@ -10606,10 +10705,10 @@ OR cstat  = '136'    ). " Evento registrado, mas não vinculado a CT-e
 
   METHOD determine_charge.
 
-*    IF is_gko_header-tpdoc EQ gc_tpdoc-cte AND is_gko_header-tpcte EQ gc_tpcte-complemento_de_valores.
-*      rv_evento = 'CTE_COMPLEMENTA'.
-*      RETURN.
-*    ENDIF.
+    IF is_gko_header-tpdoc EQ gc_tpdoc-cte AND is_gko_header-tpcte EQ gc_tpcte-complemento_de_valores.
+      rv_evento = 'CTE_COMPLEMENTA'.
+      RETURN.
+    ENDIF.
 *
 *    IF ( is_gko_header-tpevento EQ 'NORMAL' OR  is_gko_header-tpevento EQ 'ENTREGA' )
 *    OR ( is_gko_header-tpcte NE gc_tpcte-complemento_de_valores AND is_gko_header-tpcte NE gc_tpcte-substituto ).
@@ -10908,7 +11007,9 @@ OR cstat  = '136'    ). " Evento registrado, mas não vinculado a CT-e
           ENDIF.
 * END OF CHANGE - JWSILVA - 06.04.2023
 
-        CATCH /bobf/cx_frw_contrct_violation. " Caller violates a BOPF contract
+*        CATCH /bobf/cx_frw_contrct_violation. " Caller violates a BOPF contract
+        CATCH BEFORE UNWIND cx_root INTO DATA(lo_root).
+          DATA(lv_message) = lo_root->get_longtext( ).
           RETURN.
       ENDTRY.
 
@@ -11430,39 +11531,173 @@ OR cstat  = '136'    ). " Evento registrado, mas não vinculado a CT-e
 
 
   METHOD check_doc_memo_miro.
+
+    TYPES: BEGIN OF ty_posted_ekbe,
+             acckey TYPE zttm_gkot003-acckey,
+             lfbnr  TYPE ekbe-lfbnr,
+           END OF ty_posted_ekbe.
+
+    TYPES: ty_t_posted_ekbe TYPE TABLE OF ty_posted_ekbe.
+
+    DATA: lt_errors      TYPE zcxtm_gko=>ty_t_errors,
+          lt_posted_ekbe TYPE ty_t_posted_ekbe.
+
+    load_gko_references( ).
+
+    DATA(lt_gko_orig_acckey) = gt_gko_references.
+    SORT lt_gko_orig_acckey BY acckey_orig.
+    DELETE ADJACENT DUPLICATES FROM lt_gko_orig_acckey COMPARING acckey_orig.
+
+    CHECK lt_gko_orig_acckey IS NOT INITIAL.
+
+    CASE gs_gko_header-cenario.
+      WHEN gc_cenario-transferencia.
+
+        SELECT gkot003~acckey,
+               ekbe~ebeln,
+               ekbe~ebelp,
+               ekbe~gjahr,
+               ekbe~belnr,
+               mseg~mblnr,
+               mseg~mjahr,
+               mseg~zeile,
+               mseg~sjahr,
+               mseg~smbln,
+               mseg~smblp
+          FROM zttm_gkot003 AS gkot003
+          INNER JOIN j_1bnflin AS lin  ON  lin~docnum = gkot003~docnum
+          INNER JOIN ekbe      AS ekbe ON  ekbe~ebeln = lin~xped
+                                       AND ekbe~ebelp = lin~nitemped
+          INNER JOIN mseg      AS mseg ON  mseg~mblnr = ekbe~belnr
+                                       AND mseg~mjahr = ekbe~gjahr
+          INTO TABLE @DATA(lt_gko_transferencia)
+          FOR ALL ENTRIES IN @lt_gko_orig_acckey
+         WHERE gkot003~acckey EQ @lt_gko_orig_acckey-acckey
+           AND ekbe~zekkn     EQ '00'
+           AND ekbe~vgabe     EQ '1'.
+
+        LOOP AT lt_gko_transferencia INTO DATA(ls_gko_transferencia) WHERE smbln IS NOT INITIAL
+                                                                       AND sjahr IS NOT INITIAL
+                                                                       AND smblp IS NOT INITIAL. "#EC CI_LOOP_INTO_WA
+
+          DELETE lt_gko_transferencia WHERE mblnr = ls_gko_transferencia-smbln
+                                        AND mjahr = ls_gko_transferencia-sjahr
+                                        AND zeile = ls_gko_transferencia-smblp.
+
+        ENDLOOP.
+
+        IF lines( lt_gko_orig_acckey ) <> lines( lt_gko_transferencia ).
+
+          LOOP AT lt_gko_orig_acckey ASSIGNING FIELD-SYMBOL(<fs_s_acckey_orig>).
+
+            READ TABLE lt_gko_transferencia TRANSPORTING NO FIELDS
+                                            WITH KEY acckey = <fs_s_acckey_orig>-acckey_orig
+                                            BINARY SEARCH.
+
+            CHECK sy-subrc IS NOT INITIAL.
+
+            me->add_to_log( it_bapi_ret = VALUE #( ( type       = 'E'
+                                                     id         = zcxtm_gko_process=>orig_acckey_not_posted-msgid
+                                                     number     = zcxtm_gko_process=>orig_acckey_not_posted-msgno
+                                                     message_v1 = <fs_s_acckey_orig>-acckey_orig ) ) ).
+
+            " A chave de origem & não possui MIRO Confirmada.
+            APPEND INITIAL LINE TO et_return ASSIGNING FIELD-SYMBOL(<fs_return>).
+            <fs_return>-type       = if_xo_const_message=>error.
+            <fs_return>-id         = zcxtm_gko_process=>orig_acckey_not_posted-msgid.
+            <fs_return>-number     = zcxtm_gko_process=>orig_acckey_not_posted-msgno.
+            <fs_return>-message_v1 = <fs_s_acckey_orig>-acckey_orig.
+
+          ENDLOOP.
+        ENDIF.
+
+      WHEN gc_cenario-venda_coligada.
+
+        SELECT gkot003~acckey,
+               ekbe~ebeln,
+               ekbe~ebelp,
+               ekbe~gjahr,
+               ekbe~belnr,
+               rbkp~stblg
+          FROM zttm_gkot003 AS gkot003
+          INNER JOIN j_1bnflin AS lin  ON  lin~docnum = gkot003~docnum
+          INNER JOIN vbrp      AS vbrp ON  vbrp~vbeln = lin~refkey
+          INNER JOIN vbkd      AS vbkd ON  vbkd~vbeln = vbrp~aubel
+          INNER JOIN ekbe      AS ekbe ON  ekbe~ebeln = vbkd~bstkd
+          INNER JOIN ekpo      AS ekpo ON  ekpo~ebeln = ekbe~ebeln
+                                       AND ekpo~ebelp = ekbe~ebelp
+          INNER JOIN rbkp      AS rbkp ON  rbkp~belnr = ekbe~belnr
+                                       AND rbkp~gjahr = ekbe~gjahr
+          INTO TABLE @DATA(lt_gko_venda_coligada)
+          FOR ALL ENTRIES IN @lt_gko_orig_acckey
+         WHERE gkot003~acckey EQ @lt_gko_orig_acckey-acckey
+           AND ekbe~zekkn     EQ '00'
+           AND ekbe~vgabe     EQ '2'
+           AND ekbe~bewtp     EQ 'Q'
+           AND ekpo~loekz     EQ @space
+           AND rbkp~stblg     EQ @space.
+
+*        LOOP AT lt_gko_venda_coligada INTO DATA(ls_gko_venda_coligada) WHERE smbln IS NOT INITIAL
+*                                                                         AND sjahr IS NOT INITIAL
+*                                                                         AND smblp IS NOT INITIAL.
 *
-*    DATA: lt_errors TYPE zcxtm_gko=>ty_t_errors.
+*          DELETE lt_gko_venda_coligada WHERE mblnr = ls_gko_venda_coligada-smbln
+*                                         AND mjahr = ls_gko_venda_coligada-sjahr
+*                                         AND zeile = ls_gko_venda_coligada-smblp.
 *
-*    load_gko_references( ).
+*        ENDLOOP.
+
+        IF lines( lt_gko_orig_acckey ) <> lines( lt_gko_venda_coligada ).
+
+          LOOP AT lt_gko_orig_acckey ASSIGNING <fs_s_acckey_orig>.
+
+            READ TABLE lt_gko_venda_coligada  TRANSPORTING NO FIELDS
+                                              WITH KEY acckey = <fs_s_acckey_orig>-acckey_orig
+                                              BINARY SEARCH.
+
+            CHECK sy-subrc IS NOT INITIAL.
+
+            me->add_to_log( it_bapi_ret = VALUE #( ( type       = 'E'
+                                                     id         = zcxtm_gko_process=>orig_acckey_not_posted-msgid
+                                                     number     = zcxtm_gko_process=>orig_acckey_not_posted-msgno
+                                                     message_v1 = <fs_s_acckey_orig>-acckey_orig ) ) ).
+
+            " A chave de origem & não possui MIRO Confirmada.
+            APPEND INITIAL LINE TO et_return ASSIGNING <fs_return>.
+            <fs_return>-type       = if_xo_const_message=>error.
+            <fs_return>-id         = zcxtm_gko_process=>orig_acckey_not_posted-msgid.
+            <fs_return>-number     = zcxtm_gko_process=>orig_acckey_not_posted-msgno.
+            <fs_return>-message_v1 = <fs_s_acckey_orig>-acckey_orig.
+
+          ENDLOOP.
+        ENDIF.
+
+    ENDCASE.
+
+*    IF gs_gko_header-cenario = gc_cenario-transferencia
+*    OR gs_gko_header-cenario = gc_cenario-venda_coligada.
 *
-*    DATA(lt_gko_orig_acckey) = gt_gko_references.
-*    SORT lt_gko_orig_acckey BY acckey_orig.
-*    DELETE ADJACENT DUPLICATES FROM lt_gko_orig_acckey COMPARING acckey_orig.
+*      LOOP AT lt_gko_orig_acckey_posted_ekbe INTO DATA(ls_gko_orig_acckey_posted_ekbe).
 *
-*    CHECK lt_gko_orig_acckey IS NOT INITIAL.
+*        CLEAR: lt_posted_ekbe.
+*        lt_posted_ekbe = VALUE #( FOR <fs_posted_ekbe> IN lt_gko_orig_acckey_posted_ekbe
+*                                  WHERE ( lfbnr = ls_gko_orig_acckey_posted_ekbe-lfbnr )
+*                                ( CORRESPONDING #( <fs_posted_ekbe> ) ) ).
 *
-*    " Verifica se a MIRO do Documento de origem, foi confirmada
-*    SELECT acckey
-*      FROM zttm_gkot001
-*     INNER JOIN rbkp
-*             ON ( rbkp~belnr = zttm_gkot001~re_belnr AND
-*                  rbkp~gjahr = zttm_gkot001~re_gjahr )
-*      INTO TABLE @DATA(lt_gko_orig_acckey_posted)
-*       FOR ALL ENTRIES IN @lt_gko_orig_acckey
-*     WHERE zttm_gkot001~acckey = @lt_gko_orig_acckey-acckey_orig
-*       AND rbkp~rbstat         = @gc_invoice_status-registrado.
-*
-*    IF sy-subrc IS INITIAL.
-*      SORT lt_gko_orig_acckey_posted BY acckey.
+*        IF lines( lt_posted_ekbe ) > 1.
+*          DELETE lt_gko_orig_acckey_posted_ekbe WHERE lfbnr = ls_gko_orig_acckey_posted_ekbe-lfbnr.
+*        ENDIF.
+*      ENDLOOP.
 *    ENDIF.
 *
-*    IF lines( lt_gko_orig_acckey ) <> lines( lt_gko_orig_acckey_posted ).
+*    IF lines( lt_gko_orig_acckey ) <> lines( lt_gko_orig_acckey_posted_ekbe ).
 *
 *      LOOP AT lt_gko_orig_acckey ASSIGNING FIELD-SYMBOL(<fs_s_acckey_orig>).
 *
-*        READ TABLE lt_gko_orig_acckey_posted TRANSPORTING NO FIELDS
-*                                                           WITH KEY acckey = <fs_s_acckey_orig>-acckey_orig
-*                                                           BINARY SEARCH.
+*        READ TABLE lt_gko_orig_acckey_posted_ekbe TRANSPORTING NO FIELDS
+*                                                  WITH KEY acckey = <fs_s_acckey_orig>-acckey_orig
+*                                                  BINARY SEARCH.
+*
 *        CHECK sy-subrc IS NOT INITIAL.
 *
 *        me->add_to_log( it_bapi_ret = VALUE #( ( type       = 'E'
@@ -11471,51 +11706,13 @@ OR cstat  = '136'    ). " Evento registrado, mas não vinculado a CT-e
 *                                                 message_v1 = <fs_s_acckey_orig>-acckey_orig ) ) ).
 *
 *        " A chave de origem & não possui MIRO Confirmada.
-*        APPEND NEW zcxtm_gko_process( textid    = zcxtm_gko_process=>orig_acckey_not_posted
-*                                      gv_msgv1  = CONV #( <fs_s_acckey_orig>-acckey_orig ) )
-*                                    TO lt_errors.
+*        APPEND INITIAL LINE TO et_return ASSIGNING FIELD-SYMBOL(<fs_return>).
+*        <fs_return>-type       = if_xo_const_message=>error.
+*        <fs_return>-id         = zcxtm_gko_process=>orig_acckey_not_posted-msgid.
+*        <fs_return>-number     = zcxtm_gko_process=>orig_acckey_not_posted-msgno.
+*        <fs_return>-message_v1 = <fs_s_acckey_orig>-acckey_orig.
 *
 *      ENDLOOP.
-*
-*      FREE: ls_header-j_1bnftype.
-*      FREE: lt_return.
-*      CALL FUNCTION 'BAPI_INCOMINGINVOICE_CREATE1'
-*        EXPORTING
-*          headerdata       = ls_header
-*          invoicestatus    = zcltm_gko_process=>gc_invoice_status-memorizado_entrado
-*        IMPORTING
-*          invoicedocnumber = ev_invoicedocnumber
-*          fiscalyear       = ev_fiscalyear
-*        TABLES
-*          itemdata         = lt_item
-*          withtaxdata      = lt_wht
-*          tm_itemdata      = lt_tm_item
-*          accountingdata   = lt_account
-*          return           = lt_return.
-*
-*      IF line_exists( lt_return[ type = 'E' ] ).
-*        CALL FUNCTION 'BAPI_TRANSACTION_ROLLBACK'.
-*      ELSE.
-*        CALL FUNCTION 'BAPI_TRANSACTION_COMMIT'
-*          EXPORTING
-*            wait = 'X'.
-*
-*        lv_codstatus = zcltm_gko_process=>gc_codstatus-miro_memorizada.
-*
-*        " Fatura &1 memorizada com sucesso.
-*        me->save_log( EXPORTING iv_acckey           = is_doc-acckey
-*                                iv_codstatus        = lv_codstatus
-*                                iv_invoicedocnumber = ev_invoicedocnumber
-*                                iv_fiscalyear       = ev_fiscalyear
-*                                it_return           = VALUE #( ( type = 'E' id = 'ZTM_GKO' number = '118' message_v1 = |{ ev_invoicedocnumber }{ ev_fiscalyear }| ) ) ).
-*
-*      ENDIF.
-*
-*
-*      RAISE EXCEPTION TYPE zcxtm_gko_process
-*        EXPORTING
-*          gt_errors = lt_errors.
-*
 *    ENDIF.
 
   ENDMETHOD.
@@ -11553,4 +11750,43 @@ OR cstat  = '136'    ). " Evento registrado, mas não vinculado a CT-e
 
   ENDMETHOD.
 
+
+  METHOD check_cte_rejected.
+
+    FREE: gt_return, gv_wait_async.
+
+* ---------------------------------------------------------------------------
+* Verifica se Evento foi concluído
+* ---------------------------------------------------------------------------
+    CALL FUNCTION 'ZFMTM_GKO_CTE_CHECK_REJECTED'
+      STARTING NEW TASK 'GKO_CTE_CHECK_REJECTED'
+      CALLING setup_messages ON END OF TASK
+      EXPORTING
+        iv_cteid = gs_gko_header-acckey.
+
+    WAIT UNTIL gv_wait_async = abap_true.
+    FREE: gv_wait_async.
+
+    IF gt_return[] IS INITIAL.
+
+      RETURN.
+
+    ELSEIF line_exists( gt_return[ type = if_xo_const_message=>error ] ).
+
+      " Para mais informações, favor verificar no monitor SAP NF-e.
+      gt_return = VALUE #( BASE gt_return ( type   = 'I'
+                                            id     = 'ZTM_GKO'
+                                            number = '153' ) ).
+
+      me->set_status( EXPORTING iv_status   = me->gc_codstatus-erro_ao_confirmar_evt_rejeicao
+                                it_bapi_ret = gt_return[] ).
+
+    ELSE.
+
+      me->set_status( EXPORTING iv_status   = me->gc_codstatus-evt_rejeicao_confirmado_sefaz
+                                it_bapi_ret = gt_return[] ).
+
+    ENDIF.
+
+  ENDMETHOD.
 ENDCLASS.

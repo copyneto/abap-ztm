@@ -9,6 +9,35 @@
    </INCLUDES>
    <FUNCTIONS>
     <item>
+     <FUNCNAME>ZFMTM_GKO_CTE_CHECK_REJECTED</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Verifica se Evento de rejeição foi efetuado.</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_CTEID</PARAMETER>
+       <TYP>/XNFE/ID</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <TYP>BAPIRET2_T</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_CTEID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Chave de acesso de 44 caracteres</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Parâmetro de retorno</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
      <FUNCNAME>ZFMTM_GKO_CTE_SET_REJECTED</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
      <SHORT_TEXT>/XNFE/CTE_SET_REJECTED</SHORT_TEXT>

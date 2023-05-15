@@ -842,9 +842,87 @@ CLASS ZCLMM_GKO_PROCESS_DOC IMPLEMENTATION.
 
 
         IF is_doc-tpcte = zcltm_gko_process=>gc_tpcte-complemento_de_valores.
+
           lo_gko_process->check_doc_orig_is_posted( ).
-*        ELSE.
-*          lo_gko_process->check_doc_memo_miro( ).
+
+        ELSE.
+
+          lo_gko_process->check_doc_memo_miro( IMPORTING et_return = data(lt_return_memo_miro) ). " Tabela de retorno
+
+          IF lt_return_memo_miro IS NOT INITIAL.
+
+            et_return[] = lt_return_memo_miro[].
+
+            IF is_doc-tpcte <> zcltm_gko_process=>gc_tpcte-complemento_de_valores.
+
+              SELECT *
+                FROM lfbw
+               WHERE lifnr     = @is_doc-lifnr
+                 AND bukrs     = @is_doc-bukrs
+                 AND wt_subjct = @abap_true
+                 AND wt_withcd IS NOT INITIAL
+                INTO @DATA(ls_wht_memo).
+                APPEND VALUE #(
+                  split_key   = 1
+                  wi_tax_type = ls_wht_memo-witht
+                  wi_tax_code = ls_wht_memo-wt_withcd
+                ) TO lt_wht.
+
+              ENDSELECT.
+
+              IF lines( lt_wht ) > 0.
+                ls_header-calc_tax_ind = abap_true.
+              ENDIF.
+
+              FREE: ls_header-j_1bnftype.
+              FREE: lt_return.
+
+              CALL FUNCTION 'BAPI_INCOMINGINVOICE_CREATE1'
+                EXPORTING
+                  headerdata       = ls_header
+                  invoicestatus    = zcltm_gko_process=>gc_invoice_status-memorizado_entrado
+                IMPORTING
+                  invoicedocnumber = ev_invoicedocnumber
+                  fiscalyear       = ev_fiscalyear
+                TABLES
+                  itemdata         = lt_item
+                  withtaxdata      = lt_wht
+                  tm_itemdata      = lt_tm_item
+                  accountingdata   = lt_account
+                  return           = lt_return.
+
+              IF line_exists( lt_return[ type = 'E' ] ).
+                CALL FUNCTION 'BAPI_TRANSACTION_ROLLBACK'.
+              ELSE.
+                CALL FUNCTION 'BAPI_TRANSACTION_COMMIT'
+                  EXPORTING
+                    wait = 'X'.
+
+                lv_codstatus = zcltm_gko_process=>gc_codstatus-miro_memorizada.
+
+                " Fatura &1 memorizada com sucesso.
+                me->save_log( EXPORTING iv_acckey           = is_doc-acckey
+                                        iv_codstatus        = lv_codstatus
+                                        iv_invoicedocnumber = ev_invoicedocnumber
+                                        iv_fiscalyear       = ev_fiscalyear
+                                        it_return           = lt_return_memo_miro ).
+
+                " Fatura &1 memorizada com sucesso.
+                me->save_log( EXPORTING iv_acckey           = is_doc-acckey
+                                        iv_codstatus        = lv_codstatus
+                                        iv_invoicedocnumber = ev_invoicedocnumber
+                                        iv_fiscalyear       = ev_fiscalyear
+                                        it_return           = VALUE #( ( type = 'E' id = 'ZTM_GKO' number = '118' message_v1 = |{ ev_invoicedocnumber }{ ev_fiscalyear }| ) ) ).
+
+                me->set_status( EXPORTING iv_acckey           = is_doc-acckey
+                                          iv_codstatus        = lv_codstatus
+                                          iv_invoicedocnumber = ev_invoicedocnumber
+                                          iv_fiscalyear       = ev_fiscalyear ).
+
+              ENDIF.
+              RETURN.
+            ENDIF.
+          ENDIF.
         ENDIF.
 
       CATCH  zcxtm_gko_process INTO DATA(lo_cx_gko_process).
@@ -1034,19 +1112,19 @@ CLASS ZCLMM_GKO_PROCESS_DOC IMPLEMENTATION.
       lv_invoicestatus = zcltm_gko_process=>gc_invoice_status-memorizado_entrado.
       CLEAR ls_header-j_1bnftype.
     ELSE.
-     IF is_header-j_1bnftype <> 'EX' AND is_header-j_1bnftype <> 'OX'.
-       IF sy-cprog    = 'ZMMR_GKO_PROCESSA'.
-         IF ( is_doc-crtn = '1' OR is_doc-crtn = '2' OR is_doc-crtn = '4' ) AND ( ls_header-j_1bnftype = 'ZK' ).
-           lv_invoicestatus = zcltm_gko_process=>gc_invoice_status-memorizado_entrado.
-           CLEAR ls_header-j_1bnftype.
-         ELSE.
-           lv_invoicestatus = zcltm_gko_process=>gc_invoice_status-registrado.
-         ENDIF.
-       ENDIF.
-     ELSE.
-       lv_invoicestatus = zcltm_gko_process=>gc_invoice_status-registrado.
-     ENDIF.
-   ENDIF.
+      IF is_header-j_1bnftype <> 'EX' AND is_header-j_1bnftype <> 'OX'.
+        IF sy-cprog    = 'ZMMR_GKO_PROCESSA'.
+          IF ( is_doc-crtn = '1' OR is_doc-crtn = '2' OR is_doc-crtn = '4' ) AND ( ls_header-j_1bnftype = 'ZK' ).
+            lv_invoicestatus = zcltm_gko_process=>gc_invoice_status-memorizado_entrado.
+            CLEAR ls_header-j_1bnftype.
+          ELSE.
+            lv_invoicestatus = zcltm_gko_process=>gc_invoice_status-registrado.
+          ENDIF.
+        ENDIF.
+      ELSE.
+        lv_invoicestatus = zcltm_gko_process=>gc_invoice_status-registrado.
+      ENDIF.
+    ENDIF.
 
 
     CALL FUNCTION 'BAPI_INCOMINGINVOICE_CREATE1'
@@ -1061,7 +1139,7 @@ CLASS ZCLMM_GKO_PROCESS_DOC IMPLEMENTATION.
         withtaxdata      = lt_wht
         return           = lt_return
         tm_itemdata      = lt_tm_item
-        ACCOUNTINGDATA   = lt_account.
+        accountingdata   = lt_account.
 
     " Limpa memória
     FREE MEMORY ID zcltm_gko_process=>gc_memory_id-acckey.
@@ -1179,7 +1257,7 @@ CLASS ZCLMM_GKO_PROCESS_DOC IMPLEMENTATION.
             TABLES
               itemdata         = lt_item
               tm_itemdata      = lt_tm_item
-              ACCOUNTINGDATA   = lt_account
+              accountingdata   = lt_account
               return           = lt_return.
 
           " Limpa memória
@@ -1333,7 +1411,7 @@ CLASS ZCLMM_GKO_PROCESS_DOC IMPLEMENTATION.
             itemdata         = lt_item
             withtaxdata      = lt_wht
             tm_itemdata      = lt_tm_item
-            ACCOUNTINGDATA   = lt_account
+            accountingdata   = lt_account
             return           = lt_return.
 
         IF line_exists( lt_return[ type = 'E' ] ).

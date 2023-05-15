@@ -667,7 +667,8 @@ CLASS ZCLTM_PROCESS_GREENMILE IMPLEMENTATION.
     SORT lt_log_locid BY loclog_id.
     DELETE ADJACENT DUPLICATES FROM lt_log_locid COMPARING loclog_id.
 
-    IF ls_tor_root-zz1_cond_exped EQ '04'.
+    IF ( ls_tor_root-zz1_cond_exped EQ '04' OR
+          ls_tor_root-zz1_cond_exped EQ '17' ).
 *      DELETE lt_log_locid WHERE table_line CS 'SP_'.
       DELETE lt_log_locid WHERE loctype = '1003'.
     ELSE.
@@ -1065,7 +1066,8 @@ CLASS ZCLTM_PROCESS_GREENMILE IMPLEMENTATION.
 *      LOOP AT lt_assigned_fus INTO ls_assigned_fus WHERE consigneeid EQ ls_log_locid-loclog_id.
 *      LOOP AT lt_assigned_fus INTO ls_assigned_fus WHERE consigneeid EQ ls_log_locid-partner.
 
-      IF ls_tor_root-zz1_cond_exped EQ '04'.
+      IF ( ls_tor_root-zz1_cond_exped EQ '04'
+         OR ls_tor_root-zz1_cond_exped EQ '17' ).
         CLEAR: lv_select_clause.
       ELSE.
         lv_select_clause =  'consigneeid = ls_log_locid-partner'.

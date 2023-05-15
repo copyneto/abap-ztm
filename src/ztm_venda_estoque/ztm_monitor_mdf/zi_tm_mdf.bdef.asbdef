@@ -60,7 +60,6 @@ etag master LocalLastChangedAt
   action ( features : instance ) enviar;
   action ( features : instance ) cancelar;
   action ( features : instance ) encerrar;
-  action ( features : instance ) refresh;
   action ( features : instance ) motorista parameter ZC_TM_MDF_MOTORISTA_POPUP;
   action ( features : instance ) criarMdfeUsarOF parameter ZI_TM_MDF_ORDEM_FRETE_POPUP;
   action ( features : instance ) criarRefMdfe;
@@ -236,6 +235,8 @@ lock dependent by _MDF
     LastChangedAt = last_changed_at;
     LocalLastChangedAt = local_last_changed_at;
   }
+  determination refresh on modify { field BR_NFTotalAmount; }
+  determination refreshSave on save  { field BR_NFTotalAmount; }
 }
 
 // ------------------------------------------------------

@@ -192,7 +192,7 @@ ENDCLASS.
 
 
 
-CLASS ZCLTM_PROCESS_OF IMPLEMENTATION.
+CLASS zcltm_process_of IMPLEMENTATION.
 
 
   METHOD execute.
@@ -292,6 +292,7 @@ CLASS ZCLTM_PROCESS_OF IMPLEMENTATION.
             create_fo( EXPORTING iv_order_type   = lv_tipo_ordem
                                  is_freight_unit = <fs_funit>
                        IMPORTING es_ordem        = ls_ordem ).
+
         ENDTRY.
       ENDIF.
       "Inserir unidade na ordem selecionada
@@ -385,8 +386,10 @@ CLASS ZCLTM_PROCESS_OF IMPLEMENTATION.
           ls_fo_info   TYPE /scmtms/s_tor_fo_info,
           lt_key       TYPE /bobf/t_frw_key,
           lt_stop_new  TYPE /scmtms/t_tor_stop_k,
+          lt_stop_fist TYPE /scmtms/t_tor_stop_k,
           lr_params    TYPE REF TO /scmtms/s_sfir_input_params,
           lt_sfir_root TYPE /scmtms/t_sfir_root_k,
+          ls_dados     TYPE ztms_input_rodnet,
           lt_sfir_keys TYPE /bobf/t_frw_key,
           lr_fo_types  TYPE RANGE OF /scmtms/c_torty-type.
 
@@ -897,6 +900,31 @@ CLASS ZCLTM_PROCESS_OF IMPLEMENTATION.
       log( is_message = ls_msg ).
     ENDLOOP.
 
+    IF iv_order_type = '1040'.
+      /bobf/cl_tra_serv_mgr_factory=>get_service_manager( /scmtms/if_tor_c=>sc_bo_key )->retrieve_by_association(
+          EXPORTING
+            iv_node_key             = /scmtms/if_tor_c=>sc_node-root                                                                                   " Node
+            it_key                  = VALUE #( ( key = ls_tor_root-key ) )                                                                                  " Key Table
+            iv_association          = /scmtms/if_tor_c=>sc_association-root-stop_first                                                                 " Association
+            iv_fill_data            = abap_true                                                                                                        " Data element for domain BOOLE: TRUE (='X') and FALSE (=' ')
+          IMPORTING
+            et_data                 = lt_stop_fist  ).
+
+      IF line_exists( lt_stop_fist[ stop_cat = 'S' ] ) . "#EC CI_SORTSEQ
+        ls_dados-ori_locid = lt_stop_fist[ stop_cat = 'S' ]-log_locid. "#EC CI_SORTSEQ
+      ENDIF.
+
+      me->create_event(
+        EXPORTING
+          is_tor      = ls_tor_root
+          is_dados    = ls_dados
+          iv_event    = 'FATURAR/CARREGAR'
+        RECEIVING
+          rt_messages = DATA(lt_return)
+      ).
+
+    ENDIF.
+
   ENDMETHOD.
 
 
@@ -1018,7 +1046,7 @@ CLASS ZCLTM_PROCESS_OF IMPLEMENTATION.
                                 IMPORTING et_message  = DATA(lt_messages) ).
     ENDIF.
 
-    IF line_exists( lt_messages[ severity = gc_e ] ). "#EC CI_STDSEQ
+    IF line_exists( lt_messages[ severity = gc_e ] ).    "#EC CI_STDSEQ
       LOOP AT lt_messages ASSIGNING FIELD-SYMBOL(<fs_message>).
         DATA(ls_erro) = <fs_message>-message->if_t100_message~t100key.
 
@@ -1247,25 +1275,44 @@ CLASS ZCLTM_PROCESS_OF IMPLEMENTATION.
       ls_fo_info-loc_dst_key = lt_result[ 2 ]-key. " Destination
     ENDIF.
 
-    SELECT SINGLE *
+    SELECT SINGLE vbeln,
+                  wadat,
+                  lfdat,
+                  vsbed,
+                  lfuhr,
+                  wauhr,
+                  vsart
       FROM likp
       INTO @DATA(ls_likp)
     WHERE vbeln = @is_freight_unit-vbeln.
-    IF sy-subrc = 0.
-      SELECT vbeln, posnr FROM vbrp INTO @DATA(ls_fat_remessa)
-        UP TO 1 ROWS
-        WHERE vgbel = @ls_likp-vbeln.
-      ENDSELECT.
-      IF sy-subrc = 0.
-        SELECT docnum FROM j_1bnflin INTO @DATA(lv_docnum)
-          UP TO 1 ROWS
-          WHERE refkey = @ls_fat_remessa-vbeln
-            AND refitm = @ls_fat_remessa-posnr.
-        ENDSELECT.
-        SELECT SINGLE pstdat FROM j_1bnfdoc INTO @DATA(lv_data_nota)
-          WHERE docnum = @lv_docnum.
-      ENDIF.
+
+* BEGIN OF DELETE - JWSILVA - 11.05.2023
+*    IF sy-subrc = 0.
+*      SELECT vbeln, posnr FROM vbrp INTO @DATA(ls_fat_remessa)
+*        UP TO 1 ROWS
+*        WHERE vgbel = @ls_likp-vbeln.
+*      ENDSELECT.
+*      IF sy-subrc = 0.
+*        SELECT docnum FROM j_1bnflin INTO @DATA(lv_docnum)
+*          UP TO 1 ROWS
+*          WHERE refkey = @ls_fat_remessa-vbeln
+*            AND refitm = @ls_fat_remessa-posnr.
+*        ENDSELECT.
+*        SELECT SINGLE pstdat FROM j_1bnfdoc INTO @DATA(lv_data_nota)
+*          WHERE docnum = @lv_docnum.
+*      ENDIF.
+*    ENDIF.
+* END OF DELETE - JWSILVA - 11.05.2023
+* BEGIN OF INSERT - JWSILVA - 11.05.2023
+    SELECT SINGLE *
+        FROM zi_tm_vh_frete_identify_nf
+        INTO @DATA(ls_fluxo)
+        WHERE DeliveryDocument = @is_freight_unit-vbeln.
+
+    IF sy-subrc EQ 0.
+      DATA(lv_data_nota) = ls_fluxo-BR_NFPostingDate.
     ENDIF.
+* END OF INSERT - JWSILVA - 11.05.2023
 
     /scmtms/cl_tor_factory=>create_tor_tour(
       EXPORTING
@@ -1311,7 +1358,8 @@ CLASS ZCLTM_PROCESS_OF IMPLEMENTATION.
 
       " Atualiza campos da Ordem de Frete
       TRY.
-          zcltm_manage_of=>change_of( CHANGING  cs_root      = ls_tor_root
+          zcltm_manage_of=>change_of( EXPORTING iv_vbeln     = is_freight_unit-vbeln  " CHANGE - JWSILVA - 10.05.2023
+                                      CHANGING  cs_root      = ls_tor_root
                                                 ct_changed   = lt_changed ).
         CATCH cx_root.
       ENDTRY.
@@ -1379,7 +1427,7 @@ CLASS ZCLTM_PROCESS_OF IMPLEMENTATION.
         IF <fs_stop_new>-stop_id EQ '0000000010'. " Origem
           <fs_stop_new>-log_locid    = is_freight_unit-sourcelocation.
           <fs_stop_new>-log_loc_uuid = lt_result[ 1 ]-key.
-          IF iv_order_type = '1120' OR iv_order_type = '1090'.
+          IF ( iv_order_type = '1120' OR iv_order_type = '1090' ) and lv_data_nota IS NOT INITIAL.  " CHANGE - JWSILVA - 11.05.2023
             CONVERT DATE lv_data_nota TIME ls_likp-wauhr INTO TIME STAMP <fs_stop_new>-plan_trans_time TIME ZONE sy-zonlo.
           ELSE.
             IF ls_likp IS NOT INITIAL.
@@ -1389,7 +1437,7 @@ CLASS ZCLTM_PROCESS_OF IMPLEMENTATION.
         ELSEIF <fs_stop_new>-stop_id EQ '0000000020'. " Destino.
           <fs_stop_new>-log_locid    = is_freight_unit-destinationlocation.
           <fs_stop_new>-log_loc_uuid = lt_result[ 2 ]-key.
-          IF iv_order_type = '1120' OR iv_order_type = '1090'.
+          IF ( iv_order_type = '1120' OR iv_order_type = '1090' ) and lv_data_nota IS NOT INITIAL.  " CHANGE - JWSILVA - 11.05.2023
             CONVERT DATE lv_data_nota TIME ls_likp-wauhr INTO TIME STAMP <fs_stop_new>-plan_trans_time TIME ZONE sy-zonlo.
           ELSE.
             IF ls_likp IS NOT INITIAL.
@@ -1399,7 +1447,7 @@ CLASS ZCLTM_PROCESS_OF IMPLEMENTATION.
         ELSEIF <fs_stop_new>-stop_id EQ '0000000030'. " Segunda Origem
           <fs_stop_new>-log_locid    = is_freight_unit-sourcelocation.
           <fs_stop_new>-log_loc_uuid = lt_result[ 1 ]-key.
-          IF iv_order_type = '1120' OR iv_order_type = '1090'.
+          IF ( iv_order_type = '1120' OR iv_order_type = '1090' ) and lv_data_nota IS NOT INITIAL.  " CHANGE - JWSILVA - 11.05.2023
             CONVERT DATE lv_data_nota TIME ls_likp-wauhr INTO TIME STAMP <fs_stop_new>-plan_trans_time TIME ZONE sy-zonlo.
           ELSE.
             IF ls_likp IS NOT INITIAL.
@@ -1409,7 +1457,7 @@ CLASS ZCLTM_PROCESS_OF IMPLEMENTATION.
         ELSEIF <fs_stop_new>-stop_id EQ '0000000040'. " Destino final.
           <fs_stop_new>-log_locid    = is_freight_unit-destinationlocation.
           <fs_stop_new>-log_loc_uuid = lt_result[ 2 ]-key.
-          IF iv_order_type = '1120' OR iv_order_type = '1090'.
+          IF ( iv_order_type = '1120' OR iv_order_type = '1090' ) and lv_data_nota IS NOT INITIAL.  " CHANGE - JWSILVA - 11.05.2023
             CONVERT DATE lv_data_nota TIME ls_likp-wauhr INTO TIME STAMP <fs_stop_new>-plan_trans_time TIME ZONE sy-zonlo.
           ELSE.
             IF ls_likp IS NOT INITIAL.

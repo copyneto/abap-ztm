@@ -13,7 +13,6 @@ use etag
   use action criarMdfeUsarOF;
   use action criarRefMdfe;
   use action motorista;
-  use action refresh;
   use association _Complemento;
   use association _Emitente;
   use association _Municipio { create; }

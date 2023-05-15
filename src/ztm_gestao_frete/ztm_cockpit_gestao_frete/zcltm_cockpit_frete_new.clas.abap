@@ -1066,6 +1066,9 @@ CLASS zcltm_cockpit_frete_new IMPLEMENTATION.
       lt_cteid   TYPE /xnfe/nfeid_r_t,
       lt_inctehd TYPE /xnfe/inctehd_t.
 
+* ----------------------------------------------------------------------
+* Prepara para eliminar o CTE
+* ----------------------------------------------------------------------
     CALL FUNCTION '/XNFE/APPEND_RANGE'
       EXPORTING
         iv_value_low = iv_acckey
@@ -1088,6 +1091,8 @@ CLASS zcltm_cockpit_frete_new IMPLEMENTATION.
     TRY.
         DATA(ls_inctehd) = lt_inctehd[ 1 ].
       CATCH cx_root.
+        " Neste cenário, o CTE já foi removido. Continuar o processo para remover a chave no cockpit apenas
+        RETURN.
     ENDTRY.
 
     CALL FUNCTION '/XNFE/B2BCTE_READ_CTE_FOR_UPD'
@@ -1127,6 +1132,40 @@ CLASS zcltm_cockpit_frete_new IMPLEMENTATION.
                                             message_v4 = sy-msgv4 ) ).
       RETURN.
     ENDIF.
+
+* BEGIN OF INSERT - JWSILVA - 12.05.2023
+* ----------------------------------------------------------------------
+* Chama lógica para eliminar os eventos
+* ----------------------------------------------------------------------
+    CALL FUNCTION '/XNFE/EV_READ_EVENT_FOR_UPD'
+      EXPORTING
+        iv_guid              = ls_inctehd-guid
+      EXCEPTIONS
+        event_does_not_exist = 1
+        event_locked         = 2
+        technical_error      = 3
+        OTHERS               = 4.
+
+    IF sy-subrc EQ 0.
+
+      CALL FUNCTION '/XNFE/EVENT_DELETE'
+        EXPORTING
+          iv_guid         = ls_inctehd-guid
+        EXCEPTIONS
+          technical_error = 1
+          OTHERS          = 2.
+
+      IF sy-subrc <> 0.
+        et_return = VALUE #( BASE et_return ( id         = sy-msgid
+                                              type       = sy-msgty
+                                              number     = sy-msgno
+                                              message_v1 = sy-msgv1
+                                              message_v2 = sy-msgv2
+                                              message_v3 = sy-msgv3
+                                              message_v4 = sy-msgv4 ) ).
+      ENDIF.
+    ENDIF.
+* END OF INSERT - JWSILVA - 12.05.2023
 
     CALL FUNCTION '/XNFE/B2BCTE_SAVE_TO_DB'.
     CALL FUNCTION '/XNFE/EV_SAVE_TO_DB'.
