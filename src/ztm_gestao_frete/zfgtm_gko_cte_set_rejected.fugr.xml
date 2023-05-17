@@ -20,6 +20,10 @@
      </IMPORT>
      <EXPORT>
       <RSEXP>
+       <PARAMETER>ES_EVENT</PARAMETER>
+       <TYP>/XNFE/EVENTS</TYP>
+      </RSEXP>
+      <RSEXP>
        <PARAMETER>ET_RETURN</PARAMETER>
        <TYP>BAPIRET2_T</TYP>
       </RSEXP>
@@ -29,6 +33,11 @@
        <PARAMETER>IV_CTEID</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Chave de acesso de 44 caracteres</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ES_EVENT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Nota Fiscal Eletronica (NF-e): Events</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_RETURN</PARAMETER>

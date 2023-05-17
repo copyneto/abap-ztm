@@ -1,318 +1,282 @@
-CLASS zcltm_modify_po DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
+class ZCLTM_MODIFY_PO definition
+  public
+  final
+  create public .
 
-  PUBLIC SECTION.
+public section.
 
-    INTERFACES if_badi_interface .
-    INTERFACES /scmtms/if_sfir_posting .
+  interfaces IF_BADI_INTERFACE .
+  interfaces /SCMTMS/IF_SFIR_POSTING .
 
-    TYPES ty_bp_dest TYPE bu_partner .
-    TYPES ty_bp_orig TYPE bu_partner .
+  types TY_BP_DEST type BU_PARTNER .
+  types TY_BP_ORIG type BU_PARTNER .
 
-    CONSTANTS gc_fretes_diversos TYPE ze_gko_cenario VALUE '06' ##NO_TEXT.
-    CONSTANTS gc_compras TYPE ze_gko_cenario VALUE '07' ##NO_TEXT.
-    CONSTANTS gc_nftype_servico TYPE j_1bnfdoc-nftype VALUE 'ZK' ##NO_TEXT.
-    CONSTANTS gc_pedido_tm TYPE ekko-bsart VALUE 'ZTM' ##NO_TEXT.
-    DATA gv_bp_rem TYPE bu_partner .
-    DATA gv_bp_dest TYPE bu_partner .
-    DATA gs_loc_origem TYPE /bofu/s_addr_postal_addressk .
-    DATA gs_loc_dest TYPE /bofu/s_addr_postal_addressk .
-    DATA gv_message TYPE char200 .
+  constants GC_FRETES_DIVERSOS type ZE_GKO_CENARIO value '06' ##NO_TEXT.
+  constants GC_COMPRAS type ZE_GKO_CENARIO value '07' ##NO_TEXT.
+  constants GC_NFTYPE_SERVICO type J_1BNFDOC-NFTYPE value 'ZK' ##NO_TEXT.
+  constants GC_PEDIDO_TM type EKKO-BSART value 'ZTM' ##NO_TEXT.
+  data GV_BP_REM type BU_PARTNER .
+  data GV_BP_DEST type BU_PARTNER .
+  data GS_LOC_ORIGEM type /BOFU/S_ADDR_POSTAL_ADDRESSK .
+  data GS_LOC_DEST type /BOFU/S_ADDR_POSTAL_ADDRESSK .
+  data GV_MESSAGE type CHAR200 .
 
-    METHODS busca_fu_assign
-      IMPORTING
-        !it_tor_fo           TYPE /scmtms/t_tor_root_k
-      RETURNING
-        VALUE(rt_tor_assign) TYPE /scmtms/t_tor_root_k .
-    METHODS determina_iva_compras
-      IMPORTING
-        !is_sfir_root   TYPE /scmtms/s_sfir_root_k
-        !it_po_items    TYPE bapimepoitem_tp
-        !is_tor_root    TYPE /scmtms/s_tor_root_k
-        !it_tor_item    TYPE /scmtms/t_tor_item_tr_k
-        !iv_btd_id      TYPE /scmtms/base_btd_id
-        !is_po_header   TYPE bapimepoheader
-      EXPORTING
-        !ev_iva         TYPE mwskz
-      CHANGING
-        !ct_po_services TYPE bapiesllc_tp .
-    METHODS determina_iva_cte
-      IMPORTING
-        !is_tor_root       TYPE /scmtms/s_tor_root_k
-        !it_tor_item       TYPE /scmtms/t_tor_item_tr_k
-        !it_tor_stop       TYPE /scmtms/t_tor_stop_k
-        !is_sfir_root      TYPE /scmtms/s_sfir_root_k
-        !it_sfir_item_data TYPE /scmtms/t_sfir_item_k
-        !it_stage_loc_data TYPE /scmtms/cl_sfir_helper_root=>tty_stage_data
-        !it_postal_addr    TYPE /bofu/t_addr_postal_addressk
-        !iv_btd_id         TYPE /scmtms/base_btd_id
-        !is_po_header      TYPE bapimepoheader
-      EXPORTING
-        !ev_iva            TYPE mwskz
-      CHANGING
-        !ct_po_items       TYPE bapimepoitem_tp OPTIONAL
-        !ct_po_itemsx      TYPE bapimepoitemx_tp OPTIONAL
-        !ct_po_services    TYPE bapiesllc_tp .
-    METHODS determina_iva_cte_fob
-      IMPORTING
-        !is_tor_root       TYPE /scmtms/s_tor_root_k
-        !it_tor_item       TYPE /scmtms/t_tor_item_tr_k
-        !it_tor_stop       TYPE /scmtms/t_tor_stop_k
-        !is_sfir_root      TYPE /scmtms/s_sfir_root_k
-        !it_sfir_item_data TYPE /scmtms/t_sfir_item_k
-        !it_stage_loc_data TYPE /scmtms/cl_sfir_helper_root=>tty_stage_data
-        !it_postal_addr    TYPE /bofu/t_addr_postal_addressk
-        !iv_btd_id         TYPE /scmtms/base_btd_id
-        !is_po_header      TYPE bapimepoheader
-      EXPORTING
-        !ev_iva            TYPE mwskz
-      CHANGING
-        !ct_po_services    TYPE bapiesllc_tp
-        !ct_po_items       TYPE bapimepoitem_tp
-        !ct_po_itemsx      TYPE bapimepoitemx_tp .
-    METHODS determina_iva_cte_services_old
-      IMPORTING
-        !is_tor_root       TYPE /scmtms/s_tor_root_k
-        !it_tor_item       TYPE /scmtms/t_tor_item_tr_k
-        !it_tor_stop       TYPE /scmtms/t_tor_stop_k
-        !is_sfir_root      TYPE /scmtms/s_sfir_root_k
-        !it_sfir_item_data TYPE /scmtms/t_sfir_item_k
-        !it_stage_loc_data TYPE /scmtms/cl_sfir_helper_root=>tty_stage_data
-        !it_postal_addr    TYPE /bofu/t_addr_postal_addressk
-        !iv_btd_id         TYPE /scmtms/base_btd_id
-        !is_po_header      TYPE bapimepoheader
-      EXPORTING
-        !ev_iva            TYPE mwskz
-      CHANGING
-        !ct_po_services    TYPE bapiesllc_tp
-        !ct_po_items       TYPE bapimepoitem_tp
-        !ct_po_itemsx      TYPE bapimepoitemx_tp .
-    METHODS determina_iva_cte_services_01
-      IMPORTING
-        !is_tor_root       TYPE /scmtms/s_tor_root_k
-        !it_tor_item       TYPE /scmtms/t_tor_item_tr_k
-        !it_tor_stop       TYPE /scmtms/t_tor_stop_k
-        !is_sfir_root      TYPE /scmtms/s_sfir_root_k
-        !it_sfir_item_data TYPE /scmtms/t_sfir_item_k
-        !it_stage_loc_data TYPE /scmtms/cl_sfir_helper_root=>tty_stage_data
-        !it_postal_addr    TYPE /bofu/t_addr_postal_addressk
-        !iv_btd_id         TYPE /scmtms/base_btd_id
-        !is_po_header      TYPE bapimepoheader
-        !it_charge_element TYPE /scmtms/t_tcc_trchrg_element_k OPTIONAL
-      EXPORTING
-        !ev_iva            TYPE mwskz
-        !ev_serv_def       TYPE char1
-      CHANGING
-        !ct_po_services    TYPE bapiesllc_tp
-        !ct_po_items       TYPE bapimepoitem_tp
-        !ct_po_itemsx      TYPE bapimepoitemx_tp .
-    METHODS determina_iva_cte_services_03
-      IMPORTING
-        !is_tor_root       TYPE /scmtms/s_tor_root_k
-        !it_tor_item       TYPE /scmtms/t_tor_item_tr_k
-        !it_tor_stop       TYPE /scmtms/t_tor_stop_k
-        !is_sfir_root      TYPE /scmtms/s_sfir_root_k
-        !it_sfir_item_data TYPE /scmtms/t_sfir_item_k
-        !it_stage_loc_data TYPE /scmtms/cl_sfir_helper_root=>tty_stage_data
-        !it_postal_addr    TYPE /bofu/t_addr_postal_addressk
-        !iv_btd_id         TYPE /scmtms/base_btd_id
-        !is_po_header      TYPE bapimepoheader
-        !it_charge_element TYPE /scmtms/t_tcc_trchrg_element_k OPTIONAL
-      EXPORTING
-        !ev_iva            TYPE mwskz
-        !ev_serv_def       TYPE char1
-      CHANGING
-        !ct_po_services    TYPE bapiesllc_tp
-        !ct_po_items       TYPE bapimepoitem_tp
-        !ct_po_itemsx      TYPE bapimepoitemx_tp .
-    METHODS determina_iva_cte_services_ol2
-      IMPORTING
-        !is_tor_root       TYPE /scmtms/s_tor_root_k
-        !it_tor_item       TYPE /scmtms/t_tor_item_tr_k
-        !it_tor_stop       TYPE /scmtms/t_tor_stop_k
-        !is_sfir_root      TYPE /scmtms/s_sfir_root_k
-        !it_sfir_item_data TYPE /scmtms/t_sfir_item_k
-        !it_stage_loc_data TYPE /scmtms/cl_sfir_helper_root=>tty_stage_data
-        !it_postal_addr    TYPE /bofu/t_addr_postal_addressk
-        !iv_btd_id         TYPE /scmtms/base_btd_id
-        !is_po_header      TYPE bapimepoheader
-      EXPORTING
-        !ev_iva            TYPE mwskz
-      CHANGING
-        !ct_po_services    TYPE bapiesllc_tp
-        !ct_po_items       TYPE bapimepoitem_tp
-        !ct_po_itemsx      TYPE bapimepoitemx_tp .
-    METHODS determina_iva_cte_cif
-      IMPORTING
-        !it_po_items       TYPE bapimepoitem_tp
-        !is_tor_root       TYPE /scmtms/s_tor_root_k
-        !it_tor_item       TYPE /scmtms/t_tor_item_tr_k
-        !it_tor_stop       TYPE /scmtms/t_tor_stop_k
-        !is_sfir_root      TYPE /scmtms/s_sfir_root_k
-        !it_sfir_item_data TYPE /scmtms/t_sfir_item_k
-        !it_stage_loc_data TYPE /scmtms/cl_sfir_helper_root=>tty_stage_data
-        !it_postal_addr    TYPE /bofu/t_addr_postal_addressk
-        !iv_btd_id         TYPE /scmtms/base_btd_id
-        !is_po_header      TYPE bapimepoheader
-      EXPORTING
-        !ev_iva            TYPE mwskz
-      CHANGING
-        !ct_po_services    TYPE bapiesllc_tp .
-    METHODS determina_iva_diversos
-      IMPORTING
-        !is_tor_root    TYPE /scmtms/s_tor_root_k
-        !it_tor_item    TYPE /scmtms/t_tor_item_tr_k
-        !is_sfir_root   TYPE /scmtms/s_sfir_root_k
-        !iv_btd_id      TYPE /scmtms/base_btd_id
-        !is_po_header   TYPE bapimepoheader
-      EXPORTING
-        !ev_iva         TYPE mwskz
-      CHANGING
-        !ct_po_items    TYPE bapimepoitem_tp
-        !ct_po_itemsx   TYPE bapimepoitemx_tp
-        !ct_po_services TYPE bapiesllc_tp .
-    METHODS determina_iva_nfse
-      IMPORTING
-        !is_sfir_root      TYPE /scmtms/s_sfir_root_k
-        !it_sfir_item_data TYPE /scmtms/t_sfir_item_k
-        !it_stage_loc_data TYPE /scmtms/cl_sfir_helper_root=>tty_stage_data
-        !it_postal_addr    TYPE /bofu/t_addr_postal_addressk
-        !it_tor_stop       TYPE /scmtms/t_tor_stop_k
-        !is_tor_root       TYPE /scmtms/s_tor_root_k
-      EXPORTING
-        !ev_iva            TYPE mwskz
-      CHANGING
-        !ct_po_services    TYPE bapiesllc_tp
-        !ct_po_items       TYPE bapimepoitem_tp
-        !ct_po_itemsx      TYPE bapimepoitemx_tp .
-    METHODS determina_conta_contab
-      IMPORTING
-        !is_sfir_root          TYPE /scmtms/s_sfir_root_k
-        !is_sfir_item_data     TYPE /scmtms/s_sfir_item_k
-        !is_tor_root           TYPE /scmtms/s_tor_root_k
-        !is_loc_origem         TYPE /bofu/s_addr_postal_addressk OPTIONAL
-        !is_loc_dest           TYPE /bofu/s_addr_postal_addressk OPTIONAL
-      RETURNING
-        VALUE(rv_conta_contab) TYPE saknr .
-    METHODS busca_referencia
-      IMPORTING
-        !is_tor_fo           TYPE /scmtms/s_tor_root_k
-      RETURNING
-        VALUE(rt_tor_docref) TYPE /scmtms/t_tor_docref_k .
-    METHODS determina_prod_acabado
-      IMPORTING
-        !it_tor_item           TYPE /scmtms/t_tor_item_tr_k
-      RETURNING
-        VALUE(rt_prod_acabado) TYPE flag .
-    METHODS determina_loc_origem_dest
-      IMPORTING
-        !it_sfir_item_data TYPE /scmtms/t_sfir_item_k
-        !it_stage_loc_data TYPE /scmtms/cl_sfir_helper_root=>tty_stage_data
-        !it_postal_addr    TYPE /bofu/t_addr_postal_addressk
-        !it_tor_stop       TYPE /scmtms/t_tor_stop_k
-      EXPORTING
-        !es_loc_origem     TYPE /bofu/s_addr_postal_addressk
-        !es_loc_dest       TYPE /bofu/s_addr_postal_addressk .
-    METHODS get_items_post
-      IMPORTING
-        !it_references       TYPE zcltm_gko_process=>ty_t_zgkot003
-        !is_header           TYPE zttm_gkot001
-        !iv_acckey           TYPE zttm_gkot001-acckey
-      RETURNING
-        VALUE(rt_items_post) TYPE zcltm_gko_process=>ty_t_items_post .
-    METHODS determina_parceiro_pedido
-      IMPORTING
-        !is_tor_root   TYPE /scmtms/s_tor_root_k
-      CHANGING
-        !ct_po_partner TYPE bapiekkop_tp .
-    METHODS determina_ncm_servico
-      IMPORTING
-        !it_po_services TYPE bapiesllc_tp
-      CHANGING
-        !ct_po_items    TYPE bapimepoitem_tp
-        !ct_po_itemsx   TYPE bapimepoitemx_tp .
-    METHODS get_items_post_wo_pa
-      IMPORTING
-        !it_nf_saida   TYPE zcltm_gko_process=>ty_t_j_1bnflin
-        !is_header     TYPE zttm_gkot001
-      CHANGING
-        !ct_items_post TYPE zcltm_gko_process=>ty_t_items_post .
-    METHODS get_items_post_others
-      IMPORTING
-        !it_nf_saida   TYPE zcltm_gko_process=>ty_t_j_1bnflin
-        !is_header     TYPE zttm_gkot001
-      CHANGING
-        !ct_items_post TYPE zcltm_gko_process=>ty_t_items_post .
-    METHODS get_items_post_transferencia
-      IMPORTING
-        !it_nf_saida   TYPE zcltm_gko_process=>ty_t_j_1bnflin
-        !is_header     TYPE zttm_gkot001
-      CHANGING
-        !ct_items_post TYPE zcltm_gko_process=>ty_t_items_post .
-    METHODS get_items_post_venda_coligada
-      IMPORTING
-        !it_nf_saida   TYPE zcltm_gko_process=>ty_t_j_1bnflin
-        !is_header     TYPE zttm_gkot001
-      CHANGING
-        !ct_items_post TYPE zcltm_gko_process=>ty_t_items_post .
-    METHODS get_iva_detailed
-      IMPORTING
-        !it_items_post TYPE zcltm_gko_process=>ty_t_items_post
-        !is_header     TYPE zttm_gkot001
-        !iv_saknr      TYPE zttm_pcockpit013-saknr
-      RETURNING
-        VALUE(rt_iva)  TYPE zcltm_gko_process=>ty_t_po_iva_detailed .
-    METHODS get_iva_unified
-      IMPORTING
-        !it_items_post TYPE zcltm_gko_process=>ty_t_items_post
-        !is_header     TYPE zttm_gkot001
-        !iv_saknr      TYPE zttm_pcockpit013-saknr
-      RETURNING
-        VALUE(rv_iva)  TYPE mwskz .
-    METHODS get_iva_from_info_record
-      IMPORTING
-        !it_items_post TYPE zcltm_gko_process=>ty_t_items_post
-        !is_header     TYPE zttm_gkot001
-        !iv_saknr      TYPE zttm_pcockpit013-saknr
-      RETURNING
-        VALUE(rv_iva)  TYPE mwskz .
-    METHODS trata_caracter_especial
-      IMPORTING
-        !iv_text       TYPE any
-      RETURNING
-        VALUE(rv_text) TYPE string .
-    METHODS set_log
-      IMPORTING
-        !it_return TYPE bapiret2_t
-        !iv_acckey TYPE j_1b_nfe_access_key_dtel44 .
-    METHODS add_lc_observacao_nf_miro
-      IMPORTING
-        !it_nfitems    TYPE j_1bnflin_tab
-        !is_nfheader   TYPE j_1bnfdoc
-      CHANGING
-        !cv_observacao TYPE j_1bnfdoc-observat .
-    METHODS determina_service
-      IMPORTING
-        !it_charge_element TYPE /scmtms/t_tcc_trchrg_element_k OPTIONAL
-      EXPORTING
-        !ev_serv_def       TYPE char1
-      CHANGING
-        !ct_po_services    TYPE bapiesllc_tp .
-
-    METHODS atualiza_po_services
-      IMPORTING
-        !it_tor_root_data  TYPE /scmtms/t_tor_root_k
-        !is_sfir_root      TYPE  /scmtms/s_sfir_root_k
-        !it_charge_element TYPE /scmtms/t_tcc_trchrg_element_k
-        !iv_iva            TYPE mwskz
-        !iv_serv_def       TYPE char1 OPTIONAL
-      CHANGING
-        !ct_po_services    TYPE bapiesllc_tp
-        !ct_po_items       TYPE bapimepoitem_tp
-        !ct_po_itemsx      TYPE bapimepoitemx_tp.
-
+  methods BUSCA_FU_ASSIGN
+    importing
+      !IT_TOR_FO type /SCMTMS/T_TOR_ROOT_K
+    returning
+      value(RT_TOR_ASSIGN) type /SCMTMS/T_TOR_ROOT_K .
+  methods DETERMINA_IVA_COMPRAS
+    importing
+      !IS_SFIR_ROOT type /SCMTMS/S_SFIR_ROOT_K
+      !IT_PO_ITEMS type BAPIMEPOITEM_TP
+      !IS_TOR_ROOT type /SCMTMS/S_TOR_ROOT_K
+      !IT_TOR_ITEM type /SCMTMS/T_TOR_ITEM_TR_K
+      !IV_BTD_ID type /SCMTMS/BASE_BTD_ID
+      !IS_PO_HEADER type BAPIMEPOHEADER
+    exporting
+      !EV_IVA type MWSKZ
+    changing
+      !CT_PO_SERVICES type BAPIESLLC_TP .
+  methods DETERMINA_IVA_CTE
+    importing
+      !IS_TOR_ROOT type /SCMTMS/S_TOR_ROOT_K
+      !IT_TOR_ITEM type /SCMTMS/T_TOR_ITEM_TR_K
+      !IT_TOR_STOP type /SCMTMS/T_TOR_STOP_K
+      !IS_SFIR_ROOT type /SCMTMS/S_SFIR_ROOT_K
+      !IT_SFIR_ITEM_DATA type /SCMTMS/T_SFIR_ITEM_K
+      !IT_STAGE_LOC_DATA type /SCMTMS/CL_SFIR_HELPER_ROOT=>TTY_STAGE_DATA
+      !IT_POSTAL_ADDR type /BOFU/T_ADDR_POSTAL_ADDRESSK
+      !IV_BTD_ID type /SCMTMS/BASE_BTD_ID
+      !IS_PO_HEADER type BAPIMEPOHEADER
+    exporting
+      !EV_IVA type MWSKZ
+    changing
+      !CT_PO_ITEMS type BAPIMEPOITEM_TP optional
+      !CT_PO_ITEMSX type BAPIMEPOITEMX_TP optional
+      !CT_PO_SERVICES type BAPIESLLC_TP .
+  methods DETERMINA_IVA_CTE_FOB
+    importing
+      !IS_TOR_ROOT type /SCMTMS/S_TOR_ROOT_K
+      !IT_TOR_ITEM type /SCMTMS/T_TOR_ITEM_TR_K
+      !IT_TOR_STOP type /SCMTMS/T_TOR_STOP_K
+      !IS_SFIR_ROOT type /SCMTMS/S_SFIR_ROOT_K
+      !IT_SFIR_ITEM_DATA type /SCMTMS/T_SFIR_ITEM_K
+      !IT_STAGE_LOC_DATA type /SCMTMS/CL_SFIR_HELPER_ROOT=>TTY_STAGE_DATA
+      !IT_POSTAL_ADDR type /BOFU/T_ADDR_POSTAL_ADDRESSK
+      !IV_BTD_ID type /SCMTMS/BASE_BTD_ID
+      !IS_PO_HEADER type BAPIMEPOHEADER
+    exporting
+      !EV_IVA type MWSKZ
+    changing
+      !CT_PO_SERVICES type BAPIESLLC_TP
+      !CT_PO_ITEMS type BAPIMEPOITEM_TP
+      !CT_PO_ITEMSX type BAPIMEPOITEMX_TP .
+  methods DETERMINA_IVA_CTE_SERVICES_01
+    importing
+      !IS_TOR_ROOT type /SCMTMS/S_TOR_ROOT_K
+      !IT_TOR_ITEM type /SCMTMS/T_TOR_ITEM_TR_K
+      !IT_TOR_STOP type /SCMTMS/T_TOR_STOP_K
+      !IS_SFIR_ROOT type /SCMTMS/S_SFIR_ROOT_K
+      !IT_SFIR_ITEM_DATA type /SCMTMS/T_SFIR_ITEM_K
+      !IT_STAGE_LOC_DATA type /SCMTMS/CL_SFIR_HELPER_ROOT=>TTY_STAGE_DATA
+      !IT_POSTAL_ADDR type /BOFU/T_ADDR_POSTAL_ADDRESSK
+      !IV_BTD_ID type /SCMTMS/BASE_BTD_ID
+      !IS_PO_HEADER type BAPIMEPOHEADER
+      !IT_CHARGE_ELEMENT type /SCMTMS/T_TCC_TRCHRG_ELEMENT_K optional
+    exporting
+      !EV_IVA type MWSKZ
+      !EV_SERV_DEF type CHAR1
+    changing
+      !CT_PO_SERVICES type BAPIESLLC_TP
+      !CT_PO_ITEMS type BAPIMEPOITEM_TP
+      !CT_PO_ITEMSX type BAPIMEPOITEMX_TP .
+  methods DETERMINA_IVA_CTE_SERVICES_03
+    importing
+      !IS_TOR_ROOT type /SCMTMS/S_TOR_ROOT_K
+      !IT_TOR_ITEM type /SCMTMS/T_TOR_ITEM_TR_K
+      !IT_TOR_STOP type /SCMTMS/T_TOR_STOP_K
+      !IS_SFIR_ROOT type /SCMTMS/S_SFIR_ROOT_K
+      !IT_SFIR_ITEM_DATA type /SCMTMS/T_SFIR_ITEM_K
+      !IT_STAGE_LOC_DATA type /SCMTMS/CL_SFIR_HELPER_ROOT=>TTY_STAGE_DATA
+      !IT_POSTAL_ADDR type /BOFU/T_ADDR_POSTAL_ADDRESSK
+      !IV_BTD_ID type /SCMTMS/BASE_BTD_ID
+      !IS_PO_HEADER type BAPIMEPOHEADER
+      !IT_CHARGE_ELEMENT type /SCMTMS/T_TCC_TRCHRG_ELEMENT_K optional
+    exporting
+      !EV_IVA type MWSKZ
+      !EV_SERV_DEF type CHAR1
+    changing
+      !CT_PO_SERVICES type BAPIESLLC_TP
+      !CT_PO_ITEMS type BAPIMEPOITEM_TP
+      !CT_PO_ITEMSX type BAPIMEPOITEMX_TP .
+  methods DETERMINA_IVA_CTE_CIF
+    importing
+      !IT_PO_ITEMS type BAPIMEPOITEM_TP
+      !IS_TOR_ROOT type /SCMTMS/S_TOR_ROOT_K
+      !IT_TOR_ITEM type /SCMTMS/T_TOR_ITEM_TR_K
+      !IT_TOR_STOP type /SCMTMS/T_TOR_STOP_K
+      !IS_SFIR_ROOT type /SCMTMS/S_SFIR_ROOT_K
+      !IT_SFIR_ITEM_DATA type /SCMTMS/T_SFIR_ITEM_K
+      !IT_STAGE_LOC_DATA type /SCMTMS/CL_SFIR_HELPER_ROOT=>TTY_STAGE_DATA
+      !IT_POSTAL_ADDR type /BOFU/T_ADDR_POSTAL_ADDRESSK
+      !IV_BTD_ID type /SCMTMS/BASE_BTD_ID
+      !IS_PO_HEADER type BAPIMEPOHEADER
+    exporting
+      !EV_IVA type MWSKZ
+    changing
+      !CT_PO_SERVICES type BAPIESLLC_TP .
+  methods DETERMINA_IVA_DIVERSOS
+    importing
+      !IS_TOR_ROOT type /SCMTMS/S_TOR_ROOT_K
+      !IT_TOR_ITEM type /SCMTMS/T_TOR_ITEM_TR_K
+      !IS_SFIR_ROOT type /SCMTMS/S_SFIR_ROOT_K
+      !IV_BTD_ID type /SCMTMS/BASE_BTD_ID
+      !IS_PO_HEADER type BAPIMEPOHEADER
+    exporting
+      !EV_IVA type MWSKZ
+    changing
+      !CT_PO_ITEMS type BAPIMEPOITEM_TP
+      !CT_PO_ITEMSX type BAPIMEPOITEMX_TP
+      !CT_PO_SERVICES type BAPIESLLC_TP .
+  methods DETERMINA_IVA_NFSE
+    importing
+      !IS_SFIR_ROOT type /SCMTMS/S_SFIR_ROOT_K
+      !IT_SFIR_ITEM_DATA type /SCMTMS/T_SFIR_ITEM_K
+      !IT_STAGE_LOC_DATA type /SCMTMS/CL_SFIR_HELPER_ROOT=>TTY_STAGE_DATA
+      !IT_POSTAL_ADDR type /BOFU/T_ADDR_POSTAL_ADDRESSK
+      !IT_TOR_STOP type /SCMTMS/T_TOR_STOP_K
+      !IS_TOR_ROOT type /SCMTMS/S_TOR_ROOT_K
+    exporting
+      !EV_IVA type MWSKZ
+    changing
+      !CT_PO_SERVICES type BAPIESLLC_TP
+      !CT_PO_ITEMS type BAPIMEPOITEM_TP
+      !CT_PO_ITEMSX type BAPIMEPOITEMX_TP .
+  methods DETERMINA_CONTA_CONTAB
+    importing
+      !IS_SFIR_ROOT type /SCMTMS/S_SFIR_ROOT_K
+      !IS_SFIR_ITEM_DATA type /SCMTMS/S_SFIR_ITEM_K
+      !IS_TOR_ROOT type /SCMTMS/S_TOR_ROOT_K
+      !IS_LOC_ORIGEM type /BOFU/S_ADDR_POSTAL_ADDRESSK optional
+      !IS_LOC_DEST type /BOFU/S_ADDR_POSTAL_ADDRESSK optional
+    returning
+      value(RV_CONTA_CONTAB) type SAKNR .
+  methods BUSCA_REFERENCIA
+    importing
+      !IS_TOR_FO type /SCMTMS/S_TOR_ROOT_K
+    returning
+      value(RT_TOR_DOCREF) type /SCMTMS/T_TOR_DOCREF_K .
+  methods DETERMINA_PROD_ACABADO
+    importing
+      !IT_TOR_ITEM type /SCMTMS/T_TOR_ITEM_TR_K
+    returning
+      value(RT_PROD_ACABADO) type FLAG .
+  methods DETERMINA_LOC_ORIGEM_DEST
+    importing
+      !IT_SFIR_ITEM_DATA type /SCMTMS/T_SFIR_ITEM_K
+      !IT_STAGE_LOC_DATA type /SCMTMS/CL_SFIR_HELPER_ROOT=>TTY_STAGE_DATA
+      !IT_POSTAL_ADDR type /BOFU/T_ADDR_POSTAL_ADDRESSK
+      !IT_TOR_STOP type /SCMTMS/T_TOR_STOP_K
+    exporting
+      !ES_LOC_ORIGEM type /BOFU/S_ADDR_POSTAL_ADDRESSK
+      !ES_LOC_DEST type /BOFU/S_ADDR_POSTAL_ADDRESSK .
+  methods GET_ITEMS_POST
+    importing
+      !IT_REFERENCES type ZCLTM_GKO_PROCESS=>TY_T_ZGKOT003
+      !IS_HEADER type ZTTM_GKOT001
+      !IV_ACCKEY type ZTTM_GKOT001-ACCKEY
+    returning
+      value(RT_ITEMS_POST) type ZCLTM_GKO_PROCESS=>TY_T_ITEMS_POST .
+  methods DETERMINA_PARCEIRO_PEDIDO
+    importing
+      !IS_TOR_ROOT type /SCMTMS/S_TOR_ROOT_K
+    changing
+      !CT_PO_PARTNER type BAPIEKKOP_TP .
+  methods DETERMINA_NCM_SERVICO
+    importing
+      !IT_PO_SERVICES type BAPIESLLC_TP
+    changing
+      !CT_PO_ITEMS type BAPIMEPOITEM_TP
+      !CT_PO_ITEMSX type BAPIMEPOITEMX_TP .
+  methods GET_ITEMS_POST_WO_PA
+    importing
+      !IT_NF_SAIDA type ZCLTM_GKO_PROCESS=>TY_T_J_1BNFLIN
+      !IS_HEADER type ZTTM_GKOT001
+    changing
+      !CT_ITEMS_POST type ZCLTM_GKO_PROCESS=>TY_T_ITEMS_POST .
+  methods GET_ITEMS_POST_OTHERS
+    importing
+      !IT_NF_SAIDA type ZCLTM_GKO_PROCESS=>TY_T_J_1BNFLIN
+      !IS_HEADER type ZTTM_GKOT001
+    changing
+      !CT_ITEMS_POST type ZCLTM_GKO_PROCESS=>TY_T_ITEMS_POST .
+  methods GET_ITEMS_POST_TRANSFERENCIA
+    importing
+      !IT_NF_SAIDA type ZCLTM_GKO_PROCESS=>TY_T_J_1BNFLIN
+      !IS_HEADER type ZTTM_GKOT001
+    changing
+      !CT_ITEMS_POST type ZCLTM_GKO_PROCESS=>TY_T_ITEMS_POST .
+  methods GET_ITEMS_POST_VENDA_COLIGADA
+    importing
+      !IT_NF_SAIDA type ZCLTM_GKO_PROCESS=>TY_T_J_1BNFLIN
+      !IS_HEADER type ZTTM_GKOT001
+    changing
+      !CT_ITEMS_POST type ZCLTM_GKO_PROCESS=>TY_T_ITEMS_POST .
+  methods GET_IVA_DETAILED
+    importing
+      !IT_ITEMS_POST type ZCLTM_GKO_PROCESS=>TY_T_ITEMS_POST
+      !IS_HEADER type ZTTM_GKOT001
+      !IV_SAKNR type ZTTM_PCOCKPIT013-SAKNR
+    returning
+      value(RT_IVA) type ZCLTM_GKO_PROCESS=>TY_T_PO_IVA_DETAILED .
+  methods GET_IVA_UNIFIED
+    importing
+      !IT_ITEMS_POST type ZCLTM_GKO_PROCESS=>TY_T_ITEMS_POST
+      !IS_HEADER type ZTTM_GKOT001
+      !IV_SAKNR type ZTTM_PCOCKPIT013-SAKNR
+    returning
+      value(RV_IVA) type MWSKZ .
+  methods GET_IVA_FROM_INFO_RECORD
+    importing
+      !IT_ITEMS_POST type ZCLTM_GKO_PROCESS=>TY_T_ITEMS_POST
+      !IS_HEADER type ZTTM_GKOT001
+      !IV_SAKNR type ZTTM_PCOCKPIT013-SAKNR
+    returning
+      value(RV_IVA) type MWSKZ .
+  methods TRATA_CARACTER_ESPECIAL
+    importing
+      !IV_TEXT type ANY
+    returning
+      value(RV_TEXT) type STRING .
+  methods SET_LOG
+    importing
+      !IT_RETURN type BAPIRET2_T
+      !IV_ACCKEY type J_1B_NFE_ACCESS_KEY_DTEL44 .
+  methods ADD_LC_OBSERVACAO_NF_MIRO
+    importing
+      !IT_NFITEMS type J_1BNFLIN_TAB
+      !IS_NFHEADER type J_1BNFDOC
+    changing
+      !CV_OBSERVACAO type J_1BNFDOC-OBSERVAT .
+  methods DETERMINA_SERVICE
+    importing
+      !IT_CHARGE_ELEMENT type /SCMTMS/T_TCC_TRCHRG_ELEMENT_K optional
+    exporting
+      !EV_SERV_DEF type CHAR1
+    changing
+      !CT_PO_SERVICES type BAPIESLLC_TP .
+  methods ATUALIZA_PO_SERVICES
+    importing
+      !IT_TOR_ROOT_DATA type /SCMTMS/T_TOR_ROOT_K
+      !IS_SFIR_ROOT type /SCMTMS/S_SFIR_ROOT_K
+      !IT_CHARGE_ELEMENT type /SCMTMS/T_TCC_TRCHRG_ELEMENT_K
+      !IV_IVA type MWSKZ
+      !IV_SERV_DEF type CHAR1 optional
+    changing
+      !CT_PO_SERVICES type BAPIESLLC_TP
+      !CT_PO_ITEMS type BAPIMEPOITEM_TP
+      !CT_PO_ITEMSX type BAPIMEPOITEMX_TP .
   PROTECTED SECTION.
   PRIVATE SECTION.
 ENDCLASS.
@@ -3515,433 +3479,6 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
   ENDMETHOD.
 
 
-  METHOD determina_iva_cte_services_old.
-
-    TYPES:
-      BEGIN OF ty_cfop_nf,
-        docnum  TYPE j_1bdocnum,
-        itmnum  TYPE j_1bitmnum,
-        cfop    TYPE j_1bcfop,
-        vlritem TYPE netwr,
-      END OF ty_cfop_nf.
-
-    DATA:
-      lt_cfop_nf    TYPE TABLE OF ty_cfop_nf.
-
-    DATA:
-      lt_refkey TYPE zctgtm_cargo_refkey,
-      ls_refkey TYPE j_1brefkey.
-
-    DATA: lv_remessa TYPE vbeln,
-          lv_vstel   TYPE vstel.
-
-    DATA:
-      lv_bp_rem      TYPE partner,
-      lv_bp_dest     TYPE partner,
-      ls_cfop_params TYPE j_1bao,
-      lv_cfop_nf     TYPE j_1bcfop,
-      lv_totnf       TYPE netwr,
-      lv_fator       TYPE bapigrprice.
-
-    determina_loc_origem_dest(
-      EXPORTING
-        it_sfir_item_data = it_sfir_item_data    " Main Area: SFIR Item
-        it_stage_loc_data = it_stage_loc_data    " Stages
-        it_postal_addr    = it_postal_addr       " /SCMTMS/S_ADDR_POSTAL_ADDRESSK
-        it_tor_stop       = it_tor_stop
-      IMPORTING
-        es_loc_origem     = DATA(ls_loc_origem)  " Node structure for postal address data - internal
-        es_loc_dest       = DATA(ls_loc_dest) ). " Node structure for postal address data - internal
-
-    CHECK ls_loc_origem IS NOT INITIAL AND
-          ls_loc_dest   IS NOT INITIAL.
-
-    lv_remessa = iv_btd_id+25(10).
-    SELECT SINGLE vbeln,
-                  vstel,
-                  kunnr
-      FROM likp
-      INTO @DATA(ls_likp)
-     WHERE vbeln EQ @lv_remessa.
-
-* BEGIN OF INSERT - JWSILVA - 16.03.2023
-    ls_likp-kunnr = COND #( WHEN ls_likp-kunnr IS NOT INITIAL
-                            THEN ls_likp-kunnr
-                            ELSE is_tor_root-consigneeid ).
-* END OF INSERT - JWSILVA - 16.03.2023
-
-    CHECK sy-subrc IS INITIAL.
-
-    SELECT vbeln,
-           vgbel,
-           vgpos,
-           j_1bcfop,
-           j_1btxsdc
-      FROM lips
-      INTO TABLE @DATA(lt_lips)
-      WHERE vbeln EQ @lv_remessa.
-
-    " Seleção do IVA na Tabela ZTTM_PCOCKPIT005
-    DATA(lv_tor_id) =   |{ is_tor_root-tor_id  ALPHA = IN }|.
-
-    " Selecionar o CFOP das notas transportadas
-    SELECT SINGLE cenario,
-                  picms,
-                  vicms,
-                  cfop
-      INTO (@DATA(lv_cenario),
-            @DATA(lv_picms),
-            @DATA(lv_vicms),
-            @DATA(lv_cfop))
-      FROM zttm_gkot001
-      WHERE tor_id = @lv_tor_id
-        AND acckey = @is_sfir_root-zzacckey.
-
-    CHECK lv_cenario = '01' OR
-          lv_cenario = '03'.
-
-
-    " seleção na tabela de IVA detalhado (ZTTM_PCOCKPIT003) considerando CFOP/ Cenário / IVA de (NF) de entrada no destino / IVA para (frete).
-    DATA(lt_mat) = it_tor_item.
-    DELETE lt_mat WHERE item_cat <> 'PRD'.
-
-    IF lt_mat[] IS NOT INITIAL.
-
-      SELECT
-        ebeln,
-        ebelp,
-        matnr,
-        mwskz
-      INTO TABLE @DATA(lt_ekpo)
-      FROM ekpo
-      FOR ALL ENTRIES IN @lt_mat
-      WHERE ebeln = @lt_mat-orig_btd_id+25(10).
-
-
-      SELECT * INTO TABLE @DATA(lt_faturas)
-        FROM vbfa
-        WHERE vbelv   = @iv_btd_id+25(10)
-          AND vbtyp_n = 'R'.
-
-      IF sy-subrc IS INITIAL.
-
-        LOOP AT lt_faturas ASSIGNING FIELD-SYMBOL(<fs_fat>).
-          ls_refkey = |{ <fs_fat>-vbeln && sy-datum(4) }|.
-          APPEND ls_refkey TO lt_refkey.
-        ENDLOOP.
-
-        SELECT *
-           FROM j_1bnflin
-          INTO TABLE @DATA(lt_lin)
-          FOR ALL ENTRIES IN @lt_refkey
-          WHERE refkey = @lt_refkey-table_line.
-
-        IF sy-subrc IS INITIAL.
-
-          DATA(lv_docnum) = lt_lin[ 1 ]-docnum.
-
-          SELECT SINGLE *
-             FROM j_1bnfdoc
-            INTO @DATA(ls_doc)
-            WHERE docnum = @lv_docnum.
-
-        ENDIF.
-
-      ENDIF.
-
-      LOOP AT lt_lin ASSIGNING FIELD-SYMBOL(<fs_lin>).
-
-        DATA(ls_cfop_nf) = VALUE ty_cfop_nf( docnum  = ls_doc-docnum
-*                                             itmnum  = <fs_lin>-itmnum
-                                             vlritem = <fs_lin>-nfnett
-                                             cfop    = <fs_lin>-cfop ).
-
-
-        lv_totnf = lv_totnf + <fs_lin>-nfnett.
-
-        COLLECT ls_cfop_nf INTO lt_cfop_nf.
-
-      ENDLOOP.
-
-      SELECT cfop
-        INTO TABLE @DATA(lt_cfop_param)
-        FROM zttm_pcockpit006
-        FOR ALL ENTRIES IN @lt_cfop_nf
-        WHERE cfop = @lt_cfop_nf-cfop.
-
-      SELECT *
-        FROM zttm_pcockpit011
-        INTO TABLE @DATA(lt_pcockpit011)
-        WHERE cenario  EQ @lv_cenario
-          AND incoterm EQ 'FOB'
-          AND rateio   EQ 'R01'.                     "#EC CI_SEL_NESTED
-
-
-      SELECT *
-        FROM zttm_pcockpit005
-        INTO TABLE @DATA(lt_pcockpit005)
-       WHERE regio_from EQ @ls_loc_origem-region
-         AND regio_to   EQ @ls_loc_dest-region
-         AND incoterm   EQ 'FOB'
-         AND burks      EQ @is_po_header-comp_code
-         AND vstel      EQ @ls_likp-vstel.
-
-      " Seleção de IVA em tabela de exceção
-*      lt_mat = it_tor_item.
-*      DELETE lt_mat WHERE item_cat <> /scmtms/if_tor_const=>sc_tor_item_category-product.
-
-      DATA(lt_mat_nf) = lt_lin.
-
-      IF lt_mat IS NOT INITIAL.
-
-        SELECT
-          matnr,
-          mtart,
-          matkl
-          INTO TABLE @DATA(lt_tp_mat)
-          FROM mara
-          FOR ALL ENTRIES IN @lt_mat_nf
-          WHERE matnr = @lt_mat_nf-matnr.               "#EC CI_SEL_DEL
-
-        SORT lt_tp_mat BY matkl.
-        DELETE ADJACENT DUPLICATES FROM lt_tp_mat COMPARING matkl.
-
-        IF lt_tp_mat[] IS NOT INITIAL.
-
-          SELECT SINGLE werks,
-                        kunnr
-            FROM t001w
-            INTO @DATA(ls_t001w)
-            WHERE kunnr EQ @ls_likp-kunnr.
-
-          IF sy-subrc IS INITIAL.
-
-            SELECT
-              vstel,
-              mtart,
-              mwskz
-              INTO TABLE @DATA(lt_pcockpit018)
-              FROM zttm_pcockpit018
-              FOR ALL ENTRIES IN @lt_tp_mat
-              WHERE vstel  = @ls_t001w-werks
-                AND mtart  = @lt_tp_mat-matkl.
-
-          ENDIF.
-        ENDIF.
-      ENDIF.
-
-*        SELECT * INTO TABLE @DATA(lt_j_1bt007)
-*          FROM j_1bt007
-*          FOR ALL ENTRIES IN @lt_ekpo
-*          WHERE in_mwskz = @lt_ekpo-mwskz
-*            AND sd_mwskz = @t_cfop_nf.
-
-
-*        SORT lt_j_1bt007 BY in_mwskz
-*                            sd_mwskz.
-      IF lt_cfop_nf IS NOT INITIAL.
-
-        SELECT *
-          INTO TABLE @DATA(lt_zttm_pcockpit003)
-          FROM zttm_pcockpit003
-          FOR ALL ENTRIES IN @lt_cfop_nf
-          WHERE cenario = @lv_cenario
-            AND cfop    = @lt_cfop_nf-cfop.   "#EC CI_ALL_FIELDS_NEEDED
-
-      ENDIF.
-    ENDIF.
-
-    DATA(lt_serv_aux) = ct_po_services.
-
-    DELETE lt_serv_aux WHERE ext_line IS INITIAL.
-
-
-    LOOP AT lt_cfop_nf INTO ls_cfop_nf.
-
-      DATA(lv_tabix_srv) = sy-tabix.
-
-      READ TABLE lt_cfop_param INTO DATA(ls_cfop_param) WITH KEY cfop = ls_cfop_nf-cfop.
-
-      IF sy-subrc IS NOT INITIAL.
-
-        DATA(lv_iva) = '0I'.
-
-      ELSE.
-
-        READ TABLE lt_pcockpit011 INTO DATA(ls_pcockpit011) INDEX 1.
-
-        IF sy-subrc IS INITIAL                   AND
-           ls_pcockpit011-dmwskz IS NOT INITIAL.
-
-          lv_iva = ls_pcockpit011-dmwskz.
-
-        ELSE.
-
-          READ TABLE lt_pcockpit005 INTO DATA(ls_pcockpit005) INDEX 1.
-
-          IF sy-subrc IS INITIAL                   AND
-             ls_pcockpit005-mwskz IS NOT INITIAL.
-            lv_iva = ls_pcockpit005-mwskz.
-          ELSE.
-
-          ENDIF.
-
-        ENDIF.
-
-      ENDIF.
-
-      READ TABLE lt_serv_aux ASSIGNING FIELD-SYMBOL(<fs_po_services>) INDEX lv_tabix_srv.
-
-      IF sy-subrc IS INITIAL.
-
-        DATA(lv_gr_price) = <fs_po_services>-gr_price.
-
-        IF lv_iva IS INITIAL.
-
-          READ TABLE ct_po_items INTO DATA(ls_po_items) INDEX 1. "WITH KEY
-          READ TABLE lt_tp_mat INTO DATA(ls_tp_mat) WITH KEY matnr = ls_po_items-material.
-          READ TABLE lt_pcockpit018 INTO DATA(ls_pcockpit018) WITH KEY mtart = ls_tp_mat-mtart.
-
-          IF sy-subrc IS INITIAL                   AND
-             ls_pcockpit018-mwskz IS NOT INITIAL.
-            lv_iva = ls_pcockpit018-mwskz.
-          ELSE.
-            READ TABLE lt_zttm_pcockpit003 INTO DATA(ls_zttm_pcockpit003) WITH KEY cfop = ls_cfop_nf-cfop.
-            IF sy-subrc IS INITIAL.
-              lv_iva = ls_zttm_pcockpit003-dmwskz.
-            ENDIF.
-          ENDIF.
-
-        ENDIF.
-
-        IF lv_iva IS NOT INITIAL.
-          <fs_po_services>-tax_code = lv_iva.
-          ev_iva = lv_iva.
-        ENDIF.
-
-        DATA(ls_po_services) = <fs_po_services>.
-
-        lv_fator = ( ls_cfop_nf-vlritem / lv_totnf ).
-        <fs_po_services>-gr_price = lv_gr_price * lv_fator.
-
-        MODIFY ct_po_services FROM <fs_po_services> TRANSPORTING tax_code gr_price
-         WHERE pckg_no  = <fs_po_services>-pckg_no   AND
-               line_no  = <fs_po_services>-line_no   AND
-               ext_line = <fs_po_services>-ext_line.
-
-
-      ELSE.
-
-        ls_po_services-line_no  = ls_po_services-line_no  + 1.
-        ls_po_services-ext_line = ls_po_services-ext_line + 10.
-
-        IF lv_iva IS INITIAL.
-
-          READ TABLE ct_po_items INTO ls_po_items INDEX 1. "WITH KEY
-
-          READ TABLE lt_tp_mat INTO ls_tp_mat WITH KEY matnr = ls_po_items-material.
-
-          READ TABLE lt_pcockpit018 INTO ls_pcockpit018 WITH KEY mtart = ls_tp_mat-mtart.
-
-          IF sy-subrc IS INITIAL                   AND
-             ls_pcockpit018-mwskz IS NOT INITIAL.
-            lv_iva = ls_pcockpit018-mwskz.
-          ELSE.
-            READ TABLE lt_zttm_pcockpit003 INTO ls_zttm_pcockpit003 WITH KEY cfop = ls_cfop_nf-cfop.
-            IF sy-subrc IS INITIAL.
-              lv_iva = ls_zttm_pcockpit003-dmwskz.
-            ENDIF.
-          ENDIF.
-
-        ENDIF.
-        IF lv_iva IS NOT INITIAL.
-          ls_po_services-tax_code = lv_iva.
-          ev_iva = ls_zttm_pcockpit003-dmwskz.
-        ENDIF.
-
-        lv_fator = ( ls_cfop_nf-vlritem / lv_totnf ).
-        ls_po_services-gr_price = lv_gr_price * lv_fator.
-*        ls_po_services-service = ls_po_services-service + 1.
-*        ls_po_services-service = '000000000002000601'.
-
-        APPEND ls_po_services TO ct_po_services.
-
-      ENDIF.
-
-    ENDLOOP.
-
-** ---------------------------------------------------------------------------
-** Caso nenhuma das determinações anteriores funcione, fazer uma última determinação
-** somente para os cenários de Entrada
-** ---------------------------------------------------------------------------
-*    " Somente continuar quando o documento for 58 (Recebimento) ou 73 (Entrega)
-*    CHECK ev_iva IS INITIAL AND lt_fo_dcref IS NOT INITIAL.
-*
-*    " Determina Produto Acabado
-*    DATA(lv_prod_acabado) = determina_prod_acabado( it_tor_item = it_tor_item ).
-*
-*    SELECT SINGLE *
-*      FROM zttm_pcockpit011
-*      INTO @DATA(ls_pcockpit011)
-*      WHERE cenario  EQ @lv_cenario
-*        AND incoterm EQ 'FOB'
-*        AND rateio   EQ 'R01'.                       "#EC CI_SEL_NESTED
-*
-*    IF sy-subrc IS INITIAL.
-*      IF lv_prod_acabado IS INITIAL.      " Se não tiver produto acabado
-*
-*        DATA(lv_iva) = ls_pcockpit011-gmwskz.
-*
-*      ELSEIF lv_picms IS NOT INITIAL AND  " Se tiver ICMS no XML do CT-e
-*         lv_vicms IS NOT INITIAL.
-*
-*        lv_iva = ls_pcockpit011-dmwskz.
-*
-*      ELSEIF lv_picms IS INITIAL AND      " Se não tiver ICMS no XML do CT-e
-*             lv_vicms IS INITIAL.
-*
-*        lv_iva = ls_pcockpit011-pmwskz.
-*
-*      ENDIF.
-*    ENDIF.
-*
-*    IF lv_iva IS NOT INITIAL.
-*      LOOP AT ct_po_items ASSIGNING FIELD-SYMBOL(<fs_ct_po_items>).
-*
-*        READ TABLE ct_po_itemsx ASSIGNING FIELD-SYMBOL(<fs_ct_po_itemsx>) WITH KEY po_item = <fs_ct_po_items>-po_item BINARY SEARCH.
-*        CHECK sy-subrc IS INITIAL.
-*
-*        <fs_ct_po_items>-tax_code  = lv_iva.
-*        <fs_ct_po_itemsx>-tax_code = abap_true.
-*        ev_iva                     = lv_iva.
-*      ENDLOOP.
-*
-*      IF ev_iva IS NOT INITIAL.
-*        CLEAR: gv_message.
-*        CONCATENATE 'ZTTM_PCOCKPIT011'
-*                    lv_cenario
-*                    'FOB'
-*                    INTO gv_message SEPARATED BY space.
-*
-*        " IVA determinado por: &1&2&3&4.
-*        DATA(lt_return) = VALUE bapiret2_t( ( type       = if_xo_const_message=>info
-*                                        id         = 'ZTM_GKO'
-*                                        number     = '137'
-*                                        message_v1 = ev_iva
-*                                        message_v2 = gv_message+0(50)
-*                                        message_v3 = gv_message+50(50)
-*                                        message_v4 = gv_message+100(50) ) ).
-*
-*        set_log( EXPORTING it_return = lt_return                 " Tabela de retorno
-*                           iv_acckey = is_sfir_root-zzacckey ).  " Chave de acesso de 44 dígitos
-*
-*      ENDIF.
-*      RETURN.
-*    ENDIF.
-
-  ENDMETHOD.
-
-
   METHOD determina_service.
 
     DATA: lv_count TYPE numc1.
@@ -4026,883 +3563,6 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
   ENDMETHOD.
 
 
-  METHOD determina_iva_cte_services_ol2.
-
-    TYPES:
-      BEGIN OF ty_cfop_nf,
-        docnum  TYPE j_1bdocnum,
-        itmnum  TYPE j_1bitmnum,
-        cfop    TYPE j_1bcfop,
-        vlritem TYPE netwr,
-        mwskz   TYPE mwskz,
-      END OF ty_cfop_nf,
-
-      BEGIN OF ty_cfop_matkl_nf,
-        docnum  TYPE j_1bdocnum,
-        itmnum  TYPE j_1bitmnum,
-        cfop    TYPE j_1bcfop,
-        matkl   TYPE matkl,
-        vlritem TYPE netwr,
-        mwskz   TYPE mwskz,
-      END OF ty_cfop_matkl_nf.
-
-    DATA:
-      lt_cfop_nf       TYPE TABLE OF ty_cfop_nf,
-      lt_cfop_matkl_nf TYPE TABLE OF ty_cfop_matkl_nf,
-      lt_pcockpit003   TYPE TABLE OF zttm_pcockpit003.
-    DATA:
-      lt_refkey TYPE zctgtm_cargo_refkey,
-      ls_refkey TYPE j_1brefkey.
-
-    DATA: lv_remessa TYPE vbeln,
-          lv_vstel   TYPE vstel.
-
-    DATA:
-      lv_bp_rem      TYPE partner,
-      lv_bp_dest     TYPE partner,
-      ls_cfop_params TYPE j_1bao,
-      lv_cfop_nf     TYPE j_1bcfop,
-      lv_totnf       TYPE netwr,
-      lv_fator       TYPE bapigrprice.
-
-    determina_loc_origem_dest(
-      EXPORTING
-        it_sfir_item_data = it_sfir_item_data    " Main Area: SFIR Item
-        it_stage_loc_data = it_stage_loc_data    " Stages
-        it_postal_addr    = it_postal_addr       " /SCMTMS/S_ADDR_POSTAL_ADDRESSK
-        it_tor_stop       = it_tor_stop
-      IMPORTING
-        es_loc_origem     = DATA(ls_loc_origem)  " Node structure for postal address data - internal
-        es_loc_dest       = DATA(ls_loc_dest) ). " Node structure for postal address data - internal
-
-    CHECK ls_loc_origem IS NOT INITIAL AND
-          ls_loc_dest   IS NOT INITIAL.
-
-    lv_remessa = iv_btd_id+25(10).
-    SELECT SINGLE vbeln,
-                  vstel,
-                  kunnr
-      FROM likp
-      INTO @DATA(ls_likp)
-     WHERE vbeln EQ @lv_remessa.
-
-* BEGIN OF INSERT - JWSILVA - 16.03.2023
-    ls_likp-kunnr = COND #( WHEN ls_likp-kunnr IS NOT INITIAL
-                            THEN ls_likp-kunnr
-                            ELSE is_tor_root-consigneeid ).
-* END OF INSERT - JWSILVA - 16.03.2023
-
-    CHECK sy-subrc IS INITIAL.
-
-    SELECT vbeln,
-           vgbel,
-           vgpos,
-           j_1bcfop,
-           j_1btxsdc
-      FROM lips
-      INTO TABLE @DATA(lt_lips)
-      WHERE vbeln EQ @lv_remessa.
-
-    " Seleção do IVA na Tabela ZTTM_PCOCKPIT005
-    DATA(lv_tor_id) =   |{ is_tor_root-tor_id  ALPHA = IN }|.
-
-    " Selecionar o CFOP das notas transportadas
-    SELECT SINGLE cenario,
-                  picms,
-                  vicms,
-                  cfop
-      INTO (@DATA(lv_cenario),
-            @DATA(lv_picms),
-            @DATA(lv_vicms),
-            @DATA(lv_cfop))
-      FROM zttm_gkot001
-      WHERE tor_id = @lv_tor_id
-        AND acckey = @is_sfir_root-zzacckey.
-
-    CHECK lv_cenario = '01' OR
-          lv_cenario = '03'.
-
-
-    " Determina Produto Acabado
-    DATA(lv_prod_acabado) = determina_prod_acabado( it_tor_item = it_tor_item ).
-
-
-    " seleção na tabela de IVA detalhado (ZTTM_PCOCKPIT003) considerando CFOP/ Cenário / IVA de (NF) de entrada no destino / IVA para (frete).
-    DATA(lt_mat) = it_tor_item.
-    DELETE lt_mat WHERE item_cat <> 'PRD'.
-
-    IF lt_mat[] IS NOT INITIAL.
-
-*      SELECT
-*        ebeln,
-*        ebelp,
-*        matnr,
-*        mwskz
-*      INTO TABLE @DATA(lt_ekpo)
-*      FROM ekpo
-*      FOR ALL ENTRIES IN @lt_mat
-*      WHERE ebeln = @lt_mat-orig_btd_id+25(10).
-
-
-      SELECT * INTO TABLE @DATA(lt_faturas)
-        FROM vbfa
-        WHERE vbelv   = @iv_btd_id+25(10)
-          AND vbtyp_n = 'R'.
-
-      IF sy-subrc IS INITIAL.
-
-        LOOP AT lt_faturas ASSIGNING FIELD-SYMBOL(<fs_fat>).
-          ls_refkey = |{ <fs_fat>-vbeln && sy-datum(4) }|.
-          APPEND ls_refkey TO lt_refkey.
-        ENDLOOP.
-
-        SELECT *
-           FROM j_1bnflin
-          INTO TABLE @DATA(lt_lin)
-          FOR ALL ENTRIES IN @lt_refkey
-          WHERE refkey = @lt_refkey-table_line.
-
-        IF sy-subrc IS INITIAL.
-
-          DATA(lv_docnum) = lt_lin[ 1 ]-docnum.
-
-          SELECT SINGLE *
-             FROM j_1bnfdoc
-            INTO @DATA(ls_doc)
-            WHERE docnum = @lv_docnum.
-
-        ENDIF.
-
-      ENDIF.
-    ENDIF.
-
-    LOOP AT lt_lin ASSIGNING FIELD-SYMBOL(<fs_lin>).
-
-      DATA(ls_cfop_nf) = VALUE ty_cfop_nf( docnum  = ls_doc-docnum
-*                                             itmnum  = <fs_lin>-itmnum
-                                           vlritem = <fs_lin>-nfnett
-                                           cfop    = <fs_lin>-cfop ).
-
-
-      lv_totnf = lv_totnf + <fs_lin>-nfnett.
-
-      COLLECT ls_cfop_nf INTO lt_cfop_nf.
-
-      DATA(ls_cfop_matkl_nf) = VALUE ty_cfop_matkl_nf( docnum  = ls_doc-docnum
-*                                                        itmnum  = <fs_lin>-itmnum
-                                                       vlritem = <fs_lin>-nfnett
-                                                       cfop    = <fs_lin>-cfop
-                                                       matkl   = <fs_lin>-matkl ).
-
-
-      lv_totnf = lv_totnf + <fs_lin>-nfnett.
-
-      COLLECT ls_cfop_matkl_nf INTO lt_cfop_matkl_nf.
-
-
-    ENDLOOP.
-
-    SELECT cfop
-      INTO TABLE @DATA(lt_cfop_param)
-      FROM zttm_pcockpit006
-      FOR ALL ENTRIES IN @lt_cfop_nf
-      WHERE cfop = @lt_cfop_nf-cfop.
-
-    SELECT *
-      FROM zttm_pcockpit011
-      INTO TABLE @DATA(lt_pcockpit011)
-      WHERE cenario  EQ @lv_cenario
-        AND incoterm EQ 'FOB'
-        AND rateio   EQ 'R01'.                       "#EC CI_SEL_NESTED
-
-
-    SELECT *
-      FROM zttm_pcockpit005
-      INTO TABLE @DATA(lt_pcockpit005)
-     WHERE regio_from EQ @ls_loc_origem-region
-       AND regio_to   EQ @ls_loc_dest-region
-       AND incoterm   EQ 'FOB'
-       AND burks      EQ @is_po_header-comp_code
-       AND vstel      EQ @ls_likp-vstel.
-
-    " Seleção de IVA em tabela de exceção
-*      lt_mat = it_tor_item.
-*      DELETE lt_mat WHERE item_cat <> /scmtms/if_tor_const=>sc_tor_item_category-product.
-
-    DATA(lt_mat_nf) = lt_lin.
-
-    IF lt_mat IS NOT INITIAL.
-
-      SELECT
-        matnr,
-        matkl
-        INTO TABLE @DATA(lt_tp_mat)
-        FROM mara
-        FOR ALL ENTRIES IN @lt_mat_nf
-        WHERE matnr = @lt_mat_nf-matnr.                 "#EC CI_SEL_DEL
-
-      SORT lt_tp_mat BY matkl.
-      DELETE ADJACENT DUPLICATES FROM lt_tp_mat COMPARING matkl.
-
-      IF lt_tp_mat[] IS NOT INITIAL.
-
-        SELECT SINGLE werks,
-                      kunnr
-          FROM t001w
-          INTO @DATA(ls_t001w)
-          WHERE kunnr EQ @ls_likp-kunnr.
-
-        IF sy-subrc IS INITIAL.
-
-          SELECT
-            vstel,
-            mtart,
-            mwskz
-            INTO TABLE @DATA(lt_pcockpit018)
-            FROM zttm_pcockpit018
-            FOR ALL ENTRIES IN @lt_tp_mat
-            WHERE vstel  = @ls_t001w-werks
-              AND mtart  = @lt_tp_mat-matkl.
-
-        ENDIF.
-      ENDIF.
-    ENDIF.
-
-*        SELECT * INTO TABLE @DATA(lt_j_1bt007)
-*          FROM j_1bt007
-*          FOR ALL ENTRIES IN @lt_ekpo
-*          WHERE in_mwskz = @lt_ekpo-mwskz
-*            AND sd_mwskz = @t_cfop_nf.
-
-
-*        SORT lt_j_1bt007 BY in_mwskz
-*                            sd_mwskz.
-*      IF lt_cfop_nf IS NOT INITIAL.
-*
-*        SELECT *
-*          INTO TABLE @DATA(lt_zttm_pcockpit003)
-*          FROM zttm_pcockpit003
-*          FOR ALL ENTRIES IN @lt_cfop_nf
-*          WHERE cenario = @lv_cenario
-*            AND cfop    = @lt_cfop_nf-cfop.   "#EC CI_ALL_FIELDS_NEEDED
-*
-*      ENDIF.
-
-
-    lt_mat = it_tor_item.
-    DELETE lt_mat WHERE item_cat <> 'PRD'.
-
-    IF lt_mat[] IS NOT INITIAL.
-
-      SELECT
-        ebeln,
-        ebelp,
-        mwskz
-      INTO TABLE @DATA(lt_ekpo)
-      FROM ekpo
-      FOR ALL ENTRIES IN @lt_mat
-      WHERE ebeln = @lt_mat-orig_btd_id+25(10).
-
-      IF sy-subrc IS INITIAL.
-
-        IF lt_lips[] IS NOT INITIAL.
-          DATA(lv_iva_sd)  = lt_lips[ 1 ]-j_1btxsdc.
-          DATA(lv_cfop_sd) = lt_lips[ 1 ]-j_1bcfop.
-        ENDIF.
-
-      ENDIF.
-
-
-      SELECT SINGLE * INTO @DATA(ls_active)
-        FROM j_1bnfe_active
-        WHERE docnum = @lv_docnum.            "#EC CI_ALL_FIELDS_NEEDED
-
-      DATA(lv_acckey) = ls_active-regio && ls_active-nfyear && ls_active-nfmonth && ls_active-stcd1 && ls_active-model && ls_active-serie && ls_active-nfnum9 && ls_active-docnum9 && ls_active-cdv.
-
-
-      SELECT SINGLE * INTO @DATA(ls_innfehd)
-        FROM /xnfe/innfehd
-        WHERE nfeid = @lv_acckey.             "#EC CI_ALL_FIELDS_NEEDED
-
-      DATA:
-        lt_assign  TYPE /xnfe/nfeassign_t.
-
-      CALL FUNCTION '/XNFE/B2BNFE_READ'
-        EXPORTING
-          iv_guid_header     = ls_innfehd-guid_header
-        IMPORTING
-          et_assign          = lt_assign
-        EXCEPTIONS
-          nfe_does_not_exist = 1
-          nfe_locked         = 2
-          technical_error    = 3
-          OTHERS             = 4.
-
-      IF sy-subrc <> 0.
-        MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4 INTO DATA(lv_message).
-      ENDIF.
-
-      SORT lt_assign BY guid_header.
-      IF lt_assign[] IS NOT INITIAL.
-        DATA(ls_assign) = lt_assign[ 1 ].
-      ENDIF.
-
-      SORT lt_lips.
-      DELETE ADJACENT DUPLICATES FROM lt_lips.
-
-      LOOP AT lt_lips INTO DATA(ls_Lips).
-
-        READ TABLE lt_assign INTO ls_assign INDEX sy-tabix.
-
-        SELECT SINGLE *
-          INTO @DATA(ls_pcockpit003)
-          FROM zttm_pcockpit003
-          WHERE cenario = @lv_cenario
-            AND cfop    = @ls_lips-j_1bcfop
-            AND dmwskz  = @ls_assign-mwskz.           "#EC CI_ALL_FIELD
-
-        IF sy-subrc IS INITIAL.
-          APPEND ls_pcockpit003 TO lt_pcockpit003.
-        ENDIF.
-
-      ENDLOOP.
-
-    ENDIF.
-
-    DATA(lt_serv_aux) = ct_po_services.
-
-    DELETE lt_serv_aux WHERE ext_line IS INITIAL.
-
-    LOOP AT lt_cfop_nf ASSIGNING FIELD-SYMBOL(<fs_cfop_nf>).
-
-      READ TABLE lt_cfop_param INTO DATA(ls_cfop_param) WITH KEY cfop = <fs_cfop_nf>-cfop.
-
-      IF sy-subrc IS NOT INITIAL.
-        <fs_cfop_nf>-mwskz = '0I'.
-      ENDIF.
-
-    ENDLOOP.
-
-    DATA(lv_gr_price) = lt_serv_aux[ 1 ]-gr_price.
-
-    DATA(lt_cfop_nf_aux) = lt_cfop_nf.
-
-    DELETE lt_cfop_nf_aux WHERE mwskz IS INITIAL.
-
-    LOOP AT lt_cfop_nf_aux INTO ls_cfop_nf.
-
-      CHECK ls_cfop_nf-mwskz IS NOT INITIAL.
-
-      DATA(lv_tabix_srv) = sy-tabix.
-
-*      READ TABLE lt_cfop_param INTO ls_cfop_param WITH KEY cfop = ls_cfop_nf-cfop.
-*
-*      IF sy-subrc IS NOT INITIAL.
-*        DATA(lv_iva) = '0I'.
-*      ELSE.
-
-*        READ TABLE lt_pcockpit011 INTO DATA(ls_pcockpit011) INDEX 1.
-*
-*        IF sy-subrc IS INITIAL                   AND
-*           ( ls_pcockpit011-dmwskz IS NOT INITIAL  OR
-*             ls_pcockpit011-gmwskz IS NOT INITIAL  OR
-*             ls_pcockpit011-pmwskz IS NOT INITIAL  ).
-*
-*          IF lv_prod_acabado IS INITIAL.      " Se não tiver produto acabado
-*
-*            lv_iva = ls_pcockpit011-gmwskz.
-*
-*          ELSEIF lv_picms IS NOT INITIAL AND  " Se tiver ICMS no XML do CT-e
-*                 lv_vicms IS NOT INITIAL.
-*
-*            lv_iva = ls_pcockpit011-dmwskz.
-*
-*          ELSEIF lv_picms IS INITIAL AND      " Se não tiver ICMS no XML do CT-e
-*                 lv_vicms IS INITIAL.
-*
-*            lv_iva = ls_pcockpit011-pmwskz.
-*
-*          ENDIF.
-*
-*        ELSE.
-*
-*          READ TABLE lt_pcockpit005 INTO DATA(ls_pcockpit005) INDEX 1.
-*
-*          IF sy-subrc IS INITIAL                   AND
-*             ls_pcockpit005-mwskz IS NOT INITIAL.
-*            lv_iva = ls_pcockpit005-mwskz.
-*          ELSE.
-*
-*          ENDIF.
-
-*        ENDIF.
-
-*      ENDIF.
-
-      READ TABLE lt_serv_aux ASSIGNING FIELD-SYMBOL(<fs_po_services>) INDEX lv_tabix_srv.
-
-      IF sy-subrc IS INITIAL.
-
-        DATA(lv_gr_price_itm) = <fs_po_services>-gr_price.
-
-*        IF lv_iva IS INITIAL.
-        IF ls_cfop_nf-mwskz IS INITIAL.
-
-*          READ TABLE ct_po_items INTO DATA(ls_po_items) INDEX 1. "WITH KEY
-*          READ TABLE lt_tp_mat INTO DATA(ls_tp_mat) WITH KEY matnr = ls_po_items-material.
-*          READ TABLE lt_pcockpit018 INTO DATA(ls_pcockpit018) WITH KEY mtart = ls_tp_mat-matkl.
-*
-*          IF sy-subrc IS INITIAL                   AND
-*             ls_pcockpit018-mwskz IS NOT INITIAL.
-*            lv_iva = ls_pcockpit018-mwskz.
-*          ELSE.
-*            READ TABLE lt_pcockpit003 INTO DATA(ls_pcockpit003) WITH KEY cfop = ls_cfop_nf-cfop.
-*            IF sy-subrc IS INITIAL.
-*              DATA(lv_iva) = ls_pcockpit003-dmwskz.
-*            ENDIF.
-*          ENDIF.
-
-        ELSE.
-          DATA(lv_iva) = ls_cfop_nf-mwskz.
-        ENDIF.
-
-        IF lv_iva IS NOT INITIAL.
-          <fs_po_services>-tax_code = lv_iva.
-          ev_iva = lv_iva.
-
-          DATA(ls_po_services) = <fs_po_services>.
-
-          lv_fator = ( ls_cfop_nf-vlritem / lv_totnf ).
-          <fs_po_services>-gr_price = lv_gr_price_itm * lv_fator.
-
-          MODIFY ct_po_services FROM <fs_po_services> TRANSPORTING tax_code gr_price
-           WHERE pckg_no  = <fs_po_services>-pckg_no   AND
-                 line_no  = <fs_po_services>-line_no   AND
-                 ext_line = <fs_po_services>-ext_line.
-
-        ENDIF.
-
-
-      ELSE.
-
-        ls_po_services-line_no  = ls_po_services-line_no  + 1.
-        ls_po_services-ext_line = ls_po_services-ext_line + 10.
-
-*        IF lv_iva IS INITIAL.
-        IF ls_cfop_nf-mwskz IS INITIAL.
-
-*          READ TABLE ct_po_items INTO ls_po_items INDEX 1. "WITH KEY
-*          READ TABLE lt_tp_mat INTO ls_tp_mat WITH KEY matnr = ls_po_items-material.
-*          READ TABLE lt_pcockpit018 INTO ls_pcockpit018 WITH KEY mtart = ls_tp_mat-matkl.
-
-*          IF sy-subrc IS INITIAL                   AND
-*             ls_pcockpit018-mwskz IS NOT INITIAL.
-*            lv_iva = ls_pcockpit018-mwskz.
-*          ELSE.
-*            READ TABLE lt_zttm_pcockpit003 INTO ls_zttm_pcockpit003 WITH KEY cfop = ls_cfop_nf-cfop.
-*            IF sy-subrc IS INITIAL.
-*              lv_iva = ls_zttm_pcockpit003-dmwskz.
-*            ENDIF.
-*          ENDIF.
-
-        ELSE.
-          lv_iva = ls_cfop_nf-mwskz.
-        ENDIF.
-
-*      ENDIF.
-        IF lv_iva IS NOT INITIAL.
-
-          ls_po_services-tax_code = lv_iva.
-          ev_iva = lv_iva.
-
-          lv_fator = ( ls_cfop_nf-vlritem / lv_totnf ).
-          ls_po_services-gr_price = lv_gr_price_itm * lv_fator.
-
-          APPEND ls_po_services TO ct_po_services.
-        ENDIF.
-
-      ENDIF.
-
-    ENDLOOP.
-
-    lt_cfop_nf_aux = lt_cfop_nf.
-    DELETE lt_cfop_nf_aux WHERE mwskz IS NOT INITIAL.
-    CHECK lt_cfop_nf_aux IS NOT INITIAL.
-
-    READ TABLE lt_pcockpit011 INTO DATA(ls_pcockpit011) INDEX 1.
-
-    IF sy-subrc IS INITIAL                   AND
-       ( ls_pcockpit011-dmwskz IS NOT INITIAL  OR
-         ls_pcockpit011-gmwskz IS NOT INITIAL  OR
-         ls_pcockpit011-pmwskz IS NOT INITIAL  ).
-
-      IF lv_prod_acabado IS INITIAL.      " Se não tiver produto acabado
-
-        lv_iva = ls_pcockpit011-gmwskz.
-
-      ELSEIF lv_picms IS NOT INITIAL AND  " Se tiver ICMS no XML do CT-e
-             lv_vicms IS NOT INITIAL.
-
-        lv_iva = ls_pcockpit011-dmwskz.
-
-      ELSEIF lv_picms IS INITIAL AND      " Se não tiver ICMS no XML do CT-e
-             lv_vicms IS INITIAL.
-
-        ev_iva = lv_iva = ls_pcockpit011-pmwskz.
-
-      ENDIF.
-
-    ELSE.
-    ENDIF.
-
-    DATA: lv_vlritem   TYPE wrbtr.
-
-    IF lv_iva IS NOT INITIAL.
-      LOOP AT ct_po_services ASSIGNING <fs_po_services> WHERE subpckg_no IS INITIAL AND tax_code IS INITIAL.
-        <fs_po_services>-tax_code = lv_iva.
-      ENDLOOP.
-      IF sy-subrc IS NOT INITIAL.
-
-        SORT ct_po_services BY line_no DESCENDING.
-
-        READ TABLE ct_po_services INTO ls_po_services INDEX 1.
-        IF sy-subrc IS INITIAL.
-
-          ls_po_services-line_no  = ls_po_services-line_no  + 1.
-          ls_po_services-ext_line = ls_po_services-ext_line + 10.
-          ls_po_services-tax_code = lv_iva.
-          ev_iva = lv_iva.
-        ENDIF.
-
-        CLEAR lv_vlritem.
-        LOOP AT lt_cfop_nf_aux ASSIGNING FIELD-SYMBOL(<ls_cfop_nf>).
-          lv_vlritem = ls_cfop_nf-vlritem + lv_vlritem.
-          <ls_cfop_nf>-mwskz = lv_iva.
-        ENDLOOP.
-
-        lv_fator = ( lv_vlritem / lv_totnf ).
-        ls_po_services-gr_price = lv_gr_price * lv_fator.
-
-        APPEND ls_po_services TO ct_po_services.
-
-
-      ENDIF.
-
-    ENDIF.
-
-*    lt_cfop_nf_aux = lt_cfop_nf.
-    DELETE lt_cfop_nf_aux WHERE mwskz IS NOT INITIAL.
-    CHECK lt_cfop_nf_aux IS NOT INITIAL.
-
-    lt_serv_aux = ct_po_services.
-
-    DELETE lt_serv_aux WHERE ext_line IS INITIAL OR tax_code IS NOT INITIAL.
-
-    IF lv_iva IS INITIAL.
-
-      READ TABLE lt_pcockpit005 INTO DATA(ls_pcockpit005) INDEX 1.
-
-      IF sy-subrc IS INITIAL                   AND
-         ls_pcockpit005-mwskz IS NOT INITIAL.
-        lv_iva = ls_pcockpit005-mwskz.
-      ELSE.
-
-      ENDIF.
-
-    ELSE.
-
-      LOOP AT ct_po_services ASSIGNING <fs_po_services> WHERE subpckg_no IS INITIAL AND tax_code IS INITIAL.
-        <fs_po_services>-tax_code = lv_iva.
-      ENDLOOP.
-      IF sy-subrc IS NOT INITIAL.
-
-        SORT ct_po_services BY line_no DESCENDING.
-
-        READ TABLE ct_po_services INTO ls_po_services INDEX 1.
-        IF sy-subrc IS INITIAL.
-
-          ls_po_services-line_no  = ls_po_services-line_no  + 1.
-          ls_po_services-ext_line = ls_po_services-ext_line + 10.
-          ls_po_services-tax_code = lv_iva.
-          ev_iva = lv_iva.
-        ENDIF.
-
-        CLEAR lv_vlritem.
-        LOOP AT lt_cfop_nf_aux ASSIGNING <ls_cfop_nf>.
-          lv_vlritem = ls_cfop_nf-vlritem + lv_vlritem.
-          <ls_cfop_nf>-mwskz = lv_iva.
-        ENDLOOP.
-
-        lv_fator = ( lv_vlritem / lv_totnf ).
-        ls_po_services-gr_price = lv_gr_price * lv_fator.
-
-        APPEND ls_po_services TO ct_po_services.
-
-      ENDIF.
-
-    ENDIF.
-
-*    lt_cfop_nf_aux = lt_cfop_nf.
-    DELETE lt_cfop_nf_aux WHERE mwskz IS NOT INITIAL.
-    CHECK lt_cfop_nf_aux IS NOT INITIAL.
-
-    lt_serv_aux = ct_po_services.
-
-    DELETE lt_serv_aux WHERE ext_line IS INITIAL OR tax_code IS NOT INITIAL.
-
-
-    LOOP AT lt_cfop_matkl_nf INTO ls_cfop_matkl_nf.
-
-      READ TABLE lt_cfop_nf_aux ASSIGNING <ls_cfop_nf> WITH KEY cfop = ls_cfop_matkl_nf-cfop.
-
-      CHECK sy-subrc IS INITIAL.
-
-      lv_tabix_srv = sy-tabix.
-
-      READ TABLE lt_serv_aux ASSIGNING <fs_po_services> INDEX lv_tabix_srv.
-
-      IF sy-subrc IS INITIAL.
-
-        READ TABLE lt_pcockpit018 INTO DATA(ls_pcockpit018) WITH KEY mtart = ls_cfop_matkl_nf-matkl.
-
-        IF sy-subrc IS INITIAL                   AND
-           ls_pcockpit018-mwskz IS NOT INITIAL.
-          lv_iva = ls_pcockpit018-mwskz.
-        ENDIF.
-
-        IF lv_iva IS NOT INITIAL.
-          <fs_po_services>-tax_code = lv_iva.
-          ev_iva = lv_iva.
-
-          <ls_cfop_nf>-mwskz = lv_iva.
-
-*          READ TABLE lt_cfop_nf_aux ASSIGNING <ls_cfop_nf> WITH KEY cfop = ls_cfop_matkl_nf-cfop.
-*          IF sy-subrc IS INITIAL.
-          lv_fator = ( ls_cfop_matkl_nf-vlritem / lv_totnf ).
-*          ENDIF.
-
-          ls_po_services-gr_price = lv_gr_price * lv_fator.
-
-          ls_po_services = <fs_po_services>.
-
-          MODIFY ct_po_services FROM <fs_po_services> TRANSPORTING tax_code gr_price
-           WHERE pckg_no  = <fs_po_services>-pckg_no   AND
-                 line_no  = <fs_po_services>-line_no   AND
-                 ext_line = <fs_po_services>-ext_line.
-
-        ENDIF.
-
-      ELSE.
-
-        ls_po_services-line_no  = ls_po_services-line_no  + 1.
-        ls_po_services-ext_line = ls_po_services-ext_line + 10.
-
-
-        READ TABLE lt_pcockpit018 INTO ls_pcockpit018 WITH KEY mtart = ls_cfop_matkl_nf-matkl.
-
-        IF sy-subrc IS INITIAL                   AND
-           ls_pcockpit018-mwskz IS NOT INITIAL.
-          lv_iva = ls_pcockpit018-mwskz.
-        ENDIF.
-
-        IF lv_iva IS NOT INITIAL.
-          ls_po_services-tax_code = lv_iva.
-          ev_iva = lv_iva.
-
-          <ls_cfop_nf>-mwskz = lv_iva.
-
-          lv_fator = ( ls_cfop_matkl_nf-vlritem / lv_totnf ).
-          ls_po_services-gr_price = lv_gr_price * lv_fator.
-
-          APPEND ls_po_services TO ct_po_services.
-        ENDIF.
-
-      ENDIF.
-
-    ENDLOOP.
-
-    DELETE lt_cfop_nf_aux WHERE mwskz IS NOT INITIAL.
-    CHECK lt_cfop_nf_aux IS NOT INITIAL.
-
-    LOOP AT lt_pcockpit003 INTO ls_pcockpit003.
-
-      IF ls_pcockpit003-pmwskz IS NOT INITIAL.
-
-        LOOP AT ct_po_services ASSIGNING <fs_po_services> WHERE subpckg_no IS INITIAL AND tax_code IS INITIAL.
-          <fs_po_services>-tax_code = ls_pcockpit003-dmwskz.
-        ENDLOOP.
-        IF sy-subrc IS NOT INITIAL.
-
-          SORT ct_po_services BY line_no DESCENDING.
-
-          READ TABLE ct_po_services INTO ls_po_services INDEX 1.
-          IF sy-subrc IS INITIAL.
-
-            ls_po_services-line_no  = ls_po_services-line_no  + 1.
-            ls_po_services-ext_line = ls_po_services-ext_line + 10.
-            ls_po_services-tax_code = ls_pcockpit003-pmwskz.
-            ev_iva = ls_pcockpit003-pmwskz.
-
-            CLEAR lv_vlritem.
-            LOOP AT lt_cfop_nf_aux ASSIGNING <ls_cfop_nf>.
-              lv_vlritem = ls_cfop_nf-vlritem + lv_vlritem.
-              <ls_cfop_nf>-mwskz = lv_iva.
-            ENDLOOP.
-
-            lv_fator = ( lv_vlritem / lv_totnf ).
-            ls_po_services-gr_price = lv_gr_price * lv_fator.
-
-          ENDIF.
-
-          APPEND ls_po_services TO ct_po_services.
-
-        ENDIF.
-      ENDIF.
-
-    ENDLOOP.
-
-*      lt_serv_aux = ct_po_services.
-*
-*      DELETE lt_serv_aux WHERE ext_line IS INITIAL OR tax_code IS NOT INITIAL.
-
-
-*      lt_cfop_nf_aux = lt_cfop_nf.
-*
-*      DELETE lt_cfop_nf_aux WHERE mwskz IS NOT INITIAL.
-*
-*      CHECK lt_cfop_nf_aux IS NOT INITIAL.
-*
-*      LOOP AT lt_cfop_nf_aux INTO ls_cfop_nf.
-*
-*        CHECK ls_cfop_nf-mwskz IS INITIAL.
-*
-*        lv_tabix_srv = sy-tabix.
-*
-*
-*        READ TABLE lt_serv_aux ASSIGNING <fs_po_services> INDEX lv_tabix_srv.
-*
-*        IF sy-subrc IS INITIAL.
-*
-*          lv_gr_price = <fs_po_services>-gr_price.
-*
-*          READ TABLE lt_zttm_pcockpit003 INTO ls_zttm_pcockpit003 WITH KEY cfop = ls_cfop_nf-cfop.
-*          IF sy-subrc IS INITIAL.
-*            lv_iva = ls_zttm_pcockpit003-dmwskz.
-*          ENDIF.
-*
-*          IF lv_iva IS NOT INITIAL.
-*            <fs_po_services>-tax_code = lv_iva.
-*            ev_iva = lv_iva.
-*          ENDIF.
-*
-*          ls_po_services = <fs_po_services>.
-*
-*          lv_fator = ( ls_cfop_nf-vlritem / lv_totnf ).
-*          <fs_po_services>-gr_price = lv_gr_price * lv_fator.
-*
-*          MODIFY ct_po_services FROM <fs_po_services> TRANSPORTING tax_code gr_price
-*           WHERE pckg_no  = <fs_po_services>-pckg_no   AND
-*                 line_no  = <fs_po_services>-line_no   AND
-*                 ext_line = <fs_po_services>-ext_line.
-*
-*
-*        ELSE.
-*
-*          ls_po_services-line_no  = ls_po_services-line_no  + 1.
-*          ls_po_services-ext_line = ls_po_services-ext_line + 10.
-*
-*          READ TABLE lt_zttm_pcockpit003 INTO ls_zttm_pcockpit003 WITH KEY cfop = ls_cfop_nf-cfop.
-*          IF sy-subrc IS INITIAL.
-*            lv_iva = ls_zttm_pcockpit003-dmwskz.
-*          ENDIF.
-*
-*          IF lv_iva IS NOT INITIAL.
-*            ls_po_services-tax_code = lv_iva.
-*            ev_iva = ls_zttm_pcockpit003-dmwskz.
-*          ENDIF.
-*
-*          lv_fator = ( ls_cfop_nf-vlritem / lv_totnf ).
-*          ls_po_services-gr_price = lv_gr_price * lv_fator.
-*
-*          APPEND ls_po_services TO ct_po_services.
-*
-*        ENDIF.
-*
-*      ENDLOOP.
-
-
-** ---------------------------------------------------------------------------
-** Caso nenhuma das determinações anteriores funcione, fazer uma última determinação
-** somente para os cenários de Entrada
-** ---------------------------------------------------------------------------
-*    " Somente continuar quando o documento for 58 (Recebimento) ou 73 (Entrega)
-*    CHECK ev_iva IS INITIAL AND lt_fo_dcref IS NOT INITIAL.
-*
-*    " Determina Produto Acabado
-*    DATA(lv_prod_acabado) = determina_prod_acabado( it_tor_item = it_tor_item ).
-*
-*    SELECT SINGLE *
-*      FROM zttm_pcockpit011
-*      INTO @DATA(ls_pcockpit011)
-*      WHERE cenario  EQ @lv_cenario
-*        AND incoterm EQ 'FOB'
-*        AND rateio   EQ 'R01'.                       "#EC CI_SEL_NESTED
-*
-*    IF sy-subrc IS INITIAL.
-*      IF lv_prod_acabado IS INITIAL.      " Se não tiver produto acabado
-*
-*        DATA(lv_iva) = ls_pcockpit011-gmwskz.
-*
-*      ELSEIF lv_picms IS NOT INITIAL AND  " Se tiver ICMS no XML do CT-e
-*         lv_vicms IS NOT INITIAL.
-*
-*        lv_iva = ls_pcockpit011-dmwskz.
-*
-*      ELSEIF lv_picms IS INITIAL AND      " Se não tiver ICMS no XML do CT-e
-*             lv_vicms IS INITIAL.
-*
-*        lv_iva = ls_pcockpit011-pmwskz.
-*
-*      ENDIF.
-*    ENDIF.
-*
-*    IF lv_iva IS NOT INITIAL.
-*      LOOP AT ct_po_items ASSIGNING FIELD-SYMBOL(<fs_ct_po_items>).
-*
-*        READ TABLE ct_po_itemsx ASSIGNING FIELD-SYMBOL(<fs_ct_po_itemsx>) WITH KEY po_item = <fs_ct_po_items>-po_item BINARY SEARCH.
-*        CHECK sy-subrc IS INITIAL.
-*
-*        <fs_ct_po_items>-tax_code  = lv_iva.
-*        <fs_ct_po_itemsx>-tax_code = abap_true.
-*        ev_iva                     = lv_iva.
-*      ENDLOOP.
-*
-*      IF ev_iva IS NOT INITIAL.
-*        CLEAR: gv_message.
-*        CONCATENATE 'ZTTM_PCOCKPIT011'
-*                    lv_cenario
-*                    'FOB'
-*                    INTO gv_message SEPARATED BY space.
-*
-*        " IVA determinado por: &1&2&3&4.
-*        DATA(lt_return) = VALUE bapiret2_t( ( type       = if_xo_const_message=>info
-*                                        id         = 'ZTM_GKO'
-*                                        number     = '137'
-*                                        message_v1 = ev_iva
-*                                        message_v2 = gv_message+0(50)
-*                                        message_v3 = gv_message+50(50)
-*                                        message_v4 = gv_message+100(50) ) ).
-*
-*        set_log( EXPORTING it_return = lt_return                 " Tabela de retorno
-*                           iv_acckey = is_sfir_root-zzacckey ).  " Chave de acesso de 44 dígitos
-*
-*      ENDIF.
-*      RETURN.
-*    ENDIF.
-
-  ENDMETHOD.
-
-
   METHOD determina_iva_cte_services_03.
 
     TYPES:
@@ -4929,14 +3589,22 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
         mwskz_btax TYPE mwskz,
         mwskz_tb03 TYPE mwskz,
         valor      TYPE netwr,
-      END OF ty_cfop_iva_vlr.
+      END OF ty_cfop_iva_vlr,
+
+      BEGIN OF ty_para_iva_vlr,
+        mwskz_para TYPE mwskz,
+        valor      TYPE netwr,
+      END OF ty_para_iva_vlr.
 
     DATA:
       lt_cfop_nf       TYPE TABLE OF ty_cfop_nf,
       lt_cfop_matkl_nf TYPE TABLE OF ty_cfop_matkl_nf,
 
       lt_cfop_iva_vlr  TYPE TABLE OF ty_cfop_iva_vlr,
-      ls_cfop_iva_vlr  LIKE LINE OF lt_cfop_iva_vlr.
+      ls_cfop_iva_vlr  LIKE LINE OF lt_cfop_iva_vlr,
+
+      lt_para_iva_vlr  TYPE TABLE OF ty_para_iva_vlr,
+      ls_para_iva_vlr  LIKE LINE OF lt_para_iva_vlr.
 
     DATA:
       lt_refkey TYPE zctgtm_cargo_refkey,
@@ -5172,11 +3840,9 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
                                                        cfop    = <fs_lin>-cfop
                                                        matkl   = <fs_lin>-matkl ).
 
-
       COLLECT ls_cfop_matkl_nf INTO lt_cfop_matkl_nf.
 
     ENDLOOP.
-
 
     DATA(lt_mat_nf) = lt_lin_2[].
 
@@ -5229,28 +3895,32 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
 *
 *        IF sy-subrc IS INITIAL.
 
-    LOOP AT lt_ekpo INTO DATA(ls_ekpo).
+    LOOP AT lt_ekpo ASSIGNING FIELD-SYMBOL(<ls_ekpo>).
 
-      READ TABLE lt_pcockpit003 INTO DATA(ls_pcockpit003) WITH KEY dmwskz = ls_ekpo-mwskz.
+      READ TABLE lt_pcockpit003 INTO DATA(ls_pcockpit003) WITH KEY dmwskz = <ls_ekpo>-mwskz.
 
       IF sy-subrc IS INITIAL.
 
-        LOOP AT lt_faturas INTO DATA(ls_faturas) WHERE posnv = ls_ekpo-ebelp." WITH KEY vbelv = ls_lips-vbeln
+        LOOP AT lt_faturas ASSIGNING FIELD-SYMBOL(<ls_faturas>) WHERE posnv = <ls_ekpo>-ebelp." WITH KEY vbelv = ls_lips-vbeln
           "          posnv = ls_lips-posnr.
 
 *          IF sy-subrc IS INITIAL.
 *          LOOP AT lt_lin INTO DATA(ls_lin) WHERE cfop = ls_lips-j_1bcfop.
-          READ TABLE lt_lin_1 INTO DATA(ls_lin_1) WITH KEY refkey = ls_faturas-vbeln
-                                                           refitm = ls_faturas-posnn.
+          READ TABLE lt_lin_1 INTO DATA(ls_lin_1) WITH KEY refkey = <ls_faturas>-vbeln
+                                                           refitm = <ls_faturas>-posnn.
 
           READ TABLE lt_lin_2 INTO DATA(ls_lin) WITH KEY itmnum = ls_lin_1-itmnum.
 
           IF sy-subrc IS INITIAL.
             ls_cfop_iva_vlr-mwskz_tb03 = ls_pcockpit003-dmwskz.
-            ls_cfop_iva_vlr-mwskz_lips = ls_ekpo-mwskz.
+            ls_cfop_iva_vlr-mwskz_lips = <ls_ekpo>-mwskz.
             ls_cfop_iva_vlr-valor      = ls_lin-nfnett.
 *            ls_cfop_iva_vlr-cfop       = ls_lin-cfop.
             COLLECT ls_cfop_iva_vlr INTO lt_cfop_iva_vlr.
+
+            ls_para_iva_vlr-mwskz_para = ls_pcockpit003-pmwskz.
+            ls_para_iva_vlr-valor      = ls_lin-nfnett.
+            COLLECT ls_para_iva_vlr INTO lt_para_iva_vlr.
 
 *            ENDLOOP.
           ENDIF.
@@ -5283,13 +3953,13 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
 
     DELETE lt_cfop_nf_aux WHERE mwskz IS INITIAL.
 
-    LOOP AT lt_cfop_nf_aux INTO ls_cfop_nf.
+    LOOP AT lt_cfop_nf_aux ASSIGNING FIELD-SYMBOL(<ls_cfop_nf>).
 
-      CHECK ls_cfop_nf-mwskz IS NOT INITIAL.
+      CHECK <ls_cfop_nf>-mwskz IS NOT INITIAL.
 
       DATA(lv_tabix_srv) = sy-tabix.
 
-      READ TABLE lt_cfop_param INTO ls_cfop_param WITH KEY cfop = ls_cfop_nf-cfop.
+      READ TABLE lt_cfop_param INTO ls_cfop_param WITH KEY cfop = <ls_cfop_nf>-cfop.
 
       IF sy-subrc IS NOT INITIAL.
         DATA(lv_iva) = '0I'.
@@ -5340,7 +4010,7 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
         DATA(lv_gr_price_itm) = <fs_po_services>-gr_price.
 
 *        IF lv_iva IS INITIAL.
-        IF ls_cfop_nf-mwskz IS INITIAL.
+        IF <ls_cfop_nf>-mwskz IS INITIAL.
 
 *          READ TABLE ct_po_items INTO DATA(ls_po_items) INDEX 1. "WITH KEY
 *          READ TABLE lt_tp_mat INTO DATA(ls_tp_mat) WITH KEY matnr = ls_po_items-material.
@@ -5350,14 +4020,14 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
 *             ls_pcockpit018-mwskz IS NOT INITIAL.
 *            lv_iva = ls_pcockpit018-mwskz.
 *          ELSE.
-*            READ TABLE lt_pcockpit003 INTO DATA(ls_pcockpit003) WITH KEY cfop = ls_cfop_nf-cfop.
+*            READ TABLE lt_pcockpit003 INTO DATA(ls_pcockpit003) WITH KEY cfop = <ls_cfop_nf>-cfop.
 *            IF sy-subrc IS INITIAL.
 *              DATA(lv_iva) = ls_pcockpit003-dmwskz.
 *            ENDIF.
 *          ENDIF.
 
         ELSE.
-          lv_iva = ls_cfop_nf-mwskz.
+          lv_iva = <ls_cfop_nf>-mwskz.
         ENDIF.
 
         IF lv_iva IS NOT INITIAL.
@@ -5366,7 +4036,7 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
 
           DATA(ls_po_services) = <fs_po_services>.
 
-          lv_fator = ( ls_cfop_nf-vlritem / lv_totnf ).
+          lv_fator = ( <ls_cfop_nf>-vlritem / lv_totnf ).
           <fs_po_services>-gr_price = lv_gr_price_itm * lv_fator.
 
           MODIFY ct_po_services FROM <fs_po_services> TRANSPORTING tax_code gr_price
@@ -5383,7 +4053,7 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
         ls_po_services-ext_line = ls_po_services-ext_line + 10.
 
 *        IF lv_iva IS INITIAL.
-        IF ls_cfop_nf-mwskz IS INITIAL.
+        IF <ls_cfop_nf>-mwskz IS INITIAL.
 
 *          READ TABLE ct_po_items INTO ls_po_items INDEX 1. "WITH KEY
 *          READ TABLE lt_tp_mat INTO ls_tp_mat WITH KEY matnr = ls_po_items-material.
@@ -5393,14 +4063,14 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
 *             ls_pcockpit018-mwskz IS NOT INITIAL.
 *            lv_iva = ls_pcockpit018-mwskz.
 *          ELSE.
-*            READ TABLE lt_zttm_pcockpit003 INTO ls_zttm_pcockpit003 WITH KEY cfop = ls_cfop_nf-cfop.
+*            READ TABLE lt_zttm_pcockpit003 INTO ls_zttm_pcockpit003 WITH KEY cfop = <ls_cfop_nf>-cfop.
 *            IF sy-subrc IS INITIAL.
 *              lv_iva = ls_zttm_pcockpit003-dmwskz.
 *            ENDIF.
 *          ENDIF.
 
         ELSE.
-          lv_iva = ls_cfop_nf-mwskz.
+          lv_iva = <ls_cfop_nf>-mwskz.
         ENDIF.
 
 *      ENDIF.
@@ -5409,7 +4079,7 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
           ls_po_services-tax_code = lv_iva.
           ev_iva = lv_iva.
 
-          lv_fator = ( ls_cfop_nf-vlritem / lv_totnf ).
+          lv_fator = ( <ls_cfop_nf>-vlritem / lv_totnf ).
           ls_po_services-gr_price = lv_gr_price_itm * lv_fator.
 
           APPEND ls_po_services TO ct_po_services.
@@ -5457,7 +4127,7 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
       DELETE lt_serv_aux WHERE ext_line IS INITIAL.
       DELETE lt_serv_aux WHERE tax_code IS NOT INITIAL.
 
-      LOOP AT lt_cfop_nf_aux ASSIGNING FIELD-SYMBOL(<ls_cfop_nf>).
+      LOOP AT lt_cfop_nf_aux ASSIGNING <ls_cfop_nf>.
 
         lv_tabix_srv = sy-tabix.
 
@@ -5574,9 +4244,9 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
 
       DELETE lt_serv_aux WHERE ext_line IS INITIAL OR tax_code IS NOT INITIAL.
 
-      LOOP AT lt_cfop_matkl_nf INTO ls_cfop_matkl_nf.
+      LOOP AT lt_cfop_matkl_nf ASSIGNING FIELD-SYMBOL(<ls_cfop_matkl_nf>).
 
-        READ TABLE lt_cfop_nf_aux ASSIGNING <ls_cfop_nf> WITH KEY cfop = ls_cfop_matkl_nf-cfop.
+        READ TABLE lt_cfop_nf_aux ASSIGNING <ls_cfop_nf> WITH KEY cfop = <ls_cfop_matkl_nf>-cfop.
 
         CHECK sy-subrc IS INITIAL.
 
@@ -5586,7 +4256,7 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
 
         IF sy-subrc IS INITIAL.
 
-          READ TABLE lt_pcockpit018 INTO DATA(ls_pcockpit018) WITH KEY mtart = ls_cfop_matkl_nf-matkl.
+          READ TABLE lt_pcockpit018 INTO DATA(ls_pcockpit018) WITH KEY mtart = <ls_cfop_matkl_nf>-matkl.
 
           IF sy-subrc IS INITIAL                   AND
              ls_pcockpit018-mwskz IS NOT INITIAL.
@@ -5599,9 +4269,9 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
 
             <ls_cfop_nf>-mwskz = lv_iva.
 
-*          READ TABLE lt_cfop_nf_aux ASSIGNING <ls_cfop_nf> WITH KEY cfop = ls_cfop_matkl_nf-cfop.
+*          READ TABLE lt_cfop_nf_aux ASSIGNING <ls_cfop_nf> WITH KEY cfop = <ls_cfop_matkl_nf>-cfop.
 *          IF sy-subrc IS INITIAL.
-            lv_fator = ( ls_cfop_matkl_nf-vlritem / lv_totnf ).
+            lv_fator = ( <ls_cfop_matkl_nf>-vlritem / lv_totnf ).
 *          ENDIF.
 
             ls_po_services-gr_price = lv_gr_price * lv_fator.
@@ -5621,7 +4291,7 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
           ls_po_services-ext_line = ls_po_services-ext_line + 10.
 
 
-          READ TABLE lt_pcockpit018 INTO ls_pcockpit018 WITH KEY mtart = ls_cfop_matkl_nf-matkl.
+          READ TABLE lt_pcockpit018 INTO ls_pcockpit018 WITH KEY mtart = <ls_cfop_matkl_nf>-matkl.
 
           IF sy-subrc IS INITIAL                   AND
              ls_pcockpit018-mwskz IS NOT INITIAL.
@@ -5634,7 +4304,7 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
 
             <ls_cfop_nf>-mwskz = lv_iva.
 
-            lv_fator = ( ls_cfop_matkl_nf-vlritem / lv_totnf ).
+            lv_fator = ( <ls_cfop_matkl_nf>-vlritem / lv_totnf ).
             ls_po_services-gr_price = lv_gr_price * lv_fator.
 
             APPEND ls_po_services TO ct_po_services.
@@ -5652,14 +4322,17 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
       SORT lt_ekpo BY mwskz.
       SORT lt_cfop_param BY cfop.
 
-      LOOP AT lt_pcockpit003 INTO ls_pcockpit003.
+      SORT lt_pcockpit003 BY pmwskz.
+      DELETE ADJACENT DUPLICATES FROM lt_pcockpit003 COMPARING pmwskz.
 
-        READ TABLE lt_ekpo INTO ls_ekpo WITH KEY mwskz = ls_pcockpit003-dmwskz BINARY SEARCH.
+      LOOP AT lt_pcockpit003 ASSIGNING FIELD-SYMBOL(<ls_pcockpit003>).
+
+        READ TABLE lt_ekpo ASSIGNING <ls_ekpo> WITH KEY mwskz = <ls_pcockpit003>-dmwskz BINARY SEARCH.
         IF sy-subrc IS INITIAL.
 
           CALL FUNCTION 'CONVERSION_EXIT_ALPHA_INPUT'
             EXPORTING
-              input  = ls_ekpo-ebelp
+              input  = <ls_ekpo>-ebelp
             IMPORTING
               output = lv_nitemped.
 
@@ -5672,22 +4345,28 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
           ENDIF.
         ENDIF.
 
-        IF ls_pcockpit003-pmwskz IS NOT INITIAL.
+        IF <ls_pcockpit003>-pmwskz IS NOT INITIAL.
 
-          LOOP AT ct_po_services ASSIGNING <fs_po_services> WHERE subpckg_no IS INITIAL AND tax_code IS INITIAL.
-            <fs_po_services>-tax_code = ls_pcockpit003-pmwskz.
+          READ TABLE ct_po_services ASSIGNING <fs_po_services> WITH KEY subpckg_no = 0
+                                                                        tax_code   = space.
 
-            READ TABLE lt_cfop_iva_vlr INTO ls_cfop_iva_vlr WITH KEY mwskz_tb03 = ls_pcockpit003-dmwskz.
+          IF sy-subrc IS INITIAL.
+
+            <fs_po_services>-tax_code = <ls_pcockpit003>-pmwskz.
+
+*            READ TABLE lt_cfop_iva_vlr INTO ls_cfop_iva_vlr WITH KEY mwskz_tb03 = <ls_pcockpit003>-dmwskz.
+            READ TABLE lt_para_iva_vlr INTO ls_para_iva_vlr WITH KEY mwskz_para = <ls_pcockpit003>-pmwskz.
 
             IF sy-subrc IS INITIAL.
-              lv_fator = ( ls_cfop_iva_vlr-valor / lv_totnf ).
+*              lv_fator = ( ls_cfop_iva_vlr-valor / lv_totnf ).
+              lv_fator = ( ls_para_iva_vlr-valor / lv_totnf ).
               <fs_po_services>-gr_price = lv_gr_price * lv_fator.
             ENDIF.
 
-          ENDLOOP.
+*          ENDLOOP.
 
-          IF sy-subrc IS NOT INITIAL.
-
+*          IF sy-subrc IS NOT INITIAL.
+          ELSE.
             SORT ct_po_services BY line_no DESCENDING.
 
             READ TABLE ct_po_services INTO ls_po_services INDEX 1.
@@ -5695,19 +4374,21 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
 
               ls_po_services-line_no  = ls_po_services-line_no  + 1.
               ls_po_services-ext_line = ls_po_services-ext_line + 10.
-              ls_po_services-tax_code = ls_pcockpit003-pmwskz.
-              ev_iva = ls_pcockpit003-pmwskz.
+              ls_po_services-tax_code = <ls_pcockpit003>-pmwskz.
+              ev_iva = <ls_pcockpit003>-pmwskz.
 
 *            CLEAR lv_vlritem.
 *            LOOP AT lt_cfop_nf_aux ASSIGNING <ls_cfop_nf>.
 *              lv_vlritem = <ls_cfop_nf>-vlritem + lv_vlritem.
-*              <ls_cfop_nf>-mwskz = ls_pcockpit003-pmwskz.
+*              <ls_cfop_nf>-mwskz = <ls_pcockpit003>-pmwskz.
 *            ENDLOOP.
 
-              READ TABLE lt_cfop_iva_vlr INTO ls_cfop_iva_vlr WITH KEY mwskz_tb03 = ls_pcockpit003-dmwskz.
+*              READ TABLE lt_cfop_iva_vlr INTO ls_cfop_iva_vlr WITH KEY mwskz_tb03 = <ls_pcockpit003>-dmwskz.
+              READ TABLE lt_para_iva_vlr INTO ls_para_iva_vlr WITH KEY mwskz_para = <ls_pcockpit003>-pmwskz.
 
               IF sy-subrc IS INITIAL.
-                lv_fator = ( ls_cfop_iva_vlr-valor / lv_totnf ).
+*                lv_fator = ( ls_cfop_iva_vlr-valor / lv_totnf ).
+                lv_fator = ( ls_para_iva_vlr-valor / lv_totnf ).
                 ls_po_services-gr_price = lv_gr_price * lv_fator.
               ENDIF.
 
@@ -5724,7 +4405,7 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
 *            SORT ct_po_services BY tax_code.
 *
 *            READ TABLE ct_po_services ASSIGNING FIELD-SYMBOL(<fs_po_services_aux>)
-*                                                    WITH KEY tax_code = ls_pcockpit003-pmwskz
+*                                                    WITH KEY tax_code = <ls_pcockpit003>-pmwskz
 *                                                    BINARY SEARCH.
 *            IF sy-subrc IS INITIAL.
 *
@@ -5739,13 +4420,13 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
 *
 *                ls_po_services-line_no  = ls_po_services-line_no  + 1.
 *                ls_po_services-ext_line = ls_po_services-ext_line + 10.
-*                ls_po_services-tax_code = ls_pcockpit003-pmwskz.
-*                ev_iva = ls_pcockpit003-pmwskz.
+*                ls_po_services-tax_code = <ls_pcockpit003>-pmwskz.
+*                ev_iva = <ls_pcockpit003>-pmwskz.
 *
 *              CLEAR lv_vlritem.
 *                LOOP AT lt_cfop_nf_aux ASSIGNING <ls_cfop_nf>.
 *              lv_vlritem = <ls_cfop_nf>-vlritem + lv_vlritem.
-*                  <ls_cfop_nf>-mwskz = ls_pcockpit003-pmwskz.
+*                  <ls_cfop_nf>-mwskz = <ls_pcockpit003>-pmwskz.
 *                ENDLOOP.
 *
 *              lv_fator = ( lv_vlritem / lv_totnf ).
@@ -5833,6 +4514,11 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
         mwskz   TYPE mwskz,
       END OF ty_cfop_matkl_nf,
 
+      BEGIN OF ty_para_iva_vlr,
+        mwskz_para TYPE mwskz,
+        valor      TYPE netwr,
+      END OF ty_para_iva_vlr,
+
       BEGIN OF ty_cfop_iva_vlr,
         cfop       TYPE j_1bcfop,
         mwskz_lips TYPE mwskz,
@@ -5846,7 +4532,11 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
       lt_cfop_matkl_nf TYPE TABLE OF ty_cfop_matkl_nf,
 
       lt_cfop_iva_vlr  TYPE TABLE OF ty_cfop_iva_vlr,
-      ls_cfop_iva_vlr  LIKE LINE OF lt_cfop_iva_vlr.
+      ls_cfop_iva_vlr  LIKE LINE OF lt_cfop_iva_vlr,
+
+      lt_para_iva_vlr  TYPE TABLE OF ty_para_iva_vlr,
+      ls_para_iva_vlr  LIKE LINE OF lt_para_iva_vlr.
+
 
     DATA:
       lt_depara_cfop TYPE RANGE OF j_1bcfop,
@@ -6234,7 +4924,7 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
 *      SORT lt_lips.
 *      DELETE ADJACENT DUPLICATES FROM lt_lips.
 *
-*      LOOP AT lt_lips INTO DATA(ls_Lips).
+*      LOOP AT lt_lips INTO DATA(<ls_lips>).
 *
 *        READ TABLE lt_assign INTO ls_assign INDEX sy-tabix.
 *
@@ -6242,7 +4932,7 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
 *          INTO @DATA(ls_pcockpit003)
 *          FROM zttm_pcockpit003
 *          WHERE cenario = @lv_cenario
-*            AND cfop    = @ls_lips-j_1bcfop
+*            AND cfop    = @<ls_lips>-j_1bcfop
 *            AND dmwskz  = @ls_assign-mwskz.           "#EC CI_ALL_FIELD
 *
 *        IF sy-subrc IS INITIAL.
@@ -6332,42 +5022,47 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
                           IMPORTING range = lt_depara_cfop ).
 
 
-    LOOP AT lt_depara_cfop INTO DATA(ls_depara_cfop).
+    LOOP AT lt_depara_cfop ASSIGNING FIELD-SYMBOL(<ls_depara_cfop>).
 
       ls_cfop_range-option  = 'EQ'.
       ls_cfop_range-sign    = 'I'.
-      ls_cfop_range-low     =  ls_depara_cfop-low.
+      ls_cfop_range-low     =  <ls_depara_cfop>-low.
       APPEND ls_cfop_range TO lr_cfop.
 
     ENDLOOP.
 
 
-    LOOP AT lt_lips INTO DATA(ls_lips).
+    LOOP AT lt_lips ASSIGNING FIELD-SYMBOL(<ls_lips>).
 
-      LOOP AT lt_j_1bt007 INTO DATA(ls_j_1bt007) WHERE sd_mwskz = ls_lips-j_1btxsdc.
+      LOOP AT lt_j_1bt007 ASSIGNING FIELD-SYMBOL(<ls_j_1bt007>) WHERE sd_mwskz = <ls_lips>-j_1btxsdc.
 
-        READ TABLE lt_pcockpit003 INTO DATA(ls_pcockpit003) WITH KEY dmwskz = ls_j_1bt007-in_mwskz.
+        READ TABLE lt_pcockpit003 INTO DATA(ls_pcockpit003) WITH KEY dmwskz = <ls_j_1bt007>-in_mwskz.
 
         IF sy-subrc IS INITIAL.
 
-          READ TABLE lt_faturas INTO DATA(ls_faturas) WITH KEY vbelv = ls_lips-vbeln
-                                                               posnv = ls_lips-posnr.
+          READ TABLE lt_faturas INTO DATA(ls_faturas) WITH KEY vbelv = <ls_lips>-vbeln
+                                                               posnv = <ls_lips>-posnr.
 
           IF sy-subrc IS INITIAL.
-*          LOOP AT lt_lin INTO DATA(ls_lin) WHERE cfop = ls_lips-j_1bcfop.
+*          LOOP AT lt_lin INTO DATA(ls_lin) WHERE cfop = <ls_lips>-j_1bcfop.
 
             READ TABLE lt_lin INTO DATA(ls_lin) WITH KEY refkey = ls_faturas-vbeln && ls_faturas-mjahr
                                                          refitm = ls_faturas-posnn.
 
             IF sy-subrc IS INITIAL.
               ls_cfop_iva_vlr-mwskz_tb03 = ls_pcockpit003-dmwskz.
-              ls_cfop_iva_vlr-mwskz_lips = ls_lips-j_1btxsdc.
-              ls_cfop_iva_vlr-mwskz_btax = ls_j_1bt007-in_mwskz.
+              ls_cfop_iva_vlr-mwskz_lips = <ls_lips>-j_1btxsdc.
+              ls_cfop_iva_vlr-mwskz_btax = <ls_j_1bt007>-in_mwskz.
               ls_cfop_iva_vlr-valor      = ls_lin-nfnett.
 *            ls_cfop_iva_vlr-cfop       = ls_lin-cfop.
               COLLECT ls_cfop_iva_vlr INTO lt_cfop_iva_vlr.
 
 *            ENDLOOP.
+
+              ls_para_iva_vlr-mwskz_para = ls_pcockpit003-pmwskz.
+              ls_para_iva_vlr-valor      = ls_lin-nfnett.
+              COLLECT ls_para_iva_vlr INTO lt_para_iva_vlr.
+
             ENDIF.
 
           ENDIF.
@@ -6381,9 +5076,9 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
 
       DATA(lv_cfop_nf) = <fs_lin>-cfop.
 
-      READ TABLE lt_depara_cfop INTO ls_depara_cfop WITH KEY low = <fs_lin>-cfop.
+      READ TABLE lt_depara_cfop ASSIGNING <ls_depara_cfop> WITH KEY low = <fs_lin>-cfop.
       IF sy-subrc IS INITIAL.
-        lv_cfop_nf = ls_depara_cfop-high.
+        lv_cfop_nf = <ls_depara_cfop>-high.
       ENDIF.
 
       DATA(ls_cfop_nf) = VALUE ty_cfop_nf( "docnum  = <fs_lin>-docnum
@@ -6503,13 +5198,13 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
 
     DELETE lt_cfop_nf_aux WHERE mwskz IS INITIAL.
 
-    LOOP AT lt_cfop_nf_aux INTO ls_cfop_nf.
+    LOOP AT lt_cfop_nf_aux ASSIGNING FIELD-SYMBOL(<ls_cfop_nf>).
 
-      CHECK ls_cfop_nf-mwskz IS NOT INITIAL.
+      CHECK <ls_cfop_nf>-mwskz IS NOT INITIAL.
 
       DATA(lv_tabix_srv) = sy-tabix.
 
-      READ TABLE lt_cfop_param INTO ls_cfop_param WITH KEY cfop = ls_cfop_nf-cfop.
+      READ TABLE lt_cfop_param INTO ls_cfop_param WITH KEY cfop = <ls_cfop_nf>-cfop.
 
       IF sy-subrc IS NOT INITIAL.
         DATA(lv_iva) = '0I'.
@@ -6678,7 +5373,7 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
       DELETE lt_serv_aux WHERE ext_line IS INITIAL.
       DELETE lt_serv_aux WHERE tax_code IS NOT INITIAL.
 
-      LOOP AT lt_cfop_nf_aux ASSIGNING FIELD-SYMBOL(<ls_cfop_nf>).
+      LOOP AT lt_cfop_nf_aux ASSIGNING <ls_cfop_nf>.
 
         lv_tabix_srv = sy-tabix.
 
@@ -6798,9 +5493,9 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
       DELETE lt_serv_aux WHERE ext_line IS INITIAL OR tax_code IS NOT INITIAL.
 
 
-      LOOP AT lt_cfop_matkl_nf INTO ls_cfop_matkl_nf.
+      LOOP AT lt_cfop_matkl_nf ASSIGNING FIELD-SYMBOL(<ls_cfop_matkl_nf>).
 
-        READ TABLE lt_cfop_nf_aux ASSIGNING <ls_cfop_nf> WITH KEY cfop = ls_cfop_matkl_nf-cfop.
+        READ TABLE lt_cfop_nf_aux ASSIGNING <ls_cfop_nf> WITH KEY cfop = <ls_cfop_matkl_nf>-cfop.
 
         CHECK sy-subrc IS INITIAL.
 
@@ -6810,7 +5505,7 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
 
         IF sy-subrc IS INITIAL.
 
-          READ TABLE lt_pcockpit018 INTO DATA(ls_pcockpit018) WITH KEY mtart = ls_cfop_matkl_nf-matkl.
+          READ TABLE lt_pcockpit018 INTO DATA(ls_pcockpit018) WITH KEY mtart = <ls_cfop_matkl_nf>-matkl.
 
           IF sy-subrc IS INITIAL                   AND
              ls_pcockpit018-mwskz IS NOT INITIAL.
@@ -6823,9 +5518,9 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
 
             <ls_cfop_nf>-mwskz = lv_iva.
 
-*          READ TABLE lt_cfop_nf_aux ASSIGNING <ls_cfop_nf> WITH KEY cfop = ls_cfop_matkl_nf-cfop.
+*          READ TABLE lt_cfop_nf_aux ASSIGNING <ls_cfop_nf> WITH KEY cfop = <ls_cfop_matkl_nf>-cfop.
 *          IF sy-subrc IS INITIAL.
-            lv_fator = ( ls_cfop_matkl_nf-vlritem / lv_totnf ).
+            lv_fator = ( <ls_cfop_matkl_nf>-vlritem / lv_totnf ).
 *          ENDIF.
 
             ls_po_services-gr_price = lv_gr_price * lv_fator.
@@ -6845,7 +5540,7 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
           ls_po_services-ext_line = ls_po_services-ext_line + 10.
 
 
-          READ TABLE lt_pcockpit018 INTO ls_pcockpit018 WITH KEY mtart = ls_cfop_matkl_nf-matkl.
+          READ TABLE lt_pcockpit018 INTO ls_pcockpit018 WITH KEY mtart = <ls_cfop_matkl_nf>-matkl.
 
           IF sy-subrc IS INITIAL                   AND
              ls_pcockpit018-mwskz IS NOT INITIAL.
@@ -6858,7 +5553,7 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
 
             <ls_cfop_nf>-mwskz = lv_iva.
 
-            lv_fator = ( ls_cfop_matkl_nf-vlritem / lv_totnf ).
+            lv_fator = ( <ls_cfop_matkl_nf>-vlritem / lv_totnf ).
             ls_po_services-gr_price = lv_gr_price * lv_fator.
 
             APPEND ls_po_services TO ct_po_services.
@@ -6871,15 +5566,23 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
     DELETE lt_cfop_nf_aux WHERE mwskz IS NOT INITIAL.
     IF lt_cfop_nf_aux IS NOT INITIAL.
 
+      SORT lt_pcockpit003 BY pmwskz.
+      DELETE ADJACENT DUPLICATES FROM lt_pcockpit003 COMPARING pmwskz.
+
       SORT lt_lin BY cfop.
 
-      LOOP AT lt_pcockpit003 INTO ls_pcockpit003.
+      LOOP AT lt_pcockpit003 ASSIGNING FIELD-SYMBOL(<ls_pcockpit003>).
 
-        IF ls_pcockpit003-pmwskz IS NOT INITIAL.
+        IF <ls_pcockpit003>-pmwskz IS NOT INITIAL.
 
-          LOOP AT ct_po_services ASSIGNING <fs_po_services> WHERE subpckg_no IS INITIAL AND tax_code IS INITIAL.
+*          LOOP AT ct_po_services ASSIGNING <fs_po_services> WHERE subpckg_no IS INITIAL AND tax_code IS INITIAL.
 
-            <fs_po_services>-tax_code = ls_pcockpit003-pmwskz.
+          READ TABLE ct_po_services ASSIGNING <fs_po_services> WITH KEY subpckg_no = 0
+                                                                        tax_code   = space.
+
+          IF sy-subrc IS INITIAL.
+
+            <fs_po_services>-tax_code = <ls_pcockpit003>-pmwskz.
 
 *          READ TABLE lt_lin ASSIGNING FIELD-SYMBOL(<fs_lin_aux>)
 *                                          WITH KEY cfop = '6151AA'
@@ -6894,22 +5597,24 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
 *            EXIT.
 *          ENDLOOP.
 
-            READ TABLE lt_cfop_iva_vlr INTO ls_cfop_iva_vlr WITH KEY mwskz_tb03 = ls_pcockpit003-dmwskz.
+*            READ TABLE lt_cfop_iva_vlr INTO ls_cfop_iva_vlr WITH KEY mwskz_tb03 = <ls_pcockpit003>-dmwskz.
+            READ TABLE lt_para_iva_vlr INTO ls_para_iva_vlr WITH KEY mwskz_para = <ls_pcockpit003>-pmwskz.
 
             IF sy-subrc IS INITIAL.
 
-              lv_fator = ( ls_cfop_iva_vlr-valor / lv_totnf ).
+*              lv_fator = ( ls_cfop_iva_vlr-valor / lv_totnf ).
+              lv_fator = ( ls_para_iva_vlr-valor / lv_totnf ).
               <fs_po_services>-gr_price = lv_gr_price * lv_fator.
 
               DATA(lv_proc) = abap_true.
 
             ENDIF.
-          ENDLOOP.
+*          ENDLOOP.
 
 *        IF sy-subrc IS NOT INITIAL
 *       AND lv_proc IS INITIAL.
 
-          IF sy-subrc IS NOT INITIAL.
+          ELSE.  "IF sy-subrc IS NOT INITIAL.
 
             SORT ct_po_services BY line_no DESCENDING.
 
@@ -6918,19 +5623,21 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
 
               ls_po_services-line_no  = ls_po_services-line_no  + 1.
               ls_po_services-ext_line = ls_po_services-ext_line + 10.
-              ls_po_services-tax_code = ls_pcockpit003-pmwskz.
-              ev_iva = ls_pcockpit003-pmwskz.
+              ls_po_services-tax_code = <ls_pcockpit003>-pmwskz.
+              ev_iva = <ls_pcockpit003>-pmwskz.
 
 *            CLEAR lv_vlritem.
 *            LOOP AT lt_cfop_nf_aux ASSIGNING <ls_cfop_nf>.
 *              lv_vlritem = <ls_cfop_nf>-vlritem + lv_vlritem.
-*              <ls_cfop_nf>-mwskz = ls_pcockpit003-pmwskz.
+*              <ls_cfop_nf>-mwskz = <ls_pcockpit003>-pmwskz.
 *            ENDLOOP.
 
-              READ TABLE lt_cfop_iva_vlr INTO ls_cfop_iva_vlr WITH KEY mwskz_tb03 = ls_pcockpit003-dmwskz.
+*              READ TABLE lt_cfop_iva_vlr INTO ls_cfop_iva_vlr WITH KEY mwskz_tb03 = <ls_pcockpit003>-dmwskz.
+              READ TABLE lt_para_iva_vlr INTO ls_para_iva_vlr WITH KEY mwskz_para = <ls_pcockpit003>-pmwskz.
 
               IF sy-subrc IS INITIAL.
-                lv_fator = ( ls_cfop_iva_vlr-valor / lv_totnf ).
+*                lv_fator = ( ls_cfop_iva_vlr-valor / lv_totnf ).
+                lv_fator = ( ls_para_iva_vlr-valor / lv_totnf ).
                 ls_po_services-gr_price = lv_gr_price * lv_fator.
               ENDIF.
 

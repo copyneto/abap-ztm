@@ -756,6 +756,11 @@ CLASS zcltm_gko_process DEFINITION
     METHODS check_doc_memo_miro
       EXPORTING
         !et_return TYPE bapiret2_t .
+    METHODS check_cte_canceled
+      IMPORTING
+        iv_raise_when_error TYPE flag DEFAULT abap_false
+      RAISING
+        zcxtm_gko_process.
   PROTECTED SECTION.
 
   PRIVATE SECTION.
@@ -783,6 +788,7 @@ CLASS zcltm_gko_process DEFINITION
     CLASS-DATA gv_check TYPE abap_bool .
     CLASS-DATA gt_sfir_id TYPE /scmtms/t_sfir_id .
     CLASS-DATA gv_success TYPE char1 .
+    CLASS-DATA gs_event  TYPE /xnfe/events.
     CLASS-DATA gt_return TYPE bapiret2_t .
     CLASS-DATA gt_bapi_return TYPE bapiret2_t .
     CLASS-DATA gv_invnumber_reversal TYPE bapi_incinv_fld-inv_doc_no .
@@ -825,6 +831,7 @@ CLASS zcltm_gko_process DEFINITION
     METHODS check_dff_confirmed.
     METHODS check_miro_created.
     METHODS check_cte_rejected.
+
     METHODS clear_reversal_fi_documents
       IMPORTING
         !iv_re_belnr  TYPE zttm_gkot001-re_belnr
@@ -988,12 +995,13 @@ CLASS zcltm_gko_process DEFINITION
       IMPORTING iv_cnpj    TYPE dfkkbptaxnum-taxnum
                 iv_cpf     TYPE dfkkbptaxnum-taxnum OPTIONAL
                 iv_ie      TYPE dfkkbptaxnum-taxnum OPTIONAL
-      EXPORTING ev_partner TYPE any.
+      EXPORTING ev_partner TYPE any
+                ev_branch  TYPE j_1bbranch-branch.
 ENDCLASS.
 
 
 
-CLASS ZCLTM_GKO_PROCESS IMPLEMENTATION.
+CLASS zcltm_gko_process IMPLEMENTATION.
 
 
   METHOD read_file.
@@ -1315,12 +1323,16 @@ CLASS ZCLTM_GKO_PROCESS IMPLEMENTATION.
 
       WHEN gc_codstatus-documento_integrado.
 
-        identify_freight_order( ).
+* BEGIN OF INSERT - JWSILVA - 16.05.2023
+        me->check_cte_canceled( ).
+* END OF INSERT - JWSILVA - 16.05.2023
+
+        IF gs_gko_header-codstatus EQ gc_codstatus-documento_integrado.
+          identify_freight_order( ).
+        ENDIF.
 
         IF gs_gko_header-codstatus EQ gc_codstatus-of_identificada.
-
           identify_scenario( ).
-
         ENDIF.
 
       WHEN gc_codstatus-cenario_identificado.
@@ -1399,7 +1411,13 @@ CLASS ZCLTM_GKO_PROCESS IMPLEMENTATION.
 
       WHEN gc_codstatus-frete_faturado.
 
-        me->create_miro( ).
+* BEGIN OF INSERT - JWSILVA - 16.05.2023
+        me->check_cte_canceled( ).
+* END OF INSERT - JWSILVA - 16.05.2023
+
+        IF gs_gko_header-codstatus EQ gc_codstatus-frete_faturado.
+          me->create_miro( ).
+        ENDIF.
 
       WHEN gc_codstatus-aguardando_estorno_dff.
 
@@ -1420,7 +1438,6 @@ CLASS ZCLTM_GKO_PROCESS IMPLEMENTATION.
       WHEN gc_codstatus-evt_rejeicao_aguard_sefaz.
 
         me->check_cte_rejected( ).
-*        me->check_status_sefaz( ).
 
     ENDCASE.
 
@@ -3639,6 +3656,7 @@ CLASS ZCLTM_GKO_PROCESS IMPLEMENTATION.
 
             RECEIVE RESULTS FROM FUNCTION 'ZFMTM_GKO_CTE_CHECK_REJECTED'
              IMPORTING
+               es_event  = gs_event
                et_return = gt_return.
 
             gv_wait_async = abap_true.
@@ -4637,11 +4655,14 @@ CLASS ZCLTM_GKO_PROCESS IMPLEMENTATION.
     DATA: lt_j1_doc   TYPE STANDARD TABLE OF j_1bnfdoc.
 
     DATA: lv_branch_entrega  TYPE j_1bbranch-branch,
-          lv_branch_retirada TYPE j_1bbranch-branch.
+          lv_branch_retirada TYPE j_1bbranch-branch,
+          lv_branch          TYPE j_1bbranch-branch.
 
     DO 1 TIMES.
 
-      " Obtêm o código da transportadora
+* ---------------------------------------------------------------------------
+* Obtêm o código da transportadora
+* ---------------------------------------------------------------------------
       me->get_partner( EXPORTING iv_cnpj    = CONV #( gs_gko_header-emit_cnpj_cpf )
                        IMPORTING ev_partner = gs_gko_header-emit_cod ).
 
@@ -4650,7 +4671,9 @@ CLASS ZCLTM_GKO_PROCESS IMPLEMENTATION.
         CONTINUE.
       ENDIF.
 
-      " Obtêm o código do tomador
+* ---------------------------------------------------------------------------
+* Obtêm o código do tomador
+* ---------------------------------------------------------------------------
       me->get_partner( EXPORTING iv_cnpj    = CONV #( gs_gko_header-tom_cnpj_cpf )
                                  iv_ie      = CONV #( gs_gko_header-tom_ie )
                        IMPORTING ev_partner = gs_gko_header-tom_cod ).
@@ -4660,31 +4683,15 @@ CLASS ZCLTM_GKO_PROCESS IMPLEMENTATION.
         CONTINUE.
       ENDIF.
 
-      " Obtêm o código do remetente
-      me->get_partner( EXPORTING iv_cnpj    = CONV #( gs_gko_header-rem_cnpj_cpf )
-                       IMPORTING ev_partner = gs_gko_header-rem_cod ).
-
-      IF gs_gko_header-rem_cod IS INITIAL.
-        set_status( gc_codstatus-cod_remetente_nao_encontrado ).
-        CONTINUE.
-      ENDIF.
-
-      " Obtêm o código do destinatário
-      me->get_partner( EXPORTING iv_cnpj    = CONV #( gs_gko_header-dest_cnpj )
-                                 iv_cpf     = CONV #( gs_gko_header-dest_cpf )
-                       IMPORTING ev_partner = gs_gko_header-dest_cod ).
-
-      IF gs_gko_header-dest_cod IS INITIAL.
-        set_status( gc_codstatus-cod_dest_nao_encontrado ).
-        CONTINUE.
-      ENDIF.
-
-      " Obtêm o código do expedidor (Opcional)
+* ---------------------------------------------------------------------------
+* Obtêm o código do expedidor (Opcional)
+* ---------------------------------------------------------------------------
       IF gs_gko_header-exped_cnpj IS NOT INITIAL OR gs_gko_header-exped_cpf IS NOT INITIAL.
 
         me->get_partner( EXPORTING iv_cnpj    = CONV #( gs_gko_header-exped_cnpj )
                                    iv_cpf     = CONV #( gs_gko_header-exped_cpf )
-                         IMPORTING ev_partner = gs_gko_header-exped_cod ).
+                         IMPORTING ev_partner = gs_gko_header-exped_cod
+                                   ev_branch  = DATA(lv_branch_exped) ).            " INSERT - JWSILVA - 16.05.2023
 
         IF gs_gko_header-exped_cod IS INITIAL.
           set_status( gc_codstatus-cod_expedidor_nao_encontrado ).
@@ -4692,12 +4699,27 @@ CLASS ZCLTM_GKO_PROCESS IMPLEMENTATION.
         ENDIF.
       ENDIF.
 
-      " Obtêm o código do recebedor (Opcional)
+* ---------------------------------------------------------------------------
+* Obtêm o código do remetente
+* ---------------------------------------------------------------------------
+      me->get_partner( EXPORTING iv_cnpj    = CONV #( gs_gko_header-rem_cnpj_cpf )
+                       IMPORTING ev_partner = gs_gko_header-rem_cod
+                                 ev_branch  = DATA(lv_branch_rem) ).                " INSERT - JWSILVA - 16.05.2023
+
+      IF gs_gko_header-rem_cod IS INITIAL.
+        set_status( gc_codstatus-cod_remetente_nao_encontrado ).
+        CONTINUE.
+      ENDIF.
+
+* ---------------------------------------------------------------------------
+* Obtêm o código do recebedor (Opcional)
+* ---------------------------------------------------------------------------
       IF gs_gko_header-receb_cnpj IS NOT INITIAL OR gs_gko_header-receb_cpf IS NOT INITIAL.
 
         me->get_partner( EXPORTING iv_cnpj    = CONV #( gs_gko_header-receb_cnpj )
                                    iv_cpf     = CONV #( gs_gko_header-receb_cpf )
-                         IMPORTING ev_partner = gs_gko_header-receb_cod ).
+                         IMPORTING ev_partner = gs_gko_header-receb_cod
+                                   ev_branch  = DATA(lv_branch_receb) ).            " INSERT - JWSILVA - 16.05.2023
 
         IF gs_gko_header-receb_cod IS INITIAL.
           set_status( gc_codstatus-cod_recebedor_nao_encontrado ).
@@ -4705,6 +4727,22 @@ CLASS ZCLTM_GKO_PROCESS IMPLEMENTATION.
         ENDIF.
       ENDIF.
 
+* ---------------------------------------------------------------------------
+* Obtêm o código do destinatário
+* ---------------------------------------------------------------------------
+      me->get_partner( EXPORTING iv_cnpj    = CONV #( gs_gko_header-dest_cnpj )
+                                 iv_cpf     = CONV #( gs_gko_header-dest_cpf )
+                       IMPORTING ev_partner = gs_gko_header-dest_cod
+                                 ev_branch  = DATA(lv_branch_dest) ).               " INSERT - JWSILVA - 16.05.2023
+
+      IF gs_gko_header-dest_cod IS INITIAL.
+        set_status( gc_codstatus-cod_dest_nao_encontrado ).
+        CONTINUE.
+      ENDIF.
+
+* ---------------------------------------------------------------------------
+* Obtêm empresa e local de negócio
+* ---------------------------------------------------------------------------
       DATA(lv_rem_ie)  = CONV j_1bstains( |%{ gs_gko_header-rem_ie }| ).
       DATA(lv_dest_ie) = CONV j_1bstains( |%{ gs_gko_header-dest_ie }| ).
 
@@ -4738,46 +4776,64 @@ CLASS ZCLTM_GKO_PROCESS IMPLEMENTATION.
 
     ENDDO.
 
-    " Local de Negócio de Retirada e Entrega
-    LOOP AT gt_gko_references ASSIGNING FIELD-SYMBOL(<fs_s_reference>).
 
-      SELECT SINGLE *
-        INTO @DATA(ls_j1_doc) FROM j_1bnfdoc
-        WHERE docnum = @<fs_s_reference>-docnum.
+* BEGIN OF DELETE - JWSILVA - 16.05.2023
+* ---------------------------------------------------------------------------
+* Local de Negócio de Retirada e Entrega ( através da Nota Fiscal)
+* ---------------------------------------------------------------------------
+*    LOOP AT gt_gko_references ASSIGNING FIELD-SYMBOL(<fs_s_reference>).
+*
+*      SELECT SINGLE *
+*        INTO @DATA(ls_j1_doc) FROM j_1bnfdoc
+*        WHERE docnum = @<fs_s_reference>-docnum.
+*
+*      IF sy-subrc IS INITIAL.
+*
+*        IF ls_j1_doc-direct EQ '1'. "NF Entrada"
+*          lv_branch_entrega = ls_j1_doc-branch.
+*
+*          SELECT SINGLE j_1bbranch
+*            FROM T001w
+*            INTO @lv_branch_retirada
+*            WHERE " werks       = @ls_j1_doc-parid(4) AND     " CHANGE - JWSILVA - 15.05.2023
+*                  j_1bbranch  = @ls_j1_doc-parid+4(4).
+*
+*
+*        ELSE. "NF Saída"
+*          lv_branch_retirada = ls_j1_doc-branch.
+*
+*          SELECT SINGLE j_1bbranch
+*           FROM T001w
+*           INTO @lv_branch_entrega
+*           WHERE " werks       = @ls_j1_doc-parid(4) AND      " CHANGE - JWSILVA - 15.05.2023
+*                 j_1bbranch  = @ls_j1_doc-parid+4(4).
+*        ENDIF.
+*      ENDIF.
+*
+*      " Se algum local foi encontrado, considera-se o mesmo para a busca
+*      IF lv_branch_entrega IS NOT INITIAL
+*      OR lv_branch_retirada IS NOT INITIAL.
+*        EXIT.
+*      ENDIF.
+*
+*    ENDLOOP.
+*
+*    gs_gko_header-ret_loc = lv_branch_retirada.
+*    gs_gko_header-ent_loc = lv_branch_entrega.
+* END OF DELETE - JWSILVA - 16.05.2023
+* BEGIN OF INSERT - JWSILVA - 16.05.2023
+* ---------------------------------------------------------------------------
+* Local de Negócio de Retirada e Entrega ( através da arquivo CTE)
+* ---------------------------------------------------------------------------
+    gs_gko_header-ret_loc = COND #( WHEN lv_branch_exped IS NOT INITIAL
+                                    THEN lv_branch_exped
+                                    ELSE lv_branch_rem ).
 
-      IF sy-subrc IS INITIAL.
+    gs_gko_header-ent_loc = COND #( WHEN lv_branch_receb IS NOT INITIAL
+                                    THEN lv_branch_receb
+                                    ELSE lv_branch_dest ).
 
-        IF ls_j1_doc-direct EQ '1'. "NF Entrada"
-          lv_branch_entrega = ls_j1_doc-branch.
-
-          SELECT SINGLE j_1bbranch
-            FROM T001w
-            INTO @lv_branch_retirada
-            WHERE " werks       = @ls_j1_doc-parid(4) AND     " CHANGE - JWSILVA - 15.05.2023
-                  j_1bbranch  = @ls_j1_doc-parid+4(4).
-
-
-        ELSE. "NF Saída"
-          lv_branch_retirada = ls_j1_doc-branch.
-
-          SELECT SINGLE j_1bbranch
-           FROM T001w
-           INTO @lv_branch_entrega
-           WHERE " werks       = @ls_j1_doc-parid(4) AND      " CHANGE - JWSILVA - 15.05.2023
-                 j_1bbranch  = @ls_j1_doc-parid+4(4).
-        ENDIF.
-      ENDIF.
-
-      " Se algum local foi encontrado, considera-se o mesmo para a busca
-      IF lv_branch_entrega IS NOT INITIAL
-      OR lv_branch_retirada IS NOT INITIAL.
-        EXIT.
-      ENDIF.
-
-    ENDLOOP.
-
-    gs_gko_header-ret_loc = lv_branch_retirada.
-    gs_gko_header-ent_loc = lv_branch_entrega.
+* END OF INSERT - JWSILVA - 16.05.2023
 
     GET TIME.
 
@@ -6074,6 +6130,10 @@ CLASS ZCLTM_GKO_PROCESS IMPLEMENTATION.
       ENDCASE.
 
       check_doc_is_valid( IMPORTING ev_acabado = DATA(lv_acabado) ).
+
+* BEGIN OF INSERT - JWSILVA - 16.05.2023
+      me->check_cte_canceled( ).
+* END OF INSERT - JWSILVA - 16.05.2023
 
       IF iv_tpdoc   = gc_tpdoc-cte
      AND lv_acabado = abap_true. " Verificação se contem produto acabado = TRUE
@@ -10587,10 +10647,10 @@ gs_gko_header-acckey      = |NFS{ gs_nfs_data-docdat }{ CONV num9( gs_nfs_data-z
 
       " Verifica se o evento de desacordo foi registrado
       LOOP AT lt_events_prot ASSIGNING FIELD-SYMBOL(<fs_s_event_prot>)
-                       WHERE tpevento = '610110'    " Desacordo de Entrega de Serviço
-AND ( cstat  = '134'       " Evento registrado e vinculado ao CT-e com alerta para situação do documento.
-OR cstat  = '135'       " Evento registrado e vinculado a CT-e
-OR cstat  = '136'    ). " Evento registrado, mas não vinculado a CT-e
+                             WHERE tpevento = '610110'    " Desacordo de Entrega de Serviço
+                               AND ( cstat  = '134'       " Evento registrado e vinculado ao CT-e com alerta para situação do documento.
+                                OR cstat  = '135'       " Evento registrado e vinculado a CT-e
+                                OR cstat  = '136'    ). " Evento registrado, mas não vinculado a CT-e
         EXIT.
       ENDLOOP.
 
@@ -11457,7 +11517,7 @@ OR cstat  = '136'    ). " Evento registrado, mas não vinculado a CT-e
 * ---------------------------------------------------------------------------
     IF iv_cnpj IS NOT INITIAL.
 
-      SELECT Parceiro, Nome, cnpj, cpf, InscricaoEstadual, InscricaoMunicipal
+      SELECT Parceiro, Nome, cnpj, cpf, InscricaoEstadual, InscricaoMunicipal, Centro, LocalNegocio         " CHANGE - JWSILVA -  16.05.2023
         FROM zi_ca_vh_partner
         WHERE cnpj EQ @iv_cnpj
         INTO TABLE @DATA(lt_parceiro).
@@ -11468,7 +11528,7 @@ OR cstat  = '136'    ). " Evento registrado, mas não vinculado a CT-e
 * ---------------------------------------------------------------------------
     IF iv_cpf IS NOT INITIAL.
 
-      SELECT Parceiro, Nome, cnpj, cpf, InscricaoEstadual, InscricaoMunicipal
+      SELECT Parceiro, Nome, cnpj, cpf, InscricaoEstadual, InscricaoMunicipal, Centro, LocalNegocio         " CHANGE - JWSILVA -  16.05.2023
         FROM zi_ca_vh_partner
         WHERE cpf EQ @iv_cpf
         APPENDING TABLE @lt_parceiro.
@@ -11488,6 +11548,7 @@ OR cstat  = '136'    ). " Evento registrado, mas não vinculado a CT-e
 
       IF sy-subrc EQ 0.
         ev_partner = ls_parceiro->Parceiro.
+        ev_branch  = ls_parceiro->LocalNegocio.                                                             " INSERT - JWSILVA -  16.05.2023
         RETURN.
       ENDIF.
     ENDIF.
@@ -11499,6 +11560,7 @@ OR cstat  = '136'    ). " Evento registrado, mas não vinculado a CT-e
 
     IF sy-subrc EQ 0.
       ev_partner = ls_parceiro->Parceiro.
+      ev_branch  = ls_parceiro->LocalNegocio.                                                               " INSERT - JWSILVA -  16.05.2023
       RETURN.
     ENDIF.
 
@@ -11613,12 +11675,12 @@ OR cstat  = '136'    ). " Evento registrado, mas não vinculado a CT-e
 
       WHEN gc_cenario-venda_coligada.
 
-        SELECT gkot003~acckey,
-               ekbe~ebeln,
-               ekbe~ebelp,
-               ekbe~gjahr,
-               ekbe~belnr,
-               rbkp~stblg
+        SELECT gkot003~acckey
+*               ekbe~ebeln,
+*               ekbe~ebelp,
+*               ekbe~gjahr,
+*               ekbe~belnr,
+*               rbkp~stblg
           FROM zttm_gkot003 AS gkot003
           INNER JOIN j_1bnflin AS lin  ON  lin~docnum = gkot003~docnum
           INNER JOIN vbrp      AS vbrp ON  vbrp~vbeln = lin~refkey
@@ -11753,7 +11815,7 @@ OR cstat  = '136'    ). " Evento registrado, mas não vinculado a CT-e
 
   METHOD check_cte_rejected.
 
-    FREE: gt_return, gv_wait_async.
+    FREE: gt_return, gv_wait_async, gs_event.
 
 * ---------------------------------------------------------------------------
 * Verifica se Evento foi concluído
@@ -11785,6 +11847,47 @@ OR cstat  = '136'    ). " Evento registrado, mas não vinculado a CT-e
 
       me->set_status( EXPORTING iv_status   = me->gc_codstatus-evt_rejeicao_confirmado_sefaz
                                 it_bapi_ret = gt_return[] ).
+
+    ENDIF.
+
+  ENDMETHOD.
+
+
+  METHOD check_cte_canceled.
+
+    FREE: gt_return, gv_wait_async, gs_event.
+
+* ---------------------------------------------------------------------------
+* Verifica se Evento foi concluído
+* ---------------------------------------------------------------------------
+    CALL FUNCTION 'ZFMTM_GKO_CTE_CHECK_REJECTED'
+      STARTING NEW TASK 'GKO_CTE_CHECK_REJECTED'
+      CALLING setup_messages ON END OF TASK
+      EXPORTING
+        iv_cteid = gs_gko_header-acckey.
+
+    WAIT UNTIL gv_wait_async = abap_true.
+    FREE: gv_wait_async.
+
+* ---------------------------------------------------------------------------
+* Verifica se Evento de cancelamento foi solicitado
+* ---------------------------------------------------------------------------
+    IF gs_event-tpevento = '110111'.        " Evento de Cancelamento
+
+      IF iv_raise_when_error IS INITIAL.
+
+        me->set_status( EXPORTING iv_status   = me->gc_codstatus-evt_rejeicao_confirmado_sefaz
+                                  iv_codigo   = gs_event-cstat
+                                  iv_desc_cod = CONV #( gs_event-xmotivo )
+                                  it_bapi_ret = gt_return[] ).
+
+      ELSE.
+
+        RAISE EXCEPTION TYPE zcxtm_gko_process
+          EXPORTING
+            gv_msgv1       = CONV #( gs_event-xmotivo )
+            gt_bapi_return = gt_return[].
+      ENDIF.
 
     ENDIF.
 

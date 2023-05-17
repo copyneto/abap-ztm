@@ -932,6 +932,12 @@
      <MSGNR>153</MSGNR>
      <TEXT>Para mais informações, favor verificar no monitor SAP NF-e.</TEXT>
     </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GKO</ARBGB>
+     <MSGNR>154</MSGNR>
+     <TEXT>Selecione ao menos um JOB para execução</TEXT>
+    </T100>
    </T100>
   </asx:values>
  </asx:abap>

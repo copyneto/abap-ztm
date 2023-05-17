@@ -94,7 +94,7 @@ ENDCLASS.
 
 
 
-CLASS zcltm_raoadnet_session IMPLEMENTATION.
+CLASS ZCLTM_RAOADNET_SESSION IMPLEMENTATION.
 
 
   METHOD carrega_dados.
@@ -568,7 +568,7 @@ CLASS zcltm_raoadnet_session IMPLEMENTATION.
 
     LOOP AT lt_delivery REFERENCE INTO DATA(ls_delivery).
 
-      READ TABLE lt_partners REFERENCE INTO DATA(ls_partner) WITH KEY vbeln = ls_delivery->DeliveryDocument.
+      READ TABLE lt_partners REFERENCE INTO DATA(ls_partner) WITH KEY vbeln = ls_delivery->DeliveryDocument BINARY SEARCH.
 
       IF sy-subrc EQ 0.
         ls_delivery->ShipToParty = ls_partner->kunnr.
@@ -631,11 +631,22 @@ CLASS zcltm_raoadnet_session IMPLEMENTATION.
       FOR ALL ENTRIES IN @lt_original_data
       WHERE SalesOrder = @lt_original_data-SalesOrder
 *** Flávia Leite -  8000006305, COCK AGENDAMENTO
-*        AND Remessa    = @lt_original_data-Remessa
+       AND Remessa    = @lt_original_data-Remessa
        AND agend_valid = @abap_true
 *** Flávia Leite - 8000006305, COCK AGENDAMENTO
       INTO TABLE @DATA(lt_agendamento).
+
+*** Flávia Leite - 8000007431, AGENDAMENTO NA ORDEM
+    IF lt_agendamento IS INITIAL.
+      SELECT SalesOrder, Remessa, DataAgendada, Senha
+      FROM zi_sd_hist_agendamento
+      FOR ALL ENTRIES IN @lt_original_data
+      WHERE SalesOrder = @lt_original_data-SalesOrder
+       AND agend_valid = @abap_true
+      INTO TABLE @lt_agendamento.
     ENDIF.
+*** Flávia Leite - 8000007431, AGENDAMENTO NA ORDEM
+   ENDIF.
 
     TRY.
         CALL METHOD lo_agend_pallet->if_sadl_exit_calc_element_read~calculate
@@ -698,6 +709,13 @@ CLASS zcltm_raoadnet_session IMPLEMENTATION.
             READ TABLE lt_agendamento ASSIGNING FIELD-SYMBOL(<fs_agendamento>)
                 WITH KEY SalesOrder = <fs_calculated_data>-SalesOrder
                          Remessa    = <fs_calculated_data>-Remessa BINARY SEARCH.
+*** Flávia Leite - 8000007431, AGENDAMENTO NA ORDEM
+           IF <fs_agendamento> IS NOT ASSIGNED.
+            READ TABLE lt_agendamento ASSIGNING <fs_agendamento>
+                WITH KEY SalesOrder = <fs_calculated_data>-SalesOrder
+                         Remessa    = space BINARY SEARCH.
+           ENDIF.
+*** Flávia Leite - 8000007431, AGENDAMENTO NA ORDEM
           ENDIF.
 
 

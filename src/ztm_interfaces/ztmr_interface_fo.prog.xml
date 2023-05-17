@@ -11,9 +11,33 @@
    </PROGDIR>
    <TPOOL>
     <item>
+     <ID>I</ID>
+     <KEY>001</KEY>
+     <ENTRY>Seleção de JOB</ENTRY>
+     <LENGTH>24</LENGTH>
+    </item>
+    <item>
      <ID>R</ID>
      <ENTRY>Disparo de interfaces GKO/GM/Trafegus - JOB</ENTRY>
      <LENGTH>43</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>P_GKO</KEY>
+     <ENTRY>Interface GKO</ENTRY>
+     <LENGTH>21</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>P_GREN</KEY>
+     <ENTRY>Interface Greenmile</ENTRY>
+     <LENGTH>27</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>P_TRAF</KEY>
+     <ENTRY>Interface Trafegus</ENTRY>
+     <LENGTH>26</LENGTH>
     </item>
    </TPOOL>
   </asx:values>

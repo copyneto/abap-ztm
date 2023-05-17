@@ -169,12 +169,12 @@ CLASS zcltm_interface_fo_gko DEFINITION
         VALUE(rv_ok)  TYPE abap_bool .
   PRIVATE SECTION.
 
-    DATA : BEGIN OF gr_parameter,
+    DATA : BEGIN OF gs_parameter,
              tor_type   TYPE RANGE OF /scmtms/tor_type,
              cond_exped TYPE RANGE OF ze_cond_exped,
              tipo_exped TYPE RANGE OF ze_tipo_exped,
              lfart      TYPE RANGE OF likp-lfart,
-           END OF gr_parameter.
+           END OF gs_parameter.
 
     "!Instância do service manager da ordem de frete (/SCMTMS/TOR)
     DATA go_srv_mng TYPE REF TO /bobf/if_tra_service_manager .
@@ -418,7 +418,7 @@ CLASS zcltm_interface_fo_gko IMPLEMENTATION.
                 iv_chave1 = 'INTEGRACAO_GKO'
                 iv_chave2 = 'TOR_TYPE'
               IMPORTING
-                et_range  = gr_parameter-tor_type ).
+                et_range  = gs_parameter-tor_type ).
 
             lo_config->m_get_range(
               EXPORTING
@@ -426,7 +426,7 @@ CLASS zcltm_interface_fo_gko IMPLEMENTATION.
                 iv_chave1 = 'INTEGRACAO_GKO'
                 iv_chave2 = 'COND_EXPED'
               IMPORTING
-                et_range  = gr_parameter-cond_exped ).
+                et_range  = gs_parameter-cond_exped ).
 
             lo_config->m_get_range(
               EXPORTING
@@ -434,7 +434,7 @@ CLASS zcltm_interface_fo_gko IMPLEMENTATION.
                 iv_chave1 = 'INTEGRACAO_GKO'
                 iv_chave2 = 'TIPO_EXPED'
               IMPORTING
-                et_range  = gr_parameter-tipo_exped ).
+                et_range  = gs_parameter-tipo_exped ).
 
 * BEGIN OF INSERT - JWSILVA - 15.05.2023
             lo_config->m_get_range(
@@ -444,7 +444,7 @@ CLASS zcltm_interface_fo_gko IMPLEMENTATION.
                 iv_chave2 = 'FRDNE'
                 iv_chave3 = 'LFART'
               IMPORTING
-                et_range  = gr_parameter-lfart ).
+                et_range  = gs_parameter-lfart ).
 * END OF INSERT - JWSILVA - 15.05.2023
 
 *        lo_config->m_get_single(
@@ -469,23 +469,23 @@ CLASS zcltm_interface_fo_gko IMPLEMENTATION.
         ENDTRY.
 
         "Verificar parâmetros da ordem de frete
-        IF NOT gs_root-tor_type IN gr_parameter-tor_type.
+        IF NOT gs_root-tor_type IN gs_parameter-tor_type.
           et_messages = VALUE #( BASE et_messages ( msgid = gc_msg msgno = '001' msgty = 'E' msgv1 = gs_root-tor_type ) ).
           ev_error = abap_true.
         ENDIF.
 
-        IF NOT gs_root-zz1_cond_exped IN gr_parameter-cond_exped.
+        IF NOT gs_root-zz1_cond_exped IN gs_parameter-cond_exped.
           et_messages = VALUE #( BASE et_messages ( msgid = gc_msg msgno = '002' msgty = 'E' msgv1 = gs_root-zz1_cond_exped ) ).
           ev_error = abap_true.
         ENDIF.
 
-        IF NOT gs_root-zz1_tipo_exped IN gr_parameter-tipo_exped.
+        IF NOT gs_root-zz1_tipo_exped IN gs_parameter-tipo_exped.
           et_messages = VALUE #( BASE et_messages ( msgid = gc_msg msgno = '003' msgty = 'E' msgv1 = gs_root-zz1_tipo_exped ) ).
           ev_error = abap_true.
         ENDIF.
 
 * BEGIN OF INSERT - JWSILVA - 15.05.2023
-        IF NOT gr_parameter-lfart IS NOT INITIAL.
+        IF NOT gs_parameter-lfart IS NOT INITIAL.
           " Falta cadastro do tipo de remessa para envio ao GKO.
           et_messages = VALUE #( BASE et_messages ( msgid = gc_msg msgno = '015' msgty = 'E' ) ).
           ev_error = abap_true.
@@ -967,7 +967,8 @@ CLASS zcltm_interface_fo_gko IMPLEMENTATION.
 
         WHEN 'FOB'.
 * BEGIN OF INSERT - JWSILVA - 20.03.2023
-          IF <fs_remessa>-lfart = 'Z004'.
+*          IF <fs_remessa>-lfart = 'Z004'.                                                      " DELETE - JWSILVA - 15.05.2023
+           IF <fs_remessa>-lfart IN gs_parameter-lfart AND gs_parameter-lfart IS NOT INITIAL.   " INSERT - JWSILVA - 15.05.2023
 
             SELECT SINGLE t001w~werks, t001w~j_1bbranch, t001w~kunnr, kna1~stcd1
                 FROM t001w
@@ -1202,7 +1203,7 @@ CLASS zcltm_interface_fo_gko IMPLEMENTATION.
 
 * BEGIN OF CHANGE - JWSILVA - 15.03.2023
     IF is_remessa-inco1 = 'FOB'
-    AND ( is_remessa-lfart IN gr_parameter-lfart[] AND gr_parameter-lfart IS NOT INITIAL ). " INSERT - JWSILVA - 15.05.2023
+    AND ( is_remessa-lfart IN gs_parameter-lfart[] AND gs_parameter-lfart IS NOT INITIAL ). " INSERT - JWSILVA - 15.05.2023
 *    AND ( is_remessa-lfart = 'Z004'      " Venda Intercompany                              " DELETE - JWSILVA - 15.05.2023
 *     OR   is_remessa-lfart = 'ZNLC' ).   " Tipo Remessa-Transferencia                      " DELETE - JWSILVA - 15.05.2023
       ls_partners-br_nfpartner        = is_remessa-bukrs && is_remessa-branch.
@@ -1272,7 +1273,7 @@ CLASS zcltm_interface_fo_gko IMPLEMENTATION.
 
 * BEGIN OF CHANGE - JWSILVA - 15.03.2023
     IF is_remessa-inco1 = 'FOB'
-    AND ( is_remessa-lfart IN gr_parameter-lfart[] AND gr_parameter-lfart IS NOT INITIAL ). " INSERT - JWSILVA - 15.05.2023
+    AND ( is_remessa-lfart IN gs_parameter-lfart[] AND gs_parameter-lfart IS NOT INITIAL ). " INSERT - JWSILVA - 15.05.2023
 *    AND ( is_remessa-lfart = 'Z004'      " Venda Intercompany                              " DELETE - JWSILVA - 15.05.2023
 *     OR   is_remessa-lfart = 'ZNLC' ).   " Tipo Remessa-Transferencia                      " DELETE - JWSILVA - 15.05.2023
       ls_record-tpentradasaida        = '1'.

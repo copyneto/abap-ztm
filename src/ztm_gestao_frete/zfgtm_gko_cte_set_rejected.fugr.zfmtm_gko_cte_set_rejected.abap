@@ -45,11 +45,17 @@ FUNCTION zfmtm_gko_cte_set_rejected.
 * ---------------------------------------------------------------------------
 * Recupera chave CTE
 * ---------------------------------------------------------------------------
+
   CALL FUNCTION '/XNFE/B2BCTE_READ_CTE_FOR_UPD'
     EXPORTING
-      iv_guid  = iv_guid
+      iv_guid            = iv_guid
     IMPORTING
-      es_ctehd = ls_ctehd.
+      es_ctehd           = ls_ctehd
+    EXCEPTIONS
+      cte_does_not_exist = 1
+      cte_locked         = 2
+      technical_error    = 3
+      OTHERS             = 4.
 
   IF sy-subrc <> 0.
     RETURN.

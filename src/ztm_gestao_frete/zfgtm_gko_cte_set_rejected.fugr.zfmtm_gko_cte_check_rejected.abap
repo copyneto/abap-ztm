@@ -4,16 +4,16 @@ FUNCTION zfmtm_gko_cte_check_rejected.
 *"  IMPORTING
 *"     VALUE(IV_CTEID) TYPE  /XNFE/ID
 *"  EXPORTING
+*"     VALUE(ES_EVENT) TYPE  /XNFE/EVENTS
 *"     VALUE(ET_RETURN) TYPE  BAPIRET2_T
 *"----------------------------------------------------------------------
-  DATA: ls_event     TYPE /xnfe/events,
-        ls_xml       TYPE /xnfe/event_xml,
+  DATA: ls_xml       TYPE /xnfe/event_xml,
         lt_status    TYPE /xnfe/event_stat_t,
         lt_hist      TYPE /xnfe/event_hist_t,
         lt_symsg     TYPE /xnfe/symsg_t,
         lv_histcount TYPE /xnfe/histcount.
 
-  FREE: et_return.
+  FREE: et_return, es_event.
 
 * ---------------------------------------------------------------------------
 * Recupera o último evento
@@ -35,7 +35,7 @@ FUNCTION zfmtm_gko_cte_check_rejected.
     EXPORTING
       iv_guid              = ls_current_event-guid
     IMPORTING
-      es_event             = ls_event
+      es_event             = es_event
       es_xml               = ls_xml
       et_status            = lt_status
       et_hist              = lt_hist
@@ -51,9 +51,9 @@ FUNCTION zfmtm_gko_cte_check_rejected.
     RETURN.
   ENDIF.
 
-  IF  ls_event-current_status NE '02'  " incorreto
-  AND ls_event-current_status NE '88'  " Processo concluído, evento foi rejeitado
-  AND ls_event-current_status NE '99'. " Processo concluído, evento foi processado com êxito
+  IF  es_event-current_status NE '02'  " incorreto
+  AND es_event-current_status NE '88'  " Processo concluído, evento foi rejeitado
+  AND es_event-current_status NE '99'. " Processo concluído, evento foi processado com êxito
     RETURN.
   ENDIF.
 
@@ -72,7 +72,7 @@ FUNCTION zfmtm_gko_cte_check_rejected.
     ENDIF.
 
     et_return = VALUE #( BASE et_return (
-                         type       = SWITCH #( ls_event-current_status
+                         type       = SWITCH #( es_event-current_status
                                                 WHEN '02' then if_xo_const_message=>error
                                                 WHEN '99' then if_xo_const_message=>success
                                                 when '88' then if_xo_const_message=>warning

@@ -46,10 +46,10 @@ CLASS zclmm_gko_process_doc DEFINITION
       EXPORTING et_return TYPE bapiret2_t.
 
   PROTECTED SECTION.
-private section.
+  PRIVATE SECTION.
 
-  types:
-    BEGIN OF ty_001,
+    TYPES:
+      BEGIN OF ty_001,
         acckey       TYPE zttm_gkot001-acckey,
         codstatus    TYPE zttm_gkot001-codstatus,
         tpdoc        TYPE zttm_gkot001-tpdoc,
@@ -64,113 +64,113 @@ private section.
         tom_ie       TYPE zttm_gkot001-tom_ie,
         tom_uf       TYPE zttm_gkot001-tom_uf,
       END OF ty_001 .
-  types:
-    BEGIN OF ty_005,
+    TYPES:
+      BEGIN OF ty_005,
         acckey TYPE zttm_gkot005-acckey,
         ebeln  TYPE zttm_gkot005-ebeln,
         lblni  TYPE zttm_gkot005-lblni,
         ebelp  TYPE zttm_gkot005-ebelp,
       END OF ty_005 .
-  types:
-    BEGIN OF ty_ekpo,
+    TYPES:
+      BEGIN OF ty_ekpo,
         ebeln TYPE ekpo-ebeln,
         ebelp TYPE ekpo-ebelp,
         zterm TYPE ekko-zterm,
       END OF ty_ekpo .
-  types:
-    ty_t_001 TYPE TABLE OF ty_001 .
-  types:
-    ty_t_005 TYPE TABLE OF ty_005 .
-  types:
-    ty_t_ekpo TYPE TABLE OF ty_ekpo .
-  types TY_DOC type ZI_MM_GET_GKO_DOC .
-  types:
-    ty_t_doc TYPE STANDARD TABLE OF ty_doc .
+    TYPES:
+      ty_t_001 TYPE TABLE OF ty_001 .
+    TYPES:
+      ty_t_005 TYPE TABLE OF ty_005 .
+    TYPES:
+      ty_t_ekpo TYPE TABLE OF ty_ekpo .
+    TYPES ty_doc TYPE zi_mm_get_gko_doc .
+    TYPES:
+      ty_t_doc TYPE STANDARD TABLE OF ty_doc .
 
-  data GT_DOC type TY_T_DOC .
-  data GT_001 type TY_T_001 .
-  data GT_005 type TY_T_005 .
-  data GS_SELOPT type TY_SELOPT .
-  data GT_RETURN type BAPIRET2_TAB .
-  data GT_EKPO type TY_T_EKPO .
-  constants GC_PO_CREATED type CHAR3 value '300' ##NO_TEXT.
-  constants GC_CTE type ZE_GKO_TPDOC value 'CTE' ##NO_TEXT.
-  constants GC_NF55 type J_1BNFTYPE value '55' ##NO_TEXT.
-  constants GC_NFS type ZE_GKO_TPDOC value 'NFS' ##NO_TEXT.
-  constants GC_NFE type ZE_GKO_TPDOC value 'NFE' ##NO_TEXT.
-  data GV_BLOQ_PAG type ZE_GKO_PARAMETRO .
-  data GV_DOCTYPE type ZE_GKO_PARAMETRO .
-  data GV_CURR type ZE_GKO_PARAMETRO .
-  data GV_TXT type ZE_GKO_PARAMETRO .
-  data:
-    gr_witht  TYPE RANGE OF lfbw-witht .
+    DATA gt_doc TYPE ty_t_doc .
+    DATA gt_001 TYPE ty_t_001 .
+    DATA gt_005 TYPE ty_t_005 .
+    DATA gs_selopt TYPE ty_selopt .
+    DATA gt_return TYPE bapiret2_tab .
+    DATA gt_ekpo TYPE ty_t_ekpo .
+    CONSTANTS gc_po_created TYPE char3 VALUE '300' ##NO_TEXT.
+    CONSTANTS gc_cte TYPE ze_gko_tpdoc VALUE 'CTE' ##NO_TEXT.
+    CONSTANTS gc_nf55 TYPE j_1bnftype VALUE '55' ##NO_TEXT.
+    CONSTANTS gc_nfs TYPE ze_gko_tpdoc VALUE 'NFS' ##NO_TEXT.
+    CONSTANTS gc_nfe TYPE ze_gko_tpdoc VALUE 'NFE' ##NO_TEXT.
+    DATA gv_bloq_pag TYPE ze_gko_parametro .
+    DATA gv_doctype TYPE ze_gko_parametro .
+    DATA gv_curr TYPE ze_gko_parametro .
+    DATA gv_txt TYPE ze_gko_parametro .
+    DATA:
+      gr_witht  TYPE RANGE OF lfbw-witht .
 
-  methods GET_MASTER_DATA .
-  methods FILL_BAPI_ITEM
-    importing
-      !IS_DOC_H type TY_DOC
-      !IT_DOC_I type TY_T_DOC
-    exporting
-      !ET_TM_ITEM type TB_BAPI_INCINV_CREATE_TM_ITEM .
-  methods GET_PARAM
-    importing
-      !IV_ID type ZE_GKO_ID
-    returning
-      value(RV_PARAM) type ZE_GKO_PARAMETRO .
-  methods GET_PARAMETERS
-    exporting
-      !ET_RETURN type BAPIRET2_T .
-  methods FILL_BAPI_HEADER
-    importing
-      !IS_DOC_H type TY_DOC
-    exporting
-      !ES_HEADER type BAPI_INCINV_CREATE_HEADER .
-  methods FILL_BAPI
-    importing
-      !IS_DOC_H type TY_DOC
-      !IT_DOC_I type TY_T_DOC
-    exporting
-      !ES_HEADER type BAPI_INCINV_CREATE_HEADER
-      !ET_TM_ITEM type TB_BAPI_INCINV_CREATE_TM_ITEM
-      !ET_ACCOUNT type BAPI_INCINV_CREATE_ACCOUNT_T .
-  methods FILL_BAPI_ACC
-    importing
-      !IS_DOC_H type TY_DOC
-      !IT_DOC_I type TY_T_DOC
-    exporting
-      !ET_ACCOUNT type BAPI_INCINV_CREATE_ACCOUNT_T .
-  methods BAPI_MIRO
-    importing
-      !IS_DOC type ZI_MM_GET_GKO_DOC
-      !IS_HEADER type BAPI_INCINV_CREATE_HEADER
-      !IT_TM_ITEM type TB_BAPI_INCINV_CREATE_TM_ITEM
-      !IT_ACCOUNT type BAPI_INCINV_CREATE_ACCOUNT_T
-    exporting
-      !EV_INVOICEDOCNUMBER type BAPI_INCINV_FLD-INV_DOC_NO
-      !EV_FISCALYEAR type BAPI_INCINV_FLD-FISC_YEAR
-      !ET_RETURN type BAPIRET2_T .
-  methods DETERMINE_NFS_INVOICE_STATUS
-    importing
-      !IS_DOC type ZI_MM_GET_GKO_DOC
-    returning
-      value(RV_INVOICESTATUS) type RBSTAT .
-  methods SAVE_LOG
-    importing
-      !IV_ACCKEY type ZTTM_GKOT001-ACCKEY
-      !IV_CODSTATUS type ZTTM_GKOT006-CODSTATUS
-      !IV_INVOICEDOCNUMBER type BAPI_INCINV_FLD-INV_DOC_NO optional
-      !IV_FISCALYEAR type BAPI_INCINV_FLD-FISC_YEAR optional
-      !IT_RETURN type BAPIRET2_T optional .
-  methods SET_STATUS
-    importing
-      !IV_ACCKEY type ZTTM_GKOT001-ACCKEY
-      !IV_CODSTATUS type ZE_GKO_CODSTATUS
-      !IV_INVOICEDOCNUMBER type BAPI_INCINV_FLD-INV_DOC_NO optional
-      !IV_FISCALYEAR type BAPI_INCINV_FLD-FISC_YEAR optional .
+    METHODS get_master_data .
+    METHODS fill_bapi_item
+      IMPORTING
+        !is_doc_h   TYPE ty_doc
+        !it_doc_i   TYPE ty_t_doc
+      EXPORTING
+        !et_tm_item TYPE tb_bapi_incinv_create_tm_item .
+    METHODS get_param
+      IMPORTING
+        !iv_id          TYPE ze_gko_id
+      RETURNING
+        VALUE(rv_param) TYPE ze_gko_parametro .
+    METHODS get_parameters
+      EXPORTING
+        !et_return TYPE bapiret2_t .
+    METHODS fill_bapi_header
+      IMPORTING
+        !is_doc_h  TYPE ty_doc
+      EXPORTING
+        !es_header TYPE bapi_incinv_create_header .
+    METHODS fill_bapi
+      IMPORTING
+        !is_doc_h   TYPE ty_doc
+        !it_doc_i   TYPE ty_t_doc
+      EXPORTING
+        !es_header  TYPE bapi_incinv_create_header
+        !et_tm_item TYPE tb_bapi_incinv_create_tm_item
+        !et_account TYPE bapi_incinv_create_account_t .
+    METHODS fill_bapi_acc
+      IMPORTING
+        !is_doc_h   TYPE ty_doc
+        !it_doc_i   TYPE ty_t_doc
+      EXPORTING
+        !et_account TYPE bapi_incinv_create_account_t .
+    METHODS bapi_miro
+      IMPORTING
+        !is_doc              TYPE zi_mm_get_gko_doc
+        !is_header           TYPE bapi_incinv_create_header
+        !it_tm_item          TYPE tb_bapi_incinv_create_tm_item
+        !it_account          TYPE bapi_incinv_create_account_t
+      EXPORTING
+        !ev_invoicedocnumber TYPE bapi_incinv_fld-inv_doc_no
+        !ev_fiscalyear       TYPE bapi_incinv_fld-fisc_year
+        !et_return           TYPE bapiret2_t .
+    METHODS determine_nfs_invoice_status
+      IMPORTING
+        !is_doc                 TYPE zi_mm_get_gko_doc
+      RETURNING
+        VALUE(rv_invoicestatus) TYPE rbstat .
+    METHODS save_log
+      IMPORTING
+        !iv_acckey           TYPE zttm_gkot001-acckey
+        !iv_codstatus        TYPE zttm_gkot006-codstatus
+        !iv_invoicedocnumber TYPE bapi_incinv_fld-inv_doc_no OPTIONAL
+        !iv_fiscalyear       TYPE bapi_incinv_fld-fisc_year OPTIONAL
+        !it_return           TYPE bapiret2_t OPTIONAL .
+    METHODS set_status
+      IMPORTING
+        !iv_acckey           TYPE zttm_gkot001-acckey
+        !iv_codstatus        TYPE ze_gko_codstatus
+        !iv_invoicedocnumber TYPE bapi_incinv_fld-inv_doc_no OPTIONAL
+        !iv_fiscalyear       TYPE bapi_incinv_fld-fisc_year OPTIONAL .
     "! Formata as mensages de retorno
-  methods FORMAT_RETURN
-    changing
-      !CT_RETURN type BAPIRET2_T .
+    METHODS format_return
+      CHANGING
+        !ct_return TYPE bapiret2_t .
 ENDCLASS.
 
 
@@ -840,6 +840,9 @@ CLASS ZCLMM_GKO_PROCESS_DOC IMPLEMENTATION.
 
 *        lo_gko_process->check_status_sefaz_direct( iv_acckey = is_doc-acckey  ).
 
+* BEGIN OF INSERT - JWSILVA - 16.05.2023
+        lo_gko_process->check_cte_canceled( EXPORTING iv_raise_when_error = abap_true ).
+* BEGIN OF INSERT - JWSILVA - 16.05.2023
 
         IF is_doc-tpcte = zcltm_gko_process=>gc_tpcte-complemento_de_valores.
 
@@ -847,7 +850,7 @@ CLASS ZCLMM_GKO_PROCESS_DOC IMPLEMENTATION.
 
         ELSE.
 
-          lo_gko_process->check_doc_memo_miro( IMPORTING et_return = data(lt_return_memo_miro) ). " Tabela de retorno
+          lo_gko_process->check_doc_memo_miro( IMPORTING et_return = DATA(lt_return_memo_miro) ). " Tabela de retorno
 
           IF lt_return_memo_miro IS NOT INITIAL.
 
@@ -855,71 +858,72 @@ CLASS ZCLMM_GKO_PROCESS_DOC IMPLEMENTATION.
 
             IF is_doc-tpcte <> zcltm_gko_process=>gc_tpcte-complemento_de_valores.
 
-              SELECT *
-                FROM lfbw
-               WHERE lifnr     = @is_doc-lifnr
-                 AND bukrs     = @is_doc-bukrs
-                 AND wt_subjct = @abap_true
-                 AND wt_withcd IS NOT INITIAL
-                INTO @DATA(ls_wht_memo).
-                APPEND VALUE #(
-                  split_key   = 1
-                  wi_tax_type = ls_wht_memo-witht
-                  wi_tax_code = ls_wht_memo-wt_withcd
-                ) TO lt_wht.
+*              SELECT *
+*                FROM lfbw
+*               WHERE lifnr     = @is_doc-lifnr
+*                 AND bukrs     = @is_doc-bukrs
+*                 AND wt_subjct = @abap_true
+*                 AND wt_withcd IS NOT INITIAL
+*                INTO @DATA(ls_wht_memo).
+*                APPEND VALUE #(
+*                  split_key   = 1
+*                  wi_tax_type = ls_wht_memo-witht
+*                  wi_tax_code = ls_wht_memo-wt_withcd
+*                ) TO lt_wht.
+*
+*              ENDSELECT.
+*
+*              IF lines( lt_wht ) > 0.
+*                ls_header-calc_tax_ind = abap_true.
+*              ENDIF.
+*
+*              FREE: ls_header-j_1bnftype.
+*              FREE: lt_return.
 
-              ENDSELECT.
+*              CALL FUNCTION 'BAPI_INCOMINGINVOICE_CREATE1'
+*                EXPORTING
+*                  headerdata       = ls_header
+*                  invoicestatus    = zcltm_gko_process=>gc_invoice_status-memorizado_entrado
+*                IMPORTING
+*                  invoicedocnumber = ev_invoicedocnumber
+*                  fiscalyear       = ev_fiscalyear
+*                TABLES
+*                  itemdata         = lt_item
+*                  withtaxdata      = lt_wht
+*                  tm_itemdata      = lt_tm_item
+*                  accountingdata   = lt_account
+*                  return           = lt_return.
+*
+*              IF line_exists( lt_return[ type = 'E' ] ).
+*                CALL FUNCTION 'BAPI_TRANSACTION_ROLLBACK'.
+*              ELSE.
+*                CALL FUNCTION 'BAPI_TRANSACTION_COMMIT'
+*                  EXPORTING
+*                    wait = 'X'.
 
-              IF lines( lt_wht ) > 0.
-                ls_header-calc_tax_ind = abap_true.
-              ENDIF.
-
-              FREE: ls_header-j_1bnftype.
-              FREE: lt_return.
-
-              CALL FUNCTION 'BAPI_INCOMINGINVOICE_CREATE1'
-                EXPORTING
-                  headerdata       = ls_header
-                  invoicestatus    = zcltm_gko_process=>gc_invoice_status-memorizado_entrado
-                IMPORTING
-                  invoicedocnumber = ev_invoicedocnumber
-                  fiscalyear       = ev_fiscalyear
-                TABLES
-                  itemdata         = lt_item
-                  withtaxdata      = lt_wht
-                  tm_itemdata      = lt_tm_item
-                  accountingdata   = lt_account
-                  return           = lt_return.
-
-              IF line_exists( lt_return[ type = 'E' ] ).
-                CALL FUNCTION 'BAPI_TRANSACTION_ROLLBACK'.
-              ELSE.
-                CALL FUNCTION 'BAPI_TRANSACTION_COMMIT'
-                  EXPORTING
-                    wait = 'X'.
-
-                lv_codstatus = zcltm_gko_process=>gc_codstatus-miro_memorizada.
+*                lv_codstatus = zcltm_gko_process=>gc_codstatus-miro_memorizada.
+                lv_codstatus = zcltm_gko_process=>gc_codstatus-erro_ao_criar_miro.
 
                 " Fatura &1 memorizada com sucesso.
                 me->save_log( EXPORTING iv_acckey           = is_doc-acckey
                                         iv_codstatus        = lv_codstatus
-                                        iv_invoicedocnumber = ev_invoicedocnumber
-                                        iv_fiscalyear       = ev_fiscalyear
+*                                        iv_invoicedocnumber = ev_invoicedocnumber
+*                                        iv_fiscalyear       = ev_fiscalyear
                                         it_return           = lt_return_memo_miro ).
 
-                " Fatura &1 memorizada com sucesso.
-                me->save_log( EXPORTING iv_acckey           = is_doc-acckey
-                                        iv_codstatus        = lv_codstatus
-                                        iv_invoicedocnumber = ev_invoicedocnumber
-                                        iv_fiscalyear       = ev_fiscalyear
-                                        it_return           = VALUE #( ( type = 'E' id = 'ZTM_GKO' number = '118' message_v1 = |{ ev_invoicedocnumber }{ ev_fiscalyear }| ) ) ).
+*                " Fatura &1 memorizada com sucesso.
+*                me->save_log( EXPORTING iv_acckey           = is_doc-acckey
+*                                        iv_codstatus        = lv_codstatus
+*                                        iv_invoicedocnumber = ev_invoicedocnumber
+*                                        iv_fiscalyear       = ev_fiscalyear
+*                                        it_return           = VALUE #( ( type = 'E' id = 'ZTM_GKO' number = '118' message_v1 = |{ ev_invoicedocnumber }{ ev_fiscalyear }| ) ) ).
 
                 me->set_status( EXPORTING iv_acckey           = is_doc-acckey
-                                          iv_codstatus        = lv_codstatus
-                                          iv_invoicedocnumber = ev_invoicedocnumber
-                                          iv_fiscalyear       = ev_fiscalyear ).
+                                          iv_codstatus        = lv_codstatus ).
+*                                          iv_invoicedocnumber = ev_invoicedocnumber
+*                                          iv_fiscalyear       = ev_fiscalyear ).
 
-              ENDIF.
+*              ENDIF.
               RETURN.
             ENDIF.
           ENDIF.
@@ -1597,7 +1601,7 @@ CLASS ZCLMM_GKO_PROCESS_DOC IMPLEMENTATION.
 * ----------------------------------------------------------------------
     IF is_doc-crtn = '1'  " Simples Nacional
     OR is_doc-crtn = '2' " Simples Nacional - rendimento bruto abaixo limite inferior
-    or is_doc-crtn = '4'.
+    OR is_doc-crtn = '4'.
       rv_invoicestatus = zcltm_gko_process=>gc_invoice_status-memorizado_entrado.
       me->save_log( EXPORTING iv_acckey           = is_doc-acckey
                               iv_codstatus        = is_doc-codstatus

@@ -29,7 +29,9 @@ CLASS zcltm_interface_fo DEFINITION
         trafegus  TYPE balsubobj VALUE 'ZTRAF',       " Interface Trafegus
       END OF gc_interface .
 
-    METHODS execute .
+    METHODS execute
+      IMPORTING
+        !iv_execution_type TYPE string OPTIONAL .
     CLASS-METHODS get_status_desc
       IMPORTING
         !is_status_cod        TYPE ze_int_status
@@ -43,6 +45,11 @@ CLASS zcltm_interface_fo DEFINITION
         !ct_parameters TYPE /bobf/t_frw_query_selparam .
   PROTECTED SECTION.
   PRIVATE SECTION.
+
+    CONSTANTS: gc_gko       TYPE string VALUE 'GKO',
+               gc_greenmile TYPE string VALUE 'GEENMILE',
+               gc_trafegus  TYPE string VALUE 'TRAFEGUS'.
+
     TYPES:
       BEGIN OF ty_tsp_id,
         tsp_id TYPE  /scmtms/s_tor_root_k-tspid,
@@ -320,46 +327,52 @@ CLASS ZCLTM_INTERFACE_FO IMPLEMENTATION.
       ls_tor_root_old = ls_tor_root.
 
       " Interface GKO
-      IF ls_tor_root-zzint_gko_status NE gc_codstatus-exec_sucesso.
+      IF iv_execution_type = me->gc_gko OR iv_execution_type IS INITIAL.
+        IF ls_tor_root-zzint_gko_status NE gc_codstatus-exec_sucesso.
 
-        call_gko( IMPORTING et_messages = DATA(lt_message)                                                                            " System Messages
-                  CHANGING  cs_tor_root = ls_tor_root ).                                                                              " Root Node
-
-        IF lt_message IS NOT INITIAL.
-          save_log( it_messages   = lt_message                                                                                        " System Messages
-                    iv_subobject  = gc_interface-gko                                                                                  " Log de aplicação: subobjeto
-                    iv_externalid = CONV balnrext( |{ ls_tor_root-tor_id ALPHA = OUT }| ) ).                                          " Log de aplicação: identificação externa
-
-        ENDIF.
-        CLEAR: lt_message.
-      ENDIF.
-
-      " Interface Greenmile
-      IF ls_tor_root-zzint_gm_status NE gc_codstatus-exec_sucesso.
-
-        call_gm( IMPORTING et_messages = lt_message                                                                                   " System Messages
-                 CHANGING  cs_tor_root = ls_tor_root ).                                                                               " Root Node
-
-        IF lt_message IS NOT INITIAL.
-          save_log( it_messages   = lt_message                                                                                        " System Messages
-                    iv_subobject  = gc_interface-greenmile                                                                            " Log de aplicação: subobjeto
-                    iv_externalid = CONV balnrext( |{ ls_tor_root-tor_id ALPHA = OUT }| ) ).                                          " Log de aplicação: identificação externa
-        ENDIF.
-        CLEAR: lt_message.
-      ENDIF.
-
-      " Interface Trafegus
-      IF ls_tor_root-zzint_traf_status NE gc_codstatus-exec_sucesso.
-        IF line_exists( lt_tsp_coligada[ partner = ls_tor_root-tspid ] ).
-          call_traf( IMPORTING et_messages = lt_message                                                                                 " System Messages
-                     CHANGING  cs_tor_root = ls_tor_root ).                                                                             " Root Node
+          call_gko( IMPORTING et_messages = DATA(lt_message)                                                                            " System Messages
+                    CHANGING  cs_tor_root = ls_tor_root ).                                                                              " Root Node
 
           IF lt_message IS NOT INITIAL.
             save_log( it_messages   = lt_message                                                                                        " System Messages
-                      iv_subobject  = gc_interface-trafegus                                                                             " Log de aplicação: subobjeto
+                      iv_subobject  = gc_interface-gko                                                                                  " Log de aplicação: subobjeto
+                      iv_externalid = CONV balnrext( |{ ls_tor_root-tor_id ALPHA = OUT }| ) ).                                          " Log de aplicação: identificação externa
+
+          ENDIF.
+          CLEAR: lt_message.
+        ENDIF.
+      ENDIF.
+
+      " Interface Greenmile
+      IF iv_execution_type = me->gc_greenmile OR iv_execution_type IS INITIAL.
+        IF ls_tor_root-zzint_gm_status NE gc_codstatus-exec_sucesso.
+
+          call_gm( IMPORTING et_messages = lt_message                                                                                   " System Messages
+                   CHANGING  cs_tor_root = ls_tor_root ).                                                                               " Root Node
+
+          IF lt_message IS NOT INITIAL.
+            save_log( it_messages   = lt_message                                                                                        " System Messages
+                      iv_subobject  = gc_interface-greenmile                                                                            " Log de aplicação: subobjeto
                       iv_externalid = CONV balnrext( |{ ls_tor_root-tor_id ALPHA = OUT }| ) ).                                          " Log de aplicação: identificação externa
           ENDIF.
           CLEAR: lt_message.
+        ENDIF.
+      ENDIF.
+
+      " Interface Trafegus
+      IF iv_execution_type = me->gc_trafegus OR iv_execution_type IS INITIAL.
+        IF ls_tor_root-zzint_traf_status NE gc_codstatus-exec_sucesso.
+          IF line_exists( lt_tsp_coligada[ partner = ls_tor_root-tspid ] ).
+            call_traf( IMPORTING et_messages = lt_message                                                                                 " System Messages
+                       CHANGING  cs_tor_root = ls_tor_root ).                                                                             " Root Node
+
+            IF lt_message IS NOT INITIAL.
+              save_log( it_messages   = lt_message                                                                                        " System Messages
+                        iv_subobject  = gc_interface-trafegus                                                                             " Log de aplicação: subobjeto
+                        iv_externalid = CONV balnrext( |{ ls_tor_root-tor_id ALPHA = OUT }| ) ).                                          " Log de aplicação: identificação externa
+            ENDIF.
+            CLEAR: lt_message.
+          ENDIF.
         ENDIF.
       ENDIF.
 
@@ -566,19 +579,19 @@ CLASS ZCLTM_INTERFACE_FO IMPLEMENTATION.
        OR is_header-code = '101'
        OR is_header-code = '102'.
 
-    SELECT BR_NFSourceDocumentNumber
+    SELECT br_nfsourcedocumentnumber
       FROM i_br_nfitem
       INTO TABLE @DATA(lt_nfitem)
     WHERE br_notafiscal = @is_header-docnum.
 
     IF sy-subrc IS INITIAL.
-      LOOP AT lt_nfitem INTO DATA(ls_nfitem).
-        MOVE ls_nfitem-BR_NFSourceDocumentNumber TO ls_vbeln-vbeln.
+      LOOP AT lt_nfitem INTO DATA(ls_nfitem). "#EC CI_LOOP_INTO_WA
+        MOVE ls_nfitem-br_nfsourcedocumentnumber TO ls_vbeln-vbeln.
 
         APPEND ls_vbeln TO lt_vbeln.
       ENDLOOP.
 
-      SELECT *
+      SELECT *                                                   "#EC CI_SEL_DEL
         FROM i_br_salehistory
         INTO TABLE @DATA(lt_salehistory)
         FOR ALL ENTRIES IN @lt_vbeln

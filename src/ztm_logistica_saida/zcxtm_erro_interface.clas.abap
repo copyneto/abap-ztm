@@ -30,7 +30,7 @@ CLASS zcxtm_erro_interface IMPLEMENTATION.
     CALL METHOD super->constructor
       EXPORTING
         previous = previous.
-    CLEAR me->textid.
+*    CLEAR me->textid.
     IF textid IS INITIAL.
       if_t100_message~t100key = if_t100_message=>default_textid.
     ELSE.

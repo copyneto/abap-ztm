@@ -17,6 +17,8 @@ CLASS zcltm_integrar_medida_cubagem DEFINITION
       gt_tor TYPE STANDARD TABLE OF ty_selected_table .
     CONSTANTS gc_tor_catg_fu TYPE /scmtms/tor_category VALUE 'FU' ##NO_TEXT.
     CONSTANTS gc_class_msg TYPE symsgid VALUE 'ZTM_INTEG_CUBAGEM' ##NO_TEXT.
+    CONSTANTS gc_001 TYPE symsgno VALUE '001'.
+    CONSTANTS gc_002 TYPE symsgno VALUE '002'.
 
     METHODS execute
       IMPORTING
@@ -126,7 +128,8 @@ CLASS zcltm_integrar_medida_cubagem IMPLEMENTATION.
         ROLLBACK WORK.
         RAISE EXCEPTION TYPE zcxtm_erro_interface
           EXPORTING
-            iv_textid = VALUE #( msgid = gc_class_msg ).
+            iv_textid = VALUE #( msgid = gc_class_msg
+                                 msgno = gc_002 ).
       ENDIF.
     ENDIF.
 
@@ -168,8 +171,9 @@ CLASS zcltm_integrar_medida_cubagem IMPLEMENTATION.
       ELSE.
         RAISE EXCEPTION TYPE zcxtm_erro_interface
           EXPORTING
-            iv_textid = VALUE #( msgid = gc_class_msg
-                                 attr1 = gc_tor_catg_fu ).
+            iv_textid = VALUE scx_t100key( msgid = gc_class_msg
+                                           msgno = gc_001
+                                           attr1 = gc_tor_catg_fu ).
       ENDIF.
 
     ENDIF.
