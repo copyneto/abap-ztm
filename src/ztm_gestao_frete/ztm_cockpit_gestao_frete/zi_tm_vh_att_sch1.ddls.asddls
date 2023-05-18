@@ -17,9 +17,9 @@ define view entity ZI_TM_VH_ATT_SCH1
                                    and _Text.ddlanguage = $session.system_language
 {
       @ObjectModel.text.element: ['AttachmentTypeText']
-      @Search.ranking: #MEDIUM
-      @Search.defaultSearchElement: true
-      @Search.fuzzinessThreshold: 0.8
+//      @Search.ranking: #MEDIUM
+//      @Search.defaultSearchElement: true
+//      @Search.fuzzinessThreshold: 0.8
   key case when Domain.domvalue_l = '2'
            then cast( 'GNRE' as /bobf/attachment_type )
            when Domain.domvalue_l = '3'

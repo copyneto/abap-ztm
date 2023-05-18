@@ -1001,7 +1001,7 @@ ENDCLASS.
 
 
 
-CLASS zcltm_gko_process IMPLEMENTATION.
+CLASS ZCLTM_GKO_PROCESS IMPLEMENTATION.
 
 
   METHOD read_file.
@@ -11616,10 +11616,10 @@ gs_gko_header-acckey      = |NFS{ gs_nfs_data-docdat }{ CONV num9( gs_nfs_data-z
       WHEN gc_cenario-transferencia.
 
         SELECT gkot003~acckey,
-               ekbe~ebeln,
-               ekbe~ebelp,
-               ekbe~gjahr,
-               ekbe~belnr,
+*               ekbe~ebeln,
+*               ekbe~ebelp,
+*               ekbe~gjahr,
+*               ekbe~belnr,
                mseg~mblnr,
                mseg~mjahr,
                mseg~zeile,
@@ -11646,7 +11646,13 @@ gs_gko_header-acckey      = |NFS{ gs_nfs_data-docdat }{ CONV num9( gs_nfs_data-z
                                         AND mjahr = ls_gko_transferencia-sjahr
                                         AND zeile = ls_gko_transferencia-smblp.
 
+          DELETE lt_gko_transferencia WHERE smbln = ls_gko_transferencia-smbln
+                                        AND sjahr = ls_gko_transferencia-sjahr
+                                        AND smblp = ls_gko_transferencia-smblp.
+
         ENDLOOP.
+
+        DELETE ADJACENT DUPLICATES FROM lt_gko_transferencia COMPARING acckey.
 
         IF lines( lt_gko_orig_acckey ) <> lines( lt_gko_transferencia ).
 
@@ -11876,7 +11882,7 @@ gs_gko_header-acckey      = |NFS{ gs_nfs_data-docdat }{ CONV num9( gs_nfs_data-z
 
       IF iv_raise_when_error IS INITIAL.
 
-        me->set_status( EXPORTING iv_status   = me->gc_codstatus-evt_rejeicao_confirmado_sefaz
+        me->set_status( EXPORTING iv_status   = me->gc_codstatus-documento_cancelado
                                   iv_codigo   = gs_event-cstat
                                   iv_desc_cod = CONV #( gs_event-xmotivo )
                                   it_bapi_ret = gt_return[] ).

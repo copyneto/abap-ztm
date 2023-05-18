@@ -18,15 +18,17 @@ define view entity ZI_TM_VH_STATUS_CTE_NFE
                                    and _Text.ddlanguage = $session.system_language
 {
       @ObjectModel.text.element: ['StatusText']
-      @Search.ranking: #MEDIUM
-      @Search.defaultSearchElement: true
-      @Search.fuzzinessThreshold: 0.8
   key cast( Domain.domvalue_l as ze_status_cte_nfe ) as Status,
       @Semantics.text: true
       @Search.defaultSearchElement: true
       @Search.ranking: #HIGH
       @Search.fuzzinessThreshold: 0.7
-      _Text.ddtext                               as StatusText
+      _Text.ddtext                                   as StatusText,
+      @Search.defaultSearchElement: true
+      @Search.ranking: #MEDIUM
+      @Search.fuzzinessThreshold: 0.7
+      @UI.hidden: true
+      Domain.domvalue_l                              as StatusSearch
 
 }
 where

@@ -17,15 +17,17 @@ define view entity ZI_TM_VH_CST
                                    and _Text.ddlanguage = $session.system_language
 {
       @ObjectModel.text.element: ['desc_cst']
-      @Search.ranking: #MEDIUM
-      @Search.defaultSearchElement: true
-      @Search.fuzzinessThreshold: 0.8
   key cast( Domain.domvalue_l as ze_gko_cst ) as cst,
       @Semantics.text: true
       @Search.defaultSearchElement: true
       @Search.ranking: #HIGH
       @Search.fuzzinessThreshold: 0.7
-      _Text.ddtext                            as desc_cst
+      _Text.ddtext                            as desc_cst,
+      @Search.defaultSearchElement: true
+      @Search.ranking: #MEDIUM
+      @Search.fuzzinessThreshold: 0.7
+      @UI.hidden: true
+      Domain.domvalue_l                       as cst_search
 
 }
 where

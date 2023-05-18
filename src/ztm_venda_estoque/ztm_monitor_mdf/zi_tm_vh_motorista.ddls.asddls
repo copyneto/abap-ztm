@@ -29,9 +29,6 @@ define view entity ZI_TM_VH_MOTORISTA
       @Search.fuzzinessThreshold: 0.8
   key Pessoa.partner as Parceiro,
       @EndUserText.label: 'Nome completo'
-      @Search.defaultSearchElement: true
-      @Search.ranking: #HIGH
-      @Search.fuzzinessThreshold: 0.7
       case when length( Pessoa.name1_text ) < 1
            then concat_with_space(Pessoa.name_first, Pessoa.name_last, 1 )
            else Pessoa.name1_text
@@ -40,9 +37,6 @@ define view entity ZI_TM_VH_MOTORISTA
       @UI.hidden: true
       _Cnpj.taxnum   as CNPJ,
       @EndUserText.label: 'CNPJ'
-      @Search.defaultSearchElement: true
-      @Search.ranking: #HIGH
-      @Search.fuzzinessThreshold: 0.7
       case when _Cnpj.taxnum is initial
              or _Cnpj.taxnum is null
            then ''
@@ -59,9 +53,6 @@ define view entity ZI_TM_VH_MOTORISTA
       @UI.hidden: true
       _Cpf.taxnum    as CPF,
       @EndUserText.label: 'CPF'
-      @Search.defaultSearchElement: true
-      @Search.ranking: #HIGH
-      @Search.fuzzinessThreshold: 0.7
       case when _Cpf.taxnum is initial
              or _Cpf.taxnum is null
            then ''
@@ -81,7 +72,34 @@ define view entity ZI_TM_VH_MOTORISTA
       @Search.defaultSearchElement: true
       @Search.ranking: #HIGH
       @Search.fuzzinessThreshold: 0.7
-      _Im.taxnum     as InscricaoMunicipal
+      _Im.taxnum     as InscricaoMunicipal,
+
+      @Search.ranking: #MEDIUM
+      @Search.defaultSearchElement: true
+      @Search.fuzzinessThreshold: 0.8
+      @UI.hidden: true
+      _Cnpj.taxnum      as cnpj_search,
+      @Search.ranking: #MEDIUM
+      @Search.defaultSearchElement: true
+      @Search.fuzzinessThreshold: 0.8
+      @UI.hidden: true
+      _Cpf.taxnum       as cpf_search,
+      @Search.defaultSearchElement: true
+      @Search.ranking: #HIGH
+      @Search.fuzzinessThreshold: 0.7
+      @UI.hidden: true
+      Pessoa.name1_text as name_search,
+      @Search.defaultSearchElement: true
+      @Search.ranking: #HIGH
+      @Search.fuzzinessThreshold: 0.7
+      @UI.hidden: true
+      Pessoa.name_first as name_first_search,
+      @Search.defaultSearchElement: true
+      @Search.ranking: #HIGH
+      @Search.fuzzinessThreshold: 0.7
+      @UI.hidden: true
+      Pessoa.name_last  as name_last_search
+      
 }
 where
        Pessoa.bpkind  = '0011'

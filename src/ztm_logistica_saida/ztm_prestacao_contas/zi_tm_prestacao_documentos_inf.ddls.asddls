@@ -9,7 +9,7 @@
 }
 define view entity ZI_TM_PRESTACAO_DOCUMENTOS_INF
   as select from           ZI_TM_PRESTACAO_DOCUMENTOS     as _Documentos
-
+ 
     left outer to one join ZI_TM_PRESTACAO_CONTAS_ULT_EXE as _UltimaExecucao on _UltimaExecucao.TransportationOrderUUID = _Documentos.FreightUnitUUID
 
     left outer to one join I_SalesDocumentBasic           as _OrdemVendaInfo on _OrdemVendaInfo.SalesDocument = _Documentos.SalesDocument

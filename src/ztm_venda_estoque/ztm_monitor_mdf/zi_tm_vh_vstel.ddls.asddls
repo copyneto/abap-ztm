@@ -14,9 +14,6 @@ define view entity ZI_TM_VH_VSTEL
                                                   and _Text.spras = $session.system_language
 {
       @ObjectModel.text.element: ['Text']
-      @Search.ranking: #MEDIUM
-      @Search.defaultSearchElement: true
-      @Search.fuzzinessThreshold: 0.8
   key tvst.LocalExpedicao,
       @Semantics.text: true
       @Search.defaultSearchElement: true

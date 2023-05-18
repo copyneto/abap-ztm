@@ -17,15 +17,17 @@ define view entity ZI_TM_VH_FRETE_TPCTE
                                    and _Text.ddlanguage = $session.system_language
 {
       @ObjectModel.text.element: ['tpcte_txt']
-      @Search.ranking: #MEDIUM
-      @Search.defaultSearchElement: true
-      @Search.fuzzinessThreshold: 0.8
   key cast( Domain.domvalue_l as ze_gko_tpcte ) as tpcte,
       @Semantics.text: true
       @Search.defaultSearchElement: true
       @Search.ranking: #HIGH
       @Search.fuzzinessThreshold: 0.7
-      _Text.ddtext                              as tpcte_txt
+      _Text.ddtext                              as tpcte_txt,
+      @Search.ranking: #MEDIUM
+      @Search.defaultSearchElement: true
+      @Search.fuzzinessThreshold: 0.8
+      @UI.hidden: true
+      Domain.domvalue_l                         as tpcte_search
 
 }
 where

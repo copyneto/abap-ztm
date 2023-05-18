@@ -1074,7 +1074,7 @@ CLASS zcltm_mdf_events IMPLEMENTATION.
            descargatext,
            accesskey,
            carga,
-           NfExtrn,
+           nfextrn,
            segcodigobarra,
            headergrossweight
       FROM zi_tm_mdf_municipio
@@ -1173,6 +1173,13 @@ CLASS zcltm_mdf_events IMPLEMENTATION.
       ls_mdfe_inf_muncarrega-id            = sy-tabix.
       ls_mdfe_inf_muncarrega-c_mun_carrega = ls_carregamento-taxjurcode+3.
       ls_mdfe_inf_muncarrega-x_mun_carrega = ls_carregamento-taxjurcodetext.
+      REPLACE ALL OCCURRENCES OF 'Ó' IN ls_mdfe_inf_muncarrega-x_mun_carrega WITH 'O'.
+      REPLACE ALL OCCURRENCES OF 'Õ' IN ls_mdfe_inf_muncarrega-x_mun_carrega WITH 'O'.
+      REPLACE ALL OCCURRENCES OF 'Á' IN ls_mdfe_inf_muncarrega-x_mun_carrega WITH 'A'.
+      REPLACE ALL OCCURRENCES OF 'Ã' IN ls_mdfe_inf_muncarrega-x_mun_carrega WITH 'A'.
+      REPLACE ALL OCCURRENCES OF 'Â' IN ls_mdfe_inf_muncarrega-x_mun_carrega WITH 'A'.
+      REPLACE ALL OCCURRENCES OF 'É' IN ls_mdfe_inf_muncarrega-x_mun_carrega WITH 'E'.
+      REPLACE ALL OCCURRENCES OF 'Ê' IN ls_mdfe_inf_muncarrega-x_mun_carrega WITH 'E'.
       APPEND ls_mdfe_inf_muncarrega TO lt_mdfe_inf_muncarrega.
     ENDLOOP.
 
@@ -1181,12 +1188,12 @@ CLASS zcltm_mdf_events IMPLEMENTATION.
 * ---------------------------------------------------------------------------
     CLEAR ls_mdfe_tot.
     ls_mdfe_tot-c_unid = '01'.
-    ls_mdfe_tot-q_nfe   = ls_mdf-QtdNfe + ls_mdf-QtdNfeWrt + ls_mdf-QtdNfeExt.                      " CHANGE - JWSILVA - 24.02.2023
+    ls_mdfe_tot-q_nfe   = ls_mdf-qtdnfe + ls_mdf-qtdnfewrt + ls_mdf-qtdnfeext.                      " CHANGE - JWSILVA - 24.02.2023
     ls_mdfe_tot-v_carga = ls_mdf-vlrcarga.
 
     ls_mdfe_tot-q_carga = REDUCE #( INIT lv_carga = '0.0000'
                                     FOR <fs_carga> IN lt_municipio
-                                    WHERE ( descarga IS NOT INITIAL OR NfExtrn IS NOT INITIAL )     " CHANGE - JWSILVA - 24.02.2023
+                                    WHERE ( descarga IS NOT INITIAL OR nfextrn IS NOT INITIAL )     " CHANGE - JWSILVA - 24.02.2023
                                     NEXT lv_carga = lv_carga + <fs_carga>-headergrossweight ).
 
     ls_mdfe_infmodal_rodo-rntrc           = '00000000'.

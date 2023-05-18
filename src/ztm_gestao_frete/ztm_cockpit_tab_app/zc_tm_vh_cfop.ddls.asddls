@@ -16,9 +16,12 @@ define view ZC_TM_VH_CFOP
   key Cfop.cfop                          as cfop,
       @UI.hidden: true
   key Cfop.version,
-      @Search.ranking: #MEDIUM
-      @Search.defaultSearchElement: true
-      @Search.fuzzinessThreshold: 0.7
       @EndUserText.label: 'Descrição'
-      substring( Cfop.TextoCFOP , 1, 40) as TextoCFOP
+      substring( Cfop.TextoCFOP , 1, 40) as TextoCFOP,
+      @Search.defaultSearchElement: true
+      @Search.ranking: #MEDIUM
+      @Search.fuzzinessThreshold: 0.7
+      @UI.hidden: true
+      Cfop.TextoCFOP                     as TextoCFOPSearch
+
 }

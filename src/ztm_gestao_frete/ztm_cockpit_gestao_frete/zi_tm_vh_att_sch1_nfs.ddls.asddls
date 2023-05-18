@@ -17,9 +17,9 @@ define view entity ZI_TM_VH_ATT_SCH1_NFS
                                    and _Text.ddlanguage = $session.system_language
 {
       @ObjectModel.text.element: ['AttachmentTypeText']
-      @Search.ranking: #MEDIUM
-      @Search.defaultSearchElement: true
-      @Search.fuzzinessThreshold: 0.8
+//      @Search.ranking: #MEDIUM
+//      @Search.defaultSearchElement: true
+//      @Search.fuzzinessThreshold: 0.8
   key case when Domain.domvalue_l = '4'
            then cast( 'NFS' as /bobf/attachment_type )
            else cast( '' as /bobf/attachment_type )

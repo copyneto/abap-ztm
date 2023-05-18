@@ -3,6 +3,7 @@
 @AbapCatalog.preserveKey: true
 @AccessControl.authorizationCheck: #CHECK
 @EndUserText.label: 'Consulta Tipo de Custo'
+@Search.searchable: true
 define view ZC_TM_VH_TPCUSTO as select from ZI_TM_VH_TPCUSTO 
 
 {

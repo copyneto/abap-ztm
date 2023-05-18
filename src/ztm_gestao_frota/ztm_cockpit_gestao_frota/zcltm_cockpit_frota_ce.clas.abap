@@ -141,9 +141,9 @@ CLASS ZCLTM_COCKPIT_FROTA_CE IMPLEMENTATION.
 
     IF lv_filter IS NOT INITIAL.
       lt_result = VALUE #(
-        FOR lw_result IN lt_result_cds
+        FOR ls_result IN lt_result_cds
           WHERE (lv_filter)
-          ( lw_result )  ).
+          ( ls_result )  ).
     ELSE.
       lt_result[] = lt_result_cds[].
     ENDIF.
@@ -746,12 +746,12 @@ CLASS ZCLTM_COCKPIT_FROTA_CE IMPLEMENTATION.
           lv_calc            TYPE p05_dec12_5,
           lv_total           TYPE char255,
           lt_obra_p          TYPE STANDARD TABLE OF ty_obra_p,
-          ir_placa           TYPE RANGE OF equnr,
-          ir_placa_valida    TYPE RANGE OF equnr,
-          ir_empresa_valida  TYPE RANGE OF bukrs,
-          is_empresa_valida  LIKE LINE OF ir_empresa_valida,
-          lw_placa_valida_r  LIKE LINE OF ir_placa_valida,
-          ls_placa           LIKE LINE OF ir_placa.
+          lr_placa           TYPE RANGE OF equnr,
+          lr_placa_valida    TYPE RANGE OF equnr,
+          lr_empresa_valida  TYPE RANGE OF bukrs,
+          ls_empresa_valida  LIKE LINE OF lr_empresa_valida,
+          ls_placa_valida_r  LIKE LINE OF lr_placa_valida,
+          ls_placa           LIKE LINE OF lr_placa.
 
 * Work areas
     DATA : " ls_measure    TYPE ty_measure_fuel,
@@ -824,39 +824,39 @@ CLASS ZCLTM_COCKPIT_FROTA_CE IMPLEMENTATION.
         ls_placa-option = 'EQ'.
         ls_placa-low    = ls_frota_ranges-equipment.
         IF ls_placa-low IS NOT INITIAL.
-          APPEND ls_placa TO ir_placa.
+          APPEND ls_placa TO lr_placa.
         ENDIF.
         CLEAR ls_placa.
       ENDLOOP.
 
-      SORT ir_placa BY low ASCENDING.
-      DELETE ADJACENT DUPLICATES FROM ir_placa COMPARING low.
+      SORT lr_placa BY low ASCENDING.
+      DELETE ADJACENT DUPLICATES FROM lr_placa COMPARING low.
 
       IF lt_obra_p IS NOT INITIAL.
         SELECT DISTINCT bukrs, equnr, kostl
           FROM itob
           FOR ALL ENTRIES IN @lt_obra_p
-          WHERE equnr IN @ir_placa
+          WHERE equnr IN @lr_placa
           AND   kostl = @lt_obra_p-rcntr
           AND   datbi >= @sy-datum
           INTO TABLE @DATA(lt_placa_valida).
       ENDIF.
     ENDIF.
 
-    LOOP AT lt_placa_valida INTO DATA(lw_placa_valida).
-      lw_placa_valida_r-sign   = 'I'.
-      lw_placa_valida_r-option = 'EQ'.
-      lw_placa_valida_r-low    = lw_placa_valida-equnr.
-      IF lw_placa_valida_r-low IS NOT INITIAL.
-        APPEND lw_placa_valida_r TO ir_placa_valida.
+    LOOP AT lt_placa_valida INTO DATA(ls_placa_valid).
+      ls_placa_valida_r-sign   = 'I'.
+      ls_placa_valida_r-option = 'EQ'.
+      ls_placa_valida_r-low    = ls_placa_valid-equnr.
+      IF ls_placa_valida_r-low IS NOT INITIAL.
+        APPEND ls_placa_valida_r TO lr_placa_valida.
       ENDIF.
       CLEAR ls_placa.
     ENDLOOP.
 
-    DATA(ct_frota_aux) = ct_frota.
+    DATA(lt_frota_aux) = ct_frota.
 
-    IF ir_placa_valida IS NOT INITIAL.
-      DELETE ct_frota_aux WHERE equipment NOT IN ir_placa_valida.
+    IF lr_placa_valida IS NOT INITIAL.
+      DELETE lt_frota_aux WHERE equipment NOT IN lr_placa_valida.
     ENDIF.
 
     SELECT
@@ -880,10 +880,10 @@ CLASS ZCLTM_COCKPIT_FROTA_CE IMPLEMENTATION.
     SORT lt_obrat BY equipplant  platenumber.
 
 * Total de linhas por ordens de frete
-    DESCRIBE TABLE ct_frota_aux LINES DATA(lv_total_frota).
-    SORT ct_frota_aux BY freightorder equipment ASCENDING.
+    DESCRIBE TABLE lt_frota_aux LINES DATA(lv_total_frota).
+    SORT lt_frota_aux BY freightorder equipment ASCENDING.
 
-    LOOP AT ct_frota_aux ASSIGNING FIELD-SYMBOL(<fs_frota>).
+    LOOP AT lt_frota_aux ASSIGNING FIELD-SYMBOL(<fs_frota>).
       DATA(lv_tabix) = sy-tabix.
       READ TABLE lt_placa_valida INTO DATA(ls_placa_valida) WITH KEY equnr = <fs_frota>-equipment
                                                                      bukrs = <fs_frota>-company.
@@ -932,7 +932,7 @@ CLASS ZCLTM_COCKPIT_FROTA_CE IMPLEMENTATION.
     CLEAR lv_tabix.
 
 * Total de linhas por placa
-    LOOP AT ct_frota_aux ASSIGNING <fs_frota>.
+    LOOP AT lt_frota_aux ASSIGNING <fs_frota>.
       lv_tabix = sy-tabix.
       READ TABLE lt_placa_valida INTO ls_placa_valida WITH KEY  equnr = <fs_frota>-equipment
                                                                 bukrs = <fs_frota>-company.
@@ -1000,7 +1000,7 @@ CLASS ZCLTM_COCKPIT_FROTA_CE IMPLEMENTATION.
     ENDIF.
   ENDLOOP.
 
-  LOOP AT ct_frota_aux REFERENCE INTO DATA(ls_r_frota).
+  LOOP AT lt_frota_aux REFERENCE INTO DATA(ls_r_frota).
     READ TABLE lt_frota_calc INTO ls_frota_calc WITH KEY equipment = ls_r_frota->equipment .
 
     IF sy-subrc NE 0.
@@ -1031,7 +1031,7 @@ CLASS ZCLTM_COCKPIT_FROTA_CE IMPLEMENTATION.
 
 
   LOOP AT ct_frota ASSIGNING FIELD-SYMBOL(<fs_frota_upd>).
-    READ TABLE ct_frota_aux INTO DATA(ls_frota_aux) WITH KEY freightorder        = <fs_frota_upd>-freightorder
+    READ TABLE lt_frota_aux INTO DATA(ls_frota_aux) WITH KEY freightorder        = <fs_frota_upd>-freightorder
                                                              freightunit         = <fs_frota_upd>-freightunit
                                                              salesdocument       = <fs_frota_upd>-salesdocument
                                                              outbounddelivery    = <fs_frota_upd>-outbounddelivery

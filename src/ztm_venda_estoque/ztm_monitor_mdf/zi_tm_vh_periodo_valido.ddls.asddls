@@ -19,16 +19,18 @@ define view entity ZI_TM_VH_PERIODO_VALIDO
 {
       @EndUserText.label    : 'Período Válido'
       @ObjectModel.text.element: ['PeriodoValidoText']
-      @Search.ranking: #MEDIUM
-      @Search.defaultSearchElement: true
-      @Search.fuzzinessThreshold: 0.8
   key cast( Domain.domvalue_l as ze_mdf_periodo_valido ) as PeriodoValido,
       @EndUserText.label    : 'Descrição'
       @Semantics.text: true
       @Search.defaultSearchElement: true
       @Search.ranking: #HIGH
       @Search.fuzzinessThreshold: 0.7
-      _Text.ddtext                                       as PeriodoValidoText
+      _Text.ddtext                                       as PeriodoValidoText,
+      @Search.defaultSearchElement: true
+      @Search.ranking: #MEDIUM
+      @Search.fuzzinessThreshold: 0.7
+      @UI.hidden: true
+      Domain.domvalue_l                                  as PeriodoValidoSearch
 
 }
 where

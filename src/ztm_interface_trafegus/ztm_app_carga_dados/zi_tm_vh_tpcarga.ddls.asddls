@@ -18,15 +18,17 @@ define view entity ZI_TM_VH_TPCARGA
                                    and _Text.ddlanguage = $session.system_language
 {
       @ObjectModel.text.element: ['TipoCargaText']
-      @Search.ranking: #MEDIUM
-      @Search.defaultSearchElement: true
-      @Search.fuzzinessThreshold: 0.8
   key cast( Domain.domvalue_l as ze_tipo_carga_tmv ) as TipoCarga,
       @Semantics.text: true
       @Search.defaultSearchElement: true
       @Search.ranking: #HIGH
       @Search.fuzzinessThreshold: 0.7
-      _Text.ddtext                                as TipoCargaText
+      _Text.ddtext                                   as TipoCargaText,
+      @Search.defaultSearchElement: true
+      @Search.ranking: #HIGH
+      @Search.fuzzinessThreshold: 0.7
+      @UI.hidden: true
+      Domain.domvalue_l                              as TipoCargaSearch
 
 }
 where

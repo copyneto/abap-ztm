@@ -32,8 +32,6 @@ define view entity ZI_TM_VH_TRAFEGUS_ORDEM_FRETE
       @Search.defaultSearchElement: true
       _FreightOrder.TranspOrdLifeCycleStatus,
       _FreightOrder.TranspOrdLifeCycleStatusDesc,
-      @Search.ranking: #MEDIUM
-      @Search.defaultSearchElement: true
       _FreightOrder.TransportationOrderUUID
 
 }

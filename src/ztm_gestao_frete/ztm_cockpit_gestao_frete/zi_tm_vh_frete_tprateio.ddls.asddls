@@ -17,16 +17,17 @@ define view entity ZI_TM_VH_FRETE_TPRATEIO
                                    and _Text.ddlanguage = $session.system_language
 {
       @ObjectModel.text.element: ['tprateio_txt']
-      @Search.ranking: #MEDIUM
-      @Search.defaultSearchElement: true
-      @Search.fuzzinessThreshold: 0.8
   key cast( Domain.domvalue_l as ze_gko_tprateio    ) as tprateio,
       @Semantics.text: true
       @Search.defaultSearchElement: true
       @Search.ranking: #HIGH
       @Search.fuzzinessThreshold: 0.7
-      _Text.ddtext                                    as tprateio_txt
-
+      _Text.ddtext                                    as tprateio_txt,
+      @Search.ranking: #MEDIUM
+      @Search.defaultSearchElement: true
+      @Search.fuzzinessThreshold: 0.8
+      @UI.hidden: true
+      Domain.domvalue_l                               as tprateio_search
 }
 where
       Domain.domname  = 'ZD_GKO_TPRATEIO'

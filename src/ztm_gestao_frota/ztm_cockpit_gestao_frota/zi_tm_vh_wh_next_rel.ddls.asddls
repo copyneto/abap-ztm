@@ -17,15 +17,17 @@ define view entity ZI_TM_VH_WH_NEXT_REL
                                    and _Text.ddlanguage = $session.system_language
 {
       @ObjectModel.text.element: ['StopNextText']
-      @Search.ranking: #MEDIUM
-      @Search.defaultSearchElement: true
-      @Search.fuzzinessThreshold: 0.8
   key cast( Domain.domvalue_l as /scmtms/stop_wh_next ) as StopNext,
       @Semantics.text: true
       @Search.defaultSearchElement: true
       @Search.ranking: #HIGH
       @Search.fuzzinessThreshold: 0.7
-      _Text.ddtext                                      as StopNextText
+      _Text.ddtext                                      as StopNextText,
+      @Search.defaultSearchElement: true
+      @Search.ranking: #MEDIUM
+      @Search.fuzzinessThreshold: 0.7
+      @UI.hidden: true
+      Domain.domvalue_l                                 as StopNextSearch
 
 }
 where
