@@ -1,4 +1,4 @@
-@AbapCatalog.sqlViewName: 'ZI_TM_CFOP'
+@AbapCatalog.sqlViewName: 'ZI_TM_CFOP_MK'
 @AbapCatalog.compiler.compareFilter: true
 @AbapCatalog.preserveKey: true
 @AccessControl.authorizationCheck: #CHECK
@@ -10,7 +10,7 @@
     dataClass: #MIXED
 }
 @Search.searchable: true
-define view ZI_TM_VH_CFOP
+define view ZI_TM_VH_CFOP_MK
   as select from j_1bagn  as _CFOP
     inner join   j_1bagnt as _Text on  _CFOP.cfop    = _Text.cfop
                                    and _CFOP.version = _Text.version
@@ -26,6 +26,10 @@ define view ZI_TM_VH_CFOP
       @Search.ranking: #MEDIUM
       @Search.fuzzinessThreshold: 0.7
       @UI.hidden: true
+      cast(_CFOP.cfop as abap.char(10) )   as cfop_search,
+      @Search.defaultSearchElement: true
+      @Search.ranking: #MEDIUM
+      @Search.fuzzinessThreshold: 0.7
+      @UI.hidden: true
       _Text.cfotxt                          as TextoCFOP_search
-
 }

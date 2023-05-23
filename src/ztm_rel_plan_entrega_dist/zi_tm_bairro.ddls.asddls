@@ -9,5 +9,6 @@ define view ZI_TM_BAIRRO
 {
   but020.partner,
   adrc.addrnumber,
-  adrc.city2
+  adrc.city2,
+  addr_valid_to
 }

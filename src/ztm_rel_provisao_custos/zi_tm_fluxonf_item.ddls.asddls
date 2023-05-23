@@ -76,6 +76,7 @@ define view ZI_TM_FLUXONF_ITEM
       _VerifyNF.BR_NFeAccessKey,
       _TransOrdemItem.TransportationOrderUUID,
       _TransOrdemItem._TransportationOrder.TransportationOrder,
+      _TransOrdemItem._TransportationOrder.TransportationOrderCategory,
       _TransOrdemItem.TransportationOrderItemUUID,
       _TransOrdemItem.TranspOrdItem,
       _TransOrdemItem.SourceStopUUID,
@@ -131,6 +132,7 @@ where
       _TransOrdemItem.TranspOrdDocReferenceType = '58'
   --and _TransOrdemItem.TranspOrdItemType         = 'PRD'
   and _TransOrdemItem.TranspOrdItemCategory     = 'PRD'
+  and _TransOrdemItem._TransportationOrder.TransportationOrderCategory = 'TO'
 
 union
 
@@ -188,6 +190,7 @@ select from       ZI_TRANSPORTATIONORDERITEM as _TransOrdemItem
       _VerifyNF.BR_NFeAccessKey,
       _TransOrdemItem.TransportationOrderUUID,
       _TransOrdemItem._TransportationOrder.TransportationOrder,
+      _TransOrdemItem._TransportationOrder.TransportationOrderCategory,
       _TransOrdemItem.TransportationOrderItemUUID,
       _TransOrdemItem.TranspOrdItem,
       _TransOrdemItem.SourceStopUUID,
@@ -242,6 +245,7 @@ where
       _TransOrdemItem.TranspOrdDocReferenceType = '73'
   //and _TransOrdemItem.TranspOrdItemType         = 'PRD'
   and _TransOrdemItem.TranspOrdItemCategory     = 'PRD'
+  and _TransOrdemItem._TransportationOrder.TransportationOrderCategory = 'TO'
 
 union
 
@@ -304,6 +308,7 @@ select from       ZI_TRANSPORTATIONORDERITEM as _TransOrdemItem
       _VerifyNF.BR_NFeAccessKey,
       _TransOrdemItem.TransportationOrderUUID,
       _TransOrdemItem._TransportationOrder.TransportationOrder,
+      _TransOrdemItem._TransportationOrder.TransportationOrderCategory,
       _TransOrdemItem.TransportationOrderItemUUID,
       _TransOrdemItem.TranspOrdItem,
       _TransOrdemItem.SourceStopUUID,
@@ -359,3 +364,4 @@ where
   and _TransOrdemItem.TranspOrdDocReferenceType = '73'   //Saída (outbound)
   //and _TransOrdemItem.TranspOrdItemType         = 'PRD'
   and _TransOrdemItem.TranspOrdItemCategory     = 'PRD'
+  and _TransOrdemItem._TransportationOrder.TransportationOrderCategory = 'TO'

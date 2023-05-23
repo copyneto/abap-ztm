@@ -85,6 +85,12 @@ CLASS lcl_Cockpit IMPLEMENTATION.
                                                                   ELSE if_abap_behv=>fc-o-disabled )
 
                       %action-definirConcluido          = COND #( WHEN ls_cockpit-TranspOrdLifeCycleStatus NE zcltm_cockpit_prestacao=>gc_lc_status-concluido
+                                                                   AND ls_cockpit-StatusSinistro IS INITIAL
+                                                                   AND ( ls_cockpit-StatusEntregue    IS NOT INITIAL OR
+                                                                         ls_cockpit-StatusDevolvido   IS NOT INITIAL OR
+                                                                         ls_cockpit-StatusSinistro    IS NOT INITIAL OR
+                                                                         ls_cockpit-StatusColetado    IS NOT INITIAL OR
+                                                                         ls_cockpit-StatusNaoColetado IS NOT INITIAL )
                                                                   THEN if_abap_behv=>fc-o-enabled
                                                                   ELSE if_abap_behv=>fc-o-disabled )
 

@@ -58,8 +58,9 @@ define view ZI_TM_REL_PLAN_ENTREGA_DIST
 
   association [0..*] to I_LocationBasic                as _Location      on  _Stop.log_locid        = _Location.Location
                                                                          and LocationAdditionalUUID = _Location.LocationAdditionalUUID
-  association [0..1] to ZI_TM_BAIRRO                   as _Bairro        on  _Cliente.CodigoBP = _Bairro.partner
-
+  association [0..1] to ZI_TM_BAIRRO                   as _Bairro        on  _Cliente.CodigoBP = _Bairro.partner 
+                                                                         and _Bairro.addr_valid_to >= 99991231000000
+                                                                         
   association [0..1] to I_SalesOrder                   as _SalesOrder    on  _SalesOrder.SalesOrder = _FluxoDocumentosNF.SalesOrderDocument
   association [0..*] to ZI_TM_STS_FN_OF                as _StatusOF      on  _FluxoDocumentosNF.TransportationOrder = _StatusOF.CodigoOrdemFrete
   association [0..1] to ZI_TM_STS_CK_FU                as _CheckStsFU    on  _FluxoDocumentosNF.TranspOrdDocReferenceID = _CheckStsFU.ReferUnidadeFrete

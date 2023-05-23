@@ -181,7 +181,7 @@ define view entity ZI_TM_MDF_MUNICIPIO
             and ( Municipio.ordem_frete is initial or Municipio.ordem_frete = '00000000000000000000' )
             and ( _Active.docnum is null or _Active.docnum is initial or _Active.docnum = '0000000000' )
             then cast( Municipio.q_carga as abap.dec(15,2) )
-            else cast( _Quantidade.HeaderGrossWeight as abap.dec(15,2) ) end as HeaderGrossWeight,
+            else cast( _Quantidade.HeaderGrossWeight as abap.dec(15,3) ) end as HeaderGrossWeight,
 
       @Semantics.user.createdBy: true
       Municipio.created_by                                                   as CreatedBy,

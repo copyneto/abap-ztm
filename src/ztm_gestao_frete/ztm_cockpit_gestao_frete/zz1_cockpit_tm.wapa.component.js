@@ -1,1 +1,1 @@
-sap.ui.define(["sap/suite/ui/generic/template/lib/AppComponent"],function(e){return e.extend("br.com.trescoracoes.tmcockpitfrete.Component",{metadata:{manifest:"json"}})});                                                                                   
+sap.ui.define(["sap/suite/ui/generic/template/lib/AppComponent"],function(e){return e.extend("br.com.trescoracoes.tmcockpitfretenew.Component",{metadata:{manifest:"json"}})});                                                                                

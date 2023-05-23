@@ -446,7 +446,8 @@ define view ZC_TM_PLAN_ENTREGA_DIST
   
   @UI.lineItem: [ { position: 850 }]
   @EndUserText.label: 'Capacidade Máx.'
-  @Aggregation.default: #SUM
+  @Aggregation.referenceElement: ['OrdemFreteNum']
+  //@Aggregation.default: #SUM
   CapacidadeMaxVeiculo,
 
   @EndUserText.label: 'Otimização da Cap. Máx'
@@ -455,22 +456,23 @@ define view ZC_TM_PLAN_ENTREGA_DIST
   
   @UI.lineItem: [ { position: 870 }]
   @EndUserText.label: 'Dropsize'
-  @Aggregation.default: #SUM  
+  //@Aggregation.default: #SUM
+  @Aggregation.referenceElement: ['OrdemFreteNum']
   Dropsize,
     
   @UI.lineItem: [ { position: 880 }]
   @EndUserText.label: 'Distância'
-  @Aggregation.default: #AVG
+  //@Aggregation.default: #AVG
   Distancia,
 
   @UI.lineItem: [ { position: 890 }]
   @EndUserText.label: 'Valor Total NFe (Bruto)'
-  @Aggregation.default: #AVG
+  //@Aggregation.default: #AVG
   ValorTotalNFeBruto,
   
   @UI.lineItem: [ { position: 900 }]
   @EndUserText.label: 'Peso Total OF'
-  @Aggregation.default: #AVG
+  //@Aggregation.default: #AVG
   PesoTotalOF,
   
   @UI.lineItem: [ { position: 910 }]

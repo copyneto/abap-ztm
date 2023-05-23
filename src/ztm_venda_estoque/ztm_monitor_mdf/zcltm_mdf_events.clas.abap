@@ -863,7 +863,7 @@ CLASS zcltm_mdf_events IMPLEMENTATION.
       ls_branch_data TYPE j_1bbranch,
       lv_cgc_number  TYPE j_1bwfield-cgc_number,
       ls_address1    TYPE addr1_val,
-
+      lv_carga       TYPE zi_tm_mdf_municipio-headergrossweight,
       lv_message     TYPE bapi_msg.
 
     DATA:
@@ -1191,10 +1191,16 @@ CLASS zcltm_mdf_events IMPLEMENTATION.
     ls_mdfe_tot-q_nfe   = ls_mdf-qtdnfe + ls_mdf-qtdnfewrt + ls_mdf-qtdnfeext.                      " CHANGE - JWSILVA - 24.02.2023
     ls_mdfe_tot-v_carga = ls_mdf-vlrcarga.
 
-    ls_mdfe_tot-q_carga = REDUCE #( INIT lv_carga = '0.0000'
-                                    FOR <fs_carga> IN lt_municipio
-                                    WHERE ( descarga IS NOT INITIAL OR nfextrn IS NOT INITIAL )     " CHANGE - JWSILVA - 24.02.2023
-                                    NEXT lv_carga = lv_carga + <fs_carga>-headergrossweight ).
+    LOOP AT lt_municipio INTO DATA(ls_municipio_tot) WHERE ( descarga IS NOT INITIAL OR nfextrn IS NOT INITIAL ).
+      lv_carga = lv_carga + ls_municipio_tot-headergrossweight.
+    ENDLOOP.
+
+    ls_mdfe_tot-q_carga =  lv_carga.
+
+    "ls_mdfe_tot-q_carga = REDUCE #( INIT lv_carga = '0.0000'
+    "                                FOR <fs_carga> IN lt_municipio
+    "                                WHERE ( descarga IS NOT INITIAL OR nfextrn IS NOT INITIAL )     " CHANGE - JWSILVA - 24.02.2023
+    "                                NEXT lv_carga = lv_carga + <fs_carga>-headergrossweight ).
 
     ls_mdfe_infmodal_rodo-rntrc           = '00000000'.
     ls_mdfe_infmodal_rodo-veictracao_ref  = '000001'.

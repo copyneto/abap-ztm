@@ -10436,7 +10436,12 @@ gs_gko_header-acckey      = |NFS{ gs_nfs_data-docdat }{ CONV num9( gs_nfs_data-z
         AND uforig      = @es_header-rem_uf
         AND ufdest      = @es_header-dest_uf
         AND rem_branch  = @ev_rem_branch
-        AND tom_branch  = @ev_tom_branch.
+        AND tom_branch  = @ev_tom_branch
+* BEGIN OF INSERT - RPORTES - 19.05.2023 - 8000007483, CORE4 - ERRO DETERMIN CENTRO DE CUSTO
+        AND dest_branch = @ev_dest_branch
+        AND loc_ret     = @es_header-ret_loc
+        AND loc_ent     = @es_header-ent_loc.
+* END OF INSERT - RPORTES - 19.05.2023 - 8000007483, CORE4 - ERRO DETERMIN CENTRO DE CUSTO
 
 * BEGIN OF INSERT - JWSILVA - 15.05.2023
     IF sy-subrc EQ 0.
@@ -10446,60 +10451,73 @@ gs_gko_header-acckey      = |NFS{ gs_nfs_data-docdat }{ CONV num9( gs_nfs_data-z
                       loc_ent     ASCENDING.
     ENDIF.
 
-    READ TABLE lt_p013 INTO es_p013 WITH KEY dest_branch = ev_dest_branch
-                                             loc_ret     = es_header-ret_loc
-                                             loc_ent     = es_header-ent_loc.
-    IF sy-subrc EQ 0.
-      RETURN.
-    ENDIF.
-
-    READ TABLE lt_p013 INTO es_p013 WITH KEY dest_branch = ev_dest_branch
-                                             loc_ret     = es_header-ret_loc.
-    IF sy-subrc EQ 0.
-      RETURN.
-    ENDIF.
-
-    READ TABLE lt_p013 INTO es_p013 WITH KEY dest_branch = ev_dest_branch
-                                             loc_ent     = es_header-ent_loc.
-    IF sy-subrc EQ 0.
-      RETURN.
-    ENDIF.
-
-    READ TABLE lt_p013 INTO es_p013 WITH KEY loc_ret     = es_header-ret_loc
-                                             loc_ent     = es_header-ent_loc.
-    IF sy-subrc EQ 0.
-      RETURN.
-    ENDIF.
-
-    READ TABLE lt_p013 INTO es_p013 WITH KEY dest_branch = ev_dest_branch.
+* BEGIN OF INSERT - RPORTES - 19.05.2023 - 8000007483, CORE4 - ERRO DETERMIN CENTRO DE CUSTO
+    READ TABLE lt_p013 INTO es_p013 WITH KEY cenario   = es_header-cenario.
 
     IF sy-subrc EQ 0.
       RETURN.
+    ELSE.
+      READ TABLE lt_p013 INTO es_p013 INDEX 1.
     ENDIF.
+* END OF INSERT - RPORTES - 19.05.2023 - 8000007483, CORE4 - ERRO DETERMIN CENTRO DE CUSTO
 
-    READ TABLE lt_p013 INTO es_p013 WITH KEY loc_ret     = es_header-ret_loc.
-
-    IF sy-subrc EQ 0.
-      RETURN.
-    ENDIF.
-
-    READ TABLE lt_p013 INTO es_p013 WITH KEY loc_ent     = es_header-ent_loc.
-
-    IF sy-subrc EQ 0.
-      RETURN.
-    ENDIF.
+* BEGIN OF DELETE - RPORTES - 19.05.2023 - 8000007483, CORE4 - ERRO DETERMIN CENTRO DE CUSTO
+*    READ TABLE lt_p013 INTO es_p013 WITH KEY dest_branch = ev_dest_branch
+*                                             loc_ret     = es_header-ret_loc
+*                                             loc_ent     = es_header-ent_loc.
+*    IF sy-subrc EQ 0.
+*      RETURN.
+*    ENDIF.
+*
+*    READ TABLE lt_p013 INTO es_p013 WITH KEY dest_branch = ev_dest_branch
+*                                             loc_ret     = es_header-ret_loc.
+*    IF sy-subrc EQ 0.
+*      RETURN.
+*    ENDIF.
+*
+*    READ TABLE lt_p013 INTO es_p013 WITH KEY dest_branch = ev_dest_branch
+*                                             loc_ent     = es_header-ent_loc.
+*    IF sy-subrc EQ 0.
+*      RETURN.
+*    ENDIF.
+*
+*    READ TABLE lt_p013 INTO es_p013 WITH KEY loc_ret     = es_header-ret_loc
+*                                             loc_ent     = es_header-ent_loc.
+*    IF sy-subrc EQ 0.
+*      RETURN.
+*    ENDIF.
+*
+*    READ TABLE lt_p013 INTO es_p013 WITH KEY dest_branch = ev_dest_branch.
+*
+*    IF sy-subrc EQ 0.
+*      RETURN.
+*    ENDIF.
+*
+*    READ TABLE lt_p013 INTO es_p013 WITH KEY loc_ret     = es_header-ret_loc.
+*
+*    IF sy-subrc EQ 0.
+*      RETURN.
+*    ENDIF.
+*
+*    READ TABLE lt_p013 INTO es_p013 WITH KEY loc_ent     = es_header-ent_loc.
+*
+*    IF sy-subrc EQ 0.
+*      RETURN.
+*    ENDIF.
 
 * ---------------------------------------------------------------------------
 * Caso não encontre combinações específicas, pegar o primeiro registro encontrado na seleção
 * ---------------------------------------------------------------------------
-    READ TABLE lt_p013 INTO es_p013 INDEX 1.
-
-    IF sy-subrc EQ 0.
-      RETURN.
-    ENDIF.
+*    READ TABLE lt_p013 INTO es_p013 INDEX 1.
+*
+*    IF sy-subrc EQ 0.
+*      RETURN.
+*    ENDIF.
 
 * END OF INSERT - JWSILVA - 15.05.2023
 * END OF INSERT - JWSILVA - 15.05.2023
+
+* END OF DELETE - RPORTES - 19.05.2023 - 8000007483, CORE4 - ERRO DETERMIN CENTRO DE CUSTO
 
 * BEGIN OF DELETE - JWSILVA - 15.05.2023
 *    IF sy-subrc EQ 0.
