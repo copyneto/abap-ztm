@@ -1,287 +1,287 @@
-CLASS zcltm_modify_po DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
+class ZCLTM_MODIFY_PO definition
+  public
+  final
+  create public .
 
-  PUBLIC SECTION.
+public section.
 
-    INTERFACES if_badi_interface .
-    INTERFACES /scmtms/if_sfir_posting .
+  interfaces IF_BADI_INTERFACE .
+  interfaces /SCMTMS/IF_SFIR_POSTING .
 
-    TYPES ty_bp_dest TYPE bu_partner .
-    TYPES ty_bp_orig TYPE bu_partner .
-
-    TYPES:
-      BEGIN OF ty_parameter,
+  types TY_BP_DEST type BU_PARTNER .
+  types TY_BP_ORIG type BU_PARTNER .
+  types:
+    BEGIN OF ty_parameter,
         nftype_cte_fob TYPE RANGE OF j_1bnfdoc-nftype,
       END OF ty_parameter .
 
-    CONSTANTS gc_fretes_diversos TYPE ze_gko_cenario VALUE '06' ##NO_TEXT.
-    CONSTANTS gc_compras TYPE ze_gko_cenario VALUE '07' ##NO_TEXT.
-    CONSTANTS gc_nftype_servico TYPE j_1bnfdoc-nftype VALUE 'ZK' ##NO_TEXT.
-    CONSTANTS gc_pedido_tm TYPE ekko-bsart VALUE 'ZTM' ##NO_TEXT.
-    DATA gv_bp_rem TYPE bu_partner .
-    DATA gv_bp_dest TYPE bu_partner .
-    DATA gs_loc_origem TYPE /bofu/s_addr_postal_addressk .
-    DATA gs_loc_dest TYPE /bofu/s_addr_postal_addressk .
-    DATA gv_message TYPE char200 .
+  constants GC_FRETES_DIVERSOS type ZE_GKO_CENARIO value '06' ##NO_TEXT.
+  constants GC_COMPRAS type ZE_GKO_CENARIO value '07' ##NO_TEXT.
+  constants GC_NFTYPE_SERVICO type J_1BNFDOC-NFTYPE value 'ZK' ##NO_TEXT.
+  constants GC_PEDIDO_TM type EKKO-BSART value 'ZTM' ##NO_TEXT.
+  data GV_BP_REM type BU_PARTNER .
+  data GV_BP_DEST type BU_PARTNER .
+  data GS_LOC_ORIGEM type /BOFU/S_ADDR_POSTAL_ADDRESSK .
+  data GS_LOC_DEST type /BOFU/S_ADDR_POSTAL_ADDRESSK .
+  data GV_MESSAGE type CHAR200 .
 
-    METHODS busca_fu_assign
-      IMPORTING
-        !it_tor_fo           TYPE /scmtms/t_tor_root_k
-      RETURNING
-        VALUE(rt_tor_assign) TYPE /scmtms/t_tor_root_k .
-    METHODS determina_iva_compras
-      IMPORTING
-        !is_sfir_root   TYPE /scmtms/s_sfir_root_k
-        !it_po_items    TYPE bapimepoitem_tp
-        !is_tor_root    TYPE /scmtms/s_tor_root_k
-        !it_tor_item    TYPE /scmtms/t_tor_item_tr_k
-        !iv_btd_id      TYPE /scmtms/base_btd_id
-        !is_po_header   TYPE bapimepoheader
-      EXPORTING
-        !ev_iva         TYPE mwskz
-      CHANGING
-        !ct_po_services TYPE bapiesllc_tp .
-    METHODS determina_iva_cte
-      IMPORTING
-        !is_tor_root       TYPE /scmtms/s_tor_root_k
-        !it_tor_item       TYPE /scmtms/t_tor_item_tr_k
-        !it_tor_stop       TYPE /scmtms/t_tor_stop_k
-        !is_sfir_root      TYPE /scmtms/s_sfir_root_k
-        !it_sfir_item_data TYPE /scmtms/t_sfir_item_k
-        !it_stage_loc_data TYPE /scmtms/cl_sfir_helper_root=>tty_stage_data
-        !it_postal_addr    TYPE /bofu/t_addr_postal_addressk
-        !iv_btd_id         TYPE /scmtms/base_btd_id
-        !is_po_header      TYPE bapimepoheader
-      EXPORTING
-        !ev_iva            TYPE mwskz
-      CHANGING
-        !ct_po_items       TYPE bapimepoitem_tp OPTIONAL
-        !ct_po_itemsx      TYPE bapimepoitemx_tp OPTIONAL
-        !ct_po_services    TYPE bapiesllc_tp .
-    METHODS determina_iva_cte_fob
-      IMPORTING
-        !is_tor_root       TYPE /scmtms/s_tor_root_k
-        !it_tor_item       TYPE /scmtms/t_tor_item_tr_k
-        !it_tor_stop       TYPE /scmtms/t_tor_stop_k
-        !is_sfir_root      TYPE /scmtms/s_sfir_root_k
-        !it_sfir_item_data TYPE /scmtms/t_sfir_item_k
-        !it_stage_loc_data TYPE /scmtms/cl_sfir_helper_root=>tty_stage_data
-        !it_postal_addr    TYPE /bofu/t_addr_postal_addressk
-        !iv_btd_id         TYPE /scmtms/base_btd_id
-        !is_po_header      TYPE bapimepoheader
-      EXPORTING
-        !ev_iva            TYPE mwskz
-      CHANGING
-        !ct_po_services    TYPE bapiesllc_tp
-        !ct_po_items       TYPE bapimepoitem_tp
-        !ct_po_itemsx      TYPE bapimepoitemx_tp .
-    METHODS determina_iva_cte_services_01
-      IMPORTING
-        !is_tor_root       TYPE /scmtms/s_tor_root_k
-        !it_tor_item       TYPE /scmtms/t_tor_item_tr_k
-        !it_tor_stop       TYPE /scmtms/t_tor_stop_k
-        !is_sfir_root      TYPE /scmtms/s_sfir_root_k
-        !it_sfir_item_data TYPE /scmtms/t_sfir_item_k
-        !it_stage_loc_data TYPE /scmtms/cl_sfir_helper_root=>tty_stage_data
-        !it_postal_addr    TYPE /bofu/t_addr_postal_addressk
-        !iv_btd_id         TYPE /scmtms/base_btd_id
-        !is_po_header      TYPE bapimepoheader
-        !it_charge_element TYPE /scmtms/t_tcc_trchrg_element_k OPTIONAL
-      EXPORTING
-        !ev_iva            TYPE mwskz
-        !ev_serv_def       TYPE char1
-      CHANGING
-        !ct_po_services    TYPE bapiesllc_tp
-        !ct_po_items       TYPE bapimepoitem_tp
-        !ct_po_itemsx      TYPE bapimepoitemx_tp .
-    METHODS determina_iva_cte_services_03
-      IMPORTING
-        !is_tor_root       TYPE /scmtms/s_tor_root_k
-        !it_tor_item       TYPE /scmtms/t_tor_item_tr_k
-        !it_tor_stop       TYPE /scmtms/t_tor_stop_k
-        !is_sfir_root      TYPE /scmtms/s_sfir_root_k
-        !it_sfir_item_data TYPE /scmtms/t_sfir_item_k
-        !it_stage_loc_data TYPE /scmtms/cl_sfir_helper_root=>tty_stage_data
-        !it_postal_addr    TYPE /bofu/t_addr_postal_addressk
-        !iv_btd_id         TYPE /scmtms/base_btd_id
-        !is_po_header      TYPE bapimepoheader
-        !it_charge_element TYPE /scmtms/t_tcc_trchrg_element_k OPTIONAL
-      EXPORTING
-        !ev_iva            TYPE mwskz
-        !ev_serv_def       TYPE char1
-      CHANGING
-        !ct_po_services    TYPE bapiesllc_tp
-        !ct_po_items       TYPE bapimepoitem_tp
-        !ct_po_itemsx      TYPE bapimepoitemx_tp .
-    METHODS determina_iva_cte_cif
-      IMPORTING
-        !it_po_items       TYPE bapimepoitem_tp
-        !is_tor_root       TYPE /scmtms/s_tor_root_k
-        !it_tor_item       TYPE /scmtms/t_tor_item_tr_k
-        !it_tor_stop       TYPE /scmtms/t_tor_stop_k
-        !is_sfir_root      TYPE /scmtms/s_sfir_root_k
-        !it_sfir_item_data TYPE /scmtms/t_sfir_item_k
-        !it_stage_loc_data TYPE /scmtms/cl_sfir_helper_root=>tty_stage_data
-        !it_postal_addr    TYPE /bofu/t_addr_postal_addressk
-        !iv_btd_id         TYPE /scmtms/base_btd_id
-        !is_po_header      TYPE bapimepoheader
-      EXPORTING
-        !ev_iva            TYPE mwskz
-      CHANGING
-        !ct_po_services    TYPE bapiesllc_tp .
-    METHODS determina_iva_diversos
-      IMPORTING
-        !is_tor_root    TYPE /scmtms/s_tor_root_k
-        !it_tor_item    TYPE /scmtms/t_tor_item_tr_k
-        !is_sfir_root   TYPE /scmtms/s_sfir_root_k
-        !iv_btd_id      TYPE /scmtms/base_btd_id
-        !is_po_header   TYPE bapimepoheader
-      EXPORTING
-        !ev_iva         TYPE mwskz
-      CHANGING
-        !ct_po_items    TYPE bapimepoitem_tp
-        !ct_po_itemsx   TYPE bapimepoitemx_tp
-        !ct_po_services TYPE bapiesllc_tp .
-    METHODS determina_iva_nfse
-      IMPORTING
-        !is_sfir_root      TYPE /scmtms/s_sfir_root_k
-        !it_sfir_item_data TYPE /scmtms/t_sfir_item_k
-        !it_stage_loc_data TYPE /scmtms/cl_sfir_helper_root=>tty_stage_data
-        !it_postal_addr    TYPE /bofu/t_addr_postal_addressk
-        !it_tor_stop       TYPE /scmtms/t_tor_stop_k
-        !is_tor_root       TYPE /scmtms/s_tor_root_k
-      EXPORTING
-        !ev_iva            TYPE mwskz
-      CHANGING
-        !ct_po_services    TYPE bapiesllc_tp
-        !ct_po_items       TYPE bapimepoitem_tp
-        !ct_po_itemsx      TYPE bapimepoitemx_tp .
-    METHODS determina_conta_contab
-      IMPORTING
-        !is_sfir_root          TYPE /scmtms/s_sfir_root_k
-        !is_sfir_item_data     TYPE /scmtms/s_sfir_item_k
-        !is_tor_root           TYPE /scmtms/s_tor_root_k
-        !is_loc_origem         TYPE /bofu/s_addr_postal_addressk OPTIONAL
-        !is_loc_dest           TYPE /bofu/s_addr_postal_addressk OPTIONAL
-      RETURNING
-        VALUE(rv_conta_contab) TYPE saknr .
-    METHODS busca_referencia
-      IMPORTING
-        !is_tor_fo           TYPE /scmtms/s_tor_root_k
-      RETURNING
-        VALUE(rt_tor_docref) TYPE /scmtms/t_tor_docref_k .
-    METHODS determina_prod_acabado
-      IMPORTING
-        !it_tor_item           TYPE /scmtms/t_tor_item_tr_k
-      RETURNING
-        VALUE(rt_prod_acabado) TYPE flag .
-    METHODS determina_loc_origem_dest
-      IMPORTING
-        !it_sfir_item_data TYPE /scmtms/t_sfir_item_k
-        !it_stage_loc_data TYPE /scmtms/cl_sfir_helper_root=>tty_stage_data
-        !it_postal_addr    TYPE /bofu/t_addr_postal_addressk
-        !it_tor_stop       TYPE /scmtms/t_tor_stop_k
-      EXPORTING
-        !es_loc_origem     TYPE /bofu/s_addr_postal_addressk
-        !es_loc_dest       TYPE /bofu/s_addr_postal_addressk .
-    METHODS get_items_post
-      IMPORTING
-        !it_references       TYPE zcltm_gko_process=>ty_t_zgkot003
-        !is_header           TYPE zttm_gkot001
-        !iv_acckey           TYPE zttm_gkot001-acckey
-      RETURNING
-        VALUE(rt_items_post) TYPE zcltm_gko_process=>ty_t_items_post .
-    METHODS determina_parceiro_pedido
-      IMPORTING
-        !is_tor_root   TYPE /scmtms/s_tor_root_k
-      CHANGING
-        !ct_po_partner TYPE bapiekkop_tp .
-    METHODS determina_ncm_servico
-      IMPORTING
-        !it_po_services TYPE bapiesllc_tp
-      CHANGING
-        !ct_po_items    TYPE bapimepoitem_tp
-        !ct_po_itemsx   TYPE bapimepoitemx_tp .
-    METHODS get_items_post_wo_pa
-      IMPORTING
-        !it_nf_saida   TYPE zcltm_gko_process=>ty_t_j_1bnflin
-        !is_header     TYPE zttm_gkot001
-      CHANGING
-        !ct_items_post TYPE zcltm_gko_process=>ty_t_items_post .
-    METHODS get_items_post_others
-      IMPORTING
-        !it_nf_saida   TYPE zcltm_gko_process=>ty_t_j_1bnflin
-        !is_header     TYPE zttm_gkot001
-      CHANGING
-        !ct_items_post TYPE zcltm_gko_process=>ty_t_items_post .
-    METHODS get_items_post_transferencia
-      IMPORTING
-        !it_nf_saida   TYPE zcltm_gko_process=>ty_t_j_1bnflin
-        !is_header     TYPE zttm_gkot001
-      CHANGING
-        !ct_items_post TYPE zcltm_gko_process=>ty_t_items_post .
-    METHODS get_items_post_venda_coligada
-      IMPORTING
-        !it_nf_saida   TYPE zcltm_gko_process=>ty_t_j_1bnflin
-        !is_header     TYPE zttm_gkot001
-      CHANGING
-        !ct_items_post TYPE zcltm_gko_process=>ty_t_items_post .
-    METHODS get_iva_detailed
-      IMPORTING
-        !it_items_post TYPE zcltm_gko_process=>ty_t_items_post
-        !is_header     TYPE zttm_gkot001
-        !iv_saknr      TYPE zttm_pcockpit013-saknr
-      RETURNING
-        VALUE(rt_iva)  TYPE zcltm_gko_process=>ty_t_po_iva_detailed .
-    METHODS get_iva_unified
-      IMPORTING
-        !it_items_post TYPE zcltm_gko_process=>ty_t_items_post
-        !is_header     TYPE zttm_gkot001
-        !iv_saknr      TYPE zttm_pcockpit013-saknr
-      RETURNING
-        VALUE(rv_iva)  TYPE mwskz .
-    METHODS get_iva_from_info_record
-      IMPORTING
-        !it_items_post TYPE zcltm_gko_process=>ty_t_items_post
-        !is_header     TYPE zttm_gkot001
-        !iv_saknr      TYPE zttm_pcockpit013-saknr
-      RETURNING
-        VALUE(rv_iva)  TYPE mwskz .
-    METHODS trata_caracter_especial
-      IMPORTING
-        !iv_text       TYPE any
-      RETURNING
-        VALUE(rv_text) TYPE string .
-    METHODS set_log
-      IMPORTING
-        !it_return TYPE bapiret2_t
-        !iv_acckey TYPE j_1b_nfe_access_key_dtel44 .
-    METHODS add_lc_observacao_nf_miro
-      IMPORTING
-        !it_nfitems    TYPE j_1bnflin_tab
-        !is_nfheader   TYPE j_1bnfdoc
-      CHANGING
-        !cv_observacao TYPE j_1bnfdoc-observat .
-    METHODS determina_service
-      IMPORTING
-        !it_charge_element TYPE /scmtms/t_tcc_trchrg_element_k OPTIONAL
-      EXPORTING
-        !ev_serv_def       TYPE char1
-      CHANGING
-        !ct_po_services    TYPE bapiesllc_tp .
-    METHODS atualiza_po_services
-      IMPORTING
-        !it_tor_root_data  TYPE /scmtms/t_tor_root_k
-        !is_sfir_root      TYPE /scmtms/s_sfir_root_k
-        !it_charge_element TYPE /scmtms/t_tcc_trchrg_element_k
-        !iv_iva            TYPE mwskz
-        !iv_serv_def       TYPE char1 OPTIONAL
-      CHANGING
-        !ct_po_services    TYPE bapiesllc_tp
-        !ct_po_items       TYPE bapimepoitem_tp
-        !ct_po_itemsx      TYPE bapimepoitemx_tp .
+  methods BUSCA_FU_ASSIGN
+    importing
+      !IT_TOR_FO type /SCMTMS/T_TOR_ROOT_K
+    returning
+      value(RT_TOR_ASSIGN) type /SCMTMS/T_TOR_ROOT_K .
+  methods DETERMINA_IVA_COMPRAS
+    importing
+      !IS_SFIR_ROOT type /SCMTMS/S_SFIR_ROOT_K
+      !IT_PO_ITEMS type BAPIMEPOITEM_TP
+      !IS_TOR_ROOT type /SCMTMS/S_TOR_ROOT_K
+      !IT_TOR_ITEM type /SCMTMS/T_TOR_ITEM_TR_K
+      !IV_BTD_ID type /SCMTMS/BASE_BTD_ID
+      !IS_PO_HEADER type BAPIMEPOHEADER
+    exporting
+      !EV_IVA type MWSKZ
+    changing
+      !CT_PO_SERVICES type BAPIESLLC_TP .
+  methods DETERMINA_IVA_CTE
+    importing
+      !IS_TOR_ROOT type /SCMTMS/S_TOR_ROOT_K
+      !IT_TOR_ITEM type /SCMTMS/T_TOR_ITEM_TR_K
+      !IT_TOR_STOP type /SCMTMS/T_TOR_STOP_K
+      !IS_SFIR_ROOT type /SCMTMS/S_SFIR_ROOT_K
+      !IT_SFIR_ITEM_DATA type /SCMTMS/T_SFIR_ITEM_K
+      !IT_STAGE_LOC_DATA type /SCMTMS/CL_SFIR_HELPER_ROOT=>TTY_STAGE_DATA
+      !IT_POSTAL_ADDR type /BOFU/T_ADDR_POSTAL_ADDRESSK
+      !IV_BTD_ID type /SCMTMS/BASE_BTD_ID
+      !IS_PO_HEADER type BAPIMEPOHEADER
+    exporting
+      !EV_IVA type MWSKZ
+    changing
+      !CT_PO_ITEMS type BAPIMEPOITEM_TP optional
+      !CT_PO_ITEMSX type BAPIMEPOITEMX_TP optional
+      !CT_PO_SERVICES type BAPIESLLC_TP .
+  methods DETERMINA_IVA_CTE_FOB
+    importing
+      !IS_TOR_ROOT type /SCMTMS/S_TOR_ROOT_K
+      !IT_TOR_ITEM type /SCMTMS/T_TOR_ITEM_TR_K
+      !IT_TOR_STOP type /SCMTMS/T_TOR_STOP_K
+      !IS_SFIR_ROOT type /SCMTMS/S_SFIR_ROOT_K
+      !IT_SFIR_ITEM_DATA type /SCMTMS/T_SFIR_ITEM_K
+      !IT_STAGE_LOC_DATA type /SCMTMS/CL_SFIR_HELPER_ROOT=>TTY_STAGE_DATA
+      !IT_POSTAL_ADDR type /BOFU/T_ADDR_POSTAL_ADDRESSK
+      !IV_BTD_ID type /SCMTMS/BASE_BTD_ID
+      !IS_PO_HEADER type BAPIMEPOHEADER
+    exporting
+      !EV_IVA type MWSKZ
+    changing
+      !CT_PO_SERVICES type BAPIESLLC_TP
+      !CT_PO_ITEMS type BAPIMEPOITEM_TP
+      !CT_PO_ITEMSX type BAPIMEPOITEMX_TP .
+  methods DETERMINA_IVA_CTE_SERVICES_01
+    importing
+      !IS_TOR_ROOT type /SCMTMS/S_TOR_ROOT_K
+      !IT_TOR_ITEM type /SCMTMS/T_TOR_ITEM_TR_K
+      !IT_TOR_STOP type /SCMTMS/T_TOR_STOP_K
+      !IS_SFIR_ROOT type /SCMTMS/S_SFIR_ROOT_K
+      !IT_SFIR_ITEM_DATA type /SCMTMS/T_SFIR_ITEM_K
+      !IT_STAGE_LOC_DATA type /SCMTMS/CL_SFIR_HELPER_ROOT=>TTY_STAGE_DATA
+      !IT_POSTAL_ADDR type /BOFU/T_ADDR_POSTAL_ADDRESSK
+      !IV_BTD_ID type /SCMTMS/BASE_BTD_ID
+      !IS_PO_HEADER type BAPIMEPOHEADER
+      !IT_CHARGE_ELEMENT type /SCMTMS/T_TCC_TRCHRG_ELEMENT_K optional
+    exporting
+      !EV_IVA type MWSKZ
+      !EV_SERV_DEF type CHAR1
+    changing
+      !CT_PO_SERVICES type BAPIESLLC_TP
+      !CT_PO_ITEMS type BAPIMEPOITEM_TP
+      !CT_PO_ITEMSX type BAPIMEPOITEMX_TP .
+  methods DETERMINA_IVA_CTE_SERVICES_03
+    importing
+      !IS_TOR_ROOT type /SCMTMS/S_TOR_ROOT_K
+      !IT_TOR_ITEM type /SCMTMS/T_TOR_ITEM_TR_K
+      !IT_TOR_STOP type /SCMTMS/T_TOR_STOP_K
+      !IS_SFIR_ROOT type /SCMTMS/S_SFIR_ROOT_K
+      !IT_SFIR_ITEM_DATA type /SCMTMS/T_SFIR_ITEM_K
+      !IT_STAGE_LOC_DATA type /SCMTMS/CL_SFIR_HELPER_ROOT=>TTY_STAGE_DATA
+      !IT_POSTAL_ADDR type /BOFU/T_ADDR_POSTAL_ADDRESSK
+      !IV_BTD_ID type /SCMTMS/BASE_BTD_ID
+      !IS_PO_HEADER type BAPIMEPOHEADER
+      !IT_CHARGE_ELEMENT type /SCMTMS/T_TCC_TRCHRG_ELEMENT_K optional
+      !IV_ZZACCKEY type J_1B_NFE_ACCESS_KEY_DTEL44 optional
+    exporting
+      !EV_IVA type MWSKZ
+      !EV_SERV_DEF type CHAR1
+    changing
+      !CT_PO_SERVICES type BAPIESLLC_TP
+      !CT_PO_ITEMS type BAPIMEPOITEM_TP
+      !CT_PO_ITEMSX type BAPIMEPOITEMX_TP .
+  methods DETERMINA_IVA_CTE_CIF
+    importing
+      !IT_PO_ITEMS type BAPIMEPOITEM_TP
+      !IS_TOR_ROOT type /SCMTMS/S_TOR_ROOT_K
+      !IT_TOR_ITEM type /SCMTMS/T_TOR_ITEM_TR_K
+      !IT_TOR_STOP type /SCMTMS/T_TOR_STOP_K
+      !IS_SFIR_ROOT type /SCMTMS/S_SFIR_ROOT_K
+      !IT_SFIR_ITEM_DATA type /SCMTMS/T_SFIR_ITEM_K
+      !IT_STAGE_LOC_DATA type /SCMTMS/CL_SFIR_HELPER_ROOT=>TTY_STAGE_DATA
+      !IT_POSTAL_ADDR type /BOFU/T_ADDR_POSTAL_ADDRESSK
+      !IV_BTD_ID type /SCMTMS/BASE_BTD_ID
+      !IS_PO_HEADER type BAPIMEPOHEADER
+    exporting
+      !EV_IVA type MWSKZ
+    changing
+      !CT_PO_SERVICES type BAPIESLLC_TP .
+  methods DETERMINA_IVA_DIVERSOS
+    importing
+      !IS_TOR_ROOT type /SCMTMS/S_TOR_ROOT_K
+      !IT_TOR_ITEM type /SCMTMS/T_TOR_ITEM_TR_K
+      !IS_SFIR_ROOT type /SCMTMS/S_SFIR_ROOT_K
+      !IV_BTD_ID type /SCMTMS/BASE_BTD_ID
+      !IS_PO_HEADER type BAPIMEPOHEADER
+    exporting
+      !EV_IVA type MWSKZ
+    changing
+      !CT_PO_ITEMS type BAPIMEPOITEM_TP
+      !CT_PO_ITEMSX type BAPIMEPOITEMX_TP
+      !CT_PO_SERVICES type BAPIESLLC_TP .
+  methods DETERMINA_IVA_NFSE
+    importing
+      !IS_SFIR_ROOT type /SCMTMS/S_SFIR_ROOT_K
+      !IT_SFIR_ITEM_DATA type /SCMTMS/T_SFIR_ITEM_K
+      !IT_STAGE_LOC_DATA type /SCMTMS/CL_SFIR_HELPER_ROOT=>TTY_STAGE_DATA
+      !IT_POSTAL_ADDR type /BOFU/T_ADDR_POSTAL_ADDRESSK
+      !IT_TOR_STOP type /SCMTMS/T_TOR_STOP_K
+      !IS_TOR_ROOT type /SCMTMS/S_TOR_ROOT_K
+    exporting
+      !EV_IVA type MWSKZ
+    changing
+      !CT_PO_SERVICES type BAPIESLLC_TP
+      !CT_PO_ITEMS type BAPIMEPOITEM_TP
+      !CT_PO_ITEMSX type BAPIMEPOITEMX_TP .
+  methods DETERMINA_CONTA_CONTAB
+    importing
+      !IS_SFIR_ROOT type /SCMTMS/S_SFIR_ROOT_K
+      !IS_SFIR_ITEM_DATA type /SCMTMS/S_SFIR_ITEM_K
+      !IS_TOR_ROOT type /SCMTMS/S_TOR_ROOT_K
+      !IS_LOC_ORIGEM type /BOFU/S_ADDR_POSTAL_ADDRESSK optional
+      !IS_LOC_DEST type /BOFU/S_ADDR_POSTAL_ADDRESSK optional
+    returning
+      value(RV_CONTA_CONTAB) type SAKNR .
+  methods BUSCA_REFERENCIA
+    importing
+      !IS_TOR_FO type /SCMTMS/S_TOR_ROOT_K
+    returning
+      value(RT_TOR_DOCREF) type /SCMTMS/T_TOR_DOCREF_K .
+  methods DETERMINA_PROD_ACABADO
+    importing
+      !IT_TOR_ITEM type /SCMTMS/T_TOR_ITEM_TR_K
+    returning
+      value(RT_PROD_ACABADO) type FLAG .
+  methods DETERMINA_LOC_ORIGEM_DEST
+    importing
+      !IT_SFIR_ITEM_DATA type /SCMTMS/T_SFIR_ITEM_K
+      !IT_STAGE_LOC_DATA type /SCMTMS/CL_SFIR_HELPER_ROOT=>TTY_STAGE_DATA
+      !IT_POSTAL_ADDR type /BOFU/T_ADDR_POSTAL_ADDRESSK
+      !IT_TOR_STOP type /SCMTMS/T_TOR_STOP_K
+    exporting
+      !ES_LOC_ORIGEM type /BOFU/S_ADDR_POSTAL_ADDRESSK
+      !ES_LOC_DEST type /BOFU/S_ADDR_POSTAL_ADDRESSK .
+  methods GET_ITEMS_POST
+    importing
+      !IT_REFERENCES type ZCLTM_GKO_PROCESS=>TY_T_ZGKOT003
+      !IS_HEADER type ZTTM_GKOT001
+      !IV_ACCKEY type ZTTM_GKOT001-ACCKEY
+    returning
+      value(RT_ITEMS_POST) type ZCLTM_GKO_PROCESS=>TY_T_ITEMS_POST .
+  methods DETERMINA_PARCEIRO_PEDIDO
+    importing
+      !IS_TOR_ROOT type /SCMTMS/S_TOR_ROOT_K
+    changing
+      !CT_PO_PARTNER type BAPIEKKOP_TP .
+  methods DETERMINA_NCM_SERVICO
+    importing
+      !IT_PO_SERVICES type BAPIESLLC_TP
+    changing
+      !CT_PO_ITEMS type BAPIMEPOITEM_TP
+      !CT_PO_ITEMSX type BAPIMEPOITEMX_TP .
+  methods GET_ITEMS_POST_WO_PA
+    importing
+      !IT_NF_SAIDA type ZCLTM_GKO_PROCESS=>TY_T_J_1BNFLIN
+      !IS_HEADER type ZTTM_GKOT001
+    changing
+      !CT_ITEMS_POST type ZCLTM_GKO_PROCESS=>TY_T_ITEMS_POST .
+  methods GET_ITEMS_POST_OTHERS
+    importing
+      !IT_NF_SAIDA type ZCLTM_GKO_PROCESS=>TY_T_J_1BNFLIN
+      !IS_HEADER type ZTTM_GKOT001
+    changing
+      !CT_ITEMS_POST type ZCLTM_GKO_PROCESS=>TY_T_ITEMS_POST .
+  methods GET_ITEMS_POST_TRANSFERENCIA
+    importing
+      !IT_NF_SAIDA type ZCLTM_GKO_PROCESS=>TY_T_J_1BNFLIN
+      !IS_HEADER type ZTTM_GKOT001
+    changing
+      !CT_ITEMS_POST type ZCLTM_GKO_PROCESS=>TY_T_ITEMS_POST .
+  methods GET_ITEMS_POST_VENDA_COLIGADA
+    importing
+      !IT_NF_SAIDA type ZCLTM_GKO_PROCESS=>TY_T_J_1BNFLIN
+      !IS_HEADER type ZTTM_GKOT001
+    changing
+      !CT_ITEMS_POST type ZCLTM_GKO_PROCESS=>TY_T_ITEMS_POST .
+  methods GET_IVA_DETAILED
+    importing
+      !IT_ITEMS_POST type ZCLTM_GKO_PROCESS=>TY_T_ITEMS_POST
+      !IS_HEADER type ZTTM_GKOT001
+      !IV_SAKNR type ZTTM_PCOCKPIT013-SAKNR
+    returning
+      value(RT_IVA) type ZCLTM_GKO_PROCESS=>TY_T_PO_IVA_DETAILED .
+  methods GET_IVA_UNIFIED
+    importing
+      !IT_ITEMS_POST type ZCLTM_GKO_PROCESS=>TY_T_ITEMS_POST
+      !IS_HEADER type ZTTM_GKOT001
+      !IV_SAKNR type ZTTM_PCOCKPIT013-SAKNR
+    returning
+      value(RV_IVA) type MWSKZ .
+  methods GET_IVA_FROM_INFO_RECORD
+    importing
+      !IT_ITEMS_POST type ZCLTM_GKO_PROCESS=>TY_T_ITEMS_POST
+      !IS_HEADER type ZTTM_GKOT001
+      !IV_SAKNR type ZTTM_PCOCKPIT013-SAKNR
+    returning
+      value(RV_IVA) type MWSKZ .
+  methods TRATA_CARACTER_ESPECIAL
+    importing
+      !IV_TEXT type ANY
+    returning
+      value(RV_TEXT) type STRING .
+  methods SET_LOG
+    importing
+      !IT_RETURN type BAPIRET2_T
+      !IV_ACCKEY type J_1B_NFE_ACCESS_KEY_DTEL44 .
+  methods ADD_LC_OBSERVACAO_NF_MIRO
+    importing
+      !IT_NFITEMS type J_1BNFLIN_TAB
+      !IS_NFHEADER type J_1BNFDOC
+    changing
+      !CV_OBSERVACAO type J_1BNFDOC-OBSERVAT .
+  methods DETERMINA_SERVICE
+    importing
+      !IT_CHARGE_ELEMENT type /SCMTMS/T_TCC_TRCHRG_ELEMENT_K optional
+    exporting
+      !EV_SERV_DEF type CHAR1
+    changing
+      !CT_PO_SERVICES type BAPIESLLC_TP .
+  methods ATUALIZA_PO_SERVICES
+    importing
+      !IT_TOR_ROOT_DATA type /SCMTMS/T_TOR_ROOT_K
+      !IS_SFIR_ROOT type /SCMTMS/S_SFIR_ROOT_K
+      !IT_CHARGE_ELEMENT type /SCMTMS/T_TCC_TRCHRG_ELEMENT_K
+      !IV_IVA type MWSKZ
+      !IV_SERV_DEF type CHAR1 optional
+    changing
+      !CT_PO_SERVICES type BAPIESLLC_TP
+      !CT_PO_ITEMS type BAPIMEPOITEM_TP
+      !CT_PO_ITEMSX type BAPIMEPOITEMX_TP .
   PROTECTED SECTION.
   PRIVATE SECTION.
     DATA gs_parameter TYPE ty_parameter .
@@ -304,7 +304,7 @@ ENDCLASS.
 
 
 
-CLASS zcltm_modify_po IMPLEMENTATION.
+CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
 
 
   METHOD /scmtms/if_sfir_posting~modify_po_creation.
@@ -3627,6 +3627,8 @@ CLASS zcltm_modify_po IMPLEMENTATION.
       lt_para_iva_vlr  TYPE TABLE OF ty_para_iva_vlr,
       ls_para_iva_vlr  LIKE LINE OF lt_para_iva_vlr.
 
+    DATA(lo_stvarv) = NEW zcacl_stvarv( ).
+
     DATA:
       lt_refkey TYPE zctgtm_cargo_refkey,
       ls_refkey TYPE j_1brefkey.
@@ -3716,7 +3718,29 @@ CLASS zcltm_modify_po IMPLEMENTATION.
         AND incoterm EQ 'FOB'
         AND rateio   EQ 'R01'.                       "#EC CI_SEL_NESTED
 
-    IF lt_mat[] IS NOT INITIAL.
+*    IF lt_mat[] IS NOT INITIAL.
+
+    SELECT
+      acckey,
+      acckey_ref
+      INTO TABLE @DATA(lt_gkot003)
+      FROM zttm_gkot003
+      WHERE acckey = @is_sfir_root-zzacckey.
+
+    IF sy-subrc IS INITIAL.
+
+      SELECT
+        accesskey,
+        purchaseorder
+        INTO TABLE @DATA(lt_po_ref)
+        FROM zi_tm_vh_frete_identify_fo
+        FOR ALL ENTRIES IN @lt_gkot003
+        WHERE accesskey = @lt_gkot003-acckey_ref
+          AND deliverydocumenttype = 'EL'.
+
+    ENDIF.
+
+    IF lt_po_ref IS NOT INITIAL.
 
       SELECT
         ebeln,
@@ -3724,49 +3748,49 @@ CLASS zcltm_modify_po IMPLEMENTATION.
         mwskz
       INTO TABLE @DATA(lt_ekpo)
       FROM ekpo
-      FOR ALL ENTRIES IN @lt_mat
-      WHERE ebeln = @lt_mat-orig_btd_id+25(10).
+      FOR ALL ENTRIES IN @lt_po_ref
+      WHERE ebeln = @lt_po_ref-purchaseorder.
 
       IF sy-subrc IS INITIAL.
-
         DATA(lv_po) = lt_ekpo[ 1 ]-ebeln.
-
       ENDIF.
 
-      lv_remessa = iv_btd_id+25(10).
-
-      SELECT SINGLE vbeln,
-                    vstel,
-                    kunnr
-        FROM likp
-        INTO @DATA(ls_likp)
-       WHERE vbeln EQ @lv_remessa.
-
-      SELECT vbeln,
-             posnr,
-             matnr,
-             vgbel,
-             vgpos,
-             matkl,
-             j_1bcfop,
-             j_1btxsdc,
-             uecha
-        FROM lips
-        INTO TABLE @DATA(lt_lips)
-        WHERE vbeln EQ @lv_remessa.
-
-      SORT lt_lips BY vbeln
-                      posnr.
-
-      LOOP AT lt_lips ASSIGNING FIELD-SYMBOL(<fs_lips>) WHERE uecha IS NOT INITIAL.
-        READ TABLE lt_lips TRANSPORTING NO FIELDS WITH KEY vbeln = <fs_lips>-vbeln
-                                                           posnr = <fs_lips>-uecha BINARY SEARCH.
-        IF sy-subrc IS INITIAL.
-          DELETE lt_lips INDEX sy-tabix.
-        ENDIF.
-      ENDLOOP.
-
     ENDIF.
+
+    lv_remessa = iv_btd_id+25(10).
+
+    SELECT SINGLE vbeln,
+                  vstel,
+                  kunnr
+      FROM likp
+      INTO @DATA(ls_likp)
+     WHERE vbeln EQ @lv_remessa.
+
+    SELECT vbeln,
+           posnr,
+           matnr,
+           vgbel,
+           vgpos,
+           matkl,
+           j_1bcfop,
+           j_1btxsdc,
+           uecha
+      FROM lips
+      INTO TABLE @DATA(lt_lips)
+      WHERE vbeln EQ @lv_remessa.
+
+    SORT lt_lips BY vbeln
+                    posnr.
+
+    LOOP AT lt_lips ASSIGNING FIELD-SYMBOL(<fs_lips>) WHERE uecha IS NOT INITIAL.
+      READ TABLE lt_lips TRANSPORTING NO FIELDS WITH KEY vbeln = <fs_lips>-vbeln
+                                                         posnr = <fs_lips>-uecha BINARY SEARCH.
+      IF sy-subrc IS INITIAL.
+        DELETE lt_lips INDEX sy-tabix.
+      ENDIF.
+    ENDLOOP.
+
+*    ENDIF.
 
     SELECT * INTO TABLE @DATA(lt_vbkd)
       FROM vbkd
@@ -3809,6 +3833,12 @@ CLASS zcltm_modify_po IMPLEMENTATION.
             IF ls_parameter-nftype_cte_fob IS NOT INITIAL.
 * END OF INSERT - JWSILVA - 23.05.2023
 
+              SELECT SINGLE
+                j_1bbranch
+                INTO @DATA(lv_locneg)
+                FROM t001w
+                WHERE kunnr = @ls_doc-parid.
+
               SELECT SINGLE *
                 FROM j_1bnfdoc
                 INTO @ls_doc
@@ -3816,7 +3846,8 @@ CLASS zcltm_modify_po IMPLEMENTATION.
 *                WHERE nftype = 'YA'
                 WHERE nftype IN @ls_parameter-nftype_cte_fob
 * BEGIN OF CHANGE - JWSILVA - 23.05.2023
-                  AND nfenum = @ls_doc-nfenum.
+                  AND nfenum = @ls_doc-nfenum
+                  AND branch = @lv_locneg.
 
               IF sy-subrc IS INITIAL.
 
@@ -4363,19 +4394,19 @@ CLASS zcltm_modify_po IMPLEMENTATION.
         READ TABLE lt_ekpo ASSIGNING <ls_ekpo> WITH KEY mwskz = <ls_pcockpit003>-dmwskz BINARY SEARCH.
         IF sy-subrc IS INITIAL.
 
-          CALL FUNCTION 'CONVERSION_EXIT_ALPHA_INPUT'
-            EXPORTING
-              input  = <ls_ekpo>-ebelp
-            IMPORTING
-              output = lv_nitemped.
-
-          READ TABLE lt_lin_2 INTO ls_lin WITH KEY nitemped = lv_nitemped BINARY SEARCH.
-          IF sy-subrc IS INITIAL.
-            READ TABLE lt_cfop_param TRANSPORTING NO FIELDS WITH KEY cfop = ls_lin-cfop BINARY SEARCH.
-            CHECK sy-subrc IS INITIAL.
-          ELSE.
-            CONTINUE.
-          ENDIF.
+*          CALL FUNCTION 'CONVERSION_EXIT_ALPHA_INPUT'
+*            EXPORTING
+*              input  = <ls_ekpo>-ebelp
+*            IMPORTING
+*              output = lv_nitemped.
+*
+*          READ TABLE lt_lin_2 INTO ls_lin WITH KEY nitemped = lv_nitemped BINARY SEARCH.
+*          IF sy-subrc IS INITIAL.
+*            READ TABLE lt_cfop_param TRANSPORTING NO FIELDS WITH KEY cfop = ls_lin-cfop BINARY SEARCH.
+*            CHECK sy-subrc IS INITIAL.
+*          ELSE.
+*            CONTINUE.
+*          ENDIF.
         ENDIF.
 
         IF <ls_pcockpit003>-pmwskz IS NOT INITIAL.
@@ -4506,7 +4537,6 @@ CLASS zcltm_modify_po IMPLEMENTATION.
                        IMPORTING ev_serv_def       = ev_serv_def
                         CHANGING ct_po_services    = ct_po_services ).
 
-    DATA(lo_stvarv) = NEW zcacl_stvarv( ).
 
     DATA:
       lv_srv_based_iv.
@@ -4764,7 +4794,29 @@ CLASS zcltm_modify_po IMPLEMENTATION.
 *    lt_mat = it_tor_item.
 *    DELETE lt_mat WHERE item_cat <> 'PRD'.
 
-    IF lt_mat[] IS NOT INITIAL.
+*    IF lt_mat[] IS NOT INITIAL.
+
+    SELECT
+      acckey,
+      acckey_ref
+      INTO TABLE @DATA(lt_gkot003)
+      FROM zttm_gkot003
+      WHERE acckey = @is_sfir_root-zzacckey.
+
+    IF sy-subrc IS INITIAL.
+
+      SELECT
+        accesskey,
+        purchaseorder
+        INTO TABLE @DATA(lt_po_ref)
+        FROM zi_tm_vh_frete_identify_fo
+        FOR ALL ENTRIES IN @lt_gkot003
+        WHERE accesskey = @lt_gkot003-acckey_ref
+          AND deliverydocumenttype = 'EL'.
+
+    ENDIF.
+
+    IF lt_po_ref IS NOT INITIAL.
 
       SELECT
         ebeln,
@@ -4772,8 +4824,8 @@ CLASS zcltm_modify_po IMPLEMENTATION.
         mwskz
       INTO TABLE @DATA(lt_ekpo)
       FROM ekpo
-      FOR ALL ENTRIES IN @lt_mat
-      WHERE ebeln = @lt_mat-orig_btd_id+25(10).
+      FOR ALL ENTRIES IN @lt_po_ref
+      WHERE ebeln = @lt_po_ref-purchaseorder.
 
       IF sy-subrc IS INITIAL.
 
@@ -6053,5 +6105,4 @@ CLASS zcltm_modify_po IMPLEMENTATION.
     ENDTRY.
 
   ENDMETHOD.
-
 ENDCLASS.

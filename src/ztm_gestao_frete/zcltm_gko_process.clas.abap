@@ -1001,7 +1001,7 @@ ENDCLASS.
 
 
 
-CLASS ZCLTM_GKO_PROCESS IMPLEMENTATION.
+CLASS zcltm_gko_process IMPLEMENTATION.
 
 
   METHOD read_file.
@@ -5096,7 +5096,10 @@ CLASS ZCLTM_GKO_PROCESS IMPLEMENTATION.
           " Chave de acesso & bloqueada pelo usuário &.
           RAISE EXCEPTION TYPE zcxtm_gko_process
             EXPORTING
-              textid   = zcxtm_gko_process=>gc_acckey_blocked
+              textid   = VALUE #( msgid = zcxtm_gko_process=>gc_acckey_blocked-msgid
+                                  msgno = zcxtm_gko_process=>gc_acckey_blocked-msgno
+                                  attr1 = CONV #( gv_acckey )
+                                  attr2 = sy-msgv1 )
               gv_msgv1 = CONV #( gv_acckey )
               gv_msgv2 = sy-msgv1.
 
@@ -5152,7 +5155,10 @@ CLASS ZCLTM_GKO_PROCESS IMPLEMENTATION.
           " Ordem de Frete &1 bloqueada pelo usuário &2.
           RAISE EXCEPTION TYPE zcxtm_gko_process
             EXPORTING
-              textid   = zcxtm_gko_process=>gc_acckey_blocked_fo
+              textid   = VALUE #( msgid = zcxtm_gko_process=>gc_acckey_blocked_fo-msgid
+                                  msgno = zcxtm_gko_process=>gc_acckey_blocked_fo-msgno
+                                  attr1 = CONV #( |{ ls_tor-tor_id ALPHA = OUT }| )
+                                  attr2 = sy-msgv1 )
               gv_msgv1 = CONV #( |{ ls_tor-tor_id ALPHA = OUT }| )
               gv_msgv2 = sy-msgv1.
 
@@ -10330,6 +10336,17 @@ gs_gko_header-acckey      = |NFS{ gs_nfs_data-docdat }{ CONV num9( gs_nfs_data-z
       RETURN.
     ENDIF.
 
+* BEGIN OF INSERT - JWSILVA - 24.05.2023
+* ---------------------------------------------------------------------------
+* Desbloqueia a chave
+* ---------------------------------------------------------------------------
+    TRY.
+        me->persist( ).
+        me->dequeue_acckey( ).
+      CATCH cx_root.
+    ENDTRY.
+* END OF INSERT - JWSILVA - 24.05.2023
+
 * ---------------------------------------------------------------------------
 * Verifica e recupera o DFF criado
 * ---------------------------------------------------------------------------
@@ -10341,11 +10358,28 @@ gs_gko_header-acckey      = |NFS{ gs_nfs_data-docdat }{ CONV num9( gs_nfs_data-z
         iv_acckey = gs_gko_header-acckey.
 
     WAIT UNTIL gv_wait_async = abap_true.
-    DATA(lt_return)  = gt_return.
-    DATA(lt_sfir_id) = gt_sfir_id.
-    rv_check = gv_check.
+    DATA(lt_return)          = gt_return.
+    DATA(lt_sfir_id)         = gt_sfir_id.
+    rv_check                 = gv_check.
+
+* BEGIN OF INSERT - JWSILVA - 24.05.2023
+* ---------------------------------------------------------------------------
+* Bloqueia a chave
+* ---------------------------------------------------------------------------
+    TRY.
+        me->enqueue_acckey( gv_locked_in_tab ).
+        gv_min_data_load = abap_false.
+        me->load_data_from_acckey( ).
+      CATCH cx_root.
+    ENDTRY.
+
+    IF gs_gko_header-codstatus+0(1) EQ 'E'.
+      RETURN.
+    ENDIF.
+* END OF INSERT - JWSILVA - 24.05.2023
 
     CHECK rv_check EQ abap_false.
+
 
     IF NOT line_exists( lt_return[ type = 'E' ] ).
 
@@ -11262,6 +11296,15 @@ gs_gko_header-acckey      = |NFS{ gs_nfs_data-docdat }{ CONV num9( gs_nfs_data-z
           lv_check_create_po = abap_false.
         ENDIF.
 
+* BEGIN OF INSERT - JWSILVA - 24.05.2023
+        " Desbloqueia chave de acesso do cockpit de frete
+        TRY.
+            me->persist( ).
+            me->dequeue_acckey( ).
+          CATCH cx_root.
+        ENDTRY.
+* END OF INSERT - JWSILVA - 24.05.2023
+
         DATA(lo_post_sfir) = /scmtms/cl_post_sfir_for_accru=>get_instance( ).
         lo_post_sfir->/scmtms/if_post_sfir_for_accru~post_sfir_for_accurals(
           EXPORTING
@@ -11287,6 +11330,20 @@ gs_gko_header-acckey      = |NFS{ gs_nfs_data-docdat }{ CONV num9( gs_nfs_data-z
         DO 3 TIMES.
           WAIT UP TO 2 SECONDS.
         ENDDO.
+
+* BEGIN OF INSERT - JWSILVA - 24.05.2023
+        " Bloqueia chave de acesso do cockpit de frete
+        TRY.
+            me->enqueue_acckey( gv_locked_in_tab ).
+            gv_min_data_load = abap_false.
+            me->load_data_from_acckey( ).
+
+            IF gs_gko_header-codstatus+0(1) = if_xo_const_message=>error.
+              RETURN.
+            ENDIF.
+          CATCH cx_root.
+        ENDTRY.
+* END OF INSERT - JWSILVA - 24.05.2023
 
         CLEAR: lt_sfir_root[].
         lo_srvmgr_sfir->retrieve(
@@ -11425,6 +11482,16 @@ gs_gko_header-acckey      = |NFS{ gs_nfs_data-docdat }{ CONV num9( gs_nfs_data-z
         me->load_data_from_acckey( ).
       CATCH cx_root.
     ENDTRY.
+
+* BEGIN OF INSERT - JWSILVA - 24.05.2023
+* ---------------------------------------------------------------------------
+* Se houve erro durante um processo anterior, as mensagens de erro já foram gravadas
+* ---------------------------------------------------------------------------
+    IF gs_gko_header-codstatus+0(1) = if_xo_const_message=>error.
+      RETURN.
+    ENDIF.
+
+* END OF INSERT - JWSILVA - 24.05.2023
 
 * ---------------------------------------------------------------------------
 * Separa as mensagens de logs que foram salvos durante etapa de fatura

@@ -389,7 +389,9 @@ define view ZI_TM_REL_PLAN_ENTREGA_DIST
 
       //      cast( round(_StopOri.OtimizacaoCapMax, 0) as abap.int1 )         as OtimizacaoCapMax, //Otimização % Capac. Máx.
       round(_StopOri.OtimizacaoCapMax, 0)                                  as OtimizacaoCapMax,
-      cast (_FluxoDocumentosNF.TranspOrdNetWeight as abap.dec( 15, 3))     as PesoTotalOF,
+      
+      cast ( _FluxoDocumentosNF.TranspOrdItemGrossWeight as abap.dec( 15, 3) ) as PesoTotalOF, 
+      //cast (_FluxoDocumentosNF.TranspOrdNetWeight as abap.dec( 15, 3))     as PesoTotalOF,
 
       case
        when _ZI_TM_QTD_ENTREGAS.totalEntregas > 0
@@ -399,8 +401,8 @@ define view ZI_TM_REL_PLAN_ENTREGA_DIST
 
       cast(_SucessorStop.total_dist_km as abap.dec( 15, 2 ) )              as Distancia,
 
-      //cast( sum ( _FluxoDocumentosNF.TranspOrdItemNetWeight ) as abap.dec( 15, 2)) as PesoLiquido,
-      cast(_FluxoDocumentosNF.TranspOrdItemNetWeight as abap.dec( 15, 2 )) as PesoLiquido,
+      cast( sum ( _FluxoDocumentosNF.TranspOrdItemNetWeight ) as abap.dec( 15, 2)) as PesoLiquido,
+      //cast(_FluxoDocumentosNF.TranspOrdItemNetWeight as abap.dec( 15, 2 )) as PesoLiquido,
       _FluxoDocumentosNF.TranspOrdItemNetWeightUnit                        as PesoLiquidoUnidade,
 
       tstmp_to_dats( _CicloPO_009.data_hora_planejada,
@@ -587,9 +589,12 @@ group by
   _SucessorStop.total_dist_km,
   _FluxoDocumentosNF.BR_NFTotalAmount,
   _ZI_TM_QTD_ENTREGAS.totalEntregas,
-  _FluxoDocumentosNF.TranspOrdItemNetWeight,
+  //_FluxoDocumentosNF.TranspOrdItemNetWeight,
   _FluxoDocumentosNF.TranspOrdItemNetWeightUnit,
-  _FluxoDocumentosNF.TranspOrdNetWeight,
+  
+  _FluxoDocumentosNF.TranspOrdNetWeight,  
   _FluxoDocumentosNF.DeliveryDocumentType,
   _FluxoDocumentosNF.InvoiceDocument,
-  _FluxoDocumentosNF.BR_NFeDocumentStatus
+  _FluxoDocumentosNF.BR_NFeDocumentStatus,
+  
+  _FluxoDocumentosNF.TranspOrdItemGrossWeight

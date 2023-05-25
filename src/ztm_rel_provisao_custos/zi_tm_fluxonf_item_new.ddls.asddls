@@ -1,4 +1,4 @@
-@AbapCatalog.sqlViewName: 'ZITMFDITEM'
+@AbapCatalog.sqlViewName: 'ZITMFDITEMNEW'
 @AbapCatalog.compiler.compareFilter: true
 @AbapCatalog.preserveKey: true
 @AccessControl.authorizationCheck: #CHECK
@@ -8,16 +8,15 @@
 //bloco 2: cenários para vendas (OUTBOUND SD)
 //bloco 3: cenário para transferências
 
-/*+[hideWarning] { "IDS" : [ "DOUBLE_JOIN" ]  } */
-define view ZI_TM_FLUXONF_ITEM
+define view ZI_TM_FLUXONF_ITEM_NEW
   as select distinct from ZI_TRANSPORTATIONORDERITEM as _TransOrdemItem
-    left outer join            A_InbDeliveryDocFlow       as _InboundDocFlow     on  _InboundDocFlow.PrecedingDocument     = right(
+    inner join            A_InbDeliveryDocFlow       as _InboundDocFlow     on  _InboundDocFlow.PrecedingDocument     = right(
       _TransOrdemItem.TranspOrdDocReferenceID, 10
     )
                                                                             and _InboundDocFlow.PrecedingDocumentItem = right(
       _TransOrdemItem.TranspOrdDocReferenceItmID, 6
     )
-    left outer join            I_BR_NFDocumentFlow_C      as _NFDocFlow          on  _NFDocFlow.PredecessorReferenceDocument = _InboundDocFlow.SubsequentDocument
+    inner join            I_BR_NFDocumentFlow_C      as _NFDocFlow          on  _NFDocFlow.PredecessorReferenceDocument = _InboundDocFlow.SubsequentDocument
                                                                             and _NFDocFlow.PredecessorReferenceDocItem  = right(
       _InboundDocFlow.SubsequentDocumentItem, 4
     )
@@ -48,10 +47,15 @@ define view ZI_TM_FLUXONF_ITEM
                                                                             and _TransOrdemItem.TranspOrdDocReferenceID = _TotalVolume.TranspOrdDocReferenceID
     left outer join       zttm_cubagem               as _Cubagem            on  _CodigoUnidadeFrete.tor_id        = _Cubagem.unidade_frete
                                                                             and _InboundDocFlow.PrecedingDocument = _Cubagem.remessa
+
+//    association
+
 {
-  key _InboundDocFlow.PrecedingDocument                                                                                                        as DocReference,
-  key _InboundDocFlow.PrecedingDocumentItem                                                                                                    as DocReferenceItem,
-      cast( 'Compras' as abap.char( 15 ) )                                                                                                     as Scenario,
+  key _TransOrdemItem.TransportationOrderUUID,
+  key _TransOrdemItem.TransportationOrderItemUUID,
+      _InboundDocFlow.PrecedingDocument                                                                                                        as DocReference,
+      _InboundDocFlow.PrecedingDocumentItem                                                                                                    as DocReferenceItem,
+      cast( 'COMPRAS' as abap.char( 15 ) )                                                                                                     as Scenario,
       _Remessa.DeliveryDocumentType,
       _Remessa._DeliveryDocumentType._Text[1:Language = $session.system_language].DeliveryDocumentTypeName,
       _Remessa.ShippingPoint,
@@ -74,14 +78,13 @@ define view ZI_TM_FLUXONF_ITEM
       _NotaFiscalHeader.BR_NFTotalAmount,
       _NotaFiscalItem.BR_NFValueAmountWithTaxes,
       _VerifyNF.BR_NFeAccessKey,
-      _TransOrdemItem.TransportationOrderUUID,
+      //      _TransOrdemItem.TransportationOrderUUID,
       _TransOrdemItem._TransportationOrder.TransportationOrder,
       _TransOrdemItem._TransportationOrder.TransportationOrderCategory,
-      _TransOrdemItem.TransportationOrderItemUUID,
+      //      _TransOrdemItem.TransportationOrderItemUUID,
       _TransOrdemItem.TranspOrdItem,
       _TransOrdemItem.SourceStopUUID,
       _TransOrdemItem.DestinationStopUUID,
-      _TransOrdemItem.IsMainCargoItem,
       _TransOrdemItem.Motorista,
       _TransOrdemItem.ProductName,
       _TransOrdemItem.Consignee,
@@ -111,13 +114,14 @@ define view ZI_TM_FLUXONF_ITEM
       _TransOrdemItem.TranspOrdItemGrossWeightUnit,
       _TransOrdemItem.TranspOrdItemNetWeight,
       _TransOrdemItem.TranspOrdItemNetWeightUnit,
+      _TransOrdemItem.IsMainCargoItem,
       _TransOrdemItem.TranspOrdDocReferenceType,
       _TransOrdemItem._TransportationOrder.TransportationOrderExecSts,
       _TransOrdemItem._TransportationOrder._TransportationOrderExecSts._Text[1:Language = $session.system_language].TransportationOrderExecStsDesc,
-      _TransOrdemItem.PredecessorTransportationOrder                        as FreghtUnitId,
-      _TransOrdemItem._TransportationOrder.PurgOrgCompanyCode               as Company2,
-      _TransOrdemItem._TransportationOrder.PurgOrgCompanyCodeAux            as Company,
-      _TransOrdemItem._TransportationOrder.CompanyText                      as CompanyDesc,
+      _TransOrdemItem.PredecessorTransportationOrder                                                                                           as FreghtUnitId,
+      _TransOrdemItem._TransportationOrder.PurgOrgCompanyCode                                                                                  as Company2,
+      _TransOrdemItem._TransportationOrder.PurgOrgCompanyCodeAux                                                                               as Company,
+      _TransOrdemItem._TransportationOrder.CompanyText                                                                                         as CompanyDesc,
       _CodigoUnidadeFrete.tor_id                                                                                                               as FreghtUnit,
       _TotalVolume.PesoBrutoTotal,
       _Cubagem.peso_total,
@@ -129,19 +133,18 @@ define view ZI_TM_FLUXONF_ITEM
 
 }
 where
-      _TransOrdemItem.TranspOrdDocReferenceType = '58'
+      _TransOrdemItem.TranspOrdDocReferenceType                        = '58'
   --and _TransOrdemItem.TranspOrdItemType         = 'PRD'
-  and _TransOrdemItem.TranspOrdItemCategory     = 'PRD'
+  and _TransOrdemItem.TranspOrdItemCategory                            = 'PRD'
   and _TransOrdemItem._TransportationOrder.TransportationOrderCategory = 'TO'
-  and _TransOrdemItem.IsMainCargoItem = 'X'
 
 union
 
 select from       ZI_TRANSPORTATIONORDERITEM as _TransOrdemItem
-  left outer join      I_DeliveryDocument         as _Remessa            on _Remessa.DeliveryDocument = right(
+  inner join      I_DeliveryDocument         as _Remessa            on _Remessa.DeliveryDocument = right(
     _TransOrdemItem.TranspOrdDocReferenceID, 10
   )
-  left outer join      I_DeliveryDocumentItem     as _RemessaItem        on  _RemessaItem.DeliveryDocument      =  _Remessa.DeliveryDocument
+  inner join      I_DeliveryDocumentItem     as _RemessaItem        on  _RemessaItem.DeliveryDocument      =  _Remessa.DeliveryDocument
                                                                     and _RemessaItem.DeliveryDocumentItem  = right(
     _TransOrdemItem.TranspOrdDocReferenceItmID, 6
   )
@@ -167,9 +170,11 @@ select from       ZI_TRANSPORTATIONORDERITEM as _TransOrdemItem
   left outer join I_SalesOrder               as _SalesOrder         on _SalesOrder.SalesOrder = _RemessaItem.ReferenceSDDocument
 
 {
-  key _Remessa.DeliveryDocument                                                                                                                as DocReference,
-  key _RemessaItem.DeliveryDocumentItem                                                                                                        as DocReferenceItem,
-      cast( 'Vendas' as abap.char( 15 ) )                                                                                                      as Scenario,
+  key _TransOrdemItem.TransportationOrderUUID,
+  key _TransOrdemItem.TransportationOrderItemUUID,  
+      _Remessa.DeliveryDocument                                                                                                                as DocReference,
+      _RemessaItem.DeliveryDocumentItem                                                                                                        as DocReferenceItem,
+      cast( 'VENDAS' as abap.char( 15 ) )                                                                                                      as Scenario,
       _Remessa.DeliveryDocumentType,
       _Remessa._DeliveryDocumentType._Text[1:Language = $session.system_language].DeliveryDocumentTypeName,
       _Remessa.ShippingPoint,
@@ -189,14 +194,13 @@ select from       ZI_TRANSPORTATIONORDERITEM as _TransOrdemItem
       _NotaFiscalHeader.BR_NFTotalAmount,
       _NotaFiscalItem.BR_NFValueAmountWithTaxes,
       _VerifyNF.BR_NFeAccessKey,
-      _TransOrdemItem.TransportationOrderUUID,
+//      _TransOrdemItem.TransportationOrderUUID,
       _TransOrdemItem._TransportationOrder.TransportationOrder,
       _TransOrdemItem._TransportationOrder.TransportationOrderCategory,
-      _TransOrdemItem.TransportationOrderItemUUID,
+//      _TransOrdemItem.TransportationOrderItemUUID,
       _TransOrdemItem.TranspOrdItem,
       _TransOrdemItem.SourceStopUUID,
       _TransOrdemItem.DestinationStopUUID,
-      _TransOrdemItem.IsMainCargoItem,
       _TransOrdemItem.Motorista,
       _TransOrdemItem.ProductName,
       _TransOrdemItem.Consignee,
@@ -226,14 +230,15 @@ select from       ZI_TRANSPORTATIONORDERITEM as _TransOrdemItem
       _TransOrdemItem.TranspOrdItemGrossWeightUnit,
       _TransOrdemItem.TranspOrdItemNetWeight,
       _TransOrdemItem.TranspOrdItemNetWeightUnit,
+      _TransOrdemItem.IsMainCargoItem,
       _TransOrdemItem.TranspOrdDocReferenceType,
       _TransOrdemItem._TransportationOrder.TransportationOrderExecSts,
       _TransOrdemItem._TransportationOrder._TransportationOrderExecSts._Text[1:Language = $session.system_language].TransportationOrderExecStsDesc,
-      _TransOrdemItem.PredecessorTransportationOrder                        as FreghtUnitId,
-      _TransOrdemItem._TransportationOrder.PurgOrgCompanyCode               as Company2,
-      _TransOrdemItem._TransportationOrder.PurgOrgCompanyCodeAux            as Company,
-      _TransOrdemItem._TransportationOrder.CompanyText                      as CompanyDesc,
-      _CodigoUnidadeFrete.tor_id                                            as FreghtUnit,
+      _TransOrdemItem.PredecessorTransportationOrder                                                                                           as FreghtUnitId,
+      _TransOrdemItem._TransportationOrder.PurgOrgCompanyCode                                                                                  as Company2,
+      _TransOrdemItem._TransportationOrder.PurgOrgCompanyCodeAux                                                                               as Company,
+      _TransOrdemItem._TransportationOrder.CompanyText                                                                                         as CompanyDesc,
+      _CodigoUnidadeFrete.tor_id                                                                                                               as FreghtUnit,
       _TotalVolume.PesoBrutoTotal,
       _Cubagem.peso_total,
       (cast(_TransOrdemItem.TranspOrdItemGrossWeight as float) / cast(_TotalVolume.PesoBrutoTotal as float))
@@ -243,19 +248,18 @@ select from       ZI_TRANSPORTATIONORDERITEM as _TransOrdemItem
       _TotalItensNF.TotalItensNF
 }
 where
-      _TransOrdemItem.TranspOrdDocReferenceType = '73'
+      _TransOrdemItem.TranspOrdDocReferenceType                        = '73'
   //and _TransOrdemItem.TranspOrdItemType         = 'PRD'
-  and _TransOrdemItem.TranspOrdItemCategory     = 'PRD'
+  and _TransOrdemItem.TranspOrdItemCategory                            = 'PRD'
   and _TransOrdemItem._TransportationOrder.TransportationOrderCategory = 'TO'
-  and _TransOrdemItem.IsMainCargoItem = 'X'
 
 union
 
 select from       ZI_TRANSPORTATIONORDERITEM as _TransOrdemItem
-  left outer join      I_DeliveryDocument         as _Remessa            on _Remessa.DeliveryDocument = right(
+  inner join      I_DeliveryDocument         as _Remessa            on _Remessa.DeliveryDocument = right(
     _TransOrdemItem.BaseBtdId, 10
   )
-  left outer join      I_DeliveryDocumentItem     as _RemessaItem        on  _RemessaItem.DeliveryDocument      =  _Remessa.DeliveryDocument
+  inner join      I_DeliveryDocumentItem     as _RemessaItem        on  _RemessaItem.DeliveryDocument      =  _Remessa.DeliveryDocument
                                                                     and _RemessaItem.DeliveryDocumentItem  = right(
     _TransOrdemItem.TranspOrdDocReferenceItmID, 6
   )
@@ -282,9 +286,11 @@ select from       ZI_TRANSPORTATIONORDERITEM as _TransOrdemItem
                                                                     and _Remessa.DeliveryDocument  = _Cubagem.remessa
   left outer join I_SalesOrder               as _SalesOrder         on _SalesOrder.SalesOrder = _RemessaItem.ReferenceSDDocument
 {
-  key _Remessa.DeliveryDocument                                                                                                                as DocReference,
-  key _RemessaItem.DeliveryDocumentItem                                                                                                        as DocReferenceItem,
-      cast( 'Transferência' as abap.char( 15 ) )                                                                                               as Scenario,
+  key _TransOrdemItem.TransportationOrderUUID,
+  key _TransOrdemItem.TransportationOrderItemUUID,
+      _Remessa.DeliveryDocument                                                                                                                as DocReference,
+      _RemessaItem.DeliveryDocumentItem                                                                                                        as DocReferenceItem,
+      cast( 'TRANSFERENCIA' as abap.char( 15 ) )                                                                                               as Scenario,
       _Remessa.DeliveryDocumentType,
       _Remessa._DeliveryDocumentType._Text[1:Language = $session.system_language].DeliveryDocumentTypeName,
       _Remessa.ShippingPoint,
@@ -308,14 +314,13 @@ select from       ZI_TRANSPORTATIONORDERITEM as _TransOrdemItem
       _NotaFiscalHeader.BR_NFTotalAmount,
       _NotaFiscalItem.BR_NFValueAmountWithTaxes,
       _VerifyNF.BR_NFeAccessKey,
-      _TransOrdemItem.TransportationOrderUUID,
+//      _TransOrdemItem.TransportationOrderUUID,
       _TransOrdemItem._TransportationOrder.TransportationOrder,
       _TransOrdemItem._TransportationOrder.TransportationOrderCategory,
-      _TransOrdemItem.TransportationOrderItemUUID,
+//      _TransOrdemItem.TransportationOrderItemUUID,
       _TransOrdemItem.TranspOrdItem,
       _TransOrdemItem.SourceStopUUID,
       _TransOrdemItem.DestinationStopUUID,
-      _TransOrdemItem.IsMainCargoItem,
       _TransOrdemItem.Motorista,
       _TransOrdemItem.ProductName,
       _TransOrdemItem.Consignee,
@@ -345,14 +350,15 @@ select from       ZI_TRANSPORTATIONORDERITEM as _TransOrdemItem
       _TransOrdemItem.TranspOrdItemGrossWeightUnit,
       _TransOrdemItem.TranspOrdItemNetWeight,
       _TransOrdemItem.TranspOrdItemNetWeightUnit,
+      _TransOrdemItem.IsMainCargoItem,
       _TransOrdemItem.TranspOrdDocReferenceType,
       _TransOrdemItem._TransportationOrder.TransportationOrderExecSts,
       _TransOrdemItem._TransportationOrder._TransportationOrderExecSts._Text[1:Language = $session.system_language].TransportationOrderExecStsDesc,
-      _TransOrdemItem.PredecessorTransportationOrder                        as FreghtUnitId,
-      _TransOrdemItem._TransportationOrder.PurgOrgCompanyCode               as Company2,
-      _TransOrdemItem._TransportationOrder.PurgOrgCompanyCodeAux            as Company,
-      _TransOrdemItem._TransportationOrder.CompanyText                      as CompanyDesc,      
-      _CodigoUnidadeFrete.tor_id                                            as FreghtUnit,
+      _TransOrdemItem.PredecessorTransportationOrder                                                                                           as FreghtUnitId,
+      _TransOrdemItem._TransportationOrder.PurgOrgCompanyCode                                                                                  as Company2,
+      _TransOrdemItem._TransportationOrder.PurgOrgCompanyCodeAux                                                                               as Company,
+      _TransOrdemItem._TransportationOrder.CompanyText                                                                                         as CompanyDesc,
+      _CodigoUnidadeFrete.tor_id                                                                                                               as FreghtUnit,
       _TotalVolume.PesoBrutoTotal,
       _Cubagem.peso_total,
       (cast(_TransOrdemItem.TranspOrdItemGrossWeight as float) / cast(_TotalVolume.PesoBrutoTotal as float))
@@ -362,9 +368,8 @@ select from       ZI_TRANSPORTATIONORDERITEM as _TransOrdemItem
       _TotalItensNF.TotalItensNF
 }
 where
-      _Remessa.DeliveryDocumentType             = 'ZNLC' //Transferencia
-  and _TransOrdemItem.TranspOrdDocReferenceType = '73'   //Saída (outbound)
+      _Remessa.DeliveryDocumentType                                    = 'ZNLC' //Transferencia
+  and _TransOrdemItem.TranspOrdDocReferenceType                        = '73'   //Saída (outbound)
   //and _TransOrdemItem.TranspOrdItemType         = 'PRD'
-  and _TransOrdemItem.TranspOrdItemCategory     = 'PRD'
+  and _TransOrdemItem.TranspOrdItemCategory                            = 'PRD'
   and _TransOrdemItem._TransportationOrder.TransportationOrderCategory = 'TO'
-  and _TransOrdemItem.IsMainCargoItem = 'X'

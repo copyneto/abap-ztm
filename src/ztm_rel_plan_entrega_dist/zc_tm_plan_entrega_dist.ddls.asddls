@@ -462,17 +462,17 @@ define view ZC_TM_PLAN_ENTREGA_DIST
     
   @UI.lineItem: [ { position: 880 }]
   @EndUserText.label: 'Distância'
-  //@Aggregation.default: #AVG
+  //@Aggregation.default: #SUM
   Distancia,
 
   @UI.lineItem: [ { position: 890 }]
   @EndUserText.label: 'Valor Total NFe (Bruto)'
-  //@Aggregation.default: #AVG
+  @Aggregation.default: #SUM
   ValorTotalNFeBruto,
   
   @UI.lineItem: [ { position: 900 }]
   @EndUserText.label: 'Peso Total OF'
-  //@Aggregation.default: #AVG
+  @Aggregation.default: #SUM
   PesoTotalOF,
   
   @UI.lineItem: [ { position: 910 }]

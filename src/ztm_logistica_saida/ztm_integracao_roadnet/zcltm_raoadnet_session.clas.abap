@@ -587,7 +587,7 @@ CLASS ZCLTM_RAOADNET_SESSION IMPLEMENTATION.
     DATA(lt_dados) = gt_dados.
 
     SORT lt_dados BY werks.
-    DELETE ADJACENT DUPLICATES FROM lt_dados COMPARING werks.
+    DELETE ADJACENT DUPLICATES FROM lt_dados COMPARING vbeln werks.
 
     DATA(lt_dadosrem) = gt_dados.
 
@@ -702,8 +702,8 @@ CLASS ZCLTM_RAOADNET_SESSION IMPLEMENTATION.
           " ---------------------------
 
           READ TABLE lt_calculated_data ASSIGNING FIELD-SYMBOL(<fs_calculated_data>)
-              WITH KEY ChaveDinamica = <fs_dados_1>-vbeln
-                       SalesOrder    = <fs_delivery_1>-ReferenceSDDocument BINARY SEARCH.
+              WITH KEY ChaveDinamica = <fs_dados>-vbeln
+                       SalesOrder    = <fs_delivery>-ReferenceSDDocument BINARY SEARCH.
 
           IF sy-subrc EQ 0.
             READ TABLE lt_agendamento ASSIGNING FIELD-SYMBOL(<fs_agendamento>)

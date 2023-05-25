@@ -1,4 +1,4 @@
-@AbapCatalog.sqlViewName: 'ZI_TM_CFOP_MK'
+@AbapCatalog.sqlViewName: 'ZI_TM_VH_CFOP_RR'
 @AbapCatalog.compiler.compareFilter: true
 @AbapCatalog.preserveKey: true
 @AccessControl.authorizationCheck: #CHECK
@@ -10,7 +10,7 @@
     dataClass: #MIXED
 }
 @Search.searchable: true
-define view ZI_TM_VH_CFOP_MK
+define view ZI_TM_VH_CFOP_REL_REM
   as select from j_1bagn  as _CFOP
     inner join   j_1bagnt as _Text on  _CFOP.cfop    = _Text.cfop
                                    and _CFOP.version = _Text.version

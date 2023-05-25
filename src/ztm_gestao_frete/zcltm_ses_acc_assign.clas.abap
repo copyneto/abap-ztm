@@ -437,7 +437,8 @@ CLASS zcltm_ses_acc_assign IMPLEMENTATION.
             lr_gko_process->persist( ).
             lr_gko_process->free( ).
           ENDIF.
-        CATCH cx_root.
+        CATCH cx_root INTO DATA(lo_root).
+            DATA(lv_msg) = lo_root->get_longtext( ).
       ENDTRY.
 
     ENDIF.
