@@ -12,10 +12,12 @@ define view ZI_TM_PROVISAO_CUSTOS
     inner join      I_TransportationOrder      as _TransportationOrderCds  on _TransportationOrderCds.TransportationOrderUUID = _FluxoItemDocumentosNF.TransportationOrderUUID
     left outer join C_BR_VerifyNotaFiscal      as _VerifyNF                on _FluxoItemDocumentosNF.BR_NotaFiscal = _VerifyNF.BR_NotaFiscal
 
-  //left outer join zttm_gkot001               as _GKO_t001                on _GKO_t003.acckey = _GKO_t001.acckey
-    left outer join zttm_gkot001               as _GKO_t001                on _FluxoItemDocumentosNF.TransportationOrder = _GKO_t001.tor_id
-  //    left outer join zttm_gkot003               as _GKO_t003                on _FluxoItemDocumentosNF.BR_NotaFiscal = _GKO_t003.docnum
-    left outer join zttm_gkot003               as _GKO_t003                on _GKO_t003.acckey = _GKO_t001.acckey
+    left outer join zttm_gkot003               as _GKO_t003                on _FluxoItemDocumentosNF.BR_NotaFiscal = _GKO_t003.docnum
+    left outer join zttm_gkot001               as _GKO_t001                on _GKO_t003.acckey = _GKO_t001.acckey
+    
+    //left outer join zttm_gkot001               as _GKO_t001                on _FluxoItemDocumentosNF.TransportationOrder = _GKO_t001.tor_id      
+    //left outer join zttm_gkot003               as _GKO_t003                on _GKO_t003.acckey = _GKO_t001.acckey
+    
     left outer join /scmtms/d_torstp           as _StopOri                 on  _StopOri.db_key       = _FluxoItemDocumentosNF.SourceStopUUID
                                                                            and _StopOri.stop_cat     = 'O'
                                                                            and _StopOri.stop_seq_pos = 'F'

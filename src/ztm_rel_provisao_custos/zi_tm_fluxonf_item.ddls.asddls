@@ -11,13 +11,13 @@
 /*+[hideWarning] { "IDS" : [ "DOUBLE_JOIN" ]  } */
 define view ZI_TM_FLUXONF_ITEM
   as select distinct from ZI_TRANSPORTATIONORDERITEM as _TransOrdemItem
-    left outer join            A_InbDeliveryDocFlow       as _InboundDocFlow     on  _InboundDocFlow.PrecedingDocument     = right(
+    inner join            A_InbDeliveryDocFlow       as _InboundDocFlow     on  _InboundDocFlow.PrecedingDocument     = right(
       _TransOrdemItem.TranspOrdDocReferenceID, 10
     )
                                                                             and _InboundDocFlow.PrecedingDocumentItem = right(
       _TransOrdemItem.TranspOrdDocReferenceItmID, 6
     )
-    left outer join            I_BR_NFDocumentFlow_C      as _NFDocFlow          on  _NFDocFlow.PredecessorReferenceDocument = _InboundDocFlow.SubsequentDocument
+    inner join            I_BR_NFDocumentFlow_C      as _NFDocFlow          on  _NFDocFlow.PredecessorReferenceDocument = _InboundDocFlow.SubsequentDocument
                                                                             and _NFDocFlow.PredecessorReferenceDocItem  = right(
       _InboundDocFlow.SubsequentDocumentItem, 4
     )
@@ -133,15 +133,14 @@ where
   --and _TransOrdemItem.TranspOrdItemType         = 'PRD'
   and _TransOrdemItem.TranspOrdItemCategory     = 'PRD'
   and _TransOrdemItem._TransportationOrder.TransportationOrderCategory = 'TO'
-  and _TransOrdemItem.IsMainCargoItem = 'X'
 
 union
 
 select from       ZI_TRANSPORTATIONORDERITEM as _TransOrdemItem
-  left outer join      I_DeliveryDocument         as _Remessa            on _Remessa.DeliveryDocument = right(
+  inner join      I_DeliveryDocument         as _Remessa            on _Remessa.DeliveryDocument = right(
     _TransOrdemItem.TranspOrdDocReferenceID, 10
   )
-  left outer join      I_DeliveryDocumentItem     as _RemessaItem        on  _RemessaItem.DeliveryDocument      =  _Remessa.DeliveryDocument
+  inner join      I_DeliveryDocumentItem     as _RemessaItem        on  _RemessaItem.DeliveryDocument      =  _Remessa.DeliveryDocument
                                                                     and _RemessaItem.DeliveryDocumentItem  = right(
     _TransOrdemItem.TranspOrdDocReferenceItmID, 6
   )
@@ -246,16 +245,15 @@ where
       _TransOrdemItem.TranspOrdDocReferenceType = '73'
   //and _TransOrdemItem.TranspOrdItemType         = 'PRD'
   and _TransOrdemItem.TranspOrdItemCategory     = 'PRD'
-  and _TransOrdemItem._TransportationOrder.TransportationOrderCategory = 'TO'
-  and _TransOrdemItem.IsMainCargoItem = 'X'
+  and _TransOrdemItem._TransportationOrder.TransportationOrderCategory = 'TO'  
 
 union
 
 select from       ZI_TRANSPORTATIONORDERITEM as _TransOrdemItem
-  left outer join      I_DeliveryDocument         as _Remessa            on _Remessa.DeliveryDocument = right(
+  inner join      I_DeliveryDocument         as _Remessa            on _Remessa.DeliveryDocument = right(
     _TransOrdemItem.BaseBtdId, 10
   )
-  left outer join      I_DeliveryDocumentItem     as _RemessaItem        on  _RemessaItem.DeliveryDocument      =  _Remessa.DeliveryDocument
+  inner join      I_DeliveryDocumentItem     as _RemessaItem        on  _RemessaItem.DeliveryDocument      =  _Remessa.DeliveryDocument
                                                                     and _RemessaItem.DeliveryDocumentItem  = right(
     _TransOrdemItem.TranspOrdDocReferenceItmID, 6
   )
@@ -367,4 +365,3 @@ where
   //and _TransOrdemItem.TranspOrdItemType         = 'PRD'
   and _TransOrdemItem.TranspOrdItemCategory     = 'PRD'
   and _TransOrdemItem._TransportationOrder.TransportationOrderCategory = 'TO'
-  and _TransOrdemItem.IsMainCargoItem = 'X'

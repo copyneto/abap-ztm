@@ -12,14 +12,14 @@
 @Search.searchable: true
 define view ZI_TM_VH_BRANCH
   as select from pbusinessplace
-{
+{ 
       @Search.defaultSearchElement: true
       @Search.fuzzinessThreshold: 0.8
   key bukrs,
       @Search.defaultSearchElement: true
       @Search.fuzzinessThreshold: 0.8
   key branch,
-      @Search.defaultSearchElement: true
-      @Search.fuzzinessThreshold: 0.8
+//      @Search.defaultSearchElement: true
+//      @Search.fuzzinessThreshold: 0.8
       name as nome
 }

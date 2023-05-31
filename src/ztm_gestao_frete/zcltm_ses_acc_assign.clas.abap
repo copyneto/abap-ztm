@@ -33,7 +33,7 @@ ENDCLASS.
 
 
 
-CLASS zcltm_ses_acc_assign IMPLEMENTATION.
+CLASS ZCLTM_SES_ACC_ASSIGN IMPLEMENTATION.
 
 
   METHOD /scmtms/if_sfir_ses_acc_assign~modify_acc_assign.
@@ -261,13 +261,15 @@ CLASS zcltm_ses_acc_assign IMPLEMENTATION.
 * ---------------------------------------------------------------------------
 * Recupera dados da Ordem de Frete
 * ---------------------------------------------------------------------------
-    zcltm_gko_process=>determina_configuracao_p013( EXPORTING iv_acckey      = ls_sfir_root-zzacckey
-                                                              iv_tor_id      = lv_tor_id
-                                                    IMPORTING es_header      = DATA(ls_001)
-                                                              ev_tom_branch  = DATA(lv_tom_branch)
-                                                              ev_rem_branch  = DATA(lv_rem_branch)
-                                                              ev_dest_branch = DATA(lv_dest_branch)
-                                                              es_p013        = DATA(ls_p013) ).
+    zcltm_gko_process=>determina_configuracao_p013( EXPORTING iv_acckey       = ls_sfir_root-zzacckey
+                                                              iv_tor_id       = lv_tor_id
+                                                    IMPORTING es_header       = DATA(ls_001)
+                                                              ev_tom_branch   = DATA(lv_tom_branch)
+                                                              ev_rem_branch   = DATA(lv_rem_branch)
+                                                              ev_dest_branch  = DATA(lv_dest_branch)
+                                                              ev_exped_branch = DATA(lv_exped_branch)
+                                                              ev_receb_branch = DATA(lv_receb_branch)
+                                                              es_p013         = DATA(ls_p013) ).
 
 * ---------------------------------------------------------------------------
 * Verifica se houve modificação da Conta Contábil e processa
@@ -398,8 +400,14 @@ CLASS zcltm_ses_acc_assign IMPLEMENTATION.
                   lv_rem_branch
                   lv_tom_branch
                   lv_dest_branch
-                  ls_001-ret_loc
-                  ls_001-ent_loc
+* BEGIN OF DELETE - RPORTES - 25.05.2023 - 8000007483, CORE4 - ERRO DETERMIN CENTRO DE CUSTO
+*                  ls_001-ret_loc
+*                  ls_001-ent_loc
+* END OF DELETE - RPORTES - 25.05.2023 - 8000007483, CORE4 - ERRO DETERMIN CENTRO DE CUSTO
+* BEGIN OF INSERT - RPORTES - 25.05.2023 - 8000007483, CORE4 - ERRO DETERMIN CENTRO DE CUSTO
+                  lv_exped_branch
+                  lv_receb_branch
+* END OF INSERT - RPORTES - 25.05.2023 - 8000007483, CORE4 - ERRO DETERMIN CENTRO DE CUSTO
                   INTO lv_message SEPARATED BY space.
 
       IF <fs_element> IS ASSIGNED.
@@ -438,7 +446,7 @@ CLASS zcltm_ses_acc_assign IMPLEMENTATION.
             lr_gko_process->free( ).
           ENDIF.
         CATCH cx_root INTO DATA(lo_root).
-            DATA(lv_msg) = lo_root->get_longtext( ).
+          DATA(lv_msg) = lo_root->get_longtext( ).
       ENDTRY.
 
     ENDIF.

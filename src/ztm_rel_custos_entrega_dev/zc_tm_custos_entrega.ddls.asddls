@@ -108,7 +108,7 @@ define view ZC_TM_CUSTOS_ENTREGA
        ChaveAcessoDocFrete,
 
        @UI.lineItem: [ { position: 120 }]
-       @EndUserText.label: 'Nº CTE'
+       @EndUserText.label: 'Nº CTe/Nº NFS/DANFE'
        CTENum,
 
        @UI.lineItem: [ { position: 130 }]
@@ -116,7 +116,7 @@ define view ZC_TM_CUSTOS_ENTREGA
        NFSDanfeNum,
 
        @EndUserText.label: 'UG Origem'
-       //      @Consumption.valueHelpDefinition: [ { entity: { name: 'ZI_CA_VH_REGIO', element: 'Region' } } ]
+       //@Consumption.valueHelpDefinition: [ { entity: { name: 'ZI_CA_VH_REGIO', element: 'Region' } } ]
        @Consumption.valueHelpDefinition: [ { entity: { name: 'ZI_TM_VH_UG', element: 'LocationId' } } ]
        UGOrigem,
 
@@ -166,11 +166,13 @@ define view ZC_TM_CUSTOS_ENTREGA
        UtilizacaoMaximaOF,
 
        @UI.lineItem: [ { position: 210 }]
-       @EndUserText.label: 'Código Local de Transporte'
+       //@EndUserText.label: 'Código Local de Transporte'
+       @EndUserText.label: 'Cód. Unidade Gerencial'
        @UI.selectionField: [{position: 50 }]
        CodigoLocalTransporte,
 
-       @EndUserText.label: 'Desc. Local de Transporte'
+       //@EndUserText.label: 'Desc. Local de Transporte'
+       @EndUserText.label: 'Desc. Unidade Gerencial'
        @UI.selectionField: [{position: 211 }]
        DescLocalTransporte,
 

@@ -68,7 +68,7 @@ define view ZI_TM_REL_PLAN_ENTREGA_DIST
   association [0..1] to ZI_TM_SUCC_KM                  as _SucessorStop  on  _FluxoDocumentosNF.TransportationOrderUUID = _SucessorStop.root_key
   association [0..*] to I_SDDocumentMultiLevelProcFlow as _RemessaDev    on  _Devolucao.Fatura                     = _RemessaDev.SubsequentDocument
                                                                          and _RemessaDev.PrecedingDocumentCategory = 'T'
-  association [0..1] to C_BR_VerifyNotaFiscal          as _NotaFiscalDev on  _Devolucao.Fatura =  _NotaFiscalDev.ReferenceDocument
+  association [0..*] to C_BR_VerifyNotaFiscal          as _NotaFiscalDev on  _Devolucao.Fatura =  _NotaFiscalDev.ReferenceDocument
                                                                          and _Devolucao.Fatura <> '' //campo vazio
 {
   key _FluxoDocumentosNF.TransportationOrderUUID                           as OrdemId,
@@ -77,6 +77,7 @@ define view ZI_TM_REL_PLAN_ENTREGA_DIST
       _FluxoDocumentosNF.DestinationStopUUID                               as DestinationID,
       _FluxoDocumentosNF.TransportationOrder                               as OrdemFreteNum,
       _FluxoDocumentosNF.BR_NFeAccessKey                                   as ChaveAcesso,
+     
       //      case
       //        when _FluxoDocumentosNF.TranspOrdDocReferenceType = '58' then _ClienteCompra.CodigoBP
       //        else _FluxoDocumentosNF.Consignee
@@ -92,8 +93,7 @@ define view ZI_TM_REL_PLAN_ENTREGA_DIST
         _FluxoDocumentosNF.SalesOrderDocument
       else
         ''
-      end                                                                  as DocumentoVendas,
-      _FluxoDocumentosNF.SalesOrderDocument                                as DocumentoVendas2,
+      end                                                                  as DocumentoVendas,      
 
       _Stop.log_locid                                                      as UGDestino,
       _Location._Address.Region                                            as UFDestino,
@@ -110,7 +110,7 @@ define view ZI_TM_REL_PLAN_ENTREGA_DIST
                      $session.client,
                      'NULL' )                                              as HoraCriacaoPedidoSAP,
 
-      tstmpl_to_utcl(_CicloPO.data_hora_registro, 'NULL', 'NULL')          as DataCriacaoPedidoSAP2,
+      //tstmpl_to_utcl(_CicloPO.data_hora_registro, 'NULL', 'NULL')          as DataCriacaoPedidoSAP2,
 
       tstmp_to_dats(_CicloPO_004.data_hora_registro,
                      abap_user_timezone(   $session.user,$session.client,'NULL' ) ,
@@ -349,7 +349,7 @@ define view ZI_TM_REL_PLAN_ENTREGA_DIST
       end                                                                  as NomeCliente,
 
 
-      //Nº Remessa Devoluções - ok
+      //Nº Remessa Devoluções
       _RemessaDev.PrecedingDocument                                        as NumeroRemessaDev,
 
 
@@ -390,8 +390,7 @@ define view ZI_TM_REL_PLAN_ENTREGA_DIST
       //      cast( round(_StopOri.OtimizacaoCapMax, 0) as abap.int1 )         as OtimizacaoCapMax, //Otimização % Capac. Máx.
       round(_StopOri.OtimizacaoCapMax, 0)                                  as OtimizacaoCapMax,
       
-      cast ( _FluxoDocumentosNF.TranspOrdItemGrossWeight as abap.dec( 15, 3) ) as PesoTotalOF, 
-      //cast (_FluxoDocumentosNF.TranspOrdNetWeight as abap.dec( 15, 3))     as PesoTotalOF,
+      cast ( sum ( _FluxoDocumentosNF.TranspOrdItemGrossWeight ) as abap.dec( 15, 3) ) as PesoTotalOF,     // Peso total por item - Na CDS de Consumo é feita agregação
 
       case
        when _ZI_TM_QTD_ENTREGAS.totalEntregas > 0
@@ -400,16 +399,13 @@ define view ZI_TM_REL_PLAN_ENTREGA_DIST
       end                                                                  as Dropsize,
 
       cast(_SucessorStop.total_dist_km as abap.dec( 15, 2 ) )              as Distancia,
-
-      cast( sum ( _FluxoDocumentosNF.TranspOrdItemNetWeight ) as abap.dec( 15, 2)) as PesoLiquido,
-      //cast(_FluxoDocumentosNF.TranspOrdItemNetWeight as abap.dec( 15, 2 )) as PesoLiquido,
-      _FluxoDocumentosNF.TranspOrdItemNetWeightUnit                        as PesoLiquidoUnidade,
+      cast( sum ( _FluxoDocumentosNF.TranspOrdItemNetWeight ) as abap.dec( 15, 2)) as PesoLiquido,      
+      _FluxoDocumentosNF.TranspOrdItemNetWeightUnit                        as PesoLiquidoUnidade,   //Unidade de medida
 
       tstmp_to_dats( _CicloPO_009.data_hora_planejada,
                           abap_user_timezone(   $session.user,$session.client,'NULL' ) ,
                                                 $session.client,
                                                 'NULL' )                   as DataCicloExternoMeta,
-
 
       tstmp_to_dats( _CicloPO_010.data_hora_planejada,
                           abap_user_timezone(   $session.user,$session.client,'NULL' ) ,
@@ -423,7 +419,6 @@ define view ZI_TM_REL_PLAN_ENTREGA_DIST
 
 
 }
-//where _FluxoDocumentosNF.BR_NFeDocumentStatus = '1'
 group by
   _FluxoDocumentosNF.TransportationOrderUUID,
   _FluxoDocumentosNF.SourceStopUUID,
@@ -462,16 +457,6 @@ group by
   _FluxoDocumentosNF.CustomerGroup,
   _FluxoDocumentosNF.CreationDateTime,
   _T151.ktext,
-
-  //StatusNFE (Unidade de frete)
-  //  _StatusOF
-  //  ( p_evento1: 'ENTREGA_PARCIAL',
-  //             p_evento2: 'ENTREGA_TOTAL',
-  //             p_evento3: 'DEVOLVIDO',
-  //             p_evento4: 'COLETADO',
-  //             p_evento5: 'NÃO COLETADO',
-  //             p_evento6: '' ).Evento,
-  //
 
   _StatusOF( p_evento1: 'ENTREGUE',
              p_evento2: 'DEVOLVIDO',
@@ -554,7 +539,6 @@ group by
   //_Devolucao.situacao,
   _Devolucao.CodSituacao,
   _Devolucao.StatusText,
-
   _NotaFiscalDev.BR_NFeNumber,
   _Devolucao.NfeComp,
   _Devolucao.Fatura,
@@ -590,11 +574,10 @@ group by
   _FluxoDocumentosNF.BR_NFTotalAmount,
   _ZI_TM_QTD_ENTREGAS.totalEntregas,
   //_FluxoDocumentosNF.TranspOrdItemNetWeight,
-  _FluxoDocumentosNF.TranspOrdItemNetWeightUnit,
-  
+  _FluxoDocumentosNF.TranspOrdItemNetWeightUnit,  
   _FluxoDocumentosNF.TranspOrdNetWeight,  
   _FluxoDocumentosNF.DeliveryDocumentType,
   _FluxoDocumentosNF.InvoiceDocument,
-  _FluxoDocumentosNF.BR_NFeDocumentStatus,
+  _FluxoDocumentosNF.BR_NFeDocumentStatus
   
-  _FluxoDocumentosNF.TranspOrdItemGrossWeight
+  //,_FluxoDocumentosNF.TranspOrdItemGrossWeight

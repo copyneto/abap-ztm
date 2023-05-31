@@ -19,7 +19,7 @@ define view ZI_TM_DATA_FN_FU
 
 {
   key right(_Ite.base_btd_id , 10)                                    as ReferUnidadeFrete,
-      _Ite.parent_key                                                 as IteParentKey,
+      //_Ite.parent_key                                                 as IteParentKey,
       _Status( p_evento1 : $parameters.p_evento1,
                              p_evento2 : $parameters.p_evento2,
                              p_evento3 : $parameters.p_evento3,
@@ -30,7 +30,7 @@ define view ZI_TM_DATA_FN_FU
 
 group by
   _Ite.base_btd_id,
-  _Ite.parent_key,
+  //_Ite.parent_key,
   _Status( p_evento1 : $parameters.p_evento1,
                        p_evento2 : $parameters.p_evento2,
                        p_evento3 : $parameters.p_evento3,

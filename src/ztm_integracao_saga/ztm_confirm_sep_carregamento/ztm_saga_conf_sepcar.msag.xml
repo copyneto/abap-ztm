@@ -26,6 +26,12 @@
      <MSGNR>002</MSGNR>
      <TEXT>Nenhuma OF localizada com o TORID (&amp;1) informado do TORCAT &amp;2</TEXT>
     </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_SAGA_CONF_SEPCAR</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Transportador &amp;1 inválido</TEXT>
+    </T100>
    </T100>
   </asx:values>
  </asx:abap>

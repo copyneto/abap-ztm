@@ -5994,6 +5994,25 @@ CLASS ZCLTM_MODIFY_PO IMPLEMENTATION.
       ELSE.
 
         <ls_ct_po_services>-external_item_id = <ls_ct_po_services>-ext_serv.
+* BEGIN OF INSERT - RPORTES - 26.05.2023 - 8000007922, COMPRAS - MESTRE D SERVIÇO PEDIDO
+
+        " Caso o cenário não seja de rateio, devemos determinar o código de mestre de serviço.
+        IF lines( lt_po_services ) <= 1.
+          IF     line_exists(   it_charge_element[ tcet084 = 'FRETE_SAIDA' ] )   .
+
+            ls_charge_element = it_charge_element[ tcet084 = 'FRETE_SAIDA' ]     .
+
+          ELSEIF line_exists(   it_charge_element[ tcet084 = 'FRETE_ENTRADA' ] ) .
+
+            ls_charge_element = it_charge_element[ tcet084 = 'FRETE_ENTRADA' ]   .
+
+          ELSEIF line_exists(   it_charge_element[ tcet084 = 'FRETE_TRANSFER' ] ).
+
+            ls_charge_element = it_charge_element[ tcet084 = 'FRETE_TRANSFER' ]  .
+
+          ENDIF.
+        ENDIF.
+* END OF INSERT - RPORTES - 26.05.2023 - 8000007922, COMPRAS - MESTRE D SERVIÇO PEDIDO
 
 * BEGIN OF DELETE - JWSILVA - 11.04.2023
 *        IF     line_exists( lt_charge_element[ tcet084 = 'FRETE_SAIDA' ] ).

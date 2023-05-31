@@ -36,6 +36,18 @@ public section.
       attr3 type scx_attrname value '',
       attr4 type scx_attrname value '',
     end of TOR_ID_INVALIDO .
+
+  constants:
+    begin of tsp_invalido,
+      msgid type symsgid value 'ZTM_SAGA_CONF_SEPCAR',
+      msgno type symsgno value '003',
+      attr1 type scx_attrname value 'GV_MSGV1',
+      attr2 type scx_attrname value '',
+      attr3 type scx_attrname value '',
+      attr4 type scx_attrname value '',
+    end of tsp_invalido.
+
+
   data GV_MSGV1 type MSGV1 .
   data GV_MSGV2 type MSGV2 .
   data GV_MSGV3 type MSGV3 .

@@ -49,6 +49,12 @@ define view ZC_TM_PROVISAO_CUSTOS
       @UI.lineItem: [ { position: 250 }]
       @EndUserText.label: 'Doc. Fat. Frete - DFF'
   key DFFDocument,
+  
+  
+      @UI.lineItem: [ { position: 400 }]
+      @EndUserText.label: 'Chave acesso NF-e Frete'
+  key ChaveAcessoDocFrete,
+  
 
       @UI.lineItem: [ { position: 10 }]
       @EndUserText.label: 'Cód. Produto'
@@ -227,10 +233,6 @@ define view ZC_TM_PROVISAO_CUSTOS
       @UI.lineItem: [ { position: 390 }]
       @EndUserText.label: 'Descr. Status Process. Cockpit'
       CockpitProcessStatusName,
-
-      @UI.lineItem: [ { position: 400 }]
-      @EndUserText.label: 'Chave acesso NF-e Frete'
-      ChaveAcessoDocFrete,
 
       @UI.lineItem: [ { position: 410 }]
       @EndUserText.label: 'Nº CTE'

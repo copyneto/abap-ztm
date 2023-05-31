@@ -80,7 +80,7 @@ ENDCLASS.
 
 
 
-CLASS zcltm_saga_conf_sep_carreg IMPLEMENTATION.
+CLASS ZCLTM_SAGA_CONF_SEP_CARREG IMPLEMENTATION.
 
 
   METHOD create_event.
@@ -143,6 +143,21 @@ CLASS zcltm_saga_conf_sep_carreg IMPLEMENTATION.
 
     IF is_input-mt_confirma_separacao_carregam-evento = gc_cdsit_emexecucao
        OR is_input-mt_confirma_separacao_carregam-evento = gc_cdsit_fechada.
+
+      IF is_input-mt_confirma_separacao_carregam-tsp IS NOT INITIAL.
+        SELECT COUNT(*) FROM but000
+          WHERE partner = @is_input-mt_confirma_separacao_carregam-tsp
+            AND XDELE = @abap_false
+            AND xblck = @abap_false.
+        IF sy-subrc <> 0.
+          RAISE EXCEPTION TYPE zcxtm_saga_conf_sep_carreg ##STMNT_EXIT
+            EXPORTING
+              textid   = zcxtm_saga_conf_sep_carreg=>tsp_invalido
+              gv_msgv1 = CONV msgv1( is_input-mt_confirma_separacao_carregam-tsp ).
+          RETURN.
+        ENDIF.
+      ENDIF.
+
 
       go_srv_tor = /bobf/cl_tra_serv_mgr_factory=>get_service_manager( /scmtms/if_tor_c=>sc_bo_key ).
       go_tra_mgr = /bobf/cl_tra_trans_mgr_factory=>get_transaction_manager( ).
