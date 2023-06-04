@@ -375,9 +375,8 @@ define view ZI_TM_REL_PLAN_ENTREGA_DIST
                              p_evento3: 'DEVOLVIDO',
                              p_evento4: '',
                              p_evento5: '',
-                             p_evento6: '' ).ContainsEvent = 'X' then 0
+                             p_evento6: '' ).ContainsEvent = 'X' then 0.00
                              else _FluxoDocumentosNF.BR_NFTotalAmount end  as ValorNFPendente,
-
 
       _FluxoDocumentosNF.BR_NFTotalAmount                                  as ValorTotalNFeBruto,
 

@@ -17,7 +17,7 @@ define view ZI_TM_STS_CK_FU
     association [1..1] to ZI_TM_DATA_STS_FN_OF as _Status on _Ite.parent_key = _Status.IdOrdemFrete
 
 {
-  key _Ite.base_btd_id                                                                             as ReferUnidadeFrete,
+  key right(_Ite.base_btd_id, 10) as ReferUnidadeFrete,
       case when _Status( p_evento1 : $parameters.p_evento1,
                          p_evento2 : $parameters.p_evento2,
                          p_evento3 : $parameters.p_evento3,
