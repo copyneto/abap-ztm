@@ -53,6 +53,12 @@ CLASS zcltm_agrupar_fatura DEFINITION
       EXCEPTIONS
         nobody_found.
 
+    "! Busca aprovadores (WF)
+    METHODS grava_log_busca_aprovadores
+      IMPORTING
+        !iv_acckey TYPE zttm_gkot001-acckey
+        !it_return TYPE bapiret2_t.
+
     "! Busca nível de desconto. Necessário para determinar quantos aprovadores serão envolvidos.
     METHODS busca_nivel_desconto
       IMPORTING
@@ -509,54 +515,9 @@ CLASS zcltm_agrupar_fatura IMPLEMENTATION.
 
     ls_objkey = iv_objkey.
 
-** ---------------------------------------------------------------------------
-** Busca documento CTE
-** ---------------------------------------------------------------------------
-*    SELECT DISTINCT xblnr, stcd1, bldat, acckey
-*        FROM zttm_gkot010
-*        WHERE xblnr EQ @ls_objkey-reference
-*          AND stcd1 EQ @ls_objkey-cnpj
-*          AND bldat EQ @ls_objkey-documentdate
-*        INTO TABLE @DATA(lt_gkot010).
-*
-*    IF lt_gkot010 IS NOT INITIAL.
-*      SELECT acckey, bukrs, branch
-*        FROM zttm_gkot001
-*        FOR ALL ENTRIES IN @lt_gkot010
-*        WHERE acckey EQ @lt_gkot010-acckey
-*        APPENDING TABLE @DATA(lt_gkot001).
-*    ENDIF.
-*
-** ---------------------------------------------------------------------------
-** Busca documento NFS ou NFE
-** ---------------------------------------------------------------------------
-*    SELECT DISTINCT xblnr, stcd1, bldat, docdat, prefno, nfnum, nfenum, series, stcd1_transp
-*      FROM zttm_gkot011
-*      WHERE xblnr EQ @ls_objkey-reference
-*        AND stcd1 EQ @ls_objkey-cnpj
-*        AND bldat EQ @ls_objkey-documentdate
-*      INTO TABLE @DATA(lt_gkot011).
-*
-*    IF lt_gkot011 IS NOT INITIAL.
-*
-*      lt_001_key = VALUE #( FOR ls_011 IN lt_gkot011 ( budat         = ls_011-docdat
-*                                                       prefno        = ls_011-prefno
-*                                                       nfnum9        = ls_011-nfenum
-*                                                       series        = ls_011-series
-*                                                       emit_cnpj_cpf = ls_011-stcd1_transp ) ).
-*
-*      SELECT acckey, bukrs, branch
-*        FROM zttm_gkot001
-*        FOR ALL ENTRIES IN @lt_001_key
-*        WHERE budat         EQ @lt_001_key-budat
-*          AND prefno        EQ @lt_001_key-prefno
-*          AND nfnum9        EQ @lt_001_key-nfnum9
-*          AND series        EQ @lt_001_key-series
-*          AND emit_cnpj_cpf EQ @lt_001_key-emit_cnpj_cpf
-*        APPENDING TABLE @lt_gkot001.
-*    ENDIF.
-
-
+* ---------------------------------------------------------------------------
+* Busca dados de agrupamento
+* ---------------------------------------------------------------------------
     SELECT DISTINCT xblnr, stcd1, bldat
         FROM zttm_gkot009
         WHERE xblnr EQ @ls_objkey-reference
@@ -580,7 +541,11 @@ CLASS zcltm_agrupar_fatura IMPLEMENTATION.
     TRY.
         DATA(ls_gko001) = lt_gkot001[ 1 ].
       CATCH cx_sy_itab_line_not_found INTO DATA(ls_exception).
-        RAISE nobody_found.
+* BEGIN OF CHANGE - JWSILVA - 06.06.2023
+*        RAISE nobody_found.
+        " Caso a chave tenha sido removida, não continuar processo
+        RETURN.
+* END OF CHANGE - JWSILVA - 06.06.2023
     ENDTRY.
 
     LOOP AT it_container ASSIGNING FIELD-SYMBOL(<fs_container>).
@@ -592,14 +557,26 @@ CLASS zcltm_agrupar_fatura IMPLEMENTATION.
     ENDLOOP.
 
     IF lv_nivel IS INITIAL.
-      RAISE nobody_found.
+* BEGIN OF CHANGE - JWSILVA - 06.06.2023
+*     RAISE nobody_found.
+      " Nenhuma estrutura organizacional configurada para Workflow.
+      me->grava_log_busca_aprovadores( iv_acckey = ls_gko001-acckey
+                                       it_return = VALUE #( ( type = 'E' id ='ZTM_GESTAO_FRETE' number = '141' ) ) ).
+      RETURN.
+* END OF CHANGE - JWSILVA - 06.06.2023
     ENDIF.
 
     " Recupera parâmetros
     me->busca_parametros( IMPORTING es_parametros = DATA(ls_parametros) ).
 
     IF ls_parametros-root IS INITIAL.
-      RAISE nobody_found.
+* BEGIN OF CHANGE - JWSILVA - 06.06.2023
+*     RAISE nobody_found.
+      " Falta cadastro dos aprovadores na estrutura organizacional.
+      me->grava_log_busca_aprovadores( iv_acckey = ls_gko001-acckey
+                                       it_return = VALUE #( ( type = 'E' id ='ZTM_GESTAO_FRETE' number = '140' ) ) ).
+      RETURN.
+* END OF CHANGE - JWSILVA - 06.06.2023
     ENDIF.
 
     CALL FUNCTION 'RH_DIR_ORG_STRUC_GET'
@@ -613,7 +590,13 @@ CLASS zcltm_agrupar_fatura IMPLEMENTATION.
         no_active_plvar = 1
         OTHERS          = 2.
     IF sy-subrc NE 0.
-      RAISE nobody_found.
+* BEGIN OF CHANGE - JWSILVA - 06.06.2023
+*     RAISE nobody_found.
+      " Falta cadastro dos aprovadores na estrutura organizacional.
+      me->grava_log_busca_aprovadores( iv_acckey = ls_gko001-acckey
+                                       it_return = VALUE #( ( type = 'E' id ='ZTM_GESTAO_FRETE' number = '140' ) ) ).
+      RETURN.
+* END OF CHANGE - JWSILVA - 06.06.2023
     ENDIF.
 
     SORT lt_org_units    BY parentid short.
@@ -623,7 +606,13 @@ CLASS zcltm_agrupar_fatura IMPLEMENTATION.
     READ TABLE lt_org_units INTO DATA(ls_org_root) WITH KEY parentid = '00000000'
                                                             BINARY SEARCH.
     IF sy-subrc NE 0.
-      RAISE nobody_found.
+* BEGIN OF CHANGE - JWSILVA - 06.06.2023
+*     RAISE nobody_found.
+      " Falta cadastro dos aprovadores na estrutura organizacional.
+      me->grava_log_busca_aprovadores( iv_acckey = ls_gko001-acckey
+                                       it_return = VALUE #( ( type = 'E' id ='ZTM_GESTAO_FRETE' number = '140' ) ) ).
+      RETURN.
+* END OF CHANGE - JWSILVA - 06.06.2023
     ENDIF.
 
     " Busca a empresa
@@ -631,7 +620,13 @@ CLASS zcltm_agrupar_fatura IMPLEMENTATION.
                                                                short    = ls_gko001-bukrs
                                                                BINARY SEARCH.
     IF sy-subrc NE 0.
-      RAISE nobody_found.
+* BEGIN OF CHANGE - JWSILVA - 06.06.2023
+*     RAISE nobody_found.
+      " Falta cadastro dos aprovadores na estrutura organizacional.
+      me->grava_log_busca_aprovadores( iv_acckey = ls_gko001-acckey
+                                       it_return = VALUE #( ( type = 'E' id ='ZTM_GESTAO_FRETE' number = '140' ) ) ).
+      RETURN.
+* END OF CHANGE - JWSILVA - 06.06.2023
     ENDIF.
 
     CASE lv_nivel.
@@ -643,7 +638,13 @@ CLASS zcltm_agrupar_fatura IMPLEMENTATION.
                                                                   short    = ls_gko001-branch
                                                                   BINARY SEARCH.
         IF sy-subrc NE 0.
-          RAISE nobody_found.
+* BEGIN OF CHANGE - JWSILVA - 06.06.2023
+*     RAISE nobody_found.
+          " Falta cadastro dos aprovadores na estrutura organizacional.
+          me->grava_log_busca_aprovadores( iv_acckey = ls_gko001-acckey
+                                           it_return = VALUE #( ( type = 'E' id ='ZTM_GESTAO_FRETE' number = '140' ) ) ).
+          RETURN.
+* END OF CHANGE - JWSILVA - 06.06.2023
         ENDIF.
 
         " Adiciona os usuários vinculados ao local de negócio (nivel 01)
@@ -669,8 +670,28 @@ CLASS zcltm_agrupar_fatura IMPLEMENTATION.
     ENDCASE.
 
     IF ct_actor_tab[] IS INITIAL.
-      RAISE nobody_found.
+* BEGIN OF CHANGE - JWSILVA - 06.06.2023
+*     RAISE nobody_found.
+      " Falta cadastro dos aprovadores na estrutura organizacional.
+      me->grava_log_busca_aprovadores( iv_acckey = ls_gko001-acckey
+                                       it_return = VALUE #( ( type = 'E' id ='ZTM_GESTAO_FRETE' number = '140' ) ) ).
+      RETURN.
+* END OF CHANGE - JWSILVA - 06.06.2023
     ENDIF.
+
+  ENDMETHOD.
+
+
+  METHOD grava_log_busca_aprovadores.
+
+    TRY.
+        DATA(lr_gko_process) = NEW zcltm_gko_process( iv_acckey    = iv_acckey
+                                                      iv_tpprocess = zcltm_gko_process=>gc_tpprocess-automatico ).
+        lr_gko_process->add_to_log( EXPORTING it_bapi_ret = it_return ).
+        lr_gko_process->persist( ).
+        lr_gko_process->free( ).
+      CATCH cx_root.
+    ENDTRY.
 
   ENDMETHOD.
 

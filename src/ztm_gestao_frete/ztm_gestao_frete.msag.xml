@@ -848,6 +848,18 @@
      <MSGNR>139</MSGNR>
      <TEXT>&amp;1: &amp;2&amp;3&amp;4</TEXT>
     </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>140</MSGNR>
+     <TEXT>Falta cadastro dos aprovadores na estrutura organizacional.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>P</SPRSL>
+     <ARBGB>ZTM_GESTAO_FRETE</ARBGB>
+     <MSGNR>141</MSGNR>
+     <TEXT>Nenhuma estrutura organizacional configurada para Workflow.</TEXT>
+    </T100>
    </T100>
    <LONGTEXTS>
     <item>
