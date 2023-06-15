@@ -192,7 +192,7 @@ ENDCLASS.
 
 
 
-CLASS zcltm_process_of IMPLEMENTATION.
+CLASS ZCLTM_PROCESS_OF IMPLEMENTATION.
 
 
   METHOD execute.
@@ -914,14 +914,14 @@ CLASS zcltm_process_of IMPLEMENTATION.
         ls_dados-ori_locid = lt_stop_fist[ stop_cat = 'S' ]-log_locid. "#EC CI_SORTSEQ
       ENDIF.
 
-      me->create_event(
-        EXPORTING
-          is_tor      = ls_tor_root
-          is_dados    = ls_dados
-          iv_event    = 'FATURAR/CARREGAR'
-        RECEIVING
-          rt_messages = DATA(lt_return)
-      ).
+*      me->create_event(
+*        EXPORTING
+*          is_tor      = ls_tor_root
+*          is_dados    = ls_dados
+*          iv_event    = 'FATURAR/CARREGAR'
+*        RECEIVING
+*          rt_messages = DATA(lt_return)
+*      ).
 
     ENDIF.
 
