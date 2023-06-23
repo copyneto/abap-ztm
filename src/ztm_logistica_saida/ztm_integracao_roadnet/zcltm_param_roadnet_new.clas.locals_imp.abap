@@ -16,6 +16,9 @@ CLASS lcl_param DEFINITION INHERITING FROM cl_abap_behavior_handler.
     METHODS rba_Redespacho FOR READ
       IMPORTING keys_rba FOR READ _Roadnet\_Redespacho FULL result_requested RESULT result LINK association_links.
 
+    METHODS rba_Log FOR READ
+      IMPORTING keys_rba FOR READ _Roadnet\_Log FULL result_requested RESULT result LINK association_links.
+
 *    METHODS importar FOR MODIFY
 *      IMPORTING keys FOR ACTION _Roadnet~importar.
 
@@ -127,6 +130,10 @@ CLASS lcl_param IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD rba_Redespacho.
+    RETURN.
+  ENDMETHOD.
+
+  METHOD rba_log.
     RETURN.
   ENDMETHOD.
 

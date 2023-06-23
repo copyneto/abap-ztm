@@ -41,15 +41,15 @@ annotate view ZC_TM_PARAM_ROADNET with
   @Consumption: { filter: { mandatory: true, multipleSelections: true } }
   centro;
 
-  @UI: { lineItem:       [ { position: 20 } ],
-         fieldGroup:     [ { position: 20, qualifier: 'Cabecalho' } ],
-         selectionField: [ { position: 20 } ] }
-  @Consumption.filter: { mandatory: true, multipleSelections: false, selectionType: #SINGLE }
-  data;
-
-  @UI: { lineItem:       [ { position: 30 } ],
-         fieldGroup:     [ { position: 30, qualifier: 'Cabecalho' } ] }
-  hora;
+//  @UI: { lineItem:       [ { position: 20 } ],
+//         fieldGroup:     [ { position: 20, qualifier: 'Cabecalho' } ],
+//         selectionField: [ { position: 20 } ] }
+//  @Consumption.filter: { mandatory: true, multipleSelections: false, selectionType: #SINGLE }
+//  data;
+//
+//  @UI: { lineItem:       [ { position: 30 } ],
+//         fieldGroup:     [ { position: 30, qualifier: 'Cabecalho' } ] }
+//  hora;
 
   @UI: { lineItem:       [ { position: 40 } ],
          fieldGroup:     [ { position: 40, qualifier: 'Cabecalho' } ] }
